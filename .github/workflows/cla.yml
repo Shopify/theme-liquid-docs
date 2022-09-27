@@ -9,8 +9,7 @@ on:
 
 jobs:
   cla:
-    # TODO change to ubuntu-latest after making public
-    runs-on: shopify-ubuntu-latest
+    runs-on: ubuntu-latest
     if: |
       (github.event.issue.pull_request
         && !github.event.issue.pull_request.merged_at
