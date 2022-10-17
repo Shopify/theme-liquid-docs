@@ -2121,7 +2121,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Escapes a string.",
+    "summary": "Escapes special characters in HTML, such as `&lt;&gt;`, `'`, and `&amp;`, and converts characters into escape sequences. The filter doesn't effect characters within the string that don’t have a corresponding escape sequence.\".",
     "syntax": "string | escape",
     "name": "escape"
   },
@@ -3827,7 +3827,7 @@
         "description": "`video_tag` supports all [HTML5 video attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attributes).\nFor example:\n\n| Attribute | Value |\n| --- | --- |\n| `autoplay` | Whether to automatically play the video after it’s loaded. Accepted values:`true`,`false`|\n| `loop` | Whether to loop the video. Accepted values:`true`,`false`|\n| `muted` | Whether to mute the video’s audio. Accepted values:`true`,`false`|\n| `controls` | Whether a user can control the video playback. Accepted values:`true`,`false`|\n",
         "syntax": "media | video_tag: attribute: boolean",
         "path": "/products/potion-beats",
-        "raw_liquid": "{% for media in product.media %}\n  {% if media.media_type == 'video' %}\n    {{ media | video_tag: autoplay: true, loop: true, muted: true, controls: true }}.\n  {% endif %}\n{% endfor %}",
+        "raw_liquid": "{% for media in product.media %}\n  {% if media.media_type == 'video' %}\n    {{ media | video_tag: autoplay: true, loop: true, muted: true, controls: true }}\n  {% endif %}\n{% endfor %}",
         "parameter": true,
         "display_type": "html",
         "show_data_tab": false
@@ -4708,7 +4708,7 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{{ 'beaker.webp' | asset_img_url }}",
+        "raw_liquid": "{{ 'red-and-black-bramble-berries.jpg' | asset_img_url }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
@@ -4718,7 +4718,7 @@
         "description": "By default, the `asset_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/api/liquid/filters#img_url-size).\n",
         "syntax": "image | asset_img_url: string",
         "path": "/",
-        "raw_liquid": "{{ 'beaker.webp' | asset_img_url: 'large' }}",
+        "raw_liquid": "{{ 'red-and-black-bramble-berries.jpg' | asset_img_url: 'large' }}",
         "parameter": true,
         "display_type": "text",
         "show_data_tab": true
@@ -4901,7 +4901,7 @@
     "category": "hosted_file",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Global assets are kept in a directory on Shopify's server. Using global assets can be faster than loading the resource\ndirectly.\n\nDepending on the resource type, you might need to use an additional filter to load the resource. The following table\noutlines which filter to use for specific resource types.\n\n| Resource type | Additional filter |\n| --- | --- |\n| JavaScript (`.js`) | [`script_tag`](/api/liquid/filters#script_tag) |\n| CSS (`.css`) | [`stylesheet_tag`](/api/liquid/filters#stylesheet_tag)  |\n\nThe following table outlines the available global assets:\n\n| Category | Assets |\n| --- | --- |\n| Firebug | - `firebug/firebug.css`&lt;br&gt;- `firebug/firebug.html`&lt;br&gt;- `firebug/firebug.js`&lt;br&gt;- `firebug/firebugx.js`&lt;br&gt;- `firebug/errorIcon.png`&lt;br&gt;- `firebug/infoIcon.png`&lt;br&gt;- `firebug/warningIcon.png` |\n| JavaScript libraries | - `controls.js`&lt;br&gt;- `dragdrop.js`&lt;br&gt;- `effects.js`&lt;br&gt;- `ga.js`&lt;br&gt;- `mootools.js` |\n| Lightbox | - `lightbox.css`&lt;br&gt;- `lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v1/lightbox.css`&lt;br&gt;- `lightbox/v1/lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v2/lightbox.css`&lt;br&gt;- `lightbox/v2/lightbox.js`&lt;br&gt;- `lightbox/v2/close.gif`&lt;br&gt;- `lightbox/v2/loading.gif`&lt;br&gt;- `lightbox/v2/overlay.png`&lt;br&gt;- `lightbox/v2/zoom-lg.gif`&lt;br&gt;&lt;br&gt;- `lightbox/v204/lightbox.css`&lt;br&gt;- `lightbox/v204/lightbox.js`&lt;br&gt;- `lightbox/v204/bullet.gif`&lt;br&gt;- `lightbox/v204/close.gif`&lt;br&gt;- `lightbox/v204/closelabel.gif`&lt;br&gt;- `lightbox/v204/donatebutton.gif`&lt;br&gt;- `lightbox/v204/downloadicon.gif`&lt;br&gt;- `lightbox/v204/loading.gif`&lt;br&gt;- `lightbox/v204/nextlabel.png`&lt;br&gt;- `lightbox/v204/prevlabel.gif` |\n| Prototype | - `prototype.js`&lt;br&gt;- `prototype/1.5/prototype.js`&lt;br&gt;- `prototype/1.6/prototype.js` |\n| script.aculo.us | - `scriptaculous/1.8.2/scriptaculous.js`&lt;br&gt;- `scriptaculous/1.8.2/builder.js`&lt;br&gt;- `scriptaculous/1.8.2/controls.js`&lt;br&gt;- `scriptaculous/1.8.2/dragdrop.js`&lt;br&gt;- `scriptaculous/1.8.2/effects.js`&lt;br&gt;- `scriptaculous/1.8.2/slider.js`&lt;br&gt;- `scriptaculous/1.8.2/sound.js`&lt;br&gt;- `scriptaculous/1.8.2/unittest.js` |\n| Shopify | - `list-collection.css`&lt;br&gt;- `search.css`&lt;br&gt;- `textile.css` |",
+    "description": "Global assets are kept in a directory on Shopify's server. Using global assets can be faster than loading the resource\ndirectly.\n\nDepending on the resource type, you might need to use an additional filter to load the resource. The following table\noutlines which filter to use for specific resource types.\n\n| Resource type | Additional filter |\n| --- | --- |\n| JavaScript (`.js`) | [`script_tag`](/api/liquid/filters#script_tag) |\n| CSS (`.css`) | [`stylesheet_tag`](/api/liquid/filters#stylesheet_tag)  |\n\nThe following table outlines the available global assets:\n\n| Category | Assets |\n| --- | --- |\n| Firebug | - `firebug/firebug.css`&lt;br&gt;- `firebug/firebug.html`&lt;br&gt;- `firebug/firebug.js`&lt;br&gt;- `firebug/firebugx.js`&lt;br&gt;- `firebug/errorIcon.png`&lt;br&gt;- `firebug/infoIcon.png`&lt;br&gt;- `firebug/warningIcon.png` |\n| JavaScript libraries | - `controls.js`&lt;br&gt;- `dragdrop.js`&lt;br&gt;- `effects.js`&lt;br&gt;- `ga.js`&lt;br&gt;- `mootools.js` |\n| Lightbox | - `lightbox.css`&lt;br&gt;- `lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v1/lightbox.css`&lt;br&gt;- `lightbox/v1/lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v2/lightbox.css`&lt;br&gt;- `lightbox/v2/lightbox.js`&lt;br&gt;- `lightbox/v2/close.gif`&lt;br&gt;- `lightbox/v2/loading.gif`&lt;br&gt;- `lightbox/v2/overlay.png`&lt;br&gt;- `lightbox/v2/zoom-lg.gif`&lt;br&gt;&lt;br&gt;- `lightbox/v204/lightbox.css`&lt;br&gt;- `lightbox/v204/lightbox.js`&lt;br&gt;- `lightbox/v204/bullet.gif`&lt;br&gt;- `lightbox/v204/close.gif`&lt;br&gt;- `lightbox/v204/closelabel.gif`&lt;br&gt;- `lightbox/v204/donatebutton.gif`&lt;br&gt;- `lightbox/v204/downloadicon.gif`&lt;br&gt;- `lightbox/v204/loading.gif`&lt;br&gt;- `lightbox/v204/nextlabel.png`&lt;br&gt;- `lightbox/v204/prevlabel.gif` |\n| Prototype | - `prototype.js`&lt;br&gt;- `prototype/1.5/prototype.js`&lt;br&gt;- `prototype/1.6/prototype.js` |\n| script.aculo.us | - `scriptaculous/1.8.2/scriptaculous.js`&lt;br&gt;- `scriptaculous/1.8.2/builder.js`&lt;br&gt;- `scriptaculous/1.8.2/controls.js`&lt;br&gt;- `scriptaculous/1.8.2/dragdrop.js`&lt;br&gt;- `scriptaculous/1.8.2/effects.js`&lt;br&gt;- `scriptaculous/1.8.2/slider.js`&lt;br&gt;- `scriptaculous/1.8.2/sound.js`&lt;br&gt;- `scriptaculous/1.8.2/unittest.js` |\n| Shopify | - `list-collection.css`&lt;br&gt;- `textile.css` |",
     "parameters": [
 
     ],

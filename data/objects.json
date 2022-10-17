@@ -3248,6 +3248,24 @@
         ],
         "summary": "The address of the location.",
         "name": "shipping_address"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The tax ID of the location.",
+        "name": "tax_registration_id"
       }
     ],
     "summary": "A location of the [company](/api/liquid/objects#company) that a [customer](/api/liquid/objects#customer) is purchasing for.",
@@ -4657,7 +4675,7 @@
         ],
         "return_type": [
           {
-            "type": "filter_value",
+            "type": "number",
             "name": "",
             "description": "",
             "array_value": ""
@@ -4722,10 +4740,6 @@
         {
           "object": "filter",
           "property": "min_value"
-        },
-        {
-          "object": "filter",
-          "property": "range_max"
         }
       ],
       "template": [
@@ -8551,7 +8565,7 @@
     "examples": [
       {
         "name": "Access metafields",
-        "description": "The access path for metafields consists of two layers:\n\n- namespace - A grouping of metafields to prevent conflicts.\n- key - The metafield name.\n\nGiven this, you can access the metafield object with the following syntax:\n\n```liquid\n{{ resource.metafields.namespace.key }}\n```\n\n##### Direct access\n\nMetafields must be accessed directly using their associated key. For example, you can't loop over a namespace to get each individual metafield.\n\n```liquid\n{% for field in resource.metafields.namespace %}\n  {{ field | metafield_tag }}\n{% endfor %}\n```\n",
+        "description": "The access path for metafields consists of two layers:\n\n- namespace - A grouping of metafields to prevent conflicts.\n- key - The metafield name.\n\nGiven this, you can access the metafield object with the following syntax:\n\n```liquid\n{{ resource.metafields.namespace.key }}\n```\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "Type: {{ product.metafields.information.directions.type }}\nValue: {{ product.metafields.information.directions.value }}",
@@ -16125,6 +16139,60 @@
         ],
         "summary": "The name of the payment provider used for the transaction.",
         "name": "gateway_display_name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Whether the transaction is pending, and whether additional customer info is required to process the payment.",
+        "name": "show_buyer_pending_payment_instructions?"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "A notice that contains instructions for the customer on how to complete their payment.\nThe messages are specific to the payment method used.",
+        "name": "buyer_pending_payment_notice"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "pending_payment_instruction_input"
+          }
+        ],
+        "summary": "A list of `pending_payment_instruction_input` header-value pairs, with payment method-specific details.\nThe customer can use these details to complete their purchase offline.\n\nIf the payment method doesn’t support pending payment instructions, then an empty array is returned.\n\n| Supported payment method | Expected Values |\n| --- | ----------- |\n| ShopifyPayments - Multibanco | [{header=\"Entity\", value=\"12345\"}, {header=\"Reference\", value=\"999999999\"}] |",
+        "name": "buyer_pending_payment_instructions"
       }
     ],
     "summary": "A transaction associated with a checkout or order.",
@@ -18295,6 +18363,74 @@
       "path": "",
       "handle": "",
       "data_from_file": "{\"is_link\":true,\"title\":\"2\",\"url\":\"/collections/all?page=2\"}"
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "transaction",
+          "property": "buyer_pending_payment_instructions"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The header of the payment instruction.\nThese are payment method-specific. Example: \"Entity\" and \"Reference\" for Multibanco",
+        "name": "header"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Contains the corresponding values to the headers of the payment instruction.",
+        "name": "value"
+      }
+    ],
+    "summary": "Header-value pairs that make up the list of payment information specific to the payment method.\nThis information can be be used by the customer to complete the transaction offline.",
+    "name": "pending_payment_instruction_input",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
     },
     "return_type": [
 
