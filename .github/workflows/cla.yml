@@ -2,6 +2,7 @@
 name: Contributor License Agreement (CLA)
 
 on:
+  workflow_dispatch:
   pull_request_target:
     types: [opened, synchronize]
   issue_comment:
@@ -14,6 +15,7 @@ jobs:
       (github.event.issue.pull_request
         && !github.event.issue.pull_request.merged_at
         && contains(github.event.comment.body, 'signed')
+        && github.actor != 'shopify-dev-bot[bot]'
       )
       || (github.event.pull_request && !github.event.pull_request.merged)
     steps:
