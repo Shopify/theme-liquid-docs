@@ -1839,7 +1839,7 @@
     "examples": [
       {
         "name": "",
-        "description": "",
+        "description": "To produce URL-safe Base64, this filter uses `-` and `_` in place of `+` and `/`.",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ 'one two three' | base64_url_safe_encode }}",
@@ -2593,7 +2593,7 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{{ \"I hate it when I accidentally spill my duplication duplication potion.\" | remove_first: 'duplication ' }}",
+        "raw_liquid": "{{ \"I hate it when I accidentally spill my duplication potion accidentally!\" | remove_first: ' accidentally' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
@@ -2625,7 +2625,7 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{{ \"double double toil and trouble\" | remove_last: 'double ' }}",
+        "raw_liquid": "{{ \"I hate it when I accidentally spill my duplication potion accidentally!\" | remove_first: ' accidentally' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
@@ -3627,7 +3627,7 @@
       },
       {
         "name": "srcset",
-        "description": "By default, Shopify generates a `srcset`. However, you can create your own `srcset`.\nThe `srcset` parameter takes precedence over the [`widths` parameter](/api/liquid/filters/image_tag#image_tag-width).\nYou shouldn't to use the `srcset` parameter unless you want to remove the attribute by setting the parameter to `nil`.\n",
+        "description": "By default, Shopify generates a `srcset`. However, you can create your own `srcset`.\nThe `srcset` parameter takes precedence over the [`width` parameter](/api/liquid/filters/image_tag#image_tag-width).\nYou shouldn't to use the `srcset` parameter unless you want to remove the attribute by setting the parameter to `nil`.\n",
         "syntax": "image_url | image_tag: srcset: string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product | image_url: width: 200 | image_tag: srcset: nil }}",
@@ -3637,7 +3637,7 @@
       },
       {
         "name": "preload",
-        "description": "Specify whether the image should be preloaded.\nWhen `preload` is set to true, a resource hint is sent as a [Link header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) with a `rel` value of [`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload). The Link header also includes `imagesrcset` and `imagesizes` that match the `srcset` and `sizes` attribute of the `&lt;img&gt;` tag, where present.\nYou should use the the `preload` parameter sparingly. For example, consider preloading only above-the-fold images. To learn more about resource hints in Shopify themes, refer to [Performance best practices for Shopify themes](/themes/best-practices/performance#preload-key-resources-defer-or-avoid-loading-others).\n",
+        "description": "Specify whether the image should be preloaded.\n\nWhen `preload` is set to `true`, a resource hint is sent as a [Link HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link)\nwith a `rel` value of [`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload).\nThe Link header also includes `imagesrcset` and `imagesizes` that match the `srcset` and `sizes` attribute of the tag,\nwhere present:\n\n```liquid\nLink: &lt;IMAGE_URL&gt;; rel=preload; as=image\nLink: &lt;IMAGE_URL&gt;; rel=preload; as=image; imagesrcset=ADDITIONAL_IMAGE_URL 352w; imagesizes=40vw\n```\n\nThis option doesn't affect the HTML img tag directly.\n\nYou should use the preload parameter sparingly. For example, consider preloading only above-the-fold images.\nTo learn more about resource hints in Shopify themes, refer to [Performance best practices for Shopify themes](/themes/best-practices/performance#preload-key-resources-defer-or-avoid-loading-others).\n",
         "syntax": "image_url | image_tag: preload: boolean",
         "path": "",
         "raw_liquid": "",
@@ -3886,7 +3886,7 @@
       },
       {
         "name": "file_reference",
-        "description": "The output varies depending on the type of file. There are the following categories of file type:\n\n| File type | Description |\n| --- | --- |\n| Image | Images in the format of `jpg`, `png`, `gif`, `heic`, and `webp`. |\n| Video | Videos in the format of `mov`, and `mp4`. |\n| Other | Any other file type. |\n\n##### Image\n\nOutputs an `&lt;img&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The image's URL. |\n| `alt` | The image's alt text. |\n| `class` | `metafield-file_reference` |\n\n##### Video\n\nOutputs a `&lt;video&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The video's URL. |\n| `poster` | The video's preview image (poster) URL. |\n| `playsinline` | N/A - Indicates the video will be played \"inline\" within the element's playback area. |\n| `preload` | `metadata` - Only metadata is pre-fetched before the video is played. |\n\nThe `&lt;video&gt;` element contains the following child elements:\n\n| Child element | HTML element | Attributes |\n| --- | --- | --- |\n| The video's multimedia playlist source, for [HTTP live streaming (HLS)](https://developer.apple.com/streaming/) | `&lt;source&gt;` | `src=\"&lt;the video's m3u8 source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"application/x-mpegURL\"` |\n| The video's original source | `&lt;source&gt;` | `src=\"&lt;the video's source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"&lt;the video's original source MIME type&gt;\"` |\n| The video's preview (poster) image | `&lt;img&gt;` | `src=\"&lt;the video's preview image URL&gt;\"` |\n\n##### Other\n\nOutputs an `&lt;a&gt;` element with a link to the file and the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-file_reference` |\n\nThe `&lt;a&gt;` element contains an `&lt;img&gt;` element for the file's [preview image](/api/liquid/objects/generic_file-preview_image) with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The file's preview image URL. |\n| `loading` | `lazy` - The image isn't loaded until it's almost in view. |\n",
+        "description": "The output varies depending on the type of file. There are the following categories of file type:\n\n| File type | Description |\n| --- | --- |\n| Image | Images in the format of `jpg`, `png`, `gif`, `heic`, and `webp`. |\n| Video | Videos in the format of `mov`, and `mp4`. |\n| Other | Any other file type. |\n\n##### Image\n\nOutputs an `&lt;img&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The image's URL. |\n| `alt` | The image's alt text. |\n| `class` | `metafield-file_reference` |\n\n##### Video\n\nOutputs a `&lt;video&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The video's URL. |\n| `poster` | The video's preview image (poster) URL. |\n| `playsinline` | N/A - Indicates the video will be played \"inline\" within the element's playback area. |\n| `preload` | `metadata` - Only metadata is pre-fetched before the video is played. |\n\nThe `&lt;video&gt;` element contains the following child elements:\n\n| Child element | HTML element | Attributes |\n| --- | --- | --- |\n| The video's multimedia playlist source, for [HTTP live streaming (HLS)](https://developer.apple.com/streaming/) | `&lt;source&gt;` | `src=\"&lt;the video's m3u8 source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"application/x-mpegURL\"` |\n| The video's original source | `&lt;source&gt;` | `src=\"&lt;the video's source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"&lt;the video's original source MIME type&gt;\"` |\n| The video's preview (poster) image | `&lt;img&gt;` | `src=\"&lt;the video's preview image URL&gt;\"` |\n\n##### Other\n\nOutputs an `&lt;a&gt;` element with a link to the file and the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-file_reference` |\n\nThe `&lt;a&gt;` element contains an `&lt;img&gt;` element for the file's [preview image](/api/liquid/objects/generic_file#generic_file-preview_image) with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The file's preview image URL. |\n| `loading` | `lazy` - The image isn't loaded until it's almost in view. |\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "&lt;!-- Image --&gt;\n{{ product.metafields.information.promo_image | metafield_tag }}\n\n&lt;!-- Video --&gt;\n{{ product.metafields.information.promo_video | metafield_tag }}\n\n&lt;!-- Other --&gt;\n{{ product.metafields.information.disclaimers | metafield_tag }}",
@@ -4535,7 +4535,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for an [article's image](/api/liquid/objects/article-image).",
+    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for an [article's image](/api/liquid/objects/article#article-image).",
     "syntax": "variable | article_img_url",
     "name": "article_img_url"
   },
@@ -4793,7 +4793,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can use the `image_url` filter on the following objects, as well as their `src` property:\n\n- [`article`](/api/liquid/objects/article)\n- [`collection`](/api/liquid/objects/collection)\n- [`image`](/api/liquid/objects/image)\n- [`line_item`](/api/liquid/objects/line_item)\n- [`product`](/api/liquid/objects/product)\n- [`variant`](/api/liquid/objects/variant)\n\n&gt; Caution:\n&gt; You need to specify either a [`width`](/api/liquid/filters/image_url-width) or\n&gt; [`height`](/api/liquid/filters/image_url-height) parameter. If neither are specified, then an error is returned.\n\n&gt; Note:\n&gt; Regardless of the specified dimensions, an image can never be resized to be larger than its original dimensions.",
+    "description": "You can use the `image_url` filter on the following objects, as well as their `src` property:\n\n- [`article`](/api/liquid/objects/article)\n- [`collection`](/api/liquid/objects/collection)\n- [`image`](/api/liquid/objects/image)\n- [`line_item`](/api/liquid/objects/line_item)\n- [`product`](/api/liquid/objects/product)\n- [`variant`](/api/liquid/objects/variant)\n\n&gt; Caution:\n&gt; You need to specify either a [`width`](/api/liquid/filters/image_url#image_url-width) or\n&gt; [`height`](/api/liquid/filters/image_url#image_url-height) parameter. If neither are specified, then an error is returned.\n\n&gt; Note:\n&gt; Regardless of the specified dimensions, an image can never be resized to be larger than its original dimensions.",
     "parameters": [
       {
         "description": "How the image should be cropped to match the desired dimensions.",
@@ -5458,6 +5458,16 @@
         "path": "/",
         "raw_liquid": "{{ 'base.css' | asset_url | stylesheet_tag }}",
         "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "preload",
+        "description": "Specify whether the stylesheet should be preloaded.\n\nWhen `preload` is set to `true`, a resource hint is sent as a [Link header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) with a `rel` value of\n[`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload).\n\n```liquid\nLink: &lt;STYLESHEET_URL&gt;; rel=preload; as=style\n```\n\nThis option doesn't affect the HTML link tag directly.\n\nYou should use the `preload` parameter sparingly. For example, consider preloading only render-blocking stylesheets that\nare needed for initial functionality of the page, such as above-the-fold content. To learn more about resource hints in\nShopify themes, refer to [Performance best practices for Shopify themes](/themes/best-practices/performance#preload-key-resources-defer-or-avoid-loading-others).\n",
+        "syntax": "stylesheet_url | stylesheet_tag: preload: boolean",
+        "path": "",
+        "raw_liquid": "",
+        "parameter": true,
         "display_type": "text",
         "show_data_tab": true
       }
