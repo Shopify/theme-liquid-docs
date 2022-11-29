@@ -190,7 +190,7 @@
       },
       {
         "name": "HTML attributes",
-        "description": "You can specify [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attributes) by adding a parameter that matches the attribute name, and the desired value.\n",
+        "description": "You can specify [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attributes) by adding a parameter that matches the attribute name with `data-` prepended, and the desired value.\n",
         "syntax": "{% form 'form_type', attribute: string %}\n  content\n{% endform %}\n",
         "path": "/products/health-potion",
         "raw_liquid": "{% form \"product\", product, id: 'custom-id', class: 'custom-class', data-example: '100' %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -1097,6 +1097,27 @@
     ]
   },
   {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the JavaScript that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% stylesheet %}` tag.\n\nTo learn more about how section-specific CSS is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#stylesheet).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.",
+    "parameters": [
+
+    ],
+    "summary": "CSS styles included in a [section](/themes/architecture/sections) file.",
+    "name": "stylesheet",
+    "syntax": "{% stylesheet %}\n  css_styles\n{% endstylesheet %}",
+    "syntax_keywords": [
+      {
+        "keyword": "css_styles",
+        "description": "The CSS styles for the section."
+      }
+    ],
+    "examples": [
+
+    ]
+  },
+  {
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
@@ -1221,7 +1242,7 @@
         "description": "",
         "syntax": "",
         "path": "/products/health-potion",
-        "raw_liquid": "{% liquid\n  assign product_type = product.type | downcase\n  assign message = ''\n\n  case product_type\n    when 'health'\n      assign message = 'This is a health potion!'\n    when 'love'\n      assign message = 'This is a love potion!'\n    else\n      assign message = 'This is a potion!'\n  endcase\n\n  echo message\n%}",
+        "raw_liquid": "{% liquid\n  # Show a message that's customized to the product type\n\n  assign product_type = product.type | downcase\n  assign message = ''\n\n  case product_type\n    when 'health'\n      assign message = 'This is a health potion!'\n    when 'love'\n      assign message = 'This is a love potion!'\n    else\n      assign message = 'This is a potion!'\n  endcase\n\n  echo message\n%}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
