@@ -553,7 +553,7 @@
       },
       {
         "name": "Access a specific collection",
-        "description": "You can use `collections` to access a collection by its [handle](/api/liquid/basics#object-handles).\n",
+        "description": "You can use `collections` to access a collection by its [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% for product in collections['sale-potions'].products %}\n  {{- product.title | link_to: product.url }}\n{% endfor %}",
@@ -646,7 +646,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `all_products` to access a product by its [handle](/api/liquid/basics#handles).",
+        "description": "You can use `all_products` to access a product by its [handle](/api/liquid/basics#handles). If the product isn't found, then `nil` is returned.",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ all_products['love-potion'].title }}",
@@ -667,6 +667,48 @@
         "description": "",
         "array_value": "product"
       }
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+
+        ],
+        "summary": "The [metafields](/api/liquid/objects/metafield) that are [owned by the app](/apps/metafields/app-owned).",
+        "name": "metafields"
+      }
+    ],
+    "summary": "An app. This object is usually used to access app-specific information for use with [theme app extensions](/apps/online-store/theme-app-extensions).",
+    "name": "app",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+
     ]
   },
   {
@@ -872,7 +914,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `articles` to access an article by its [handle](/api/liquid/basics#object-handles).\n",
+        "description": "You can use `articles` to access an article by its [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% assign article = articles['potion-notions/new-potions-for-spring'] %}\n{{ article.title | link_to: article.url }}",
@@ -1443,7 +1485,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `blogs` to access a blog by its [handle](/api/liquid/basics#object-handles).\n",
+        "description": "You can use `blogs` to access a blog by its [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% for article in blogs.potion-notions.articles %}\n  {{- article.title | link_to: article.url }}\n{% endfor %}",
@@ -1532,7 +1574,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/api/liquid/basics#object-handles) of the blog.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the blog.",
         "name": "handle"
       },
       {
@@ -2182,7 +2224,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/api/liquid/basics/handle) of the collection.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the collection.",
         "name": "handle"
       },
       {
@@ -3623,7 +3665,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `customer` object is directly accessible globally when a customer is logged in to their account. It's also defined in\nthe following contexts:\n\n- The [`customers/account` template](/themes/architecture/templates/customers-account)\n- The [`customers/addresses` template](/themes/architecture/templates/customers-addresses)\n- The [`customers/order` template](/themes/architecture/templates/customers-order)\n- When accessing [`checkout.customer`](/api/liquid/objects/checout#checkout-customer)\n- When accessing [`gift_card.customer`](/api/liquid/objects/gift_card#gift_card-customer)\n- When accessing [`order.customer`](/api/liquid/objects/order#order-customer)\n\nOutside of the above contexts, if the customer isn't logged into their account, the `customer` object returns `nil`.",
+    "description": "The `customer` object is directly accessible globally when a customer is logged in to their account. It's also defined in\nthe following contexts:\n\n- The [`customers/account` template](/themes/architecture/templates/customers-account)\n- The [`customers/addresses` template](/themes/architecture/templates/customers-addresses)\n- The [`customers/order` template](/themes/architecture/templates/customers-order)\n- When accessing [`checkout.customer`](/api/liquid/objects/checkout#checkout-customer)\n- When accessing [`gift_card.customer`](/api/liquid/objects/gift_card#gift_card-customer)\n- When accessing [`order.customer`](/api/liquid/objects/order#order-customer)\n\nOutside of the above contexts, if the customer isn't logged into their account, the `customer` object returns `nil`.",
     "properties": [
       {
         "deprecated": false,
@@ -5787,7 +5829,7 @@
         "name": "alt"
       }
     ],
-    "summary": "A file from a `file_reference` type metafield that is neither an image or video.",
+    "summary": "A file from a `file_reference` type [metafield](/api/liquid/objects/metafield) that is neither an image or video.",
     "name": "generic_file",
     "examples": [
 
@@ -6183,7 +6225,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use the [`image_url`](/api/liquid/filters/image_url) and [`image_tag`](/api/liquid/filters/image_tag) filters to display\n&gt; images on the storefront.",
+    "description": "To learn about the image formats that Shopify supports, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/images/theme-images#image-formats).\n\n&gt; Tip:\n&gt; Use the [`image_url`](/api/liquid/filters/image_url) and [`image_tag`](/api/liquid/filters/image_tag) filters to display\n&gt; images on the storefront.",
     "properties": [
       {
         "deprecated": false,
@@ -6413,7 +6455,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The `variants` property is only available for images accessed through the following sources:\n\n- [`product.featured_image`](/api/liquid/objects#product-featured_image)\n- [`product.images`](/api/liquid/objects#product-images)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
+        "description": "The `variants` property is only available for images accessed through the following sources:\n\n- [`product.featured_image`](/api/liquid/objects#product-featured_image)\n- [`product.images`](/api/liquid/objects/product#product-images)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
         "examples": [
 
         ],
@@ -6735,7 +6777,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [ID](/api/liquid/objects/variant-id) of the line item's variant.",
+        "summary": "The [ID](/api/liquid/objects/variant#variant-id) of the line item's variant.",
         "name": "variant_id"
       },
       {
@@ -6753,7 +6795,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [ID](/api/liquid/objects/product-id) of the line item's product.",
+        "summary": "The [ID](/api/liquid/objects/product#product-id) of the line item's product.",
         "name": "product_id"
       },
       {
@@ -6867,11 +6909,11 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "You can add, or allow customers to add, custom information to a line item with line item properties.\n\nLine item properties consist of a name and value pair. They can be captured with the following methods:\n\n- [A custom input inside a product form](/api/liquid/objects/line_item-capture-line-properties-in-the-product-form)\n- [The AJAX Cart API](/api/ajax/reference/cart#add-line-item-properties)\n\n&gt; Tip:\n&gt; To learn about how to display captured properties, refer to [Display line item properties](/themes/architecture/templates/cart#display-line-item-properties).",
+        "description": "You can add, or allow customers to add, custom information to a line item with line item properties.\n\nLine item properties consist of a name and value pair. They can be captured with the following methods:\n\n- [A custom input inside a product form](/themes/architecture/templates/product#line-item-properties)\n- [The AJAX Cart API](/api/ajax/reference/cart#add-line-item-properties)\n\n&gt; Tip:\n&gt; To learn about how to display captured properties, refer to [Display line item properties](/themes/architecture/templates/cart#display-line-item-properties).",
         "examples": [
           {
             "name": "Capture line item properties in the product form",
-            "description": "To capture line item properties inside the [product form](/api/liquid/tagsform-product), you need to include an input, for each property. Each  input needs a unique `name` attribute. Use the following format:\n\n```\nname=\"properties[property-name]\"\n```\n\nThe value of the input is captured as the value of the property.\n\nFor example, you can use the following code to capture custom engraving text for a product:\n\n```liquid\n{% form 'product', product %}\n  ...\n  &lt;label for=\"engravingText\"&gt;Engraving&lt;label&gt;\n  &lt;input type=\"text\" id=\"engravingText\" name=\"properties[Engraving]\"&gt;\n  ...\n{% endform %}\n```\n\n&gt; Tip:\n&gt; You can add an underscore to the beginning of a property name to hide it from customers at checkout. For example,\n&gt; `properties[_hiddenPropertyName]`.\n",
+            "description": "To capture line item properties inside the [product form](/api/liquid/tags/form#form-product), you need to include an input, for each property. Each  input needs a unique `name` attribute. Use the following format:\n\n```\nname=\"properties[property-name]\"\n```\n\nThe value of the input is captured as the value of the property.\n\nFor example, you can use the following code to capture custom engraving text for a product:\n\n```liquid\n{% form 'product', product %}\n  ...\n  &lt;label for=\"engravingText\"&gt;Engraving&lt;label&gt;\n  &lt;input type=\"text\" id=\"engravingText\" name=\"properties[Engraving]\"&gt;\n  ...\n{% endform %}\n```\n\n&gt; Tip:\n&gt; You can add an underscore to the beginning of a property name to hide it from customers at checkout. For example,\n&gt; `properties[_hiddenPropertyName]`.\n",
             "syntax": "",
             "path": "/products/health-potion",
             "raw_liquid": "",
@@ -6942,13 +6984,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The [sku](/api/liquid/objects/variant-sku) of the variant associated with the line item.",
+        "summary": "The [sku](/api/liquid/objects/variant#variant-sku) of the variant associated with the line item.",
         "name": "sku"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The following table outlines what's returned depending on the number of discounts affecting the line item:\n\n| Number of discounts | Value |\n| --- | --- |\n| 0 | `nil` |\n| 1 | The [title](/api/liquid/objects/discount_application-title) of the discount. |\n| More than 1 | A Shopify generated string noting how many discounts have been applied. |",
+        "description": "The following table outlines what's returned depending on the number of discounts affecting the line item:\n\n| Number of discounts | Value |\n| --- | --- |\n| 0 | `nil` |\n| 1 | The [title](/api/liquid/objects/discount_application#discount_application-title) of the discount. |\n| More than 1 | A Shopify generated string noting how many discounts have been applied. |",
         "examples": [
 
         ],
@@ -7281,7 +7323,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "#### Availability of selling plan information\n\nThe following properties aren't available when referencing selling plan information through an\n[order's line items](/api/liquid/objects/order-line_items):\n\n- [`selling_plan_allocation.compare_at_price`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-compare_at_price)\n- [`selling_plan_allocation.price_adjustments`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments)\n- [`selling_plan_allocation.selling_plan.group_id`](/api/liquid/objects/selling_plan#selling_plan-group_id)\n- [`selling_plan_allocation.selling_plan.options`](/api/liquid/objects/selling_plan#selling_plan-options)\n- [`selling_plan_allocation.selling_plan.price_adjustments`](/api/liquid/objects/selling_plan#selling_plan-price_adjustments)\n- [`selling_plan_allocation.selling_plan_group_id`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-selling_plan_group_id)\n\n&gt; Tip:\n&gt; If you need to show selling plan information post-purchase, then you should use [`selling_plan.name`](/api/liquid/objects/selling_plan#selling_plan-name).",
+        "description": "#### Availability of selling plan information\n\nThe following properties aren't available when referencing selling plan information through an\n[order's line items](/api/liquid/objects/order#order-line_items):\n\n- [`selling_plan_allocation.compare_at_price`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-compare_at_price)\n- [`selling_plan_allocation.price_adjustments`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments)\n- [`selling_plan_allocation.selling_plan.group_id`](/api/liquid/objects/selling_plan#selling_plan-group_id)\n- [`selling_plan_allocation.selling_plan.options`](/api/liquid/objects/selling_plan#selling_plan-options)\n- [`selling_plan_allocation.selling_plan.price_adjustments`](/api/liquid/objects/selling_plan#selling_plan-price_adjustments)\n- [`selling_plan_allocation.selling_plan_group_id`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-selling_plan_group_id)\n\n&gt; Tip:\n&gt; If you need to show selling plan information post-purchase, then you should use [`selling_plan.name`](/api/liquid/objects/selling_plan#selling_plan-name).",
         "examples": [
 
         ],
@@ -7331,7 +7373,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A link is considered to be active if the current URL path matches, or contains, the link's [url](/api/liquid/objects/link-url).\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`\n\n&gt; Tip:\n&gt; The `link.active` property is useful for menu designs that highlight when top-level navigation categories are being\n&gt; viewed. For example, if a customer is viewing an article from the \"Potion notions\" blog, then the \"Potion notions\" link\n&gt; is highlighted in the menu.",
+        "description": "A link is considered to be active if the current URL path matches, or contains, the link's [url](/api/liquid/objects/link#link-url).\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`\n\n&gt; Tip:\n&gt; The `link.active` property is useful for menu designs that highlight when top-level navigation categories are being\n&gt; viewed. For example, if a customer is viewing an article from the \"Potion notions\" blog, then the \"Potion notions\" link\n&gt; is highlighted in the menu.",
         "examples": [
 
         ],
@@ -7361,13 +7403,13 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the current URL path matches the [URL](/api/liquid/objects/link-url) of the link. Returns `false` if not.",
+        "summary": "Returns `true` if the current URL path matches the [URL](/api/liquid/objects/link#link-url) of the link. Returns `false` if not.",
         "name": "current"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A link is considered to be active if the current URL path matches, or contains, the [URL](/api/liquid/objects/link-url) of\nthe link.\n\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`",
+        "description": "A link is considered to be active if the current URL path matches, or contains, the [URL](/api/liquid/objects/link#link-url) of\nthe link.\n\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`",
         "examples": [
 
         ],
@@ -7397,7 +7439,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if current URL path matches a link's child link [URL](/api/liquid/objects/link-url). Returns `false` if not.",
+        "summary": "Returns `true` if current URL path matches a link's child link [URL](/api/liquid/objects/link#link-url). Returns `false` if not.",
         "name": "child_current"
       },
       {
@@ -8596,7 +8638,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics/types#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics/types#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics/types#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics/types#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics/types#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
+        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
         "examples": [
 
         ],
@@ -15063,7 +15105,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because whether or not prices have taxes included is dependent on the customer's country.\n\nThe `shop.locale` property has been replaced by [cart.taxes_included](/api/liquid/objects/cart#cart-taxes_included).",
+        "deprecation_reason": "Deprecated because whether or not prices have taxes included is dependent on the customer's country.\n\nThe `shop.taxes_included` property has been replaced by [cart.taxes_included](/api/liquid/objects/cart#cart-taxes_included).",
         "description": "",
         "examples": [
 
@@ -17648,7 +17690,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Additional information entered by the customer with the [cart](/api/liquid/objects/cart-note).",
+        "summary": "Additional information entered by the customer with the [cart](/api/liquid/objects/cart#cart-note).",
         "name": "note"
       },
       {
@@ -18112,6 +18154,41 @@
     ],
     "summary": "Returns checkout buttons for any active payment providers with offsite checkouts.",
     "name": "content_for_additional_checkout_buttons",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ]
+  },
+  {
+    "access": {
+      "global": true,
+      "parents": [
+
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "If you use a [Liquid index template](/themes/architecture/templates/index-template) (`templates/index.liquid`), then you must include `{{ content_for_index }}` in the template. This object can't be used in JSON index templates.",
+    "properties": [
+
+    ],
+    "summary": "Dynamically returns the content of [sections](/themes/architecture/sections) to be rendered on the home page.",
+    "name": "content_for_index",
     "examples": [
 
     ],
