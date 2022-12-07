@@ -17402,7 +17402,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The customer associated with the checkout.",
+        "summary": "The customer associated with the checkout.\n&gt; Note:\n&gt; The `customer` object is available only on the Thank You and Order Status [pages](https://help.shopify.com/manual/orders/status-tracking).",
         "name": "customer"
       },
       {
@@ -17696,7 +17696,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Depending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "Depending on the payment provider, the order might not have been created when the [Thank You page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.\n&gt; Note:\n&gt; The `order` object isn't available on the Thank You page.",
         "examples": [
 
         ],
