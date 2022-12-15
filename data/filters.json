@@ -1,5 +1,37 @@
 [
   {
+    "category": "cart",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "parameters": [
+
+    ],
+    "return_type": [
+      {
+        "type": "number",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/cart",
+        "raw_liquid": "{{ cart | item_count_for_variant: 39888235757633 }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Returns the total item count of a variant in the cart.",
+    "syntax": "cart | item_count_for_variant: {variant_id}",
+    "name": "item_count_for_variant"
+  },
+  {
     "category": "collection",
     "deprecated": false,
     "deprecation_reason": "",
