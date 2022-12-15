@@ -568,7 +568,12 @@
       "data_from_file": ""
     },
     "return_type": [
-
+      {
+        "type": "array",
+        "name": "",
+        "description": "",
+        "array_value": "collection"
+      }
     ]
   },
   {
@@ -12407,12 +12412,12 @@
           }
         ],
         "summary": "Returns `true` when being referenced inside a section that's been rendered using the Product Recommendations API and\nthe Section Rendering API. Returns `false` if not.",
-        "name": "recommendations.performed?"
+        "name": "performed?"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If `recommendations.performed?` is `false`, then an [EmptyDrop](/api/liquid/basics#emptydrop) is returned.",
+        "description": "If `performed?` is `false`, then an [EmptyDrop](/api/liquid/basics#emptydrop) is returned.",
         "examples": [
 
         ],
@@ -12430,7 +12435,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If `recommendations.performed` is `false`, then 0 is returned.",
+        "description": "If `performed?` is `false`, then 0 is returned.",
         "examples": [
 
         ],
@@ -12448,7 +12453,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If `recommendations.performed` is `false`, then `nil` is returned.",
+        "description": "If `performed?` is `false`, then `nil` is returned.",
         "examples": [
 
         ],
