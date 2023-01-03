@@ -15080,12 +15080,7 @@
 
         ],
         "return_type": [
-          {
-            "type": "metafield",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
+
         ],
         "summary": "The [metafields](/api/liquid/objects/metafield) applied to the store.",
         "name": "metafields"
