@@ -18513,7 +18513,13 @@
         "type": "string",
         "name": "",
         "description": "",
-        "array_value": ""
+        "array_value": "",
+        "denied_filters": [
+          "escape",
+          "escape_once",
+          "url_escape",
+          "url_param_escape"
+        ]
       }
     ]
   },
@@ -18583,7 +18589,13 @@
         "type": "string",
         "name": "",
         "description": "",
-        "array_value": ""
+        "array_value": "",
+        "denied_filters": [
+          "escape",
+          "escape_once",
+          "url_escape",
+          "url_param_escape"
+        ]
       }
     ]
   },
