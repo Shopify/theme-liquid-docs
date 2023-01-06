@@ -2657,7 +2657,7 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{{ \"I hate it when I accidentally spill my duplication potion accidentally!\" | remove_first: ' accidentally' }}",
+        "raw_liquid": "{{ \"I hate it when I accidentally spill my duplication potion accidentally!\" | remove_last: ' accidentally' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
