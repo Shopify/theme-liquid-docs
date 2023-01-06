@@ -1,0 +1,26 @@
+name: Update latest.json when changes pushed to main
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+      - name: Write latest sha to latest.json
+        run: |
+          echo -e { \"latest\": \"$(git rev-parse HEAD)\" }\\n > latest.json
+      - name: Run git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: Commit and push changes
+        run: |
+          git add latest.json
+          git commit -m "Update latest.json"
+          git push origin main
