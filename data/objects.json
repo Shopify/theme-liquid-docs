@@ -11046,7 +11046,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. The `selected_variant` parameter is available on product pages only.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 1.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "description": "&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. The `selected_variant` parameter is available on product pages only.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
         "examples": [
 
         ],
@@ -11100,7 +11100,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 1.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
         "examples": [
 
         ],
@@ -11118,7 +11118,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 1.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
         "examples": [
 
         ],
