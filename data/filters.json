@@ -2083,13 +2083,13 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{{ 4 | divided_by: 2 }}",
+        "raw_liquid": "{{ 4 | divided_by: 2 }}\n\n# divisor is an integer\n{{ 20 | divided_by: 7 }}\n\n# divisor is a float \n{{ 20 | divided_by: 7.0 }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
       }
     ],
-    "summary": "Divides a number by a given number.",
+    "summary": "Divides a number by a given number. The `divided_by` filter produces a result of the same type as the divisor. This means if you divide by an integer, the result will be an integer, and if you divide by a float, the result will be a float.",
     "syntax": "number | divided_by: number",
     "name": "divided_by"
   },
