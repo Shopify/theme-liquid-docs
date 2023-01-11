@@ -1118,6 +1118,27 @@
     ]
   },
   {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Use this tag to render section groups as part of the theme's [layout](/themes/architecture/layouts) content. Place the `sections` tag where you want to render it in the layout.\n\nTo learn more about section groups and how to use them in your theme, refer to [Section groups](/themes/architecture/section-groups#usage).",
+    "parameters": [
+
+    ],
+    "summary": "Renders a [section group](/themes/architecture/section-groups).",
+    "name": "sections",
+    "syntax": "{% sections 'name' %}",
+    "syntax_keywords": [
+      {
+        "keyword": "name",
+        "description": "The name of the section group file you want to render."
+      }
+    ],
+    "examples": [
+
+    ]
+  },
+  {
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
