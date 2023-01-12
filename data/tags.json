@@ -1100,7 +1100,7 @@
     "category": "theme",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the JavaScript that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% stylesheet %}` tag.\n\nTo learn more about how section-specific CSS is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#stylesheet).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.",
+    "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the CSS styles that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% stylesheet %}` tag.\n\nTo learn more about how section-specific CSS is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#stylesheet).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.",
     "parameters": [
 
     ],
