@@ -8882,6 +8882,134 @@
     "access": {
       "global": false,
       "parents": [
+
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "One or more corresponding [`metaobject`](/api/liquid/objects#metaobject) objects contain values for\nthe fields specified in the metaobject definition.",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "metaobject"
+          }
+        ],
+        "summary": "The [metaobjects](/api/liquid/objects#metaobject) that follow the definition.",
+        "name": "values"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The total number of entries for the metaobject definition.",
+        "name": "values_count"
+      }
+    ],
+    "summary": "A `metaobject_definition` defines the structure of a metaobject type for the store, which consists of\na merchant-defined set of [field definitions](https://help.shopify.com/en/manual/metafields/metafield-definitions).",
+    "name": "metaobject_definition",
+    "examples": [
+      {
+        "name": "Loop over entries of a metaobject definition",
+        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nFor example, you can display the field `key` for each metaobject using the following `forloop`:\n\n```liquid\n{% for metaobject in shop.metaobjects.type.values %}\n  {{ metaobject.key }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
+        "syntax": "",
+        "path": "",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      }
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "shop",
+          "property": "metaobjects"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+
+        ],
+        "summary": "Returns an object containing system information about the metaobject. This includes the metaobject's\n`id`, `handle` and `type`.",
+        "name": "system"
+      }
+    ],
+    "summary": "A metaobject entry, which includes the values for a set of [fields](/api/liquid/objects#metafield).\nThe set is defined by the parent [`metaobject_definition`](/api/liquid/objects#metaobject_definition).",
+    "name": "metaobject",
+    "examples": [
+      {
+        "name": "Access metaobjects individually",
+        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use bracket notation for the handle:\n\n```liquid\n{{ shop.metaobjects.type['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.type.handle.key }}\n{{ shop.metaobjects.type['handle'].key }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
+        "syntax": "",
+        "path": "",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      }
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
         {
           "object": "product",
           "property": "media"
@@ -15345,6 +15473,19 @@
         ],
         "summary": "Returns `true` if the store accepts gift cards. Returns `false` if not.",
         "name": "accepts_gift_cards"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Metaobjects can only be accessed by specifying their type and handle. For more information, refer to [Access metaobjects individually](/api/liquid/objects#metaobject-access-metaobjects-individually).\n\nMetaobjects are created in the [Content](https://www.shopify.com/admin/content) page of the Shopify admin.",
+        "examples": [
+
+        ],
+        "return_type": [
+
+        ],
+        "summary": "All of the [metaobjects](/api/liquid/objects/metaobject) of the store.",
+        "name": "metaobjects"
       }
     ],
     "summary": "Information about the store, such as the store address, the total number of products, and various settings.",
