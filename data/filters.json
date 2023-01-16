@@ -3891,7 +3891,7 @@
         "description": "Most metafield types return a simple HTML element:\n\n| Type | Element | Attributes |\n| --- | --- | --- |\n| `boolean` | `&lt;span&gt;` | `class=\"metafield-boolean\"` |\n| `collection_reference` | `&lt;a&gt;` | `class=\"metafield-collection_reference\"` |\n| `color` | `&lt;span&gt;` | `class=\"metafield-color\"` |\n| `date` | `&lt;time&gt;` | `datetime=\"&lt;the metafield value&gt;\"`&lt;br&gt;&lt;br&gt;`class=\"metafield-date\"`&lt;br&gt;&lt;br&gt;Value is localized to the customer |\n| `date_time` | `&lt;time&gt;` | `datetime=\"&lt;the metafield value&gt;\"`&lt;br&gt;&lt;br&gt;`class=\"metafield-date\"`&lt;br&gt;&lt;br&gt;Value is localized to the customer |\n| `json` | `&lt;script&gt;` | `type=\"application/json\"`&lt;br&gt;&lt;br&gt;`class=\"metafield-json\"` |\n| `money` | `&lt;span&gt;` | `class=\"metafield-money\"`&lt;br&gt;&lt;br&gt;Value is formatted using the store's [HTML with currency setting](https://help.shopify.com/manual/payments/currency-formatting) |\n| `multi_line_text_field` | `&lt;span&gt;` | `class=\"metafield-multi_line_text_field\"` |\n| `number_decimal` | `&lt;span&gt;` | `class=\"metafield-number_decimal\"` |\n| `number_integer` | `&lt;span&gt;` | `class=\"metafield-number_integer\"` |\n| `page_reference` | `&lt;a&gt;` | `class=\"metafield-page_reference\"` |\n| `product_reference` | `&lt;a&gt;` | `class=\"metafield-page_reference\"` |\n| `rating` | `&lt;span&gt;` | `class=\"metafield-rating\"` | |\n| `single_line_text_field` | `&lt;span&gt;` | `class=\"metafield-single_line_text_field\"` |\n| `url` | `&lt;a&gt;` | `class=\"metafield-url\"` |\n| `variant_reference` | `&lt;a&gt;` | `class=\"metafield-variant_reference\"` |\n| `rich_text_field` | &lt;div&gt; | `class=\"metafield-rich_text_field\"` |\n",
         "syntax": "",
         "path": "/products/health-potion",
-        "raw_liquid": "&lt;!-- boolean --&gt;\n{{ product.metafields.information.seasonal | metafield_tag }}\n\n&lt;!-- collection_reference --&gt;\n{{ product.metafields.information.related_collection | metafield_tag }}\n\n&lt;!-- color --&gt;\n{{ product.metafields.details.potion_color | metafield_tag }}\n\n&lt;!-- date --&gt;\n{{ product.metafields.information.expiry | metafield_tag }}\n\n&lt;!-- date_time --&gt;\n{{ product.metafields.information.brew_date | metafield_tag }}\n\n&lt;!-- json --&gt;\n{{ product.metafields.information.burn_temperature | metafield_tag }}\n\n&lt;!-- money --&gt;\n{{ product.metafields.details.price_per_ml | metafield_tag }}\n\n&lt;!-- multi_line_text_field --&gt;\n{{ product.metafields.information.shipping | metafield_tag }}\n\n&lt;!-- number_decimal --&gt;\n{{ product.metafields.information.salinity | metafield_tag }}\n\n&lt;!-- number_integer --&gt;\n{{ product.metafields.information.doses_per_day | metafield_tag }}\n\n&lt;!-- page_reference --&gt;\n{{ product.metafields.information.dosage | metafield_tag }}\n\n&lt;!-- product_reference --&gt;\n{{ product.metafields.information.related_product | metafield_tag }}\n\n&lt;!-- rating --&gt;\n{{ product.metafields.details.rating | metafield_tag }}\n\n&lt;!-- single_line_text_field --&gt;\n{{ product.metafields.information.directions | metafield_tag }}\n\n&lt;!-- url --&gt;\n{{ product.metafields.information.health | metafield_tag }}\n\n&lt;!-- variant_reference --&gt;\n{{ product.metafields.information.health | metafield_tag }}\n\n&lt;!-- rich_text_field --&gt;\n{{ product.metafields.information.health | metafield_tag }}",
+        "raw_liquid": "&lt;!-- boolean --&gt;\n{{ product.metafields.information.seasonal | metafield_tag }}\n\n&lt;!-- collection_reference --&gt;\n{{ product.metafields.information.related_collection | metafield_tag }}\n\n&lt;!-- color --&gt;\n{{ product.metafields.details.potion_color | metafield_tag }}\n\n&lt;!-- date --&gt;\n{{ product.metafields.information.expiry | metafield_tag }}\n\n&lt;!-- date_time --&gt;\n{{ product.metafields.information.brew_date | metafield_tag }}\n\n&lt;!-- json --&gt;\n{{ product.metafields.information.burn_temperature | metafield_tag }}\n\n&lt;!-- money --&gt;\n{{ product.metafields.details.price_per_ml | metafield_tag }}\n\n&lt;!-- multi_line_text_field --&gt;\n{{ product.metafields.information.shipping | metafield_tag }}\n\n&lt;!-- number_decimal --&gt;\n{{ product.metafields.information.salinity | metafield_tag }}\n\n&lt;!-- number_integer --&gt;\n{{ product.metafields.information.doses_per_day | metafield_tag }}\n\n&lt;!-- page_reference --&gt;\n{{ product.metafields.information.dosage | metafield_tag }}\n\n&lt;!-- product_reference --&gt;\n{{ product.metafields.information.related_product | metafield_tag }}\n\n&lt;!-- rating --&gt;\n{{ product.metafields.details.rating | metafield_tag }}\n\n&lt;!-- single_line_text_field --&gt;\n{{ product.metafields.information.directions | metafield_tag }}\n\n&lt;!-- url --&gt;\n{{ product.metafields.information.health | metafield_tag }}\n\n&lt;!-- variant_reference --&gt;\n{{ product.metafields.information.health | metafield_tag }}\n\n&lt;!-- rich_text_field --&gt;\n{{ product.metafields.information.rich_description | metafield_tag }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
@@ -4152,6 +4152,36 @@
     "summary": "Generates HTML for a set of links for paginated results. Must be applied to the [`paginate` object](/api/liquid/objects/paginate).",
     "syntax": "paginate | default_pagination",
     "name": "default_pagination"
+  },
+  {
+    "category": "customer",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Configure the storefront for Follow on Shop. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)\n\n&gt; Note:\n&gt; The presence of the [Shop](/api/liquid/objects/shop) object\n&gt; is required for validation purposes only.\n\n&gt; Note:\n&gt; The `action` specified is always `'follow'`. If this parameter is not supplied the button will not render.\n\n```liquid\n{{ shop | login_button: action: 'follow' }}\n```",
+    "parameters": [
+      {
+        "description": "Specify 'follow' for the follow flow.",
+        "name": "action",
+        "required": true,
+        "types": [
+          "string"
+        ]
+      }
+    ],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+
+    ],
+    "summary": "Generates an HTML Button that enables a customer to follow the Shop in the Shop App",
+    "syntax": "shop | login_button: action: 'follow'",
+    "name": "login_button"
   },
   {
     "category": "string",
