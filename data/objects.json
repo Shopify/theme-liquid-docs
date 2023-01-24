@@ -2932,6 +2932,24 @@
         ],
         "return_type": [
           {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The attention line of the address.",
+        "name": "attention"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
             "type": "number",
             "name": "",
             "description": "",
@@ -8934,7 +8952,7 @@
     "examples": [
       {
         "name": "Loop over entries of a metaobject definition",
-        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nFor example, you can display the field `author` for each metaobject using the following `forloop`:\n\n```liquid\n{% for testimonial in shop.metaobjects.testimonials.values %}\n  {{ testimonial.author.value }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/custom-data/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
+        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nFor example, you can display the field `author` for each metaobject using the following `forloop`:\n\n```liquid\n{% for testimonial in shop.metaobjects.testimonials.values %}\n  {{ testimonial.author.value }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -8988,7 +9006,7 @@
     "examples": [
       {
         "name": "Access metaobjects individually",
-        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ shop.metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.testimonials.homepage.title }}\n{{ shop.metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/custom-data/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
+        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ shop.metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.testimonials.homepage.title }}\n{{ shop.metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
