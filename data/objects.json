@@ -12689,6 +12689,12 @@
           },
           {
             "type": "string",
+            "name": "captcha",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
             "name": "cart",
             "description": "",
             "array_value": ""
@@ -16005,7 +16011,7 @@
       ]
     },
     "deprecated": true,
-    "deprecation_reason": "Deprecated because the values of this object's properties are subject to change, so can't be relied on within the theme.\n\nIf you want to link to the theme editor for the published theme, then you can use the URL path `/admin/themes/current/editor`.",
+    "deprecation_reason": "Deprecated because the values of this object's properties are subject to change, so can't be relied on within the theme.\n\nIf you want to link to the theme editor for the published theme, then you can use the URL path `/admin/themes/current/editor`.\n\nWhile this object is deprecated in Liquid and shouldn't be used, you can still access it through the [REST Admin API](/api/admin-rest/current/resources/theme).",
     "description": "",
     "properties": [
       {
