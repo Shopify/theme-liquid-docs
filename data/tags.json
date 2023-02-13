@@ -3,7 +3,7 @@
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Because there are many different form types available in Shopify themes, the `form` tag requires a type. Depending on the\nform type, an additional parameter might be required. You can specify the following form types:\n\n- [`activate_customer_password`](/docs/api/liquid/tags/form#form-activate_customer_password)\n- [`cart`](/docs/api/liquid/tags/form#form-cart)\n- [`contact`](/docs/api/liquid/tags/form#form-contact)\n- [`create_customer`](/docs/api/liquid/tags/form#form-create_customer)\n- [`currency`](/docs/api/liquid/tags/form#form-currency)\n- [`customer`](/docs/api/liquid/tags/form#form-customer)\n- [`customer_address`](/docs/api/liquid/tags/form#form-customer_address)\n- [`customer_login`](/docs/api/liquid/tags/form#form-customer_login)\n- [`guest_login`](/docs/api/liquid/tags/form#form-guest_login)\n- [`localization`](/docs/api/liquid/tags/form#form-localization)\n- [`new_comment`](/docs/api/liquid/tags/form#form-new_comment)\n- [`product`](/docs/api/liquid/tags/form#form-product)\n- [`recover_customer_password`](/docs/api/liquid/tags/form#form-recover_customer_password)\n- [`reset_customer_password`](/docs/api/liquid/tags/form#form-reset_customer_password)\n- [`storefront_password`](/docs/api/liquid/tags/form#form-storefront_password)",
+    "description": "Because there are many different form types available in Shopify themes, the `form` tag requires a type. Depending on the\nform type, an additional parameter might be required. You can specify the following form types:\n\n- [`activate_customer_password`](/api/liquid/tags/form#form-activate_customer_password)\n- [`cart`](/api/liquid/tags/form#form-cart)\n- [`contact`](/api/liquid/tags/form#form-contact)\n- [`create_customer`](/api/liquid/tags/form#form-create_customer)\n- [`currency`](/api/liquid/tags/form#form-currency)\n- [`customer`](/api/liquid/tags/form#form-customer)\n- [`customer_address`](/api/liquid/tags/form#form-customer_address)\n- [`customer_login`](/api/liquid/tags/form#form-customer_login)\n- [`guest_login`](/api/liquid/tags/form#form-guest_login)\n- [`localization`](/api/liquid/tags/form#form-localization)\n- [`new_comment`](/api/liquid/tags/form#form-new_comment)\n- [`product`](/api/liquid/tags/form#form-product)\n- [`recover_customer_password`](/api/liquid/tags/form#form-recover_customer_password)\n- [`reset_customer_password`](/api/liquid/tags/form#form-reset_customer_password)\n- [`storefront_password`](/api/liquid/tags/form#form-storefront_password)",
     "parameters": [
       {
         "description": "The desired URL to redirect to when the form submits.",
@@ -40,7 +40,7 @@
       },
       {
         "name": "cart",
-        "description": "Generates a form for creating a checkout based on the items currently in the cart. The `cart` form requires a [`cart` object](/docs/api/liquid/objects/cart) as a parameter.\nTo learn more about using the cart form in your theme, refer to the [`cart` template](/themes/architecture/templates/cart#proceed-to-checkout).\n",
+        "description": "Generates a form for creating a checkout based on the items currently in the cart. The `cart` form requires a [`cart` object](/api/liquid/objects/cart) as a parameter.\nTo learn more about using the cart form in your theme, refer to the [`cart` template](/themes/architecture/templates/cart#proceed-to-checkout).\n",
         "syntax": "{% form 'cart', cart %}\n  form_content\n{% endform %}\n",
         "path": "/",
         "raw_liquid": "{% form 'cart', cart %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -70,7 +70,7 @@
       },
       {
         "name": "currency",
-        "description": "&gt; Deprecated:\n&gt; The `currency` form is deprecated and has been replaced by the [`localization` form](/docs/api/liquid/tags/form#form-localization).\n\nGenerates a form for customers to select their preferred currency.\n\n&gt; Tip:\n&gt; Use the [`currency_selector` filter](/docs/api/liquid/filters/currency_selector) to include a currency selector inside the form.\n",
+        "description": "&gt; Deprecated:\n&gt; The `currency` form is deprecated and has been replaced by the [`localization` form](/api/liquid/tags/form#form-localization).\n\nGenerates a form for customers to select their preferred currency.\n\n&gt; Tip:\n&gt; Use the [`currency_selector` filter](/api/liquid/filters/currency_selector) to include a currency selector inside the form.\n",
         "syntax": "{% form 'currency' %}\n  form_content\n{% endform %}\n",
         "path": "/",
         "raw_liquid": "{% form 'currency' %}\n  {{ form | currency_selector }}\n{% endform %}",
@@ -80,7 +80,7 @@
       },
       {
         "name": "customer",
-        "description": "Generates a form for creating a new customer without registering a new account. This form is useful for collecting customer information when you don't want customers to log in to your store, such as building a list of emails from a newsletter signup.\n\n&gt; Tip:\n&gt; To generate a form that registers a customer account, use the [`create_customer` form](/docs/api/liquid/tags/form#form-create_customer).\n\nTo learn more about using this form, and its contents, refer to [Email consent](/themes/customer-engagement/email-consent#newsletter-sign-up-form).\n",
+        "description": "Generates a form for creating a new customer without registering a new account. This form is useful for collecting customer information when you don't want customers to log in to your store, such as building a list of emails from a newsletter signup.\n\n&gt; Tip:\n&gt; To generate a form that registers a customer account, use the [`create_customer` form](/api/liquid/tags/form#form-create_customer).\n\nTo learn more about using this form, and its contents, refer to [Email consent](/themes/customer-engagement/email-consent#newsletter-sign-up-form).\n",
         "syntax": "{% form 'customer' %}\n  form_content\n{% endform %}\n",
         "path": "/",
         "raw_liquid": "{% form 'customer' %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -120,7 +120,7 @@
       },
       {
         "name": "localization",
-        "description": "Generates a form for customers to select their preferred country so that they're shown the appropriate language and currency. The `localization` form can contain one of two selectors:\n\n- A country selector\n- A language selector\n\n&gt; Note:\n&gt; The `localization` form replaces the deprecated [`currency` form](/docs/api/liquid/tags/form#form-currency).\n\nTo learn more about using this form, and its contents, refer to [Support multiple currencies and languages](/themes/internationalization/multiple-currencies-languages).\n",
+        "description": "Generates a form for customers to select their preferred country so that they're shown the appropriate language and currency. The `localization` form can contain one of two selectors:\n\n- A country selector\n- A language selector\n\n&gt; Note:\n&gt; The `localization` form replaces the deprecated [`currency` form](/api/liquid/tags/form#form-currency).\n\nTo learn more about using this form, and its contents, refer to [Support multiple currencies and languages](/themes/internationalization/multiple-currencies-languages).\n",
         "syntax": "{% form 'localization' %}\n  form_content\n{% endform %}\n",
         "path": "/",
         "raw_liquid": "{% form 'localization' %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -130,7 +130,7 @@
       },
       {
         "name": "new_comment",
-        "description": "Generates a form for creating a new comment on an article. The `new_comment` form requires an [`article` object](/docs/api/liquid/objects/article) as a parameter.\nTo learn more about using this form, and its contents, refer to the [`article` template](/themes/architecture/templates/article#the-comment-form).\n",
+        "description": "Generates a form for creating a new comment on an article. The `new_comment` form requires an [`article` object](/api/liquid/objects/article) as a parameter.\nTo learn more about using this form, and its contents, refer to the [`article` template](/themes/architecture/templates/article#the-comment-form).\n",
         "syntax": "{% form 'new_comment', article %}\n  form_content\n{% endform %}\n",
         "path": "/blogs/potion-notions/how-to-tell-if-you-have-run-out-of-invisibility-potion",
         "raw_liquid": "{% form 'new_comment', article %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -140,7 +140,7 @@
       },
       {
         "name": "product",
-        "description": "Generates a form for adding a product variant to the cart. The `product` form requires a [`product` object](/docs/api/liquid/objects/product) as a parameter.\nTo learn more about using this form, and its contents, refer to the [`product` template](/themes/architecture/templates/product#the-product-form).\n",
+        "description": "Generates a form for adding a product variant to the cart. The `product` form requires a [`product` object](/api/liquid/objects/product) as a parameter.\nTo learn more about using this form, and its contents, refer to the [`product` template](/themes/architecture/templates/product#the-product-form).\n",
         "syntax": "{% form 'product', product %}\n  form_content\n{% endform %}\n",
         "path": "/products/health-potion",
         "raw_liquid": "{% form 'product', product %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -180,7 +180,7 @@
       },
       {
         "name": "return_to",
-        "description": "By default, each form type redirects customers to a specific page after the form submits. For example, the `product` form redirects to the cart page.\n\nThe `return_to` parameter allows you to specify a URL to redirect to. This can be done with the following values:\n\n| Value | Description |\n| --- | --- |\n| `back` | Redirect back to the same page that the customer was on before submitting the form. |\n| A relative path | A specific URL path. For example `/collections/all`. |\n| A [`routes` attribute](/docs/api/liquid/objects/routes) | For example, `routes.root_url` |\n",
+        "description": "By default, each form type redirects customers to a specific page after the form submits. For example, the `product` form redirects to the cart page.\n\nThe `return_to` parameter allows you to specify a URL to redirect to. This can be done with the following values:\n\n| Value | Description |\n| --- | --- |\n| `back` | Redirect back to the same page that the customer was on before submitting the form. |\n| A relative path | A specific URL path. For example `/collections/all`. |\n| A [`routes` attribute](/api/liquid/objects/routes) | For example, `routes.root_url` |\n",
         "syntax": "{% form 'form_type', return_to: string %}\n  content\n{% endform %}\n",
         "path": "/",
         "raw_liquid": "{% form 'customer_login', return_to: routes.root_url %}\n  &lt;!-- form content --&gt;\n{% endform %}",
@@ -234,7 +234,7 @@
     "category": "variable",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can create variables of any [basic type](/docs/api/liquid/basics#types), [object](/docs/api/liquid/objects), or object property.",
+    "description": "You can create variables of any [basic type](/api/liquid/basics#types), [object](/api/liquid/objects), or object property.",
     "parameters": [
 
     ],
@@ -272,7 +272,7 @@
     "parameters": [
 
     ],
-    "summary": "Stops a [`for` loop](/docs/api/liquid/tags/for) from iterating.",
+    "summary": "Stops a [`for` loop](/api/liquid/tags/for) from iterating.",
     "name": "break",
     "syntax": "{% break %}",
     "syntax_keywords": [
@@ -415,7 +415,7 @@
       },
       {
         "name": "Inline comments inside `liquid` tags",
-        "description": "You can use inline comment tags inside [`liquid` tags](/docs/api/liquid/tags/liquid). The tag must be used for each line that you want to comment.\n",
+        "description": "You can use inline comment tags inside [`liquid` tags](/api/liquid/tags/liquid). The tag must be used for each line that you want to comment.\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% liquid\n  # this is a comment\n  assign topic = 'Learning about comments!'\n  echo topic\n%}",
@@ -433,7 +433,7 @@
     "parameters": [
 
     ],
-    "summary": "Causes a [`for` loop](/docs/api/liquid/tags/for) to skip to the next iteration.",
+    "summary": "Causes a [`for` loop](/api/liquid/tags/for) to skip to the next iteration.",
     "name": "continue",
     "syntax": "{% continue %}",
     "syntax_keywords": [
@@ -460,7 +460,7 @@
     "parameters": [
 
     ],
-    "summary": "Loops through a group of strings and outputs them one at a time for each iteration of a [`for` loop](/docs/api/liquid/tags/for).",
+    "summary": "Loops through a group of strings and outputs them one at a time for each iteration of a [`for` loop](/api/liquid/tags/for).",
     "name": "cycle",
     "syntax": "{% cycle string, string, ... %}",
     "syntax_keywords": [
@@ -493,7 +493,7 @@
     "category": "variable",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Variables that are declared with `decrement` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture#snippets) included in the file.\n\nSimilarly, variables that are created with `decrement` are independent from those created with [`assign`](/docs/api/liquid/tags/assign)\nand [`capture`](/docs/api/liquid/tags/capture). However, `decrement` and [`increment`](/docs/api/liquid/tags/increment) share\nvariables.",
+    "description": "Variables that are declared with `decrement` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture#snippets) included in the file.\n\nSimilarly, variables that are created with `decrement` are independent from those created with [`assign`](/api/liquid/tags/assign)\nand [`capture`](/api/liquid/tags/capture). However, `decrement` and [`increment`](/api/liquid/tags/increment) share\nvariables.",
     "parameters": [
 
     ],
@@ -523,7 +523,7 @@
     "category": "syntax",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Using the `echo` tag is the same as wrapping an expression in curly brackets (`{{` and `}}`). However, unlike the curly\nbracket method, you can use the `echo` tag inside [`liquid` tags](/docs/api/liquid/tags/liquid).\n\n&gt; Tip:\n&gt; You can use [filters](/docs/api/liquid/filters) on expressions inside `echo` tags.",
+    "description": "Using the `echo` tag is the same as wrapping an expression in curly brackets (`{{` and `}}`). However, unlike the curly\nbracket method, you can use the `echo` tag inside [`liquid` tags](/api/liquid/tags/liquid).\n\n&gt; Tip:\n&gt; You can use [filters](/api/liquid/filters) on expressions inside `echo` tags.",
     "parameters": [
 
     ],
@@ -553,7 +553,7 @@
     "category": "iteration",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can do a maximum of 50 iterations with a `for` loop. If you need to iterate over more than 50 items, then use the\n[`paginate` tag](/docs/api/liquid/tags/paginate) to split the items over multiple pages.\n\n&gt; Tip:\n&gt; Every `for` loop has an associated [`forloop` object](/docs/api/liquid/objects/forloop) with information about the loop.",
+    "description": "You can do a maximum of 50 iterations with a `for` loop. If you need to iterate over more than 50 items, then use the\n[`paginate` tag](/api/liquid/tags/paginate) to split the items over multiple pages.\n\n&gt; Tip:\n&gt; Every `for` loop has an associated [`forloop` object](/api/liquid/objects/forloop) with information about the loop.",
     "parameters": [
       {
         "description": "The number of iterations to perform.",
@@ -705,8 +705,8 @@
   {
     "category": "theme",
     "deprecated": true,
-    "deprecation_reason": "Deprecated because the way that variables are handled reduces performance and makes code harder to both read and maintain.\n\nThe `include` tag has been replaced by [`render`](/docs/api/liquid/tags/render).",
-    "description": "Inside the snippet, you can access and alter variables that are [created](/docs/api/liquid/tags/variable-tags) outside of the\nsnippet.",
+    "deprecation_reason": "Deprecated because the way that variables are handled reduces performance and makes code harder to both read and maintain.\n\nThe `include` tag has been replaced by [`render`](/api/liquid/tags/render).",
+    "description": "Inside the snippet, you can access and alter variables that are [created](/api/liquid/tags/variable-tags) outside of the\nsnippet.",
     "parameters": [
 
     ],
@@ -727,7 +727,7 @@
     "category": "variable",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Variables that are declared with `increment` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture#snippets) included in the file.\n\nSimilarly, variables that are created with `increment` are independent from those created with [`assign`](/docs/api/liquid/tags/assign)\nand [`capture`](/docs/api/liquid/tags/capture). However, `increment` and [`decrement`](/docs/api/liquid/tags/decrement) share\nvariables.",
+    "description": "Variables that are declared with `increment` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture#snippets) included in the file.\n\nSimilarly, variables that are created with `increment` are independent from those created with [`assign`](/api/liquid/tags/assign)\nand [`capture`](/api/liquid/tags/capture). However, `increment` and [`decrement`](/api/liquid/tags/decrement) share\nvariables.",
     "parameters": [
 
     ],
@@ -787,7 +787,7 @@
     "category": "theme",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Inside snippets and app blocks, you can't directly access variables that are [created](/docs/api/liquid/tags/variable-tags) outside\nof the snippet or app block. However, you can [specify variables as parameters](/docs/api/liquid/tags/render#render-passing-variables-to-a-snippet)\nto pass outside variables to snippets.\n\nWhile you can't directly access created variables, you can access global objects, as well as any objects that are\ndirectly accessible outside the snippet or app block. For example, a snippet or app block inside the [product template](/themes/architecture/templates/product)\ncan access the [`product` object](/docs/api/liquid/objects/product), and a snippet or app block inside a [section](/themes/architecture/sections)\ncan access the [`section` object](/docs/api/liquid/objects/section).\n\nOutside a snippet or app block, you can't access variables created inside the snippet or app block.\n\n&gt; Note:\n&gt; When you render a snippet using the `render` tag, you can't use the [`include` tag](/docs/api/liquid/tags/include)\n&gt; inside the snippet.",
+    "description": "Inside snippets and app blocks, you can't directly access variables that are [created](/api/liquid/tags/variable-tags) outside\nof the snippet or app block. However, you can [specify variables as parameters](/api/liquid/tags/render#render-passing-variables-to-a-snippet)\nto pass outside variables to snippets.\n\nWhile you can't directly access created variables, you can access global objects, as well as any objects that are\ndirectly accessible outside the snippet or app block. For example, a snippet or app block inside the [product template](/themes/architecture/templates/product)\ncan access the [`product` object](/api/liquid/objects/product), and a snippet or app block inside a [section](/themes/architecture/sections)\ncan access the [`section` object](/api/liquid/objects/section).\n\nOutside a snippet or app block, you can't access variables created inside the snippet or app block.\n\n&gt; Note:\n&gt; When you render a snippet using the `render` tag, you can't use the [`include` tag](/api/liquid/tags/include)\n&gt; inside the snippet.",
     "parameters": [
 
     ],
@@ -803,7 +803,7 @@
     "examples": [
       {
         "name": "for",
-        "description": "You can render a snippet for every item in an array using the `for` parameter. You can also supply an optional `as` parameter to be able to reference the current item in the iteration inside the snippet.\nAdditionally, you can access a [`forloop` object](/docs/api/liquid/objects/forloop) for the loop inside the snippet.\n",
+        "description": "You can render a snippet for every item in an array using the `for` parameter. You can also supply an optional `as` parameter to be able to reference the current item in the iteration inside the snippet.\nAdditionally, you can access a [`forloop` object](/api/liquid/objects/forloop) for the loop inside the snippet.\n",
         "syntax": "{% render 'filename' for array as item %}",
         "path": "/",
         "raw_liquid": "",
@@ -813,7 +813,7 @@
       },
       {
         "name": "Passing variables to a snippet",
-        "description": "Variables that have been [created](/docs/api/liquid/tags/variable-tags) outside of a snippet can be passed to a snippet as parameters on the `render` tag.\n\n&gt; Note:\n&gt; Any changes that are made to a passed variable apply only within the snippet.\n",
+        "description": "Variables that have been [created](/api/liquid/tags/variable-tags) outside of a snippet can be passed to a snippet as parameters on the `render` tag.\n\n&gt; Note:\n&gt; Any changes that are made to a passed variable apply only within the snippet.\n",
         "syntax": "{% render 'filename', variable: value %}",
         "path": "/",
         "raw_liquid": "",
@@ -837,7 +837,7 @@
     "category": "iteration",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `tablerow` tag must be wrapped in HTML `&lt;table&gt;` and `&lt;/table&gt;` tags.\n\n&gt; Tip:\n&gt; Every `tablerow` loop has an associated [`tablerowloop` object](/docs/api/liquid/objects/tablerowloop) with information about the loop.",
+    "description": "The `tablerow` tag must be wrapped in HTML `&lt;table&gt;` and `&lt;/table&gt;` tags.\n\n&gt; Tip:\n&gt; Every `tablerow` loop has an associated [`tablerowloop` object](/api/liquid/objects/tablerowloop) with information about the loop.",
     "parameters": [
       {
         "description": "The number of columns that the table should have.",
@@ -946,7 +946,7 @@
     "category": "conditional",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Similar to the [`if` tag](/docs/api/liquid/tags/if), you can use `elsif` to add more conditions to an `unless` tag.",
+    "description": "&gt; Tip:\n&gt; Similar to the [`if` tag](/api/liquid/tags/if), you can use `elsif` to add more conditions to an `unless` tag.",
     "parameters": [
 
     ],
@@ -980,7 +980,7 @@
     "category": "iteration",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Because [`for` loops](/docs/api/liquid/tags/for) are limited to 50 iterations per page, you need to use the `paginate` tag to\niterate over an array that has more than 50 items. The following arrays can be paginated:\n\n- [`all_products`](/docs/api/liquid/objects/all_products)\n- [`article.comments`](/docs/api/liquid/objects/article#article-comments)\n- [`blog.articles`](/docs/api/liquid/objects/blog#blog-articles)\n- [`collections`](/docs/api/liquid/objects/collections)\n- [`collection.products`](/docs/api/liquid/objects/collection#collection-products)\n- [`customer.addresses`](/docs/api/liquid/objects/customer#customer-addresses)\n- [`customer.orders`](/docs/api/liquid/objects/customer#customer-orders)\n- [`pages`](/docs/api/liquid/objects/pages)\n- [`search.results`](/docs/api/liquid/objects/search#search-results)\n- [`collection_list` settings](/themes/architecture/settings/input-settings#collection_list)\n- [`product_list` settings](/themes/architecture/settings/input-settings#product_list)\n\nWithin the `paginate` tag, you have access to the [`paginate` object](/docs/api/liquid/objects/paginate). You can use this\nobject, or the [`default_pagination` filter](/docs/api/liquid/filters/default_pagination), to build page navigation.",
+    "description": "Because [`for` loops](/api/liquid/tags/for) are limited to 50 iterations per page, you need to use the `paginate` tag to\niterate over an array that has more than 50 items. The following arrays can be paginated:\n\n- [`all_products`](/api/liquid/objects/all_products)\n- [`article.comments`](/api/liquid/objects/article#article-comments)\n- [`blog.articles`](/api/liquid/objects/blog#blog-articles)\n- [`collections`](/api/liquid/objects/collections)\n- [`collection.products`](/api/liquid/objects/collection#collection-products)\n- [`customer.addresses`](/api/liquid/objects/customer#customer-addresses)\n- [`customer.orders`](/api/liquid/objects/customer#customer-orders)\n- [`pages`](/api/liquid/objects/pages)\n- [`search.results`](/api/liquid/objects/search#search-results)\n- [`collection_list` settings](/themes/architecture/settings/input-settings#collection_list)\n- [`product_list` settings](/themes/architecture/settings/input-settings#product_list)\n\nWithin the `paginate` tag, you have access to the [`paginate` object](/api/liquid/objects/paginate). You can use this\nobject, or the [`default_pagination` filter](/api/liquid/filters/default_pagination), to build page navigation.",
     "parameters": [
       {
         "description": "The number of pages to display in the pagination.",
@@ -1025,7 +1025,7 @@
       },
       {
         "name": "Paginating setting arrays",
-        "description": "To allow the pagination of `product_list` and `collection_list` settings to operate independently from other paginated lists on a page, these lists use a pagination query parameter with a unique key. The key is automatically assigned by the `paginate` tag, and you don't need to reference the key in your code. However, you can access the key using [`paginate.page_param`](/docs/api/liquid/objects/paginate#paginate-page_param).\n\n&gt; Tip:\n&gt; To paginate two arrays independently without refreshing the entire page, you can use the [Section Rendering API](/api/section-rendering).\n",
+        "description": "To allow the pagination of `product_list` and `collection_list` settings to operate independently from other paginated lists on a page, these lists use a pagination query parameter with a unique key. The key is automatically assigned by the `paginate` tag, and you don't need to reference the key in your code. However, you can access the key using [`paginate.page_param`](/api/liquid/objects/paginate#paginate-page_param).\n\n&gt; Tip:\n&gt; To paginate two arrays independently without refreshing the entire page, you can use the [Section Rendering API](/api/section-rendering).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "",
@@ -1172,7 +1172,7 @@
     "category": "conditional",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can use the `else` tag with the following tags:\n\n- [`case`](/docs/api/liquid/tags/case)\n- [`if`](/docs/api/liquid/tags/if)\n- [`unless`](/docs/api/liquid/tags/unless)",
+    "description": "You can use the `else` tag with the following tags:\n\n- [`case`](/api/liquid/tags/case)\n- [`if`](/api/liquid/tags/if)\n- [`unless`](/api/liquid/tags/unless)",
     "parameters": [
 
     ],
@@ -1206,7 +1206,7 @@
     "parameters": [
 
     ],
-    "summary": "Allows you to specify a default expression to execute when a [`for` loop](/docs/api/liquid/tags/for) has zero length.",
+    "summary": "Allows you to specify a default expression to execute when a [`for` loop](/api/liquid/tags/for) has zero length.",
     "name": "else",
     "syntax": "{% for variable in array %}\n  first_expression\n{% else %}\n  second_expression\n{% endfor %}",
     "syntax_keywords": [
@@ -1244,7 +1244,7 @@
     "category": "syntax",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Because the tags don't have delimeters, each tag needs to be on its own line.\n\n&gt; Tip:\n&gt; Use the [`echo` tag](/docs/api/liquid/tags/echo) to output an expression inside `liquid` tags.",
+    "description": "Because the tags don't have delimeters, each tag needs to be on its own line.\n\n&gt; Tip:\n&gt; Use the [`echo` tag](/api/liquid/tags/echo) to output an expression inside `liquid` tags.",
     "parameters": [
 
     ],

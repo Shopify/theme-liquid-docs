@@ -22,7 +22,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `media` object can be returned by the [`product.media` array](/docs/api/liquid/objects/product#product-media) or a\n[`file_reference` metafield](/apps/metafields/types).\n\nYou can use [media filters](/docs/api/liquid/filters/media-filters) to generate URLs and media displays. To learn about how\nto use media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).\n\n&gt; Note:\n&gt; Each media type has unique properties in addition to the general `media` properties. To learn about these\n&gt; additional properties, refer to the reference for each type.",
+    "description": "The `media` object can be returned by the [`product.media` array](/api/liquid/objects/product#product-media) or a\n[`file_reference` metafield](/apps/metafields/types).\n\nYou can use [media filters](/api/liquid/filters/media-filters) to generate URLs and media displays. To learn about how\nto use media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).\n\n&gt; Note:\n&gt; Each media type has unique properties in addition to the general `media` properties. To learn about these\n&gt; additional properties, refer to the reference for each type.",
     "properties": [
       {
         "deprecated": false,
@@ -57,7 +57,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The position of the media in the [`product.media` array](/docs/api/liquid/objects/product#product-media).",
+        "summary": "The position of the media in the [`product.media` array](/api/liquid/objects/product#product-media).",
         "name": "position"
       },
       {
@@ -67,7 +67,7 @@
         "examples": [
           {
             "name": "Filter for media of a specific type",
-            "description": "You can use the `media_type` property with the [`where` filter](/docs/api/liquid/filters/where) to filter the [`product.media` array](/docs/api/liquid/objects/product#product-media) for all media of a desired type.\n",
+            "description": "You can use the `media_type` property with the [`where` filter](/api/liquid/filters/where) to filter the [`product.media` array](/api/liquid/objects/product#product-media) for all media of a desired type.\n",
             "syntax": "",
             "path": "/products/snake-venom",
             "raw_liquid": "{% assign images = product.media | where: 'media_type', 'image' %}\n\n{% for image in images %}\n  {{- image | image_url: width: 300 | image_tag }}\n{% endfor %}",
@@ -142,7 +142,7 @@
         "name": "alt"
       }
     ],
-    "summary": "An abstract media object that can represent the following object types:\n\n- [`image`](/docs/api/liquid/objects/image)\n- [`model`](/docs/api/liquid/objects/model)\n- [`video`](/docs/api/liquid/objects/video)\n- [`external_video`](/docs/api/liquid/objects/external_video)",
+    "summary": "An abstract media object that can represent the following object types:\n\n- [`image`](/api/liquid/objects/image)\n- [`model`](/api/liquid/objects/model)\n- [`video`](/api/liquid/objects/video)\n- [`external_video`](/api/liquid/objects/external_video)",
     "name": "media",
     "examples": [
 
@@ -199,7 +199,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use the [`format_address` filter](/docs/api/liquid/filters/format_address) to output an address according to its locale.",
+    "description": "&gt; Tip:\n&gt; Use the [`format_address` filter](/api/liquid/filters/format_address) to output an address according to its locale.",
     "properties": [
       {
         "deprecated": false,
@@ -538,7 +538,7 @@
     "properties": [
 
     ],
-    "summary": "All of the [collections](/docs/api/liquid/objects/collection) on a store.",
+    "summary": "All of the [collections](/api/liquid/objects/collection) on a store.",
     "name": "collections",
     "examples": [
       {
@@ -553,7 +553,7 @@
       },
       {
         "name": "Access a specific collection",
-        "description": "You can use `collections` to access a collection by its [handle](/docs/api/liquid/basics#handles).\n",
+        "description": "You can use `collections` to access a collection by its [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% for product in collections['sale-potions'].products %}\n  {{- product.title | link_to: product.url }}\n{% endfor %}",
@@ -592,12 +592,12 @@
     "properties": [
 
     ],
-    "summary": "All of the [pages](/docs/api/liquid/objects/page) on a store.",
+    "summary": "All of the [pages](/api/liquid/objects/page) on a store.",
     "name": "pages",
     "examples": [
       {
         "name": "",
-        "description": "You can access a specific page through the `pages` object using the page's [handle](/docs/api/liquid/basics#handles).\n",
+        "description": "You can access a specific page through the `pages` object using the page's [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ pages.contact.title }}\n{{ pages['about-us'].title }}",
@@ -607,7 +607,7 @@
       },
       {
         "name": "Paginate the `pages` object",
-        "description": "You can [paginate](/docs/api/liquid/tags/paginate) the `pages` object, allowing you to iterate over up to 50 pages at a time.\n",
+        "description": "You can [paginate](/api/liquid/tags/paginate) the `pages` object, allowing you to iterate over up to 50 pages at a time.\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% paginate pages by 2 -%}\n  {% for page in pages -%}\n    {{ page.title | link_to: page.url }}\n  {%- endfor %}\n\n  {{- paginate | default_pagination }}\n{%- endpaginate %}",
@@ -651,7 +651,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). If the product isn't found, then `nil` is returned.",
+        "description": "You can use `all_products` to access a product by its [handle](/api/liquid/basics#handles). If the product isn't found, then `nil` is returned.",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ all_products['love-potion'].title }}",
@@ -698,7 +698,7 @@
         "return_type": [
 
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) that are [owned by the app](/apps/metafields/app-owned).",
+        "summary": "The [metafields](/api/liquid/objects/metafield) that are [owned by the app](/apps/metafields/app-owned).",
         "name": "metafields"
       }
     ],
@@ -742,13 +742,13 @@
       ]
     },
     "deprecated": true,
-    "deprecation_reason": "Deprecated because not all discount types and details are captured.\n\nThe `discount` object has been replaced by the [`discount_allocation`](/docs/api/liquid/objects/discount_allocation) and\n[`discount_application`](/docs/api/liquid/objects/discount_application) objects.",
+    "deprecation_reason": "Deprecated because not all discount types and details are captured.\n\nThe `discount` object has been replaced by the [`discount_allocation`](/api/liquid/objects/discount_allocation) and\n[`discount_application`](/api/liquid/objects/discount_application) objects.",
     "description": "",
     "properties": [
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_amount`](/docs/api/liquid/objects/discount#discount-total_amount).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_amount`](/api/liquid/objects/discount#discount-total_amount).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -766,7 +766,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.amount`](/docs/api/liquid/objects/discount#discount-amount).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.amount`](/api/liquid/objects/discount#discount-amount).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -784,7 +784,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.title`](/docs/api/liquid/objects/discount#discount-title).",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.title`](/api/liquid/objects/discount#discount-title).",
         "examples": [
 
         ],
@@ -802,7 +802,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.code`](/docs/api/liquid/objects/discount#discount-code).",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.code`](/api/liquid/objects/discount#discount-code).",
         "examples": [
 
         ],
@@ -850,7 +850,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_savings`](/docs/api/liquid/objects/discount#discount-total_savings).\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_savings`](/api/liquid/objects/discount#discount-total_savings).\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -868,7 +868,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.savings`](/docs/api/liquid/objects/discount#discount-savings).\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.savings`](/api/liquid/objects/discount#discount-savings).\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -919,7 +919,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `articles` to access an article by its [handle](/docs/api/liquid/basics#handles).\n",
+        "description": "You can use `articles` to access an article by its [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% assign article = articles['potion-notions/new-potions-for-spring'] %}\n{{ article.title | link_to: article.url }}",
@@ -1014,7 +1014,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the article.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the article.",
         "name": "metafields"
       },
       {
@@ -1032,7 +1032,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the article.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the article.",
         "name": "handle"
       },
       {
@@ -1110,7 +1110,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -1128,7 +1128,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -1146,7 +1146,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -1182,7 +1182,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Returns an empty array if comments are disabled.\n\n&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many comments to show at once, up to a limit of 50.",
+        "description": "Returns an empty array if comments are disabled.\n\n&gt; Tip:\n&gt; Use the [paginate](/api/liquid/tags/paginate) tag to choose how many comments to show at once, up to a limit of 50.",
         "examples": [
 
         ],
@@ -1302,7 +1302,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns the article [excerpt](/docs/api/liquid/objects/article#article-excerpt) if it exists. Returns the article\n[content](/docs/api/liquid/objects/article#article-content) if no excerpt exists.",
+        "summary": "Returns the article [excerpt](/api/liquid/objects/article#article-excerpt) if it exists. Returns the article\n[content](/api/liquid/objects/article#article-content) if no excerpt exists.",
         "name": "excerpt_or_content"
       },
       {
@@ -1490,7 +1490,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `blogs` to access a blog by its [handle](/docs/api/liquid/basics#handles).\n",
+        "description": "You can use `blogs` to access a blog by its [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{% for article in blogs.potion-notions.articles %}\n  {{- article.title | link_to: article.url }}\n{% endfor %}",
@@ -1579,13 +1579,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the blog.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the blog.",
         "name": "handle"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many articles to show per page, up to a limit of 50.",
+        "description": "&gt; Tip:\n&gt; Use the [paginate](/api/liquid/tags/paginate) tag to choose how many articles to show per page, up to a limit of 50.",
         "examples": [
 
         ],
@@ -1633,7 +1633,7 @@
             "array_value": "metafield"
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the blog.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the blog.",
         "name": "metafields"
       },
       {
@@ -1705,7 +1705,7 @@
             "array_value": "string"
           }
         ],
-        "summary": "A list of all of the tags on all of the articles in the blog.\n\nUnlike [`blog.all_tags`](/docs/api/liquid/objects/blog#blog-all_tags), this property only returns tags of articles that are in the\nfiltered view.",
+        "summary": "A list of all of the tags on all of the articles in the blog.\n\nUnlike [`blog.all_tags`](/api/liquid/objects/blog#blog-all_tags), this property only returns tags of articles that are in the\nfiltered view.",
         "name": "tags"
       },
       {
@@ -1875,7 +1875,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -1893,7 +1893,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -1911,7 +1911,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -1929,7 +1929,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -1947,7 +1947,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -2001,7 +2001,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If the store uses multi-currency, then this is the same as the customer's local\n(presentment) currency. Otherwise, it's the same as the store currency.\n\n&gt; Tip:\n&gt; You can output the store's available currencies using [`shop.enabled_currencies`](/docs/api/liquid/objects/shop#shop-enabled_currencies).",
+        "description": "If the store uses multi-currency, then this is the same as the customer's local\n(presentment) currency. Otherwise, it's the same as the store currency.\n\n&gt; Tip:\n&gt; You can output the store's available currencies using [`shop.enabled_currencies`](/api/liquid/objects/shop#shop-enabled_currencies).",
         "examples": [
 
         ],
@@ -2112,7 +2112,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because not all discount types and details are available.\n\nThe `cart.discounts` property has been replaced by [`cart.discount_applications`](/docs/api/liquid/objects/cart#cart-discount_applications).",
+        "deprecation_reason": "Deprecated because not all discount types and details are available.\n\nThe `cart.discounts` property has been replaced by [`cart.discount_applications`](/api/liquid/objects/cart#cart-discount_applications).",
         "description": "",
         "examples": [
 
@@ -2193,7 +2193,7 @@
             "array_value": "metafield"
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the collection.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the collection.",
         "name": "metafields"
       },
       {
@@ -2229,7 +2229,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the collection.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the collection.",
         "name": "handle"
       },
       {
@@ -2343,7 +2343,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -2532,7 +2532,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many products to show per page, up to a limit of 50.",
+        "description": "&gt; Tip:\n&gt; Use the [paginate](/api/liquid/tags/paginate) tag to choose how many products to show per page, up to a limit of 50.",
         "examples": [
 
         ],
@@ -2550,7 +2550,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This includes products that have been filtered out of the current view.\n\n&gt; Tip:\n&gt; To display the number of products in a filtered collection, use [`collection.products_count`](/docs/api/liquid/objects/collection#collection-products_count).",
+        "description": "This includes products that have been filtered out of the current view.\n\n&gt; Tip:\n&gt; To display the number of products in a filtered collection, use [`collection.products_count`](/api/liquid/objects/collection#collection-products_count).",
         "examples": [
 
         ],
@@ -2568,7 +2568,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This includes tags for products that have been filtered out of the current view.\nA maximum of 1,000 tags can be returned.\n\n&gt; Tip:\n&gt; To display the tags that are currently applied, use [`collection.tags`](/docs/api/liquid/objects/collection#collection-tags).",
+        "description": "This includes tags for products that have been filtered out of the current view.\nA maximum of 1,000 tags can be returned.\n\n&gt; Tip:\n&gt; To display the tags that are currently applied, use [`collection.tags`](/api/liquid/objects/collection#collection-tags).",
         "examples": [
 
         ],
@@ -2608,7 +2608,7 @@
         "examples": [
           {
             "name": "Create links to product types",
-            "description": "Use the [`link_to_type`](/docs/api/liquid/filters/link_to_type) filter to create links to the product types in a collection.\n",
+            "description": "Use the [`link_to_type`](/api/liquid/filters/link_to_type) filter to create links to the product types in a collection.\n",
             "syntax": "",
             "path": "/collections/ingredients",
             "raw_liquid": "{% for product_type in collection.all_types -%}\n  {{- product_type | link_to_type }}\n{%- endfor %}",
@@ -2635,7 +2635,7 @@
         "examples": [
           {
             "name": "Create links to vendors",
-            "description": "Use the [`link_to_vendor`](/docs/api/liquid/filters/link_to_vendor) filter to create links to the vendors in a collection.\n",
+            "description": "Use the [`link_to_vendor`](/api/liquid/filters/link_to_vendor) filter to create links to the vendors in a collection.\n",
             "syntax": "",
             "path": "/collections/ingredients",
             "raw_liquid": "{% for product_vendor in collection.all_vendors %}\n  {{- product_vendor | link_to_vendor }}\n{% endfor %}",
@@ -2676,7 +2676,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The default is the [collection image](/docs/api/liquid/objects/collection#collection-image). If this image isn't available, then\nShopify falls back to the featured image of the first product in the collection. If the first product in the collection\ndoesn't have a featured image, then `nil` is returned.",
+        "description": "The default is the [collection image](/api/liquid/objects/collection#collection-image). If this image isn't available, then\nShopify falls back to the featured image of the first product in the collection. If the first product in the collection\ndoesn't have a featured image, then `nil` is returned.",
         "examples": [
 
         ],
@@ -2718,7 +2718,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use [color filters](/docs/api/liquid/filters/color-filters) to modify or extract properties of a `color` object.",
+    "description": "&gt; Tip:\n&gt; Use [color filters](/api/liquid/filters/color-filters) to modify or extract properties of a `color` object.",
     "properties": [
       {
         "deprecated": false,
@@ -3212,7 +3212,7 @@
         "name": "available_locations"
       }
     ],
-    "summary": "A company that a [customer](/docs/api/liquid/objects/customer) is purchasing for.",
+    "summary": "A company that a [customer](/api/liquid/objects/customer) is purchasing for.",
     "name": "company",
     "examples": [
 
@@ -3378,7 +3378,7 @@
         "name": "tax_registration_id"
       }
     ],
-    "summary": "A location of the [company](/docs/api/liquid/objects/company) that a [customer](/docs/api/liquid/objects/customer) is purchasing for.",
+    "summary": "A location of the [company](/api/liquid/objects/company) that a [customer](/api/liquid/objects/customer) is purchasing for.",
     "name": "company_location",
     "examples": [
 
@@ -3688,7 +3688,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `customer` object is directly accessible globally when a customer is logged in to their account. It's also defined in\nthe following contexts:\n\n- The [`customers/account` template](/themes/architecture/templates/customers-account)\n- The [`customers/addresses` template](/themes/architecture/templates/customers-addresses)\n- The [`customers/order` template](/themes/architecture/templates/customers-order)\n- When accessing [`checkout.customer`](/docs/api/liquid/objects/checkout#checkout-customer)\n- When accessing [`gift_card.customer`](/docs/api/liquid/objects/gift_card#gift_card-customer)\n- When accessing [`order.customer`](/docs/api/liquid/objects/order#order-customer)\n\nOutside of the above contexts, if the customer isn't logged into their account, the `customer` object returns `nil`.",
+    "description": "The `customer` object is directly accessible globally when a customer is logged in to their account. It's also defined in\nthe following contexts:\n\n- The [`customers/account` template](/themes/architecture/templates/customers-account)\n- The [`customers/addresses` template](/themes/architecture/templates/customers-addresses)\n- The [`customers/order` template](/themes/architecture/templates/customers-order)\n- When accessing [`checkout.customer`](/api/liquid/objects/checkout#checkout-customer)\n- When accessing [`gift_card.customer`](/api/liquid/objects/gift_card#gift_card-customer)\n- When accessing [`order.customer`](/api/liquid/objects/order#order-customer)\n\nOutside of the above contexts, if the customer isn't logged into their account, the `customer` object returns `nil`.",
     "properties": [
       {
         "deprecated": false,
@@ -3747,7 +3747,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -3765,7 +3765,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many orders to show at once, up to a limit of 20.",
+        "description": "&gt; Tip:\n&gt; Use the [paginate](/api/liquid/tags/paginate) tag to choose how many orders to show at once, up to a limit of 20.",
         "examples": [
 
         ],
@@ -3945,7 +3945,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many addresses to show at once, up to a limit of 20.",
+        "description": "&gt; Tip:\n&gt; Use the [paginate](/api/liquid/tags/paginate) tag to choose how many addresses to show at once, up to a limit of 20.",
         "examples": [
 
         ],
@@ -4134,7 +4134,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -4192,7 +4192,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -4228,7 +4228,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/discount_application#discount_application-value_type) of the\ndiscount. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount of the discount in the currency's subunit. |\n| `percentage` | The percent amount of the discount. |\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "How this value is interpreted depends on the [value type](/api/liquid/objects/discount_application#discount_application-value_type) of the\ndiscount. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount of the discount in the currency's subunit. |\n| `percentage` | The percent amount of the discount. |\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -4246,7 +4246,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Whether the selection method applies to line items or shipping lines depends on the discount's\n&gt; [target type](/docs/api/liquid/objects/discount_application#discount_application-target_type).",
+        "description": "&gt; Note:\n&gt; Whether the selection method applies to line items or shipping lines depends on the discount's\n&gt; [target type](/api/liquid/objects/discount_application#discount_application-target_type).",
         "examples": [
 
         ],
@@ -4387,7 +4387,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use the [`external_video_tag` filter](/docs/api/liquid/filters/external_video_tag) to output the video in an\n&gt; HTML `&lt;iframe&gt;` tag. Use the [`external_video_url` filter](/docs/api/liquid/filters/external_video_url) to specify parameters\n&gt; for the external video player.",
+    "description": "&gt; Tip:\n&gt; Use the [`external_video_tag` filter](/api/liquid/filters/external_video_tag) to output the video in an\n&gt; HTML `&lt;iframe&gt;` tag. Use the [`external_video_url` filter](/api/liquid/filters/external_video_url) to specify parameters\n&gt; for the external video player.",
     "properties": [
       {
         "deprecated": false,
@@ -4492,7 +4492,7 @@
         "examples": [
           {
             "name": "Filter for media of a specific type",
-            "description": "You can use the `media_type` property with the [`where` filter](/docs/api/liquid/filters/where) to filter the [`product.media` array](/docs/api/liquid/objects/product#product-media) for all media of a desired type.\n",
+            "description": "You can use the `media_type` property with the [`where` filter](/api/liquid/filters/where) to filter the [`product.media` array](/api/liquid/objects/product#product-media) for all media of a desired type.\n",
             "syntax": "",
             "path": "/products/potion-beats",
             "raw_liquid": "{% assign external_videos = product.media | where: 'media_type', 'external_video' %}\n\n{% for external_video in external_videos %}\n  {{- external_video | external_video_tag }}\n{% endfor %}",
@@ -4527,7 +4527,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The position of the external video in the [`product.media`](/docs/api/liquid/objects/product#product-media) array.",
+        "summary": "The position of the external video in the [`product.media`](/api/liquid/objects/product#product-media) array.",
         "name": "position"
       },
       {
@@ -5016,7 +5016,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The focal point will remain visible when the image is cropped by the\ntheme. [Learn more about supporting focal points in your theme](https://shopify.dev/themes/architecture/settings/input-settings#image-focal-points).\n\n&gt; Tip:\n&gt; Use the [`image_tag`](/docs/api/liquid/filters/image_tag) filter to automatically apply focal point settings to an\n&gt; image on the storefront. This applies the focal point using the `object-position` CSS property.",
+    "description": "The focal point will remain visible when the image is cropped by the\ntheme. [Learn more about supporting focal points in your theme](https://shopify.dev/themes/architecture/settings/input-settings#image-focal-points).\n\n&gt; Tip:\n&gt; Use the [`image_tag`](/api/liquid/filters/image_tag) filter to automatically apply focal point settings to an\n&gt; image on the storefront. This applies the focal point using the `object-position` CSS property.",
     "properties": [
       {
         "deprecated": false,
@@ -5090,7 +5090,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can use the `font` object in Liquid [assets](/themes/architecture#assets) or inside a [`style` tag](/docs/api/liquid/tags/style)\nto apply font setting values to theme CSS.\n\n&gt; Tip:\n&gt; Use [font filters](/docs/api/liquid/filters/font-filters) to modify properties of the `font` object, load the font,\n&gt; or obtain font variants.",
+    "description": "You can use the `font` object in Liquid [assets](/themes/architecture#assets) or inside a [`style` tag](/api/liquid/tags/style)\nto apply font setting values to theme CSS.\n\n&gt; Tip:\n&gt; Use [font filters](/api/liquid/filters/font-filters) to modify properties of the `font` object, load the font,\n&gt; or obtain font variants.",
     "properties": [
       {
         "deprecated": false,
@@ -5203,7 +5203,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; You can use this property to determine whether you need to include a corresponding [font-face](/docs/api/liquid/filters/font_face)\n&gt; declaration for the font.",
+        "description": "&gt; Tip:\n&gt; You can use this property to determine whether you need to include a corresponding [font-face](/api/liquid/filters/font_face)\n&gt; declaration for the font.",
         "examples": [
 
         ],
@@ -5250,7 +5250,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there are no errors, then `nil` is returned.\n\n&gt; Tip:\n&gt; You can apply the [`default_errors` filter](/docs/api/liquid/filters/default_errors) to `form.errors` to output default\n&gt; error messages without having to loop through the array.",
+        "description": "If there are no errors, then `nil` is returned.\n\n&gt; Tip:\n&gt; You can apply the [`default_errors` filter](/api/liquid/filters/default_errors) to `form.errors` to output default\n&gt; error messages without having to loop through the array.",
         "examples": [
 
         ],
@@ -5268,7 +5268,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5286,7 +5286,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5304,7 +5304,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`new_comment` form](/docs/api/liquid/tags/form#form-new_comment).",
+        "description": "This property is exclusive to the [`new_comment` form](/api/liquid/tags/form#form-new_comment).",
         "examples": [
 
         ],
@@ -5322,7 +5322,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`contact`](/docs/api/liquid/tags/form#form-contact) and [`new_comment`](/docs/api/liquid/tags/form#form-new_comment)\nforms.",
+        "description": "This property is exclusive to the [`contact`](/api/liquid/tags/form#form-contact) and [`new_comment`](/api/liquid/tags/form#form-new_comment)\nforms.",
         "examples": [
 
         ],
@@ -5340,7 +5340,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5358,7 +5358,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5376,7 +5376,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5394,7 +5394,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the following forms:\n\n- [`contact`](/docs/api/liquid/tags/form#form-contact)\n- [`create_customer`](/docs/api/liquid/tags/form#form-create_customer)\n- [`customer`](/docs/api/liquid/tags/form#form-customer)\n- [`customer_login`](/docs/api/liquid/tags/form#form-customer_login)\n- [`new_comment`](/docs/api/liquid/tags/form#form-new_comment)\n- [`recover_customer_password`](/docs/api/liquid/tags/form#form-recover_customer_password)",
+        "description": "This property is exclusive to the following forms:\n\n- [`contact`](/api/liquid/tags/form#form-contact)\n- [`create_customer`](/api/liquid/tags/form#form-create_customer)\n- [`customer`](/api/liquid/tags/form#form-customer)\n- [`customer_login`](/api/liquid/tags/form#form-customer_login)\n- [`new_comment`](/api/liquid/tags/form#form-new_comment)\n- [`recover_customer_password`](/api/liquid/tags/form#form-recover_customer_password)",
         "examples": [
 
         ],
@@ -5412,7 +5412,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`create_customer`](/docs/api/liquid/tags/form#form-create_customer) and\n[`customer_address`](/docs/api/liquid/tags/form#form-customer_address) forms.",
+        "description": "This property is exclusive to the [`create_customer`](/api/liquid/tags/form#form-create_customer) and\n[`customer_address`](/api/liquid/tags/form#form-customer_address) forms.",
         "examples": [
 
         ],
@@ -5448,7 +5448,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`create_customer`](/docs/api/liquid/tags/form#form-create_customer) and\n[`customer_address`](/docs/api/liquid/tags/form#form-customer_address) forms.",
+        "description": "This property is exclusive to the [`create_customer`](/api/liquid/tags/form#form-create_customer) and\n[`customer_address`](/api/liquid/tags/form#form-customer_address) forms.",
         "examples": [
 
         ],
@@ -5466,7 +5466,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_login` form](/docs/api/liquid/tags/form#form-customer_login).",
+        "description": "This property is exclusive to the [`customer_login` form](/api/liquid/tags/form#form-customer_login).",
         "examples": [
 
         ],
@@ -5484,7 +5484,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5502,7 +5502,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address) always returns `true`.",
+        "description": "&gt; Note:\n&gt; The [`customer_address` form](/api/liquid/tags/form#form-customer_address) always returns `true`.",
         "examples": [
 
         ],
@@ -5520,7 +5520,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5538,7 +5538,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5556,7 +5556,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the [`customer_address` form](/docs/api/liquid/tags/form#form-customer_address).",
+        "description": "This property is exclusive to the [`customer_address` form](/api/liquid/tags/form#form-customer_address).",
         "examples": [
 
         ],
@@ -5572,7 +5572,7 @@
         "name": "zip"
       }
     ],
-    "summary": "Information about a form created by a [`form` tag](/docs/api/liquid/tags/form).",
+    "summary": "Information about a form created by a [`form` tag](/api/liquid/tags/form).",
     "name": "form",
     "examples": [
 
@@ -5606,7 +5606,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -5830,7 +5830,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The position of the media in the [`product.media` array](/docs/api/liquid/objects/product#product-media).",
+        "summary": "The position of the media in the [`product.media` array](/api/liquid/objects/product#product-media).",
         "name": "position"
       },
       {
@@ -5852,7 +5852,7 @@
         "name": "alt"
       }
     ],
-    "summary": "A file from a `file_reference` type [metafield](/docs/api/liquid/objects/metafield) that is neither an image or video.",
+    "summary": "A file from a `file_reference` type [metafield](/api/liquid/objects/metafield) that is neither an image or video.",
     "name": "generic_file",
     "examples": [
 
@@ -5883,7 +5883,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -5991,7 +5991,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If the gift card never expires, then `nil` is returned.\n&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "If the gift card never expires, then `nil` is returned.\n&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -6009,7 +6009,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -6063,7 +6063,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there aren't any line item properties, then an [`EmptyDrop`](/docs/api/liquid/basics#emptydrop) is returned.",
+        "description": "If there aren't any line item properties, then an [`EmptyDrop`](/api/liquid/basics#emptydrop) is returned.",
         "examples": [
 
         ],
@@ -6075,7 +6075,7 @@
             "array_value": "untyped"
           }
         ],
-        "summary": "The [line item properties](/docs/api/liquid/objects/line_item#line_item-properties) assigned to the gift card.",
+        "summary": "The [line item properties](/api/liquid/objects/line_item#line_item-properties) assigned to the gift card.",
         "name": "properties"
       },
       {
@@ -6248,7 +6248,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "To learn about the image formats that Shopify supports, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/images/theme-images#image-formats).\n\n&gt; Tip:\n&gt; Use the [`image_url`](/docs/api/liquid/filters/image_url) and [`image_tag`](/docs/api/liquid/filters/image_tag) filters to display\n&gt; images on the storefront.",
+    "description": "To learn about the image formats that Shopify supports, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/images/theme-images#image-formats).\n\n&gt; Tip:\n&gt; Use the [`image_url`](/api/liquid/filters/image_url) and [`image_tag`](/api/liquid/filters/image_tag) filters to display\n&gt; images on the storefront.",
     "properties": [
       {
         "deprecated": false,
@@ -6361,7 +6361,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The `attached_to_variant?` property is only available for images accessed through the following sources:\n\n- [`product.featured_image`](/docs/api/liquid/objects/product#product-featured_image)\n- [`product.images`](/docs/api/liquid/objects/product#product-images)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
+        "description": "The `attached_to_variant?` property is only available for images accessed through the following sources:\n\n- [`product.featured_image`](/api/liquid/objects/product#product-featured_image)\n- [`product.images`](/api/liquid/objects/product#product-images)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
         "examples": [
 
         ],
@@ -6379,7 +6379,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If you reference the `id` property for preview images of [`generic_file`](/docs/api/liquid/objects/generic_file) or\n[`media`](/docs/api/liquid/objects/media) objects, then `nil` is returned.",
+        "description": "If you reference the `id` property for preview images of [`generic_file`](/api/liquid/objects/generic_file) or\n[`media`](/api/liquid/objects/media) objects, then `nil` is returned.",
         "examples": [
 
         ],
@@ -6397,11 +6397,11 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The `media_type` property is only available for images accessed through the following sources:\n\n- [`product.media`](/docs/api/liquid/objects/product#product-media)\n- [`file_reference` type metafields](/apps/metafields/types#supported-types)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
+        "description": "The `media_type` property is only available for images accessed through the following sources:\n\n- [`product.media`](/api/liquid/objects/product#product-media)\n- [`file_reference` type metafields](/apps/metafields/types#supported-types)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
         "examples": [
           {
             "name": "Filter for media of a specific type",
-            "description": "You can use the `media_type` property with the [`where` filter](/docs/api/liquid/filters/where) to filter the [`product.media` array](/docs/api/liquid/objects/product#product-media) for all media of a desired type.\n",
+            "description": "You can use the `media_type` property with the [`where` filter](/api/liquid/filters/where) to filter the [`product.media` array](/api/liquid/objects/product#product-media) for all media of a desired type.\n",
             "syntax": "",
             "path": "/products/snake-venom",
             "raw_liquid": "{% assign images = product.media | where: 'media_type', 'image' %}\n\n{% for image in images %}\n  {{- image | image_url: width: 300 | image_tag }}\n{% endfor %}",
@@ -6436,13 +6436,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The position of the image in the [`product.images`](/docs/api/liquid/objects/product#product-images) or [`product.media`](/docs/api/liquid/objects/product#product-media)\narray.",
+        "summary": "The position of the image in the [`product.images`](/api/liquid/objects/product#product-images) or [`product.media`](/api/liquid/objects/product#product-media)\narray.",
         "name": "position"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The `preview_image` property is only available for images accessed through the following sources:\n\n- [`product.featured_media`](/docs/api/liquid/objects/product#product-featured_media)\n- [`product.media`](/docs/api/liquid/objects/product#product-media)\n- [`file_reference` type metafields](/apps/metafields/types#supported-types)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
+        "description": "The `preview_image` property is only available for images accessed through the following sources:\n\n- [`product.featured_media`](/api/liquid/objects/product#product-featured_media)\n- [`product.media`](/api/liquid/objects/product#product-media)\n- [`file_reference` type metafields](/apps/metafields/types#supported-types)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
         "examples": [
 
         ],
@@ -6478,7 +6478,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The `variants` property is only available for images accessed through the following sources:\n\n- [`product.featured_image`](/docs/api/liquid/objects#product-featured_image)\n- [`product.images`](/docs/api/liquid/objects/product#product-images)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
+        "description": "The `variants` property is only available for images accessed through the following sources:\n\n- [`product.featured_image`](/api/liquid/objects#product-featured_image)\n- [`product.images`](/api/liquid/objects/product#product-images)\n\nIf you reference this property on an image from another source, then `nil` is returned.",
         "examples": [
 
         ],
@@ -6588,7 +6588,7 @@
     "properties": [
 
     ],
-    "summary": "All of the [images](/docs/api/liquid/objects/image) that have been [uploaded](https://help.shopify.com/manual/online-store/images/theme-images#upload-images)\nto a store.",
+    "summary": "All of the [images](/api/liquid/objects/image) that have been [uploaded](https://help.shopify.com/manual/online-store/images/theme-images#upload-images)\nto a store.",
     "name": "images",
     "examples": [
       {
@@ -6644,7 +6644,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The ID differs depending on the context. The following table outlines the possible contexts and their associated values:\n\n| Context | Value |\n| --- | --- |\n| [`cart.items`](/docs/api/liquid/objects/cart#cart-items) | The ID of the line item's variant.&lt;br&gt;&lt;br&gt;This ID isn't unique, and can be shared by multiple items with the same variant. |\n| [`checkout.line_items`](/docs/api/liquid/objects/checkout#checkout-line_items) | A temporary unique hash generated for the checkout. |\n| [`order.line_items`](/docs/api/liquid/objects/order#order-line_items) | A unique integer ID. |",
+        "description": "The ID differs depending on the context. The following table outlines the possible contexts and their associated values:\n\n| Context | Value |\n| --- | --- |\n| [`cart.items`](/api/liquid/objects/cart#cart-items) | The ID of the line item's variant.&lt;br&gt;&lt;br&gt;This ID isn't unique, and can be shared by multiple items with the same variant. |\n| [`checkout.line_items`](/api/liquid/objects/checkout#checkout-line_items) | A temporary unique hash generated for the checkout. |\n| [`order.line_items`](/api/liquid/objects/order#order-line_items) | A unique integer ID. |",
         "examples": [
 
         ],
@@ -6679,8 +6679,8 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.price` property has been replaced by [`line_item.final_price`](/docs/api/liquid/objects/line_item#line_item-final_price).",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.price` property has been replaced by [`line_item.final_price`](/api/liquid/objects/line_item#line_item-final_price).",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -6697,8 +6697,8 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.line_price` property has been replaced by [`line_item.final_line_price`](/docs/api/liquid/objects/line_item#line_item-final_line_price).",
-        "description": "The value is equal to `line_item.price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.line_price` property has been replaced by [`line_item.final_line_price`](/api/liquid/objects/line_item#line_item-final_line_price).",
+        "description": "The value is equal to `line_item.price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -6715,8 +6715,8 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.total_discount` property has been replaced by [`line_item.line_level_total_discount`](/docs/api/liquid/objects/line_item#line_item-line_level_total_discount).",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.total_discount` property has been replaced by [`line_item.line_level_total_discount`](/api/liquid/objects/line_item#line_item-line_level_total_discount).",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -6752,7 +6752,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -6770,7 +6770,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is equal to `line_item.final_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is equal to `line_item.final_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -6800,7 +6800,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [ID](/docs/api/liquid/objects/variant#variant-id) of the line item's variant.",
+        "summary": "The [ID](/api/liquid/objects/variant#variant-id) of the line item's variant.",
         "name": "variant_id"
       },
       {
@@ -6818,7 +6818,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [ID](/docs/api/liquid/objects/product#product-id) of the line item's product.",
+        "summary": "The [ID](/api/liquid/objects/product#product-id) of the line item's product.",
         "name": "product_id"
       },
       {
@@ -6936,7 +6936,7 @@
         "examples": [
           {
             "name": "Capture line item properties in the product form",
-            "description": "To capture line item properties inside the [product form](/docs/api/liquid/tags/form#form-product), you need to include an input, for each property. Each  input needs a unique `name` attribute. Use the following format:\n\n```\nname=\"properties[property-name]\"\n```\n\nThe value of the input is captured as the value of the property.\n\nFor example, you can use the following code to capture custom engraving text for a product:\n\n```liquid\n{% form 'product', product %}\n  ...\n  &lt;label for=\"engravingText\"&gt;Engraving&lt;label&gt;\n  &lt;input type=\"text\" id=\"engravingText\" name=\"properties[Engraving]\"&gt;\n  ...\n{% endform %}\n```\n\n&gt; Tip:\n&gt; You can add an underscore to the beginning of a property name to hide it from customers at checkout. For example,\n&gt; `properties[_hiddenPropertyName]`.\n",
+            "description": "To capture line item properties inside the [product form](/api/liquid/tags/form#form-product), you need to include an input, for each property. Each  input needs a unique `name` attribute. Use the following format:\n\n```\nname=\"properties[property-name]\"\n```\n\nThe value of the input is captured as the value of the property.\n\nFor example, you can use the following code to capture custom engraving text for a product:\n\n```liquid\n{% form 'product', product %}\n  ...\n  &lt;label for=\"engravingText\"&gt;Engraving&lt;label&gt;\n  &lt;input type=\"text\" id=\"engravingText\" name=\"properties[Engraving]\"&gt;\n  ...\n{% endform %}\n```\n\n&gt; Tip:\n&gt; You can add an underscore to the beginning of a property name to hide it from customers at checkout. For example,\n&gt; `properties[_hiddenPropertyName]`.\n",
             "syntax": "",
             "path": "/products/health-potion",
             "raw_liquid": "",
@@ -6977,7 +6977,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7007,13 +7007,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The [sku](/docs/api/liquid/objects/variant#variant-sku) of the variant associated with the line item.",
+        "summary": "The [sku](/api/liquid/objects/variant#variant-sku) of the variant associated with the line item.",
         "name": "sku"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The following table outlines what's returned depending on the number of discounts affecting the line item:\n\n| Number of discounts | Value |\n| --- | --- |\n| 0 | `nil` |\n| 1 | The [title](/docs/api/liquid/objects/discount_application#discount_application-title) of the discount. |\n| More than 1 | A Shopify generated string noting how many discounts have been applied. |",
+        "description": "The following table outlines what's returned depending on the number of discounts affecting the line item:\n\n| Number of discounts | Value |\n| --- | --- |\n| 0 | `nil` |\n| 1 | The [title](/api/liquid/objects/discount_application#discount_application-title) of the discount. |\n| More than 1 | A Shopify generated string noting how many discounts have been applied. |",
         "examples": [
 
         ],
@@ -7049,7 +7049,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "In most contexts, the line item title appears in the customer's preferred language. However, in the context of an\n[order](/docs/api/liquid/objects/order), the line item title appears in the language that the customer checked out in.\n\n#### Line item title history\n\nWhen referencing line item, product, and variant titles in the context of an order, the following changes might result\nin a different output than you expect:\n\n- A product or variant being deleted\n- A product or variant title being edited\n\nWhen `line_item.title` is referenced for an order, the line item title at the time of the order is returned.\nHowever, when `line_item.product.title` and `line_item.variant.title` are referenced, the current value for\neach title is returned.",
+        "description": "In most contexts, the line item title appears in the customer's preferred language. However, in the context of an\n[order](/api/liquid/objects/order), the line item title appears in the language that the customer checked out in.\n\n#### Line item title history\n\nWhen referencing line item, product, and variant titles in the context of an order, the following changes might result\nin a different output than you expect:\n\n- A product or variant being deleted\n- A product or variant title being edited\n\nWhen `line_item.title` is referenced for an order, the line item title at the time of the order is returned.\nHowever, when `line_item.product.title` and `line_item.variant.title` are referenced, the current value for\neach title is returned.",
         "examples": [
 
         ],
@@ -7085,7 +7085,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7103,7 +7103,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is equal to `line_item.original_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is equal to `line_item.original_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7121,7 +7121,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -7156,7 +7156,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/docs/api/liquid/objects/line_item#line_item-discount_allocations).",
+        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/api/liquid/objects/line_item#line_item-discount_allocations).",
         "description": "",
         "examples": [
 
@@ -7210,7 +7210,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because not all discount types and details are available.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/docs/api/liquid/objects/line_item#line_item-discount_allocations).",
+        "deprecation_reason": "Deprecated because not all discount types and details are available.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/api/liquid/objects/line_item#line_item-discount_allocations).",
         "description": "",
         "examples": [
 
@@ -7274,7 +7274,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use this property with the [`weight_with_unit` filter](/docs/api/liquid/filters/weight_with_unit) to format the weight.",
+        "description": "&gt; Tip:\n&gt; Use this property with the [`weight_with_unit` filter](/api/liquid/filters/weight_with_unit) to format the weight.",
         "examples": [
 
         ],
@@ -7346,7 +7346,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "#### Availability of selling plan information\n\nThe following properties aren't available when referencing selling plan information through an\n[order's line items](/docs/api/liquid/objects/order#order-line_items):\n\n- [`selling_plan_allocation.compare_at_price`](/docs/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-compare_at_price)\n- [`selling_plan_allocation.price_adjustments`](/docs/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments)\n- [`selling_plan_allocation.selling_plan.group_id`](/docs/api/liquid/objects/selling_plan#selling_plan-group_id)\n- [`selling_plan_allocation.selling_plan.options`](/docs/api/liquid/objects/selling_plan#selling_plan-options)\n- [`selling_plan_allocation.selling_plan.price_adjustments`](/docs/api/liquid/objects/selling_plan#selling_plan-price_adjustments)\n- [`selling_plan_allocation.selling_plan_group_id`](/docs/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-selling_plan_group_id)\n\n&gt; Tip:\n&gt; If you need to show selling plan information post-purchase, then you should use [`selling_plan.name`](/docs/api/liquid/objects/selling_plan#selling_plan-name).",
+        "description": "#### Availability of selling plan information\n\nThe following properties aren't available when referencing selling plan information through an\n[order's line items](/api/liquid/objects/order#order-line_items):\n\n- [`selling_plan_allocation.compare_at_price`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-compare_at_price)\n- [`selling_plan_allocation.price_adjustments`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments)\n- [`selling_plan_allocation.selling_plan.group_id`](/api/liquid/objects/selling_plan#selling_plan-group_id)\n- [`selling_plan_allocation.selling_plan.options`](/api/liquid/objects/selling_plan#selling_plan-options)\n- [`selling_plan_allocation.selling_plan.price_adjustments`](/api/liquid/objects/selling_plan#selling_plan-price_adjustments)\n- [`selling_plan_allocation.selling_plan_group_id`](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-selling_plan_group_id)\n\n&gt; Tip:\n&gt; If you need to show selling plan information post-purchase, then you should use [`selling_plan.name`](/api/liquid/objects/selling_plan#selling_plan-name).",
         "examples": [
 
         ],
@@ -7396,7 +7396,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A link is considered to be active if the current URL path matches, or contains, the link's [url](/docs/api/liquid/objects/link#link-url).\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`\n\n&gt; Tip:\n&gt; The `link.active` property is useful for menu designs that highlight when top-level navigation categories are being\n&gt; viewed. For example, if a customer is viewing an article from the \"Potion notions\" blog, then the \"Potion notions\" link\n&gt; is highlighted in the menu.",
+        "description": "A link is considered to be active if the current URL path matches, or contains, the link's [url](/api/liquid/objects/link#link-url).\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`\n\n&gt; Tip:\n&gt; The `link.active` property is useful for menu designs that highlight when top-level navigation categories are being\n&gt; viewed. For example, if a customer is viewing an article from the \"Potion notions\" blog, then the \"Potion notions\" link\n&gt; is highlighted in the menu.",
         "examples": [
 
         ],
@@ -7414,7 +7414,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; URL parameters are ignored when determining a match.\n&gt;\n&gt; Product URLs [within the context of a collection](/docs/api/liquid/filters/within) are treated as equal to a standard product\n&gt; URL for the same product.",
+        "description": "&gt; Note:\n&gt; URL parameters are ignored when determining a match.\n&gt;\n&gt; Product URLs [within the context of a collection](/api/liquid/filters/within) are treated as equal to a standard product\n&gt; URL for the same product.",
         "examples": [
 
         ],
@@ -7426,13 +7426,13 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the current URL path matches the [URL](/docs/api/liquid/objects/link#link-url) of the link. Returns `false` if not.",
+        "summary": "Returns `true` if the current URL path matches the [URL](/api/liquid/objects/link#link-url) of the link. Returns `false` if not.",
         "name": "current"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A link is considered to be active if the current URL path matches, or contains, the [URL](/docs/api/liquid/objects/link#link-url) of\nthe link.\n\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`",
+        "description": "A link is considered to be active if the current URL path matches, or contains, the [URL](/api/liquid/objects/link#link-url) of\nthe link.\n\nFor example, if the current URL path is `/blog/potion-notions/new-potions-for-spring`, then the following link URLs\nwould be considered active:\n\n- `/blog/potion-notions/new-potions-for-spring`\n- `/blog/potion-notions`",
         "examples": [
 
         ],
@@ -7450,7 +7450,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; URL parameters are ignored when determining a match.\n&gt;\n&gt; Product URLs [within the context of a collection](/docs/api/liquid/filters/within) and standard product URLs are treated\n&gt; the same.",
+        "description": "&gt; Note:\n&gt; URL parameters are ignored when determining a match.\n&gt;\n&gt; Product URLs [within the context of a collection](/api/liquid/filters/within) and standard product URLs are treated\n&gt; the same.",
         "examples": [
 
         ],
@@ -7462,7 +7462,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if current URL path matches a link's child link [URL](/docs/api/liquid/objects/link#link-url). Returns `false` if not.",
+        "summary": "Returns `true` if current URL path matches a link's child link [URL](/api/liquid/objects/link#link-url). Returns `false` if not.",
         "name": "child_current"
       },
       {
@@ -7480,7 +7480,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the link.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the link.",
         "name": "handle"
       },
       {
@@ -7513,7 +7513,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The object can be one of the following:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`blog`](/docs/api/liquid/objects/blog)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`page`](/docs/api/liquid/objects/page)\n- [`policy`](/docs/api/liquid/objects/policy)\n- [`product`](/docs/api/liquid/objects/product)",
+        "description": "The object can be one of the following:\n\n- [`article`](/api/liquid/objects/article)\n- [`blog`](/api/liquid/objects/blog)\n- [`collection`](/api/liquid/objects/collection)\n- [`page`](/api/liquid/objects/page)\n- [`policy`](/api/liquid/objects/policy)\n- [`product`](/api/liquid/objects/product)",
         "examples": [
 
         ],
@@ -7696,7 +7696,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can access a specific menu through the `linklists` object using the menu's [handle](/docs/api/liquid/basics#handles).\n",
+        "description": "You can access a specific menu through the `linklists` object using the menu's [handle](/api/liquid/basics#handles).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "&lt;!-- Main menu --&gt;\n{% for link in linklists.main-menu.links -%}\n  {{ link.title | link_to: link.url }}\n{%- endfor %}\n\n&lt;!-- Footer menu --&gt;\n{% for link in linklists['footer'].links -%}\n  {{ link.title | link_to: link.url }}\n{%- endfor %}",
@@ -7769,7 +7769,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the menu.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the menu.",
         "name": "handle"
       },
       {
@@ -7994,7 +7994,7 @@
         "name": "last"
       }
     ],
-    "summary": "Information about a parent [`for` loop](/docs/api/liquid/tags/for).",
+    "summary": "Information about a parent [`for` loop](/api/liquid/tags/for).",
     "name": "forloop",
     "examples": [
       {
@@ -8248,7 +8248,7 @@
         "name": "col_last"
       }
     ],
-    "summary": "Information about a parent [`tablerow` loop](/docs/api/liquid/tags/tablerow).",
+    "summary": "Information about a parent [`tablerow` loop](/api/liquid/tags/tablerow).",
     "name": "tablerowloop",
     "examples": [
 
@@ -8274,7 +8274,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `localization` object can be used in a [localization form](/docs/api/liquid/tags/form#form-localization).\n\nTo learn about how to offer localization options in your theme, refer to [Support multiple currencies and languages](/themes/internationalization/multiple-currencies-languages).",
+    "description": "The `localization` object can be used in a [localization form](/api/liquid/tags/form#form-localization).\n\nTo learn about how to offer localization options in your theme, refer to [Support multiple currencies and languages](/themes/internationalization/multiple-currencies-languages).",
     "properties": [
       {
         "deprecated": false,
@@ -8485,7 +8485,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the location.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the location.",
         "name": "metafields"
       }
     ],
@@ -8656,12 +8656,12 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "To learn about how to access a metafield on a specific object, refer to [Access metafields](/docs/api/liquid/objects/metafield#metafield-access-metafields).\n\nMetafields support [multiple data types](/apps/metafields/types), which determine the kind of information that's stored\nin the metafield. You can also output the metafield content in a type-specific format using\n[metafield filters](/docs/api/liquid/filters/metafield-filters).\n\n&gt; Note:\n&gt; You can't create metafields in Liquid. Metafields can be created in only the following ways:\n&gt;\n&gt; - [In the Shopify admin](https://help.shopify.com/manual/metafields)\n&gt; - [Through an app](https://shopify.dev/apps/metafields)\n\n&gt; Note:\n&gt; Metafields of type `integer`, `json_string`, and `string` are older implementations that don't have the properties\n  noted on this page, and aren't compatible with metafield filters. To learn more, refer to [Deprecated metafields](/docs/api/liquid/objects/metafield#metafield-deprecated-metafields).",
+    "description": "To learn about how to access a metafield on a specific object, refer to [Access metafields](/api/liquid/objects/metafield#metafield-access-metafields).\n\nMetafields support [multiple data types](/apps/metafields/types), which determine the kind of information that's stored\nin the metafield. You can also output the metafield content in a type-specific format using\n[metafield filters](/api/liquid/filters/metafield-filters).\n\n&gt; Note:\n&gt; You can't create metafields in Liquid. Metafields can be created in only the following ways:\n&gt;\n&gt; - [In the Shopify admin](https://help.shopify.com/manual/metafields)\n&gt; - [Through an app](https://shopify.dev/apps/metafields)\n\n&gt; Note:\n&gt; Metafields of type `integer`, `json_string`, and `string` are older implementations that don't have the properties\n  noted on this page, and aren't compatible with metafield filters. To learn more, refer to [Deprecated metafields](/api/liquid/objects/metafield#metafield-deprecated-metafields).",
     "properties": [
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/docs/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/docs/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/docs/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
+        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/basics#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
         "examples": [
 
         ],
@@ -8878,7 +8878,7 @@
       },
       {
         "name": "Deprecated metafields",
-        "description": "Deprecated metafields are older metafield types with limited functionality. The following metafield types are deprecated:\n\n- `integer`\n- `json_string`\n- `string`\n\nThese metafield types don't have the same metafield object properties mentioned in the previous sections. Instead, they return the metafield value directly.\n\nThe following table outlines the value type for each deprecated metafield type:\n\n| Metafield type | Value type |\n| --- | --- |\n| `integer` | [An integer](/docs/api/liquid/basics#number) |\n| `json_string` | [A JSON object](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) |\n| `string` | [A string](/docs/api/liquid/basics#string) |\n",
+        "description": "Deprecated metafields are older metafield types with limited functionality. The following metafield types are deprecated:\n\n- `integer`\n- `json_string`\n- `string`\n\nThese metafield types don't have the same metafield object properties mentioned in the previous sections. Instead, they return the metafield value directly.\n\nThe following table outlines the value type for each deprecated metafield type:\n\n| Metafield type | Value type |\n| --- | --- |\n| `integer` | [An integer](/api/liquid/basics#number) |\n| `json_string` | [A JSON object](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) |\n| `string` | [A string](/api/liquid/basics#string) |\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "",
@@ -8908,7 +8908,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "One or more corresponding [`metaobject`](/docs/api/liquid/objects#metaobject) objects contain values for\nthe fields specified in the metaobject definition.",
+    "description": "One or more corresponding [`metaobject`](/api/liquid/objects#metaobject) objects contain values for\nthe fields specified in the metaobject definition.",
     "properties": [
       {
         "deprecated": false,
@@ -8925,7 +8925,7 @@
             "array_value": "metaobject"
           }
         ],
-        "summary": "The [metaobjects](/docs/api/liquid/objects#metaobject) that follow the definition.",
+        "summary": "The [metaobjects](/api/liquid/objects#metaobject) that follow the definition.",
         "name": "values"
       },
       {
@@ -9001,12 +9001,12 @@
         "name": "system"
       }
     ],
-    "summary": "A metaobject entry, which includes the values for a set of [fields](/docs/api/liquid/objects#metafield).\nThe set is defined by the parent [`metaobject_definition`](/docs/api/liquid/objects#metaobject_definition).",
+    "summary": "A metaobject entry, which includes the values for a set of [fields](/api/liquid/objects#metafield).\nThe set is defined by the parent [`metaobject_definition`](/api/liquid/objects#metaobject_definition).",
     "name": "metaobject",
     "examples": [
       {
         "name": "Access metaobjects individually",
-        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/docs/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ shop.metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.testimonials.homepage.title }}\n{{ shop.metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
+        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ shop.metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.testimonials.homepage.title }}\n{{ shop.metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -9039,7 +9039,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use the [`model_viewer_tag` filter](/docs/api/liquid/filters/model_viewer_tag) to output a [Google model viewer component](https://modelviewer.dev)\n&gt; for the model.",
+    "description": "&gt; Tip:\n&gt; Use the [`model_viewer_tag` filter](/api/liquid/filters/model_viewer_tag) to output a [Google model viewer component](https://modelviewer.dev)\n&gt; for the model.",
     "properties": [
       {
         "deprecated": false,
@@ -9102,7 +9102,7 @@
         "examples": [
           {
             "name": "Filter for media of a specific type",
-            "description": "You can use the `media_type` property with the [`where` filter](/docs/api/liquid/filters/where) to filter the [`product.media` array](/docs/api/liquid/objects/product#product-media) for all media of a desired type.\n",
+            "description": "You can use the `media_type` property with the [`where` filter](/api/liquid/filters/where) to filter the [`product.media` array](/api/liquid/objects/product#product-media) for all media of a desired type.\n",
             "syntax": "",
             "path": "/products/potion-bottle",
             "raw_liquid": "{% assign models = product.media | where: 'media_type', 'model' %}\n\n{% for model in models %}\n  {{- model | model_viewer_tag }}\n{% endfor %}",
@@ -9137,7 +9137,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The position of the model in the [`product.media`](/docs/api/liquid/objects/product#product-media) array.",
+        "summary": "The position of the model in the [`product.media`](/api/liquid/objects/product#product-media) array.",
         "name": "position"
       },
       {
@@ -9274,7 +9274,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+    "description": "&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
     "properties": [
       {
         "deprecated": false,
@@ -9345,7 +9345,7 @@
     "properties": [
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because not all discount types and details are captured.\n\nThe `order.discounts` property has been replaced by [`order.discount_applications`](/docs/api/liquid/objects/order#order-discount_applications).",
+        "deprecation_reason": "Deprecated because not all discount types and details are captured.\n\nThe `order.discounts` property has been replaced by [`order.discount_applications`](/api/liquid/objects/order#order-discount_applications).",
         "description": "",
         "examples": [
 
@@ -9445,7 +9445,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The localized version of the [cancellation reason](/docs/api/liquid/objects/order#order-cancel_reason) for the order.",
+        "summary": "The localized version of the [cancellation reason](/api/liquid/objects/order#order-cancel_reason) for the order.",
         "name": "cancel_reason_label"
       },
       {
@@ -9469,7 +9469,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -9505,7 +9505,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -9523,7 +9523,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there are no duties, then `nil` is returned. The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "If there are no duties, then `nil` is returned. The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -9595,7 +9595,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -9613,7 +9613,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The amount is calculated after refunds are applied, so is equal to `order.total_price` minus `order.total_refunded_amount`.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The amount is calculated after refunds are applied, so is equal to `order.total_price` minus `order.total_refunded_amount`.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -9631,7 +9631,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -9649,7 +9649,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -9758,7 +9758,7 @@
         "return_type": [
 
         ],
-        "summary": "The localized version of the [financial status](/docs/api/liquid/objects/order#order-financial_status) of the order.",
+        "summary": "The localized version of the [financial status](/api/liquid/objects/order#order-financial_status) of the order.",
         "name": "financial_status_label"
       },
       {
@@ -9818,7 +9818,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The localized version of the [fulfillment status](/docs/api/liquid/objects/order#order-fulfillment_status) of the order.",
+        "summary": "The localized version of the [fulfillment status](/api/liquid/objects/order#order-fulfillment_status) of the order.",
         "name": "fulfillment_status_label"
       },
       {
@@ -9854,7 +9854,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the order.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the order.",
         "name": "metafields"
       },
       {
@@ -9908,7 +9908,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The integer representation of the order [name](/docs/api/liquid/objects/order#order-name).",
+        "summary": "The integer representation of the order [name](/api/liquid/objects/order#order-name).",
         "name": "order_number"
       },
       {
@@ -10076,7 +10076,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; These line items are used to calculate the the [subtotal price](/docs/api/liquid/objects/order#order-subtotal_price).",
+        "description": "&gt; Note:\n&gt; These line items are used to calculate the the [subtotal price](/api/liquid/objects/order#order-subtotal_price).",
         "examples": [
 
         ],
@@ -10130,7 +10130,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10148,7 +10148,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10160,13 +10160,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The sum of the prices of the [subtotal line items](/docs/api/liquid/objects/order#order-subtotal_line_items) in the currency's subunit, after any line item or\ncart discounts have been applied.",
+        "summary": "The sum of the prices of the [subtotal line items](/api/liquid/objects/order#order-subtotal_line_items) in the currency's subunit, after any line item or\ncart discounts have been applied.",
         "name": "subtotal_price"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The total price is calculated before refunds are applied. Use [`order.total_net_amount`](/docs/api/liquid/objects/order#order-total_net_amount)\n&gt; to output the total minus any refunds.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; The total price is calculated before refunds are applied. Use [`order.total_net_amount`](/api/liquid/objects/order#order-total_net_amount)\n&gt; to output the total minus any refunds.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10184,7 +10184,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10286,7 +10286,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the page.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the page.",
         "name": "handle"
       },
       {
@@ -10376,13 +10376,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the page.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the page.",
         "name": "metafields"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -10424,7 +10424,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use the [`default_pagination` filter](/docs/api/liquid/filters/default_pagination) to output pagination links.",
+    "description": "&gt; Tip:\n&gt; Use the [`default_pagination` filter](/api/liquid/filters/default_pagination) to output pagination links.",
     "properties": [
       {
         "deprecated": false,
@@ -10589,7 +10589,7 @@
         "name": "page_param"
       }
     ],
-    "summary": "Information about the pagination inside a set of [`paginate` tags](/docs/api/liquid/tags/paginate).",
+    "summary": "Information about the pagination inside a set of [`paginate` tags](/api/liquid/tags/paginate).",
     "name": "paginate",
     "examples": [
 
@@ -10638,7 +10638,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "You can check whether any resources of a specific type were returned using the [`size` filter](/docs/api/liquid/filters/size).\n\n```liquid\n{% if predictive_search.resources.articles.size &gt; 0 %}\n  {% for article in predictive_search.resources.articles %}\n    {{ article.title }}\n  {% endfor %}\n{% endif %}\n```",
+        "description": "You can check whether any resources of a specific type were returned using the [`size` filter](/api/liquid/filters/size).\n\n```liquid\n{% if predictive_search.resources.articles.size &gt; 0 %}\n  {% for article in predictive_search.resources.articles %}\n    {{ article.title }}\n  {% endfor %}\n{% endif %}\n```",
         "examples": [
 
         ],
@@ -10656,7 +10656,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`highlight` filter](/docs/api/liquid/filters/highlight) to highlight the search terms in search results content.",
+        "description": "&gt; Tip:\n&gt; Use the [`highlight` filter](/api/liquid/filters/highlight) to highlight the search terms in search results content.",
         "examples": [
 
         ],
@@ -10674,7 +10674,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Searches can be performed on the following object types:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`page`](/docs/api/liquid/objects/page)\n- [`product`](/docs/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the [`types` query parameter](/api/ajax/reference/predictive-search#query-parameters).",
+        "description": "Searches can be performed on the following object types:\n\n- [`article`](/api/liquid/objects/article)\n- [`collection`](/api/liquid/objects/collection)\n- [`page`](/api/liquid/objects/page)\n- [`product`](/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the [`types` query parameter](/api/ajax/reference/predictive-search#query-parameters).",
         "examples": [
 
         ],
@@ -10754,7 +10754,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The 1-based index of the price adjustment in the [`selling_plan.price_adjustments` array](/docs/api/liquid/objects/selling_plan#selling_plan-price_adjustments).",
+        "summary": "The 1-based index of the price adjustment in the [`selling_plan.price_adjustments` array](/api/liquid/objects/selling_plan#selling_plan-price_adjustments).",
         "name": "position"
       },
       {
@@ -10790,7 +10790,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/selling_plan_price_adjustment#selling_plan_price_adjustment-value_type) of\nthe price adjustment. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount that the original price is being adjusted by, in the currency's subunit. |\n| `percentage` | The percent amount that the original price is being adjusted by. |\n| `price` | The adjusted amount in the currency's subunit. |\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "How this value is interpreted depends on the [value type](/api/liquid/objects/selling_plan_price_adjustment#selling_plan_price_adjustment-value_type) of\nthe price adjustment. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount that the original price is being adjusted by, in the currency's subunit. |\n| `percentage` | The percent amount that the original price is being adjusted by. |\n| `price` | The adjusted amount in the currency's subunit. |\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -10916,7 +10916,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the product.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the product.",
         "name": "metafields"
       },
       {
@@ -10988,7 +10988,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the product.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the product.",
         "name": "handle"
       },
       {
@@ -11030,7 +11030,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.content`](/docs/api/liquid/objects/product#product-content).",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.content`](/api/liquid/objects/product#product-content).",
         "examples": [
 
         ],
@@ -11048,7 +11048,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.description`](/docs/api/liquid/objects/product#product-description).",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.description`](/api/liquid/objects/product#product-description).",
         "examples": [
 
         ],
@@ -11084,7 +11084,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; You can use [media filters](/docs/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
+        "description": "&gt; Tip:\n&gt; You can use [media filters](/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
         "examples": [
 
         ],
@@ -11102,7 +11102,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; You can use [media filters](/docs/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
+        "description": "&gt; Tip:\n&gt; You can use [media filters](/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
         "examples": [
 
         ],
@@ -11120,7 +11120,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.price`](/docs/api/liquid/objects/product#product-price).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.price`](/api/liquid/objects/product#product-price).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11138,7 +11138,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.price_min`](/docs/api/liquid/objects/product#product-price_min).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.price_min`](/api/liquid/objects/product#product-price_min).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11156,7 +11156,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11286,7 +11286,7 @@
         "examples": [
           {
             "name": "Output the options",
-            "description": "You can use the [`size` filter](/docs/api/liquid/filters/size) with dot notation to determine how many options a product has.\n",
+            "description": "You can use the [`size` filter](/api/liquid/filters/size) with dot notation to determine how many options a product has.\n",
             "syntax": "",
             "path": "/products/health-potion",
             "raw_liquid": "{% if product.options.size &gt; 0 -%}\n  {% for option in product.options -%}\n    - {{ option }}\n  {%- endfor %}\n{%- endif %}",
@@ -11327,7 +11327,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11345,7 +11345,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11363,7 +11363,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11435,7 +11435,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -11453,7 +11453,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -11492,7 +11492,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Allows you to access a specific [product option](/docs/api/liquid/objects/product_option) by its name.",
+        "summary": "Allows you to access a specific [product option](/api/liquid/objects/product_option) by its name.",
         "name": "options_by_name"
       },
       {
@@ -11516,7 +11516,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; A variant requires a selling plan if [`variant.requires_selling_plan`](/docs/api/liquid/objects/variant#variant-requires_selling_plan)\n&gt; is `true`.",
+        "description": "&gt; Note:\n&gt; A variant requires a selling plan if [`variant.requires_selling_plan`](/api/liquid/objects/variant#variant-requires_selling_plan)\n&gt; is `true`.",
         "examples": [
 
         ],
@@ -11686,7 +11686,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The 1-based index of the product option in the [`product.options_with_values` array](/docs/api/liquid/objects/product#product-options_with_values).",
+        "summary": "The 1-based index of the product option in the [`product.options_with_values` array](/api/liquid/objects/product#product-options_with_values).",
         "name": "position"
       },
       {
@@ -11788,7 +11788,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the variant.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the variant.",
         "name": "metafields"
       },
       {
@@ -11911,7 +11911,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11929,7 +11929,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12058,7 +12058,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The values of the variant for each [product option](/docs/api/liquid/objects/product_option).",
+        "summary": "The values of the variant for each [product option](/api/liquid/objects/product_option).",
         "name": "options"
       },
       {
@@ -12136,7 +12136,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; To output the weight of a variant in this unit, use this property, and the `variant.weight_in_unit` property, with the\n&gt; [`weight_with_unit` filter](/docs/api/liquid/filters/weight_with_unit).",
+        "description": "&gt; Tip:\n&gt; To output the weight of a variant in this unit, use this property, and the `variant.weight_in_unit` property, with the\n&gt; [`weight_with_unit` filter](/api/liquid/filters/weight_with_unit).",
         "examples": [
 
         ],
@@ -12154,7 +12154,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; To output this weight, use this property, and the `variant.weight_unit` property, with the [`weight_with_unit` filter](/docs/api/liquid/filters/weight_with_unit).",
+        "description": "&gt; Tip:\n&gt; To output this weight, use this property, and the `variant.weight_unit` property, with the [`weight_with_unit` filter](/api/liquid/filters/weight_with_unit).",
         "examples": [
 
         ],
@@ -12172,7 +12172,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`weight_with_unit` filter](/docs/api/liquid/filters/weight_with_unit) filter to format the weight in\n&gt; [the store's format](https://www.shopify.com/admin/settings/general).\n&gt;\n&gt; Use `variant.weight_in_unit` to output the weight in the unit configured on the variant.",
+        "description": "&gt; Tip:\n&gt; Use the [`weight_with_unit` filter](/api/liquid/filters/weight_with_unit) filter to format the weight in\n&gt; [the store's format](https://www.shopify.com/admin/settings/general).\n&gt;\n&gt; Use `variant.weight_in_unit` to output the weight in the unit configured on the variant.",
         "examples": [
 
         ],
@@ -12208,7 +12208,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12322,7 +12322,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`variant.image`](/docs/api/liquid/objects/variant#variant-image).",
+        "description": "&gt; Note:\n&gt; This is the same value as [`variant.image`](/api/liquid/objects/variant#variant-image).",
         "examples": [
 
         ],
@@ -12340,7 +12340,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`variant.featured_image`](/docs/api/liquid/objects/variant#variant-featured_image).",
+        "description": "&gt; Note:\n&gt; This is the same value as [`variant.featured_image`](/api/liquid/objects/variant#variant-featured_image).",
         "examples": [
 
         ],
@@ -12394,7 +12394,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Incoming inventory information is populated by [inventory transfers](https://help.shopify.com/manual/products/inventory/transfers).\n\n&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the date.",
+        "description": "Incoming inventory information is populated by [inventory transfers](https://help.shopify.com/manual/products/inventory/transfers).\n\n&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the date.",
         "examples": [
 
         ],
@@ -12581,7 +12581,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If `performed?` is `false`, then an [EmptyDrop](/docs/api/liquid/basics#emptydrop) is returned.",
+        "description": "If `performed?` is `false`, then an [EmptyDrop](/api/liquid/basics#emptydrop) is returned.",
         "examples": [
 
         ],
@@ -13534,7 +13534,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`highlight` filter](/docs/api/liquid/filters/highlight) to highlight the search terms in search result content.",
+        "description": "&gt; Tip:\n&gt; Use the [`highlight` filter](/api/liquid/filters/highlight) to highlight the search terms in search result content.",
         "examples": [
 
         ],
@@ -13588,7 +13588,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "An item can be an [`article`](/docs/api/liquid/objects/article), a [`page`](/docs/api/liquid/objects/page), or a\n[`product`](/docs/api/liquid/objects/product).\n\n&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many results to show per page, up to a limit of 50.",
+        "description": "An item can be an [`article`](/api/liquid/objects/article), a [`page`](/api/liquid/objects/page), or a\n[`product`](/api/liquid/objects/product).\n\n&gt; Tip:\n&gt; Use the [paginate](/api/liquid/tags/paginate) tag to choose how many results to show per page, up to a limit of 50.",
         "examples": [
           {
             "name": "Search result `object_type`",
@@ -13691,7 +13691,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A search can be performed on the following object types:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`page`](/docs/api/liquid/objects/page)\n- [`product`](/docs/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the `types` URL parameter.",
+        "description": "A search can be performed on the following object types:\n\n- [`article`](/api/liquid/objects/article)\n- [`page`](/api/liquid/objects/page)\n- [`product`](/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the `types` URL parameter.",
         "examples": [
 
         ],
@@ -13840,7 +13840,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -13858,7 +13858,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value of the **compare at** price is the line item's price without the selling plan applied. If the price and compare\nat price are equal, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value of the **compare at** price is the line item's price without the selling plan applied. If the price and compare\nat price are equal, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -13876,7 +13876,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The maximum length of the array is two. If the associated selling plan doesn't create any price adjustments, then the\narray is empty.\n\nEach `selling_plan_allocation_price_adjustment` maps to a [`selling_plan_price_adjustment`](/docs/api/liquid/objects/selling_plan_price_adjustment)\nin the [`selling_plan.price_adjustments` array](/docs/api/liquid/objects/selling_plan#selling_plan-price_adjustments). The\n`selling_plan.price_adjustments` array contains the intent of the selling plan, and the\n`selling_plan_allocation.price_adjustments` array contains the resulting money amounts.",
+        "description": "The maximum length of the array is two. If the associated selling plan doesn't create any price adjustments, then the\narray is empty.\n\nEach `selling_plan_allocation_price_adjustment` maps to a [`selling_plan_price_adjustment`](/api/liquid/objects/selling_plan_price_adjustment)\nin the [`selling_plan.price_adjustments` array](/api/liquid/objects/selling_plan#selling_plan-price_adjustments). The\n`selling_plan.price_adjustments` array contains the intent of the selling plan, and the\n`selling_plan_allocation.price_adjustments` array contains the resulting money amounts.",
         "examples": [
 
         ],
@@ -13894,7 +13894,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If the variant doesn't have a unit price, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "If the variant doesn't have a unit price, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -13906,13 +13906,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The [unit price](/docs/api/liquid/objects/variant#variant-unit_price) of the variant associated with the selling plan, in the currency's subunit.",
+        "summary": "The [unit price](/api/liquid/objects/variant#variant-unit_price) of the variant associated with the selling plan, in the currency's subunit.",
         "name": "unit_price"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If a selling plan includes multiple deliveries, then the `per_delivery_price` is the `price` divided by the number of\ndeliveries.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "If a selling plan includes multiple deliveries, then the `per_delivery_price` is the `price` divided by the number of\ndeliveries.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -13960,13 +13960,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The ID of the [`selling_plan_group`](/docs/api/liquid/objects/selling_plan_group) that the selling plan of the allocation belongs to.",
+        "summary": "The ID of the [`selling_plan_group`](/api/liquid/objects/selling_plan_group) that the selling plan of the allocation belongs to.",
         "name": "selling_plan_group_id"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -13984,7 +13984,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14046,13 +14046,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The 1-based index of the price adjustment in the\n[`selling_plan_allocation.price_adjustments` array](/docs/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments).",
+        "summary": "The 1-based index of the price adjustment in the\n[`selling_plan_allocation.price_adjustments` array](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments).",
         "name": "position"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14068,7 +14068,7 @@
         "name": "price"
       }
     ],
-    "summary": "The resulting price from the intent of the associated [`selling_plan_price_adjustment`](/docs/api/liquid/objects/selling_plan_price_adjustment).",
+    "summary": "The resulting price from the intent of the associated [`selling_plan_price_adjustment`](/api/liquid/objects/selling_plan_price_adjustment).",
     "name": "selling_plan_allocation_price_adjustment",
     "examples": [
 
@@ -14134,7 +14134,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/selling_plan_checkout_charge#selling_plan_checkout_charge-value_type) of\nthe checkout charge. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `percentage` | The percent amount of the original price that the customer needs to pay.&lt;br&gt;&lt;br&gt;For example, if the value is 50, then the customer needs to pay 50% of the original price. |\n| `price` | The amount that the customer needs to pay in the currency's subunit. |\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "How this value is interpreted depends on the [value type](/api/liquid/objects/selling_plan_checkout_charge#selling_plan_checkout_charge-value_type) of\nthe checkout charge. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `percentage` | The percent amount of the original price that the customer needs to pay.&lt;br&gt;&lt;br&gt;For example, if the value is 50, then the customer needs to pay 50% of the original price. |\n| `price` | The amount that the customer needs to pay in the currency's subunit. |\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14262,7 +14262,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The ID of the [`selling_plan_group`](/docs/api/liquid/objects/selling_plan_group) that the selling plan belongs to.",
+        "summary": "The ID of the [`selling_plan_group`](/api/liquid/objects/selling_plan_group) that the selling plan belongs to.",
         "name": "group_id"
       },
       {
@@ -14304,7 +14304,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The maximum length of the array is two. If the selling plan doesn't create any price adjustments, then the\narray is empty.\n\nEach `selling_plan_price_adjustment` maps to a [`selling_plan_allocation_price_adjustment`](/docs/api/liquid/objects/selling_plan_allocation_price_adjustment)\nin the [`selling_plan_allocation.price_adjustments` array](/docs/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments).\nThe `selling_plan.price_adjustments` array contains the intent of the selling plan, and the\n`selling_plan_allocation.price_adjustments` contains the resulting money amounts.",
+        "description": "The maximum length of the array is two. If the selling plan doesn't create any price adjustments, then the\narray is empty.\n\nEach `selling_plan_price_adjustment` maps to a [`selling_plan_allocation_price_adjustment`](/api/liquid/objects/selling_plan_allocation_price_adjustment)\nin the [`selling_plan_allocation.price_adjustments` array](/api/liquid/objects/selling_plan_allocation#selling_plan_allocation-price_adjustments).\nThe `selling_plan.price_adjustments` array contains the intent of the selling plan, and the\n`selling_plan_allocation.price_adjustments` contains the resulting money amounts.",
         "examples": [
 
         ],
@@ -14385,7 +14385,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Selling plans are grouped based on shared [selling plan option names](/docs/api/liquid/objects/selling_plan_option#selling_plan_option-name).\n\nTo learn about how to support selling plans in your theme, refer to [Purchase options](/themes/pricing-payments/purchase-options).",
+    "description": "Selling plans are grouped based on shared [selling plan option names](/api/liquid/objects/selling_plan_option#selling_plan_option-name).\n\nTo learn about how to support selling plans in your theme, refer to [Purchase options](/themes/pricing-payments/purchase-options).",
     "properties": [
       {
         "deprecated": false,
@@ -14444,7 +14444,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If the app doesn't provide a value, then `nil` is returned.\n\n&gt; Tip:\n&gt; You can use this property, with the [`where` filter](/docs/api/liquid/filters/where), to filter the\n&gt; [`product.selling_plan_groups` array](/docs/api/liquid/objects/product#product-selling_plan_groups) for all selling plan groups\n&gt; from a specific app.",
+        "description": "If the app doesn't provide a value, then `nil` is returned.\n\n&gt; Tip:\n&gt; You can use this property, with the [`where` filter](/api/liquid/filters/where), to filter the\n&gt; [`product.selling_plan_groups` array](/api/liquid/objects/product#product-selling_plan_groups) for all selling plan groups\n&gt; from a specific app.",
         "examples": [
 
         ],
@@ -14560,7 +14560,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The 1-based index of the option in the [`selling_plan_group.options` array](/docs/api/liquid/objects/selling_plan_group#selling_plan_group-options).",
+        "summary": "The 1-based index of the option in the [`selling_plan_group.options` array](/api/liquid/objects/selling_plan_group#selling_plan_group-options).",
         "name": "position"
       },
       {
@@ -14600,7 +14600,7 @@
         "name": "selected_value"
       }
     ],
-    "summary": "Information about a specific option in a [selling plan group](/docs/api/liquid/objects/selling_plan_group).",
+    "summary": "Information about a specific option in a [selling plan group](/api/liquid/objects/selling_plan_group).",
     "name": "selling_plan_group_option",
     "examples": [
 
@@ -14664,13 +14664,13 @@
             "array_value": ""
           }
         ],
-        "summary": "The 1-based index of the selling plan option in the associated [`selling_plan_group.options` array](/docs/api/liquid/objects/selling_plan_group#selling_plan_group-options).",
+        "summary": "The 1-based index of the selling plan option in the associated [`selling_plan_group.options` array](/api/liquid/objects/selling_plan_group#selling_plan_group-options).",
         "name": "position"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is one of the [`selling_plan_group_option.values`](/docs/api/liquid/objects/selling_plan_group_option#selling_plan_group_option-values).",
+        "description": "The value is one of the [`selling_plan_group_option.values`](/api/liquid/objects/selling_plan_group_option#selling_plan_group_option-values).",
         "examples": [
 
         ],
@@ -14686,7 +14686,7 @@
         "name": "value"
       }
     ],
-    "summary": "Information about a selling plan's value for a specific [`selling_plan_group_option`](/docs/api/liquid/objects/selling_plan_group_option).",
+    "summary": "Information about a selling plan's value for a specific [`selling_plan_group_option`](/api/liquid/objects/selling_plan_group_option).",
     "name": "selling_plan_option",
     "examples": [
 
@@ -14724,7 +14724,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "In most contexts, the shipping method title appears in the customer's preferred language. However, in the context of an\n[order](/docs/api/liquid/objects/order), the shipping method title appears in the language that the customer checked out in.",
+        "description": "In most contexts, the shipping method title appears in the customer's preferred language. However, in the context of an\n[order](/api/liquid/objects/order), the shipping method title appears in the language that the customer checked out in.",
         "examples": [
 
         ],
@@ -14742,7 +14742,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14760,7 +14760,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14790,7 +14790,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handle](/docs/api/liquid/basics#handles) of the shipping method.",
+        "summary": "The [handle](/api/liquid/basics#handles) of the shipping method.",
         "name": "handle"
       },
       {
@@ -14933,7 +14933,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; You can get the store's currency with [`shop.currency`](/docs/api/liquid/objects/shop#shop-currency).",
+        "description": "&gt; Tip:\n&gt; You can get the store's currency with [`shop.currency`](/api/liquid/objects/shop#shop-currency).",
         "examples": [
 
         ],
@@ -14968,7 +14968,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because the name didn't make it clear that the returned locales were published.\n\nThe `shop.enabled_locales` property has been replaced by [`shop.published_locales`](/docs/api/liquid/objects/shop#shop-published_locales).",
+        "deprecation_reason": "Deprecated because the name didn't make it clear that the returned locales were published.\n\nThe `shop.enabled_locales` property has been replaced by [`shop.published_locales`](/api/liquid/objects/shop#shop-published_locales).",
         "description": "",
         "examples": [
 
@@ -14992,7 +14992,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because this value is contextual to the request and not a property of the shop resource.\n\nThe `shop.locale` property has been replaced by [request.locale](/docs/api/liquid/objects/request#request-locale).",
+        "deprecation_reason": "Deprecated because this value is contextual to the request and not a property of the shop resource.\n\nThe `shop.locale` property has been replaced by [request.locale](/api/liquid/objects/request#request-locale).",
         "description": "",
         "examples": [
 
@@ -15252,13 +15252,13 @@
         "return_type": [
 
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the store.",
+        "summary": "The [metafields](/api/liquid/objects/metafield) applied to the store.",
         "name": "metafields"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The payment types are based on the store's enabled [payment providers](https://help.shopify.com/manual/payments) and\nthe customer's current region and currency.\n\n&gt; Tip:\n&gt; You can output an `svg` logo for each payment type with the [`payment_type_svg_tag` filter](/docs/api/liquid/filters/payment_type_svg_tag).\n&gt; Alternatively, you can get the source URL for each `svg` with the [`payment_type_img_url` filter](/docs/api/liquid/filters/payment_type_img_url).",
+        "description": "The payment types are based on the store's enabled [payment providers](https://help.shopify.com/manual/payments) and\nthe customer's current region and currency.\n\n&gt; Tip:\n&gt; You can output an `svg` logo for each payment type with the [`payment_type_svg_tag` filter](/api/liquid/filters/payment_type_svg_tag).\n&gt; Alternatively, you can get the source URL for each `svg` with the [`payment_type_img_url` filter](/api/liquid/filters/payment_type_img_url).",
         "examples": [
 
         ],
@@ -15275,7 +15275,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because whether or not prices have taxes included is dependent on the customer's country.\n\nThe `shop.taxes_included` property has been replaced by [cart.taxes_included](/docs/api/liquid/objects/cart#cart-taxes_included).",
+        "deprecation_reason": "Deprecated because whether or not prices have taxes included is dependent on the customer's country.\n\nThe `shop.taxes_included` property has been replaced by [cart.taxes_included](/api/liquid/objects/cart#cart-taxes_included).",
         "description": "",
         "examples": [
 
@@ -15519,14 +15519,14 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Metaobjects can only be accessed by specifying their type and handle. For more information, refer to [Access metaobjects individually](/docs/api/liquid/objects#metaobject-access-metaobjects-individually).\n\nMetaobjects are created in the [Content](https://www.shopify.com/admin/content) page of the Shopify admin.",
+        "description": "Metaobjects can only be accessed by specifying their type and handle. For more information, refer to [Access metaobjects individually](/api/liquid/objects#metaobject-access-metaobjects-individually).\n\nMetaobjects are created in the [Content](https://www.shopify.com/admin/content) page of the Shopify admin.",
         "examples": [
 
         ],
         "return_type": [
 
         ],
-        "summary": "All of the [metaobjects](/docs/api/liquid/objects/metaobject) of the store.",
+        "summary": "All of the [metaobjects](/api/liquid/objects/metaobject) of the store.",
         "name": "metaobjects"
       }
     ],
@@ -15952,7 +15952,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -16445,7 +16445,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -16535,7 +16535,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [handleized](/docs/api/liquid/basics#modifying-handles) name of the payment provider used for the transaction.",
+        "summary": "The [handleized](/api/liquid/basics#modifying-handles) name of the payment provider used for the transaction.",
         "name": "gateway"
       },
       {
@@ -16577,7 +16577,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The amount is in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The amount is in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -16763,7 +16763,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The unit of measurement used to measure the [`quantity_value`](/docs/api/liquid/objects/unit_price_measurement#unit_price_measurement-quantity_value).",
+        "summary": "The unit of measurement used to measure the [`quantity_value`](/api/liquid/objects/unit_price_measurement#unit_price_measurement-quantity_value).",
         "name": "quantity_unit"
       },
       {
@@ -16799,7 +16799,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The unit of measurement used to measure the [`reference_value`](/docs/api/liquid/objects/unit_price_measurement#unit_price_measurement-reference_value).",
+        "summary": "The unit of measurement used to measure the [`reference_value`](/api/liquid/objects/unit_price_measurement#unit_price_measurement-reference_value).",
         "name": "reference_unit"
       }
     ],
@@ -17012,7 +17012,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; Use the [`video_tag` filter](/docs/api/liquid/filters/video_tag) to output the video in an HTML `&lt;video&gt;` tag.",
+    "description": "&gt; Tip:\n&gt; Use the [`video_tag` filter](/api/liquid/filters/video_tag) to output the video in an HTML `&lt;video&gt;` tag.",
     "properties": [
       {
         "deprecated": false,
@@ -17111,7 +17111,7 @@
         "examples": [
           {
             "name": "Filter for media of a specific type",
-            "description": "You can use the `media_type` property with the [`where` filter](/docs/api/liquid/filters/where) to filter the [`product.media` array](/docs/api/liquid/objects/product#product-media) for all media of a desired type.\n",
+            "description": "You can use the `media_type` property with the [`where` filter](/api/liquid/filters/where) to filter the [`product.media` array](/api/liquid/objects/product#product-media) for all media of a desired type.\n",
             "syntax": "",
             "path": "/products/potion-beats",
             "raw_liquid": "{% assign videos = product.media | where: 'media_type', 'video' %}\n\n{% for video in videos %}\n  {{- video | video_tag }}\n{% endfor %}",
@@ -17146,7 +17146,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The position of the video in the [`product.media`](/docs/api/liquid/objects/product#product-media) array.",
+        "summary": "The position of the video in the [`product.media`](/api/liquid/objects/product#product-media) array.",
         "name": "position"
       },
       {
@@ -17168,7 +17168,7 @@
         "name": "preview_image"
       }
     ],
-    "summary": "Information about a video uploaded as [product media](/docs/api/liquid/objects/product-media) or a [`file_reference` metafield](/apps/metafields/types).",
+    "summary": "Information about a video uploaded as [product media](/api/liquid/objects/product-media) or a [`file_reference` metafield](/apps/metafields/types).",
     "name": "video",
     "examples": [
 
@@ -17328,7 +17328,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Use `additional_checkout_buttons` to check whether these payment providers exist, and\n[`content_for_additional_checkout_buttons`](/docs/api/liquid/objects/content_for_additional_checkout_buttons)\nto show the associated checkout buttons. To learn more about how to use these objects, refer to\n[Accelerated checkout](/themes/pricing-payments/accelerated-checkout).\n\n```liquid\n{% if additional_checkout_buttons %}\n  {{ content_for_additional_checkout_buttons }}\n{% endif %}\n```",
+    "description": "Use `additional_checkout_buttons` to check whether these payment providers exist, and\n[`content_for_additional_checkout_buttons`](/api/liquid/objects/content_for_additional_checkout_buttons)\nto show the associated checkout buttons. To learn more about how to use these objects, refer to\n[Accelerated checkout](/themes/pricing-payments/accelerated-checkout).\n\n```liquid\n{% if additional_checkout_buttons %}\n  {{ content_for_additional_checkout_buttons }}\n{% endif %}\n```",
     "properties": [
 
     ],
@@ -17363,7 +17363,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "An attribute called `data-provinces` is set for each `&lt;option&gt;`, and contains a JSON-encoded array of the\ncountry or region's subregions. If a country doesn't have any subregions, then an empty array is set for\nits `data-provinces` attribute.\n\n&gt; Tip:\n&gt; To return only the countries and regions included in the store's shipping zones, use the [`country_option_tags` object](/docs/api/liquid/objects/country_option_tags).",
+    "description": "An attribute called `data-provinces` is set for each `&lt;option&gt;`, and contains a JSON-encoded array of the\ncountry or region's subregions. If a country doesn't have any subregions, then an empty array is set for\nits `data-provinces` attribute.\n\n&gt; Tip:\n&gt; To return only the countries and regions included in the store's shipping zones, use the [`country_option_tags` object](/api/liquid/objects/country_option_tags).",
     "properties": [
 
     ],
@@ -17442,7 +17442,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can access the `checkout` object on the [order status page](https://help.shopify.com/manual/orders/status-tracking/customize-order-status).\n\n&gt; Plus:\n&gt; Shopify Plus merchants can access the `checkout` object in the [`checkout.liquid` layout](/themes/architecture/layouts/checkout#checkout-liquid).",
+    "description": "&gt; Deprecated:\n&gt; &lt;p&gt;The &lt;code&gt;checkout&lt;/code&gt; object will be deprecated for the Information, Shipping, and Payment pages on August 13, 2024. Merchants who have customized these pages using &lt;code&gt;checkout.liquid&lt;/code&gt; need to &lt;a href=\"https://help.shopify.com/manual/online-store/themes/theme-structure/extend/checkout-migration#migrate-to-checkout-extensibility\"&gt;upgrade to checkout extensibility&lt;/a&gt; before August 13, 2024.&lt;/p&gt;\n&gt; &lt;p&gt;Learn &lt;a href=\"/apps/checkout\"&gt;how to build checkout extensions&lt;/a&gt; that extend the functionality of Shopify checkout.&lt;/p&gt;\n\nYou can access the `checkout` object on the [order status page](https://help.shopify.com/manual/orders/status-tracking/customize-order-status).\n\nShopify Plus merchants can access the `checkout` object in the [`checkout.liquid` layout](/themes/architecture/layouts/checkout-liquid).",
     "properties": [
       {
         "deprecated": false,
@@ -17465,7 +17465,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Plus:\n&gt; Merchants that have access to `checkout.liquid` can [capture attributes at checkout](/themes/architecture/layouts/checkout-liquid#capture-checkout-attributes).",
+        "description": "Shopify Plus merchants that have access to `checkout.liquid` can [capture attributes at checkout](/themes/architecture/layouts/checkout-liquid#capture-checkout-attributes).",
         "examples": [
 
         ],
@@ -17477,7 +17477,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Additional attributes entered by the customer with the [cart](/docs/api/liquid/objects/cart#cart-attributes).",
+        "summary": "Additional attributes entered by the customer with the [cart](/api/liquid/objects/cart#cart-attributes).",
         "name": "attributes"
       },
       {
@@ -17608,7 +17608,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because not all discount types and details are captured.\n\nThe `checkout.discounts` property has been replaced by [`checkout.discount_applications`](/docs/api/liquid/objects/checkout#checkout-discount_applications).",
+        "deprecation_reason": "Deprecated because not all discount types and details are captured.\n\nThe `checkout.discounts` property has been replaced by [`checkout.discount_applications`](/api/liquid/objects/checkout#checkout-discount_applications).",
         "description": "",
         "examples": [
 
@@ -17645,7 +17645,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -17663,7 +17663,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -17771,7 +17771,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -17825,7 +17825,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -17843,7 +17843,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This value is the same as [`checkout.id`](/docs/api/liquid/objects/checkout#checkout-id) with a `#` prepended to it.",
+        "description": "This value is the same as [`checkout.id`](/api/liquid/objects/checkout#checkout-id) with a `#` prepended to it.",
         "examples": [
 
         ],
@@ -17873,7 +17873,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Additional information entered by the customer with the [cart](/docs/api/liquid/objects/cart#cart-note).",
+        "summary": "Additional information entered by the customer with the [cart](/api/liquid/objects/cart#cart-note).",
         "name": "note"
       },
       {
@@ -17897,7 +17897,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is the same as [`order.id`](/docs/api/liquid/objects/order#order-id).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "The value is the same as [`order.id`](/api/liquid/objects/order#order-id).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
         "examples": [
 
         ],
@@ -17915,7 +17915,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is the same as [`order.name`](/docs/api/liquid/objects/order#order-name).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "The value is the same as [`order.name`](/api/liquid/objects/order#order-name).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
         "examples": [
 
         ],
@@ -17933,7 +17933,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is the same as [`order.order_number`](/docs/api/liquid/objects/order#order-order_number).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "The value is the same as [`order.order_number`](/api/liquid/objects/order#order-order_number).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
         "examples": [
 
         ],
@@ -18005,7 +18005,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -18041,7 +18041,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -18059,7 +18059,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -18112,7 +18112,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because the array is always the same as [`checkout.line_items`](/docs/api/liquid/objects/checkout#checkout-line_items).",
+        "deprecation_reason": "Deprecated because the array is always the same as [`checkout.line_items`](/api/liquid/objects/checkout#checkout-line_items).",
         "description": "",
         "examples": [
 
@@ -18199,7 +18199,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -18253,7 +18253,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Outside of the Liquid context, the status of a comment can vary based on spam detection and whether blog comments are\nmoderated. However, only comments with a status of `published` are included in the [`article.comments` array](/docs/api/liquid/objects/article#article-comments).\n\n&gt; Tip:\n&gt; To learn more about blog comments, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/blogs/managing-comments).",
+        "description": "Outside of the Liquid context, the status of a comment can vary based on spam detection and whether blog comments are\nmoderated. However, only comments with a status of `published` are included in the [`article.comments` array](/api/liquid/objects/article#article-comments).\n\n&gt; Tip:\n&gt; To learn more about blog comments, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/blogs/managing-comments).",
         "examples": [
 
         ],
@@ -18271,7 +18271,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/api/liquid/filters/date) to format the timestamp.",
         "examples": [
 
         ],
@@ -18301,7 +18301,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The relative URL of the article that the comment is associated with, with [`comment.id`](/docs/api/liquid/objects/comment#comment-id)\nappended.",
+        "summary": "The relative URL of the article that the comment is associated with, with [`comment.id`](/api/liquid/objects/comment#comment-id)\nappended.",
         "name": "url"
       }
     ],
@@ -18331,7 +18331,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Use [`additional_checkout_buttons`](/docs/api/liquid/objects/additional_checkout_buttons)\nto check whether these payment providers exist, and `content_for_additional_checkout_buttons`\nto show the associated checkout buttons. To learn more about how to use these objects, refer to\n[Accelerated checkout](/themes/pricing-payments/accelerated-checkout).\n\n```liquid\n{% if additional_checkout_buttons %}\n  {{ content_for_additional_checkout_buttons }}\n{% endif %}\n```",
+    "description": "Use [`additional_checkout_buttons`](/api/liquid/objects/additional_checkout_buttons)\nto check whether these payment providers exist, and `content_for_additional_checkout_buttons`\nto show the associated checkout buttons. To learn more about how to use these objects, refer to\n[Accelerated checkout](/themes/pricing-payments/accelerated-checkout).\n\n```liquid\n{% if additional_checkout_buttons %}\n  {{ content_for_additional_checkout_buttons }}\n{% endif %}\n```",
     "properties": [
 
     ],
@@ -18436,7 +18436,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "An attribute called `data-provinces` is set for each `&lt;option&gt;`, and contains a JSON-encoded array of the\ncountry or region's subregions. If a country doesn't have any subregions, then an empty array is set for its\n`data-provinces` attribute.\n\n&gt; Tip:\n&gt; To return all countries and regions included in the store's shipping zones, use [`all_country_option_tags`](/docs/api/liquid/objects/all_country_option_tags).",
+    "description": "An attribute called `data-provinces` is set for each `&lt;option&gt;`, and contains a JSON-encoded array of the\ncountry or region's subregions. If a country doesn't have any subregions, then an empty array is set for its\n`data-provinces` attribute.\n\n&gt; Tip:\n&gt; To return all countries and regions included in the store's shipping zones, use [`all_country_option_tags`](/api/liquid/objects/all_country_option_tags).",
     "properties": [
 
     ],
@@ -18602,7 +18602,7 @@
         "name": "translated_fields"
       }
     ],
-    "summary": "The error category strings for errors from a form created by a [`form` tag](/docs/api/liquid/tags/form).",
+    "summary": "The error category strings for errors from a form created by a [`form` tag](/api/liquid/tags/form).",
     "name": "form_errors",
     "examples": [
       {
@@ -18646,7 +18646,7 @@
     "properties": [
 
     ],
-    "summary": "The [handle](/docs/api/liquid/basics#handles) of the resource associated with the current template.",
+    "summary": "The [handle](/api/liquid/basics#handles) of the resource associated with the current template.",
     "name": "handle",
     "examples": [
 
@@ -18867,7 +18867,7 @@
     "examples": [
       {
         "name": "Create pagination navigation with `part`",
-        "description": "You can create a pagination navigation by iterating over each `part` of a [`paginate` object](/docs/api/liquid/objects/paginate).\n",
+        "description": "You can create a pagination navigation by iterating over each `part` of a [`paginate` object](/api/liquid/objects/paginate).\n",
         "syntax": "",
         "path": "/collections/all",
         "raw_liquid": "{% paginate collection.products by 5 -%}\n  {% for part in paginate.parts -%}\n    {% if part.is_link -%}\n      {{ part.title | link_to: part.url}}\n    {%- else -%}\n      &lt;span&gt;{{ part.title }}&lt;/span&gt;\n    {% endif %}\n  {%- endfor %}\n{%- endpaginate %}",
@@ -19007,7 +19007,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can check whether any resources of a specific type were returned using the [`size` filter](/docs/api/liquid/filters/size).\n\n```liquid\n{% if predictive_search.resources.articles.size &gt; 0 %}\n  {% for article in predictive_search.resources.articles %}\n    {{ article.title }}\n  {% endfor %}\n{% endif %}\n```",
+    "description": "You can check whether any resources of a specific type were returned using the [`size` filter](/api/liquid/filters/size).\n\n```liquid\n{% if predictive_search.resources.articles.size &gt; 0 %}\n  {% for article in predictive_search.resources.articles %}\n    {{ article.title }}\n  {% endfor %}\n{% endif %}\n```",
     "properties": [
       {
         "deprecated": false,
@@ -19357,7 +19357,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This value is used when assigning the [`collection.sort_by`](/docs/api/liquid/objects/collection#collection-sort_by) and\n[`search.sort_by`](/docs/api/liquid/objects/search#search-sort_by) parameters.",
+        "description": "This value is used when assigning the [`collection.sort_by`](/api/liquid/objects/collection#collection-sort_by) and\n[`search.sort_by`](/api/liquid/objects/search#search-sort_by) parameters.",
         "examples": [
 
         ],
