@@ -133,7 +133,7 @@
     "category": "collection",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Accepts the following values:\n\n- `manual`\n- `best-selling`\n- `title-ascending`\n- `title-descending`\n- `price-ascending`\n- `price-descending`\n- `created-ascending`\n- `created-descending`\n\n&gt; Tip:\n&gt; You can append the `sort_by` filter to the [`url_for_type`](/docs/api/liquid/filters/url_for_type)\n&gt; and [`url_for_vendor`](/docs/api/liquid/filters/url_for_vendor) filters.",
+    "description": "Accepts the following values:\n\n- `manual`\n- `best-selling`\n- `title-ascending`\n- `title-descending`\n- `price-ascending`\n- `price-descending`\n- `created-ascending`\n- `created-descending`\n\n&gt; Tip:\n&gt; You can append the `sort_by` filter to the [`url_for_type`](/api/liquid/filters/url_for_type)\n&gt; and [`url_for_vendor`](/api/liquid/filters/url_for_vendor) filters.",
     "parameters": [
 
     ],
@@ -229,7 +229,7 @@
     "category": "collection",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "When the collection context is included, you can access the associated [`collection` object](/docs/api/liquid/objects/collection)\nin the [product template](/themes/architecture/templates/product).\n\n&gt; Caution:\n&gt; Because a standard product page and a product page in the context of a collection have the same content on separate\n&gt; URLs, you should consider the SEO implications of using the `within` filter.",
+    "description": "When the collection context is included, you can access the associated [`collection` object](/api/liquid/objects/collection)\nin the [product template](/themes/architecture/templates/product).\n\n&gt; Caution:\n&gt; Because a standard product page and a product page in the context of a collection have the same content on separate\n&gt; URLs, you should consider the SEO implications of using the `within` filter.",
     "parameters": [
 
     ],
@@ -814,7 +814,7 @@
   {
     "category": "color",
     "deprecated": true,
-    "deprecation_reason": "The `hex_to_rgba` filter has been replaced by [`color_to_rgb`](/docs/api/liquid/filters/color_to_rgb) and\n[`color_modify`](/docs/api/liquid/filters/color_modify).",
+    "deprecation_reason": "The `hex_to_rgba` filter has been replaced by [`color_to_rgb`](/api/liquid/filters/color_to_rgb) and\n[`color_modify`](/api/liquid/filters/color_modify).",
     "description": "",
     "parameters": [
       {
@@ -1023,8 +1023,8 @@
   {
     "category": "localization",
     "deprecated": true,
-    "deprecation_reason": "Deprecated without a direct replacement because the [currency form](/docs/api/liquid/tags/form#form-currency) has also been\ndeprecated.",
-    "description": "The `currency_selector` filter must be applied to the [`form` object](/docs/api/liquid/objects/form) within a\n[currency form](/docs/api/liquid/tags/form#form-currency).",
+    "deprecation_reason": "Deprecated without a direct replacement because the [currency form](/api/liquid/tags/form#form-currency) has also been\ndeprecated.",
+    "description": "The `currency_selector` filter must be applied to the [`form` object](/api/liquid/objects/form) within a\n[currency form](/api/liquid/tags/form#form-currency).",
     "parameters": [
       {
         "description": "The desired `class` attribute.",
@@ -1229,7 +1229,7 @@
       },
       {
         "name": "format",
-        "description": "Specify a locale-aware date format. You can use the following formats:\n\n- `abbreviated_date`\n- `basic`\n- `date`\n- `date_at_time`\n- `default`\n- `on_date`\n- `short` (deprecated)\n- `long` (deprecated)\n\n&gt; Note:\n&gt; You can also [define custom formats](/docs/api/liquid/filters/date-setting-format-options-in-locale-files) in your theme's locale files.\n",
+        "description": "Specify a locale-aware date format. You can use the following formats:\n\n- `abbreviated_date`\n- `basic`\n- `date`\n- `date_at_time`\n- `default`\n- `on_date`\n- `short` (deprecated)\n- `long` (deprecated)\n\n&gt; Note:\n&gt; You can also [define custom formats](/api/liquid/filters/date-setting-format-options-in-locale-files) in your theme's locale files.\n",
         "syntax": "string | date: format: string",
         "path": "/blogs/potion-notions/how-to-tell-if-you-have-run-out-of-invisibility-potion",
         "raw_liquid": "{{ article.created_at | date: format: 'abbreviated_date' }}",
@@ -1305,7 +1305,7 @@
     "category": "font",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `font_modify` filter requires two parameters. The first indicates which property should be modified and the second is\neither the new value, or modification amount, for that property.\n\n&gt; Tip:\n&gt; You can access every variant of the chosen font's family by using [`font.variants`](/docs/api/liquid/objects/font#font-variants).\n&gt; However, you can more easily access specific styles and weights by using the `font_modify` filter.\n\nThe following table outlines the valid font properties and modification values:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;th&gt;Property&lt;/th&gt;\n    &lt;th&gt;Modification value&lt;/th&gt;\n    &lt;th&gt;Output&lt;/th&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td rowspan=3&gt;&lt;code&gt;style&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;&lt;code&gt;normal&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns the normal variant of the same weight, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;italic&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns the italic variant of the same weight, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;oblique&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;\n        &lt;p&gt;Returns the oblique variant of the same weight, if it exists.&lt;/p&gt;\n        &lt;p&gt;Oblique variants are similar to italic variants in appearance. All Shopify fonts have only oblique or italic variants, not both.&lt;/p&gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td rowspan=7&gt;&lt;code&gt;weight&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;&lt;code&gt;100&lt;/code&gt; &amp;rarr; &lt;code&gt;900&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a variant of the same style with the given weight, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;normal&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a variant of the same style with a weight of &lt;code&gt;400&lt;/code&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;bold&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a variant of the same style with a weight of &lt;code&gt;700&lt;/code&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;+100&lt;/code&gt; &amp;rarr; &lt;code&gt;+900&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;\n        &lt;p&gt;Returns a variant of the same style with a weight incremented by the given value, if it exists.&lt;/p&gt;\n        &lt;p&gt;For example, if a font has a weight of &lt;code&gt;400&lt;/code&gt;, then using &lt;code&gt;+100&lt;/code&gt; would return the font with a weight of &lt;code&gt;500&lt;/code&gt;.&lt;/p&gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;-100&lt;/code&gt; &amp;rarr; &lt;code&gt;-900&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;\n        &lt;p&gt;Returns a variant of the same style with a weight decremented by the given value, if it exists.&lt;/p&gt;\n        &lt;p&gt;For example, if a font has a weight of &lt;code&gt;400&lt;/code&gt;, then using &lt;code&gt;-100&lt;/code&gt; would return the font with a weight of &lt;code&gt;300&lt;/code&gt;.&lt;/p&gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;lighter&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a lighter variant of the same style by applying the rules used by the &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Meaning_of_relative_weights\"&gt;CSS &lt;code&gt;font-weight&lt;/code&gt; property&lt;/a&gt; and browser &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Fallback_weights\"&gt;fallback weights&lt;/a&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;bolder&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a bolder variant of the same style by applying the rules used by the &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Meaning_of_relative_weights\"&gt;CSS &lt;code&gt;font-weight&lt;/code&gt; property&lt;/a&gt; and browser &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Fallback_weights\"&gt;fallback weights&lt;/a&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
+    "description": "The `font_modify` filter requires two parameters. The first indicates which property should be modified and the second is\neither the new value, or modification amount, for that property.\n\n&gt; Tip:\n&gt; You can access every variant of the chosen font's family by using [`font.variants`](/api/liquid/objects/font#font-variants).\n&gt; However, you can more easily access specific styles and weights by using the `font_modify` filter.\n\nThe following table outlines the valid font properties and modification values:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;th&gt;Property&lt;/th&gt;\n    &lt;th&gt;Modification value&lt;/th&gt;\n    &lt;th&gt;Output&lt;/th&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td rowspan=3&gt;&lt;code&gt;style&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;&lt;code&gt;normal&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns the normal variant of the same weight, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;italic&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns the italic variant of the same weight, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;oblique&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;\n        &lt;p&gt;Returns the oblique variant of the same weight, if it exists.&lt;/p&gt;\n        &lt;p&gt;Oblique variants are similar to italic variants in appearance. All Shopify fonts have only oblique or italic variants, not both.&lt;/p&gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td rowspan=7&gt;&lt;code&gt;weight&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;&lt;code&gt;100&lt;/code&gt; &amp;rarr; &lt;code&gt;900&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a variant of the same style with the given weight, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;normal&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a variant of the same style with a weight of &lt;code&gt;400&lt;/code&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;bold&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a variant of the same style with a weight of &lt;code&gt;700&lt;/code&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;+100&lt;/code&gt; &amp;rarr; &lt;code&gt;+900&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;\n        &lt;p&gt;Returns a variant of the same style with a weight incremented by the given value, if it exists.&lt;/p&gt;\n        &lt;p&gt;For example, if a font has a weight of &lt;code&gt;400&lt;/code&gt;, then using &lt;code&gt;+100&lt;/code&gt; would return the font with a weight of &lt;code&gt;500&lt;/code&gt;.&lt;/p&gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;-100&lt;/code&gt; &amp;rarr; &lt;code&gt;-900&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;\n        &lt;p&gt;Returns a variant of the same style with a weight decremented by the given value, if it exists.&lt;/p&gt;\n        &lt;p&gt;For example, if a font has a weight of &lt;code&gt;400&lt;/code&gt;, then using &lt;code&gt;-100&lt;/code&gt; would return the font with a weight of &lt;code&gt;300&lt;/code&gt;.&lt;/p&gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;lighter&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a lighter variant of the same style by applying the rules used by the &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Meaning_of_relative_weights\"&gt;CSS &lt;code&gt;font-weight&lt;/code&gt; property&lt;/a&gt; and browser &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Fallback_weights\"&gt;fallback weights&lt;/a&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;&lt;code&gt;bolder&lt;/code&gt;&lt;/td&gt;\n      &lt;td&gt;Returns a bolder variant of the same style by applying the rules used by the &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Meaning_of_relative_weights\"&gt;CSS &lt;code&gt;font-weight&lt;/code&gt; property&lt;/a&gt; and browser &lt;a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Fallback_weights\"&gt;fallback weights&lt;/a&gt;, if it exists.&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
     "parameters": [
       {
         "description": "Font property to modify",
@@ -1345,7 +1345,7 @@
       },
       {
         "name": "Non-existent font variants",
-        "description": "If the `font_modify` filter tries to create a font variant that doesn't exist, then it returns `nil`. To handle this, you can either assign a fallback value with the [`default` filter](/docs/api/liquid/filters/default), or check for `nil` before using the variant.\n",
+        "description": "If the `font_modify` filter tries to create a font variant that doesn't exist, then it returns `nil`. To handle this, you can either assign a fallback value with the [`default` filter](/api/liquid/filters/default), or check for `nil` before using the variant.\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{%- assign bold_font = settings.type_body_font | font_modify: 'weight', 'bold' -%}\n{%- assign italic_font = settings.type_body_font | font_modify: 'style', 'italic' -%}\n{%- assign heavy_font = settings.type_body_font | font_modify: 'weight', '900' | default: bold_font -%}\n{%- assign oblique_font = settings.type_body_font | font_modify: 'style', 'oblique' | default: italic_font -%}\n\nh2 {\n  font-style: {{ heavy_font.weight }};\n}\n\n.italic {\n  {% if oblique_font -%}\n    font-style: {{ oblique_font.style }};\n  {%- else -%}\n    font-style: {{ italic_font.style }};\n  {%- endif %}\n}",
@@ -1434,7 +1434,7 @@
     "category": "payment",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; You can't render dynamic checkout buttons through AJAX requests, including those through the\n&gt; [Section Rendering API](/api/section-rendering). The dynamic checkout buttons are added by JavaScript included\n&gt; by Shopify through the [`content_for_header`](/docs/api/liquid/objects/content_for_header) object, which only runs on\n&gt; the initial page load.",
+    "description": "&gt; Note:\n&gt; You can't render dynamic checkout buttons through AJAX requests, including those through the\n&gt; [Section Rendering API](/api/section-rendering). The dynamic checkout buttons are added by JavaScript included\n&gt; by Shopify through the [`content_for_header`](/api/liquid/objects/content_for_header) object, which only runs on\n&gt; the initial page load.",
     "parameters": [
 
     ],
@@ -1458,7 +1458,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates an HTML container to host [dynamic checkout buttons](https://help.shopify.com/manual/online-store/dynamic-checkout)\nfor a product. The `payment_button` filter must be used on the `form` object within a [product form](/docs/api/liquid/tags/form#form-product).",
+    "summary": "Generates an HTML container to host [dynamic checkout buttons](https://help.shopify.com/manual/online-store/dynamic-checkout)\nfor a product. The `payment_button` filter must be used on the `form` object within a [product form](/api/liquid/tags/form#form-product).",
     "syntax": "form | payment_button",
     "name": "payment_button"
   },
@@ -1466,7 +1466,7 @@
     "category": "payment",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `payment_terms` filter must be used on the `form` object within a [product form](/docs/api/liquid/tags/form#form-product) or\n[cart form](/docs/api/liquid/tags/form#form-cart).\n\n```liquid\n{% form 'product', product %}\n  {{ form | payment_terms }}\n{% endform %}\n```\n\n```liquid\n{% form 'cart', cart %}\n  {{ form | payment_terms }}\n{% endform %}\n```",
+    "description": "The `payment_terms` filter must be used on the `form` object within a [product form](/api/liquid/tags/form#form-product) or\n[cart form](/api/liquid/tags/form#form-cart).\n\n```liquid\n{% form 'product', product %}\n  {{ form | payment_terms }}\n{% endform %}\n```\n\n```liquid\n{% form 'cart', cart %}\n  {{ form | payment_terms }}\n{% endform %}\n```",
     "parameters": [
 
     ],
@@ -1521,7 +1521,7 @@
       },
       {
         "name": "format",
-        "description": "Specify a locale-aware date format. Accepts the following values:\n\n- `abbreviated_date`\n- `basic`\n- `date`\n- `date_at_time`\n- `default`\n- `on_date`\n- `short` (deprecated)\n- `long` (deprecated)\n\n&gt; Note:\n&gt; You can also [define custom formats](/docs/api/liquid/filters/date-setting-format-options-in-locale-files) in your theme's locale files.\n",
+        "description": "Specify a locale-aware date format. Accepts the following values:\n\n- `abbreviated_date`\n- `basic`\n- `date`\n- `date_at_time`\n- `default`\n- `on_date`\n- `short` (deprecated)\n- `long` (deprecated)\n\n&gt; Note:\n&gt; You can also [define custom formats](/api/liquid/filters/date-setting-format-options-in-locale-files) in your theme's locale files.\n",
         "syntax": "string | time_tag: format: string",
         "path": "/blogs/potion-notions/how-to-tell-if-you-have-run-out-of-invisibility-potion",
         "raw_liquid": "{{ article.created_at | time_tag: format: 'abbreviated_date' }}",
@@ -1600,7 +1600,7 @@
     "category": "format",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Tip:\n&gt; When using the JSON output in JavaScript, you don't need to wrap it in quotes because the `json` filter includes them.\n&gt; The `json` filter also escapes any quotes inside the output.\n\n#### Product inventory\n\nWhen applied to a [`product` object](/docs/api/liquid/objects/product) on any Shopify store created after December 5, 2017, the\n`json` filter doesn't output values for the `inventory_quantity` and `inventory_policy` properties of any associated\n[variants](/docs/api/liquid/objects/variant). These properties are excluded to help prevent bots and crawlers from retrieving\ninventory quantities for stores to which they aren't granted access.\n\nIf you need inventory information, you can access it through individual variants.",
+    "description": "&gt; Tip:\n&gt; When using the JSON output in JavaScript, you don't need to wrap it in quotes because the `json` filter includes them.\n&gt; The `json` filter also escapes any quotes inside the output.\n\n#### Product inventory\n\nWhen applied to a [`product` object](/api/liquid/objects/product) on any Shopify store created after December 5, 2017, the\n`json` filter doesn't output values for the `inventory_quantity` and `inventory_policy` properties of any associated\n[variants](/api/liquid/objects/variant). These properties are excluded to help prevent bots and crawlers from retrieving\ninventory quantities for stores to which they aren't granted access.\n\nIf you need inventory information, you can access it through individual variants.",
     "parameters": [
 
     ],
@@ -1984,7 +1984,7 @@
     "category": "array",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; The `concat` filter won't filter out duplicates. If you want to remove duplicates, then you need to use the\n&gt; [`uniq` filter](/docs/api/liquid/filters/uniq).",
+    "description": "&gt; Note:\n&gt; The `concat` filter won't filter out duplicates. If you want to remove duplicates, then you need to use the\n&gt; [`uniq` filter](/api/liquid/filters/uniq).",
     "parameters": [
 
     ],
@@ -2057,7 +2057,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Sets a default value for any variable whose value is one of the following:\n\n- [`empty`](/docs/api/liquid/basics#empty)\n- [`false`](/docs/api/liquid/basics#truthy-and-falsy)\n- [`nil`](/docs/api/liquid/basics#nil)",
+    "summary": "Sets a default value for any variable whose value is one of the following:\n\n- [`empty`](/api/liquid/basics#empty)\n- [`false`](/api/liquid/basics#truthy-and-falsy)\n- [`nil`](/api/liquid/basics#nil)",
     "syntax": "variable | default: variable",
     "name": "default"
   },
@@ -2792,7 +2792,7 @@
       },
       {
         "name": "Reversing strings",
-        "description": "You can't use the `reverse` filter on strings directly. However, you can use the [`split` filter](/docs/api/liquid/filters/split) to create an array of characters in the string, reverse that array, and then use the [`join` filter](/docs/api/liquid/filters/join) to combine them again.\n",
+        "description": "You can't use the `reverse` filter on strings directly. However, you can use the [`split` filter](/api/liquid/filters/split) to create an array of characters in the string, reverse that array, and then use the [`join` filter](/api/liquid/filters/join) to combine them again.\n",
         "syntax": "",
         "path": "/collections/sale-potions",
         "raw_liquid": "{{ collection.title | split: '' | reverse | join: '' }}",
@@ -3499,7 +3499,7 @@
         "show_data_tab": false
       }
     ],
-    "summary": "Generates an HTML `&lt;iframe&gt;` tag containing the player for a given external video. The input for the `external_video_tag`\nfilter can be either a [`media` object](/docs/api/liquid/objects/media) or [`external_video_url`](/docs/api/liquid/filters/external_video_url).",
+    "summary": "Generates an HTML `&lt;iframe&gt;` tag containing the player for a given external video. The input for the `external_video_tag`\nfilter can be either a [`media` object](/api/liquid/objects/media) or [`external_video_url`](/api/liquid/filters/external_video_url).",
     "syntax": "variable | external_video_tag",
     "name": "external_video_tag"
   },
@@ -3531,7 +3531,7 @@
         "show_data_tab": false
       }
     ],
-    "summary": "Returns the URL for a given external video. Use this filter to specify parameters for the external video player generated\nby the [`external_video_tag` filter](/docs/api/liquid/filters/external_video_tag).",
+    "summary": "Returns the URL for a given external video. Use this filter to specify parameters for the external video player generated\nby the [`external_video_tag` filter](/api/liquid/filters/external_video_tag).",
     "syntax": "media | external_video_url: attribute: string",
     "name": "external_video_url"
   },
@@ -3539,7 +3539,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "By default, `width` and `height` attributes are added to the `&lt;img&gt;` tag based on the dimensions and aspect ratio from\nthe image URL. However, you can override these attributes with the [width](/docs/api/liquid/filters/image_tag#image_tag-width) and [height](/docs/api/liquid/filters/image_tag#image_tag-height)\nparameters. If only one parameter is provided, then only that attribute is added.\n\n&gt; Note:\n&gt; This filter automatically applies the `object-position` css style from the focal point value if set. For more\n&gt; information, refer to the [`focal_point` object](/docs/api/liquid/objects/focal_point).",
+    "description": "By default, `width` and `height` attributes are added to the `&lt;img&gt;` tag based on the dimensions and aspect ratio from\nthe image URL. However, you can override these attributes with the [width](/api/liquid/filters/image_tag#image_tag-width) and [height](/api/liquid/filters/image_tag#image_tag-height)\nparameters. If only one parameter is provided, then only that attribute is added.\n\n&gt; Note:\n&gt; This filter automatically applies the `object-position` css style from the focal point value if set. For more\n&gt; information, refer to the [`focal_point` object](/api/liquid/objects/focal_point).",
     "parameters": [
       {
         "description": "The width of the image.",
@@ -3659,7 +3659,7 @@
       },
       {
         "name": "srcset",
-        "description": "By default, Shopify generates a `srcset`. However, you can create your own `srcset`.\nThe `srcset` parameter takes precedence over the [`width` parameter](/docs/api/liquid/filters/image_tag#image_tag-width).\nYou shouldn't to use the `srcset` parameter unless you want to remove the attribute by setting the parameter to `nil`.\n",
+        "description": "By default, Shopify generates a `srcset`. However, you can create your own `srcset`.\nThe `srcset` parameter takes precedence over the [`width` parameter](/api/liquid/filters/image_tag#image_tag-width).\nYou shouldn't to use the `srcset` parameter unless you want to remove the attribute by setting the parameter to `nil`.\n",
         "syntax": "image_url | image_tag: srcset: string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product | image_url: width: 200 | image_tag: srcset: nil }}",
@@ -3698,7 +3698,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates an HTML `&lt;img&gt;` tag for a given [`image_url`](/docs/api/liquid/filters/image_url).",
+    "summary": "Generates an HTML `&lt;img&gt;` tag for a given [`image_url`](/api/liquid/filters/image_url).",
     "syntax": "string | image_tag",
     "name": "image_tag"
   },
@@ -3814,7 +3814,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; When `mp4` videos are uploaded, Shopify generates an `m3u8` file as an additional [`video_source`](/docs/api/liquid/objects/video_source).\n&gt; An `m3u8` file enables video players to leverage [HTTP live streaming (HLS)](https://developer.apple.com/streaming/),\n&gt; resulting in an optimized video experience based on the user's internet connection. If loop is enabled, the HLS source is not used\n&gt; in order to allow progessive download to cache the video.\n&gt;\n&gt; If the `m3u8` source isn't supported, then the player falls back to the `mp4` source.",
+    "description": "&gt; Note:\n&gt; When `mp4` videos are uploaded, Shopify generates an `m3u8` file as an additional [`video_source`](/api/liquid/objects/video_source).\n&gt; An `m3u8` file enables video players to leverage [HTTP live streaming (HLS)](https://developer.apple.com/streaming/),\n&gt; resulting in an optimized video experience based on the user's internet connection. If loop is enabled, the HLS source is not used\n&gt; in order to allow progessive download to cache the video.\n&gt;\n&gt; If the `m3u8` source isn't supported, then the player falls back to the `mp4` source.",
     "parameters": [
       {
         "description": "The dimensions of the video's poster image.",
@@ -3898,7 +3898,7 @@
       },
       {
         "name": "Complex types",
-        "description": "\nThe following metafield types return nested elements, or different elements depending on the metafield contents:\n\n- [`dimension`](/docs/api/liquid/filters/metafield_tag#metafield_tag-dimension)\n- [`file_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-file_reference)\n- [`list.single_line_text_field`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.single_line_text_field)\n- [`volume`](/docs/api/liquid/filters/metafield_tag#metafield_tag-volume)\n- [`weight`](/docs/api/liquid/filters/metafield_tag#metafield_tag-weight)",
+        "description": "\nThe following metafield types return nested elements, or different elements depending on the metafield contents:\n\n- [`dimension`](/api/liquid/filters/metafield_tag#metafield_tag-dimension)\n- [`file_reference`](/api/liquid/filters/metafield_tag#metafield_tag-file_reference)\n- [`list.single_line_text_field`](/api/liquid/filters/metafield_tag#metafield_tag-list.single_line_text_field)\n- [`volume`](/api/liquid/filters/metafield_tag#metafield_tag-volume)\n- [`weight`](/api/liquid/filters/metafield_tag#metafield_tag-weight)",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "",
@@ -3918,7 +3918,7 @@
       },
       {
         "name": "file_reference",
-        "description": "The output varies depending on the type of file. There are the following categories of file type:\n\n| File type | Description |\n| --- | --- |\n| Image | Images in the format of `jpg`, `png`, `gif`, `heic`, and `webp`. |\n| Video | Videos in the format of `mov`, and `mp4`. |\n| Other | Any other file type. |\n\n##### Image\n\nOutputs an `&lt;img&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The image's URL. |\n| `alt` | The image's alt text. |\n| `class` | `metafield-file_reference` |\n\n##### Video\n\nOutputs a `&lt;video&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The video's URL. |\n| `poster` | The video's preview image (poster) URL. |\n| `playsinline` | N/A - Indicates the video will be played \"inline\" within the element's playback area. |\n| `preload` | `metadata` - Only metadata is pre-fetched before the video is played. |\n\nThe `&lt;video&gt;` element contains the following child elements:\n\n| Child element | HTML element | Attributes |\n| --- | --- | --- |\n| The video's multimedia playlist source, for [HTTP live streaming (HLS)](https://developer.apple.com/streaming/) | `&lt;source&gt;` | `src=\"&lt;the video's m3u8 source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"application/x-mpegURL\"` |\n| The video's original source | `&lt;source&gt;` | `src=\"&lt;the video's source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"&lt;the video's original source MIME type&gt;\"` |\n| The video's preview (poster) image | `&lt;img&gt;` | `src=\"&lt;the video's preview image URL&gt;\"` |\n\n##### Other\n\nOutputs an `&lt;a&gt;` element with a link to the file and the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-file_reference` |\n\nThe `&lt;a&gt;` element contains an `&lt;img&gt;` element for the file's [preview image](/docs/api/liquid/objects/generic_file#generic_file-preview_image) with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The file's preview image URL. |\n| `loading` | `lazy` - The image isn't loaded until it's almost in view. |\n",
+        "description": "The output varies depending on the type of file. There are the following categories of file type:\n\n| File type | Description |\n| --- | --- |\n| Image | Images in the format of `jpg`, `png`, `gif`, `heic`, and `webp`. |\n| Video | Videos in the format of `mov`, and `mp4`. |\n| Other | Any other file type. |\n\n##### Image\n\nOutputs an `&lt;img&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The image's URL. |\n| `alt` | The image's alt text. |\n| `class` | `metafield-file_reference` |\n\n##### Video\n\nOutputs a `&lt;video&gt;` element with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The video's URL. |\n| `poster` | The video's preview image (poster) URL. |\n| `playsinline` | N/A - Indicates the video will be played \"inline\" within the element's playback area. |\n| `preload` | `metadata` - Only metadata is pre-fetched before the video is played. |\n\nThe `&lt;video&gt;` element contains the following child elements:\n\n| Child element | HTML element | Attributes |\n| --- | --- | --- |\n| The video's multimedia playlist source, for [HTTP live streaming (HLS)](https://developer.apple.com/streaming/) | `&lt;source&gt;` | `src=\"&lt;the video's m3u8 source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"application/x-mpegURL\"` |\n| The video's original source | `&lt;source&gt;` | `src=\"&lt;the video's source URL&gt;\"`&lt;br&gt;&lt;br&gt;`type=\"&lt;the video's original source MIME type&gt;\"` |\n| The video's preview (poster) image | `&lt;img&gt;` | `src=\"&lt;the video's preview image URL&gt;\"` |\n\n##### Other\n\nOutputs an `&lt;a&gt;` element with a link to the file and the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-file_reference` |\n\nThe `&lt;a&gt;` element contains an `&lt;img&gt;` element for the file's [preview image](/api/liquid/objects/generic_file#generic_file-preview_image) with the following attributes:\n\n| Attribute | Value |\n| --- | --- |\n| `src` | The file's preview image URL. |\n| `loading` | `lazy` - The image isn't loaded until it's almost in view. |\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "&lt;!-- Image --&gt;\n{{ product.metafields.information.promo_image | metafield_tag }}\n\n&lt;!-- Video --&gt;\n{{ product.metafields.information.promo_video | metafield_tag }}\n\n&lt;!-- Other --&gt;\n{{ product.metafields.information.disclaimers | metafield_tag }}",
@@ -4117,7 +4117,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Formats a given price based on the store's [**HTML without currency** setting](https://help.shopify.com/manual/payments/currency-formatting), excluding the decimal separator\n(either `.` or `,`) and trailing zeros.\n\nIf the price has a non-zero decimal value, then the output is the same as the [`money` filter](/docs/api/liquid/filters#money).",
+    "summary": "Formats a given price based on the store's [**HTML without currency** setting](https://help.shopify.com/manual/payments/currency-formatting), excluding the decimal separator\n(either `.` or `,`) and trailing zeros.\n\nIf the price has a non-zero decimal value, then the output is the same as the [`money` filter](/api/liquid/filters#money).",
     "syntax": "number | money_without_trailing_zeros",
     "name": "money_without_trailing_zeros"
   },
@@ -4149,7 +4149,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates HTML for a set of links for paginated results. Must be applied to the [`paginate` object](/docs/api/liquid/objects/paginate).",
+    "summary": "Generates HTML for a set of links for paginated results. Must be applied to the [`paginate` object](/api/liquid/objects/paginate).",
     "syntax": "paginate | default_pagination",
     "name": "default_pagination"
   },
@@ -4157,7 +4157,7 @@
     "category": "customer",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Configure the storefront for Follow on Shop. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)\n\n&gt; Note:\n&gt; The presence of the [Shop](/docs/api/liquid/objects/shop) object\n&gt; is required for validation purposes only.\n\n&gt; Note:\n&gt; The `action` specified is always `'follow'`. If this parameter is not supplied the button will not render.\n\n```liquid\n{{ shop | login_button: action: 'follow' }}\n```",
+    "description": "Configure the storefront for Follow on Shop. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)\n\n&gt; Note:\n&gt; The presence of the [Shop](/api/liquid/objects/shop) object\n&gt; is required for validation purposes only.\n\n&gt; Note:\n&gt; The `action` specified is always `'follow'`. If this parameter is not supplied the button will not render.\n\n```liquid\n{{ shop | login_button: action: 'follow' }}\n```",
     "parameters": [
       {
         "description": "Specify 'follow' for the follow flow.",
@@ -4243,7 +4243,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Converts a string into a [handle](/docs/api/liquid/basics#handles).",
+    "summary": "Converts a string into a [handle](/api/liquid/basics#handles).",
     "syntax": "string | handleize",
     "name": "handleize"
   },
@@ -4283,7 +4283,7 @@
     "category": "string",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `url_param_escape` filter escapes the same characters as [`url_escape`](/docs/api/liquid/filters/url_escape), with the\naddition of `&amp;`.",
+    "description": "The `url_param_escape` filter escapes the same characters as [`url_escape`](/api/liquid/filters/url_escape), with the\naddition of `&amp;`.",
     "parameters": [
 
     ],
@@ -4555,7 +4555,7 @@
   {
     "category": "media",
     "deprecated": true,
-    "deprecation_reason": "The `article_img_url` filter has been replaced by [`image_url`](/docs/api/liquid/filters/image_url).",
+    "deprecation_reason": "The `article_img_url` filter has been replaced by [`image_url`](/api/liquid/filters/image_url).",
     "description": "",
     "parameters": [
       {
@@ -4588,7 +4588,7 @@
       },
       {
         "name": "size",
-        "description": "By default, the `article_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/docs/api/liquid/filters/img_url#img_url-size).\n",
+        "description": "By default, the `article_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/api/liquid/filters/img_url#img_url-size).\n",
         "syntax": "image | article_img_url: string",
         "path": "/blogs/potion-notions/how-to-tell-if-you-have-run-out-of-invisibility-potion",
         "raw_liquid": "{{ article.image | article_img_url: 'large' }}",
@@ -4597,7 +4597,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for an [article's image](/docs/api/liquid/objects/article#article-image).",
+    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for an [article's image](/api/liquid/objects/article#article-image).",
     "syntax": "variable | article_img_url",
     "name": "article_img_url"
   },
@@ -4637,7 +4637,7 @@
       },
       {
         "name": "size",
-        "description": "By default, the `asset_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/docs/api/liquid/filters/img_url#img_url-size).\n",
+        "description": "By default, the `asset_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/api/liquid/filters/img_url#img_url-size).\n",
         "syntax": "image | asset_img_url: string",
         "path": "/",
         "raw_liquid": "{{ 'red-and-black-bramble-berries.jpg' | asset_img_url: 'large' }}",
@@ -4685,7 +4685,7 @@
   {
     "category": "media",
     "deprecated": true,
-    "deprecation_reason": "The `collection_img_url` filter has been replaced by [`image_url`](/docs/api/liquid/filters/image_url).",
+    "deprecation_reason": "The `collection_img_url` filter has been replaced by [`image_url`](/api/liquid/filters/image_url).",
     "description": "",
     "parameters": [
       {
@@ -4718,7 +4718,7 @@
       },
       {
         "name": "The size parameter",
-        "description": "By default, the `collection_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/docs/api/liquid/filters/img_url#img_url-size).\n",
+        "description": "By default, the `collection_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/api/liquid/filters/img_url#img_url-size).\n",
         "syntax": "image | collection_img_url: string",
         "path": "/collections/sale-potions",
         "raw_liquid": "{{ collection.image | collection_img_url: 'large' }}",
@@ -4727,7 +4727,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for a [collection's image](/docs/api/liquid/objects/collection#collection-image).",
+    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for a [collection's image](/api/liquid/objects/collection#collection-image).",
     "syntax": "variable | collection_img_url",
     "name": "collection_img_url"
   },
@@ -4767,7 +4767,7 @@
       },
       {
         "name": "The size parameter",
-        "description": "By default, the `file_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/docs/api/liquid/filters/img_url#img_url-size).\n",
+        "description": "By default, the `file_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/api/liquid/filters/img_url#img_url-size).\n",
         "syntax": "image | file_img_url: string",
         "path": "/",
         "raw_liquid": "{{ 'potions-header.png' | file_img_url: 'large' }}",
@@ -4823,7 +4823,7 @@
     "category": "hosted_file",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Global assets are kept in a directory on Shopify's server. Using global assets can be faster than loading the resource\ndirectly.\n\nDepending on the resource type, you might need to use an additional filter to load the resource. The following table\noutlines which filter to use for specific resource types.\n\n| Resource type | Additional filter |\n| --- | --- |\n| JavaScript (`.js`) | [`script_tag`](/docs/api/liquid/filters/script_tag) |\n| CSS (`.css`) | [`stylesheet_tag`](/docs/api/liquid/filters/stylesheet_tag)  |\n\nThe following table outlines the available global assets:\n\n| Category | Assets |\n| --- | --- |\n| Firebug | - `firebug/firebug.css`&lt;br&gt;- `firebug/firebug.html`&lt;br&gt;- `firebug/firebug.js`&lt;br&gt;- `firebug/firebugx.js`&lt;br&gt;- `firebug/errorIcon.png`&lt;br&gt;- `firebug/infoIcon.png`&lt;br&gt;- `firebug/warningIcon.png` |\n| JavaScript libraries | - `controls.js`&lt;br&gt;- `dragdrop.js`&lt;br&gt;- `effects.js`&lt;br&gt;- `ga.js`&lt;br&gt;- `mootools.js` |\n| Lightbox | - `lightbox.css`&lt;br&gt;- `lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v1/lightbox.css`&lt;br&gt;- `lightbox/v1/lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v2/lightbox.css`&lt;br&gt;- `lightbox/v2/lightbox.js`&lt;br&gt;- `lightbox/v2/close.gif`&lt;br&gt;- `lightbox/v2/loading.gif`&lt;br&gt;- `lightbox/v2/overlay.png`&lt;br&gt;- `lightbox/v2/zoom-lg.gif`&lt;br&gt;&lt;br&gt;- `lightbox/v204/lightbox.css`&lt;br&gt;- `lightbox/v204/lightbox.js`&lt;br&gt;- `lightbox/v204/bullet.gif`&lt;br&gt;- `lightbox/v204/close.gif`&lt;br&gt;- `lightbox/v204/closelabel.gif`&lt;br&gt;- `lightbox/v204/donatebutton.gif`&lt;br&gt;- `lightbox/v204/downloadicon.gif`&lt;br&gt;- `lightbox/v204/loading.gif`&lt;br&gt;- `lightbox/v204/nextlabel.png`&lt;br&gt;- `lightbox/v204/prevlabel.gif` |\n| Prototype | - `prototype.js`&lt;br&gt;- `prototype/1.5/prototype.js`&lt;br&gt;- `prototype/1.6/prototype.js` |\n| script.aculo.us | - `scriptaculous/1.8.2/scriptaculous.js`&lt;br&gt;- `scriptaculous/1.8.2/builder.js`&lt;br&gt;- `scriptaculous/1.8.2/controls.js`&lt;br&gt;- `scriptaculous/1.8.2/dragdrop.js`&lt;br&gt;- `scriptaculous/1.8.2/effects.js`&lt;br&gt;- `scriptaculous/1.8.2/slider.js`&lt;br&gt;- `scriptaculous/1.8.2/sound.js`&lt;br&gt;- `scriptaculous/1.8.2/unittest.js` |\n| Shopify | - `list-collection.css`&lt;br&gt;- `textile.css` |",
+    "description": "Global assets are kept in a directory on Shopify's server. Using global assets can be faster than loading the resource\ndirectly.\n\nDepending on the resource type, you might need to use an additional filter to load the resource. The following table\noutlines which filter to use for specific resource types.\n\n| Resource type | Additional filter |\n| --- | --- |\n| JavaScript (`.js`) | [`script_tag`](/api/liquid/filters/script_tag) |\n| CSS (`.css`) | [`stylesheet_tag`](/api/liquid/filters/stylesheet_tag)  |\n\nThe following table outlines the available global assets:\n\n| Category | Assets |\n| --- | --- |\n| Firebug | - `firebug/firebug.css`&lt;br&gt;- `firebug/firebug.html`&lt;br&gt;- `firebug/firebug.js`&lt;br&gt;- `firebug/firebugx.js`&lt;br&gt;- `firebug/errorIcon.png`&lt;br&gt;- `firebug/infoIcon.png`&lt;br&gt;- `firebug/warningIcon.png` |\n| JavaScript libraries | - `controls.js`&lt;br&gt;- `dragdrop.js`&lt;br&gt;- `effects.js`&lt;br&gt;- `ga.js`&lt;br&gt;- `mootools.js` |\n| Lightbox | - `lightbox.css`&lt;br&gt;- `lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v1/lightbox.css`&lt;br&gt;- `lightbox/v1/lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v2/lightbox.css`&lt;br&gt;- `lightbox/v2/lightbox.js`&lt;br&gt;- `lightbox/v2/close.gif`&lt;br&gt;- `lightbox/v2/loading.gif`&lt;br&gt;- `lightbox/v2/overlay.png`&lt;br&gt;- `lightbox/v2/zoom-lg.gif`&lt;br&gt;&lt;br&gt;- `lightbox/v204/lightbox.css`&lt;br&gt;- `lightbox/v204/lightbox.js`&lt;br&gt;- `lightbox/v204/bullet.gif`&lt;br&gt;- `lightbox/v204/close.gif`&lt;br&gt;- `lightbox/v204/closelabel.gif`&lt;br&gt;- `lightbox/v204/donatebutton.gif`&lt;br&gt;- `lightbox/v204/downloadicon.gif`&lt;br&gt;- `lightbox/v204/loading.gif`&lt;br&gt;- `lightbox/v204/nextlabel.png`&lt;br&gt;- `lightbox/v204/prevlabel.gif` |\n| Prototype | - `prototype.js`&lt;br&gt;- `prototype/1.5/prototype.js`&lt;br&gt;- `prototype/1.6/prototype.js` |\n| script.aculo.us | - `scriptaculous/1.8.2/scriptaculous.js`&lt;br&gt;- `scriptaculous/1.8.2/builder.js`&lt;br&gt;- `scriptaculous/1.8.2/controls.js`&lt;br&gt;- `scriptaculous/1.8.2/dragdrop.js`&lt;br&gt;- `scriptaculous/1.8.2/effects.js`&lt;br&gt;- `scriptaculous/1.8.2/slider.js`&lt;br&gt;- `scriptaculous/1.8.2/sound.js`&lt;br&gt;- `scriptaculous/1.8.2/unittest.js` |\n| Shopify | - `list-collection.css`&lt;br&gt;- `textile.css` |",
     "parameters": [
 
     ],
@@ -4855,7 +4855,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can use the `image_url` filter on the following objects, as well as their `src` property:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`image`](/docs/api/liquid/objects/image)\n- [`line_item`](/docs/api/liquid/objects/line_item)\n- [`product`](/docs/api/liquid/objects/product)\n- [`variant`](/docs/api/liquid/objects/variant)\n\n&gt; Caution:\n&gt; You need to specify either a [`width`](/docs/api/liquid/filters/image_url#image_url-width) or\n&gt; [`height`](/docs/api/liquid/filters/image_url#image_url-height) parameter. If neither are specified, then an error is returned.\n\n&gt; Note:\n&gt; Regardless of the specified dimensions, an image can never be resized to be larger than its original dimensions.",
+    "description": "You can use the `image_url` filter on the following objects, as well as their `src` property:\n\n- [`article`](/api/liquid/objects/article)\n- [`collection`](/api/liquid/objects/collection)\n- [`image`](/api/liquid/objects/image)\n- [`line_item`](/api/liquid/objects/line_item)\n- [`product`](/api/liquid/objects/product)\n- [`variant`](/api/liquid/objects/variant)\n\n&gt; Caution:\n&gt; You need to specify either a [`width`](/api/liquid/filters/image_url#image_url-width) or\n&gt; [`height`](/api/liquid/filters/image_url#image_url-height) parameter. If neither are specified, then an error is returned.\n\n&gt; Note:\n&gt; Regardless of the specified dimensions, an image can never be resized to be larger than its original dimensions.",
     "parameters": [
       {
         "description": "How the image should be cropped to match the desired dimensions.",
@@ -4975,8 +4975,8 @@
   {
     "category": "media",
     "deprecated": true,
-    "deprecation_reason": "The `img_tag` filter has been replaced by [`image_tag`](/docs/api/liquid/filters/image_tag).",
-    "description": "You can also use the `img_tag` filter on the following objects:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`image`](/docs/api/liquid/objects/image)\n- [`line_item`](/docs/api/liquid/objects/line_item)\n- [`product`](/docs/api/liquid/objects/product)\n- [`variant`](/docs/api/liquid/objects/variant)",
+    "deprecation_reason": "The `img_tag` filter has been replaced by [`image_tag`](/api/liquid/filters/image_tag).",
+    "description": "You can also use the `img_tag` filter on the following objects:\n\n- [`article`](/api/liquid/objects/article)\n- [`collection`](/api/liquid/objects/collection)\n- [`image`](/api/liquid/objects/image)\n- [`line_item`](/api/liquid/objects/line_item)\n- [`product`](/api/liquid/objects/product)\n- [`variant`](/api/liquid/objects/variant)",
     "parameters": [
       {
         "description": "The image's alt text.",
@@ -5024,7 +5024,7 @@
       },
       {
         "name": "Optional parameters",
-        "description": "The `img_tag` filter accepts 3 unnamed parameters, separated by commas, to specify the `alt` and `class` attributes, and the\n[size](/docs/api/liquid/filters/img_url#img_url-size) of the image. Because the parameters are read in that order, you must include a value for each parameter before the last\nparameter you want to specify. If you don't want to include a parameter that precedes one that you do want to include, then\nyou can set the value to an empty string.\n\n&gt; Note:\n&gt; The `size` attribute of the `img_tag` filter can't be used in conjunction with the [`img_url` filter](/docs/api/liquid/filters/img_url).\n&gt; If both are used, then the `img_url` filter will override the `size` parameter of the `img_tag` filter.\n",
+        "description": "The `img_tag` filter accepts 3 unnamed parameters, separated by commas, to specify the `alt` and `class` attributes, and the\n[size](/api/liquid/filters/img_url#img_url-size) of the image. Because the parameters are read in that order, you must include a value for each parameter before the last\nparameter you want to specify. If you don't want to include a parameter that precedes one that you do want to include, then\nyou can set the value to an empty string.\n\n&gt; Note:\n&gt; The `size` attribute of the `img_tag` filter can't be used in conjunction with the [`img_url` filter](/api/liquid/filters/img_url).\n&gt; If both are used, then the `img_url` filter will override the `size` parameter of the `img_tag` filter.\n",
         "syntax": "variable | img_tag: string, string, string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product | img_tag: 'image alt text', '', '450x450' }}",
@@ -5040,8 +5040,8 @@
   {
     "category": "media",
     "deprecated": true,
-    "deprecation_reason": "The `img_url` filter has been replaced by [`image_url`](/docs/api/liquid/filters/image_url).",
-    "description": "You can use the `img_url` filter on the following objects:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`image`](/docs/api/liquid/objects/image)\n- [`line_item`](/docs/api/liquid/objects/line_item)\n- [`product`](/docs/api/liquid/objects/product)\n- [`variant`](/docs/api/liquid/objects/variant)",
+    "deprecation_reason": "The `img_url` filter has been replaced by [`image_url`](/api/liquid/filters/image_url).",
+    "description": "You can use the `img_url` filter on the following objects:\n\n- [`article`](/api/liquid/objects/article)\n- [`collection`](/api/liquid/objects/collection)\n- [`image`](/api/liquid/objects/image)\n- [`line_item`](/api/liquid/objects/line_item)\n- [`product`](/api/liquid/objects/product)\n- [`variant`](/api/liquid/objects/variant)",
     "parameters": [
       {
         "description": "The desired image size.",
@@ -5217,7 +5217,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the URL for an SVG image of a given [payment type](/docs/api/liquid/objects/shop#shop-enabled_payment_types).",
+    "summary": "Returns the URL for an SVG image of a given [payment type](/api/liquid/objects/shop#shop-enabled_payment_types).",
     "syntax": "type | payment_type_img_url",
     "name": "payment_type_img_url"
   },
@@ -5266,7 +5266,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates an HTML `&lt;svg&gt;` tag for a given [payment type](/docs/api/liquid/objects/shop#shop-enabled_payment_types).",
+    "summary": "Generates an HTML `&lt;svg&gt;` tag for a given [payment type](/api/liquid/objects/shop#shop-enabled_payment_types).",
     "syntax": "type | payment_type_svg_tag",
     "name": "payment_type_svg_tag"
   },
@@ -5323,7 +5323,7 @@
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You should use this filter sparingly. For example, consider preloading only resources necessary for rendering\nabove-the-fold content. To learn more about preloading resources, refer to\n[Performance best practices for Shopify themes](/themes/best-practices/performance#preload-key-resources-defer-or-avoid-loading-others).\n\n&gt; Tip:\n&gt; If you want to preload a stylesheet, then use [`stylesheet_tag`](/docs/api/liquid/filters/stylesheet_tag). If you want to\n&gt; preload an image, then use [`image_tag`](/docs/api/liquid/filters/image_tag).\n\nThe input to this filter must be a URL from one of the following filters:\n\n- [`asset_url`](/docs/api/liquid/filters/asset_url)\n- [`global_asset_url`](/docs/api/liquid/filters/global_asset_url)\n- [`shopify_asset_url`](/docs/api/liquid/filters/shopify_asset_url)\n\nThe `preload_tag` filter also requires an [`as` parameter](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-as)\nbased on the kind of resource being preloaded.",
+    "description": "You should use this filter sparingly. For example, consider preloading only resources necessary for rendering\nabove-the-fold content. To learn more about preloading resources, refer to\n[Performance best practices for Shopify themes](/themes/best-practices/performance#preload-key-resources-defer-or-avoid-loading-others).\n\n&gt; Tip:\n&gt; If you want to preload a stylesheet, then use [`stylesheet_tag`](/api/liquid/filters/stylesheet_tag). If you want to\n&gt; preload an image, then use [`image_tag`](/api/liquid/filters/image_tag).\n\nThe input to this filter must be a URL from one of the following filters:\n\n- [`asset_url`](/api/liquid/filters/asset_url)\n- [`global_asset_url`](/api/liquid/filters/global_asset_url)\n- [`shopify_asset_url`](/api/liquid/filters/shopify_asset_url)\n\nThe `preload_tag` filter also requires an [`as` parameter](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-as)\nbased on the kind of resource being preloaded.",
     "parameters": [
       {
         "description": "The type of element or resource to preload.",
@@ -5371,7 +5371,7 @@
   {
     "category": "media",
     "deprecated": true,
-    "deprecation_reason": "The `product_img_url` filter has been replaced by [`image_url`](/docs/api/liquid/filters/image_url).",
+    "deprecation_reason": "The `product_img_url` filter has been replaced by [`image_url`](/api/liquid/filters/image_url).",
     "description": "This can be the product's `featured_image` or any image from the `images` array.",
     "parameters": [
       {
@@ -5404,7 +5404,7 @@
       },
       {
         "name": "The size parameter",
-        "description": "By default, the `product_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/docs/api/liquid/filters/img_url#img_url-size).\n",
+        "description": "By default, the `product_img_url` filter returns the `small` version of the image (100 x 100 px). However, you can specify a [size](/api/liquid/filters/img_url#img_url-size).\n",
         "syntax": "image | product_img_url: string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product.images[0] | product_img_url: 'large' }}",
@@ -5413,7 +5413,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for a [product image](/docs/api/liquid/objects/product).",
+    "summary": "Returns the [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for a [product image](/api/liquid/objects/product).",
     "syntax": "variable | product_img_url",
     "name": "product_img_url"
   },
@@ -5583,7 +5583,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates a formatted weight for a [`variant` object](/docs/api/liquid/objects/variant#variant-weight). The weight unit is\nset in the [general settings](https://www.shopify.com/admin/settings/general) in the Shopify admin.",
+    "summary": "Generates a formatted weight for a [`variant` object](/api/liquid/objects/variant#variant-weight). The weight unit is\nset in the [general settings](https://www.shopify.com/admin/settings/general) in the Shopify admin.",
     "syntax": "number | weight_with_unit",
     "name": "weight_with_unit"
   }
