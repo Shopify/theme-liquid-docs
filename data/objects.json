@@ -7998,9 +7998,18 @@
         "deprecated": false,
         "deprecation_reason": "",
         "description": "",
-        "examples": [],
-        "return_type": [],
-        "summary": "Returns an object containing system information about the metaobject. This includes the metaobject's\n`id`, `handle` and `type`.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "metaobject_system",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Basic information about the metaobject. These properties are grouped under the `system` object to avoid collisions between system property names and user-defined metaobject fields.",
         "name": "system"
       }
     ],
@@ -8010,6 +8019,101 @@
       {
         "name": "Access metaobjects individually",
         "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/docs/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ shop.metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.testimonials.homepage.title }}\n{{ shop.metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
+        "syntax": "",
+        "path": "",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      }
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "metaobject",
+          "property": "system"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "This is a free-form string that's defined when the metaobject definition is created.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The type of the metaobject definition.",
+        "name": "type"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The unique [handle](/api/liquid/basics#handles) of the metaobject.",
+        "name": "handle"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the metaobject.",
+        "name": "id"
+      }
+    ],
+    "summary": "Basic information about a [`metaobject`](/api/liquid/objects#metaobject). These properties are grouped under the `system` object to avoid collisions between system property names and user-defined metaobject fields.",
+    "name": "metaobject_system",
+    "examples": [
+      {
+        "name": "Using the `metaobject_system` object",
+        "description": "You can access the `metaobject_system` object and its properties through the metaobject's `system` property. You can use the following syntax:\n\n```liquid\n{{ shop.metaobjects.testimonials[\"home_page\"].system.id }}\n```\n\nYou can also access `metaobject_system` properties when iterating over a list of metaobjects:\n\n```liquid\n{% for metaobject in product.metafields.custom.mixed_metaobject_list.value %}\n  {% if metaobject.system.type == \"testimonial\" %}\n    {% render 'testimonial' with metaobject as testimonial  %}\n  {% else %}\n    {{ metaobject.system.handle }}\n  {% endif %}\n{% endfor %}\n```\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -15463,7 +15567,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Deprecated:\n&gt; &lt;p&gt;The &lt;code&gt;checkout&lt;/code&gt; object will be deprecated for the Information, Shipping, and Payment pages on August 13, 2024. Merchants who have customized these pages using &lt;code&gt;checkout.liquid&lt;/code&gt; need to &lt;a href=\"https://help.shopify.com/manual/online-store/themes/theme-structure/extend/checkout-migration#migrate-to-checkout-extensibility\"&gt;upgrade to checkout extensibility&lt;/a&gt; before August 13, 2024.&lt;/p&gt;\n&gt; &lt;p&gt;Learn &lt;a href=\"/apps/checkout\"&gt;how to build checkout extensions&lt;/a&gt; that extend the functionality of Shopify checkout.&lt;/p&gt;\n\nYou can access the `checkout` object on the [order status page](https://help.shopify.com/manual/orders/status-tracking/customize-order-status).\n\nShopify Plus merchants can access the `checkout` object in the [`checkout.liquid` layout](/themes/architecture/layouts/checkout-liquid).",
+    "description": "&gt; Deprecated:\n&gt; &lt;p&gt;The &lt;code&gt;checkout&lt;/code&gt; object will be deprecated for the Information, Shipping, and Payment pages on August 13, 2024. Merchants who have customized these pages using &lt;code&gt;checkout.liquid&lt;/code&gt; to &lt;a href=\"https://help.shopify.com/manual/online-store/themes/theme-structure/extend/checkout-migration#migrate-to-checkout-extensibility\"&gt;upgrade to checkout extensibility&lt;/a&gt; before August 13, 2024.&lt;/p&gt;\n&gt; &lt;p&gt;Learn &lt;a href=\"/apps/checkout\"&gt;how to build checkout extensions&lt;/a&gt; that extend the functionality of Shopify checkout.&lt;/p&gt;\n\nYou can access the `checkout` object on the [order status page](https://help.shopify.com/manual/orders/status-tracking/customize-order-status).\n\nShopify Plus merchants can access the `checkout` object in the [`checkout.liquid` layout](/themes/architecture/layouts/checkout-liquid).",
     "properties": [
       {
         "deprecated": false,
