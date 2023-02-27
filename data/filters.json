@@ -3928,10 +3928,10 @@
       },
       {
         "name": "list.single_line_text_field",
-        "description": "Outputs a `&lt;ul&gt;` element with the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-single_line_text_field-array` |\n\nThe `&lt;ul&gt;` element contains an `&lt;li&gt;` element for each item in the list with a `class` of `metafield-single_line_text_field`.\n",
+        "description": "Outputs a `&lt;ul&gt;` element by default with the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-single_line_text_field-array` |\n\nThe `&lt;ul&gt;` element contains an `&lt;li&gt;` element for each item in the list with a `class` of `metafield-single_line_text_field`.\n\nTo output an `&lt;ol&gt;` element pass the `list_format` parameter with the value `'ordered'` like so: `| metafield_tag: list_format: 'ordered'`\n",
         "syntax": "",
         "path": "/products/health-potion",
-        "raw_liquid": "{{ product.metafields.information.pickup_locations | metafield_tag }}",
+        "raw_liquid": "&lt;!-- ul --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag }}\n\n&lt;!-- ol --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag: list_format: 'ordered' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
