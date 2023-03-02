@@ -3542,6 +3542,16 @@
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
+      },
+      {
+        "name": "Rendering a flag image",
+        "description": "When the country object is passed to the [`image_url`](/docs/api/liquid/filters#image_url) filter, a [CDN URL](/themes/best-practices/performance/platform#shopify-cdn) for that country’s flag is returned. All country’s flags are SVGs, normalized to an aspect ratio of 4:3.\n",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{{ localization.country | image_url: width: 32 | image_tag }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
       }
     ],
     "json_data": {

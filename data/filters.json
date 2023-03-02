@@ -4855,7 +4855,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can use the `image_url` filter on the following objects, as well as their `src` property:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`image`](/docs/api/liquid/objects/image)\n- [`line_item`](/docs/api/liquid/objects/line_item)\n- [`product`](/docs/api/liquid/objects/product)\n- [`variant`](/docs/api/liquid/objects/variant)\n\n&gt; Caution:\n&gt; You need to specify either a [`width`](/docs/api/liquid/filters/image_url#image_url-width) or\n&gt; [`height`](/docs/api/liquid/filters/image_url#image_url-height) parameter. If neither are specified, then an error is returned.\n\n&gt; Note:\n&gt; Regardless of the specified dimensions, an image can never be resized to be larger than its original dimensions.",
+    "description": "You can use the `image_url` filter on the following objects, as well as their `src` property:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`image`](/docs/api/liquid/objects/image)\n- [`line_item`](/docs/api/liquid/objects/line_item)\n- [`product`](/docs/api/liquid/objects/product)\n- [`variant`](/docs/api/liquid/objects/variant)\n- [`country`](/docs/api/liquid/objects/country)\n\n&gt; Caution:\n&gt; You need to specify either a [`width`](/docs/api/liquid/filters/image_url#image_url-width) or\n&gt; [`height`](/docs/api/liquid/filters/image_url#image_url-height) parameter. If neither are specified, then an error is returned.\n\n&gt; Note:\n&gt; Regardless of the specified dimensions, an image can never be resized to be larger than its original dimensions.",
     "parameters": [
       {
         "description": "How the image should be cropped to match the desired dimensions.",
@@ -4939,7 +4939,7 @@
       },
       {
         "name": "crop",
-        "description": "Specify which part of the image to show if the specified dimensions result in an aspect ratio that differs from the original. You can use the following values:\n\n- `top`\n- `center`\n- `bottom`\n- `left`\n- `right`\n\nThe default value is `center`.\n",
+        "description": "Specify which part of the image to show if the specified dimensions result in an aspect ratio that differs from the original. You can use the following values:\n\n- `top`\n- `center`\n- `bottom`\n- `left`\n- `right`\n\nThe default value is `center`.\n\n&gt; Note:\n&gt; Country flags are SVG images and can only be cropped if a value for `format`\n&gt; is also provided.\n",
         "syntax": "variable | image_url: crop: string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product | image_url: width: 400, height: 400, crop: 'bottom' }}",
