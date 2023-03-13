@@ -3928,10 +3928,10 @@
       },
       {
         "name": "list.single_line_text_field",
-        "description": "Outputs a `&lt;ul&gt;` element by default with the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-single_line_text_field-array` |\n\nThe `&lt;ul&gt;` element contains an `&lt;li&gt;` element for each item in the list with a `class` of `metafield-single_line_text_field`.\n\nTo output an `&lt;ol&gt;` element pass the `list_format` parameter with the value `'ordered'` like so: `| metafield_tag: list_format: 'ordered'`\n",
+        "description": "Outputs a `&lt;ul&gt;` element by default with the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-single_line_text_field-array` |\n\nThe `&lt;ul&gt;` element contains an `&lt;li&gt;` element for each item in the list with a `class` of `metafield-single_line_text_field`.\n\nTo output an `&lt;ol&gt;` element, pass the `list_format` parameter with a value of `ordered`.\n",
         "syntax": "",
         "path": "/products/health-potion",
-        "raw_liquid": "&lt;!-- ul --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag }}\n\n&lt;!-- ol --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag: list_format: 'ordered' }}",
+        "raw_liquid": "&lt;!-- &lt;ul&gt; element --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag }}\n\n&lt;!-- &lt;ol&gt; element --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag: list_format: 'ordered' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
@@ -4939,10 +4939,10 @@
       },
       {
         "name": "crop",
-        "description": "Specify which part of the image to show if the specified dimensions result in an aspect ratio that differs from the original. You can use the following values:\n\n- `top`\n- `center`\n- `bottom`\n- `left`\n- `right`\n\nThe default value is `center`.\n\n&gt; Note:\n&gt; Country flags are SVG images and can only be cropped if a value for `format`\n&gt; is also provided.\n",
+        "description": "Specify which part of the image to show if the specified dimensions result in an aspect ratio that differs from the original. You can use the following values:\n\n- `top`\n- `center`\n- `bottom`\n- `left`\n- `right`\n- `region`\n\nThe default value is `center`.\n\nWhen using the `region` crop mode, the starting point for the crop is defined by `crop_left` and `crop_top` and extends to the `crop_width` and `crop_height`.\nOptionally, to resize the region extracted by the crop, use the `width` and `height` parameters.\n\n&gt; Note:\n&gt; Country flags are SVG images and can only be cropped if a value for `format`\n&gt; is also provided.\n",
         "syntax": "variable | image_url: crop: string",
         "path": "/products/health-potion",
-        "raw_liquid": "{{ product | image_url: width: 400, height: 400, crop: 'bottom' }}",
+        "raw_liquid": "{{ product | image_url: width: 400, height: 400, crop: 'bottom' }}\n\n{{ product | image_url: crop: 'region', crop_left: 32, crop_top: 32, crop_width: 512, crop_height: 512 }}\n\n{{ product | image_url: crop: 'region', width: 100, height: 100, crop_left: 32, crop_top: 32, crop_width: 512, crop_height: 512 }}",
         "parameter": true,
         "display_type": "text",
         "show_data_tab": true
