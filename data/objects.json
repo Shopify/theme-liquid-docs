@@ -3528,6 +3528,24 @@
         ],
         "summary": "The currency used in the country.",
         "name": "currency"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "market",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The market that includes this country.",
+        "name": "market"
       }
     ],
     "summary": "A country supported by the store's localization options.",
@@ -8331,6 +8349,24 @@
         ],
         "return_type": [
           {
+            "type": "market",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The currently selected market on the storefront.",
+        "name": "market"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
             "type": "country",
             "name": "",
             "description": "",
@@ -8507,6 +8543,96 @@
     "json_data": {
       "path": "/products/health-potion?variant=39897499729985",
       "handle": "product.selected_variant.store_availabilities[0].location",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "localization",
+          "property": "market"
+        },
+        {
+          "object": "country",
+          "property": "market"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "To learn more about markets, refer to [the Shopify Markets conceptual\noverview](/docs/apps/markets).",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the market.",
+        "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The [handle](/docs/api/liquid/basics#handles) of the market.",
+        "name": "handle"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage\n&gt; metafields](/apps/metafields/manage) or visit the [Shopify Help\n&gt; Center](https://help.shopify.com/manual/metafields).",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "metafield"
+          }
+        ],
+        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the market.",
+        "name": "metafields"
+      }
+    ],
+    "summary": "A group of one or more regions of the world that a merchant is targeting for sales.",
+    "name": "market",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "/",
+      "handle": "localization.market",
       "data_from_file": ""
     },
     "return_type": [
