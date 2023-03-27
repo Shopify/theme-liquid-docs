@@ -2014,7 +2014,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Tip:\n&gt; Use the [`weight_with_unit`](/docs/api/liquid/filters/weight_with_unit) filter to format the weight in\n&gt; [the store's format](https://www.shopify.com/admin/settings/general), or override the default unit.",
         "examples": [
 
         ],
@@ -2026,7 +2026,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The total weight of all of the items in the cart.",
+        "summary": "The total weight of all of the items in the cart in grams.",
         "name": "total_weight"
       },
       {
@@ -12408,7 +12408,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; Use the [`weight_with_unit` filter](/docs/api/liquid/filters/weight_with_unit) filter to format the weight in\n&gt; [the store's format](https://www.shopify.com/admin/settings/general).\n&gt;\n&gt; Use `variant.weight_in_unit` to output the weight in the unit configured on the variant.",
+        "description": "&gt; Tip:\n&gt; Use the [`weight_with_unit`](/docs/api/liquid/filters/weight_with_unit) filter to format the weight in\n&gt; [the store's format](https://www.shopify.com/admin/settings/general).\n&gt;\n&gt; Use `variant.weight_in_unit` to output the weight in the unit configured on the variant.",
         "examples": [
 
         ],
