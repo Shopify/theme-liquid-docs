@@ -5983,6 +5983,42 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "If there is no recipient associated with the gift card, then `nil` is returned.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "recipient",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The recipient associated with the gift card.",
+        "name": "recipient"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "If there is no message intended for the recipient, then `nil` is returned.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The personalized message intended for the recipient.",
+        "name": "message"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [
 
@@ -6179,7 +6215,7 @@
         "name": "last_four_characters"
       }
     ],
-    "summary": "A [gift card](https://help.shopify.com/manual/products/gift-card-products) that's been issued to a customer.",
+    "summary": "A [gift card](https://help.shopify.com/manual/products/gift-card-products) that's been issued to a customer or a recipient.",
     "name": "gift_card",
     "examples": [
 
@@ -6187,7 +6223,7 @@
     "json_data": {
       "path": "",
       "handle": "",
-      "data_from_file": "{\"balance\":5000,\"code\":\"WCGX 7X97 K9HJ DFR8\",\"currency\":\"CAD\",\"customer\":{},\"enabled\":true,\"expired\":false,\"expires_on\":null,\"initial_value\":5000,\"last_four_characters\":\"DFR8\",\"pass_url\":\"https://polinas-potent-potions.myshopify.com/v1/passes/pass.com.shopify.giftcardnext/94af7fbe55d010130df8d8bc4a338d36/\",\"product\":{},\"properties\":{},\"qr_identifier\":\"shopify-giftcard-v1-3TKWJKJBM3X7PBRK\",\"template_suffix\":null,\"url\":\"https://checkout.shopify.com/gift_cards/56174706753/0011c591fc720d0a51b80cdb694f969e\"}"
+      "data_from_file": "{\"balance\":5000,\"code\":\"WCGX 7X97 K9HJ DFR8\",\"currency\":\"CAD\",\"customer\":{},\"enabled\":true,\"expired\":false,\"expires_on\":null,\"initial_value\":5000,\"last_four_characters\":\"DFR8\",\"message\":null,\"pass_url\":\"https://polinas-potent-potions.myshopify.com/v1/passes/pass.com.shopify.giftcardnext/94af7fbe55d010130df8d8bc4a338d36/\",\"product\":{},\"properties\":{},\"qr_identifier\":\"shopify-giftcard-v1-3TKWJKJBM3X7PBRK\",\"recipient\":null,\"template_suffix\":null,\"url\":\"https://checkout.shopify.com/gift_cards/56174706753/0011c591fc720d0a51b80cdb694f969e\"}"
     },
     "return_type": [
 
@@ -12777,6 +12813,92 @@
       "path": "/products/health-potion",
       "handle": "product.metafields.details.rating.value",
       "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "gift_card",
+          "property": "recipient"
+        }
+      ],
+      "template": [
+        "gift_card.liquid"
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The nickname of the recipient.",
+        "name": "nickname"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The email of the recipient.",
+        "name": "email"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The full name of the recipient.",
+        "name": "name"
+      }
+    ],
+    "summary": "A recipient that is associated with a [gift card](https://help.shopify.com/manual/products/gift-card-products).",
+    "name": "recipient",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": "{\"email\":\"cornelius.potionmaker@gmail.com\",\"name\":\"Cornelius Potionmaker\",\"nickname\":\"Cornelius\"}"
     },
     "return_type": [
 
