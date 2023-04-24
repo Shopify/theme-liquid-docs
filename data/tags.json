@@ -977,36 +977,6 @@
     ]
   },
   {
-    "category": "theme",
-    "deprecated": false,
-    "deprecation_reason": "",
-    "description": "Rendering a section with the `section` tag renders a section statically. To learn more about sections and how to use\nthem in your theme, refer to [Render a section](/themes/architecture/sections#render-a-section).",
-    "parameters": [
-
-    ],
-    "summary": "Renders a [section](/themes/architecture/sections).",
-    "name": "section",
-    "syntax": "{% section 'name' %}",
-    "syntax_keywords": [
-      {
-        "keyword": "name",
-        "description": "The name of the section file you want to render."
-      }
-    ],
-    "examples": [
-      {
-        "name": "",
-        "description": "",
-        "syntax": "",
-        "path": "/",
-        "raw_liquid": "{% section 'header' %}",
-        "parameter": false,
-        "display_type": "text",
-        "show_data_tab": true
-      }
-    ]
-  },
-  {
     "category": "iteration",
     "deprecated": false,
     "deprecation_reason": "",

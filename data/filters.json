@@ -27,7 +27,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the total item count of a variant in the cart.",
+    "summary": "Returns the total item count for a specified variant in the cart.",
     "syntax": "cart | item_count_for_variant: {variant_id}",
     "name": "item_count_for_variant"
   },
@@ -2992,7 +2992,7 @@
       },
       {
         "name": "Sort by an array item property",
-        "description": "You can specify an array item property to sort the array items by.\n",
+        "description": "You can specify an array item property to sort the array items by. You can sort by any property of the object that you're sorting.\n",
         "syntax": "array | sort: string",
         "path": "/collections/all",
         "raw_liquid": "{% assign products = collection.products | sort: 'price' %}\n\n{% for product in products -%}\n  {{ product.title }}\n{%- endfor %}",
@@ -3679,10 +3679,10 @@
       },
       {
         "name": "alt",
-        "description": "By default, the `alt` attribute of the `&lt;img&gt;` tag is set to the  [media alt text](https://help.shopify.com/manual/products/product-media/add-alt-text), or the resource title for article, collection, line item, product, and variant images. However, you can override this default, or set the value if there's no default.\n",
+        "description": "By default, the `alt` attribute of the `&lt;img&gt;` tag is set to the [media alt text](https://help.shopify.com/manual/products/product-media/add-alt-text), or the resource title for article, collection, line item, product, and variant images. However, you can override this default, or set the value if there's no default.\n",
         "syntax": "image_url | image_tag: alt: string",
         "path": "/products/health-potion",
-        "raw_liquid": "{{ product | image_url: width: 200 | image_tag: alt: 'My image's alt text' }}",
+        "raw_liquid": "{{ product | image_url: width: 200 | image_tag: alt: \"My image's alt text\" }}",
         "parameter": true,
         "display_type": "html",
         "show_data_tab": true
@@ -4143,7 +4143,7 @@
         "description": "",
         "syntax": "",
         "path": "/collections/sale-potions",
-        "raw_liquid": "{% paginate collection.products by 2 %}\n  {% for product in collection.products %}\n    {{- product.title }} product card\n  {% endfor %}\n\n  {{- paginate | default_pagination -}}\n{% endpaginate %}",
+        "raw_liquid": "{% paginate collection.products by 2 %}\n  {% for product in collection.products %}\n    {{- product.title }}\n  {% endfor %}\n\n  {{- paginate | default_pagination -}}\n{% endpaginate %}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true

@@ -1380,7 +1380,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Sections and blocks are reusable modules of content that make up [templates](/themes/architecture/templates).",
+    "description": "Sections and blocks are reusable modules of content that make up [templates](/themes/architecture/templates).\n\nTo learn more about using blocks, refer to the [Shopify Partners blog](https://www.shopify.com/partners/blog/theme-blocks).",
     "properties": [
       {
         "deprecated": false,
@@ -1789,6 +1789,181 @@
     "json_data": {
       "path": "/blogs/potion-notions/new-potions-for-spring",
       "handle": "blog",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "shop",
+          "property": "brand"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The slogan for the brand.",
+        "name": "slogan"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "A short description of the brand.",
+        "name": "short_description"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The square logo for the brand, resized to 32x32 px.",
+        "name": "favicon_url"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The square logo for the brand, resized to 32x32 px.",
+        "name": "cover_image"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The default logo for the brand.",
+        "name": "logo"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The square logo for the brand.",
+        "name": "square_logo"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "To learn about how to access brand colors, refer to [`brand_color`](/docs/api/liquid/objects/brand_color).",
+        "examples": [
+
+        ],
+        "return_type": [
+
+        ],
+        "summary": "The brand's colors.",
+        "name": "colors"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Social links are stored in [metafields](/docs/api/liquid/objects/metafield), and can be accessed using the syntax `shop.brand.metafields.social_links.&lt;platform&gt;.value`.\n\n| Platforms |\n| --- |\n| `facebook` |\n| `pinterest` |\n| `instagram` |\n| `tiktok` |\n| `tumblr` |\n| `snapchat` |\n| `vimeo` |",
+        "examples": [
+          {
+            "name": "Access social links",
+            "description": "",
+            "syntax": "",
+            "path": "/",
+            "raw_liquid": "{{ shop.brand.metafields.social_links.twitter.value }}\n{{ shop.brand.metafields.social_links.youtube.value }}",
+            "parameter": false,
+            "display_type": "text",
+            "show_data_tab": true
+          }
+        ],
+        "return_type": [
+
+        ],
+        "summary": "The social links for the brand.",
+        "name": "metafields"
+      }
+    ],
+    "summary": "The [brand assets](https://help.shopify.com/manual/promoting-marketing/managing-brand-assets) for the store.",
+    "name": "brand",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "/",
+      "handle": "shop.brand",
       "data_from_file": ""
     },
     "return_type": [
@@ -2704,6 +2879,53 @@
     },
     "return_type": [
 
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "brand",
+          "property": "colors"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+
+    ],
+    "summary": "The colors defined as part of a store's [brand assets](https://help.shopify.com/manual/promoting-marketing/managing-brand-assets).",
+    "name": "brand_color",
+    "examples": [
+      {
+        "name": "",
+        "description": "To access a brand color, specify the following:\n- The brand color group: either `primary` or `secondary`\n- The color role: Whether the color is a `background` or `foreground` (contrasting) color\n- The 0-based index of the color within the group and role\n",
+        "syntax": "shop.brand.colors.group[index].role",
+        "path": "/",
+        "raw_liquid": "{{ shop.brand.colors.primary[0].background }}\n{{ shop.brand.colors.primary[0].foreground }}\n{{ shop.brand.colors.secondary[0].background }}\n{{ shop.brand.colors.secondary[1].background }}\n{{ shop.brand.colors.secondary[0].foreground }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
     ]
   },
   {
@@ -5422,7 +5644,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "This property is exclusive to the following forms:\n\n- [`contact`](/docs/api/liquid/tags/form#form-contact)\n- [`create_customer`](/docs/api/liquid/tags/form#form-create_customer)\n- [`customer`](/docs/api/liquid/tags/form#form-customer)\n- [`customer_login`](/docs/api/liquid/tags/form#form-customer_login)\n- [`new_comment`](/docs/api/liquid/tags/form#form-new_comment)\n- [`recover_customer_password`](/docs/api/liquid/tags/form#form-recover_customer_password)",
+        "description": "This property is exclusive to the following forms:\n\n- [`contact`](/docs/api/liquid/tags/form#form-contact)\n- [`create_customer`](/docs/api/liquid/tags/form#form-create_customer)\n- [`customer`](/docs/api/liquid/tags/form#form-customer)\n- [`customer_login`](/docs/api/liquid/tags/form#form-customer_login)\n- [`new_comment`](/docs/api/liquid/tags/form#form-new_comment)\n- [`recover_customer_password`](/docs/api/liquid/tags/form#form-recover_customer_password)\n- [`product`](/docs/api/liquid/tags/form#form-product)",
         "examples": [
 
         ],
@@ -5580,6 +5802,42 @@
         ],
         "summary": "Renders an HTML checkbox that can submit the address as the customer's default address.",
         "name": "set_as_default_checkbox"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "This property is exclusive to the [`product` form](/docs/api/liquid/tags/form#form-product).",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The nickname of the gift card recipient.",
+        "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "This property is exclusive to the [`product` form](/docs/api/liquid/tags/form#form-product).",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The personalized message intended for the recipient.",
+        "name": "message"
       },
       {
         "deprecated": false,
@@ -6019,6 +6277,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "If the gift card does not have a scheduled date, then `nil` is returned.\n&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the date.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The scheduled date on which the gift card will be sent to the recipient.",
+        "name": "send_on"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [
 
@@ -6223,7 +6499,7 @@
     "json_data": {
       "path": "",
       "handle": "",
-      "data_from_file": "{\"balance\":5000,\"code\":\"WCGX 7X97 K9HJ DFR8\",\"currency\":\"CAD\",\"customer\":{},\"enabled\":true,\"expired\":false,\"expires_on\":null,\"initial_value\":5000,\"last_four_characters\":\"DFR8\",\"message\":null,\"pass_url\":\"https://polinas-potent-potions.myshopify.com/v1/passes/pass.com.shopify.giftcardnext/94af7fbe55d010130df8d8bc4a338d36/\",\"product\":{},\"properties\":{},\"qr_identifier\":\"shopify-giftcard-v1-3TKWJKJBM3X7PBRK\",\"recipient\":null,\"template_suffix\":null,\"url\":\"https://checkout.shopify.com/gift_cards/56174706753/0011c591fc720d0a51b80cdb694f969e\"}"
+      "data_from_file": "{\"balance\":5000,\"code\":\"WCGX 7X97 K9HJ DFR8\",\"currency\":\"CAD\",\"customer\":{},\"enabled\":true,\"expired\":false,\"expires_on\":null,\"initial_value\":5000,\"last_four_characters\":\"DFR8\",\"message\":null,\"send_on\":null,\"pass_url\":\"https://polinas-potent-potions.myshopify.com/v1/passes/pass.com.shopify.giftcardnext/94af7fbe55d010130df8d8bc4a338d36/\",\"product\":{},\"properties\":{},\"qr_identifier\":\"shopify-giftcard-v1-3TKWJKJBM3X7PBRK\",\"recipient\":null,\"template_suffix\":null,\"url\":\"https://checkout.shopify.com/gift_cards/56174706753/0011c591fc720d0a51b80cdb694f969e\"}"
     },
     "return_type": [
 
@@ -6280,6 +6556,22 @@
         {
           "object": "video",
           "property": "preview_image"
+        },
+        {
+          "object": "brand",
+          "property": "favicon_url"
+        },
+        {
+          "object": "brand",
+          "property": "cover_image"
+        },
+        {
+          "object": "brand",
+          "property": "logo"
+        },
+        {
+          "object": "brand",
+          "property": "square_logo"
         },
         {
           "object": "collection",
@@ -7220,7 +7512,7 @@
       },
       {
         "deprecated": true,
-        "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/docs/api/liquid/objects/line_item#line_item-discount_allocations).",
+        "deprecation_reason": "Deprecated because not all discount types and details are available.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/docs/api/liquid/objects/line_item#line_item-discount_allocations).",
         "description": "",
         "examples": [
 
@@ -7233,7 +7525,7 @@
             "array_value": "discount"
           }
         ],
-        "summary": "The discounts from [Shopify Scripts](https://help.shopify.com/manual/checkout-settings/script-editor) that have\nbeen applied to the line item.",
+        "summary": "The discounts applied to the line item.",
         "name": "discounts"
       },
       {
@@ -7271,24 +7563,6 @@
         ],
         "summary": "Returns `true` if the variant associated with the line item requires shipping. Returns `false` if not.",
         "name": "requires_shipping"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because not all discount types and details are available.\n\nThe `line_item.discounts` property has been replaced by [`line_item.discount_allocations`](/docs/api/liquid/objects/line_item#line_item-discount_allocations).",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "discount"
-          }
-        ],
-        "summary": "The discounts applied to the line item.",
-        "name": "discounts"
       },
       {
         "deprecated": false,
@@ -12498,7 +12772,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If inventory isn't tracked, then `0` is returned.",
+        "description": "If inventory isn't tracked, then the number of items sold is returned.",
         "examples": [
 
         ],
@@ -15877,6 +16151,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "brand",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The [brand assets](https://help.shopify.com/manual/promoting-marketing/managing-brand-assets) for the store.",
+        "name": "brand"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "Metaobjects can only be accessed by specifying their type and handle. For more information, refer to [Access metaobjects individually](/docs/api/liquid/objects#metaobject-access-metaobjects-individually).\n\nMetaobjects are created in the [Content](https://www.shopify.com/admin/content) page of the Shopify admin.",
         "examples": [
 
@@ -16653,7 +16945,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The name of the template's [type](/themes/architecture/templates#template-types).",
+        "summary": "The name of the template's [type](/docs/themes/architecture/templates#template-types).",
         "name": "name"
       },
       {
@@ -16693,7 +16985,7 @@
         "name": "directory"
       }
     ],
-    "summary": "Information about the current template.",
+    "summary": "Information about the current [template](/docs/themes/architecture/templates).",
     "name": "template",
     "examples": [
 
@@ -18485,6 +18777,24 @@
         ],
         "summary": "The unfulfilled line items of the checkout.",
         "name": "unfulfilled_line_items"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The number of items in the checkout.",
+        "name": "item_count"
       }
     ],
     "summary": "A customer's checkout.",
