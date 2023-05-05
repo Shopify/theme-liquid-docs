@@ -3132,6 +3132,119 @@
     "access": {
       "global": false,
       "parents": [
+
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "&gt; Tip:\n&gt; To learn about color scheme groups in themes, refer to [`color_scheme_group` setting](/themes/architecture/settings/input-settings#color_scheme_group).",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the color_scheme",
+        "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "untyped",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The [settings](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group) of the color_scheme.",
+        "name": "settings"
+      }
+    ],
+    "summary": "A color_scheme from a [`color_scheme` setting](/themes/architecture/settings/input-settings#color_scheme).",
+    "name": "color_scheme",
+    "examples": [
+      {
+        "name": "Referencing color_scheme settings directly",
+        "description": "When a color_scheme setting is referenced directly, the color scheme ID is returned.\n",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{{ settings.card_color_scheme }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "json_data": {
+      "path": "/",
+      "handle": "settings.card_color_scheme",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "&gt; Tip:\n&gt; To learn about color schemes in themes, refer to [`color_scheme` setting](/themes/architecture/settings/input-settings#color_scheme).",
+    "properties": [
+
+    ],
+    "summary": "A color_scheme_group from a [`color_scheme_group` setting](/themes/architecture/settings/input-settings#color_scheme_group).",
+    "name": "color_scheme_group",
+    "examples": [
+      {
+        "name": "Referencing color_scheme_group settings directly",
+        "description": "",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{% for scheme in settings.color_schemes %}\n  .color-{{ scheme.id }} {\n    --color-background: {{ scheme.settings.background }};\n    --color-text: {{ scheme.settings.text }};\n  }\n{% endfor %}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "json_data": {
+      "path": "/",
+      "handle": "settings.color_schemes",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
         {
           "object": "company_location",
           "property": "shipping_address"
