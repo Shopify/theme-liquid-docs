@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "moveStep": {
+      "type": "object",
+      "properties": {
+        "action": { "const": "move" },
+        "file": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "properties": {
+                "source": { "type": "string" },
+                "target": { "type": "string" }
+              },
+              "required": ["source", "target"]
+            }
+          ]
+        },
+        "from_key": { "type": "string" },
+        "to_key": { "type": "string" }
+      },
+      "required": ["action", "file", "from_key", "to_key"],
+      "additionalProperties": false
+    },
+    "copyStep": {
+      "type": "object",
+      "properties": {
+        "action": { "const": "copy" },
+        "file": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "properties": {
+                "source": { "type": "string" },
+                "target": { "type": "string" }
+              },
+              "required": ["source", "target"]
+            }
+          ]
+        },
+        "from_key": { "type": "string" },
+        "to_key": { "type": "string" }
+      },
+      "required": ["action", "file", "from_key", "to_key"],
+      "additionalProperties": false
+    },
+    "addStep": {
+      "type": "object",
+      "properties": {
+        "action": { "const": "add" },
+        "file": { "type": "string" },
+        "key": { "type": "string" },
+        "value": {
+          "oneOf": [{ "type": "object" }, { "type": "array" }]
+        }
+      },
+      "required": ["action", "file", "key", "value"],
+      "additionalProperties": false
+    },
+    "updateStep": {
+      "type": "object",
+      "properties": {
+        "action": { "const": "update" },
+        "file": { "type": "string" },
+        "key": { "type": "string" },
+        "old_value": { "type": "string" },
+        "new_value": { "type": "string" }
+      },
+      "required": ["action", "file", "key", "new_value"],
+      "additionalProperties": false
+    },
+    "deleteStep": {
+      "type": "object",
+      "properties": {
+        "action": { "const": "delete" },
+        "file": { "type": "string" },
+        "key": { "type": "string" },
+        "value": { "type": "string" }
+      },
+      "required": ["action", "file", "key"],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "theme_name": {
+      "type": "string"
+    },
+    "theme_version": {
+      "type": "string"
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "anyOf": [
+              { "$ref": "#/definitions/moveStep" },
+              { "$ref": "#/definitions/copyStep" },
+              { "$ref": "#/definitions/addStep" },
+              { "$ref": "#/definitions/updateStep" },
+              { "$ref": "#/definitions/deleteStep" }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": ["$schema", "theme_name", "theme_version", "operations"],
+  "additionalProperties": false
+}
