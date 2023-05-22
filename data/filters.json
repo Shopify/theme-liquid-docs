@@ -1023,7 +1023,7 @@
   {
     "category": "localization",
     "deprecated": true,
-    "deprecation_reason": "Deprecated without a direct replacement because the [currency form](/docs/api/liquid/tags/form#form-currency) has also been\ndeprecated.",
+    "deprecation_reason": "Deprecated without a direct replacement because the [currency form](/docs/api/liquid/tags/form#form-currency) has also been\ndeprecated. The currency form was replaced by the [localization form](/docs/api/liquid/tags/form#form-localization). Refer to\nthis guide which explains [how to create a country selector](/docs/themes/markets/multiple-currencies-languages#implementing-country-and-language-selectors)\nusing the localization form.",
     "description": "The `currency_selector` filter must be applied to the [`form` object](/docs/api/liquid/objects/form) within a\n[currency form](/docs/api/liquid/tags/form#form-currency).",
     "parameters": [
       {

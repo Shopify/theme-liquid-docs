@@ -3545,6 +3545,24 @@
         ],
         "summary": "The company locations that the current customer has access to, or can interact with.",
         "name": "available_locations"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage metafields](/apps/metafields/manage) or visit\n&gt; the [Shopify Help Center](https://help.shopify.com/manual/metafields).",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "metafield"
+          }
+        ],
+        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the company.",
+        "name": "metafields"
       }
     ],
     "summary": "A company that a [customer](/docs/api/liquid/objects/customer) is purchasing for.",
@@ -3711,6 +3729,24 @@
         ],
         "summary": "The tax ID of the location.",
         "name": "tax_registration_id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage metafields](/apps/metafields/manage) or visit\n&gt; the [Shopify Help Center](https://help.shopify.com/manual/metafields).",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "metafield"
+          }
+        ],
+        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the company location.",
+        "name": "metafields"
       }
     ],
     "summary": "A location of the [company](/docs/api/liquid/objects/company) that a [customer](/docs/api/liquid/objects/customer) is purchasing for.",
