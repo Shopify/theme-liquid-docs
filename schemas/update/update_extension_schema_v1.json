@@ -4,22 +4,41 @@
     "moveStep": {
       "type": "object",
       "properties": {
-        "action": { "const": "move" },
+        "action": {
+          "const": "move",
+          "description": "The action type."
+        },
         "file": {
+          "description": "The file referenced in this step can be either a string, if the source and target are the same, or an object with 'source' and 'target' properties.",
           "oneOf": [
-            { "type": "string" },
+            {
+              "type": "string",
+              "description": "The relative path of the file, within the theme folder, to move the key-value pair."
+            },
             {
               "type": "object",
               "properties": {
-                "source": { "type": "string" },
-                "target": { "type": "string" }
+                "source": {
+                  "type": "string",
+                  "description": "The relative path of source file."
+                },
+                "target": {
+                  "type": "string",
+                  "description": "The relative path of target file."
+                }
               },
               "required": ["source", "target"]
             }
           ]
         },
-        "from_key": { "type": "string" },
-        "to_key": { "type": "string" }
+        "from_key": {
+          "type": "string",
+          "description": "The key to move from."
+        },
+        "to_key": {
+          "type": "string",
+          "description": "The key to move to."
+        }
       },
       "required": ["action", "file", "from_key", "to_key"],
       "additionalProperties": false
@@ -27,22 +46,41 @@
     "copyStep": {
       "type": "object",
       "properties": {
-        "action": { "const": "copy" },
+        "action": {
+          "const": "copy",
+          "description": "The action type."
+        },
         "file": {
+          "description": "The file referenced in this step can be either a string, if the source and target are the same, or an object with 'source' and 'target' properties.",
           "oneOf": [
-            { "type": "string" },
+            {
+              "type": "string",
+              "description": "The relative path of the file to copy the key-value pair."
+            },
             {
               "type": "object",
               "properties": {
-                "source": { "type": "string" },
-                "target": { "type": "string" }
+                "source": {
+                  "type": "string",
+                  "description": "The relative path of source file."
+                },
+                "target": {
+                  "type": "string",
+                  "description": "The relative path of target file."
+                }
               },
               "required": ["source", "target"]
             }
           ]
         },
-        "from_key": { "type": "string" },
-        "to_key": { "type": "string" }
+        "from_key": {
+          "type": "string",
+          "description": "The key to copy from."
+        },
+        "to_key": {
+          "type": "string",
+          "description": "The key to copy to."
+        }
       },
       "required": ["action", "file", "from_key", "to_key"],
       "additionalProperties": false
@@ -50,11 +88,28 @@
     "addStep": {
       "type": "object",
       "properties": {
-        "action": { "const": "add" },
-        "file": { "type": "string" },
-        "key": { "type": "string" },
+        "action": {
+          "const": "add",
+          "description": "The action type."
+        },
+        "file": {
+          "type": "string",
+          "description": "The relative path of the file to add the key-value pair to."
+        },
+        "key": {
+          "type": "string",
+          "description": "The existing key to add the value to."
+        },
         "value": {
-          "oneOf": [{ "type": "object" }, { "type": "array" }]
+          "description": "The value to add, either as an object or an array.",
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "array"
+            }
+          ]
         }
       },
       "required": ["action", "file", "key", "value"],
@@ -63,11 +118,26 @@
     "updateStep": {
       "type": "object",
       "properties": {
-        "action": { "const": "update" },
-        "file": { "type": "string" },
-        "key": { "type": "string" },
-        "old_value": { "type": "string" },
-        "new_value": { "type": "string" }
+        "action": {
+          "const": "update",
+          "description": "The action type."
+        },
+        "file": {
+          "type": "string",
+          "description": "The relative path of the file to update the key-value pair in."
+        },
+        "key": {
+          "type": "string",
+          "description": "The setting id to update."
+        },
+        "old_value": {
+          "type": "string",
+          "description": "The old setting id to be replaced."
+        },
+        "new_value": {
+          "type": "string",
+          "description": "The new setting id to replace the old one."
+        }
       },
       "required": ["action", "file", "key", "old_value", "new_value"],
       "additionalProperties": false
@@ -75,10 +145,22 @@
     "deleteStep": {
       "type": "object",
       "properties": {
-        "action": { "const": "delete" },
-        "file": { "type": "string" },
-        "key": { "type": "string" },
-        "value": { "type": "string" }
+        "action": {
+          "const": "delete",
+          "description": "The action type."
+        },
+        "file": {
+          "type": "string",
+          "description": "The relative path of the file to delete the key-value pair from."
+        },
+        "key": {
+          "type": "string",
+          "description": "The key to delete."
+        },
+        "value": {
+          "type": "string",
+          "description": "The optional value to delete in the key."
+        }
       },
       "required": ["action", "file", "key"],
       "additionalProperties": false
@@ -87,16 +169,20 @@
   "type": "object",
   "properties": {
     "$schema": {
-      "type": "string"
+      "type": "string",
+      "description": "The URL for the JSON schema version used for validation and execution."
     },
     "theme_name": {
-      "type": "string"
+      "type": "string",
+      "description": "The name of the theme to which the update extension script applies."
     },
     "theme_version": {
-      "type": "string"
+      "type": "string",
+      "description": "The version of the theme to which the update extension script applies."
     },
     "operations": {
       "type": "array",
+      "description": "An array of operations to be performed on the theme during an update.",
       "minItems": 1,
       "items": {
         "type": "object",
@@ -117,7 +203,6 @@
               ]
             }
           }
-
         },
         "required": ["id", "actions"],
         "additionalProperties": false
