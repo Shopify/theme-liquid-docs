@@ -1,8 +1,8 @@
 {
-  "name": "theme-liquid-docs",
+  "name": "@shopify/theme-liquid-docs",
   "version": "1.0.0",
+  "private": true,
   "description": "Repository for sources of truth relating to Shopify theme liquid content.",
-  "main": "index.js",
   "repository": "https://github.com/Shopify/theme-liquid-docs",
   "author": "Albert Chu <albert.chu@shopify.com>",
   "license": "MIT",
