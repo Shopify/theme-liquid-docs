@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Shopify Liquid Theme Section Schema",
   "type": "object",
+  "additionalProperties": false,
   "definitions": {
     "inputSettings": {
       "type": "array",

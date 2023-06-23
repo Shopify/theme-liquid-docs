@@ -1,0 +1,201 @@
+{
+  "name": "t:sections.collage.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Multimedia collage",
+      "label": "t:sections.collage.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collage.settings.desktop_layout.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collage.settings.desktop_layout.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.collage.settings.desktop_layout.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "options": [
+        {
+          "value": "collage",
+          "label": "t:sections.collage.settings.mobile_layout.options__1.label"
+        },
+        {
+          "value": "column",
+          "label": "t:sections.collage.settings.mobile_layout.options__2.label"
+        }
+      ],
+      "default": "column",
+      "label": "t:sections.collage.settings.mobile_layout.label"
+    },
+    {
+      "type": "select",
+      "id": "card_styles",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.collage.settings.card_styles.options__1.label"
+        },
+        {
+          "value": "product-card-wrapper",
+          "label": "t:sections.collage.settings.card_styles.options__2.label"
+        }
+      ],
+      "default": "product-card-wrapper",
+      "info": "t:sections.collage.settings.card_styles.info",
+      "label": "t:sections.collage.settings.card_styles.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.collage.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.collage.blocks.image.settings.image.label"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "t:sections.collage.blocks.product.name",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.collage.blocks.product.settings.product.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_image",
+          "default": false,
+          "label": "t:sections.collage.blocks.product.settings.second_image.label"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "t:sections.collage.blocks.collection.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.collage.blocks.collection.settings.collection.label"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "t:sections.collage.blocks.video.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "t:sections.collage.blocks.video.settings.cover_image.label"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "t:sections.collage.blocks.video.settings.video_url.label",
+          "placeholder": "t:sections.collage.blocks.video.settings.video_url.placeholder",
+          "info": "t:sections.collage.blocks.video.settings.video_url.info"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Describe the video",
+          "label": "t:sections.collage.blocks.video.settings.description.label",
+          "info": "t:sections.collage.blocks.video.settings.description.info"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "t:sections.collage.presets.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
