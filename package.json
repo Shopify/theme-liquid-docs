@@ -6,10 +6,12 @@
   "repository": "https://github.com/Shopify/theme-liquid-docs",
   "author": "Albert Chu <albert.chu@shopify.com>",
   "license": "MIT",
-  "scripts":{
+  "scripts": {
     "test": "vitest"
   },
   "devDependencies": {
+    "ajv": "^8.12.0",
+    "lodash.set": "^4.3.2",
     "vitest": "^0.32.2"
   }
 }
