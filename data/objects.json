@@ -651,7 +651,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). If the product isn't found, then `nil` is returned.",
+        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). If the product isn't found, then `empty` is returned.",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ all_products['love-potion'].title }}",
