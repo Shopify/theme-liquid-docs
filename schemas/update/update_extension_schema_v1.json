@@ -115,33 +115,6 @@
       "required": ["action", "file", "key", "value"],
       "additionalProperties": false
     },
-    "updateStep": {
-      "type": "object",
-      "properties": {
-        "action": {
-          "const": "update",
-          "description": "The action type."
-        },
-        "file": {
-          "type": "string",
-          "description": "The relative path of the file to update the key-value pair in."
-        },
-        "key": {
-          "type": "string",
-          "description": "The setting id to update."
-        },
-        "old_value": {
-          "type": "string",
-          "description": "The old setting id to be replaced."
-        },
-        "new_value": {
-          "type": "string",
-          "description": "The new setting id to replace the old one."
-        }
-      },
-      "required": ["action", "file", "key", "old_value", "new_value"],
-      "additionalProperties": false
-    },
     "deleteStep": {
       "type": "object",
       "properties": {
@@ -198,7 +171,6 @@
                 { "$ref": "#/definitions/moveStep" },
                 { "$ref": "#/definitions/copyStep" },
                 { "$ref": "#/definitions/addStep" },
-                { "$ref": "#/definitions/updateStep" },
                 { "$ref": "#/definitions/deleteStep" }
               ]
             }
