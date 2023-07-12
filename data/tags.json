@@ -1036,9 +1036,9 @@
       {
         "name": "window_size",
         "description": "Set the window size of the pagination. The window size is the number of pages that should be visible in the pagination navigation.\n",
-        "syntax": "{% paginate collection.products by 3, window_size: '1' %}",
+        "syntax": "{% paginate collection.products by 3, window_size: 1 %}",
         "path": "/collections/all",
-        "raw_liquid": "{% paginate collection.products by 3, window_size: '1' %}\n  {% for product in collection.products -%}\n    {{ product.title }}\n  {%- endfor %}\n\n  {{- paginate | default_pagination }}\n{% endpaginate %}",
+        "raw_liquid": "{% paginate collection.products by 3, window_size: 1 %}\n  {% for product in collection.products -%}\n    {{ product.title }}\n  {%- endfor %}\n\n  {{- paginate | default_pagination }}\n{% endpaginate %}",
         "parameter": true,
         "display_type": "text",
         "show_data_tab": true
