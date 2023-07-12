@@ -651,7 +651,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). If the product isn't found, then `nil` is returned.",
+        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). If the product isn't found, then `empty` is returned.",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ all_products['love-potion'].title }}",
@@ -2833,7 +2833,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Only filters relevant to the current collection are returned. Filters will be empty for collections that contain over 1000 products.\n\nTo learn about supporting filters in your theme, refer to [Support storefront filtering](/themes/navigation-search/filtering/storefront-filtering/support-storefront-filtering).",
+        "description": "Only filters relevant to the current collection are returned. Filters will be empty for collections that contain over 5000 products.\n\nTo learn about supporting filters in your theme, refer to [Support storefront filtering](/themes/navigation-search/filtering/storefront-filtering/support-storefront-filtering).",
         "examples": [
 
         ],
@@ -5262,7 +5262,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "For example, `filter.v.option.color`.\n\nFilters of type `price_range` include an extra component depending on whether the filter value is for the filter's\n`min_value` or `max_value`. The following table outlines the URL parameter for each:\n\n| Value type | URL parameter |\n| --- | --- |\n| `min_value` | `filter.v.price.lte` |\n| `max_value` | `filter.v.price.gte` |",
+        "description": "For example, `filter.v.option.color`.\n\nFilters of type `price_range` include an extra component depending on whether the filter value is for the filter's\n`min_value` or `max_value`. The following table outlines the URL parameter for each:\n\n| Value type | URL parameter |\n| --- | --- |\n| `min_value` | `filter.v.price.gte` |\n| `max_value` | `filter.v.price.lte` |",
         "examples": [
 
         ],
@@ -7239,7 +7239,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Caution:\n&gt; Not applicable for item component as discounts are applied to the parent line item.",
         "examples": [
 
         ],
@@ -7644,7 +7644,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Caution:\n&gt; Not applicable for item component as discounts are applied to the parent line item.",
         "examples": [
 
         ],
@@ -7847,6 +7847,24 @@
         ],
         "summary": "The selling plan allocation of the line item. If the line item doesn't have a selling plan allocation, then `nil` is returned.",
         "name": "selling_plan_allocation"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This field is applicable for cart line item only.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "line_item"
+          }
+        ],
+        "summary": "The components of a line item.",
+        "name": "item_components"
       }
     ],
     "summary": "A line in a cart, checkout, or order. Each line item represents a product variant.",
@@ -9027,7 +9045,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "To learn more about markets, refer to [the Shopify Markets conceptual\noverview](/docs/apps/markets).",
+    "description": "To learn more about markets, refer to [Shopify Markets](/docs/apps/markets).\nTo make sure that visitors interact with the optimal version of a store using Shopify Markets,\nrefer to [Detect and set a visitor's optimal localization](/docs/themes/markets/localization-discovery).",
     "properties": [
       {
         "deprecated": false,
@@ -9256,7 +9274,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/docs/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/docs/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/docs/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
+        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rich_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A field that supports headings, lists, links, bold, and italics&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/docs/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/docs/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/docs/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
         "examples": [
 
         ],
@@ -9288,6 +9306,12 @@
           {
             "type": "string",
             "name": "multi_line_text_field",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "rich_text_field",
             "description": "",
             "array_value": ""
           },
@@ -9547,7 +9571,7 @@
     "examples": [
       {
         "name": "Loop over entries of a metaobject definition",
-        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nFor example, you can display the field `author` for each metaobject using the following `forloop`:\n\n```liquid\n{% for testimonial in shop.metaobjects.testimonials.values %}\n  {{ testimonial.author.value }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
+        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nYou can loop over a maximum of 50 entries in a metaobject definition.\nFor example, you can display the field `author` for each metaobject using the following `forloop`:\n\n```liquid\n{% for testimonial in shop.metaobjects.testimonials.values %}\n  {{ testimonial.author.value }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -10597,6 +10621,24 @@
         ],
         "return_type": [
           {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "A randomly generated alpha-numeric identifier for the order that may be shown to the customer\ninstead of the sequential order name. For example, \"XPAV284CT\", \"R50KELTJP\" or \"35PKUN0UJ\".\nThis value isn't guaranteed to be unique.",
+        "name": "confirmation_number"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
             "type": "number",
             "name": "",
             "description": "",
@@ -11369,7 +11411,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Searches can be performed on the following object types:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`page`](/docs/api/liquid/objects/page)\n- [`product`](/docs/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the [`types` query parameter](/api/ajax/reference/predictive-search#query-parameters).",
+        "description": "Searches can be performed on the following object types:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`page`](/docs/api/liquid/objects/page)\n- [`product`](/docs/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the [`type` query parameter](/api/ajax/reference/predictive-search#query-parameters).",
         "examples": [
 
         ],
@@ -14472,7 +14514,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A search can be performed on the following object types:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`page`](/docs/api/liquid/objects/page)\n- [`product`](/docs/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the `types` URL parameter.",
+        "description": "A search can be performed on the following object types:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`page`](/docs/api/liquid/objects/page)\n- [`product`](/docs/api/liquid/objects/product)\n\n&gt; Note:\n&gt; The types are determined by the [`type` query parameter](/api/ajax/reference/predictive-search#query-parameters).",
         "examples": [
 
         ],
@@ -18384,7 +18426,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The customer associated with the checkout.\n&gt; Note:\n&gt; The `customer` object is available only on the Thank You and Order Status [pages](https://help.shopify.com/manual/orders/status-tracking).",
+        "summary": "The customer associated with the checkout.\n&gt; Note:\n&gt; The [`customer` object](/docs/api/liquid/objects/customer) is directly accessible globally when a customer is logged in to their account.",
         "name": "customer"
       },
       {

@@ -1912,7 +1912,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Capitalizes the first word in a string.",
+    "summary": "Capitalizes the first word in a string and downcases the remaining characters.",
     "syntax": "string | capitalize",
     "name": "capitalize"
   },
@@ -3174,6 +3174,48 @@
     "summary": "Strips all newline characters (line breaks) from a string.",
     "syntax": "string | strip_newlines",
     "name": "strip_newlines"
+  },
+  {
+    "category": "array",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "parameters": [
+
+    ],
+    "return_type": [
+      {
+        "type": "number",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{% assign fibonacci = '0, 1, 1, 2, 3, 5' | split: ', ' %}\n\n{{ fibonacci | sum }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Sum object property values",
+        "description": "For an array of Liquid objects, you can specify a property to sum.",
+        "syntax": "array | sum: string",
+        "path": "/cart",
+        "raw_liquid": "Total quantity of all items in cart:\n{{ cart.items | sum: 'quantity' }}\n\nSubtotal price for all items in cart:\n{{ cart.items | sum: 'final_line_price' | money }}",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Returns the sum of all elements in an array.",
+    "syntax": "array | sum",
+    "name": "sum"
   },
   {
     "category": "math",
@@ -5211,7 +5253,7 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{% for type in shop.enabled_payment_types %}\n&lt;img src=\"{{ type | payment_type_img_url }}\" /&gt;\n{% endfor %}",
+        "raw_liquid": "{% for type in shop.enabled_payment_types %}\n&lt;img src=\"{{ type | payment_type_img_url }}\" width=\"50\" height=\"50\" /&gt;\n{% endfor %}",
         "parameter": false,
         "display_type": "html",
         "show_data_tab": true
@@ -5274,7 +5316,7 @@
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Accepts the following placeholder names:\n\n- `collection-1`\n- `collection-2`\n- `collection-3`\n- `collection-4`\n- `collection-5`\n- `collection-6`\n- `image`\n- `lifestyle-1`\n- `lifestyle-2`\n- `product-1`\n- `product-2`\n- `product-3`\n- `product-4`\n- `product-5`\n- `product-6`",
+    "description": "Accepts the following placeholder names:\n\n| Outline illustrations | Color illustrations |\n| --- | --- |\n| &lt;ul&gt;&lt;li&gt;`product-1`&lt;/li&gt;&lt;li&gt;`product-2`&lt;/li&gt;&lt;li&gt;`product-3`&lt;/li&gt;&lt;li&gt;`product-4`&lt;/li&gt; &lt;li&gt;`product-5`&lt;/li&gt;&lt;li&gt;`product-6`&lt;/li&gt;&lt;li&gt;`collection-1`&lt;/li&gt;&lt;li&gt;`collection-2`&lt;/li&gt;&lt;li&gt;`collection-3`&lt;/li&gt;&lt;li&gt;`collection-4`&lt;/li&gt;&lt;li&gt;`collection-5`&lt;/li&gt;&lt;li&gt;`collection-6`&lt;/li&gt;&lt;li&gt;`lifestyle-1`&lt;/li&gt;&lt;li&gt;`lifestyle-2`&lt;/li&gt;&lt;li&gt;`image`&lt;/li&gt;&lt;/ul&gt; | &lt;ul&gt;&lt;li&gt;`product-apparel-1`&lt;/li&gt;&lt;li&gt;`product-apparel-2`&lt;/li&gt;&lt;li&gt;`product-apparel-3`&lt;/li&gt;&lt;li&gt;`product-apparel-4`&lt;/li&gt;&lt;li&gt;`collection-apparel-1`&lt;/li&gt;&lt;li&gt;`collection-apparel-2`&lt;/li&gt;&lt;li&gt;`collection-apparel-3`&lt;/li&gt;&lt;li&gt;`collection-apparel-4`&lt;/li&gt;&lt;li&gt;`hero-apparel-1`&lt;/li&gt;&lt;li&gt;`hero-apparel-2`&lt;/li&gt;&lt;li&gt;`hero-apparel-3`&lt;/li&gt;&lt;li&gt;`blog-apparel-1`&lt;/li&gt;&lt;li&gt;`blog-apparel-2`&lt;/li&gt;&lt;li&gt;`blog-apparel-3`&lt;/li&gt;&lt;li&gt;`detailed-apparel-1`&lt;/li&gt;&lt;/ul&gt; |",
     "parameters": [
       {
         "description": "The desired `class` attribute.",
