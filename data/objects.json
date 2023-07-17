@@ -12253,6 +12253,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the product has at least one variant with quantity price breaks in the current customer context.\nReturns `false` if not.",
+        "name": "quantity_price_breaks_configured?"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "&gt; Note:\n&gt; A variant requires a selling plan if [`variant.requires_selling_plan`](/docs/api/liquid/objects/variant#variant-requires_selling_plan)\n&gt; is `true`.",
         "examples": [
 
@@ -12644,6 +12662,42 @@
         ],
         "summary": "Returns the specified quantity rule for the variant if one exists in the current customer context. Otherwise returns `min=1,max=nil,increment=1` if the variant does not have any quantity rule.",
         "name": "quantity_rule"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "quantity_price_break"
+          }
+        ],
+        "summary": "Returns `quantity_price_break` objects for the variant in the current customer context.",
+        "name": "quantity_price_breaks"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the variant has any quantity price breaks available in the current customer context.\nReturns `false` if it doesn't.",
+        "name": "quantity_price_breaks_configured?"
       },
       {
         "deprecated": false,
@@ -13192,6 +13246,74 @@
       "path": "/products/health-potion",
       "handle": "product.variants[0]",
       "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "variant",
+          "property": "quantity_price_breaks"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The minimum quantity required to qualify for the price break.",
+        "name": "minimum_quantity"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is the price in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The price for the quantity price break once the minimum quantity is met.",
+        "name": "price"
+      }
+    ],
+    "summary": "The per-unit price of a variant when purchasing the minimum quantity or more.",
+    "name": "quantity_price_break",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": "{\"minimum_quantity\":\"10\",\"price\":\"20.00\"}"
     },
     "return_type": [
 
