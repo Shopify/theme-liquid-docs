@@ -9718,6 +9718,24 @@
         ],
         "summary": "The ID of the metaobject.",
         "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Only set for metaobjects that have the `online_store` capability.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The relative URL of the metaobject.",
+        "name": "url"
       }
     ],
     "summary": "Basic information about a [`metaobject`](/api/liquid/objects#metaobject). These properties are grouped under the `system` object to avoid collisions between system property names and user-defined metaobject fields.",
