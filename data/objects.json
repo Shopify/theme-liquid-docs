@@ -10159,6 +10159,12 @@
           },
           {
             "type": "string",
+            "name": "staff",
+            "description": "Staff error",
+            "array_value": ""
+          },
+          {
+            "type": "string",
             "name": "other",
             "description": "Other",
             "array_value": ""
@@ -18758,7 +18764,7 @@
         ],
         "return_type": [
           {
-            "type": "string",
+            "type": "number",
             "name": "",
             "description": "",
             "array_value": ""
