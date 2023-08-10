@@ -6113,6 +6113,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "string"
+          }
+        ],
+        "summary": "An array of the fulfillment's tracking numbers.",
+        "name": "tracking_numbers"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "If there's no tracking number, then `nil` is returned.",
         "examples": [
 
