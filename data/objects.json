@@ -17598,7 +17598,7 @@
         ],
         "return_type": [
           {
-            "type": "string",
+            "type": "number",
             "name": "",
             "description": "",
             "array_value": ""
