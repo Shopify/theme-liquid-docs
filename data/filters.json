@@ -32,6 +32,48 @@
     "name": "item_count_for_variant"
   },
   {
+    "category": "cart",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Accepts the following object types:\n\n- `product`\n- `variant`",
+    "parameters": [
+
+    ],
+    "return_type": [
+      {
+        "type": "array",
+        "name": "",
+        "description": "",
+        "array_value": "line_item"
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/products/bloodroot-whole",
+        "raw_liquid": "{% assign product = all_products['bloodroot-whole'] %}\n{% assign line_items = cart | line_items_for: product %}\n\nTotal cart quantity for product: {{ line_items | sum: 'quantity' }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/products/bloodroot-whole",
+        "raw_liquid": "{% assign product = all_products['bloodroot-whole'] %}\n{% assign variant = product.variants.first %}\n{% assign line_items = cart | line_items_for: variant %}\n\nTotal cart quantity for variant: {{ line_items | sum: 'quantity' }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Returns the subset of cart line items that include a specified product or variant.",
+    "syntax": "cart | line_items_for: object",
+    "name": "line_items_for"
+  },
+  {
     "category": "collection",
     "deprecated": false,
     "deprecation_reason": "",
