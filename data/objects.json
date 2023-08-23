@@ -13679,6 +13679,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "You can use `request.visual_preview_mode` to control theme behavior depending on whether the theme is being viewed in the editor's visual preview.\nFor example, you can remove any scripts that interefere with how the section is displayed.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the request is being made from within the theme editor's visual preview. Returns `false` if not.",
+        "name": "visual_preview_mode"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [
 
