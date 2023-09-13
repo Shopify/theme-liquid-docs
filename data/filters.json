@@ -5302,7 +5302,7 @@
       }
     ],
     "summary": "Returns the URL for an SVG image of a given [payment type](/docs/api/liquid/objects/shop#shop-enabled_payment_types).",
-    "syntax": "type | payment_type_img_url",
+    "syntax": "string | payment_type_img_url",
     "name": "payment_type_img_url"
   },
   {
@@ -5351,7 +5351,7 @@
       }
     ],
     "summary": "Generates an HTML `&lt;svg&gt;` tag for a given [payment type](/docs/api/liquid/objects/shop#shop-enabled_payment_types).",
-    "syntax": "type | payment_type_svg_tag",
+    "syntax": "string | payment_type_svg_tag",
     "name": "payment_type_svg_tag"
   },
   {
