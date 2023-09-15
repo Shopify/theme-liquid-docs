@@ -3974,10 +3974,6 @@
         },
         {
           "object": "shop",
-          "property": "currency"
-        },
-        {
-          "object": "shop",
           "property": "money_format"
         },
         {
@@ -11404,7 +11400,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; The `predictive_search` object returns results only when rendered in a section using the Predictive Saerch API and the\n[Section Rendering API](/api/section-rendering). To learn about how to include predictive search in your theme,\n&gt; refer to [Add predictive search to your theme](/themes/navigation-search/search/predictive-search).",
+    "description": "&gt; Note:\n&gt; The `predictive_search` object returns results only when rendered in a section using the Predictive Search API and the\n[Section Rendering API](/api/section-rendering). To learn about how to include predictive search in your theme,\n&gt; refer to [Add predictive search to your theme](/themes/navigation-search/search/predictive-search).",
     "properties": [
       {
         "deprecated": false,
@@ -13679,7 +13675,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "You can use `request.visual_preview_mode` to control theme behavior depending on whether the theme is being viewed in the editor's visual preview.\nFor example, you can remove any scripts that interefere with how the section is displayed.",
+        "description": "You can use `request.visual_preview_mode` to control theme behavior depending on whether the theme is being viewed in the online store editor's visual section preview.\nFor example, you can remove any scripts that interefere with how the section is displayed.",
         "examples": [
 
         ],
@@ -13691,7 +13687,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the request is being made from within the theme editor's visual preview. Returns `false` if not.",
+        "summary": "Returns `true` if the request is being made from within the online store editor's visual section preview. Returns `false` if not.",
         "name": "visual_preview_mode"
       },
       {
@@ -14791,6 +14787,60 @@
         ],
         "summary": "The [settings](https://shopify.dev/themes/architecture/sections/section-schema#settings) of the section.",
         "name": "settings"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Use this property to adjust section behavior based on its position within its location ([template](/docs/themes/architecture/templates), [section group](/docs/themes/architecture/section-groups)) and on the page. The `index` starts at 1 within each location.\n\nAn example use case is for programmatically setting `loading=\"lazy\"` for images below the fold based on an index higher than, for example, 3. Note that this is now the default behavior for the [`image_tag` filter](/docs/api/liquid/filters#image_tag).\n\nOnly use this for non-display use cases like web performance. Because of various limitations, the `index` property returns `nil` in the following contexts:\n\n- When rendered as a [static section](/docs/themes/architecture/sections#statically-render-a-section)\n- While rendering in the online store editor\n- When using the [Section Rendering API](/docs/api/section-rendering)",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The 1-based index of the current section within its location.",
+        "name": "index"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "This is the same as the `index` property except that the index starts at 0 instead of 1.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The 0-based index of the current section within its location.",
+        "name": "index0"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Sections can have one of four different location types. For sections rendered within a [template](/docs/themes/architecture/templates), the location will be `template`. For sections rendered within a [section group](/docs/themes/architecture/section-groups), the location will be the section group type, e.g., `header`, `footer`, `custom.&lt;type&gt;`. Sections [rendered statically](/docs/themes/architecture/sections#statically-render-a-section) will be `static`. Finally, if you're still using `content_for_index`, then the value will be `content_for_index`.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The scope or context of the section (template, section group, or global).",
+        "name": "location"
       },
       {
         "deprecated": false,
@@ -16218,7 +16268,7 @@
         ],
         "return_type": [
           {
-            "type": "currency",
+            "type": "string",
             "name": "",
             "description": "",
             "array_value": ""
@@ -16285,10 +16335,10 @@
         ],
         "return_type": [
           {
-            "type": "string",
+            "type": "array",
             "name": "",
             "description": "",
-            "array_value": ""
+            "array_value": "string"
           }
         ],
         "summary": "The accepted payment types on the store.",
