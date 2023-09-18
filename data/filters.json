@@ -3623,7 +3623,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "By default, `width` and `height` attributes are added to the `&lt;img&gt;` tag based on the dimensions and aspect ratio from\nthe image URL. However, you can override these attributes with the [width](/docs/api/liquid/filters/image_tag#image_tag-width) and [height](/docs/api/liquid/filters/image_tag#image_tag-height)\nparameters. If only one parameter is provided, then only that attribute is added.\n\n&gt; Note:\n&gt; This filter automatically applies the `object-position` css style from the focal point value if set. For more\n&gt; information, refer to the [`focal_point` object](/docs/api/liquid/objects/focal_point).",
+    "description": "By default, `width` and `height` attributes are added to the `&lt;img&gt;` tag based on the dimensions and aspect ratio from\nthe image URL. However, you can override these attributes with the [width](/docs/api/liquid/filters/image_tag#image_tag-width) and [height](/docs/api/liquid/filters/image_tag#image_tag-height)\nparameters. If only one parameter is provided, then only that attribute is added.\n\nNote that if you do not set the `loading` attribute, it will be set to `lazy` by default for images in sections further down the page. You should not lazy load images above the fold. If the default value does not work for your theme, consider using your own logic based on the `section.index` and `section.location` properties. For more information, refer to the [`section` object](/docs/api/liquid/objects/section).\n\n&gt; Note:\n&gt; This filter automatically applies the `object-position` css style from the focal point value if set. For more\n&gt; information, refer to the [`focal_point` object](/docs/api/liquid/objects/focal_point).",
     "parameters": [
       {
         "description": "The width of the image.",
@@ -5302,7 +5302,7 @@
       }
     ],
     "summary": "Returns the URL for an SVG image of a given [payment type](/docs/api/liquid/objects/shop#shop-enabled_payment_types).",
-    "syntax": "type | payment_type_img_url",
+    "syntax": "string | payment_type_img_url",
     "name": "payment_type_img_url"
   },
   {
@@ -5351,7 +5351,7 @@
       }
     ],
     "summary": "Generates an HTML `&lt;svg&gt;` tag for a given [payment type](/docs/api/liquid/objects/shop#shop-enabled_payment_types).",
-    "syntax": "type | payment_type_svg_tag",
+    "syntax": "string | payment_type_svg_tag",
     "name": "payment_type_svg_tag"
   },
   {
