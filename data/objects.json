@@ -748,7 +748,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_amount`](/docs/api/liquid/objects/discount#discount-total_amount).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_amount`](/docs/api/liquid/objects/discount#discount-total_amount).\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -766,7 +766,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.amount`](/docs/api/liquid/objects/discount#discount-amount).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.amount`](/docs/api/liquid/objects/discount#discount-amount).\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -850,7 +850,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_savings`](/docs/api/liquid/objects/discount#discount-total_savings).\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.total_savings`](/docs/api/liquid/objects/discount#discount-total_savings).\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -868,7 +868,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`discount.savings`](/docs/api/liquid/objects/discount#discount-savings).\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`discount.savings`](/docs/api/liquid/objects/discount#discount-savings).\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -2050,7 +2050,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -2068,7 +2068,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -2086,7 +2086,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -2104,7 +2104,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -2122,7 +2122,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -4142,7 +4142,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -4529,7 +4529,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -4587,7 +4587,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -4623,7 +4623,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/discount_application#discount_application-value_type) of the\ndiscount. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount of the discount in the currency's subunit. |\n| `percentage` | The percent amount of the discount. |\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/discount_application#discount_application-value_type) of the\ndiscount. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount of the discount in the currency's subunit. |\n| `percentage` | The percent amount of the discount. |\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -6332,7 +6332,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -6512,7 +6512,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -7199,7 +7199,7 @@
       {
         "deprecated": true,
         "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.price` property has been replaced by [`line_item.final_price`](/docs/api/liquid/objects/line_item#line_item-final_price).",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7217,7 +7217,7 @@
       {
         "deprecated": true,
         "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.line_price` property has been replaced by [`line_item.final_line_price`](/docs/api/liquid/objects/line_item#line_item-final_line_price).",
-        "description": "The value is equal to `line_item.price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is equal to `line_item.price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7235,7 +7235,7 @@
       {
         "deprecated": true,
         "deprecation_reason": "Deprecated because discounts from automatic discounts and discount codes aren't included.\n\nThe `line_item.total_discount` property has been replaced by [`line_item.line_level_total_discount`](/docs/api/liquid/objects/line_item#line_item-line_level_total_discount).",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -7271,7 +7271,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7289,7 +7289,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is equal to `line_item.final_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is equal to `line_item.final_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7496,7 +7496,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7604,7 +7604,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7622,7 +7622,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is equal to `line_item.original_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is equal to `line_item.original_price` multiplied by `line_item.quantity`. It's output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -7640,7 +7640,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10290,7 +10290,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there are no duties, then `nil` is returned. The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "If there are no duties, then `nil` is returned. The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10362,7 +10362,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10380,7 +10380,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The amount is calculated after refunds are applied, so is equal to `order.total_price` minus `order.total_refunded_amount`.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The amount is calculated after refunds are applied, so is equal to `order.total_price` minus `order.total_refunded_amount`.\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10398,7 +10398,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10416,7 +10416,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10915,7 +10915,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10933,7 +10933,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10951,7 +10951,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The total price is calculated before refunds are applied. Use [`order.total_net_amount`](/docs/api/liquid/objects/order#order-total_net_amount)\n&gt; to output the total minus any refunds.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "&gt; Note:\n&gt; The total price is calculated before refunds are applied. Use [`order.total_net_amount`](/docs/api/liquid/objects/order#order-total_net_amount)\n&gt; to output the total minus any refunds.\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10969,7 +10969,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -10983,6 +10983,24 @@
         ],
         "summary": "The shipping price of the order in the currency's subunit.",
         "name": "shipping_price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the order is a store pickup order.",
+        "name": "pickup_in_store?"
       }
     ],
     "summary": "An [order](https://help.shopify.com/manual/orders).",
@@ -11575,7 +11593,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/selling_plan_price_adjustment#selling_plan_price_adjustment-value_type) of\nthe price adjustment. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount that the original price is being adjusted by, in the currency's subunit. |\n| `percentage` | The percent amount that the original price is being adjusted by. |\n| `price` | The adjusted amount in the currency's subunit. |\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/selling_plan_price_adjustment#selling_plan_price_adjustment-value_type) of\nthe price adjustment. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `fixed_amount` | The amount that the original price is being adjusted by, in the currency's subunit. |\n| `percentage` | The percent amount that the original price is being adjusted by. |\n| `price` | The adjusted amount in the currency's subunit. |\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11905,7 +11923,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.price`](/docs/api/liquid/objects/product#product-price).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.price`](/docs/api/liquid/objects/product#product-price).\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11923,7 +11941,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.price_min`](/docs/api/liquid/objects/product#product-price_min).\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.price_min`](/docs/api/liquid/objects/product#product-price_min).\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -11941,7 +11959,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12112,7 +12130,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12130,7 +12148,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12148,7 +12166,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12696,7 +12714,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The default quantity rule is `min=1,max=null,increment=1`.",
+        "description": "If no rule exists, then a default value is returned.\n\nThis rule can be set as part of a [B2B catalog](https://help.shopify.com/manual/b2b/catalogs/quantity-pricing).\n\n&gt; Note:\n&gt; The default quantity rule is `min=1,max=null,increment=1`.",
         "examples": [
 
         ],
@@ -12708,7 +12726,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns the specified quantity rule for the variant if one exists in the current customer context. Otherwise returns `min=1,max=nil,increment=1` if the variant does not have any quantity rule.",
+        "summary": "The quantity rule for the variant.",
         "name": "quantity_rule"
       },
       {
@@ -12750,7 +12768,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -12768,7 +12786,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -13047,7 +13065,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14929,7 +14947,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value of the **compare at** price is the line item's price without the selling plan applied. If the price and compare\nat price are equal, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value of the **compare at** price is the line item's price without the selling plan applied.\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14965,7 +14983,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If the variant doesn't have a unit price, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "If the variant doesn't have a unit price, then `nil` is returned.\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -14983,7 +15001,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If a selling plan includes multiple deliveries, then the `per_delivery_price` is the `price` divided by the number of\ndeliveries.\n\nThe value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "If a selling plan includes multiple deliveries, then the `per_delivery_price` is the `price` divided by the number of\ndeliveries.\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -15055,7 +15073,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -15123,7 +15141,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -15205,7 +15223,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/selling_plan_checkout_charge#selling_plan_checkout_charge-value_type) of\nthe checkout charge. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `percentage` | The percent amount of the original price that the customer needs to pay.&lt;br&gt;&lt;br&gt;For example, if the value is 50, then the customer needs to pay 50% of the original price. |\n| `price` | The amount that the customer needs to pay in the currency's subunit. |\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "How this value is interpreted depends on the [value type](/docs/api/liquid/objects/selling_plan_checkout_charge#selling_plan_checkout_charge-value_type) of\nthe checkout charge. The following table outlines what the value represents for each value type:\n\n| Value type | Value |\n| --- | --- |\n| `percentage` | The percent amount of the original price that the customer needs to pay.&lt;br&gt;&lt;br&gt;For example, if the value is 50, then the customer needs to pay 50% of the original price. |\n| `price` | The amount that the customer needs to pay in the currency's subunit. |\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -15813,7 +15831,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -15831,7 +15849,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -17041,7 +17059,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
         "examples": [
 
         ],
@@ -17666,7 +17684,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The amount is in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The amount is in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -18531,7 +18549,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Deprecated:\n&gt; &lt;p&gt;The &lt;code&gt;checkout&lt;/code&gt; object will be deprecated for the Information, Shipping, and Payment pages on August 13, 2024. Merchants who have customized these pages using &lt;code&gt;checkout.liquid&lt;/code&gt; to &lt;a href=\"https://help.shopify.com/manual/online-store/themes/theme-structure/extend/checkout-migration#migrate-to-checkout-extensibility\"&gt;upgrade to checkout extensibility&lt;/a&gt; before August 13, 2024.&lt;/p&gt;\n&gt; &lt;p&gt;Learn &lt;a href=\"/apps/checkout\"&gt;how to build checkout extensions&lt;/a&gt; that extend the functionality of Shopify checkout.&lt;/p&gt;\n\nYou can access the `checkout` object on the [order status page](https://help.shopify.com/manual/orders/status-tracking/customize-order-status).\n\nShopify Plus merchants can access the `checkout` object in the [`checkout.liquid` layout](/themes/architecture/layouts/checkout-liquid).",
+    "description": "&gt; Deprecated:\n&gt; &lt;p&gt;The &lt;code&gt;checkout&lt;/code&gt; object will be deprecated for the Information, Shipping, and Payment pages on August 13, 2024. Merchants who have customized these pages using &lt;code&gt;checkout.liquid&lt;/code&gt; need to &lt;a href=\"https://help.shopify.com/manual/online-store/themes/theme-structure/extend/checkout-migration#migrate-to-checkout-extensibility\"&gt;upgrade to checkout extensibility&lt;/a&gt; before August 13, 2024.&lt;/p&gt;\n&gt; &lt;p&gt;Learn &lt;a href=\"/apps/checkout\"&gt;how to build checkout extensions&lt;/a&gt; that extend the functionality of Shopify checkout.&lt;/p&gt;\n\nYou can access the `checkout` object on the [order status page](https://help.shopify.com/manual/orders/status-tracking/customize-order-status).\n\nShopify Plus merchants can access the `checkout` object in the [`checkout.liquid` layout](/themes/architecture/layouts/checkout-liquid).",
     "properties": [
       {
         "deprecated": false,
@@ -18734,7 +18752,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
         "examples": [
 
         ],
@@ -18748,492 +18766,6 @@
         ],
         "summary": "The total amount of the discounts applied to the checkout in the currency's subunit.",
         "name": "discounts_amount"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "discount_application"
-          }
-        ],
-        "summary": "The total amount of the discounts applied to the checkout in the currency's subunit, as a negative value.",
-        "name": "discounts_savings"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The email associated with the checkout.",
-        "name": "email"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because `nil` is always returned.",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The financial status of the checkout.",
-        "name": "financial_status"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because `nil` is always returned.",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "A timestamp for the fulfullment of the checkout.",
-        "name": "fulfilled_at"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because the array is always empty.",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "line_item"
-          }
-        ],
-        "summary": "The fulfilled line items from the checkout.",
-        "name": "fulfilled_line_items"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because `unfulfilled` is always returned.",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The fulfillment status of the checkout.",
-        "name": "fulfillment_status"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The amount of the checkout price paid in gift cards.",
-        "name": "gift_cards_amount"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The ID of the checkout.",
-        "name": "id"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "line_item"
-          }
-        ],
-        "summary": "The line items of the checkout.",
-        "name": "line_items"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The sum of the prices of all of the line items of the checkout in the currency's subunit, after any line item discounts\nhave been applied.",
-        "name": "line_items_subtotal_price"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "This value is the same as [`checkout.id`](/docs/api/liquid/objects/checkout#checkout-id) with a `#` prepended to it.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The name of the checkout.",
-        "name": "name"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "Additional information entered by the customer with the [cart](/docs/api/liquid/objects/cart#cart-note).",
-        "name": "note"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "Depending on the payment provider, the order might not have been created when the [Thank You page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.\n&gt; Note:\n&gt; The `order` object isn't available on the Thank You page.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "order",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The order created by the checkout.",
-        "name": "order"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is the same as [`order.id`](/docs/api/liquid/objects/order#order-id).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The ID of the order created by the checkout.",
-        "name": "order_id"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is the same as [`order.name`](/docs/api/liquid/objects/order#order-name).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The name of the order created by the checkout.",
-        "name": "order_name"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is the same as [`order.order_number`](/docs/api/liquid/objects/order#order-order_number).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "An integer representation of the name of the order created by the checkout.",
-        "name": "order_number"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "boolean",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "Returns `true` if any of the line items of the checkout require shipping. Returns `false` if not.",
-        "name": "requires_shipping"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "address",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The shipping address of the checkout.",
-        "name": "shipping_address"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "shipping_method",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The shipping method of the checkout.",
-        "name": "shipping_method"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The shipping price of the checkout in the currency's subunit.",
-        "name": "shipping_price"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "tax_line"
-          }
-        ],
-        "summary": "The tax lines for the checkout.",
-        "name": "tax_lines"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The total tax amount of the checkout in the currency's subunit.",
-        "name": "tax_price"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The total price of the checkout in the currency's subunit.",
-        "name": "total_price"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "transaction"
-          }
-        ],
-        "summary": "The transactions of the checkout.",
-        "name": "transactions"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because the array is always empty.",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "line_item"
-          }
-        ],
-        "summary": "The unavailable line items of the checkout.",
-        "name": "unavailable_line_items"
-      },
-      {
-        "deprecated": true,
-        "deprecation_reason": "Deprecated because the array is always the same as [`checkout.line_items`](/docs/api/liquid/objects/checkout#checkout-line_items).",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "line_item"
-          }
-        ],
-        "summary": "The unfulfilled line items of the checkout.",
-        "name": "unfulfilled_line_items"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "number",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The number of items in the checkout.",
-        "name": "item_count"
       }
     ],
     "summary": "A customer's checkout.",
@@ -20218,7 +19750,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "",
+    "description": "If no rule exists, then a default value is returned.\n\nThis rule can be set as part of a [B2B catalog](https://help.shopify.com/manual/b2b/catalogs/quantity-pricing).\n\n&gt; Note:\n&gt; The default quantity rule is `min=1,max=null,increment=1`.",
     "properties": [
       {
         "deprecated": false,
@@ -20235,13 +19767,13 @@
             "array_value": ""
           }
         ],
-        "summary": "Minimum order quantity (default 1)",
+        "summary": "The minimum order quantity. The default value is `1`.",
         "name": "min"
       },
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there is no maximum, then `nil` is returned.",
+        "description": "If there is no maximum quantity, then `nil` is returned.",
         "examples": [
 
         ],
@@ -20253,7 +19785,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Maximum order quantity",
+        "summary": "The maximum order quantity.",
         "name": "max"
       },
       {
@@ -20271,11 +19803,11 @@
             "array_value": ""
           }
         ],
-        "summary": "Order quantity increment (default 1)",
+        "summary": "The number the order quantity can be incremented by. The default value is `1`.",
         "name": "increment"
       }
     ],
-    "summary": "A variant order quantity rule (minimum, maximum, and increment). The default order variant quantity rule is `min=1,max=null,increment=1`.",
+    "summary": "A variant order quantity rule.",
     "name": "quantity_rule",
     "examples": [
       {
@@ -20292,7 +19824,7 @@
     "json_data": {
       "path": "",
       "handle": "",
-      "data_from_file": "{\"min\":\"1\",\"max\":null,\"increment\":\"1\"}"
+      "data_from_file": "{\"min\":5,\"max\":100,\"increment\":5}"
     },
     "return_type": [
 

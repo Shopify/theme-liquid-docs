@@ -378,7 +378,7 @@
         "description": "A `when` tag can accept multiple values. When multiple values are provided, the expression is returned when the variable matches any of the values inside of the tag.\nProvide the values as a comma-separated list, or separate them using an `or` operator.\n",
         "syntax": "{% case variable %}\n  {% when first_value or second_value or third_value %}\n    first_expression\n  {% when fourth_value, fifth_value, sixth_value %}\n    second_expression\n  {% else %}\n    third_expression\n{% endcase %}\n",
         "path": "/products/health-potion",
-        "raw_liquid": "{% case product.tags %}\n  {% when 'Love' or 'Luck' %}\n    This is a love or luck potion.\n  {% when 'Strength','Health' %}\n    This is a strength or health potion.\n  {% else %}\n    This is a potion.\n{% endcase %}",
+        "raw_liquid": "{% case product.type %}\n  {% when 'Love' or 'Luck' %}\n    This is a love or luck potion.\n  {% when 'Strength','Health' %}\n    This is a strength or health potion.\n  {% else %}\n    This is a potion.\n{% endcase %}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
