@@ -38,6 +38,7 @@ const ALLOWED_SETTING_TYPES = [
   "select",
   "text",
   "textarea",
+  "text_alignment",
   "url",
   "video_url",
   "video",
