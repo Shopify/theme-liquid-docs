@@ -2221,7 +2221,7 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{%- assign escaped_text = '&lt;p&gt;Text to be escaped.&lt;/p&gt;' | escape -%}\n\n{{ escaped_text }}\n{{ escaped_text | escape_once }}",
+        "raw_liquid": "# applying the escape filter to already escaped text escapes characters in HTML entities:\n\n{{ \"&amp;lt;p&amp;gt;Text to be escaped.&amp;lt;/p&amp;gt;\" | escape }}\n\n# applying the escape_once filter to already escaped text skips characters in HTML entities:\n\n{{ \"&amp;lt;p&amp;gt;Text to be escaped.&amp;lt;/p&amp;gt;\" | escape_once }}\n\n# use escape_once to escape strings where a combination of HTML entities and non-escaped characters might be present:\n\n{{ \"&amp;lt;p&amp;gt;Text to be escaped.&amp;lt;/p&amp;gt; &amp; some additional text\" | escape_once }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
@@ -3623,7 +3623,7 @@
     "category": "media",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "By default, `width` and `height` attributes are added to the `&lt;img&gt;` tag based on the dimensions and aspect ratio from\nthe image URL. However, you can override these attributes with the [width](/docs/api/liquid/filters/image_tag#image_tag-width) and [height](/docs/api/liquid/filters/image_tag#image_tag-height)\nparameters. If only one parameter is provided, then only that attribute is added.\n\nNote that if you do not set the `loading` attribute, it will be set to `lazy` by default for images in sections further down the page. You should not lazy load images above the fold. If the default value does not work for your theme, consider using your own logic based on the `section.index` and `section.location` properties. For more information, refer to the [`section` object](/docs/api/liquid/objects/section).\n\n&gt; Note:\n&gt; This filter automatically applies the `object-position` css style from the focal point value if set. For more\n&gt; information, refer to the [`focal_point` object](/docs/api/liquid/objects/focal_point).",
+    "description": "By default, `width` and `height` attributes are added to the `&lt;img&gt;` tag based on the dimensions and aspect ratio from\nthe image URL. However, you can override these attributes with the [width](/docs/api/liquid/filters/image_tag#image_tag-width) and [height](/docs/api/liquid/filters/image_tag#image_tag-height)\nparameters. If only one parameter is provided, then only that attribute is added.",
     "parameters": [
       {
         "description": "The width of the image.",
@@ -3697,6 +3697,26 @@
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product | image_url: width: 200 | image_tag }}",
+        "parameter": false,
+        "display_type": "html",
+        "show_data_tab": true
+      },
+      {
+        "name": "Lazy loading",
+        "description": "If you don't apply the `preload` attribute to `image_tag`, then `loading` is automatically set to `lazy` for images in sections further down the page.\nYou shouldn't lazy load images above the fold. If the default value doesn't work for your theme, then consider writing your own logic using the `section.index` and `section.location` properties. For more information, refer to the [`section` object](/docs/api/liquid/objects/section).\n",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "`image_tag` and focal points",
+        "description": "This filter automatically applies a focal point to the image using the `object-position` CSS style, if focal point coordinates are available. You can also access an image's focal point coordinates directly through the [`focal_point`](/docs/api/liquid/objects/focal_point) object. [Learn how to set a focal point](https://help.shopify.com/manual/online-store/images/theme-images#set-a-focal-point-on-a-theme-image).\n",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{{ images['potions-header.png'] | image_url: width: 300 | image_tag }}",
         "parameter": false,
         "display_type": "html",
         "show_data_tab": true
