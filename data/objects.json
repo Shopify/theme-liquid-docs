@@ -18766,6 +18766,492 @@
         ],
         "summary": "The total amount of the discounts applied to the checkout in the currency's subunit.",
         "name": "discounts_amount"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "discount_application"
+          }
+        ],
+        "summary": "The total amount of the discounts applied to the checkout in the currency's subunit, as a negative value.",
+        "name": "discounts_savings"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The email associated with the checkout.",
+        "name": "email"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because `nil` is always returned.",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The financial status of the checkout.",
+        "name": "financial_status"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because `nil` is always returned.",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "A timestamp for the fulfullment of the checkout.",
+        "name": "fulfilled_at"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because the array is always empty.",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "line_item"
+          }
+        ],
+        "summary": "The fulfilled line items from the checkout.",
+        "name": "fulfilled_line_items"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because `unfulfilled` is always returned.",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The fulfillment status of the checkout.",
+        "name": "fulfillment_status"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The amount of the checkout price paid in gift cards.",
+        "name": "gift_cards_amount"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the checkout.",
+        "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "line_item"
+          }
+        ],
+        "summary": "The line items of the checkout.",
+        "name": "line_items"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The sum of the prices of all of the line items of the checkout in the currency's subunit, after any line item discounts.\nhave been applied.",
+        "name": "line_items_subtotal_price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "This value is the same as [`checkout.id`](/docs/api/liquid/objects/checkout#checkout-id) with a `#` prepended to it.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the checkout.",
+        "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Additional information entered by the customer with the [cart](/docs/api/liquid/objects/cart#cart-note).",
+        "name": "note"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Depending on the payment provider, the order might not have been created when the [Thank You page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.\n&gt; Note:\n&gt; The `order` object isn't available on the Thank You page.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "order",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The order created by the checkout.",
+        "name": "order"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is the same as [`order.id`](/docs/api/liquid/objects/order#order-id).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the order created by the checkout.",
+        "name": "order_id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is the same as [`order.name`](/docs/api/liquid/objects/order#order-name).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the order created by the checkout.",
+        "name": "order_name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is the same as [`order.order_number`](/docs/api/liquid/objects/order#order-order_number).\n\nDepending on the payment provider, the order might not have been created when the [Order status page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "An integer representation of the name of the order created by the checkout.",
+        "name": "order_number"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if any of the line items of the checkout require shipping. Returns `false` if not.",
+        "name": "requires_shipping"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "address",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The shipping address of the checkout.",
+        "name": "shipping_address"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "shipping_method",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The shipping method of the checkout.",
+        "name": "shipping_method"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The shipping price of the checkout in the currency's subunit.",
+        "name": "shipping_price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "tax_line"
+          }
+        ],
+        "summary": "The tax lines for the checkout.",
+        "name": "tax_lines"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The total tax amount of the checkout in the currency's subunit.",
+        "name": "tax_price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The total price of the checkout in the currency's subunit.",
+        "name": "total_price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "transaction"
+          }
+        ],
+        "summary": "The transactions of the checkout.",
+        "name": "transactions"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because the array is always empty.",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "line_item"
+          }
+        ],
+        "summary": "The unavailable line items of the checkout.",
+        "name": "unavailable_line_items"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because the array is always the same as [`checkout.line_items`](/docs/api/liquid/objects/checkout#checkout-line_items).",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "line_item"
+          }
+        ],
+        "summary": "The unfulfilled line items of the checkout.",
+        "name": "unfulfilled_line_items"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The number of items in the checkout.",
+        "name": "item_count"
       }
     ],
     "summary": "A customer's checkout.",
