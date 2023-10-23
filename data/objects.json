@@ -3917,6 +3917,60 @@
         ],
         "summary": "The market that includes this country.",
         "name": "market"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the country is popular for this shop. Otherwise, returns `false`.\nThis can be useful for sorting countries in a country selector.",
+        "name": "popular?"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Possible values are `Africa`, `Asia`, `Central America`, `Europe`, `North America`, `Oceania`, and `South America`.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The continent that the country is in.",
+        "name": "continent"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "shop_locale"
+          }
+        ],
+        "summary": "The languages that have been added to the market that this country belongs to.",
+        "name": "available_languages"
       }
     ],
     "summary": "A country supported by the store's localization options.",
@@ -8032,7 +8086,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The object can be one of the following:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`blog`](/docs/api/liquid/objects/blog)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`page`](/docs/api/liquid/objects/page)\n- [`policy`](/docs/api/liquid/objects/policy)\n- [`product`](/docs/api/liquid/objects/product)",
+        "description": "The object can be one of the following:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`blog`](/docs/api/liquid/objects/blog)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`metaobject`](docs/api/liquid/objects/metaobject)\n- [`page`](/docs/api/liquid/objects/page)\n- [`policy`](/docs/api/liquid/objects/policy)\n- [`product`](/docs/api/liquid/objects/product)",
         "examples": [
 
         ],
@@ -8113,6 +8167,12 @@
             "type": "string",
             "name": "http_link",
             "description": "The link points to an external web page, or a product type or vendor collection.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "metaobject_link",
+            "description": "The link points to a metaobject page.",
             "array_value": ""
           },
           {
