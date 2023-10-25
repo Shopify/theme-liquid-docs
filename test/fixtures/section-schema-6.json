@@ -1,0 +1,63 @@
+{
+  "name": "Example Section",
+  "tag": "div",
+  "class": "example-class",
+  "limit": 1,
+  "settings": [],
+  "max_blocks": 2,
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Example Preset",
+      "settings": {
+        "exampleString": "This is a string",
+        "exampleNumber": 123,
+        "exampleBoolean": true,
+        "exampleArray": ["String 1", "String 2"]
+      },
+      "blocks": [
+        {
+          "type": "exampleBlock",
+          "settings": {
+            "exampleString": "This is a string",
+            "exampleNumber": 123,
+            "exampleBoolean": true,
+            "exampleArray": ["String 1", "String 2"]
+          }
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {
+      "exampleString": "This is a string",
+      "exampleNumber": 123,
+      "exampleBoolean": true,
+      "exampleArray": ["String 1", "String 2"]
+    },
+    "blocks": [
+      {
+        "type": "exampleBlock",
+        "settings": {
+          "exampleString": "This is a string",
+          "exampleNumber": 123,
+          "exampleBoolean": true,
+          "exampleArray": ["String 1", "String 2"]
+        }
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "exampleString": "This is a string"
+    }
+  },
+  "enabled_on": {
+    "templates": ["index"],
+    "groups": ["exampleGroup"]
+  },
+  "disabled_on": {
+    "templates": ["product"],
+    "groups": ["exampleGroup2"]
+  }
+}
