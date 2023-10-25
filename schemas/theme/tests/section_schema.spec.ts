@@ -8,6 +8,8 @@ import sectionSchema1 from "../../../test/fixtures/section-schema-1.json";
 import sectionSchema2 from "../../../test/fixtures/section-schema-2.json";
 import sectionSchema3 from "../../../test/fixtures/section-schema-3.json";
 import sectionSchema4 from "../../../test/fixtures/section-schema-4.json";
+import sectionSchema5 from "../../../test/fixtures/section-schema-5.json";
+import sectionSchema6 from "../../../test/fixtures/section-schema-6.json";
 
 const emptySchema = {};
 const ALLOWED_SETTING_TYPES = [
@@ -55,6 +57,8 @@ describe("JSON Schema validation for Theme Liquid Section Schemas", () => {
     sectionSchema2,
     sectionSchema3,
     sectionSchema4,
+    sectionSchema5,
+    sectionSchema6,
   ])("should evaluate valid section schemas expectedly", (sectionSchema) => {
     const errors = validate(sectionSchema);
     expect(errors).toStrictEqual([]);
@@ -121,7 +125,7 @@ describe("JSON Schema validation for Theme Liquid Section Schemas", () => {
       },
     ]);
   });
-  
+
   it("should properly validate the max value for max_blocks", () => {
     const errors = validate({ max_blocks: 51 });
     expect(errors).toStrictEqual([

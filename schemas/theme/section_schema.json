@@ -89,7 +89,7 @@
           "required": ["id", "type", "label"]
         }
       },
-      "minItems": 1
+      "minItems": 0
     },
     "sectionToggle": {
       "type": "object",
@@ -144,7 +144,14 @@
     "tag": {
       "type": "string",
       "description": "The HTML element to use for the section.",
-      "enum": ["article", "aside", "div", "footer", "header", "section"]
+      "enum": [
+        "article",
+        "aside",
+        "div",
+        "footer",
+        "header",
+        "section"
+      ]
     },
     "class": {
       "type": "string",
@@ -214,7 +221,12 @@
             "type": "object",
             "description": "Default values for settings.",
             "additionalProperties": {
-              "type": "string"
+              "anyOf": [
+                { "type": "number" },
+                { "type": "boolean" },
+                { "type": "string" },
+                { "type": "array", "items": { "type": "string" } }
+              ]
             }
           },
           "blocks": {
@@ -231,7 +243,15 @@
                   "type": "object",
                   "description": "Block settings.",
                   "additionalProperties": {
-                    "type": "string"
+                    "anyOf": [
+                      { "type": "number" },
+                      { "type": "boolean" },
+                      { "type": "string" },
+                      {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      }
+                    ]
                   }
                 }
               },
@@ -250,7 +270,12 @@
           "type": "object",
           "description": "Default values for settings.",
           "additionalProperties": {
-            "type": "string"
+            "anyOf": [
+              { "type": "number" },
+              { "type": "boolean" },
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" } }
+            ]
           }
         },
         "blocks": {
@@ -267,7 +292,12 @@
                 "type": "object",
                 "description": "Block settings.",
                 "additionalProperties": {
-                  "type": "string"
+                  "anyOf": [
+                    { "type": "number" },
+                    { "type": "boolean" },
+                    { "type": "string" },
+                    { "type": "array", "items": { "type": "string" } }
+                  ]
                 }
               }
             },
