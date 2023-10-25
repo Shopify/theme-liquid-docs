@@ -12127,7 +12127,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.\n- The variant has an associated [delivery profile](/docs/apps/selling-strategies/purchase-options/deferred/shipping-delivery/delivery-profiles) with a valid shipping rate.",
         "examples": [
 
         ],
@@ -15581,7 +15581,7 @@
         ],
         "return_type": [
           {
-            "type": "number",
+            "type": "string",
             "name": "",
             "description": "",
             "array_value": ""
