@@ -5260,6 +5260,30 @@
         ],
         "summary": "The current page URL with the URL parameter related to the filter removed.",
         "name": "url_to_remove"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "swatch",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "text",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Describes how to present the filter values.\n\nReturns a value only for `list` type filters. Returns `nil` for other types.",
+        "name": "presentation"
       }
     ],
     "summary": "A [storefront filter](https://help.shopify.com/manual/online-store/themes/customizing-themes/storefront-filters).",
@@ -5270,6 +5294,80 @@
     "json_data": {
       "path": "/search?q=potion&amp;filter.v.option.strength=Low",
       "handle": "search.filters.to_a[3]",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "filter_value",
+          "property": "display"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "colors",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "image",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The type of visual representation.",
+        "name": "type"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Can be a list of [`colors`](/docs/api/liquid/objects/color) or an [`image`](/docs/api/liquid/objects/image).\nRefer to the [`type`](#filter_value_display-type) property to determine the type of visual representation.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "untyped",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The visual representation.",
+        "name": "value"
+      }
+    ],
+    "summary": "The visual representation of a filter value.",
+    "name": "filter_value_display",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "",
+      "handle": "",
       "data_from_file": ""
     },
     "return_type": [
@@ -5330,7 +5428,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "For example, `High` will be used in the URL as `filter.v.option.strength=High`.",
         "examples": [
 
         ],
@@ -5342,7 +5440,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The value.",
+        "summary": "The value for the URL parameter. The `value` is paired with the [`param_name`](#filter_value-param_name) property.",
         "name": "value"
       },
       {
@@ -5402,7 +5500,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Note:\n&gt; Any [pagination](/docs/api/liquid/tags/paginate) URL parameters are removed.",
         "examples": [
 
         ],
@@ -5420,7 +5518,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Note:\n&gt; Any [pagination](/docs/api/liquid/tags/paginate) URL parameters are also removed.",
         "examples": [
 
         ],
@@ -5434,6 +5532,24 @@
         ],
         "summary": "The current page URL with the filter value parameter removed.",
         "name": "url_to_remove"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Returns a visual representation for the filter value.\nIf no visual representation is available, then `nil` is returned.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "filter_value_display",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The visual representation of the filter value.",
+        "name": "display"
       }
     ],
     "summary": "A specific value of a filter.",
@@ -9348,7 +9464,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rich_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A field that supports headings, lists, links, bold, and italics&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/docs/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/docs/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/docs/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;list&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#array\"&gt;An array of objects, numbers, or strings, depending on the list type&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
+        "description": "The following table outlines the value format for each metafield type:\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Type&lt;/th&gt;\n      &lt;th&gt;Returned format&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;single_line_text_field&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;multi_line_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rich_text_field&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A field that supports headings, lists, links, bold, and italics&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;product_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/product\"&gt;A product object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;collection_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/collection\"&gt;A collection object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;variant_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/variant\"&gt;A variant object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;page_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/page\"&gt;A page object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;file_reference&lt;/code&gt;\n     &lt;/td&gt;\n     &lt;td&gt;\n       &lt;a href=\"/docs/api/liquid/objects/generic-file\"&gt;A generic_file object&lt;/a&gt;&lt;br&gt;&lt;br&gt;\n       &lt;a href=\"/docs/api/liquid/objects/media\"&gt;A media object (images and videos only)&lt;/a&gt;\n     &lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;number_integer&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;number_decimal&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#number\"&gt;A number&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;date&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;date_time&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;A date string. To format the string, use the &lt;a href=\"/docs/api/liquid/filters/date\"&gt;date&lt;/a&gt; filter.&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;url_reference&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#string\"&gt;A url string&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;json&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON\"&gt;A JSON object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n       &lt;code&gt;boolean&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/basics#boolean\"&gt;A boolean&lt;/a&gt;&lt;/td&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;color&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/color\"&gt;A color object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;weight&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;volume&lt;/code&gt;&lt;br&gt;&lt;br&gt;\n        &lt;code&gt;dimension&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/measurement\"&gt;A measurement object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;rating&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/rating\"&gt;A rating object&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;\n        &lt;code&gt;money&lt;/code&gt;\n      &lt;/td&gt;\n      &lt;td&gt;&lt;a href=\"/docs/api/liquid/objects/money\"&gt;A money object, displayed in the customer's local (presentment) currency.&lt;/a&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;",
         "examples": [
 
         ],
@@ -9488,12 +9604,6 @@
           {
             "type": "string",
             "name": "rating",
-            "description": "",
-            "array_value": ""
-          },
-          {
-            "type": "string",
-            "name": "list",
             "description": "",
             "array_value": ""
           },

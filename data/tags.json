@@ -823,7 +823,7 @@
       },
       {
         "name": "with",
-        "description": "You can pass a single object to a snippet using the `with` parameter. You can also supply an optional `as` parameter to specify a custom name to reference the object inside the snippet.\n",
+        "description": "You can pass a single object to a snippet using the `with` parameter. You can also supply an optional `as` parameter to specify a custom name to reference the object inside the snippet. If you don't use the `as` parameter to specify a custom name, then you can reference the object using the snippet filename.\n",
         "syntax": "{% render 'filename' with object as name %}",
         "path": "/",
         "raw_liquid": "",
