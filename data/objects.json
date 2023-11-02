@@ -5072,6 +5072,30 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "Example:\nFor a filter named `color` with values `red` and `blue`:\n  - If the operator is `AND`, it will filter items that are both red and blue.\n  - If the operator is `OR`, it will filter items that are either red or blue or both.\n\nFilters that support the `AND` operator:\n  - Product tags\n  - Metafields of type `list.single_line_text_field` and `list.metaobject_reference`",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "AND",
+            "description": "Includes products that match all buyer selections.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "OR",
+            "description": "Includes products that match at least one buyer selection.",
+            "array_value": ""
+          }
+        ],
+        "summary": "The logical operator used by the filter.\nReturns a value only for `boolean` and `list` type filters. Returns `nil` for other types.",
+        "name": "operator"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [
 
