@@ -13427,7 +13427,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Incoming inventory information is populated by [inventory transfers](https://help.shopify.com/manual/products/inventory/transfers).",
+        "description": "Incoming inventory information is populated by [inventory transfers](https://help.shopify.com/manual/products/inventory/transfers),\n[purchase orders](https://help.shopify.com/manual/products/inventory/purchase-orders), and\n[third-party apps](/docs/apps/fulfillment/inventory-management-apps).",
         "examples": [
 
         ],
@@ -13445,7 +13445,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Incoming inventory information is populated by [inventory transfers](https://help.shopify.com/manual/products/inventory/transfers).\n\n&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the date.",
+        "description": "Incoming inventory information is populated by [inventory transfers](https://help.shopify.com/manual/products/inventory/transfers),\n[purchase orders](https://help.shopify.com/manual/products/inventory/purchase-orders), and\n[third-party apps](/docs/apps/fulfillment/inventory-management-apps).\n\n&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the date.",
         "examples": [
 
         ],
