@@ -835,6 +835,7 @@
   "shopify.checkout.redeemable_errors.gift_card.invalid": "Enter a valid gift card",
   "shopify.checkout.redeemable_errors.gift_card.currency_mismatch": "Only gift cards in %{shop_currency} are accepted",
   "shopify.checkout.redeemable_errors.gift_card.generic": "The gift card could not be added to checkout",
+  "shopify.checkout.redeemable_errors.gift_card.throttle_limit_exceeded": "You have exceeded the maximum number of attempts. Try again later.",
   "shopify.checkout.payment_errors.method_not_available": "The requested payment method is not available.",
   "shopify.checkout.payment_errors.available_methods_updated": "Available payment methods have been updated.",
   "shopify.checkout.payment_errors.generic_error": "There was an issue processing your payment. Try again or use a different payment method.",
