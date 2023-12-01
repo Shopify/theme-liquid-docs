@@ -12396,7 +12396,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "If a product is [recommended](/docs/themes/product-merchandising/recommendations), then the URL contains tracking parameters:\n\n```liquid\n/products/gorgeous-wooden-computer?pr_choice=default&amp;pr_prod_strat=description&amp;pr_rec_pid=13&amp;pr_ref_pid=17&amp;pr_seq=alternating\n```",
         "examples": [
 
         ],
