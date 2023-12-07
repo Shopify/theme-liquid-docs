@@ -869,6 +869,7 @@
   "shopify.checkout.payment_errors.expired_card": "Your card has expired. Use a different payment method.",
   "shopify.checkout.payment_errors.card_declined": "Your card was declined. Try again or use a different payment method.",
   "shopify.checkout.payment_errors.processing_error": "There was an issue processing your payment. Try again or use a different payment method.",
+  "shopify.checkout.payment_errors.processing_error_checkout_as_guest": "There was an issue processing your payment. Try again with a different payment method or {{checkout_as_guest_link}}.",
   "shopify.checkout.payment_errors.selected_payment_method": "There was an issue with your selected payment method and you haven't been charged. Try again or use a different payment method.",
   "shopify.checkout.payment_errors.payment_method_billing_address": "There was an issue with your selected payment method's billing address and you haven't been charged. Check the address and try again or use a different payment method.",
   "shopify.checkout.payment_errors.call_issuer": "Your card was declined. Use a different payment method or contact your bank for more information.",
