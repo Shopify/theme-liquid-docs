@@ -1320,6 +1320,7 @@
   "shopify.checkout.notice_banner.editable_shipping_address_violations_email_link": "contact us",
   "shopify.checkout.notice_banner.shipping_address_incomplete_title": "Shipping address is incomplete",
   "shopify.checkout.notice_banner.calculating_shipping": "Shipping is still being calculated. Try again in a few seconds. You haven’t been charged.",
+  "shopify.checkout.notice_banner.calculating_taxes": "Taxes are still being calculated. Try again in a few seconds. You haven't been charged.",
   "shopify.checkout.marketplaces.legal_notice.legal_text": "Review",
   "shopify.checkout.marketplaces.legal_notice.separator": " ",
   "shopify.checkout.marketplaces.legal_notice.link_label": "{{partnerDisplayName}} Terms and Conditions",
