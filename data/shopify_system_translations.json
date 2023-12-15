@@ -923,6 +923,7 @@
   "shopify.checkout.field_errors.address_country_blank": "Select a country\/region",
   "shopify.checkout.field_errors.address_country_not_supported": "We don't ship to this country or region. Enter a new shipping address and try again.",
   "shopify.checkout.field_errors.address_province_blank": "Select a state \/ province",
+  "shopify.checkout.field_errors.address_province_invalid": "Select a valid state \/ province",
   "shopify.checkout.field_errors.address_company_blank": "Enter a company name",
   "shopify.checkout.field_errors.address_company_too_long": "Company name is too long (maximum is 255 characters)",
   "shopify.checkout.field_errors.address_company_contains_emojis": "Company cannot contain emojis",
