@@ -500,6 +500,7 @@
   "shopify.checkout.order_summary.payment_terms_totals.due_on_fulfillment": "Total due on fulfillment",
   "shopify.checkout.order_summary.payment_terms_totals.due_on_receipt": "Total due on receipt",
   "shopify.checkout.order_summary.payment_terms_totals.due_later_checkout_to_draft": "Total due later",
+  "shopify.checkout.order_summary.payment_terms_totals.total_paid": "Total paid",
   "shopify.checkout.order_summary.maximum_discount_code_limit_reached": "You've reached the maximum number of discount codes. Remove an existing code to use <strong style=\"text-transform:uppercase\">%{code}<\/strong>.",
   "shopify.checkout.order_summary.discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> isn't working right now. Contact us for help.",
   "shopify.checkout.order_summary.due_on_fulfillment": "Due on fulfillment",
