@@ -3977,7 +3977,7 @@
     "category": "metafield",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; The `metafield_tag` filter doesn't support list metafields other than `list.single_line_text_field`.",
+    "description": "&gt; Note:\n&gt; The `metafield_tag` filter doesn't currently support list metafields other than `list.single_line_text_field` and `list.metaobject_reference`.",
     "parameters": [
 
     ],
@@ -4002,7 +4002,7 @@
       },
       {
         "name": "Complex types",
-        "description": "\nThe following metafield types return nested elements, or different elements depending on the metafield contents:\n\n- [`dimension`](/docs/api/liquid/filters/metafield_tag#metafield_tag-dimension)\n- [`file_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-file_reference)\n- [`list.single_line_text_field`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.single_line_text_field)\n- [`volume`](/docs/api/liquid/filters/metafield_tag#metafield_tag-volume)\n- [`weight`](/docs/api/liquid/filters/metafield_tag#metafield_tag-weight)\n",
+        "description": "\nThe following metafield types return nested elements, or different elements depending on the metafield contents:\n\n- [`dimension`](/docs/api/liquid/filters/metafield_tag#metafield_tag-dimension)\n- [`file_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-file_reference)\n- [`list.metaobject_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.metaobject_reference)\n- [`list.single_line_text_field`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.single_line_text_field)\n- [`volume`](/docs/api/liquid/filters/metafield_tag#metafield_tag-volume)\n- [`weight`](/docs/api/liquid/filters/metafield_tag#metafield_tag-weight)\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "",
@@ -4026,6 +4026,16 @@
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "&lt;!-- Image --&gt;\n{{ product.metafields.information.promo_image | metafield_tag }}\n\n&lt;!-- Video --&gt;\n{{ product.metafields.information.promo_video | metafield_tag }}\n\n&lt;!-- Other --&gt;\n{{ product.metafields.information.disclaimers | metafield_tag }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "list.metaobject_reference",
+        "description": "Outputs a `&lt;ul&gt;` element by default with the following attribute:\n\n| Attribute | Value |\n| --- | --- |\n| `class` | `metafield-single_line_text_field-array` |\n\nThe `&lt;ul&gt;` element contains an `&lt;li&gt;` element for each metaobject in the list with a `class` of `metafield-single_line_text_field`. The required `field` parameter specifies which field should be rendered for each metaobject. The `field` parameter can reference only metafields of type `single_line_text_field`.\n\nTo output an `&lt;ol&gt;` element, pass the `list_format` parameter with a value of `ordered`.\n",
+        "syntax": "metafield | metafield_tag: field: string",
+        "path": "/products/health-potion",
+        "raw_liquid": "&lt;!-- &lt;ul&gt; element --&gt;\n{{ product.metafields.information.ingredients | metafield_tag: field: 'name' }}\n\n&lt;!-- &lt;ol&gt; element --&gt;\n{{ product.metafields.information.ingredients | metafield_tag: field: 'name', list_format: 'ordered' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
@@ -4069,7 +4079,7 @@
     "category": "metafield",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The following outlines the output for each metafield type:\n\n| Metafield type | Output |\n| --- | --- |\n| `single_line_text_field` | The metafield text. |\n| `multi_line_text_field` | The metafield text. |\n| `page_reference` | The page title. |\n| `product_reference` | The product title. |\n| `collection_reference` | The collection title. |\n| `variant_reference` | The variant title. |\n| `file_reference` | The file URL. |\n| `number_integer` | The number. |\n| `number_decimal` | The number. |\n| `date` | The date. |\n| `date-time` | The date and time. |\n| `url` | The URL. |\n| `json` | The JSON. |\n| `boolean` | The boolean value. |\n| `color` | The color value. |\n| `weight` | The weight value and unit.&lt;br&gt;&lt;br&gt;If the value is a decimal with more than two places, then it'll be formatted to have a precision of two with trailing zeros removed. |\n| `volume` | The volume value and unit.&lt;br&gt;&lt;br&gt;If the value is a decimal with more than two places, then it'll be formatted to have a precision of two with trailing zeros removed. |\n| `dimension` | The dimension value and unit.&lt;br&gt;&lt;br&gt;If the value is a decimal with more than two places, then it'll be formatted to have a precision of two with trailing zeros removed. |\n| `rating` | The rating value. |\n| `list.single_line_text_field` | The metafield values converted to a sentence.&lt;br&gt;&lt;br&gt;For example, if you had the values `Toronto`, `Ottawa`, and `Vancouver`, then the output would be:&lt;br&gt;&lt;br&gt;`Toronto, Ottawa, and Vancouver` |\n| `money` | The money value, formatted using the store's [**HTML with currency** setting](https://help.shopify.com/manual/payments/currency-formatting). |\n| `rich_text_field` | The rich text value as simple text. |",
+    "description": "&gt; Note:\n&gt; The `metafield_text` filter doesn't currently support list metafields other than `list.single_line_text_field` and `list.metaobject_reference`.",
     "parameters": [
 
     ],
@@ -4083,11 +4093,31 @@
     ],
     "examples": [
       {
-        "name": "",
-        "description": "",
+        "name": "Basic types",
+        "description": "The following outlines the output for each metafield type:\n\n| Metafield type | Output |\n| --- | --- |\n| `single_line_text_field` | The metafield text. |\n| `multi_line_text_field` | The metafield text. |\n| `page_reference` | The page title. |\n| `product_reference` | The product title. |\n| `collection_reference` | The collection title. |\n| `variant_reference` | The variant title. |\n| `file_reference` | The file URL. |\n| `number_integer` | The number. |\n| `number_decimal` | The number. |\n| `date` | The date. |\n| `date-time` | The date and time. |\n| `url` | The URL. |\n| `json` | The JSON. |\n| `boolean` | The boolean value. |\n| `color` | The color value. |\n| `weight` | The weight value and unit.&lt;br&gt;&lt;br&gt;If the value is a decimal with more than two places, then it'll be formatted to have a precision of two with trailing zeros removed. |\n| `volume` | The volume value and unit.&lt;br&gt;&lt;br&gt;If the value is a decimal with more than two places, then it'll be formatted to have a precision of two with trailing zeros removed. |\n| `dimension` | The dimension value and unit.&lt;br&gt;&lt;br&gt;If the value is a decimal with more than two places, then it'll be formatted to have a precision of two with trailing zeros removed. |\n| `rating` | The rating value. |\n| `list.single_line_text_field` | The metafield values in sentence format.&lt;br&gt;&lt;br&gt;For example, if you had the values `Toronto`, `Ottawa`, and `Vancouver`, then the output would be:&lt;br&gt;&lt;br&gt;`Toronto, Ottawa, and Vancouver` |\n| `money` | The money value, formatted using the store's [**HTML with currency** setting](https://help.shopify.com/manual/payments/currency-formatting). |\n| `rich_text_field` | The rich text value as simple text. |\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product.metafields.information.dosage | metafield_text }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "Complex types",
+        "description": "\nThe following metafield types produce different output depending on the provided `field` parameter:\n\n- [`list.metaobject_reference`](/docs/api/liquid/filters/metafield_text#metafield_text-list.metaobject_reference)\n",
+        "syntax": "",
+        "path": "/products/health-potion",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "list.metaobject_reference",
+        "description": "Outputs the list of metaobjects in sentence format. The required `field` parameter specifies which field should be rendered for each metaobject. The `field` parameter can reference only metafields of type `single_line_text_field`.\n",
+        "syntax": "metafield | metafield_text: field: string",
+        "path": "/products/health-potion",
+        "raw_liquid": "{{ product.metafields.information.ingredients | metafield_text: field: 'name' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
