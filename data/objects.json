@@ -5684,7 +5684,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Tip:\n&gt; If the family name contains non-alphanumeric characters (A-Z, a-z, 0-9, or '-'), then it will be wrapped in double quotes.",
         "examples": [
 
         ],
