@@ -4002,7 +4002,7 @@
       },
       {
         "name": "Complex types",
-        "description": "\nThe following metafield types return nested elements, or different elements depending on the metafield contents:\n\n- [`dimension`](/docs/api/liquid/filters/metafield_tag#metafield_tag-dimension)\n- [`file_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-file_reference)\n- [`list.metaobject_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.metaobject_reference)\n- [`list.single_line_text_field`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.single_line_text_field)\n- [`volume`](/docs/api/liquid/filters/metafield_tag#metafield_tag-volume)\n- [`weight`](/docs/api/liquid/filters/metafield_tag#metafield_tag-weight)\n",
+        "description": "\nThe following metafield types return nested elements, or different elements depending on the metafield contents:\n\n- [`dimension`](/docs/api/liquid/filters/metafield_tag#metafield_tag-dimension)\n- [`file_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-file_reference)\n- [`list.metaobject_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.metaobject_reference)\n- [`list.single_line_text_field`](/docs/api/liquid/filters/metafield_tag#metafield_tag-list.single_line_text_field)\n- [`metaobject_reference`](/docs/api/liquid/filters/metafield_tag#metafield_tag-metaobject_reference)\n- [`volume`](/docs/api/liquid/filters/metafield_tag#metafield_tag-volume)\n- [`weight`](/docs/api/liquid/filters/metafield_tag#metafield_tag-weight)\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "",
@@ -4046,6 +4046,16 @@
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "&lt;!-- &lt;ul&gt; element --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag }}\n\n&lt;!-- &lt;ol&gt; element --&gt;\n{{ product.metafields.information.pickup_locations | metafield_tag: list_format: 'ordered' }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "metaobject_reference",
+        "description": "Outputs an HTML element for the metaobject field specified by the required `field` parameter. The `field` parameter can reference only metafields of type `single_line_text_field`.\n",
+        "syntax": "metafield | metafield_tag: field: string",
+        "path": "/products/health-potion",
+        "raw_liquid": "{{ product.metafields.information.primary_ingredient | metafield_tag: field: 'name' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
@@ -4104,7 +4114,7 @@
       },
       {
         "name": "Complex types",
-        "description": "\nThe following metafield types produce different output depending on the provided `field` parameter:\n\n- [`list.metaobject_reference`](/docs/api/liquid/filters/metafield_text#metafield_text-list.metaobject_reference)\n",
+        "description": "\nThe following metafield types produce different output depending on the provided `field` parameter:\n\n- [`list.metaobject_reference`](/docs/api/liquid/filters/metafield_text#metafield_text-list.metaobject_reference)\n- [`metaobject_reference`](/docs/api/liquid/filters/metafield_text#metafield_text-metaobject_reference)\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "",
@@ -4118,6 +4128,16 @@
         "syntax": "metafield | metafield_text: field: string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product.metafields.information.ingredients | metafield_text: field: 'name' }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "metaobject_reference",
+        "description": "Outputs the metafield text for the metaobject field specified by the required `field` parameter. The `field` parameter can reference only metafields of type `single_line_text_field`.\n",
+        "syntax": "metafield | metafield_text: field: string",
+        "path": "/products/health-potion",
+        "raw_liquid": "{{ product.metafields.information.primary_ingredient | metafield_tag: field: 'name' }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": false
