@@ -1059,6 +1059,7 @@
   "shopify.checkout.alternative_payment_method_banner.express_checkout": "Express checkout",
   "shopify.checkout.alternative_payment_method_banner.or": "OR",
   "shopify.checkout.alternative_payment_method_banner.show_more_options": "Show more options",
+  "shopify.checkout.alternative_payment_method_banner.hide_more_options": "Hide more options",
   "shopify.checkout.post_purchase.page_title": "Post-purchase",
   "shopify.checkout.post_purchase.title": "Post-purchase",
   "shopify.checkout.post_purchase.escape_confirmation": "You’ve paid for your order.",
