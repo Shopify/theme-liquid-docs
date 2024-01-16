@@ -783,6 +783,7 @@
   "shopify.checkout.payment.store_credit.add_label": "Add store credit",
   "shopify.checkout.payment.store_credit.manage_label": "Manage store credit",
   "shopify.checkout.payment.store_credit.buying_gift_card": "You can’t use store credit to buy a gift card",
+  "shopify.checkout.payment.store_credit.no_fixed_selling_plans": "You can’t use store credit with deferred purchase options",
   "shopify.checkout.payment.clear": "Clear",
   "shopify.checkout.payment.billing_must_match_shipping_notice": "Your payment method’s billing address must match the shipping address.",
   "shopify.checkout.payment.same_billing_address_checkbox_label": "Use shipping address as billing address",
