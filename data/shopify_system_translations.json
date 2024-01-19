@@ -852,6 +852,7 @@
   "shopify.checkout.payment.order_edit_banner_multiple_items_removed": "{{amount}} removed",
   "shopify.checkout.payment.order_edit_banner_single_item_returned": "Returned",
   "shopify.checkout.payment.order_edit_banner_multiple_items_returned": "{{amount}} returned",
+  "shopify.checkout.payment.order_edit_banner_updated_order_label": "Updated order",
   "shopify.checkout.payment.gift_card_wrapper.heading": "Gift card",
   "shopify.checkout.payment.gift_card_wrapper.apply_gift_card_label": "Apply a gift card",
   "shopify.checkout.payment.gift_card_wrapper.apply_another_gift_card_label": "Apply another gift card",
