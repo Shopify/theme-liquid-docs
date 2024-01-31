@@ -2932,7 +2932,10 @@
     "access": {
       "global": false,
       "parents": [
-
+        {
+          "object": "product_option_value_swatch",
+          "property": "color"
+        }
       ],
       "template": [
 
@@ -6941,6 +6944,10 @@
         {
           "object": "image",
           "property": "preview_image"
+        },
+        {
+          "object": "product_option_value_swatch",
+          "property": "image"
         },
         {
           "object": "variant",
@@ -12716,7 +12723,7 @@
             "type": "array",
             "name": "",
             "description": "",
-            "array_value": "string"
+            "array_value": "product_option_value"
           }
         ],
         "summary": "The possible values for the product option.",
@@ -12760,6 +12767,196 @@
       "global": false,
       "parents": [
         {
+          "object": "product_option",
+          "property": "values"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the product option value.",
+        "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "product_option_value_swatch",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, please submit a request in the &lt;a href=“https://help.shopify.com/manual/products/details/product-category”&gt;Help Center&lt;/a&gt;.\n\nThe swatch for this value, if one exists.",
+        "name": "swatch"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Whether or not the option value is selected.",
+        "name": "selected"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and/or the Shopify Combined Listings app, please reach out to &lt;a href=\"https://partners.shopify.com/current/support\"&gt;Partner support&lt;/a&gt;.\n\nIf this option value is selected (`selected == true`), this returns the `selected_or_first_available_variant`.\n\nIf this option value is not selected (`selected == false`), this returns the variant that is associated with the current\noption value and the other currently selected option values.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "variant",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The variant associated with this option value combined with the other currently selected option values, if one exists.",
+        "name": "variant"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and/or the Shopify Combined Listings app, please reach out to &lt;a href=\"https://partners.shopify.com/current/support\"&gt;Partner support&lt;/a&gt;.\n\n```liquid\n/products/gorgeous-wooden-computer\n```",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The relative URL of the product.",
+        "name": "product_url"
+      }
+    ],
+    "summary": "A product option value, such as 'red' for the option 'color'",
+    "name": "product_option_value",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "/products/mana-potion",
+      "handle": "product.options_with_values[0].values[0]",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "product_option_value",
+          "property": "swatch"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "color",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The swatch color.",
+        "name": "color"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The swatch image.",
+        "name": "image"
+      }
+    ],
+    "summary": "A swatch for a product option value. May contain an image, a color, or both.\n\n&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, please submit a request in the &lt;a href=“https://help.shopify.com/manual/products/details/product-category”&gt;Help Center&lt;/a&gt;.",
+    "name": "product_option_value_swatch",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "/products/mana-potion",
+      "handle": "product.options_with_values[0].values[0].swatch",
+      "data_from_file": ""
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
           "object": "line_item",
           "property": "variant"
         },
@@ -12778,6 +12975,10 @@
         {
           "object": "product",
           "property": "selected_variant"
+        },
+        {
+          "object": "product_option_value",
+          "property": "variant"
         }
       ],
       "template": [
@@ -13113,8 +13314,8 @@
         "name": "options"
       },
       {
-        "deprecated": false,
-        "deprecation_reason": "",
+        "deprecated": true,
+        "deprecation_reason": "Deprecated. Prefer to use [`variant.options`](/docs/api/liquid/objects/variant#variant-options) instead.",
         "description": "If there's no first product option, then `nil` is returned.",
         "examples": [
 
@@ -13131,8 +13332,8 @@
         "name": "option1"
       },
       {
-        "deprecated": false,
-        "deprecation_reason": "",
+        "deprecated": true,
+        "deprecation_reason": "Deprecated. Prefer to use [`variant.options`](/docs/api/liquid/objects/variant#variant-options) instead.",
         "description": "If there's no second product option, then `nil` is returned.",
         "examples": [
 
@@ -13149,8 +13350,8 @@
         "name": "option2"
       },
       {
-        "deprecated": false,
-        "deprecation_reason": "",
+        "deprecated": true,
+        "deprecation_reason": "Deprecated. Prefer to use [`variant.options`](/docs/api/liquid/objects/variant#variant-options) instead.",
         "description": "If there's no third product option, then `nil` is returned.",
         "examples": [
 
