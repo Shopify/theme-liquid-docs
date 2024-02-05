@@ -1781,6 +1781,7 @@
   "shopify.notices.cart.shipping_address_invalid": "There was a problem calculating your shipping rates. Continue to checkout to choose a shipping rate before you complete your order.",
   "shopify.notices.cart.bundle_requires_components": "The bundle product '%{name}' cannot be added to the cart.",
   "shopify.notices.cart.gift_card_with_components_not_supported": "The bundle product '%{name}' cannot be added to the cart.",
+  "shopify.notices.cart.gift_card_price_must_be_greater_than_zero": "The bundle product '%{name}' cannot be added to the cart.",
   "shopify.notices.cart.bundle_products_not_supported_for_b2b_draft": "Bundled items can't be added to B2B orders for this location.",
   "shopify.notices.cart.view_lines_limit_reached": "Lines must be less than %{limit}",
   "shopify.notices.cart.merchandise_line_transformers.run_error": "An error occurred in your cart.",
