@@ -5195,7 +5195,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The `false` filter value.\n\nReturns a value only for `boolean` type filters. Returns `nil` for other types.",
+        "summary": "The `false` filter value.\n\nReturns a value for `boolean` type filters if the unfiltered view has at least one result with the `false` filter value. Otherwise, it returns `nil`.",
         "name": "false_value"
       },
       {
@@ -5213,7 +5213,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The `true` filter value.\n\nReturns a value only for `boolean` type filters. Returns `nil` for other types.",
+        "summary": "The `true` filter value.\n\nReturns a value for `boolean` type filters if the unfiltered view has at least one result with the `true` filter value. Otherwise, it returns `nil`.",
         "name": "true_value"
       },
       {
