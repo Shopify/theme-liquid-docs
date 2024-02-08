@@ -12812,7 +12812,7 @@
             "array_value": ""
           }
         ],
-        "summary": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, please submit a request in the &lt;a href=“https://help.shopify.com/manual/products/details/product-category”&gt;Help Center&lt;/a&gt;.\n\nThe swatch for this value, if one exists.",
+        "summary": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, [sign up here](https://www.shopify.com/editions/winter2024#new-taxonomy).\n\nThe swatch for this value, if one exists.",
         "name": "swatch"
       },
       {
@@ -12870,7 +12870,7 @@
         "name": "product_url"
       }
     ],
-    "summary": "A product option value, such as 'red' for the option 'color'",
+    "summary": "A product option value, such as \"red\" for the option \"color\".",
     "name": "product_option_value",
     "examples": [
 
@@ -12938,7 +12938,7 @@
         "name": "image"
       }
     ],
-    "summary": "A swatch for a product option value. May contain an image, a color, or both.\n\n&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, please submit a request in the &lt;a href=“https://help.shopify.com/manual/products/details/product-category”&gt;Help Center&lt;/a&gt;.",
+    "summary": "A swatch for a product option value. Might contain an image, a color, or both.\n\n&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, [sign up here](https://www.shopify.com/editions/winter2024#new-taxonomy).",
     "name": "product_option_value_swatch",
     "examples": [
 
