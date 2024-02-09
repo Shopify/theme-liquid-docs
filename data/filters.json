@@ -175,7 +175,7 @@
     "category": "collection",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Accepts the following values:\n\n- `manual`\n- `best-selling`\n- `title-ascending`\n- `title-descending`\n- `price-ascending`\n- `price-descending`\n- `created-ascending`\n- `created-descending`\n\n&gt; Tip:\n&gt; You can append the `sort_by` filter to the [`url_for_type`](/docs/api/liquid/filters/url_for_type)\n&gt; and [`url_for_vendor`](/docs/api/liquid/filters/url_for_vendor) filters.",
+    "description": "Accepts the following values:\n\n- `manual` (as defined in the [collection settings](https://help.shopify.com/manual/products/collections/collection-layout#change-the-sort-order-for-the-products-in-a-collection))\n- `best-selling`\n- `title-ascending`\n- `title-descending`\n- `price-ascending`\n- `price-descending`\n- `created-ascending`\n- `created-descending`\n\n&gt; Tip:\n&gt; You can append the `sort_by` filter to the [`url_for_type`](/docs/api/liquid/filters/url_for_type)\n&gt; and [`url_for_vendor`](/docs/api/liquid/filters/url_for_vendor) filters.",
     "parameters": [
 
     ],
