@@ -651,7 +651,7 @@
     "examples": [
       {
         "name": "",
-        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). If the product isn't found, then `empty` is returned.",
+        "description": "You can use `all_products` to access a product by its [handle](/docs/api/liquid/basics#handles). This returns the [`product`](/docs/api/liquid/objects/product) object for the specified product. If the product isn't found, then `empty` is returned.",
         "syntax": "",
         "path": "/",
         "raw_liquid": "{{ all_products['love-potion'].title }}",
@@ -1380,7 +1380,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Sections and blocks are reusable modules of content that make up [templates](/themes/architecture/templates).\n\nTo learn more about using blocks, refer to the [Shopify Partners blog](https://www.shopify.com/partners/blog/theme-blocks).",
+    "description": "Sections and blocks are reusable modules of content that make up [templates](/themes/architecture/templates).\n\nYou can include a maxiumum of 50 blocks in a section. To learn more about using blocks, refer to the [Building with sections and blocks](/docs/themes/best-practices/templates-sections-blocks).",
     "properties": [
       {
         "deprecated": false,
@@ -12779,6 +12779,24 @@
     "deprecation_reason": "",
     "description": "",
     "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the product option value.",
+        "name": "id"
+      },
       {
         "deprecated": false,
         "deprecation_reason": "",
