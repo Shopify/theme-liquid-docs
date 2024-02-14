@@ -9702,10 +9702,20 @@
       },
       {
         "name": "",
-        "description": "&lt;br&gt;&lt;br&gt; If the list is of type `single_line_text_field`, then you can access the items in the array directly in Liquid by using a 0-based index.\n",
+        "description": "&lt;br&gt;&lt;br&gt; If the list is of type `single_line_text_field`, then you can access the items in the array directly in Liquid using a 0-based index.\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "First item in list: {{ product.metafields.information.pickup_locations.value[0] }}\nLast item in list: {{ product.metafields.information.pickup_locations.value.last }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Determining the length of a list metafield",
+        "description": "The way that you determine the length of a list metafield depends on its type:\n- **[Reference types](/docs/apps/custom-data/metafields/types#reference-types)**: Use the `count` property to determine the list length.\n- **Non-reference types**: These lists are rendered as arrays. Use the [`size`](/docs/api/liquid/filters/size) filter to determine the number of items in the array.\n",
+        "syntax": "",
+        "path": "/products/health-potion",
+        "raw_liquid": "# list.product_reference\nNumber of similar products: {{ product.metafields.information.similar_products.value.count }}\n\n# list.single_line_text_field\nNumber of pickup locations: {{ product.metafields.information.pickup_locations.value.size }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
@@ -11881,24 +11891,6 @@
             "type": "array",
             "name": "",
             "description": "",
-            "array_value": "variant"
-          }
-        ],
-        "summary": "The variants of the product.",
-        "name": "variants"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
             "array_value": "image"
           }
         ],
@@ -11940,6 +11932,24 @@
         ],
         "summary": "The options on the product.",
         "name": "options_with_values"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "variant"
+          }
+        ],
+        "summary": "The variants of the product.",
+        "name": "variants"
       },
       {
         "deprecated": false,
