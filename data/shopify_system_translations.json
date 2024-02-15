@@ -880,6 +880,7 @@
   "shopify.checkout.payment.waiting_on_taxes_notice": "Calculating taxes",
   "shopify.checkout.payment.payment_method": "Payment method",
   "shopify.checkout.payment.expired_payment_method": "Selected payment method has expired",
+  "shopify.checkout.payment.proposed_gateway_unavailable": "The proposed payment gateway is unavailable",
   "shopify.checkout.billing.billing_address_title": "Bill to",
   "shopify.checkout.billing.same_as_shipping": "Same as shipping address",
   "shopify.checkout.billing.add_address": "Use a different address",
