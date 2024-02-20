@@ -3,12 +3,12 @@
   "description": "A schema for Shopify theme translation files. Supports nested properties, pluralized translations, and translations containing HTML.",
   "type": "object",
   "additionalProperties": {
-    "oneOf": [
-      {
-        "type": "string"
-      },
+    "anyOf": [
       {
         "$ref": "#/$defs/pluralizedString"
+      },
+      {
+        "type": "string"
       },
       {
         "$ref": "#"
