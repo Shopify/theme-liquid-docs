@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A schema for Shopify theme translation files. Supports nested properties, pluralized translations, and translations containing HTML.",
+  "type": "object",
+  "additionalProperties": {
+    "anyOf": [
+      {
+        "$ref": "#/$defs/pluralizedString"
+      },
+      {
+        "type": "string"
+      },
+      {
+        "$ref": "#"
+      }
+    ]
+  },
+  "patternProperties": {
+    ".*_html$": {
+      "type": "string",
+      "description": "Translation string that contains HTML. The '_html' suffix prevents the HTML content from being escaped."
+    }
+  },
+  "$defs": {
+    "pluralizedString": {
+      "type": "object",
+      "properties": {
+        "one": {
+          "type": "string",
+          "description": "Translation for the singular form"
+        },
+        "other": {
+          "type": "string",
+          "description": "Translation for the plural form"
+        },
+        "few": {
+          "type": "string",
+          "description": "Translation for 'few' form, used in some languages"
+        },
+        "many": {
+          "type": "string",
+          "description": "Translation for 'many' form, used in some languages"
+        },
+        "two": {
+          "type": "string",
+          "description": "Translation for 'two' form, used in some languages"
+        },
+        "zero": {
+          "type": "string",
+          "description": "Translation for 'zero' form, used in some languages"
+        }
+      },
+      "additionalProperties": false,
+      "description": "An object representing a pluralized translation string"
+    }
+  }
+}
