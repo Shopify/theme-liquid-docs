@@ -1735,6 +1735,7 @@
   "shopify.notices.customer.no_account_found": "No account found with that email.",
   "shopify.notices.customer.invalid_credentials": "Incorrect email or password.",
   "shopify.notices.customer.denylisted_reset_password": "Your account couldn't be accessed because the current password is not secure. You will receive an email to update your password.",
+  "shopify.notices.customer.signup_disabled": "Customer account creation has been disabled.",
   "shopify.notices.address.updated": "Successfully updated address.",
   "shopify.notices.address.error_updating": "Error updating address",
   "shopify.notices.address.created": "Successfully created address",
