@@ -2320,6 +2320,24 @@
         ],
         "summary": "Returns `true` if taxes are included in the prices of products in the cart. Returns `false` if not.",
         "name": "taxes_included"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if duties are included in the prices of products in the cart. Returns `false` if not.",
+        "name": "duties_included"
       }
     ],
     "summary": "A customer’s cart.",
@@ -14997,7 +15015,7 @@
         "name": "name"
       }
     ],
-    "summary": "Information about a Shopify Script.",
+    "summary": "Information about a Shopify Script.\n&gt; Caution:\n&gt; Shopify Scripts will be sunset on August 28, 2025. Migrate your existing scripts to [Shopify Functions](/docs/api/functions) before this date.",
     "name": "script",
     "examples": [
 
@@ -20817,7 +20835,7 @@
         "name": "cart_calculate_line_items"
       }
     ],
-    "summary": "The active scripts, of each script type, on the store.",
+    "summary": "The active scripts, of each script type, on the store.\n&gt; Caution:\n&gt; Shopify Scripts will be sunset on August 28, 2025. Migrate your existing scripts to [Shopify Functions](/docs/api/functions) before this date.",
     "name": "scripts",
     "examples": [
 
