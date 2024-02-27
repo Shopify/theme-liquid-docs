@@ -69,6 +69,7 @@
   "shopify.checkout.general.errors.merchandise.quantity_rules_not_met": "Invalid quantity of merchandise.",
   "shopify.checkout.general.errors.merchandise.bundle_requires_components": "This bundle merchandise has no components.",
   "shopify.checkout.general.errors.merchandise.title_too_long": "Merchandise title is too long.",
+  "shopify.checkout.general.errors.merchandise.title_empty": "Merchandise title is empty.",
   "shopify.checkout.general.errors.buyer_identity.business_customer_does_not_match_company": "Company contact does not have access to company.",
   "shopify.checkout.general.errors.buyer_identity.customer_account_required": "Customer must log in to continue.",
   "shopify.checkout.general.errors.buyer_identity.contact_info_does_not_match_customer_account": "Specified customer info should match the logged in customer account.",
