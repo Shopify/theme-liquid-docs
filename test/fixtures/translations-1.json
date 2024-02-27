@@ -1,0 +1,10 @@
+{
+  "general": {
+    "label": "label",
+    "thing_html": "<script>console.log</script>",
+    "pluralized": {
+      "one": "{{ count }} thing",
+      "other": "{{ count }} things"
+    }
+  }
+}
