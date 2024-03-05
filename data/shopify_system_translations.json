@@ -152,6 +152,7 @@
   "shopify.checkout.general.errors.payment.unauthorized_capture_method": "Configuring the payment capture method is not allowed.",
   "shopify.checkout.general.errors.payment.saved_payment_methods_not_allowed": "Saved payment methods is not allowed.",
   "shopify.checkout.general.errors.payment.saved_payment_methods_not_enabled": "Saved payment methods is not enabled for this shop.",
+  "shopify.checkout.general.errors.payment.saved_payment_methods_cvv_verification_disabled": "The selected payment method requires CVV verification which is not enabled for this shop. Select a different payment method.",
   "shopify.checkout.general.errors.payment.store_credit_not_enabled": "Store credit is not enabled for this shop.",
   "shopify.checkout.general.errors.payment.store_credit_account_not_found": "Store credit account not found.",
   "shopify.checkout.general.errors.payment.store_credit_account_mismatch": "Store credit account does not match the buyer identity.",
