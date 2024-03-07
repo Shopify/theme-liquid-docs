@@ -1589,6 +1589,7 @@
   "shopify.checkout.discount_errors.generic_error": "Your order couldn't be processed because your discount code is no longer available. Review your order total and try again.",
   "shopify.checkout.shop_pay_external.errors.problem_loading": "There's a problem loading Shop Pay",
   "shopify.checkout.shop_pay_external.errors.try_again_later": "Check your connection or close this window and try again in a few moments.",
+  "shopify.checkout.shop_pay_external.errors.checkout_has_expired": "Your checkout has expired. Close this window and try checking out again from {{shopName}}.",
   "shopify.checkout.shop_pay_external.return_to_store": "Return to {{shopName}}",
   "shopify.checkout.wallets.return_to_store": "Return to store",
   "shopify.checkout.wallets.redirect_hint": "You will be asked to login with {{walletName}}.",
