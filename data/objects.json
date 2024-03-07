@@ -2951,7 +2951,7 @@
       "global": false,
       "parents": [
         {
-          "object": "product_option_value_swatch",
+          "object": "swatch",
           "property": "color"
         }
       ],
@@ -5394,8 +5394,8 @@
 
       ]
     },
-    "deprecated": false,
-    "deprecation_reason": "",
+    "deprecated": true,
+    "deprecation_reason": "Deprecated in favor of the [swatch](/docs/api/liquid/objects/swatch) drop.",
     "description": "",
     "properties": [
       {
@@ -5615,8 +5615,8 @@
         "name": "url_to_remove"
       },
       {
-        "deprecated": false,
-        "deprecation_reason": "",
+        "deprecated": true,
+        "deprecation_reason": "Deprecated in favor of the [swatch](#swatch) attribute.",
         "description": "Returns a visual representation for the filter value.\nIf no visual representation is available, then `nil` is returned.",
         "examples": [
 
@@ -5631,6 +5631,24 @@
         ],
         "summary": "The visual representation of the filter value.",
         "name": "display"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Returns a [swatch](/docs/api/liquid/objects/swatch) drop for the filter value.\nRequires the [filter presentation](/docs/api/liquid/objects/filter#filter-presentation) to be `swatch` and saved color or image content for the swatch. Otherwise, returns `nil`.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "swatch",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The visual representation of the filter value when a swatch is used.",
+        "name": "swatch"
       }
     ],
     "summary": "A specific value of a filter.",
@@ -7000,7 +7018,7 @@
           "property": "preview_image"
         },
         {
-          "object": "product_option_value_swatch",
+          "object": "swatch",
           "property": "image"
         },
         {
@@ -8134,6 +8152,24 @@
         ],
         "summary": "The components of a line item.",
         "name": "item_components"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\nThis field is applicable for cart line item only and currently available for shops using Checkout Extensibility.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "An informational error message about the status of the line item in the buyer's chosen language.",
+        "name": "error_message"
       }
     ],
     "summary": "A line in a cart, checkout, or order. Each line item represents a product variant.",
@@ -12888,7 +12924,7 @@
         ],
         "return_type": [
           {
-            "type": "product_option_value_swatch",
+            "type": "swatch",
             "name": "",
             "description": "",
             "array_value": ""
@@ -12973,6 +13009,10 @@
         {
           "object": "product_option_value",
           "property": "swatch"
+        },
+        {
+          "object": "filter_value",
+          "property": "swatch"
         }
       ],
       "template": [
@@ -13020,8 +13060,8 @@
         "name": "image"
       }
     ],
-    "summary": "A swatch for a product option value. Might contain an image, a color, or both.\n\n&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, [sign up here](https://www.shopify.com/editions/winter2024#new-taxonomy).",
-    "name": "product_option_value_swatch",
+    "summary": "Color and image for visual representation.\nAvailable for [product option values](/docs/api/liquid/objects/product_option_value) and [filter values](/docs/api/liquid/objects/filter_value).",
+    "name": "swatch",
     "examples": [
 
     ],
