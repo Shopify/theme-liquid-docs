@@ -1635,6 +1635,7 @@
   "shopify.checkout.wallets.errors.select_different_shipping_address_to_resolve_errors": "Your shipping address is invalid. Select a different address or use a new one.",
   "shopify.checkout.note.length_exceeds_maximum": "Reduce the size of the note to 5000 or fewer characters.",
   "shopify.checkout.one.errors.merchandise.gift_card_price_must_be_greater_than_zero": "Gift card price must be greater than 0.",
+  "shopify.checkout.one.errors.merchandise.subtotal_limit_reached": "The maximum value of line items has been reached.",
   "shopify.pagination.previous": "Previous",
   "shopify.pagination.next": "Next",
   "shopify.links.powered_by_shopify": "Powered by Shopify",
