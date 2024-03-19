@@ -891,6 +891,7 @@
   "shopify.checkout.payment.payment_method": "Payment method",
   "shopify.checkout.payment.expired_payment_method": "Selected payment method has expired",
   "shopify.checkout.payment.proposed_gateway_unavailable": "The proposed payment gateway is unavailable",
+  "shopify.checkout.payment.pay_in_installments_split_pay_short": "4 payments of %{amount}",
   "shopify.checkout.billing.billing_address_title": "Bill to",
   "shopify.checkout.billing.same_as_shipping": "Same as shipping address",
   "shopify.checkout.billing.add_address": "Use a different address",
