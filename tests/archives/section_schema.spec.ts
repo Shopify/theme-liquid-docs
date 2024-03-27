@@ -1,15 +1,21 @@
+/**
+ * This test is _deprecated_ while we transition away from `ajv`.
+ *
+ * We should get rid of it once the `ajv` dependency is ripped out of
+ * theme-tools, the CLI and the online store code editor.
+ */
 import { describe, expect, it } from "vitest";
 import set from "lodash.set";
 
-import jsonSchema from "../section_schema.json";
-import { validateSchema } from "../../../test/utilities";
+import jsonSchema from "../../schemas/theme/section_schema.json";
+import { validateSchema } from "./legacy-ajv-utilities";
 
-import sectionSchema1 from "../../../test/fixtures/section-schema-1.json";
-import sectionSchema2 from "../../../test/fixtures/section-schema-2.json";
-import sectionSchema3 from "../../../test/fixtures/section-schema-3.json";
-import sectionSchema4 from "../../../test/fixtures/section-schema-4.json";
-import sectionSchema5 from "../../../test/fixtures/section-schema-5.json";
-import sectionSchema6 from "../../../test/fixtures/section-schema-6.json";
+import sectionSchema1 from "../fixtures/section-schema-1.json";
+import sectionSchema2 from "../fixtures/section-schema-2.json";
+import sectionSchema3 from "../fixtures/section-schema-3.json";
+import sectionSchema4 from "../fixtures/section-schema-4.json";
+import sectionSchema5 from "../fixtures/section-schema-5.json";
+import sectionSchema6 from "../fixtures/section-schema-6.json";
 
 const emptySchema = {};
 const ALLOWED_SETTING_TYPES = [

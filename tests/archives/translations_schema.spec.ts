@@ -1,10 +1,16 @@
+/**
+ * This test is _deprecated_ while we transition away from `ajv`.
+ *
+ * We should get rid of it once the `ajv` dependency is ripped out of
+ * theme-tools, the CLI and the online store code editor.
+ */
 import { describe, expect, it, beforeEach } from 'vitest';
 import set from 'lodash.set';
 
-import jsonSchema from '../translations_schema.json';
-import { validateSchema } from '../../../test/utilities';
+import jsonSchema from '../../schemas/theme/translations_schema.json';
+import { validateSchema } from './legacy-ajv-utilities';
 
-import translations1 from '../../../test/fixtures/translations-1.json';
+import translations1 from '../fixtures/translations-1.json';
 
 const emptySchema = {};
 
