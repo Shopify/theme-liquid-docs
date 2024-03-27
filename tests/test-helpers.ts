@@ -3,11 +3,17 @@ import {
   Diagnostic,
   TextDocument,
 } from 'vscode-json-languageservice';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 export interface SchemaDefinition {
   uri: string;
   fileMatch?: string[];
   schema: string;
+}
+
+export const makeLoadSchema = (dirname: string) => (relativePath: string): string => {
+  return fs.readFileSync(path.resolve(dirname, relativePath), 'utf8');
 }
 
 export const validateSchema = (schemas: SchemaDefinition[]) => {

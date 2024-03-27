@@ -2,14 +2,16 @@ import set from 'lodash.set';
 import { describe, expect, it } from 'vitest';
 
 import sectionSchema from '../schemas/theme/section.json';
-import { validateSchema } from './test-helpers';
+import { makeLoadSchema, validateSchema } from './test-helpers';
 
-import sectionSchema1 from './fixtures/section-schema-1.json';
-import sectionSchema2 from './fixtures/section-schema-2.json';
-import sectionSchema3 from './fixtures/section-schema-3.json';
-import sectionSchema4 from './fixtures/section-schema-4.json';
-import sectionSchema5 from './fixtures/section-schema-5.json';
-import sectionSchema6 from './fixtures/section-schema-6.json';
+const loadSchema = makeLoadSchema(__dirname);
+const sectionSchema1 = loadSchema('./fixtures/section-schema-1.json');
+const sectionSchema2 = loadSchema('./fixtures/section-schema-2.json');
+const sectionSchema3 = loadSchema('./fixtures/section-schema-3.json');
+const sectionSchema4 = loadSchema('./fixtures/section-schema-4.json');
+const sectionSchema5 = loadSchema('./fixtures/section-schema-5.json');
+const sectionSchema6 = loadSchema('./fixtures/section-schema-6.json');
+const sectionSettings = loadSchema('./fixtures/section-settings.json');
 
 const emptySchema = {};
 const ALLOWED_SETTING_TYPES = [
@@ -72,7 +74,7 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
 
   it('should evaluate invalid settings items correctly', async () => {
     // Using JSON to make a deep copy of one of the valid schemas to mutate safely.
-    const sectionSchema = JSON.parse(JSON.stringify(sectionSchema1));
+    const sectionSchema = JSON.parse(sectionSchema1);
     set(sectionSchema, 'settings.4', 'foobar');
 
     const diagnostics = await validate(sectionSchema);
@@ -96,7 +98,7 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
 
   it('should evaluate invalid settings item type correctly', async () => {
     // Using JSON to make a deep copy of one of the valid schemas to mutate safely.
-    const sectionSchema = JSON.parse(JSON.stringify(sectionSchema1));
+    const sectionSchema = JSON.parse(sectionSchema1);
     set(sectionSchema, 'settings.6.type', 'foobar');
 
     const diagnostics = await validate(sectionSchema);
@@ -179,5 +181,56 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
         }),
       },
     ]);
+  });
+
+  it('should properly validate the default values of input settings per setting type', async () => {
+    // here we make sure that the input settings rules are working as intended
+    const diagnostics = await validate(sectionSettings);
+    expect(diagnostics).toContainEqual({
+      message: 'Incorrect type. Expected "boolean".',
+      severity: 1,
+      range: expect.objectContaining({
+        start: expect.objectContaining({
+          line: 7,
+        }),
+      }),
+    });
+    expect(diagnostics).toContainEqual({
+      message: 'Incorrect type. Expected "number".',
+      severity: 1,
+      range: expect.objectContaining({
+        start: expect.objectContaining({
+          line: 13,
+        }),
+      }),
+    });
+    expect(diagnostics).toContainEqual({
+      message: 'Incorrect type. Expected "string".',
+      severity: 1,
+      range: expect.objectContaining({
+        start: expect.objectContaining({
+          line: 19,
+        }),
+      }),
+    });
+    expect(diagnostics).toContainEqual({
+      message: 'Missing property "options".',
+      severity: 1,
+      range: expect.objectContaining({
+        start: expect.objectContaining({
+          line: 21,
+        }),
+      }),
+    });
+    expect(diagnostics).toContainEqual({
+      code: 1,
+      message: 'Value is not accepted. Valid values: "youtube", "vimeo".',
+      severity: 1,
+      range: expect.objectContaining({
+        start: expect.objectContaining({
+          line: 30,
+        }),
+      }),
+    });
   });
 });

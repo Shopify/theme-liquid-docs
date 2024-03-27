@@ -35,7 +35,6 @@ describe('JSON Schema validation for translation files', () => {
       "message": 'Incorrect type. Expected "string".',
       "range": expect.anything(),
       "severity": 1,
-    },
-    );
+    });
   });
 });
