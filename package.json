@@ -7,11 +7,14 @@
   "author": "Albert Chu <albert.chu@shopify.com>",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write \"schemas/theme/*.json\"",
+    "format:check": "prettier --check --ignore-unknown \"schemas/theme/*.json\"",
     "test": "vitest"
   },
   "devDependencies": {
     "ajv": "^8.12.0",
     "lodash.set": "^4.3.2",
+    "prettier": "^2.8.8",
     "vitest": "^0.32.2",
     "vscode-json-languageservice": "^5.3.10"
   }
