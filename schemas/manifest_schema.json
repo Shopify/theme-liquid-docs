@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "schemas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SchemaDefinition"
+      }
+    }
+  },
+  "definitions": {
+    "SchemaDefinition": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "uri-template": "https://raw.githubusercontent.com/Shopify/theme-liquid-docs/main/schemas/theme/{schema}.json"
+        },
+        "fileMatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["uri"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,17 +1,14 @@
 import set from 'lodash.set';
 import { describe, expect, it } from 'vitest';
+import { loadFixture, validateSchema } from './test-helpers';
 
-import sectionSchema from '../schemas/theme/section.json';
-import { makeLoadSchema, validateSchema } from './test-helpers';
-
-const loadSchema = makeLoadSchema(__dirname);
-const sectionSchema1 = loadSchema('./fixtures/section-schema-1.json');
-const sectionSchema2 = loadSchema('./fixtures/section-schema-2.json');
-const sectionSchema3 = loadSchema('./fixtures/section-schema-3.json');
-const sectionSchema4 = loadSchema('./fixtures/section-schema-4.json');
-const sectionSchema5 = loadSchema('./fixtures/section-schema-5.json');
-const sectionSchema6 = loadSchema('./fixtures/section-schema-6.json');
-const sectionSettings = loadSchema('./fixtures/section-settings.json');
+const sectionSchema1 = loadFixture('section-schema-1.json');
+const sectionSchema2 = loadFixture('section-schema-2.json');
+const sectionSchema3 = loadFixture('section-schema-3.json');
+const sectionSchema4 = loadFixture('section-schema-4.json');
+const sectionSchema5 = loadFixture('section-schema-5.json');
+const sectionSchema6 = loadFixture('section-schema-6.json');
+const sectionSettings = loadFixture('section-settings.json');
 
 const emptySchema = {};
 const ALLOWED_SETTING_TYPES = [
@@ -47,37 +44,31 @@ const ALLOWED_SETTING_TYPES = [
   'video_url',
   'video',
 ];
-const validate = validateSchema([
-  {
-    uri: 'https://shopify.dev/schemas/section',
-    fileMatch: ['*.json'],
-    schema: JSON.stringify(sectionSchema),
-  },
-]);
+const validate = validateSchema();
 
-describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
-  it.each([
-    emptySchema,
-    sectionSchema1,
-    sectionSchema2,
-    sectionSchema3,
-    sectionSchema4,
-    sectionSchema5,
-    sectionSchema6,
-  ])(
-    'should evaluate valid section schemas expectedly',
-    async (sectionSchema) => {
-      const diagnostics = await validate(sectionSchema);
+describe('JSON Schema validation of Liquid theme section schema tags', () => {
+  it('should validate valid section schemas', async () => {
+    const schemas = [
+      emptySchema,
+      sectionSchema1,
+      sectionSchema2,
+      sectionSchema3,
+      sectionSchema4,
+      sectionSchema5,
+      sectionSchema6,
+    ];
+    for (const sectionSchema of schemas) {
+      const diagnostics = await validate('sections/section.liquid', sectionSchema);
       expect(diagnostics).toStrictEqual([]);
-    },
-  );
+    }
+  });
 
-  it('should evaluate invalid settings items correctly', async () => {
+  it('should report incorrect types', async () => {
     // Using JSON to make a deep copy of one of the valid schemas to mutate safely.
     const sectionSchema = JSON.parse(sectionSchema1);
     set(sectionSchema, 'settings.4', 'foobar');
 
-    const diagnostics = await validate(sectionSchema);
+    const diagnostics = await validate('sections/section.liquid', sectionSchema);
     expect(diagnostics).toStrictEqual([
       {
         message: 'Incorrect type. Expected "object".',
@@ -96,18 +87,16 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
     ]);
   });
 
-  it('should evaluate invalid settings item type correctly', async () => {
+  it('should report invalid enum values', async () => {
     // Using JSON to make a deep copy of one of the valid schemas to mutate safely.
     const sectionSchema = JSON.parse(sectionSchema1);
     set(sectionSchema, 'settings.6.type', 'foobar');
 
-    const diagnostics = await validate(sectionSchema);
+    const diagnostics = await validate('sections/section.liquid', sectionSchema);
     expect(diagnostics).toStrictEqual([
       {
         code: 1,
-        message: expect.stringContaining(
-          'Value is not accepted. Valid values: "article", "blog"',
-        ),
+        message: expect.stringContaining('Value is not accepted. Valid values: "article", "blog"'),
         severity: 1,
         range: expect.objectContaining({
           start: expect.objectContaining({
@@ -123,8 +112,8 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
     ]);
   });
 
-  it('should not accept invalid section schema values', async () => {
-    const diagnostics = await validate({ invalid: 'value' });
+  it('should not accept invalid properties', async () => {
+    const diagnostics = await validate('sections/section.liquid', { invalid: 'value' });
     expect(diagnostics).toStrictEqual([
       {
         message: 'Property invalid is not allowed.',
@@ -144,7 +133,7 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
   });
 
   it('should properly validate the min value for max_blocks', async () => {
-    const diagnostics = await validate({ max_blocks: 0 });
+    const diagnostics = await validate('sections/section.liquid', { max_blocks: 0 });
     expect(diagnostics).toStrictEqual([
       {
         message: 'Value is below the minimum of 1.',
@@ -164,7 +153,7 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
   });
 
   it('should properly validate the max value for max_blocks', async () => {
-    const diagnostics = await validate({ max_blocks: 51 });
+    const diagnostics = await validate('sections/section.liquid', { max_blocks: 51 });
     expect(diagnostics).toStrictEqual([
       {
         message: 'Value is above the maximum of 50.',
@@ -185,7 +174,7 @@ describe('JSON Schema validation for Theme Liquid Section Schemas', () => {
 
   it('should properly validate the default values of input settings per setting type', async () => {
     // here we make sure that the input settings rules are working as intended
-    const diagnostics = await validate(sectionSettings);
+    const diagnostics = await validate('sections/section.liquid', sectionSettings);
     expect(diagnostics).toContainEqual({
       message: 'Incorrect type. Expected "boolean".',
       severity: 1,
