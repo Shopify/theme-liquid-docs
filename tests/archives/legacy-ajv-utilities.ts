@@ -15,7 +15,7 @@ export const validateSchema = ({
   jsonSchema,
   options,
 }: ValidateSchemaProps) => {
-  const ajv = new Ajv({ allErrors: true, ...(options ?? {}) });
+  const ajv = new Ajv({ strict: false, allErrors: true, ...(options ?? {}) });
 
   const validator = ajv.compile(jsonSchema);
 

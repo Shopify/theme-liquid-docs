@@ -26,5 +26,8 @@ jobs:
       - name: Install the packages
         run: yarn install --frozen-lockfile --ignore-engines
 
+      - name: Run format:check
+        run: yarn format:check
+
       - name: Run the unit tests
         run: yarn test

@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$comment": "This one is deprecated. Use the 'translations' schema instead (uniform naming convention).",
   "type": "object",
   "additionalProperties": {
     "anyOf": [
