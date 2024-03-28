@@ -3,388 +3,8 @@
   "title": "Shopify Liquid Theme Section Schema",
   "type": "object",
   "additionalProperties": false,
-  "definitions": {
-    "options": {
-      "description": "Takes an array of `value`/`label` definitions.",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          },
-          "label": {
-            "type": "string"
-          }
-        },
-        "required": ["value", "label"]
-      }
-    },
-    "inputSettings": {
-      "type": "array",
-      "description": "Input settings can hold a value and are configurable by merchants.",
-      "markdownDescription": "Input settings can hold a value and are configurable by merchants.\n\n---\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings)",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The unique identifier for the setting, which is used to access the setting value.",
-            "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
-          },
-          "type": {
-            "type": "string",
-            "description": "The input type of the setting.",
-            "markdownDescription": "The input type of the setting.\n\n---\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)",
-            "enum": [
-              "article",
-              "blog",
-              "checkbox",
-              "collection_list",
-              "collection",
-              "color_background",
-              "color_scheme_group",
-              "color_scheme",
-              "color",
-              "font_picker",
-              "header",
-              "html",
-              "image_picker",
-              "inline_richtext",
-              "link_list",
-              "liquid",
-              "number",
-              "page",
-              "paragraph",
-              "product_list",
-              "product",
-              "radio",
-              "range",
-              "richtext",
-              "select",
-              "text",
-              "textarea",
-              "text_alignment",
-              "url",
-              "video_url",
-              "video"
-            ]
-          },
-          "label": {
-            "type": "string",
-            "description": "The label for the setting, which will show in the theme editor."
-          },
-          "default": {
-            "description": "The default value for the setting."
-          },
-          "info": {
-            "type": "string",
-            "description": "An option for informational text about the setting."
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["header", "paragraph"]
-                }
-              }
-            },
-            "then": {
-              "required": ["type"]
-            },
-            "else": {
-              "required": ["type", "id", "label"]
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["checkbox"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "boolean"
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["number"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "number"
-                },
-                "placeholder": {
-                  "type": "number",
-                  "description": "A placeholder value for the input."
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["radio"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "string",
-                  "description": "The value of the default option"
-                },
-                "options": {
-                  "$ref": "#/definitions/options"
-                }
-              },
-              "required": ["options"]
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["range"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "number"
-                },
-                "min": {
-                  "type": "number",
-                  "description": "The minimum value of the input"
-                },
-                "max": {
-                  "type": "number",
-                  "description": "The maximum value of the input"
-                },
-                "step": {
-                  "type": "number",
-                  "description": "The increment size between steps of the slider"
-                },
-                "unit": {
-                  "type": "string",
-                  "description": "The unit for the input. For example, you can set \"px\" for a font-size slider",
-                  "markdownDescription": "The unit for the input. For example, you can set `px` for a font-size slider"
-                }
-              },
-              "required": ["min", "max", "step"]
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["select"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "string",
-                  "description": "The value of the default option"
-                },
-                "options": {
-                  "$ref": "#/definitions/options"
-                },
-                "group": {
-                  "type": "string",
-                  "description": "An optional attribute that you can add to each option to create option groups in the drop-down."
-                }
-              },
-              "required": ["options"]
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["text", "textarea", "html"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "string"
-                },
-                "placeholder": {
-                  "type": "string",
-                  "description": "A placeholder value for the input."
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["liquid", "inline_richtext", "richtext", "url"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["collection_list", "product_list"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "limit": {
-                  "type": "number",
-                  "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": [
-                    "color",
-                    "color_background",
-                    "color_scheme",
-                    "color_scheme_group",
-                    "font_picker"
-                  ]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["text_alignment"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "default": {
-                  "type": "string",
-                  "enum": ["left", "right", "center"]
-                }
-              }
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "type": {
-                  "enum": ["video_url"]
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "placeholder": {
-                  "type": "string",
-                  "description": "A placeholder value for the input."
-                },
-                "accept": {
-                  "description": "Takes an array of accepted video providers. Valid values are youtube, vimeo, or both.",
-                  "markdownDescription": "Takes an array of accepted video providers. Valid values are `youtube`, `vimeo`, or both.",
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": ["youtube", "vimeo"]
-                  }
-                }
-              },
-              "required": ["accept"]
-            }
-          }
-        ]
-      },
-      "minItems": 0
-    },
-    "sectionToggle": {
-      "type": "object",
-      "description": "Restrict the section to certain template page types and section group types.",
-      "properties": {
-        "templates": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "*",
-              "404",
-              "article",
-              "blog",
-              "captcha",
-              "cart",
-              "collection",
-              "customers/account",
-              "customers/activate_account",
-              "customers/addresses",
-              "customers/login",
-              "customers/order",
-              "customers/register",
-              "customers/reset_password",
-              "gift_card",
-              "index",
-              "list-collections",
-              "metaobject",
-              "page",
-              "password",
-              "policy",
-              "product",
-              "search"
-            ]
-          },
-          "uniqueItems": true
-        },
-        "groups": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
   "properties": {
+    "$schema": { "type": "string" },
     "name": {
       "type": "string",
       "description": "The section title shown in the theme editor."
@@ -406,7 +26,7 @@
     },
     "settings": {
       "description": "Section specific settings.",
-      "$ref": "#/definitions/inputSettings"
+      "$ref": "./input_settings.json"
     },
     "max_blocks": {
       "type": "integer",
@@ -430,7 +50,7 @@
           },
           "settings": {
             "description": "Block settings.",
-            "$ref": "#/definitions/inputSettings"
+            "$ref": "./input_settings.json"
           }
         },
         "if": {
@@ -605,6 +225,54 @@
     "disabled_on": {
       "description": "Prevent the section from being used on certain template page types and section group types.",
       "$ref": "#/definitions/sectionToggle"
+    }
+  },
+  "definitions": {
+    "sectionToggle": {
+      "type": "object",
+      "description": "Restrict the section to certain template page types and section group types.",
+      "properties": {
+        "templates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "*",
+              "404",
+              "article",
+              "blog",
+              "captcha",
+              "cart",
+              "collection",
+              "customers/account",
+              "customers/activate_account",
+              "customers/addresses",
+              "customers/login",
+              "customers/order",
+              "customers/register",
+              "customers/reset_password",
+              "gift_card",
+              "index",
+              "list-collections",
+              "metaobject",
+              "page",
+              "password",
+              "policy",
+              "product",
+              "search"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

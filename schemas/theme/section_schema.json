@@ -147,14 +147,7 @@
     "tag": {
       "type": "string",
       "description": "The HTML element to use for the section.",
-      "enum": [
-        "article",
-        "aside",
-        "div",
-        "footer",
-        "header",
-        "section"
-      ]
+      "enum": ["article", "aside", "div", "footer", "header", "section"]
     },
     "class": {
       "type": "string",
@@ -225,10 +218,21 @@
             "description": "Default values for settings.",
             "additionalProperties": {
               "anyOf": [
-                { "type": "number" },
-                { "type": "boolean" },
-                { "type": "string" },
-                { "type": "array", "items": { "type": "string" } }
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               ]
             }
           },
@@ -247,12 +251,20 @@
                   "description": "Block settings.",
                   "additionalProperties": {
                     "anyOf": [
-                      { "type": "number" },
-                      { "type": "boolean" },
-                      { "type": "string" },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "string"
+                      },
                       {
                         "type": "array",
-                        "items": { "type": "string" }
+                        "items": {
+                          "type": "string"
+                        }
                       }
                     ]
                   }
@@ -274,10 +286,21 @@
           "description": "Default values for settings.",
           "additionalProperties": {
             "anyOf": [
-              { "type": "number" },
-              { "type": "boolean" },
-              { "type": "string" },
-              { "type": "array", "items": { "type": "string" } }
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             ]
           }
         },
@@ -296,10 +319,21 @@
                 "description": "Block settings.",
                 "additionalProperties": {
                   "anyOf": [
-                    { "type": "number" },
-                    { "type": "boolean" },
-                    { "type": "string" },
-                    { "type": "array", "items": { "type": "string" } }
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
                   ]
                 }
               }
