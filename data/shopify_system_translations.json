@@ -465,7 +465,7 @@
   "shopify.checkout.order_summary.paid_label": "Paid",
   "shopify.checkout.order_summary.payment_due_label": "Payment due",
   "shopify.checkout.order_summary.vat_label_html": "Including %{amount} in taxes",
-  "shopify.checkout.order_summary.duties_included_label": "The total amount includes all applicable taxes and customs duties for no additional charges on delivery",
+  "shopify.checkout.order_summary.duties_included_label": "Total includes taxes and duties. No extra charges on delivery.",
   "shopify.checkout.order_summary.discount_and_gift_card_savings_notice": "After %{discount_amount} in discounts and %{gift_card_amount} in gift cards",
   "shopify.checkout.order_summary.discount_savings_notice": "After %{discount_amount} in discounts",
   "shopify.checkout.order_summary.gift_card_savings_notice": "After %{gift_card_amount} in gift cards",
