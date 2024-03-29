@@ -647,6 +647,7 @@
   "shopify.checkout.shipping.address_edit": "Edit address",
   "shopify.checkout.shipping.address_delete": "Delete address",
   "shopify.checkout.shipping.address_confirm": "Are you sure you want to delete this address from your account?",
+  "shopify.checkout.shipping.address_default": "Set as default",
   "shopify.checkout.shipping.address_form.add_address": "Add address",
   "shopify.checkout.shipping.address_form.save": "Save",
   "shopify.checkout.shipping.address_form.cancel": "Cancel",
