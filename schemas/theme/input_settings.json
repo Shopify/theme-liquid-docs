@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Input Settings",
-  "markdownDescription": "Input settings can hold a value and are configurable by merchants.\n\n-----\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings)",
+  "markdownDescription": "Input settings can hold a value and are configurable by merchants.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings)",
   "description": "Input settings can hold a value and are configurable by merchants.",
   "type": "array",
   "items": {
@@ -10,12 +10,12 @@
       "id": {
         "type": "string",
         "description": "The unique identifier for the setting, which is used to access the setting value.",
-        "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
+        "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
       },
       "type": {
         "type": "string",
         "description": "The input type of the setting.",
-        "markdownDescription": "The input type of the setting.\n\n---\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)",
+        "markdownDescription": "The input type of the setting.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)",
         "enum": [
           "article",
           "blog",
