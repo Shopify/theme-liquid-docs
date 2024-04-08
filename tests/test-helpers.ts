@@ -1,7 +1,15 @@
-import { getLanguageService, Diagnostic, TextDocument } from 'vscode-json-languageservice';
+import {
+  getLanguageService,
+  Diagnostic,
+  TextDocument,
+  LanguageService,
+  Hover,
+} from 'vscode-json-languageservice';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
+// put the uft8 block character in the cursor variable
+export const CURSOR = '█';
 const rootURI = 'https://raw.githubusercontent.com/Shopify/theme-liquid-docs/main/schemas';
 
 export interface SchemaDefinition {
@@ -17,7 +25,7 @@ export const loadSchema = (relativePath: string): string => {
   return fs.readFileSync(path.resolve(__dirname, '../schemas', relativePath), 'utf8');
 };
 
-export const validateSchema = (manifestName = 'manifest_theme.json') => {
+export const getService = (manifestName = 'manifest_theme.json') => {
   const manifestPath = path.resolve(__dirname, '../schemas', manifestName);
   const manifest = require(manifestPath);
   const schemas = manifest.schemas.map(
@@ -44,6 +52,12 @@ export const validateSchema = (manifestName = 'manifest_theme.json') => {
     schemas: schemas.map((sd) => ({ uri: sd.uri, fileMatch: sd.fileMatch })),
   });
 
+  return service;
+};
+
+export const validateSchema = (manifestName = 'manifest_theme.json') => {
+  const service = getService(manifestName);
+
   return async (filePath: string, jsonContent: any): Promise<Diagnostic[]> => {
     if (typeof jsonContent !== 'string') {
       jsonContent = JSON.stringify(jsonContent);
@@ -59,4 +73,18 @@ export const validateSchema = (manifestName = 'manifest_theme.json') => {
 
     return diagnostics;
   };
+};
+
+export const hover = async (
+  service: LanguageService,
+  filePath: string,
+  jsonContent: string,
+): Promise<Hover | null> => {
+  const offset = jsonContent.indexOf(CURSOR);
+  jsonContent = jsonContent.replace(CURSOR, '');
+
+  const textDocument = TextDocument.create('file:/' + filePath, 'json', 0, jsonContent);
+  const position = textDocument.positionAt(offset);
+  const jsonDocument = service.parseJSONDocument(textDocument);
+  return service.doHover(textDocument, position, jsonDocument);
 };

@@ -11,7 +11,14 @@
       "fileMatch": ["sections/*.liquid"]
     },
     {
-      "uri": "theme/input_settings.json"
+      "uri": "theme/theme_settings.json",
+      "fileMatch": ["config/settings_schema.json"]
+    },
+    {
+      "uri": "theme/settings.json"
+    },
+    {
+      "uri": "theme/setting.json"
     }
   ]
 }
