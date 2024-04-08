@@ -25,8 +25,6 @@
       "maximum": 2
     },
     "settings": {
-      "description": "Settings that merchants can configure through the theme editor.",
-      "markdownDescription": "Settings that merchants can configure through the [theme editor](https://help.shopify.com/en/manual/online-store/themes/customizing-themes#theme-editor)\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings).",
       "$ref": "./settings.json"
     },
     "max_blocks": {
@@ -50,8 +48,6 @@
             "description": "The block type."
           },
           "settings": {
-            "description": "Settings that merchants can configure through the theme editor.",
-            "markdownDescription": "Settings that merchants can configure through the [theme editor](https://help.shopify.com/en/manual/online-store/themes/customizing-themes#theme-editor)\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings).",
             "$ref": "./settings.json"
           }
         },
