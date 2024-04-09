@@ -3,403 +3,884 @@
   "type": "object",
   "properties": {
     "type": {
-      "oneOf": [
-        {
-          "const": "article",
-          "description": "A setting of type article outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture an article selection, such as the article to feature on the homepage.",
-          "markdownDescription": "A setting of type `article` outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture an article selection, such as the article to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#article)"
-        },
-        {
-          "const": "blog",
-          "description": "A setting of type blog outputs a blog picker field that's automatically populated with the available blogs for the store. You can use these fields to capture a blog selection, such as the blog to feature in the sidebar.",
-          "markdownDescription": "A setting of type `blog` outputs a blog picker field that's automatically populated with the available blogs for the store. You can use these fields to capture a blog selection, such as the blog to feature in the sidebar.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#blog)"
-        },
-        {
-          "const": "checkbox",
-          "description": "A setting of type checkbox outputs a checkbox field. These fields can be used for toggling features on and off, such as whether to show an announcement bar.",
-          "markdownDescription": "A setting of type `checkbox` outputs a checkbox field. These fields can be used for toggling features on and off, such as whether to show an announcement bar.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#checkbox)"
-        },
-        {
-          "const": "collection",
-          "description": "A setting of type collection outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture a collection selection, such as a collection for featuring products on the homepage.",
-          "markdownDescription": "A setting of type `collection` outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture a collection selection, such as a collection for featuring products on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#collection)"
-        },
-        {
-          "const": "collection_list",
-          "description": "A setting of type collection_list outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture multiple collections, such as a group of collections to feature on the homepage.",
-          "markdownDescription": "A setting of type `collection_list` outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture multiple collections, such as a group of collections to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#collection_list)"
-        },
-        {
-          "const": "color",
-          "description": "A setting of type color outputs a color picker field. You can use these fields to capture a color selection for various theme elements, such as the body text color.",
-          "markdownDescription": "A setting of type `color` outputs a color picker field. You can use these fields to capture a color selection for various theme elements, such as the body text color.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color)"
-        },
-        {
-          "const": "color_background",
-          "description": "A setting of type color_background outputs a text field for entering CSS background properties. You can use these fields to capture background settings for various theme elements, such as the store background.",
-          "markdownDescription": "A setting of type `color_background` outputs a text field for entering [CSS background](https://developer.mozilla.org/en-US/docs/Web/CSS/background) properties. You can use these fields to capture background settings for various theme elements, such as the store background.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_background)"
-        },
-        {
-          "const": "color_scheme",
-          "description": "A setting of type color_scheme outputs a picker with all of the available theme color schemes, and a preview of the selected color scheme.",
-          "markdownDescription": "A setting of type `color_scheme` outputs a picker with all of the available theme color schemes, and a preview of the selected color scheme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme)"
-        },
-        {
-          "const": "color_scheme_group",
-          "description": "A setting of type color_scheme_group outputs a color scheme.",
-          "markdownDescription": "A setting of type `color_scheme_group` outputs a color scheme which is composed of the following input setting types:\n\n- `header`\n- `color`\n- `color_background`\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)"
-        },
-        {
-          "const": "font_picker",
-          "description": "A setting of type font_picker outputs a font picker field that's automatically populated with fonts from the Shopify font library. This library includes web-safe fonts, a selection of Google Fonts, and fonts licensed by Monotype.",
-          "markdownDescription": "A setting of type `font_picker` outputs a font picker field that's automatically populated with fonts from the [Shopify font library](https://shopify.dev/docs/themes/architecture/settings/fonts#shopify-font-library). This library includes web-safe fonts, a selection of Google Fonts, and fonts licensed by Monotype.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#font_picker)"
-        },
-        {
-          "const": "header",
-          "description": "A setting of type `header` outputs a header element to help you better organize your input settings.",
-          "markdownDescription": "A setting of type `header` outputs a header element to help you better organize your input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/sidebar-settings#header)"
-        },
-        {
-          "const": "html",
-          "description": "A setting of type html outputs a multi-line text field that accepts HTML markup.",
-          "markdownDescription": "A setting of type `html` outputs a multi-line text field that accepts HTML markup.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#html)"
-        },
-        {
-          "const": "image_picker",
-          "description": "A setting of type image_picker outputs an image picker field that's automatically populated with the available images from the Files section of Shopify admin, and has the option to upload new images. Merchants also have an opportunity to enter alt text and select a focal point for their image.",
-          "markdownDescription": "A setting of type `image_picker` outputs an image picker field that's automatically populated with the available images from the [Files](https://help.shopify.com/manual/shopify-admin/productivity-tools/file-uploads) section of Shopify admin, and has the option to upload new images. Merchants also have an opportunity to enter alt text and select a [focal point](https://shopify.dev/docs/themes/architecture/settings/input-settings#image-focal-points) for their image.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#image_picker)"
-        },
-        {
-          "const": "inline_richtext",
-          "description": "A setting of type inline_richtext outputs HTML markup that isn't wrapped in paragraph tags (<p>)",
-          "markdownDescription": "A setting of type `inline_richtext` outputs HTML markup that isn't wrapped in paragraph tags (`<p>`). The setting includes the following basic formatting options:\n\n- Bold\n- Italic\n- Link\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#inline_richtext)"
-        },
-        {
-          "const": "link_list",
-          "description": "A setting of type link_list outputs a menu picker field that's automatically populated with the available menus for the store. You can use these fields to capture a menu selection, such as the menu to use for footer links.",
-          "markdownDescription": "A setting of type `link_list` outputs a menu picker field that's automatically populated with the available menus for the store. You can use these fields to capture a menu selection, such as the menu to use for footer links.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#link_list)"
-        },
-        {
-          "const": "liquid",
-          "description": "A setting of type liquid outputs a multi-line text field that accepts HTML and limited Liquid markup. You can use these fields to capture custom blocks of HTML and Liquid content, such as a product-specific message. Merchants can also use a liquid setting to add the code needed to integrate certain types of apps into your theme.",
-          "markdownDescription": "A setting of type `liquid` outputs a multi-line text field that accepts HTML and [limited](https://shopify.dev/docs/themes/architecture/settings/input-settings#limitations) Liquid markup. You can use these fields to capture custom blocks of HTML and Liquid content, such as a product-specific message. Merchants can also use a liquid setting to add the code needed to integrate certain types of [apps](https://shopify.dev/docs/apps/online-store) into your theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#liquid)"
-        },
-        {
-          "const": "number",
-          "description": "A setting of type number outputs a single number field.",
-          "markdownDescription": "A setting of type `number` outputs a single number field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#number)"
-        },
-        {
-          "const": "page",
-          "description": "A setting of type page outputs a page picker field that's automatically populated with the available pages for the store. You can use these fields to capture a page selection, such as the page to feature content for in a size-chart display.",
-          "markdownDescription": "A setting of type `page` outputs a page picker field that's automatically populated with the available pages for the store. You can use these fields to capture a page selection, such as the page to feature content for in a size-chart display.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#page)"
-        },
-        {
-          "const": "paragraph",
-          "description": "A setting of type paragraph outputs a text element to help you better describe your input settings.",
-          "markdownDescription": "A setting of type `paragraph` outputs a text element to help you better describe your input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/sidebar-settings#paragraph)"
-        },
-        {
-          "const": "product",
-          "description": "A setting of type product outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture a product selection, such as the product to feature on the homepage.",
-          "markdownDescription": "A setting of type `product` outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture a product selection, such as the product to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#product)"
-        },
-        {
-          "const": "product_list",
-          "description": "A setting of type product_list outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple products, such as a group of products to feature on the homepage.",
-          "markdownDescription": "A setting of type `product_list` outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple products, such as a group of products to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#product_list)"
-        },
-        {
-          "const": "radio",
-          "description": "A setting of type radio outputs a radio option field.",
-          "markdownDescription": "A setting of type `radio` outputs a radio option field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#radio)"
-        },
-        {
-          "const": "range",
-          "description": "A setting of type range outputs a range slider field with an input field.",
-          "markdownDescription": "A setting of type `range` outputs a range slider field with an input field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#range)"
-        },
-        {
-          "const": "richtext",
-          "description": "A setting of type richtext outputs a multi-line text field.",
-          "markdownDescription": "A setting of type `richtext` outputs a multi-line text field with the following basic formatting options:\n\n- Bold\n- Italic\n- Underline\n- Link\n- Paragraph\n- Unordered list\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#richtext)"
-        },
-        {
-          "const": "select",
-          "description": "A setting of type select outputs different selector fields, depending on certain criteria.",
-          "markdownDescription": "A setting of type `select` outputs [different selector fields](https://shopify.dev/docs/themes/architecture/settings/input-settings#selector-fields), depending on certain criteria.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#select)"
-        },
-        {
-          "const": "text",
-          "description": "A setting of type text outputs a single-line text field.",
-          "markdownDescription": "A setting of type `text` outputs a single-line text field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#text)"
-        },
-        {
-          "const": "text_alignment",
-          "description": "A setting of type text_alignment outputs a SegmentedControl field with icons.",
-          "markdownDescription": "A setting of type `text_alignment` outputs a `SegmentedControl` field with icons.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#text_alignment)"
-        },
-        {
-          "const": "textarea",
-          "description": "A setting of type textarea outputs a multi-line text field.",
-          "markdownDescription": "A setting of type `textarea` outputs a multi-line text field\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#textarea)"
-        },
-        {
-          "const": "url",
-          "description": "A setting of type url outputs a URL entry field where you can manually enter external URLs and relative paths.",
-          "markdownDescription": "A setting of type `url` outputs a URL entry field where you can manually enter external URLs and relative paths.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#url)"
-        },
-        {
-          "const": "video",
-          "description": "A setting of type video outputs a video picker that's automatically populated with the available videos from the Files section of the Shopify admin. The merchant also has the option to upload new videos.",
-          "markdownDescription": "A setting of type `video` outputs a video picker that's automatically populated with the available videos from the [Files](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/file-uploads) section of the Shopify admin. The merchant also has the option to upload new videos.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#video)"
-        },
-        {
-          "const": "video_url",
-          "description": "A setting of type video_url outputs a URL entry field.",
-          "markdownDescription": "A setting of type `video_url` outputs a URL entry field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#video_url)"
-        }
+      "enum": [
+        "article",
+        "blog",
+        "checkbox",
+        "collection",
+        "collection_list",
+        "color",
+        "color_background",
+        "color_scheme",
+        "color_scheme_group",
+        "font_picker",
+        "header",
+        "html",
+        "image_picker",
+        "inline_richtext",
+        "link_list",
+        "liquid",
+        "number",
+        "page",
+        "paragraph",
+        "product",
+        "product_list",
+        "radio",
+        "range",
+        "richtext",
+        "select",
+        "text",
+        "text_alignment",
+        "textarea",
+        "url",
+        "video",
+        "video_url"
       ]
-    },
-    "info": {
-      "type": "string",
-      "description": "An option for informational text about the setting."
     }
   },
+
+  "$comment": "We're doing the weird allOf here so that we have better error messages when type is invalid. We're also doing the allOf so that we can use additionalProperties properly.",
   "allOf": [
     {
-      "$comment": "Standard settings switch for sidebar vs input settings",
-      "if": { "properties": { "type": { "enum": ["header", "paragraph"] } } },
-      "then": {
-        "$comment": "Sidebar standard settings",
-        "required": ["type", "content"],
-        "properties": {
-          "content": {
-            "type": "string",
-            "description": "The setting content, which will show in the theme editor."
-          }
-        }
-      },
-
-      "else": {
-        "$comment": "Input standard settings",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The unique identifier for the setting, which is used to access the setting value.",
-            "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
-          },
-          "default": {
-            "description": "The default value for the setting."
-          }
-        },
-        "if": { "properties": { "type": { "const": "color_scheme_group" } } },
-        "then": {
-          "$comment": "color_scheme_group is an exception to the rule...",
-          "required": ["type", "id"]
-        },
-        "else": {
-          "required": ["type", "id", "label"],
-          "properties": {
-            "label": {
-              "type": "string",
-              "description": "The label for the setting, which will show in the theme editor."
-            }
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "header" } } },
+      "then": { "$ref": "#/definitions/header" }
     },
-
+    {
+      "if": { "properties": { "type": { "const": "paragraph" } } },
+      "then": { "$ref": "#/definitions/paragraph" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "article" } } },
+      "then": { "$ref": "#/definitions/article" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "blog" } } },
+      "then": { "$ref": "#/definitions/blog" }
+    },
     {
       "if": { "properties": { "type": { "const": "checkbox" } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "boolean"
-          }
-        }
-      }
+      "then": { "$ref": "#/definitions/checkbox" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["number"] } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "number"
-          },
-          "placeholder": {
-            "type": "number",
-            "description": "A placeholder value for the input."
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "collection" } } },
+      "then": { "$ref": "#/definitions/collection" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["radio"] } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "string",
-            "description": "The value of the default option"
-          },
-          "options": {
-            "$ref": "#/definitions/options"
-          }
-        },
-        "required": ["options"]
-      }
+      "if": { "properties": { "type": { "const": "collection_list" } } },
+      "then": { "$ref": "#/definitions/collection_list" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["range"] } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "number"
-          },
-          "min": {
-            "type": "number",
-            "description": "The minimum value of the input"
-          },
-          "max": {
-            "type": "number",
-            "description": "The maximum value of the input"
-          },
-          "step": {
-            "type": "number",
-            "description": "The increment size between steps of the slider"
-          },
-          "unit": {
-            "type": "string",
-            "description": "The unit for the input. For example, you can set \"px\" for a font-size slider",
-            "markdownDescription": "The unit for the input. For example, you can set `px` for a font-size slider"
-          }
-        },
-        "required": ["min", "max", "step"]
-      }
+      "if": { "properties": { "type": { "const": "color" } } },
+      "then": { "$ref": "#/definitions/color" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["select"] } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "string",
-            "description": "The value of the default option"
-          },
-          "options": {
-            "$ref": "#/definitions/options"
-          },
-          "group": {
-            "type": "string",
-            "description": "An optional attribute that you can add to each option to create option groups in the drop-down."
-          }
-        },
-        "required": ["options"]
-      }
+      "if": { "properties": { "type": { "const": "color_background" } } },
+      "then": { "$ref": "#/definitions/color_background" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["text", "textarea", "html"] } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "string"
-          },
-          "placeholder": {
-            "type": "string",
-            "description": "A placeholder value for the input."
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "color_scheme" } } },
+      "then": { "$ref": "#/definitions/color_scheme" }
     },
-
     {
-      "if": {
-        "properties": { "type": { "enum": ["liquid", "inline_richtext", "richtext", "url"] } }
-      },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "string"
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "color_scheme_group" } } },
+      "then": { "$ref": "#/definitions/color_scheme_group" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["collection_list", "product_list"] } } },
-      "then": {
-        "properties": {
-          "limit": {
-            "type": "number",
-            "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "font_picker" } } },
+      "then": { "$ref": "#/definitions/font_picker" }
     },
-
     {
-      "if": {
-        "properties": {
-          "type": {
-            "enum": [
-              "color",
-              "color_background",
-              "color_scheme",
-              "color_scheme_group",
-              "font_picker"
-            ]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "string"
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "html" } } },
+      "then": { "$ref": "#/definitions/html" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["text_alignment"] } } },
-      "then": {
-        "properties": {
-          "default": {
-            "type": "string",
-            "enum": ["left", "right", "center"]
-          }
-        }
-      }
+      "if": { "properties": { "type": { "const": "image_picker" } } },
+      "then": { "$ref": "#/definitions/image_picker" }
     },
-
     {
-      "if": { "properties": { "type": { "enum": ["video_url"] } } },
-      "then": {
-        "properties": {
-          "placeholder": {
-            "type": "string",
-            "description": "A placeholder value for the input."
-          },
-          "accept": {
-            "description": "Takes an array of accepted video providers. Valid values are youtube, vimeo, or both.",
-            "markdownDescription": "Takes an array of accepted video providers. Valid values are `youtube`, `vimeo`, or both.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": ["youtube", "vimeo"]
-            }
-          }
-        },
-        "required": ["accept"]
-      }
+      "if": { "properties": { "type": { "const": "inline_richtext" } } },
+      "then": { "$ref": "#/definitions/inline_richtext" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "link_list" } } },
+      "then": { "$ref": "#/definitions/link_list" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "liquid" } } },
+      "then": { "$ref": "#/definitions/liquid" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "number" } } },
+      "then": { "$ref": "#/definitions/number" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "page" } } },
+      "then": { "$ref": "#/definitions/page" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "product" } } },
+      "then": { "$ref": "#/definitions/product" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "product_list" } } },
+      "then": { "$ref": "#/definitions/product_list" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "radio" } } },
+      "then": { "$ref": "#/definitions/radio" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "range" } } },
+      "then": { "$ref": "#/definitions/range" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "richtext" } } },
+      "then": { "$ref": "#/definitions/richtext" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "select" } } },
+      "then": { "$ref": "#/definitions/select" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "text" } } },
+      "then": { "$ref": "#/definitions/text" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "text_alignment" } } },
+      "then": { "$ref": "#/definitions/text_alignment" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "textarea" } } },
+      "then": { "$ref": "#/definitions/textarea" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "url" } } },
+      "then": { "$ref": "#/definitions/url" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "video" } } },
+      "then": { "$ref": "#/definitions/video" }
+    },
+    {
+      "if": { "properties": { "type": { "const": "video_url" } } },
+      "then": { "$ref": "#/definitions/video_url" }
     }
   ],
 
   "definitions": {
+    "article": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "article",
+          "description": "A setting of type article outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture an article selection, such as the article to feature on the homepage.",
+          "markdownDescription": "A setting of type `article` outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture an article selection, such as the article to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#article)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "blog": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "blog",
+          "description": "A setting of type blog outputs a blog picker field that's automatically populated with the available blogs for the store. You can use these fields to capture a blog selection, such as the blog to feature in the sidebar.",
+          "markdownDescription": "A setting of type `blog` outputs a blog picker field that's automatically populated with the available blogs for the store. You can use these fields to capture a blog selection, such as the blog to feature in the sidebar.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#blog)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "checkbox": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "checkbox",
+          "description": "A setting of type checkbox outputs a checkbox field. These fields can be used for toggling features on and off, such as whether to show an announcement bar.",
+          "markdownDescription": "A setting of type `checkbox` outputs a checkbox field. These fields can be used for toggling features on and off, such as whether to show an announcement bar.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#checkbox)"
+        },
+        "default": { "type": "boolean" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "collection": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "collection",
+          "description": "A setting of type collection outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture a collection selection, such as a collection for featuring products on the homepage.",
+          "markdownDescription": "A setting of type `collection` outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture a collection selection, such as a collection for featuring products on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#collection)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "collection_list": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "collection_list",
+          "description": "A setting of type collection_list outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture multiple collections, such as a group of collections to feature on the homepage.",
+          "markdownDescription": "A setting of type `collection_list` outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture multiple collections, such as a group of collections to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#collection_list)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "color": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "color",
+          "description": "A setting of type color outputs a color picker field. You can use these fields to capture a color selection for various theme elements, such as the body text color.",
+          "markdownDescription": "A setting of type `color` outputs a color picker field. You can use these fields to capture a color selection for various theme elements, such as the body text color.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "color_background": {
+      "type": "object",
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "color_background",
+          "description": "A setting of type color_background outputs a text field for entering CSS background properties. You can use these fields to capture background settings for various theme elements, such as the store background.",
+          "markdownDescription": "A setting of type `color_background` outputs a text field for entering [CSS background](https://developer.mozilla.org/en-US/docs/Web/CSS/background) properties. You can use these fields to capture background settings for various theme elements, such as the store background.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_background)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "color_scheme": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "color_scheme",
+          "description": "A setting of type color_scheme outputs a picker with all of the available theme color schemes, and a preview of the selected color scheme.",
+          "markdownDescription": "A setting of type `color_scheme` outputs a picker with all of the available theme color schemes, and a preview of the selected color scheme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "color_scheme_group": {
+      "allOf": [{ "$ref": "#/definitions/colorSchemeGroupStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "color_scheme_group",
+          "description": "A setting of type color_scheme_group outputs a color scheme.",
+          "markdownDescription": "A setting of type `color_scheme_group` outputs a color scheme which is composed of the following input setting types:\n\n- `header`\n- `color`\n- `color_background`\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)"
+        },
+        "definition": {
+          "description": "An array of header, color and color_background input settings.",
+          "markdownDescription": "An array of `header`, `color` and `color_background` input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": ["header", "color", "color_background"]
+              }
+            },
+            "allOf": [
+              {
+                "if": { "properties": { "type": { "const": "header" } } },
+                "then": { "$ref": "#/definitions/header" }
+              },
+              {
+                "if": { "properties": { "type": { "const": "color" } } },
+                "then": { "$ref": "#/definitions/color" }
+              },
+              {
+                "if": { "properties": { "type": { "const": "color_background" } } },
+                "then": { "$ref": "#/definitions/color_background" }
+              }
+            ]
+          }
+        },
+        "role": {
+          "type": "object",
+          "properties": {
+            "background": {
+              "description": "Renders the background color of the preview",
+              "oneOf": [{ "type": "string" }, { "$ref": "#/definitions/gradient" }]
+            },
+            "text": {
+              "description": "Renders the text color of the preview",
+              "type": "string"
+            },
+            "primary_button": {
+              "description": "Renders the first pill in the preview",
+              "oneOf": [{ "type": "string" }, { "$ref": "#/definitions/gradient" }]
+            },
+            "secondary_button": {
+              "description": "Renders the second pill in the preview",
+              "oneOf": [{ "type": "string" }, { "$ref": "#/definitions/gradient" }]
+            },
+            "primary_button_border": {
+              "description": "Render the first pills' border in the preview",
+              "type": "string"
+            },
+            "secondary_button_border": {
+              "description": "Render the second pills' border in the preview",
+              "type": "string"
+            },
+            "on_primary_button": {
+              "description": "Not used in the preview",
+              "type": "string"
+            },
+            "on_secondary_button": {
+              "description": "Not used in the preview",
+              "type": "string"
+            },
+            "links": {
+              "description": "Not used in the preview",
+              "type": "string"
+            },
+            "icons": {
+              "description": "Not used in the preview",
+              "type": "string"
+            }
+          },
+          "required": [
+            "background",
+            "text",
+            "primary_button",
+            "secondary_button",
+            "primary_button_border",
+            "secondary_button_border",
+            "on_primary_button",
+            "on_secondary_button",
+            "links",
+            "icons"
+          ]
+        },
+        "info": true,
+        "id": true
+      },
+      "required": ["definition", "role"],
+      "additionalProperties": false
+    },
+
+    "font_picker": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "font_picker",
+          "description": "A setting of type font_picker outputs a font picker field that's automatically populated with fonts from the Shopify font library. This library includes web-safe fonts, a selection of Google Fonts, and fonts licensed by Monotype.",
+          "markdownDescription": "A setting of type `font_picker` outputs a font picker field that's automatically populated with fonts from the [Shopify font library](https://shopify.dev/docs/themes/architecture/settings/fonts#shopify-font-library). This library includes web-safe fonts, a selection of Google Fonts, and fonts licensed by Monotype.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#font_picker)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "html": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "html",
+          "description": "A setting of type html outputs a multi-line text field that accepts HTML markup.",
+          "markdownDescription": "A setting of type `html` outputs a multi-line text field that accepts HTML markup.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#html)"
+        },
+        "default": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "A placeholder value for the input."
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "image_picker": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "image_picker",
+          "description": "A setting of type image_picker outputs an image picker field that's automatically populated with the available images from the Files section of Shopify admin, and has the option to upload new images. Merchants also have an opportunity to enter alt text and select a focal point for their image.",
+          "markdownDescription": "A setting of type `image_picker` outputs an image picker field that's automatically populated with the available images from the [Files](https://help.shopify.com/manual/shopify-admin/productivity-tools/file-uploads) section of Shopify admin, and has the option to upload new images. Merchants also have an opportunity to enter alt text and select a [focal point](https://shopify.dev/docs/themes/architecture/settings/input-settings#image-focal-points) for their image.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#image_picker)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "inline_richtext": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "inline_richtext",
+          "description": "A setting of type inline_richtext outputs HTML markup that isn't wrapped in paragraph tags (<p>)",
+          "markdownDescription": "A setting of type `inline_richtext` outputs HTML markup that isn't wrapped in paragraph tags (`<p>`). The setting includes the following basic formatting options:\n\n- Bold\n- Italic\n- Link\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#inline_richtext)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "link_list": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "link_list",
+          "description": "A setting of type link_list outputs a menu picker field that's automatically populated with the available menus for the store. You can use these fields to capture a menu selection, such as the menu to use for footer links.",
+          "markdownDescription": "A setting of type `link_list` outputs a menu picker field that's automatically populated with the available menus for the store. You can use these fields to capture a menu selection, such as the menu to use for footer links.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#link_list)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "liquid": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "liquid",
+          "description": "A setting of type liquid outputs a multi-line text field that accepts HTML and limited Liquid markup. You can use these fields to capture custom blocks of HTML and Liquid content, such as a product-specific message. Merchants can also use a liquid setting to add the code needed to integrate certain types of apps into your theme.",
+          "markdownDescription": "A setting of type `liquid` outputs a multi-line text field that accepts HTML and [limited](https://shopify.dev/docs/themes/architecture/settings/input-settings#limitations) Liquid markup. You can use these fields to capture custom blocks of HTML and Liquid content, such as a product-specific message. Merchants can also use a liquid setting to add the code needed to integrate certain types of [apps](https://shopify.dev/docs/apps/online-store) into your theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#liquid)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "number": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "number",
+          "description": "A setting of type number outputs a single number field.",
+          "markdownDescription": "A setting of type `number` outputs a single number field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#number)"
+        },
+        "placeholder": {
+          "type": "number",
+          "description": "A placeholder value for the input."
+        },
+        "default": { "type": "number" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "page": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "page",
+          "description": "A setting of type page outputs a page picker field that's automatically populated with the available pages for the store. You can use these fields to capture a page selection, such as the page to feature content for in a size-chart display.",
+          "markdownDescription": "A setting of type `page` outputs a page picker field that's automatically populated with the available pages for the store. You can use these fields to capture a page selection, such as the page to feature content for in a size-chart display.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#page)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "product": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "product",
+          "description": "A setting of type product outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture a product selection, such as the product to feature on the homepage.",
+          "markdownDescription": "A setting of type `product` outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture a product selection, such as the product to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#product)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "product_list": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "product_list",
+          "description": "A setting of type product_list outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple products, such as a group of products to feature on the homepage.",
+          "markdownDescription": "A setting of type `product_list` outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple products, such as a group of products to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#product_list)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "radio": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "radio",
+          "description": "A setting of type radio outputs a radio option field.",
+          "markdownDescription": "A setting of type `radio` outputs a radio option field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#radio)"
+        },
+        "default": {
+          "type": "string",
+          "description": "The value of the default option"
+        },
+        "options": { "$ref": "#/definitions/options" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+
+    "range": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "range",
+          "description": "A setting of type range outputs a range slider field with an input field.",
+          "markdownDescription": "A setting of type `range` outputs a range slider field with an input field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#range)"
+        },
+        "default": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number",
+          "description": "The minimum value of the input"
+        },
+        "max": {
+          "type": "number",
+          "description": "The maximum value of the input"
+        },
+        "step": {
+          "type": "number",
+          "description": "The increment size between steps of the slider"
+        },
+        "unit": {
+          "type": "string",
+          "description": "The unit for the input. For example, you can set \"px\" for a font-size slider",
+          "markdownDescription": "The unit for the input. For example, you can set `px` for a font-size slider"
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "required": ["min", "max", "step"],
+      "additionalProperties": false
+    },
+
+    "richtext": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "richtext",
+          "description": "A setting of type richtext outputs a multi-line text field.",
+          "markdownDescription": "A setting of type `richtext` outputs a multi-line text field with the following basic formatting options:\n\n- Bold\n- Italic\n- Underline\n- Link\n- Paragraph\n- Unordered list\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#richtext)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "select": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "select",
+          "description": "A setting of type select outputs different selector fields, depending on certain criteria.",
+          "markdownDescription": "A setting of type `select` outputs [different selector fields](https://shopify.dev/docs/themes/architecture/settings/input-settings#selector-fields), depending on certain criteria.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#select)"
+        },
+        "default": {
+          "type": "string",
+          "description": "The value of the default option"
+        },
+        "group": {
+          "type": "string",
+          "description": "An optional attribute that you can add to each option to create option groups in the drop-down."
+        },
+        "options": { "$ref": "#/definitions/options" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+
+    "text": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "text",
+          "description": "A setting of type text outputs a single-line text field.",
+          "markdownDescription": "A setting of type `text` outputs a single-line text field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#text)"
+        },
+        "default": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "A placeholder value for the input."
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "text_alignment": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "text_alignment",
+          "description": "A setting of type text_alignment outputs a SegmentedControl field with icons.",
+          "markdownDescription": "A setting of type `text_alignment` outputs a `SegmentedControl` field with icons.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#text_alignment)"
+        },
+        "default": {
+          "type": "string",
+          "enum": ["left", "right", "center"]
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "textarea": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "textarea",
+          "description": "A setting of type textarea outputs a multi-line text field.",
+          "markdownDescription": "A setting of type `textarea` outputs a multi-line text field\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#textarea)"
+        },
+        "default": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "A placeholder value for the input."
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "url": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "url",
+          "description": "A setting of type url outputs a URL entry field where you can manually enter external URLs and relative paths.",
+          "markdownDescription": "A setting of type `url` outputs a URL entry field where you can manually enter external URLs and relative paths.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#url)"
+        },
+        "default": { "type": "string" },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "video": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "video",
+          "description": "A setting of type video outputs a video picker that's automatically populated with the available videos from the Files section of the Shopify admin. The merchant also has the option to upload new videos.",
+          "markdownDescription": "A setting of type `video` outputs a video picker that's automatically populated with the available videos from the [Files](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/file-uploads) section of the Shopify admin. The merchant also has the option to upload new videos.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#video)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "video_url": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "video_url",
+          "description": "A setting of type video_url outputs a URL entry field.",
+          "markdownDescription": "A setting of type `video_url` outputs a URL entry field.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#video_url)"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "A placeholder value for the input."
+        },
+        "accept": {
+          "description": "Takes an array of accepted video providers. Valid values are youtube, vimeo, or both.",
+          "markdownDescription": "Takes an array of accepted video providers. Valid values are `youtube`, `vimeo`, or both.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["youtube", "vimeo"]
+          }
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "required": ["accept"],
+      "additionalProperties": false
+    },
+
+    "header": {
+      "allOf": [{ "$ref": "#/definitions/sidebarStandardSettings" }],
+      "properties": {
+        "type": {
+          "const": "header",
+          "description": "A setting of type `header` outputs a header element to help you better organize your input settings.",
+          "markdownDescription": "A setting of type `header` outputs a header element to help you better organize your input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/sidebar-settings#header)"
+        },
+        "info": { "$ref": "#/definitions/info" },
+        "content": true
+      },
+      "additionalProperties": false
+    },
+
+    "paragraph": {
+      "allOf": [{ "$ref": "#/definitions/sidebarStandardSettings" }],
+      "properties": {
+        "type": {
+          "const": "paragraph",
+          "description": "A setting of type paragraph outputs a text element to help you better describe your input settings.",
+          "markdownDescription": "A setting of type `paragraph` outputs a text element to help you better describe your input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/sidebar-settings#paragraph)"
+        },
+        "content": true
+      },
+      "additionalProperties": false
+    },
+
+    "sidebarStandardSettings": {
+      "$comment": "Sidebar standard settings",
+      "required": ["type", "content"],
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "The setting content, which will show in the theme editor."
+        }
+      }
+    },
+
+    "inputSettingsStandardAttributes": {
+      "required": ["type", "id", "label"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the setting, which is used to access the setting value.",
+          "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
+        },
+        "label": {
+          "type": "string",
+          "description": "The label for the setting, which will show in the theme editor."
+        },
+        "default": {
+          "description": "The default value for the setting."
+        },
+        "info": {
+          "$ref": "#/definitions/info"
+        }
+      }
+    },
+
+    "colorSchemeGroupStandardAttributes": {
+      "required": ["type", "id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the setting, which is used to access the setting value.",
+          "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
+        }
+      }
+    },
+
+    "info": {
+      "type": "string",
+      "description": "An option for informational text about the setting."
+    },
+
+    "gradient": {
+      "type": "object",
+      "required": ["solid", "gradient"],
+      "properties": {
+        "solid": { "type": "string" },
+        "gradient": { "type": "string" }
+      }
+    },
+
     "options": {
       "description": "Takes an array of `value`/`label` definitions.",
       "type": "array",

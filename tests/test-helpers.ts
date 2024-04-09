@@ -8,7 +8,6 @@ import {
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-// put the uft8 block character in the cursor variable
 export const CURSOR = '█';
 const rootURI = 'https://raw.githubusercontent.com/Shopify/theme-liquid-docs/main/schemas';
 

@@ -53,20 +53,12 @@
         ],
         "oneOf": [
           {
-            "title": "Schema with propertyA",
-            "description": "An object with propertyA and without propertyB",
             "required": ["theme_support_email"],
-            "not": {
-              "required": ["theme_support_url"]
-            }
+            "not": { "required": ["theme_support_url"] }
           },
           {
-            "title": "Schema with propertyB",
-            "description": "An object with propertyB and without propertyA",
             "required": ["theme_support_url"],
-            "not": {
-              "required": ["theme_support_email"]
-            }
+            "not": { "required": ["theme_support_email"] }
           }
         ]
       },
