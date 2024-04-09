@@ -1,0 +1,22 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "tests/fixtures/section-*.json"
+      ],
+      "url": "./schemas/theme/section.json"
+    },
+    {
+      "fileMatch": [
+        "tests/fixtures/translations-*.json"
+      ],
+      "url": "./schemas/theme/translations.json"
+    },
+    {
+      "fileMatch": [
+        "tests/fixtures/theme-settings-*.json"
+      ],
+      "url": "./schemas/theme/theme_settings.json"
+    }
+  ]
+}

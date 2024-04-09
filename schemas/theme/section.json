@@ -25,8 +25,7 @@
       "maximum": 2
     },
     "settings": {
-      "description": "Section specific settings.",
-      "$ref": "./input_settings.json"
+      "$ref": "./settings.json"
     },
     "max_blocks": {
       "type": "integer",
@@ -49,8 +48,7 @@
             "description": "The block type."
           },
           "settings": {
-            "description": "Block settings.",
-            "$ref": "./input_settings.json"
+            "$ref": "./settings.json"
           }
         },
         "if": {

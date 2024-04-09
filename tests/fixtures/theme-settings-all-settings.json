@@ -1,0 +1,301 @@
+[
+  {
+    "name": "Some category",
+    "settings": [
+      {
+        "type": "checkbox",
+        "default": true,
+        "id": "my-checkbox",
+        "info": "This is a checkbox",
+        "label": "The checkbox's label"
+      },
+      {
+        "type": "number",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "default": 20
+      },
+      {
+        "type": "radio",
+        "id": "logo_aligment",
+        "label": "Logo alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "centered",
+            "label": "Centered"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "range",
+        "id": "font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 16
+      },
+      {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "Vertical alignment",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "middle",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "middle"
+      },
+      {
+        "type": "text",
+        "id": "my-text",
+        "info": "This is a text field",
+        "label": "The text field's label"
+      },
+      {
+        "type": "textarea",
+        "id": "my-textarea",
+        "info": "This is a text area",
+        "label": "The text area's label"
+      },
+
+      {
+        "type": "article",
+        "id": "my-article",
+        "info": "This is an article",
+        "label": "the article's label"
+      },
+      {
+        "type": "blog",
+        "id": "my-blog",
+        "info": "This is a blog",
+        "label": "the blog's label"
+      },
+
+      {
+        "type": "collection",
+        "id": "my-collection",
+        "info": "This is a collection",
+        "label": "the collection's label"
+      },
+      {
+        "type": "collection_list",
+        "id": "my-collection-list",
+        "info": "This is a collection list",
+        "label": "the collection list's label"
+      },
+      {
+        "type": "color",
+        "id": "my-color",
+        "info": "This is a color",
+        "label": "the color's label",
+        "default": "#000000"
+      },
+      {
+        "type": "color_background",
+        "id": "background",
+        "label": "Background",
+        "default": "linear-gradient(#ffffff, #000000)"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "scheme_1",
+        "label": "Color Scheme"
+      },
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "header",
+            "content": "Typography"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "Text",
+            "default": "#121212"
+          },
+          {
+            "type": "header",
+            "content": "Background"
+          },
+          {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color_background",
+            "id": "background_gradient",
+            "label": "Gradient",
+            "info": "Background gradient replaces background where possible."
+          },
+          {
+            "type": "header",
+            "content": "Additional"
+          },
+          {
+            "type": "color",
+            "id": "primary_button",
+            "label": "Primary",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "on_primary_button",
+            "label": "On Primary Button",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_border",
+            "label": "Primary Button Border",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button",
+            "label": "Secondary Button"
+          },
+          {
+            "type": "color",
+            "id": "on_secondary_button",
+            "label": "On Secondary Button",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "Secondary Button Border",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "icons",
+            "label": "Icons",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "links",
+            "label": "Links",
+            "default": "#121212"
+          }
+        ],
+        "role": {
+          "background": {
+            "solid": "background",
+            "gradient": "background_gradient"
+          },
+          "text": "text",
+          "primary_button": "primary_button",
+          "on_primary_button": "on_primary_button",
+          "primary_button_border": "primary_button_border",
+          "secondary_button": "secondary_button",
+          "on_secondary_button": "on_secondary_button",
+          "secondary_button_border": "secondary_button_border",
+          "icons": "icons",
+          "links": "links"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "html",
+        "id": "video_embed",
+        "label": "Video embed"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_with_text_image",
+        "label": "Image"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "inline",
+        "default": "my <i>inline</i> <b>text</b>",
+        "label": "Inline rich text"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+      },
+      {
+        "type": "liquid",
+        "id": "battery_message",
+        "label": "Battery message",
+        "default": "{% if product.tags contains 'battery' %}This product can only be shipped by ground.{% else %}This product can be shipped by ground or air.{% endif %}"
+      },
+      {
+        "type": "page",
+        "id": "page",
+        "label": "Page"
+      },
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      },
+      {
+        "type": "product_list",
+        "id": "product_list",
+        "label": "Products",
+        "limit": 12
+      },
+      {
+        "type": "richtext",
+        "id": "paragraph",
+        "label": "Paragraph"
+      },
+      {
+        "type": "text_alignment",
+        "id": "alignment",
+        "label": "Text alignment",
+        "default": "center"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "video",
+        "id": "video",
+        "label": "A Shopify-hosted video"
+      },
+
+      {
+        "type": "header",
+        "content": "Email Signup",
+        "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
+      },
+      {
+        "type": "paragraph",
+        "content": "All of your collections are listed by default. To customize your list, choose 'Selected' and add collections."
+      }
+    ]
+  }
+]

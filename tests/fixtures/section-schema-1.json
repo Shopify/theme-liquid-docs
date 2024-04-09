@@ -1,82 +1,82 @@
 {
-    "name": "t:sections.announcement-bar.name",
-    "max_blocks": 12,
-    "class": "announcement-bar-section",
-    "enabled_on": {
-      "groups": ["*", "header"]
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["*", "header"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "accent-1"
     },
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "t:sections.all.colors.label",
-        "default": "accent-1"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_line_separator",
-        "default": true,
-        "label": "t:sections.header.settings.show_line_separator.label"
-      },
-      {
-        "type": "header",
-        "content": "t:sections.announcement-bar.settings.header__1.content",
-        "info": "t:sections.announcement-bar.settings.header__1.info"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_social",
-        "default": false,
-        "label": "t:sections.announcement-bar.settings.show_social.label"
-      },
-      {
-        "type": "header",
-        "content": "t:sections.announcement-bar.settings.header__2.content"
-      },
-      {
-        "type": "checkbox",
-        "id": "auto_rotate",
-        "label": "t:sections.announcement-bar.settings.auto_rotate.label",
-        "default": false
-      },
-      {
-        "type": "range",
-        "id": "change_slides_speed",
-        "min": 5,
-        "max": 10,
-        "step": 1,
-        "unit": "s",
-        "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
-        "default": 5
-      }
-    ],
-    "blocks": [
-      {
-        "type": "announcement",
-        "name": "t:sections.announcement-bar.blocks.announcement.name",
-        "settings": [
-          {
-            "type": "text",
-            "id": "text",
-            "default": "Welcome to our store",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
-          },
-          {
-            "type": "url",
-            "id": "link",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "t:sections.announcement-bar.presets.name",
-        "blocks": [
-          {
-            "type": "announcement"
-          }
-        ]
-      }
-    ]
-  }
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__1.content",
+      "info": "t:sections.announcement-bar.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": false,
+      "label": "t:sections.announcement-bar.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__2.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.announcement-bar.settings.auto_rotate.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-bar.presets.name",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
