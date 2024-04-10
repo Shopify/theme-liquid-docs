@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shopify Liquid Theme Block Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name attribute determines the block title that's shown in the theme editor.",
+      "markdownDescription": "The `name` attribute determines the block title that's shown in the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#name)"
+    },
+
+    "settings": {
+      "$ref": "./settings.json"
+    },
+
+    "blocks": {
+      "type": "array",
+      "description": "Theme blocks can accept other app and theme blocks as children using the blocks attribute of their schema.",
+      "markdownDescription": "Theme blocks can accept other app and theme blocks as children using the `blocks` attribute of their schema.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The type of block that can be added to this block.",
+            "oneOf": [
+              {
+                "const": "@app",
+                "description": "The \"@app\" type is used to denote that this block accepts app blocks. App blocks enable app developers to create blocks for merchants to add app content to their theme without having to directly edit theme code.",
+                "markdownDescription": "The `@app` type is used to denote that this block accepts app blocks. [App blocks](/docs/themes/architecture/sections/app-blocks) enable app developers to create blocks for merchants to add app content to their theme without having to directly edit theme code.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
+              },
+              {
+                "const": "@theme",
+                "description": "The \"@theme\" type denotes that this block is compatible with other theme-defined blocks that live in the /blocks folder of the theme.",
+                "markdownDescription": "The `@theme` type denotes that this block is compatible with other theme-defined blocks that live in the `blocks/` folder of the theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    "presets": {
+      "type": "array",
+      "description": "Presets are default configurations of blocks that enable merchants to easily add a block to a JSON template through the theme editor.",
+      "markdownDescription": "Presets are default configurations of blocks that enable merchants to easily add a block to a JSON template through the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The preset name, which displays in the Add block picker of the theme editor.",
+            "markdownDescription": "The preset name, which displays in the <strong>Add block</strong> picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)"
+          },
+          "settings": {
+            "$ref": "#/definitions/defaultSettingValues"
+          },
+          "blocks": {
+            "type": "array",
+            "description": "A list of child blocks that you might want to include.",
+            "markdownDescription": "A list of child blocks that you might want to include.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)",
+            "required": ["type"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "The block type."
+                },
+                "settings": {
+                  "$ref": "#/definitions/defaultSettingValues"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "tag": {
+      "description": "The HTML element that is used to wrap rendered block. Accepts any string up to 50 characters. Can be used to render custom HTML elements. Use null to render without a wrapping element.",
+      "markdownDescription": "The HTML element that is used to wrap rendered block. Accepts any string up to 50 characters. Can be used to render custom HTML elements.\n\nUse `null` to render without a wrapping element.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#tag)",
+      "oneOf": [
+        {
+          "description": "If you don't want to use a <div>, then you can specify which kind of HTML element to use.",
+          "markdownDescription": "If you don't want to use a `<div>`, then you can specify which kind of HTML element to use.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#tag)",
+          "type": "string",
+          "maxLength": 50
+        },
+        {
+          "description": "Used to render the block without a wrapping element.",
+          "markdownDescription": "Used to render the block without a wrapping element.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#rendering-blocks-without-a-wrapper)",
+          "type": "null"
+        }
+      ]
+    },
+
+    "class": {
+      "type": "string",
+      "description": "When Shopify renders a block, it's wrapped in an HTML element with the shopify-block class. You can append other classes by using the class attribute.",
+      "markdownDescription": "When Shopify renders a block, it's wrapped in an HTML element with the `shopify-block` class. You can append other classes by using the class attribute.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#class)"
+    }
+  },
+
+  "definitions": {
+    "defaultSettingValues": {
+      "type": "object",
+      "description": "A list of default values for any settings that you might want to populate. Each entry should include the setting name and the value.",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

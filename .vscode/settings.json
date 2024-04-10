@@ -17,6 +17,12 @@
         "tests/fixtures/theme-settings-*.json"
       ],
       "url": "./schemas/theme/theme_settings.json"
+    },
+    {
+      "fileMatch": [
+        "tests/fixtures/theme-block-*.json"
+      ],
+      "url": "./schemas/theme/theme_block.json"
     }
   ]
 }

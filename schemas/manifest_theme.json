@@ -11,6 +11,10 @@
       "fileMatch": ["sections/*.liquid"]
     },
     {
+      "uri": "theme/theme_block.json",
+      "fileMatch": ["blocks/*.liquid"]
+    },
+    {
       "uri": "theme/theme_settings.json",
       "fileMatch": ["config/settings_schema.json"]
     },

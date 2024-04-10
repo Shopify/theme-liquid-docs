@@ -1,0 +1,34 @@
+{
+  "name": "Example Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "checkbox",
+      "label": "Checkbox",
+      "default": "not-a-boolean"
+    },
+    {
+      "type": "number",
+      "id": "number",
+      "label": "Number",
+      "default": "not-a-number"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": 10
+    },
+    {
+      "type": "radio",
+      "id": "radio",
+      "label": "Radio"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["not-youtube", "not-vimeo"]
+    }
+  ]
+}

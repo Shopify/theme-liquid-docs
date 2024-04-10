@@ -162,7 +162,6 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
 
     it('has documentation for all input setting types that point to the input settings documentation', async () => {
       for (const inputSetting of inputSettingTypes) {
-        console.log(inputSetting);
         const settings = `
           [
             {
@@ -186,7 +185,6 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
 
     it('has documentation for all sidebar setting types that point to the sidebar settings documentation', async () => {
       for (const sidebarSetting of sidebarSettingTypes) {
-        console.log(sidebarSetting);
         const settings = `
           [
             {
