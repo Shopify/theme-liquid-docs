@@ -23,6 +23,9 @@
     },
     {
       "uri": "theme/setting.json"
+    },
+    {
+      "uri": "theme/default_setting_values.json"
     }
   ]
 }

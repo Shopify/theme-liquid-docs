@@ -55,7 +55,7 @@
             "markdownDescription": "The preset name, which displays in the <strong>Add block</strong> picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)"
           },
           "settings": {
-            "$ref": "#/definitions/defaultSettingValues"
+            "$ref": "./default_setting_values.json"
           },
           "blocks": {
             "type": "array",
@@ -70,7 +70,10 @@
                   "description": "The block type."
                 },
                 "settings": {
-                  "$ref": "#/definitions/defaultSettingValues"
+                  "$ref": "./default_setting_values.json"
+                },
+                "blocks": {
+                  "$ref": "#/properties/presets/items/properties/blocks"
                 }
               }
             }
@@ -101,32 +104,7 @@
       "type": "string",
       "description": "When Shopify renders a block, it's wrapped in an HTML element with the shopify-block class. You can append other classes by using the class attribute.",
       "markdownDescription": "When Shopify renders a block, it's wrapped in an HTML element with the `shopify-block` class. You can append other classes by using the class attribute.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#class)"
-    }
-  },
 
-  "definitions": {
-    "defaultSettingValues": {
-      "type": "object",
-      "description": "A list of default values for any settings that you might want to populate. Each entry should include the setting name and the value.",
-      "additionalProperties": {
-        "anyOf": [
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        ]
-      }
     }
   }
 }

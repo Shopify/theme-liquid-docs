@@ -71,73 +71,33 @@
       "description": "Section presets.",
       "items": {
         "type": "object",
+        "required": ["name"],
         "properties": {
           "name": {
             "type": "string",
             "description": "The preset name."
           },
           "settings": {
-            "type": "object",
-            "description": "Default values for settings.",
-            "additionalProperties": {
-              "anyOf": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "boolean"
-                },
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            }
+            "$ref": "./default_setting_values.json"
           },
           "blocks": {
             "type": "array",
             "description": "Default blocks.",
             "items": {
               "type": "object",
+              "required": ["type"],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "The block type."
                 },
                 "settings": {
-                  "type": "object",
-                  "description": "Block settings.",
-                  "additionalProperties": {
-                    "anyOf": [
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "boolean"
-                      },
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    ]
-                  }
+                  "$ref": "./default_setting_values.json"
                 }
-              },
-              "required": ["type"]
+              }
             }
           }
-        },
-        "required": ["name"]
+        }
       }
     },
     "default": {
@@ -145,63 +105,23 @@
       "description": "Default configuration for statically rendered sections.",
       "properties": {
         "settings": {
-          "type": "object",
-          "description": "Default values for settings.",
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            ]
-          }
+          "$ref": "./default_setting_values.json"
         },
         "blocks": {
           "type": "array",
           "description": "Default blocks.",
           "items": {
             "type": "object",
+            "required": ["type"],
             "properties": {
               "type": {
                 "type": "string",
                 "description": "The block type."
               },
               "settings": {
-                "type": "object",
-                "description": "Block settings.",
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+                "$ref": "./default_setting_values.json"
               }
-            },
-            "required": ["type"]
+            }
           }
         }
       }
