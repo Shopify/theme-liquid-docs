@@ -9,6 +9,7 @@ const sectionSchema4 = loadFixture('section-schema-4.json');
 const sectionSchema5 = loadFixture('section-schema-5.json');
 const sectionSchema6 = loadFixture('section-schema-6.json');
 const sectionSettings = loadFixture('section-settings.json');
+const sectionNestedBlocks = loadFixture('section-nested-blocks.json');
 const emptySchema = '{}';
 
 const validate = validateSchema();
@@ -24,6 +25,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       sectionSchema4,
       sectionSchema5,
       sectionSchema6,
+      sectionNestedBlocks,
     ];
     for (const sectionSchema of schemas) {
       const diagnostics = await validate('sections/section.liquid', sectionSchema);
