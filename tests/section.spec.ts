@@ -1,6 +1,6 @@
 import set from 'lodash.set';
-import { describe, expect, it } from 'vitest';
-import { loadFixture, validateSchema } from './test-helpers';
+import { assert, describe, expect, it } from 'vitest';
+import { complete, getService, hover, loadFixture, validateSchema } from './test-helpers';
 
 const sectionSchema1 = loadFixture('section-schema-1.json');
 const sectionSchema2 = loadFixture('section-schema-2.json');
@@ -9,9 +9,11 @@ const sectionSchema4 = loadFixture('section-schema-4.json');
 const sectionSchema5 = loadFixture('section-schema-5.json');
 const sectionSchema6 = loadFixture('section-schema-6.json');
 const sectionSettings = loadFixture('section-settings.json');
+const sectionNestedBlocks = loadFixture('section-nested-blocks.json');
 const emptySchema = '{}';
 
 const validate = validateSchema();
+const service = getService();
 
 describe('JSON Schema validation of Liquid theme section schema tags', () => {
   it('should validate valid section schemas', async () => {
@@ -23,10 +25,11 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       sectionSchema4,
       sectionSchema5,
       sectionSchema6,
+      sectionNestedBlocks,
     ];
     for (const sectionSchema of schemas) {
       const diagnostics = await validate('sections/section.liquid', sectionSchema);
-      expect(diagnostics).toStrictEqual([]);
+      expect(diagnostics, sectionSchema).toStrictEqual([]);
     }
   });
 
@@ -188,5 +191,96 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
         }),
       }),
     });
+  });
+
+  it('should complete the type property with the generic docs', async () => {
+    const result = await complete(
+      service,
+      'sections/section.liquid',
+      `{
+        "blocks": [
+          {
+            "type█"
+          }
+        ]
+      }`,
+    );
+
+    assert(result);
+    expect(result.items).toContainEqual(
+      expect.objectContaining({
+        documentation: expect.stringContaining('The type of block that can be added to this block'),
+      }),
+    );
+  });
+
+  it('should complete the type value with the specific docs', async () => {
+    const result = await complete(
+      service,
+      'sections/section.liquid',
+      `{
+        "blocks": [
+          {
+            "type": "█"
+          }
+        ]
+      }`,
+    );
+
+    assert(result);
+    // not showing generic docs
+    expect(result.items).not.toContainEqual(
+      expect.objectContaining({
+        documentation: expect.stringContaining('The type of block that can be added to this block'),
+      }),
+    );
+    // show docs for @app and @theme
+    expect(result.items).toContainEqual(
+      expect.objectContaining({ documentation: expect.stringContaining('@app') }),
+    );
+    expect(result.items).toContainEqual(
+      expect.objectContaining({ documentation: expect.stringContaining('@theme') }),
+    );
+  });
+
+  it('should hover the type property of a specific block with the specific block docs', async () => {
+    const result = await hover(
+      service,
+      'sections/section.liquid',
+      `{
+        "blocks": [
+          {
+            "type": "slide█"
+          }
+        ]
+      }`,
+    );
+
+    assert(result);
+    // not showing generic docs
+    expect(result.contents).toContainEqual(
+      expect.stringContaining('found in the `blocks/` folder'),
+    );
+  });
+
+  it('should hover the type property of a local block with the local block docs', async () => {
+    const result = await hover(
+      service,
+      'sections/section.liquid',
+      `{
+        "blocks": [
+          {
+            "type": "slide█",
+            "name": "slide"
+          }
+        ]
+      }`,
+    );
+
+    assert(result);
+    // not showing generic docs
+    expect(result.contents).toContainEqual(
+      expect.stringContaining('This is a free-form string that you can use as an identifier.'),
+    );
   });
 });

@@ -4,6 +4,7 @@ import {
   TextDocument,
   LanguageService,
   Hover,
+  CompletionList,
 } from 'vscode-json-languageservice';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -86,4 +87,18 @@ export const hover = async (
   const position = textDocument.positionAt(offset);
   const jsonDocument = service.parseJSONDocument(textDocument);
   return service.doHover(textDocument, position, jsonDocument);
+};
+
+export const complete = async (
+  service: LanguageService,
+  filePath: string,
+  jsonContent: string,
+): Promise<CompletionList | null> => {
+  const offset = jsonContent.indexOf(CURSOR);
+  jsonContent = jsonContent.replace(CURSOR, '');
+
+  const textDocument = TextDocument.create('file:/' + filePath, 'json', 0, jsonContent);
+  const position = textDocument.positionAt(offset);
+  const jsonDocument = service.parseJSONDocument(textDocument);
+  return service.doComplete(textDocument, position, jsonDocument);
 };

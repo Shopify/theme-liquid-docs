@@ -4,211 +4,171 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
     "name": {
       "type": "string",
-      "description": "The section title shown in the theme editor."
+      "description": "The name attribute determines the section title that is shown in the theme editor.",
+      "markdownDescription": "The `name` attribute determines the section title that is shown in the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#name)"
     },
+
     "tag": {
       "type": "string",
-      "description": "The HTML element to use for the section.",
+      "description": "The HTML element that is used to wrap the section.",
+      "markdownDescription": "The HTML element that is used to wrap the section.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#tag)",
       "enum": ["article", "aside", "div", "footer", "header", "section"]
     },
+
     "class": {
       "type": "string",
-      "description": "Additional CSS class for the section."
+      "description": "Additional CSS class for the section.",
+      "markdownDescription": "Additional CSS class for the section.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#class)"
     },
+
     "limit": {
       "type": "integer",
       "description": "The number of times a section can be added to a template or section group.",
+      "markdownDescription": "The number of times a section can be added to a template or section group.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#limit)",
       "minimum": 1,
       "maximum": 2
     },
+
     "settings": {
       "$ref": "./settings.json"
     },
+
     "max_blocks": {
       "type": "integer",
-      "description": "The maximum number of blocks allowed in the section.",
+      "description": "There's a limit of 50 blocks per section. You can specify a lower limit with the max_blocks attribute",
+      "markdownDescription": "There's a limit of 50 blocks per section. You can specify a lower limit with the `max_blocks` attribute.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#max_blocks)",
       "minimum": 1,
       "maximum": 50
     },
+
     "blocks": {
       "type": "array",
-      "description": "Section blocks.",
+      "description": "Blocks are reusable modules of content that can be added, removed, and reordered within a section.",
+      "markdownDescription": "Blocks are reusable modules of content that can be added, removed, and reordered within a section.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#blocks)",
+      "properties": {
+        "type": {
+          "description": "The block type. Can be one of the following values: @theme, @app, or a custom block type.",
+          "markdownDescription": "The block type. Can be one of the following values: @theme, @app, or a custom block type.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#blocks)"
+        }
+      },
       "items": {
         "type": "object",
+        "required": ["type"],
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "The block name."
-          },
           "type": {
             "type": "string",
-            "description": "The block type."
-          },
-          "settings": {
-            "$ref": "./settings.json"
+            "description": "The type of block that can be added to this block.",
+            "markdownDescription": "The type of block that can be added to this block.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
           }
         },
-        "if": {
-          "properties": {
-            "type": {
-              "const": "@app"
+        "$comment": "The allOf rule here exists because that's how we do discriminated unions in JSON schemas. If a rule matches, that rule will be used to document the type property. Otherwise we fallback to the docs above.",
+        "allOf": [
+          {
+            "if": { "required": ["type"], "properties": { "type": { "const": "@theme" } } },
+            "then": { "$ref": "./theme_block_entry.json" }
+          },
+          {
+            "if": { "required": ["type"], "properties": { "type": { "const": "@app" } } },
+            "then": { "$ref": "./app_block_entry.json" }
+          },
+          {
+            "if": {
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "not": { "enum": ["@app", "@theme"] }
+                }
+              }
+            },
+            "then": {
+              "oneOf": [
+                { "$ref": "./targetted_block_entry.json" },
+                { "$ref": "./local_block_entry.json" }
+              ]
             }
           }
-        },
-        "then": {
-          "required": ["type"]
-        },
-        "else": {
-          "required": ["name", "type"]
-        }
+        ]
       }
     },
+
     "presets": {
       "type": "array",
-      "description": "Section presets.",
+      "description": "Presets are default configurations of sections that enable users to easily add a section to a JSON template through the theme editor.",
+      "markdownDescription": "Presets are default configurations of sections that enable users to easily add a section to a [JSON template](https://shopify.dev/docs/themes/architecture/templates/json-templates) through the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)",
       "items": {
         "type": "object",
+        "required": ["name"],
         "properties": {
           "name": {
             "type": "string",
-            "description": "The preset name."
+            "description": "The preset name, which will show in the Add section picker of the theme editor.",
+            "markdownDescription": "The preset name, which will show in the Add section picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
           },
           "settings": {
-            "type": "object",
-            "description": "Default values for settings.",
-            "additionalProperties": {
-              "anyOf": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "boolean"
-                },
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            }
+            "$ref": "./default_setting_values.json"
           },
           "blocks": {
             "type": "array",
-            "description": "Default blocks.",
+            "description": "Default blocks configurations to ship with this preset.",
+            "markdownDescription": "Default blocks configurations to ship with this preset.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)",
             "items": {
               "type": "object",
+              "required": ["type"],
+              "additionalProperties": false,
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "The block type."
                 },
                 "settings": {
-                  "type": "object",
-                  "description": "Block settings.",
-                  "additionalProperties": {
-                    "anyOf": [
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "boolean"
-                      },
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    ]
-                  }
+                  "$ref": "./default_setting_values.json"
+                },
+                "blocks": {
+                  "$ref": "#/properties/presets/items/properties/blocks"
                 }
-              },
-              "required": ["type"]
+              }
             }
           }
-        },
-        "required": ["name"]
+        }
       }
     },
+
     "default": {
       "type": "object",
       "description": "Default configuration for statically rendered sections.",
+      "markdownDescription": "Default configuration for statically rendered sections.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#default)",
       "properties": {
         "settings": {
-          "type": "object",
-          "description": "Default values for settings.",
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            ]
-          }
+          "$ref": "./default_setting_values.json"
         },
         "blocks": {
           "type": "array",
-          "description": "Default blocks.",
+          "description": "Default blocks configurations to ship with this default.",
+          "markdownDescription": "Default blocks configurations to ship with this default.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#default)",
           "items": {
             "type": "object",
+            "required": ["type"],
             "properties": {
               "type": {
                 "type": "string",
                 "description": "The block type."
               },
               "settings": {
-                "type": "object",
-                "description": "Block settings.",
-                "additionalProperties": {
-                  "anyOf": [
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+                "$ref": "./default_setting_values.json"
               }
-            },
-            "required": ["type"]
+            }
           }
         }
       }
     },
+
     "locales": {
       "type": "object",
-      "description": "A set of translated strings for the section.",
+      "description": "Sections can provide their own set of translated strings through the locales object. This is separate from the locales directory of the theme, which makes it a useful feature for sections that are meant to be installed on multiple themes or shops.",
+      "markdownDescription": "Sections can provide their own set of translated strings through the `locales` object. This is separate from the `locales` directory of the theme, which makes it a useful feature for sections that are meant to be installed on multiple themes or shops.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#locales)",
       "additionalProperties": {
         "type": "object",
         "additionalProperties": {
@@ -216,19 +176,25 @@
         }
       }
     },
+
     "enabled_on": {
       "description": "Restrict the section to certain template page types and section group types.",
+      "markdownDescription": "Restrict the section to certain template page types and section group types.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#enabled_on)",
       "$ref": "#/definitions/sectionToggle"
     },
+
     "disabled_on": {
       "description": "Prevent the section from being used on certain template page types and section group types.",
+      "markdownDescription": "Prevent the section from being used on certain template page types and section group types.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#disabled_on)",
       "$ref": "#/definitions/sectionToggle"
     }
   },
+
   "definitions": {
     "sectionToggle": {
       "type": "object",
       "description": "Restrict the section to certain template page types and section group types.",
+      "additionalProperties": false,
       "properties": {
         "templates": {
           "type": "array",
@@ -269,8 +235,7 @@
           },
           "uniqueItems": true
         }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }

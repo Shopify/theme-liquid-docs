@@ -3,6 +3,8 @@
   "type": "object",
   "properties": {
     "type": {
+      "description": "The type of the input or sidebar setting. This value determines the type of field that gets rendered into the editor.",
+      "markdownDescription": "The type of the input or sidebar setting. This value determines the type of field that gets rendered into the editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings)",
       "enum": [
         "article",
         "blog",
@@ -42,127 +44,127 @@
   "$comment": "We're doing the weird allOf here so that we have better error messages when type is invalid. We're also doing the allOf so that we can use additionalProperties properly.",
   "allOf": [
     {
-      "if": { "properties": { "type": { "const": "header" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "header" } } },
       "then": { "$ref": "#/definitions/header" }
     },
     {
-      "if": { "properties": { "type": { "const": "paragraph" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "paragraph" } } },
       "then": { "$ref": "#/definitions/paragraph" }
     },
     {
-      "if": { "properties": { "type": { "const": "article" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "article" } } },
       "then": { "$ref": "#/definitions/article" }
     },
     {
-      "if": { "properties": { "type": { "const": "blog" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "blog" } } },
       "then": { "$ref": "#/definitions/blog" }
     },
     {
-      "if": { "properties": { "type": { "const": "checkbox" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "checkbox" } } },
       "then": { "$ref": "#/definitions/checkbox" }
     },
     {
-      "if": { "properties": { "type": { "const": "collection" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "collection" } } },
       "then": { "$ref": "#/definitions/collection" }
     },
     {
-      "if": { "properties": { "type": { "const": "collection_list" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "collection_list" } } },
       "then": { "$ref": "#/definitions/collection_list" }
     },
     {
-      "if": { "properties": { "type": { "const": "color" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "color" } } },
       "then": { "$ref": "#/definitions/color" }
     },
     {
-      "if": { "properties": { "type": { "const": "color_background" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "color_background" } } },
       "then": { "$ref": "#/definitions/color_background" }
     },
     {
-      "if": { "properties": { "type": { "const": "color_scheme" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "color_scheme" } } },
       "then": { "$ref": "#/definitions/color_scheme" }
     },
     {
-      "if": { "properties": { "type": { "const": "color_scheme_group" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "color_scheme_group" } } },
       "then": { "$ref": "#/definitions/color_scheme_group" }
     },
     {
-      "if": { "properties": { "type": { "const": "font_picker" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "font_picker" } } },
       "then": { "$ref": "#/definitions/font_picker" }
     },
     {
-      "if": { "properties": { "type": { "const": "html" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "html" } } },
       "then": { "$ref": "#/definitions/html" }
     },
     {
-      "if": { "properties": { "type": { "const": "image_picker" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "image_picker" } } },
       "then": { "$ref": "#/definitions/image_picker" }
     },
     {
-      "if": { "properties": { "type": { "const": "inline_richtext" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "inline_richtext" } } },
       "then": { "$ref": "#/definitions/inline_richtext" }
     },
     {
-      "if": { "properties": { "type": { "const": "link_list" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "link_list" } } },
       "then": { "$ref": "#/definitions/link_list" }
     },
     {
-      "if": { "properties": { "type": { "const": "liquid" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "liquid" } } },
       "then": { "$ref": "#/definitions/liquid" }
     },
     {
-      "if": { "properties": { "type": { "const": "number" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "number" } } },
       "then": { "$ref": "#/definitions/number" }
     },
     {
-      "if": { "properties": { "type": { "const": "page" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "page" } } },
       "then": { "$ref": "#/definitions/page" }
     },
     {
-      "if": { "properties": { "type": { "const": "product" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "product" } } },
       "then": { "$ref": "#/definitions/product" }
     },
     {
-      "if": { "properties": { "type": { "const": "product_list" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "product_list" } } },
       "then": { "$ref": "#/definitions/product_list" }
     },
     {
-      "if": { "properties": { "type": { "const": "radio" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "radio" } } },
       "then": { "$ref": "#/definitions/radio" }
     },
     {
-      "if": { "properties": { "type": { "const": "range" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "range" } } },
       "then": { "$ref": "#/definitions/range" }
     },
     {
-      "if": { "properties": { "type": { "const": "richtext" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "richtext" } } },
       "then": { "$ref": "#/definitions/richtext" }
     },
     {
-      "if": { "properties": { "type": { "const": "select" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "select" } } },
       "then": { "$ref": "#/definitions/select" }
     },
     {
-      "if": { "properties": { "type": { "const": "text" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "text" } } },
       "then": { "$ref": "#/definitions/text" }
     },
     {
-      "if": { "properties": { "type": { "const": "text_alignment" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "text_alignment" } } },
       "then": { "$ref": "#/definitions/text_alignment" }
     },
     {
-      "if": { "properties": { "type": { "const": "textarea" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "textarea" } } },
       "then": { "$ref": "#/definitions/textarea" }
     },
     {
-      "if": { "properties": { "type": { "const": "url" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "url" } } },
       "then": { "$ref": "#/definitions/url" }
     },
     {
-      "if": { "properties": { "type": { "const": "video" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "video" } } },
       "then": { "$ref": "#/definitions/video" }
     },
     {
-      "if": { "properties": { "type": { "const": "video_url" } } },
+      "if": { "required": ["type"], "properties": { "type": { "const": "video_url" } } },
       "then": { "$ref": "#/definitions/video_url" }
     }
   ],
@@ -322,15 +324,18 @@
             },
             "allOf": [
               {
-                "if": { "properties": { "type": { "const": "header" } } },
+                "if": { "required": ["type"], "properties": { "type": { "const": "header" } } },
                 "then": { "$ref": "#/definitions/header" }
               },
               {
-                "if": { "properties": { "type": { "const": "color" } } },
+                "if": { "required": ["type"], "properties": { "type": { "const": "color" } } },
                 "then": { "$ref": "#/definitions/color" }
               },
               {
-                "if": { "properties": { "type": { "const": "color_background" } } },
+                "if": {
+                  "required": ["type"],
+                  "properties": { "type": { "const": "color_background" } }
+                },
                 "then": { "$ref": "#/definitions/color_background" }
               }
             ]
