@@ -49,7 +49,7 @@
                 }
               }
             },
-            "then": { "$ref": "./specific_block_entry.json" }
+            "then": { "$ref": "./targetted_block_entry.json" }
           }
         ]
       }

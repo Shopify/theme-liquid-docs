@@ -85,7 +85,7 @@
             },
             "then": {
               "oneOf": [
-                { "$ref": "./specific_block_entry.json" },
+                { "$ref": "./targetted_block_entry.json" },
                 { "$ref": "./local_block_entry.json" }
               ]
             }
