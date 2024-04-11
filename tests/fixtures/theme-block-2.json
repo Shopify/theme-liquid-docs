@@ -1,7 +1,7 @@
 {
   "name": "Group",
   "tag": null,
-  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }, { "type": "group" }],
   "settings": [
     {
       "type": "select",

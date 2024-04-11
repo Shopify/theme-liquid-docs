@@ -1,6 +1,6 @@
 import set from 'lodash.set';
 import { assert, describe, expect, it } from 'vitest';
-import { getService, hover, loadFixture, validateSchema } from './test-helpers';
+import { complete, getService, hover, loadFixture, validateSchema } from './test-helpers';
 
 const themeSettingsMetadata = loadFixture('theme-settings-metadata.json');
 const themeSettingsAllSettings = loadFixture('theme-settings-all-settings.json');
@@ -224,6 +224,51 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         assert(result);
         expect(result.contents).toContainEqual(
           expect.stringContaining('A setting of type `' + setting + '`'),
+        );
+      }
+    });
+
+    it('completes the type property with the generic documentation', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type█"
+            }
+          ]
+        }
+      ]`;
+      const result = await complete(service, 'config/settings_schema.json', settings);
+      assert(result);
+      expect(result.items).toContainEqual(
+        expect.objectContaining({
+          documentation: expect.stringContaining(
+            'This value determines the type of field that gets rendered into the editor.',
+          ),
+        }),
+      );
+    });
+
+    it('completes the type value with the setting type enums', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "█"
+            }
+          ]
+        }
+      ]`;
+      const result = await complete(service, 'config/settings_schema.json', settings);
+      assert(result);
+      expect(result.items).to.have.lengthOf(inputSettingTypes.length + sidebarSettingTypes.length);
+      for (const setting of [...inputSettingTypes, ...sidebarSettingTypes]) {
+        expect(result.items).toContainEqual(
+          expect.objectContaining({
+            label: `"${setting}"`,
+          }),
         );
       }
     });

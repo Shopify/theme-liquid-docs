@@ -21,29 +21,37 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
+        "required": ["type"],
         "properties": {
           "type": {
+            "type": "string",
             "description": "The type of block that can be added to this block.",
-            "oneOf": [
-              {
-                "const": "@app",
-                "description": "The \"@app\" type is used to denote that this block accepts app blocks. App blocks enable app developers to create blocks for merchants to add app content to their theme without having to directly edit theme code.",
-                "markdownDescription": "The `@app` type is used to denote that this block accepts app blocks. [App blocks](/docs/themes/architecture/sections/app-blocks) enable app developers to create blocks for merchants to add app content to their theme without having to directly edit theme code.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
-              },
-              {
-                "const": "@theme",
-                "description": "The \"@theme\" type denotes that this block is compatible with other theme blocks that live in the blocks/ folder of the theme.",
-                "markdownDescription": "The `@theme` type denotes that this block is compatible with other theme blocks that live in the `blocks/` folder of the theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
-              },
-              {
-                "type": "string",
-                "pattern": "^[a-zA-Z0-9_-]+$",
-                "description": "The name of a theme block found in the blocks/ folder of the theme.",
-                "markdownDescription": "The name of a theme block found in the `blocks/` folder of the theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
-              }
-            ]
+            "markdownDescription": "The type of block that can be added to this block.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
           }
-        }
+        },
+        "$comment": "The allOf rule here exists because that's how we do discriminated unions in JSON schemas. If a rule matches, that rule will be used to document the type property. Otherwise we fallback to the docs above.",
+        "allOf": [
+          {
+            "if": { "required": ["type"], "properties": { "type": { "const": "@theme" } } },
+            "then": { "$ref": "./theme_block_entry.json" }
+          },
+          {
+            "if": { "required": ["type"], "properties": { "type": { "const": "@app" } } },
+            "then": { "$ref": "./app_block_entry.json" }
+          },
+          {
+            "if": {
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "not": { "enum": ["@app", "@theme"] }
+                }
+              }
+            },
+            "then": { "$ref": "./specific_block_entry.json" }
+          }
+        ]
       }
     },
 
@@ -89,8 +97,8 @@
     },
 
     "tag": {
-      "description": "The HTML element that is used to wrap rendered block. Accepts any string up to 50 characters. Can be used to render custom HTML elements. Use null to render without a wrapping element.",
-      "markdownDescription": "The HTML element that is used to wrap rendered block. Accepts any string up to 50 characters. Can be used to render custom HTML elements.\n\nUse `null` to render without a wrapping element.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#tag)",
+      "description": "The HTML element that is used to wrap the rendered block. Accepts any string up to 50 characters. Can be used to render custom HTML elements. Use null to render without a wrapping element.",
+      "markdownDescription": "The HTML element that is used to wrap the rendered block. Accepts any string up to 50 characters. Can be used to render custom HTML elements.\n\nUse `null` to render without a wrapping element.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#tag)",
       "oneOf": [
         {
           "description": "If you don't want to use a <div>, then you can specify which kind of HTML element to use.",
