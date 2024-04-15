@@ -4573,6 +4573,24 @@
         ],
         "summary": "The company that the customer is purchasing for.",
         "name": "current_company"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "A customer may have an avatar associated with their account, which can be displayed in the storefront.\n\n&gt; Tip:\n&gt; Use with the [`avatar`](/docs/api/liquid/filters/avatar) filter to render the customer's avatar.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if an avatar is associated with a customer. Returns `false` if not.",
+        "name": "has_avatar?"
       }
     ],
     "summary": "A [customer](https://help.shopify.com/manual/customers) of the store.",
@@ -7841,7 +7859,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "In most contexts, the line item title appears in the customer's preferred language. However, in the context of an\n[order](/docs/api/liquid/objects/order), the line item title appears in the language that the customer checked out in.\n\n#### Line item title history\n\nWhen referencing line item, product, and variant titles in the context of an order, the following changes might result\nin a different output than you expect:\n\n- A product or variant being deleted\n- A product or variant title being edited\n\nWhen `line_item.title` is referenced for an order, the line item title at the time of the order is returned.\nHowever, when `line_item.product.title` and `line_item.variant.title` are referenced, the current value for\neach title is returned.",
+        "description": "In most contexts, the line item title appears in the customer's preferred language. However, in the context of an\n[order](/docs/api/liquid/objects/order), the line item title appears in the language that the customer checked out in.\nThe title can receive an override value from the [Cart Transform API](/docs/api/functions/reference/cart-transform#showing-overrides).\nOverrides take precedence over translations.\n\n#### Line item title history\n\nWhen referencing line item, product, and variant titles in the context of an order, the following changes might result\nin a different output than you expect:\n\n- A product or variant being deleted\n- A product or variant title being edited\n\nWhen `line_item.title` is referenced for an order, the line item title at the time of the order is returned.\nHowever, when `line_item.product.title` and `line_item.variant.title` are referenced, the current value for\neach title is returned.",
         "examples": [
 
         ],
@@ -12930,7 +12948,7 @@
             "array_value": ""
           }
         ],
-        "summary": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, [sign up here](https://www.shopify.com/editions/winter2024#new-taxonomy).\n\nThe swatch for this value, if one exists.",
+        "summary": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and the Shopify Product Taxonomy, [sign up here](https://www.shopify.com/editions/winter2024#new-taxonomy).\n\nReturns a [swatch](/docs/api/liquid/objects/swatch) drop for the product option value. If there is no saved `color` or `image` content for the swatch, then the return value is `nil`.",
         "name": "swatch"
       },
       {
