@@ -413,11 +413,16 @@
           "description": "A setting of type font_picker outputs a font picker field that's automatically populated with fonts from the Shopify font library. This library includes web-safe fonts, a selection of Google Fonts, and fonts licensed by Monotype.",
           "markdownDescription": "A setting of type `font_picker` outputs a font picker field that's automatically populated with fonts from the [Shopify font library](https://shopify.dev/docs/themes/architecture/settings/fonts#shopify-font-library). This library includes web-safe fonts, a selection of Google Fonts, and fonts licensed by Monotype.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#font_picker)"
         },
-        "default": { "type": "string" },
+        "default": {
+          "type": "string",
+          "description": "The default font from the Shopify font library.",
+          "markdownDescription": "The default font from the [Shopify font library](https://shopify.dev/docs/themes/architecture/settings/fonts#shopify-font-library)."
+        },
         "label": true,
         "info": true,
         "id": true
       },
+      "required": ["default"],
       "additionalProperties": false
     },
 
@@ -632,7 +637,7 @@
         "info": true,
         "id": true
       },
-      "required": ["min", "max"],
+      "required": ["default", "min", "max"],
       "additionalProperties": false
     },
 
