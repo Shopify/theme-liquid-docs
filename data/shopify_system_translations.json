@@ -1511,6 +1511,7 @@
   "shopify.checkout.pickup_point.location_is_currently_closed": "Closed",
   "shopify.checkout.pickup_point.business_hours": "Opening hours",
   "shopify.checkout.pickup_point.no_business_hours": "No opening hours available",
+  "shopify.checkout.pickup_point.open_twenty_four_hours": "Open 24\/7",
   "shopify.checkout.pickup_point.title": "Pickup point",
   "shopify.checkout.pickup_point.or": "or",
   "shopify.checkout.pickup_point.search_button": "Search",
