@@ -632,7 +632,7 @@
         "info": true,
         "id": true
       },
-      "required": ["min", "max", "step"],
+      "required": ["min", "max"],
       "additionalProperties": false
     },
 
