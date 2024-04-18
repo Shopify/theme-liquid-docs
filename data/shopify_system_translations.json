@@ -730,6 +730,7 @@
   "shopify.checkout.payment.no_method_error": "This store can’t accept payments right now.",
   "shopify.checkout.payment.not_configured_error": "This store can’t accept payments right now.",
   "shopify.checkout.payment.missing_credit_card_error": "Enter your card details to complete the payment",
+  "shopify.checkout.payment.shop_pay_ideal_unavailable_error": "iDEAL is not available for this order. Choose another payment method.",
   "shopify.checkout.payment.payment_method_not_available_for_shipping_address_error": "Payment method not available for selected shipping address. Choose another payment method.",
   "shopify.checkout.payment.billing_address_not_supported_for_payment_method_error": "This payment method isn't available for your billing address and currency. Please try a different payment method.",
   "shopify.checkout.payment.generic_incorrect_card_info": "Your payment details couldn’t be verified. Check your card details and try again.",
@@ -1073,6 +1074,9 @@
   "shopify.checkout.shipping_errors.title": "Shipping not available",
   "shopify.checkout.alternative_payment_method_banner.express_checkout": "Express checkout",
   "shopify.checkout.alternative_payment_method_banner.or": "OR",
+  "shopify.checkout.alternative_payment_method_banner.or_pay_another_way": "Or pay another way",
+  "shopify.checkout.alternative_payment_method_banner.or_check_out_another_way": "Or check out another way",
+  "shopify.checkout.alternative_payment_method_banner.or_pay_with_credit_card": "Or pay with credit card",
   "shopify.checkout.alternative_payment_method_banner.show_more_options": "Show more options",
   "shopify.checkout.alternative_payment_method_banner.hide_more_options": "Hide more options",
   "shopify.checkout.post_purchase.page_title": "Post-purchase",
@@ -1086,6 +1090,7 @@
   "shopify.checkout.processing.redirecting_page_title": "Redirecting…",
   "shopify.checkout.processing.redirecting_title": "Redirecting…",
   "shopify.checkout.processing.redirecting_notice": "Wait while we redirect you.",
+  "shopify.checkout.processing.redirecting_to_bank": "Redirecting to {{bank}}",
   "shopify.checkout.processing.complete_your_purchase_title": "Complete your purchase",
   "shopify.checkout.processing.continue_to_payment_gateway_notice": "Continue to payment to add your payment information.",
   "shopify.checkout.processing.continue_to_payment_gateway_button_label": "Continue to payment",
@@ -1665,7 +1670,6 @@
   "shopify.collections.sorting.price_descending": "Price, high to low",
   "shopify.collections.sorting.date_ascending": "Date, old to new",
   "shopify.collections.sorting.date_descending": "Date, new to old",
-  "shopify.collections.sorting.most_relevant": "Most relevant",
   "shopify.errors.blank": "can't be blank",
   "shopify.errors.blocked_address": "This location isn't supported.",
   "shopify.errors.credit_card_session_expired": "Credit card authorization has expired, please enter your payment information again. Your card has not been charged.",
@@ -1868,5 +1872,6 @@
   "shopify.store_availability.pick_up_time.zero_to_two_hours": "Usually ready in 2 hours",
   "shopify.store_availability.pick_up_time.two_to_four_hours": "Usually ready in 4 hours",
   "shopify.store_availability.pick_up_time.immediately": "Ready for pickup now",
-  "shopify.store_availability.pick_up_time.next_day": "Ready for pickup next day"
+  "shopify.store_availability.pick_up_time.next_day": "Ready for pickup next day",
+  "shopify.online_store.spam_detection.disclaimer_html": "<p data-spam-detection-disclaimer>This site is protected by reCAPTCHA and the Google <a href=\"https:\/\/policies.google.com\/privacy\">Privacy Policy<\/a> and <a href=\"https:\/\/policies.google.com\/terms\">Terms of Service<\/a> apply.<\/p>\n"
 }
