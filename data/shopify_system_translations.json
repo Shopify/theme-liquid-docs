@@ -774,6 +774,7 @@
   "shopify.checkout.payment.account_connected": "Account connected.",
   "shopify.checkout.payment.mor_disclaimer_html": "By clicking below and completing your order, you agree to purchase your item(s) from Global-e as merchant of record\nfor this transaction, on Global-e's <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Terms and Conditions<\/a>\nand <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Privacy Policy<\/a>. Global-e is an international\nfulfilment service provider to %{shop_name}\n",
   "shopify.checkout.payment.pending_payment.due_notice": "Your payment of %{amount_due} is due on %{due_date}.",
+  "shopify.checkout.payment.pending_payment.multibanco.buyer_action_info": "Your payment of %{amount_due} is due.",
   "shopify.checkout.payment.pending_payment.multibanco.instruction_html": "Make your payment at Multibanco or online using the details below. For questions or to update payment details, %{contact_us}.",
   "shopify.checkout.payment.pending_payment.multibanco.entity": "Entity",
   "shopify.checkout.payment.pending_payment.multibanco.reference": "Reference",
