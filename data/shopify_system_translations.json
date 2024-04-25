@@ -311,7 +311,6 @@
   "shopify.checkout.contact.pincode_placeholder": "PIN code",
   "shopify.checkout.contact.civic_number_warning": "Add a house number if you have one",
   "shopify.checkout.contact.optional_last_name_label": "Last name (optional)",
-  "shopify.checkout.contact.optional_recipient_label": "Attention (optional)",
   "shopify.checkout.contact.company_contact_info": "{{companyName}} · {{contact}}",
   "shopify.checkout.contact.different_shipping_address_label": "Ship to a different address",
   "shopify.checkout.contact.different_shipping_address_text": "Use a one-time address for this order",
