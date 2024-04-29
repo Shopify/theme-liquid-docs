@@ -4492,7 +4492,7 @@
     "category": "format",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "",
+    "description": "The `structured_data` filter can be used on the [`product`](/docs/api/liquid/objects/product) object.",
     "parameters": [
 
     ],
