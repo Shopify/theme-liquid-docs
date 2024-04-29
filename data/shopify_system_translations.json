@@ -256,6 +256,7 @@
   "shopify.checkout.general.list_formatter.narrow.twoWordConnector": "{{firstWord}}, {{secondWord}}",
   "shopify.checkout.general.map.cluster_title.one": "Cluster of {{number}} marker",
   "shopify.checkout.general.map.cluster_title.other": "Cluster of {{number}} markers",
+  "shopify.checkout.general.sheet.expand": "Expand",
   "shopify.checkout.contact.title": "Information",
   "shopify.checkout.contact.address_title": "Address",
   "shopify.checkout.contact.shipping_used_as_billing_notice": "This will also be used as your billing address for this order.",
