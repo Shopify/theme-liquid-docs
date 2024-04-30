@@ -5370,6 +5370,12 @@
         "return_type": [
           {
             "type": "string",
+            "name": "image",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
             "name": "swatch",
             "description": "",
             "array_value": ""
@@ -5667,6 +5673,24 @@
         ],
         "summary": "The visual representation of the filter value when a swatch is used.",
         "name": "swatch"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Returns an [image](/docs/api/liquid/objects/image) drop for the filter value.\nRequires the [filter presentation](/docs/api/liquid/objects/filter#filter-presentation) to be `image` and for an image to be available. Otherwise, returns `nil`.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The visual representation of the filter value when an image is used.",
+        "name": "image"
       }
     ],
     "summary": "A specific value of a filter.",
@@ -7030,6 +7054,10 @@
         {
           "object": "external_video",
           "property": "preview_image"
+        },
+        {
+          "object": "filter_value",
+          "property": "image"
         },
         {
           "object": "image",
@@ -13002,7 +13030,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The relative URL of the product.",
+        "summary": "Returns a URL if the option value may be associated with another product, nil otherwise.",
         "name": "product_url"
       }
     ],
@@ -13834,7 +13862,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the variant is set to require a `selling_plan` when being added to the cart. Returns `false` if not.",
+        "summary": "Returns `true` if the variant's product is set to require a `selling_plan` when being added to the cart. Returns `false` if not.",
         "name": "requires_selling_plan"
       }
     ],
