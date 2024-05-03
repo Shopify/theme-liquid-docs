@@ -118,12 +118,6 @@
       "type": "string",
       "description": "When Shopify renders a block, it's wrapped in an HTML element with the shopify-block class. You can append other classes by using the class attribute.",
       "markdownDescription": "When Shopify renders a block, it's wrapped in an HTML element with the `shopify-block` class. You can append other classes by using the class attribute.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#class)"
-    },
-
-    "private": {
-      "type": "boolean",
-      "description": "A block can be set to private, such that it will have to be explicitly included for use in other blocks or sections. If the private attribute is omitted, then the block is accessible to any block or section that accepts theme blocks.",
-      "markdownDescription": "A block can be set to private, such that it will have to be explicitly included for use in other blocks or sections. If the private attribute is omitted, then the block is accessible to any block or section that accepts theme blocks.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#private)"
     }
   }
 }
