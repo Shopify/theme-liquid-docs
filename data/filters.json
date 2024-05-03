@@ -4334,12 +4334,12 @@
     "category": "customer",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Configure the storefront for Follow on Shop. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)\n\n&gt; Note:\n&gt; The presence of the [Shop](/docs/api/liquid/objects/shop) object\n&gt; is required for validation purposes only.\n\n&gt; Note:\n&gt; The `action` specified is always `'follow'`. If this parameter is not supplied the button will not render.\n\n```liquid\n{{ shop | login_button: action: 'follow' }}\n```",
+    "description": "&gt; Note:\n&gt; The presence of the [shop](/docs/api/liquid/objects/shop) object is required for validation purposes only.",
     "parameters": [
       {
-        "description": "Specify 'follow' for the follow flow.",
+        "description": "The action to be performed.",
         "name": "action",
-        "required": true,
+        "required": false,
         "types": [
           "string"
         ]
@@ -4354,10 +4354,29 @@
       }
     ],
     "examples": [
-
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "action",
+        "description": "Controls the behavior of the button after authentication.\n\nAccepts the following values:\n\n- `default` - Authentication only\n- `follow` - Performs a side-effect after authentication which follows the current shop in the Shop app. Requires additional configuration. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)\n\n```liquid\n{{ shop | login_button: action: 'follow' }}\n```\n",
+        "syntax": "shop | login_button: action: string",
+        "path": "",
+        "raw_liquid": "",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": true
+      }
     ],
-    "summary": "Generates an HTML Button that enables a customer to follow the Shop in the Shop App",
-    "syntax": "shop | login_button: action: 'follow'",
+    "summary": "Generates an HTML Button that enables a customer to either sign in to the storefront using their Shop account or follow the shop in the Shop App.",
+    "syntax": "shop | login_button",
     "name": "login_button"
   },
   {
