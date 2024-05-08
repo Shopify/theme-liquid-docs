@@ -627,7 +627,6 @@
   "shopify.checkout.shipping.shipping_method_combinations.combination": "%{rest} and %{current}",
   "shopify.checkout.shipping.shipping_used_as_billing_notice": "This will also be used as your billing address for this order.",
   "shopify.checkout.shipping.address_update": "Update address",
-  "shopify.checkout.shipping.enter_address_manually_label": "Enter address manually",
   "shopify.checkout.shipping.shipping_address_title": "Ship to",
   "shopify.checkout.shipping.add_address": "Use a different address",
   "shopify.checkout.shipping.add_delivery_instructions": "Add delivery instructions",
