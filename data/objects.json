@@ -13000,6 +13000,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and/or the Shopify Combined Listings app, please reach out to &lt;a href=\"https://partners.shopify.com/current/support\"&gt;Partner support&lt;/a&gt;.\n\nIn the context of the selected values for previous options, indicates whether the current option value has any purchaseable combinations in any subsequent options, or whether the current option value is purchaseable if there are no subsequent options.\nFor example, if a product comes in Color/Size/Material and Red/Small/Cotton is selected, `available` will indicate:\n- Color: Whether any variants for the Color option value are available for purchase.\n- Size: Whether any variants for Color:Red and the Size option value are available for purchase.\n- Material: Whether any variants for Color:Red, Size:Small, and the Material option value are available for purchase.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Whether or not the option value is available.",
+        "name": "available"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "&gt; Beta:\n&gt; This feature is currently in early access. To be considered for early access to these API updates and/or the Shopify Combined Listings app, please reach out to &lt;a href=\"https://partners.shopify.com/current/support\"&gt;Partner support&lt;/a&gt;.\n\nIf this option value is selected (`selected == true`), this returns the `selected_or_first_available_variant`.\n\nIf this option value is not selected (`selected == false`), this returns the variant that is associated with the current\noption value and the other currently selected option values.",
         "examples": [
 
