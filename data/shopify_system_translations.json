@@ -72,6 +72,7 @@
   "shopify.checkout.general.errors.merchandise.title_empty": "Merchandise title is empty.",
   "shopify.checkout.general.errors.buyer_identity.business_customer_does_not_match_company": "Company contact does not have access to company.",
   "shopify.checkout.general.errors.buyer_identity.customer_account_required": "Customer must log in to continue.",
+  "shopify.checkout.general.errors.buyer_identity.company_location_required": "Customer must choose a company location to continue.",
   "shopify.checkout.general.errors.buyer_identity.contact_info_does_not_match_customer_account": "Specified customer info should match the logged in customer account.",
   "shopify.checkout.general.errors.buyer_identity.phone_number_does_not_match_expected_pattern": "The specified phone number does not match the expected pattern.",
   "shopify.checkout.general.errors.buyer_identity.email_required": "An email is required when the merchandise is purchased using a subscription.",
