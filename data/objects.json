@@ -8076,7 +8076,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Line item keys are unique identifiers that consist of the following components separated by a colon:\n\n- The ID of the variant associated with the line item\n- A hash of the properties of the line item, even if there are no properties",
+        "description": "Line item keys are unique identifiers that consist of the following components separated by a colon:\n\n- The ID of the variant associated with the line item\n- A hash of unique characteristics of the line item.\n\nNote: Line item keys are not stable identifiers. The line item key will change as characteristics of the line item change. This includes, but is not limited to, properties and discount applications.",
         "examples": [
 
         ],
