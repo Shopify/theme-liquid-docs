@@ -1043,7 +1043,7 @@
   "shopify.checkout.payment_errors.deferred_payment_required": "This order requires a deferred payment. Please check your order and try again.",
   "shopify.checkout.payment_errors.deferred_amount_changed": "Your payment couldn't be processed because the deferred payment amount has changed. Please check your order and try again.",
   "shopify.checkout.payment_errors.deferred_date_changed": "Your payment couldn't be processed because the deferred payment date has changed. Please check your order and try again.",
-  "shopify.checkout.payment_errors.order_total_changed": "Your payment couldn’t be processed because your order total has changed. Check your order total and try again.",
+  "shopify.checkout.payment_errors.order_total_changed": "Your order total has changed. Review and try again.",
   "shopify.checkout.payment_errors.payment_processing": "Your payment can’t be processed for technical reasons. Try again or use a different payment method.",
   "shopify.checkout.payment_errors.payment_processing_no_retry": "Your payment can’t be processed for technical reasons. Please try a different payment method.",
   "shopify.checkout.payment_errors.paypal_zero_amount": "You can’t use PayPal for %{amount} orders. Confirm your order is correct and check out without PayPal.",
