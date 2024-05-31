@@ -1627,6 +1627,7 @@
   "shopify.checkout.wallets.errors.detour.price_change": "Some item prices have changed. Close {{walletName}} to review your order and try again.",
   "shopify.checkout.wallets.errors.detour.queue": "You have been placed in a queue to checkout. Close {{walletName}} to continue.",
   "shopify.checkout.wallets.errors.unsupported.address": "The merchant can’t deliver to this address",
+  "shopify.checkout.wallets.errors.unsupported.wallet_is_unavailable": "{{walletName}} cannot be used with this address. Select a different address or close {{walletName}} to complete your purchase",
   "shopify.checkout.wallets.errors.unsupported.postal_code": "This location isn't supported",
   "shopify.checkout.wallets.errors.outdated.shipping_method": "The shipping options have changed for your order. Review your selection.",
   "shopify.checkout.wallets.errors.invalid.shipping_address": "Enter a valid shipping address",
