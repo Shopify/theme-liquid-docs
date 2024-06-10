@@ -1622,6 +1622,7 @@
   "shopify.checkout.wallets.errors.unavailable.title": "{{walletName}} not available",
   "shopify.checkout.wallets.errors.unavailable.description": "{{walletName}} wasn’t available. Use a different payment method or try again later.",
   "shopify.checkout.wallets.errors.unavailable.instructions": "There was an issue with {{walletName}}. Return to store to try again or check out a different way.",
+  "shopify.checkout.wallets.errors.unavailable.unavailable_for_country": "{{walletName}} is not available in {{countryName}}. Select a different payment method to complete your purchase",
   "shopify.checkout.wallets.errors.unavailable_terminal.instructions": "{{walletName}} is currently unavailable for your order. To continue your purchase, choose another checkout method.",
   "shopify.checkout.wallets.errors.generic": "There was an issue with {{walletName}}. Try again or use a different payment method.",
   "shopify.checkout.wallets.errors.terminal": "There was an issue with {{walletName}}. Please use a different payment method.",
