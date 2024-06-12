@@ -269,6 +269,7 @@
   "shopify.checkout.contact.email_or_phone_label": "Email or mobile phone number",
   "shopify.checkout.contact.email_or_phone_placeholder": "Email or mobile phone number",
   "shopify.checkout.contact.stored_addresses_label": "Saved addresses",
+  "shopify.checkout.contact.available_addresses_label": "Available addresses",
   "shopify.checkout.contact.new_address_label": "Use a new address",
   "shopify.checkout.contact.first_name_label": "First name",
   "shopify.checkout.contact.optional_first_name_label": "First name (optional)",
