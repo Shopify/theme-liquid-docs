@@ -1100,7 +1100,7 @@
   "shopify.checkout.payment_errors.development_store_order_limit_reached": "You’ve reached the limit for development store orders with this payment processor. To place another order, you’ll need to use a test payment gateway. Learn more about %{development_store_order_testing_docs_link}.",
   "shopify.checkout.payment_errors.development_store_with_order_limit": "To place a test order, you’ll need to use a test payment gateway. Learn more about %{development_store_order_testing_docs_link}.",
   "shopify.checkout.payment_errors.development_store_order_testing_docs_link": "testing orders in development stores",
-  "shopify.checkout.payment_errors.payment_above_threshold": "The payment amount is above the monetary limit for this region",
+  "shopify.checkout.payment_errors.payment_above_threshold": "The payment amount is above the monetary limit for this region. Reduce the total and try again",
   "shopify.checkout.shipping_errors.shipping_method": "The shipping options have changed for your order. Review your selection and try again.",
   "shopify.checkout.shipping_errors.shipping_method_not_available": "Your cart has been updated and the items you added can’t be shipped to your address. Remove the items to complete your order.",
   "shopify.checkout.shipping_errors.shipping_method_not_available_generic.one": "Your order cannot be shipped to the selected address. Review your address to ensure it's correct and try again, or select a different address.",
