@@ -1043,7 +1043,7 @@
   "shopify.checkout.field_errors.address_country_invalid": "Select a country\/region from the list",
   "shopify.checkout.field_errors.address_zip_invalid": "Enter a valid ZIP \/ postal code",
   "shopify.checkout.field_errors.gift_card_invalid": "Gift card \"••••%{last_four_characters}\" is no longer valid",
-  "shopify.checkout.field_errors.vaulting_agreement_blank": "To continue, you need to save your new credit card because payment for this order will happen at a later date.",
+  "shopify.checkout.field_errors.vaulting_agreement_blank": "Your card must be saved because payment for the balance of this order is due later.",
   "shopify.checkout.field_errors.sms_marketing_phone_invalid": "Enter a valid phone number",
   "shopify.checkout.field_errors.address_suggestion_did_you_mean_html": "Did you mean %{html}?",
   "shopify.checkout.store_credit_errors.generic_error": "There was a problem with your store credit. Try again or reload the page.",
