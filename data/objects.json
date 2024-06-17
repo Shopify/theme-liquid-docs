@@ -19567,7 +19567,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Depending on the payment provider, the order might not have been created when the [**Thank you** page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.\n&gt; Note:\n&gt; The `order` object isn't available on the **Thank you** page.",
+        "description": "&gt; Note:\n&gt; In most cases, the `order` object isn't available on the **Thank you** page.",
         "examples": [
 
         ],
@@ -19585,7 +19585,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is the same as [`order.id`](/docs/api/liquid/objects/order#order-id).\n\nDepending on the payment provider, the order might not have been created when the [**Order status** page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "The value is the same as [`order.id`](/docs/api/liquid/objects/order#order-id).\n\nThis value is available on the **Thank you** page, even if the order has not been created yet.",
         "examples": [
 
         ],
@@ -19603,7 +19603,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is the same as [`order.name`](/docs/api/liquid/objects/order#order-name).\n\nDepending on the payment provider, the order might not have been created when the [**Order status** page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "The value is the same as [`order.name`](/docs/api/liquid/objects/order#order-name).\n\n&gt; Note:\n&gt; In most cases, the `order` object isn't available on the **Thank you** page. In this case, `nil` is returned.",
         "examples": [
 
         ],
@@ -19621,7 +19621,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The value is the same as [`order.order_number`](/docs/api/liquid/objects/order#order-order_number).\n\nDepending on the payment provider, the order might not have been created when the [**Order status** page](https://help.shopify.com/en/manual/orders/status-tracking)\nis first viewed. In this case, `nil` is returned.",
+        "description": "The value is the same as [`order.order_number`](/docs/api/liquid/objects/order#order-order_number).\n\n&gt; Note:\n&gt; In most cases, the `order` object isn't available on the **Thank you** page. In this case, `nil` is returned.",
         "examples": [
 
         ],

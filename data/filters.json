@@ -4511,7 +4511,7 @@
     "category": "format",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "The `structured_data` filter can be used on the [`product`](/docs/api/liquid/objects/product) and [`article`](/docs/api/liquid/objects/article) objects.\n\nProduct objects are output as a [schema.org `Product`](https://schema.org/Product) if they have no variants, and a [`ProductGroup`](https://schema.org/ProductGroup) if they have one or more variants.\n\nArticle objects are output as a [schema.org `Article`.](https://schema.org/Article)",
+    "description": "The `structured_data` filter can be used on the [`product`](/docs/api/liquid/objects/product) and [`article`](/docs/api/liquid/objects/article) objects.\n\nProduct objects are output as a [schema.org `Product`](https://schema.org/Product).\n\nArticle objects are output as a [schema.org `Article`.](https://schema.org/Article)",
     "parameters": [
 
     ],
