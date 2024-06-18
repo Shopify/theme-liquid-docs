@@ -916,6 +916,7 @@
   "shopify.checkout.payment.purchase_order_number.title": "PO number",
   "shopify.checkout.payment.purchase_order_number.label": "PO number (optional)",
   "shopify.checkout.payment.alternative_payment_currency_total_notice": "Note: you will be charged %{amount_due}.",
+  "shopify.checkout.payment.alternative_payment_currency_total_manual_payment_notice": "Note: converted total is %{amount_due}.",
   "shopify.checkout.payment.waiting_on_taxes_message": "If your taxes don't calculate within the next few seconds, refresh the page.",
   "shopify.checkout.payment.waiting_on_taxes_notice": "Calculating taxes",
   "shopify.checkout.payment.payment_method": "Payment method",
