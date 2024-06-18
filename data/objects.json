@@ -12072,7 +12072,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "&gt; Note:\n&gt; Returns a maximum of 100 variants.",
         "examples": [
 
         ],
