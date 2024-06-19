@@ -32,6 +32,7 @@ const inputSettingTypes = [
   'product_list',
   'product',
   'richtext',
+  'style.layout_panel',
   'text_alignment',
   'url',
   'video_url',
@@ -364,5 +365,63 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         }),
       ]);
     });
+  });
+
+  describe('Unit: styles', () => {
+    it('should report invalid style properties', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "style.layout_panel",
+              "id": "layout",
+              "label": "Layout",
+              "default": {
+                "flex-rap": "wrap"
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: 'Property flex-rap is not allowed.',
+        }),
+      ]);
+    });
+    
+    it('should report invalid property values', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "style.layout_panel",
+              "id": "layout",
+              "label": "Layout",
+              "default": {
+                "flex-wrap": "rap"
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: expect.stringContaining(
+            'Value is not accepted.',
+          ),
+        })
+        
+      ]);
+    });
+
   });
 });

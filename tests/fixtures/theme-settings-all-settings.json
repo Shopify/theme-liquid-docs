@@ -271,6 +271,24 @@
         "label": "Paragraph"
       },
       {
+        "type": "style.layout_panel",
+        "id": "layout",
+        "label": "Layout",
+        "default": {
+          "flex-direction": "row",
+          "column-gap": "20px",
+          "row-gap": "2rem",
+          "flex-wrap": "wrap",
+          "justify-content": "space-around",
+          "align-items": "center",
+          "align-content": "space-between",
+          "@media (--mobile)": {
+            "flex-direction": "column",
+            "gap": "0"
+          }
+        }
+      },
+      {
         "type": "text_alignment",
         "id": "alignment",
         "label": "Text alignment",

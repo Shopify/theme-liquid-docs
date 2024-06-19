@@ -31,6 +31,7 @@
         "range",
         "richtext",
         "select",
+        "style.layout_panel",
         "text",
         "text_alignment",
         "textarea",
@@ -142,6 +143,10 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "select" } } },
       "then": { "$ref": "#/definitions/select" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "style.layout_panel" } } },
+      "then": { "$ref": "#/definitions/style.layout_panel" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "text" } } },
@@ -682,6 +687,37 @@
       "additionalProperties": false
     },
 
+    "style.layout_panel": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "style.layout_panel",
+          "description": "A setting of type style.layout_panel outputs Style settings for layout.",
+          "markdownDescription": "A setting of type `style.layout_panel` outputs Style Settings for layout.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.layout_panel)"
+        },
+        "default": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/flex_layout_properties"
+            }
+          ],
+          "properties": {
+            "@media (--mobile)": {
+              "type": "object",
+              "description": "Style settings for the mobile breakpoint",
+              "$ref": "#/definitions/flex_layout_properties",
+              "unevaluatedProperties": false
+            }
+          },
+          "unevaluatedProperties": false
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
     "text": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
       "properties": {
@@ -888,6 +924,45 @@
       "properties": {
         "solid": { "type": "string" },
         "gradient": { "type": "string" }
+      }
+    },
+
+    "flex_layout_properties": {
+      "type": "object",
+      "properties": {
+        "flex-direction": {
+          "type": "string",
+          "description": "Sets how flex items are placed in the flex container defining the main axis and the direction. Valid values are row (default), row-reverse, column, and column-reverse."
+        },
+        "flex-wrap": {
+          "type": "string",
+          "description": "Sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked. Valid values are nowrap (default), wrap, and wrap-reverse.",
+          "enum": ["nowrap", "wrap", "wrap-reverse"]
+        },
+        "row-gap": {
+          "type": "string",
+          "description": "Sets the size of the gap (gutter) between an element's rows."
+        },
+        "column-gap": {
+          "type": "string",
+          "description": "Sets the size of the gap (gutter) between an element's columns."
+        },
+        "gap": {
+          "type": "string",
+          "description": "Shorthand for row-gap and column-gap. Sets the gaps (gutters) between rows and columns."
+        },
+        "justify-content": {
+          "type": "string",
+          "description": "Aligns flex items along the main axis of the current line of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly."
+        },
+        "align-items": {
+          "type": "string",
+          "description": "Controls the alignment of flex items on the cross axis. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline."
+        },
+        "align-content": {
+          "type": "string",
+          "description": "Sets the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly."
+        }
       }
     },
 
