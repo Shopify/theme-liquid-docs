@@ -119,6 +119,13 @@
               "required": ["type"],
               "additionalProperties": false,
               "properties": {
+                "static": {
+                  "type": "boolean",
+                  "description": "If the block is rendered statically or not"
+                },
+                "id": {
+                  "type": "string"
+                },
                 "type": {
                   "type": "string",
                   "description": "The block type."
@@ -129,7 +136,22 @@
                 "blocks": {
                   "$ref": "#/properties/presets/items/properties/blocks"
                 }
-              }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "static": {
+                        "const": true
+                      }
+                    },
+                    "required": ["static"]
+                  },
+                  "then": {
+                    "required": ["id"]
+                  }
+                }
+              ]
             }
           }
         }

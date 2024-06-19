@@ -1,0 +1,69 @@
+{
+  "name": "Example Section",
+  "tag": "div",
+  "class": "example-class",
+  "limit": 1,
+  "settings": [],
+  "max_blocks": 2,
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Example Preset 1",
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "exampleBlock",
+          "static": false,
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "name": "Example Preset 2",
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "exampleBlock",
+          "static": true,
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "name": "Example Preset 3",
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "exampleBlock",
+          "static": true,
+          "id": "blockId",
+          "settings": {}
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "exampleString": "This is a string"
+    }
+  },
+  "enabled_on": {
+    "templates": [
+      "index"
+    ],
+    "groups": [
+      "exampleGroup"
+    ]
+  },
+  "disabled_on": {
+    "templates": [
+      "product"
+    ],
+    "groups": [
+      "exampleGroup2"
+    ]
+  }
+}
