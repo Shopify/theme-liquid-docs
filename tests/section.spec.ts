@@ -8,6 +8,7 @@ const sectionSchema3 = loadFixture('section-schema-3.json');
 const sectionSchema4 = loadFixture('section-schema-4.json');
 const sectionSchema5 = loadFixture('section-schema-5.json');
 const sectionSchema6 = loadFixture('section-schema-6.json');
+const sectionSchemaStaticBlockPreset = loadFixture('section-schema-static-block-preset.json');
 const sectionSettings = loadFixture('section-settings.json');
 const sectionNestedBlocks = loadFixture('section-nested-blocks.json');
 const emptySchema = '{}';
@@ -140,6 +141,19 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
         }),
       },
     ]);
+  });
+
+  it('should properly validate the default values of input settings per setting type', async () => {
+    const diagnostics = await validate('sections/section.liquid', sectionSchemaStaticBlockPreset);
+    expect(diagnostics).toContainEqual({
+      message: 'Missing property "id".',
+      severity: 1,
+      range: expect.objectContaining({
+        start: expect.objectContaining({
+          line: 26,
+        }),
+      }),
+    });
   });
 
   it('should properly validate the default values of input settings per setting type', async () => {
