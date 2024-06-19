@@ -932,7 +932,8 @@
       "properties": {
         "flex-direction": {
           "type": "string",
-          "description": "Sets how flex items are placed in the flex container defining the main axis and the direction. Valid values are row (default), row-reverse, column, and column-reverse."
+          "description": "Sets how flex items are placed in the flex container defining the main axis and the direction. Valid values are row (default), row-reverse, column, and column-reverse.",
+          "enum": ["row", "row-reverse", "column", "column-reverse"]
         },
         "flex-wrap": {
           "type": "string",
@@ -953,15 +954,18 @@
         },
         "justify-content": {
           "type": "string",
-          "description": "Aligns flex items along the main axis of the current line of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly."
+          "description": "Aligns flex items along the main axis of the current line of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly.",
+          "enum": ["flex-start", "flex-end", "start", "end", "left", "right", "center", "space-between", "space-around", "space-evenly"]
         },
         "align-items": {
           "type": "string",
-          "description": "Controls the alignment of flex items on the cross axis. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline."
+          "description": "Controls the alignment of flex items on the cross axis. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline.",
+          "enum": ["stretch", "flex-start", "start", "self-start", "flex-end", "end", "self-end", "center", "baseline"]
         },
         "align-content": {
           "type": "string",
-          "description": "Sets the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly."
+          "description": "Sets the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly.",
+          "enum": ["stretch", "flex-start", "start", "flex-end", "end", "center", "space-between", "space-around", "space-evenly"]
         }
       }
     },
