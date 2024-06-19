@@ -33,6 +33,7 @@
         "select",
         "style.layout_panel",
         "style.size_panel",
+        "style.spacing_panel",
         "text",
         "text_alignment",
         "textarea",
@@ -152,6 +153,10 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "style.size_panel" } } },
       "then": { "$ref": "#/definitions/style.size_panel" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "style.spacing_panel" } } },
+      "then": { "$ref": "#/definitions/style.spacing_panel" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "text" } } },
@@ -753,6 +758,37 @@
       },
       "additionalProperties": false
     },
+    
+    "style.spacing_panel": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "style.spacing_panel",
+          "description": "A setting of type style.spacing_panel outputs Style settings for spacing.",
+          "markdownDescription": "A setting of type `style.spacing_panel` outputs Style Settings for spacing.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.spacing_panel)"
+        },
+        "default": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/spacing_properties"
+            }
+          ],
+          "properties": {
+            "@media (--mobile)": {
+              "type": "object",
+              "description": "Style settings for the mobile breakpoint",
+              "$ref": "#/definitions/spacing_properties",
+              "unevaluatedProperties": false
+            }
+          },
+          "unevaluatedProperties": false
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
 
     "text": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
@@ -1044,6 +1080,100 @@
         "max-height": {
           "type": "string",
           "description": "Sets the maximum height of a flex item."
+        }
+      }
+    },
+
+    "spacing_properties": {
+      "type": "object",
+      "properties": {
+        "padding": {
+          "type": "string",
+          "description": "Shorthand that sets the padding on all four sides of an element."
+        },
+        "padding-top": {
+          "type": "string",
+          "description": "Sets the padding on the top side of an element."
+        },
+        "padding-right": {
+          "type": "string",
+          "description": "Sets the padding on the right side of an element."
+        },
+        "padding-bottom": {
+          "type": "string",
+          "description": "Sets the padding on the bottom side of an element."
+        },
+        "padding-left": {
+          "type": "string",
+          "description": "Sets the padding on the left side of an element."
+        },
+        "padding-block-start": {
+          "type": "string",
+          "description": "Shorthand that defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+        },
+        "padding-block-end": {
+          "type": "string",
+          "description": "Shorthand that defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+        },
+        "padding-block": {
+          "type": "string",
+          "description": "Shorthand that defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation."
+        },
+        "padding-inline-start": {
+          "type": "string",
+          "description": "Defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+        },
+        "padding-inline-end": {
+          "type": "string",
+          "description": "Defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+        },
+        "padding-inline": {
+          "type": "string",
+          "description": "Defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation."
+        },
+        "margin": {
+          "type": "string",
+          "description": "Shorthand that sets the margin on all four sides of an element."
+        },
+        "margin-top": {
+          "type": "string",
+          "description": "Sets the margin on the top side of an element."
+        },
+        "margin-right": {
+          "type": "string",
+          "description": "Sets the margin on the right side of an element."
+        },
+        "margin-bottom": {
+          "type": "string",
+          "description": "Sets the margin on the bottom side of an element."
+        },
+        "margin-left": {
+          "type": "string",
+          "description": "Sets the margin on the left side of an element."
+        },
+        "margin-block-start": {
+          "type": "string",
+          "description": "Defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+        },
+        "margin-block-end": {
+          "type": "string",
+          "description": "Defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+        },
+        "margin-block": {
+          "type": "string",
+          "description": "Shorthand that defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation."
+        },
+        "margin-inline-start": {
+          "type": "string",
+          "description": "Defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+        },
+        "margin-inline-end": {
+          "type": "string",
+          "description": "Defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+        },
+        "margin-inline": {
+          "type": "string",
+          "description": "Shorthand that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation."
         }
       }
     },

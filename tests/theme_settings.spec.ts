@@ -34,6 +34,7 @@ const inputSettingTypes = [
   'richtext',
   'style.layout_panel',
   'style.size_panel',
+  'style.spacing_panel',
   'text_alignment',
   'url',
   'video_url',
