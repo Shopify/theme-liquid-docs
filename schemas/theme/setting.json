@@ -32,6 +32,7 @@
         "richtext",
         "select",
         "style.layout_panel",
+        "style.size_panel",
         "text",
         "text_alignment",
         "textarea",
@@ -147,6 +148,10 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "style.layout_panel" } } },
       "then": { "$ref": "#/definitions/style.layout_panel" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "style.size_panel" } } },
+      "then": { "$ref": "#/definitions/style.size_panel" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "text" } } },
@@ -718,6 +723,37 @@
       "additionalProperties": false
     },
 
+    "style.size_panel": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "style.size_panel",
+          "description": "A setting of type style.size_panel outputs Style settings for size.",
+          "markdownDescription": "A setting of type `style.size_panel` outputs Style Settings for size.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.size_panel)"
+        },
+        "default": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/size_properties"
+            }
+          ],
+          "properties": {
+            "@media (--mobile)": {
+              "type": "object",
+              "description": "Style settings for the mobile breakpoint",
+              "$ref": "#/definitions/size_properties",
+              "unevaluatedProperties": false
+            }
+          },
+          "unevaluatedProperties": false
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
     "text": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
       "properties": {
@@ -966,6 +1002,48 @@
           "type": "string",
           "description": "Sets the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly.",
           "enum": ["stretch", "flex-start", "start", "flex-end", "end", "center", "space-between", "space-around", "space-evenly"]
+        }
+      }
+    },
+
+    "size_properties": {
+      "type": "object",
+      "properties": {
+        "flex-grow": {
+          "type": "number",
+          "description": "Sets the flex grow factor of a flex item. It specifies how much of the remaining space in the flex container should be assigned to the item."
+        },
+        "flex-shrink": {
+          "type": "number",
+          "description": "Sets the flex shrink factor of a flex item. It specifies how much the item will shrink relative to the rest of the flex items in the flex container when there isn't enough space."
+        },
+        "flex-basis": {
+          "type": "string",
+          "description": "Sets the initial main size of a flex item. It specifies the size of the content-box unless specified otherwise using box-sizing."
+        },
+        "width": {
+          "type": "string",
+          "description": "Sets the width of a flex item."
+        },
+        "min-width": {
+          "type": "string",
+          "description": "Sets the minimum width of a flex item."
+        },
+        "max-width": {
+          "type": "string",
+          "description": "Sets the maximum width of a flex item."
+        },
+        "height": {
+          "type": "string",
+          "description": "Sets the height of a flex item."
+        },
+        "min-height": {
+          "type": "string",
+          "description": "Sets the minimum height of a flex item."
+        },
+        "max-height": {
+          "type": "string",
+          "description": "Sets the maximum height of a flex item."
         }
       }
     },

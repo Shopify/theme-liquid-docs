@@ -33,6 +33,7 @@ const inputSettingTypes = [
   'product',
   'richtext',
   'style.layout_panel',
+  'style.size_panel',
   'text_alignment',
   'url',
   'video_url',
