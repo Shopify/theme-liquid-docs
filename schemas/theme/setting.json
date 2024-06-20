@@ -1004,39 +1004,39 @@
       "properties": {
         "flex-direction": {
           "type": "string",
-          "description": "Sets how flex items are placed in the flex container defining the main axis and the direction. Valid values are row (default), row-reverse, column, and column-reverse.",
+          "description": "Determines how flex items are arranged within the flex container by specifying the main axis and direction. Valid values are row (default), row-reverse, column, and column-reverse.",
           "enum": ["row", "row-reverse", "column", "column-reverse"]
         },
         "flex-wrap": {
           "type": "string",
-          "description": "Sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked. Valid values are nowrap (default), wrap, and wrap-reverse.",
+          "description": "Specifies whether flex items are confined to a single line or can flow onto multiple lines. If wrapping is allowed, it defines the stacking direction of the lines. Valid values are nowrap (default), wrap, and wrap-reverse.",
           "enum": ["nowrap", "wrap", "wrap-reverse"]
         },
         "row-gap": {
           "type": "string",
-          "description": "Sets the size of the gap (gutter) between an element's rows."
+          "description": "Defines the size of the gap between the rows of a wrapped flex container."
         },
         "column-gap": {
           "type": "string",
-          "description": "Sets the size of the gap (gutter) between an element's columns."
+          "description": "Defines the size of the gap between flex items."
         },
         "gap": {
           "type": "string",
-          "description": "Shorthand for row-gap and column-gap. Sets the gaps (gutters) between rows and columns."
+          "description": "Shorthand for row-gap and column-gap. Defines the gaps between flex items."
         },
         "justify-content": {
           "type": "string",
-          "description": "Aligns flex items along the main axis of the current line of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly.",
+          "description": "Defines the alignment of flex items along the main axis of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly.",
           "enum": ["flex-start", "flex-end", "start", "end", "left", "right", "center", "space-between", "space-around", "space-evenly"]
         },
         "align-items": {
           "type": "string",
-          "description": "Controls the alignment of flex items on the cross axis. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline.",
+          "description": "Defines the alignment of flex items along the cross axis of the flex container. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline.",
           "enum": ["stretch", "flex-start", "start", "self-start", "flex-end", "end", "self-end", "center", "baseline"]
         },
         "align-content": {
           "type": "string",
-          "description": "Sets the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly.",
+          "description": "Defines the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly.",
           "enum": ["stretch", "flex-start", "start", "flex-end", "end", "center", "space-between", "space-around", "space-evenly"]
         }
       }
@@ -1047,39 +1047,39 @@
       "properties": {
         "flex-grow": {
           "type": "number",
-          "description": "Sets the flex grow factor of a flex item. It specifies how much of the remaining space in the flex container should be assigned to the item."
+          "description": "Defines the flex grow factor of a flex item, determining how much of the available space in the flex container the item should occupy."
         },
         "flex-shrink": {
           "type": "number",
-          "description": "Sets the flex shrink factor of a flex item. It specifies how much the item will shrink relative to the rest of the flex items in the flex container when there isn't enough space."
+          "description": "Defines the flex shrink factor of a flex item, determining how much the item should reduce in size compared to the other flex items when space is insufficient."
         },
         "flex-basis": {
           "type": "string",
-          "description": "Sets the initial main size of a flex item. It specifies the size of the content-box unless specified otherwise using box-sizing."
+          "description": "Defines the initial main size of a flex item, determining the size of the content-box unless otherwise specified by box-sizing."
         },
         "width": {
           "type": "string",
-          "description": "Sets the width of a flex item."
+          "description": "Defines the width of a flex item."
         },
         "min-width": {
           "type": "string",
-          "description": "Sets the minimum width of a flex item."
+          "description": "Defines the minimum width of a flex item."
         },
         "max-width": {
           "type": "string",
-          "description": "Sets the maximum width of a flex item."
+          "description": "Defines the maximum width of a flex item."
         },
         "height": {
           "type": "string",
-          "description": "Sets the height of a flex item."
+          "description": "Defines the height of a flex item."
         },
         "min-height": {
           "type": "string",
-          "description": "Sets the minimum height of a flex item."
+          "description": "Defines the minimum height of a flex item."
         },
         "max-height": {
           "type": "string",
-          "description": "Sets the maximum height of a flex item."
+          "description": "Defines the maximum height of a flex item."
         }
       }
     },
@@ -1089,91 +1089,91 @@
       "properties": {
         "padding": {
           "type": "string",
-          "description": "Shorthand that sets the padding on all four sides of an element."
+          "description": "Shorthand that defines the padding on all four sides of an element."
         },
         "padding-top": {
           "type": "string",
-          "description": "Sets the padding on the top side of an element."
+          "description": "Defines the padding on the top side of an element."
         },
         "padding-right": {
           "type": "string",
-          "description": "Sets the padding on the right side of an element."
+          "description": "Defines the padding on the right side of an element."
         },
         "padding-bottom": {
           "type": "string",
-          "description": "Sets the padding on the bottom side of an element."
+          "description": "Defines the padding on the bottom side of an element."
         },
         "padding-left": {
           "type": "string",
-          "description": "Sets the padding on the left side of an element."
+          "description": "Defines the padding on the left side of an element."
         },
         "padding-block-start": {
           "type": "string",
-          "description": "Shorthand that defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical block start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
         },
         "padding-block-end": {
           "type": "string",
-          "description": "Shorthand that defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical block end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
         },
         "padding-block": {
           "type": "string",
-          "description": "Shorthand that defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation."
+          "description": "Shorthand for padding-block-start and padding-block end. Defines the logical block start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
         },
         "padding-inline-start": {
           "type": "string",
-          "description": "Defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical inline start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
         },
         "padding-inline-end": {
           "type": "string",
-          "description": "Defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical inline end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
         },
         "padding-inline": {
           "type": "string",
-          "description": "Defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation."
+          "description": "Shorthand that defines the logical inline start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
         },
         "margin": {
           "type": "string",
-          "description": "Shorthand that sets the margin on all four sides of an element."
+          "description": "Shorthand that defines the margin on all four sides of an element."
         },
         "margin-top": {
           "type": "string",
-          "description": "Sets the margin on the top side of an element."
+          "description": "Defines the margin on the top side of an element."
         },
         "margin-right": {
           "type": "string",
-          "description": "Sets the margin on the right side of an element."
+          "description": "Defines the margin on the right side of an element."
         },
         "margin-bottom": {
           "type": "string",
-          "description": "Sets the margin on the bottom side of an element."
+          "description": "Defines the margin on the bottom side of an element."
         },
         "margin-left": {
           "type": "string",
-          "description": "Sets the margin on the left side of an element."
+          "description": "Defines the margin on the left side of an element."
         },
         "margin-block-start": {
           "type": "string",
-          "description": "Defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical block start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
         },
         "margin-block-end": {
           "type": "string",
-          "description": "Defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical block end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
         },
         "margin-block": {
           "type": "string",
-          "description": "Shorthand that defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation."
+          "description": "Shorthand that defines the logical block start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
         },
         "margin-inline-start": {
           "type": "string",
-          "description": "Defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical inline start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
         },
         "margin-inline-end": {
           "type": "string",
-          "description": "Defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation."
+          "description": "Defines the logical inline end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
         },
         "margin-inline": {
           "type": "string",
-          "description": "Shorthand that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation."
+          "description": "Shorthand that defines both the logical inline start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
         }
       }
     },
