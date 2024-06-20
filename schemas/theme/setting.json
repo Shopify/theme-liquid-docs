@@ -758,7 +758,7 @@
       },
       "additionalProperties": false
     },
-    
+
     "style.spacing_panel": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
       "properties": {
@@ -1027,17 +1027,48 @@
         "justify-content": {
           "type": "string",
           "description": "Defines the alignment of flex items along the main axis of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly.",
-          "enum": ["flex-start", "flex-end", "start", "end", "left", "right", "center", "space-between", "space-around", "space-evenly"]
+          "enum": [
+            "flex-start",
+            "flex-end",
+            "start",
+            "end",
+            "left",
+            "right",
+            "center",
+            "space-between",
+            "space-around",
+            "space-evenly"
+          ]
         },
         "align-items": {
           "type": "string",
           "description": "Defines the alignment of flex items along the cross axis of the flex container. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline.",
-          "enum": ["stretch", "flex-start", "start", "self-start", "flex-end", "end", "self-end", "center", "baseline"]
+          "enum": [
+            "stretch",
+            "flex-start",
+            "start",
+            "self-start",
+            "flex-end",
+            "end",
+            "self-end",
+            "center",
+            "baseline"
+          ]
         },
         "align-content": {
           "type": "string",
           "description": "Defines the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly.",
-          "enum": ["stretch", "flex-start", "start", "flex-end", "end", "center", "space-between", "space-around", "space-evenly"]
+          "enum": [
+            "stretch",
+            "flex-start",
+            "start",
+            "flex-end",
+            "end",
+            "center",
+            "space-between",
+            "space-around",
+            "space-evenly"
+          ]
         }
       }
     },
