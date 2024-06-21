@@ -708,14 +708,14 @@
         "default": {
           "allOf": [
             {
-              "$ref": "#/definitions/flex_layout_properties"
+              "$ref": "#/definitions/style.flex_layout_properties"
             }
           ],
           "properties": {
             "@media (--mobile)": {
               "type": "object",
               "description": "Style settings for the mobile breakpoint",
-              "$ref": "#/definitions/flex_layout_properties",
+              "$ref": "#/definitions/style.flex_layout_properties",
               "unevaluatedProperties": false
             }
           },
@@ -739,14 +739,14 @@
         "default": {
           "allOf": [
             {
-              "$ref": "#/definitions/size_properties"
+              "$ref": "#/definitions/style.size_properties"
             }
           ],
           "properties": {
             "@media (--mobile)": {
               "type": "object",
               "description": "Style settings for the mobile breakpoint",
-              "$ref": "#/definitions/size_properties",
+              "$ref": "#/definitions/style.size_properties",
               "unevaluatedProperties": false
             }
           },
@@ -770,14 +770,14 @@
         "default": {
           "allOf": [
             {
-              "$ref": "#/definitions/spacing_properties"
+              "$ref": "#/definitions/style.spacing_properties"
             }
           ],
           "properties": {
             "@media (--mobile)": {
               "type": "object",
               "description": "Style settings for the mobile breakpoint",
-              "$ref": "#/definitions/spacing_properties",
+              "$ref": "#/definitions/style.spacing_properties",
               "unevaluatedProperties": false
             }
           },
@@ -999,7 +999,7 @@
       }
     },
 
-    "flex_layout_properties": {
+    "style.flex_layout_properties": {
       "type": "object",
       "properties": {
         "flex-direction": {
@@ -1073,7 +1073,7 @@
       }
     },
 
-    "size_properties": {
+    "style.size_properties": {
       "type": "object",
       "properties": {
         "flex-grow": {
@@ -1090,32 +1090,32 @@
         },
         "width": {
           "type": "string",
-          "description": "Defines the width of a flex item."
+          "description": "Defines the width of an item."
         },
         "min-width": {
           "type": "string",
-          "description": "Defines the minimum width of a flex item."
+          "description": "Defines the minimum width of an item."
         },
         "max-width": {
           "type": "string",
-          "description": "Defines the maximum width of a flex item."
+          "description": "Defines the maximum width of an item."
         },
         "height": {
           "type": "string",
-          "description": "Defines the height of a flex item."
+          "description": "Defines the height of an item."
         },
         "min-height": {
           "type": "string",
-          "description": "Defines the minimum height of a flex item."
+          "description": "Defines the minimum height of an item."
         },
         "max-height": {
           "type": "string",
-          "description": "Defines the maximum height of a flex item."
+          "description": "Defines the maximum height of an item."
         }
       }
     },
 
-    "spacing_properties": {
+    "style.spacing_properties": {
       "type": "object",
       "properties": {
         "padding": {
