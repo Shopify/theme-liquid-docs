@@ -702,8 +702,8 @@
       "properties": {
         "type": {
           "const": "style.layout_panel",
-          "description": "A setting of type style.layout_panel outputs Style settings for layout.",
-          "markdownDescription": "A setting of type `style.layout_panel` outputs Style Settings for layout.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.layout_panel)"
+          "description": "A setting of type style.layout_panel outputs style settings for layout.",
+          "markdownDescription": "A setting of type `style.layout_panel` outputs style settings for layout.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.layout_panel)"
         },
         "default": {
           "allOf": [
@@ -733,8 +733,8 @@
       "properties": {
         "type": {
           "const": "style.size_panel",
-          "description": "A setting of type style.size_panel outputs Style settings for size.",
-          "markdownDescription": "A setting of type `style.size_panel` outputs Style Settings for size.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.size_panel)"
+          "description": "A setting of type style.size_panel outputs style settings for size.",
+          "markdownDescription": "A setting of type `style.size_panel` outputs style settings for size.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.size_panel)"
         },
         "default": {
           "allOf": [
@@ -764,8 +764,8 @@
       "properties": {
         "type": {
           "const": "style.spacing_panel",
-          "description": "A setting of type style.spacing_panel outputs Style settings for spacing.",
-          "markdownDescription": "A setting of type `style.spacing_panel` outputs Style Settings for spacing.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.spacing_panel)"
+          "description": "A setting of type style.spacing_panel outputs style settings for spacing.",
+          "markdownDescription": "A setting of type `style.spacing_panel` outputs style settings for spacing.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.spacing_panel)"
         },
         "default": {
           "allOf": [
@@ -1077,11 +1077,11 @@
       "type": "object",
       "properties": {
         "flex-grow": {
-          "type": "number",
+          "type": "string",
           "description": "Defines the flex grow factor of a flex item, determining how much of the available space in the flex container the item should occupy."
         },
         "flex-shrink": {
-          "type": "number",
+          "type": "string",
           "description": "Defines the flex shrink factor of a flex item, determining how much the item should reduce in size compared to the other flex items when space is insufficient."
         },
         "flex-basis": {
