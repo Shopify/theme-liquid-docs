@@ -293,8 +293,8 @@
         "id": "size",
         "label": "Size",
         "default": {
-          "flex-grow": 1,
-          "flex-shrink": 0,
+          "flex-grow": "1",
+          "flex-shrink": "0",
           "flex-basis": "auto",
           "width": "100px",
           "min-width": "50px",
