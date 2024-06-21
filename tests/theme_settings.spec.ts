@@ -32,6 +32,9 @@ const inputSettingTypes = [
   'product_list',
   'product',
   'richtext',
+  'style.layout_panel',
+  'style.size_panel',
+  'style.spacing_panel',
   'text_alignment',
   'url',
   'video_url',
@@ -364,5 +367,211 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         }),
       ]);
     });
+  });
+
+  describe('Unit: styles', () => {
+    it('should allow valid style settings and breakpoints', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "style.layout_panel",
+              "id": "layout",
+              "label": "Layout",
+              "default": {
+                "flex-direction": "row",
+                "flex-wrap": "wrap",
+                "align-items": "center",
+                "@media (--mobile)": {
+                  "flex-direction": "column",
+                  "align-items": "stretch",
+                  "gap": "0"
+                }
+              }
+            },
+            {
+              "type": "style.spacing_panel",
+              "id": "spacing",
+              "label": "Spacing",
+              "default": {
+                "padding": "10px",
+                "margin": "10px",
+                "@media (--mobile)": {
+                  "margin-top": "0",
+                  "margin-inline-end": "1rem" 
+                }
+              }
+            },
+            {
+              "type": "style.size_panel",
+              "id": "size",
+              "label": "Size",
+              "default": {
+                "flex-grow": "2",
+                "width": "25%",
+                "@media (--mobile)": {
+                  "width": "100%",
+                  "flex-grow": "0"
+                }
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toHaveLength(0);
+    });
+
+    it('should report invalid style setting panel types', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "styles.layout_panel",
+              "id": "layout",
+              "label": "Layout",
+              "default": {
+                "gap": "20px"
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: expect.stringContaining(
+            'Value is not accepted.',
+          )
+        })
+      ]);
+      
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: expect.stringContaining(
+            'style.layout_panel',
+          )
+        })
+      ]);
+    });
+
+    it('should report invalid style properties', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "style.layout_panel",
+              "id": "layout",
+              "label": "Layout",
+              "default": {
+                "flex-rap": "wrap"
+              }
+            },
+            {
+              "type": "style.spacing_panel",
+              "id": "spacing",
+              "label": "Spacing",
+              "default": {
+                "pudding": "20px"
+              }
+            },
+            {
+              "type": "style.size_panel",
+              "id": "size",
+              "label": "Size",
+              "default": {
+                "width": "fit-content",
+                "@media (--mobile)": {
+                  "width": "100%",
+                  "flex-shrunk": "0"
+                }
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: 'Property flex-rap is not allowed.',
+        }),
+        expect.objectContaining({
+          message: 'Property pudding is not allowed.',
+        }),
+        expect.objectContaining({
+          message: 'Property flex-shrunk is not allowed.',
+        })
+      ]);
+    });
+    
+    it('should report invalid property values', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "style.layout_panel",
+              "id": "layout",
+              "label": "Layout",
+              "default": {
+                "flex-wrap": "rap"
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: expect.stringContaining(
+            'Value is not accepted.',
+          ),
+        })
+      ]);
+    });
+    
+    it('should report invalid breakpoints', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "style.size_panel",
+              "id": "size",
+              "label": "Size",
+              "default": {
+                "width": "fit-content",
+                "@media (--iphone)": {
+                  "width": "100%",
+                  "flex-shrink": "0"
+                }
+              }
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: expect.stringContaining(
+            'Property @media (--iphone) is not allowed'
+          )
+        })
+      ]);
+    });
+
   });
 });

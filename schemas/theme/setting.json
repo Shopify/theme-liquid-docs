@@ -31,6 +31,9 @@
         "range",
         "richtext",
         "select",
+        "style.layout_panel",
+        "style.size_panel",
+        "style.spacing_panel",
         "text",
         "text_alignment",
         "textarea",
@@ -142,6 +145,18 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "select" } } },
       "then": { "$ref": "#/definitions/select" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "style.layout_panel" } } },
+      "then": { "$ref": "#/definitions/style.layout_panel" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "style.size_panel" } } },
+      "then": { "$ref": "#/definitions/style.size_panel" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "style.spacing_panel" } } },
+      "then": { "$ref": "#/definitions/style.spacing_panel" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "text" } } },
@@ -682,6 +697,99 @@
       "additionalProperties": false
     },
 
+    "style.layout_panel": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "style.layout_panel",
+          "description": "A setting of type style.layout_panel outputs style settings for layout.",
+          "markdownDescription": "A setting of type `style.layout_panel` outputs style settings for layout.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.layout_panel)"
+        },
+        "default": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/style.flex_layout_properties"
+            }
+          ],
+          "properties": {
+            "@media (--mobile)": {
+              "type": "object",
+              "description": "Style settings for the mobile breakpoint",
+              "$ref": "#/definitions/style.flex_layout_properties",
+              "unevaluatedProperties": false
+            }
+          },
+          "unevaluatedProperties": false
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "style.size_panel": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "style.size_panel",
+          "description": "A setting of type style.size_panel outputs style settings for size.",
+          "markdownDescription": "A setting of type `style.size_panel` outputs style settings for size.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.size_panel)"
+        },
+        "default": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/style.size_properties"
+            }
+          ],
+          "properties": {
+            "@media (--mobile)": {
+              "type": "object",
+              "description": "Style settings for the mobile breakpoint",
+              "$ref": "#/definitions/style.size_properties",
+              "unevaluatedProperties": false
+            }
+          },
+          "unevaluatedProperties": false
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "style.spacing_panel": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "style.spacing_panel",
+          "description": "A setting of type style.spacing_panel outputs style settings for spacing.",
+          "markdownDescription": "A setting of type `style.spacing_panel` outputs style settings for spacing.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.spacing_panel)"
+        },
+        "default": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/style.spacing_properties"
+            }
+          ],
+          "properties": {
+            "@media (--mobile)": {
+              "type": "object",
+              "description": "Style settings for the mobile breakpoint",
+              "$ref": "#/definitions/style.spacing_properties",
+              "unevaluatedProperties": false
+            }
+          },
+          "unevaluatedProperties": false
+        },
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
     "text": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
       "properties": {
@@ -888,6 +996,216 @@
       "properties": {
         "solid": { "type": "string" },
         "gradient": { "type": "string" }
+      }
+    },
+
+    "style.flex_layout_properties": {
+      "type": "object",
+      "properties": {
+        "flex-direction": {
+          "type": "string",
+          "description": "Determines how flex items are arranged within the flex container by specifying the main axis and direction. Valid values are row (default), row-reverse, column, and column-reverse.",
+          "enum": ["row", "row-reverse", "column", "column-reverse"]
+        },
+        "flex-wrap": {
+          "type": "string",
+          "description": "Specifies whether flex items are confined to a single line or can flow onto multiple lines. If wrapping is allowed, it defines the stacking direction of the lines. Valid values are nowrap (default), wrap, and wrap-reverse.",
+          "enum": ["nowrap", "wrap", "wrap-reverse"]
+        },
+        "row-gap": {
+          "type": "string",
+          "description": "Defines the size of the gap between the rows of a wrapped flex container."
+        },
+        "column-gap": {
+          "type": "string",
+          "description": "Defines the size of the gap between flex items."
+        },
+        "gap": {
+          "type": "string",
+          "description": "Shorthand for row-gap and column-gap. Defines the gaps between flex items."
+        },
+        "justify-content": {
+          "type": "string",
+          "description": "Defines the alignment of flex items along the main axis of the flex container. Valid values are flex-start (default), flex-end, start, end, left, right, center, space-between, space-around and space-evenly.",
+          "enum": [
+            "flex-start",
+            "flex-end",
+            "start",
+            "end",
+            "left",
+            "right",
+            "center",
+            "space-between",
+            "space-around",
+            "space-evenly"
+          ]
+        },
+        "align-items": {
+          "type": "string",
+          "description": "Defines the alignment of flex items along the cross axis of the flex container. Valid values are stretch (default), flex-start / start / self-start, flex-end / end / self-end, center and baseline.",
+          "enum": [
+            "stretch",
+            "flex-start",
+            "start",
+            "self-start",
+            "flex-end",
+            "end",
+            "self-end",
+            "center",
+            "baseline"
+          ]
+        },
+        "align-content": {
+          "type": "string",
+          "description": "Defines the distribution of space between and around flex items along the cross axis. Valid values are stretch, flex-start / start, flex-end / end, center, space-between, space-around, and space-evenly.",
+          "enum": [
+            "stretch",
+            "flex-start",
+            "start",
+            "flex-end",
+            "end",
+            "center",
+            "space-between",
+            "space-around",
+            "space-evenly"
+          ]
+        }
+      }
+    },
+
+    "style.size_properties": {
+      "type": "object",
+      "properties": {
+        "flex-grow": {
+          "type": "string",
+          "description": "Defines the flex grow factor of a flex item, determining how much of the available space in the flex container the item should occupy."
+        },
+        "flex-shrink": {
+          "type": "string",
+          "description": "Defines the flex shrink factor of a flex item, determining how much the item should reduce in size compared to the other flex items when space is insufficient."
+        },
+        "flex-basis": {
+          "type": "string",
+          "description": "Defines the initial main size of a flex item, determining the size of the content-box unless otherwise specified by box-sizing."
+        },
+        "width": {
+          "type": "string",
+          "description": "Defines the width of an item."
+        },
+        "min-width": {
+          "type": "string",
+          "description": "Defines the minimum width of an item."
+        },
+        "max-width": {
+          "type": "string",
+          "description": "Defines the maximum width of an item."
+        },
+        "height": {
+          "type": "string",
+          "description": "Defines the height of an item."
+        },
+        "min-height": {
+          "type": "string",
+          "description": "Defines the minimum height of an item."
+        },
+        "max-height": {
+          "type": "string",
+          "description": "Defines the maximum height of an item."
+        }
+      }
+    },
+
+    "style.spacing_properties": {
+      "type": "object",
+      "properties": {
+        "padding": {
+          "type": "string",
+          "description": "Shorthand that defines the padding on all four sides of an element."
+        },
+        "padding-top": {
+          "type": "string",
+          "description": "Defines the padding on the top side of an element."
+        },
+        "padding-right": {
+          "type": "string",
+          "description": "Defines the padding on the right side of an element."
+        },
+        "padding-bottom": {
+          "type": "string",
+          "description": "Defines the padding on the bottom side of an element."
+        },
+        "padding-left": {
+          "type": "string",
+          "description": "Defines the padding on the left side of an element."
+        },
+        "padding-block-start": {
+          "type": "string",
+          "description": "Defines the logical block start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+        },
+        "padding-block-end": {
+          "type": "string",
+          "description": "Defines the logical block end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+        },
+        "padding-block": {
+          "type": "string",
+          "description": "Shorthand for padding-block-start and padding-block end. Defines the logical block start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+        },
+        "padding-inline-start": {
+          "type": "string",
+          "description": "Defines the logical inline start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+        },
+        "padding-inline-end": {
+          "type": "string",
+          "description": "Defines the logical inline end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+        },
+        "padding-inline": {
+          "type": "string",
+          "description": "Shorthand that defines the logical inline start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+        },
+        "margin": {
+          "type": "string",
+          "description": "Shorthand that defines the margin on all four sides of an element."
+        },
+        "margin-top": {
+          "type": "string",
+          "description": "Defines the margin on the top side of an element."
+        },
+        "margin-right": {
+          "type": "string",
+          "description": "Defines the margin on the right side of an element."
+        },
+        "margin-bottom": {
+          "type": "string",
+          "description": "Defines the margin on the bottom side of an element."
+        },
+        "margin-left": {
+          "type": "string",
+          "description": "Defines the margin on the left side of an element."
+        },
+        "margin-block-start": {
+          "type": "string",
+          "description": "Defines the logical block start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+        },
+        "margin-block-end": {
+          "type": "string",
+          "description": "Defines the logical block end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+        },
+        "margin-block": {
+          "type": "string",
+          "description": "Shorthand that defines the logical block start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+        },
+        "margin-inline-start": {
+          "type": "string",
+          "description": "Defines the logical inline start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+        },
+        "margin-inline-end": {
+          "type": "string",
+          "description": "Defines the logical inline end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+        },
+        "margin-inline": {
+          "type": "string",
+          "description": "Shorthand that defines both the logical inline start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+        }
       }
     },
 
