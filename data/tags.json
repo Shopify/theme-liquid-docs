@@ -1,5 +1,42 @@
 [
   {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "&lt;aside class=\"note beta\"&gt;\n  &lt;h4&gt;Developer preview&lt;/h4&gt;\n  &lt;p&gt;This tag is only available as part of the &lt;a href=\"/storefronts/themes/architecture/blocks/theme-blocks/developer-preview\"&gt;Theme blocks developer preview&lt;/a&gt;.&lt;/p&gt;\n&lt;/aside&gt;\n\nThe content_for tag requires a type to indicate whether it will render a single static block or a number of theme blocks defined in the JSON templates or section groups.\n\n- [`blocks`](/docs/api/liquid/tags/content_for#content_for-blocks)\n- [`block`](/docs/api/liquid/tags/content_for#content_for-block)",
+    "parameters": [
+
+    ],
+    "summary": "Creates a surface for rendering a block or blocks.",
+    "name": "content_for",
+    "syntax": "{% content_for 'blocks' %}\n{% content_for 'block', type: \"\", id: \"\" %}",
+    "syntax_keywords": [
+
+    ],
+    "examples": [
+      {
+        "name": "blocks",
+        "description": "Renders block elements within sections or other blocks as configured in the JSON template or section groups. See [theme blocks](/themes/architecture/blocks/theme-blocks) to see how to create theme blocks that can be used this way.\n",
+        "syntax": "{% content_for \"blocks\" %}\n",
+        "path": "/",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "block",
+        "description": "Renders a static theme block within `sections` or `theme blocks`.\n",
+        "syntax": "{% content_for \"block\", type: \"button\", id: \"static-block-1\" %}\n",
+        "path": "/",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ]
+  },
+  {
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
