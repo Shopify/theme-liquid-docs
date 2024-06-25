@@ -380,13 +380,16 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
               "id": "layout",
               "label": "Layout",
               "default": {
+                "gap": "10px 10px",
+                "row-gap": "10px",
+                "column-gap": "10px",
                 "flex-direction": "row",
                 "flex-wrap": "wrap",
                 "align-items": "center",
                 "@media (--mobile)": {
                   "flex-direction": "column",
                   "align-items": "stretch",
-                  "gap": "0"
+                  "gap": "0px"
                 }
               }
             },
@@ -395,11 +398,13 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
               "id": "spacing",
               "label": "Spacing",
               "default": {
-                "padding": "10px",
-                "margin": "10px",
+                "padding": "10px 20px",
+                "margin": "10px 20px 10px 20px",
                 "@media (--mobile)": {
-                  "margin-top": "0",
-                  "margin-inline-end": "1rem" 
+                  "padding-block": "10px 20px",
+                  "margin-top": "0px",
+                  "margin-inline": "20px",
+                  "margin-inline-end": "1px" 
                 }
               }
             },
@@ -410,6 +415,7 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
               "default": {
                 "flex-grow": "2",
                 "width": "25%",
+                "height": "25px",
                 "@media (--mobile)": {
                   "width": "100%",
                   "flex-grow": "0"
@@ -446,18 +452,14 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
 
       expect(diagnostics).toStrictEqual([
         expect.objectContaining({
-          message: expect.stringContaining(
-            'Value is not accepted.',
-          )
-        })
+          message: expect.stringContaining('Value is not accepted.'),
+        }),
       ]);
-      
+
       expect(diagnostics).toStrictEqual([
         expect.objectContaining({
-          message: expect.stringContaining(
-            'style.layout_panel',
-          )
-        })
+          message: expect.stringContaining('style.layout_panel'),
+        }),
       ]);
     });
 
@@ -509,10 +511,10 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         }),
         expect.objectContaining({
           message: 'Property flex-shrunk is not allowed.',
-        })
+        }),
       ]);
     });
-    
+
     it('should report invalid property values', async () => {
       const settings = `[
         {
@@ -523,6 +525,9 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
               "id": "layout",
               "label": "Layout",
               "default": {
+                "row-gap": "-10px",
+                "column-gap": "-10px",
+                "gap": "-10px -10px",
                 "flex-wrap": "rap"
               }
             }
@@ -532,15 +537,19 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
 
       const diagnostics = await validate('config/settings_schema.json', settings);
 
-      expect(diagnostics).toStrictEqual([
+      expect(diagnostics).toHaveLength(4);
+      expect(diagnostics).toContainEqual(
         expect.objectContaining({
-          message: expect.stringContaining(
-            'Value is not accepted.',
-          ),
-        })
-      ]);
+          message: expect.stringContaining('Value is not accepted.'),
+        }),
+      );
+      expect(diagnostics).toContainEqual(
+        expect.objectContaining({
+          message: expect.stringContaining('String does not match the pattern'),
+        }),
+      );
     });
-    
+
     it('should report invalid breakpoints', async () => {
       const settings = `[
         {
@@ -566,12 +575,9 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
 
       expect(diagnostics).toStrictEqual([
         expect.objectContaining({
-          message: expect.stringContaining(
-            'Property @media (--iphone) is not allowed'
-          )
-        })
+          message: expect.stringContaining('Property @media (--iphone) is not allowed'),
+        }),
       ]);
     });
-
   });
 });

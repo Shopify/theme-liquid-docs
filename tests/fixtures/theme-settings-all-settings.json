@@ -277,14 +277,14 @@
         "default": {
           "flex-direction": "row",
           "column-gap": "20px",
-          "row-gap": "2rem",
+          "row-gap": "2px",
           "flex-wrap": "wrap",
           "justify-content": "space-around",
           "align-items": "center",
           "align-content": "space-between",
           "@media (--mobile)": {
             "flex-direction": "column",
-            "gap": "0"
+            "gap": "0px"
           }
         }
       },

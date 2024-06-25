@@ -697,6 +697,36 @@
       "additionalProperties": false
     },
 
+    "lengthPattern": {
+      "type": "string",
+      "pattern": "^[0-9]+(px|%)$"
+    },
+
+    "lengthAutoPattern": {
+      "type": "string",
+      "pattern": "^([0-9]+(px|%)|auto|fit-content)$"
+    },
+
+    "lengthNonePattern": {
+      "type": "string",
+      "pattern": "^([0-9]+(px|%)|none|fit-content)$"
+    },
+
+    "negativeLengthPattern": {
+      "type": "string",
+      "pattern": "^-?[0-9]+(px|%)$"
+    },
+
+    "numberPattern": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+
+    "negativeNumberPattern": {
+      "type": "string",
+      "pattern": "^-?[0-9]+$"
+    },
+
     "style.layout_panel": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
       "properties": {
@@ -1013,16 +1043,17 @@
           "enum": ["nowrap", "wrap", "wrap-reverse"]
         },
         "row-gap": {
-          "type": "string",
+          "$ref": "#/definitions/lengthPattern",
           "description": "Defines the size of the gap between the rows of a wrapped flex container."
         },
         "column-gap": {
-          "type": "string",
+          "$ref": "#/definitions/lengthPattern",
           "description": "Defines the size of the gap between flex items."
         },
         "gap": {
           "type": "string",
-          "description": "Shorthand for row-gap and column-gap. Defines the gaps between flex items."
+          "description": "Shorthand for row-gap and column-gap. Defines the gaps between flex items.",
+          "pattern": "^([0-9]+(px|%) ?){1,2}$"
         },
         "justify-content": {
           "type": "string",
@@ -1077,39 +1108,39 @@
       "type": "object",
       "properties": {
         "flex-grow": {
-          "type": "string",
+          "$ref": "#/definitions/numberPattern",
           "description": "Defines the flex grow factor of a flex item, determining how much of the available space in the flex container the item should occupy."
         },
         "flex-shrink": {
-          "type": "string",
+          "$ref": "#/definitions/numberPattern",
           "description": "Defines the flex shrink factor of a flex item, determining how much the item should reduce in size compared to the other flex items when space is insufficient."
         },
         "flex-basis": {
-          "type": "string",
+          "$ref": "#/definitions/lengthAutoPattern",
           "description": "Defines the initial main size of a flex item, determining the size of the content-box unless otherwise specified by box-sizing."
         },
         "width": {
-          "type": "string",
+          "$ref": "#/definitions/lengthAutoPattern",
           "description": "Defines the width of an item."
         },
         "min-width": {
-          "type": "string",
+          "$ref": "#/definitions/lengthAutoPattern",
           "description": "Defines the minimum width of an item."
         },
         "max-width": {
-          "type": "string",
+          "$ref": "#/definitions/lengthNonePattern",
           "description": "Defines the maximum width of an item."
         },
         "height": {
-          "type": "string",
+          "$ref": "#/definitions/lengthAutoPattern",
           "description": "Defines the height of an item."
         },
         "min-height": {
-          "type": "string",
+          "$ref": "#/definitions/lengthAutoPattern",
           "description": "Defines the minimum height of an item."
         },
         "max-height": {
-          "type": "string",
+          "$ref": "#/definitions/lengthNonePattern",
           "description": "Defines the maximum height of an item."
         }
       }
@@ -1119,92 +1150,97 @@
       "type": "object",
       "properties": {
         "padding": {
-          "type": "string",
-          "description": "Shorthand that defines the padding on all four sides of an element."
+          "description": "Shorthand that defines the padding on all four sides of an element.",
+          "pattern": "^([0-9]+(px|%) ?){1,4}$"
         },
         "padding-top": {
-          "type": "string",
-          "description": "Defines the padding on the top side of an element."
+          "description": "Defines the padding on the top side of an element.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-right": {
-          "type": "string",
-          "description": "Defines the padding on the right side of an element."
+          "description": "Defines the padding on the right side of an element.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-bottom": {
-          "type": "string",
-          "description": "Defines the padding on the bottom side of an element."
+          "description": "Defines the padding on the bottom side of an element.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-left": {
-          "type": "string",
-          "description": "Defines the padding on the left side of an element."
+          "description": "Defines the padding on the left side of an element.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-block-start": {
-          "type": "string",
-          "description": "Defines the logical block start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical block start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-block-end": {
-          "type": "string",
-          "description": "Defines the logical block end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical block end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-block": {
           "type": "string",
-          "description": "Shorthand for padding-block-start and padding-block end. Defines the logical block start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+          "description": "Shorthand for padding-block-start and padding-block end. Defines the logical block start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation.",
+          "pattern": "^([0-9]+(px|%) ?){1,2}$"
         },
         "padding-inline-start": {
-          "type": "string",
-          "description": "Defines the logical inline start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical inline start padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-inline-end": {
-          "type": "string",
-          "description": "Defines the logical inline end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical inline end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/lengthPattern"
         },
         "padding-inline": {
           "type": "string",
-          "description": "Shorthand that defines the logical inline start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation."
+          "description": "Shorthand that defines the logical inline start and end padding of an element, translating to physical padding based on the element's writing mode, text direction, and text orientation.",
+          "pattern": "^([0-9]+(px|%) ?){1,2}$"
         },
         "margin": {
           "type": "string",
-          "description": "Shorthand that defines the margin on all four sides of an element."
+          "description": "Shorthand that defines the margin on all four sides of an element.",
+          "pattern": "^(-?[0-9]+(px|%) ?){1,4}$"
         },
         "margin-top": {
-          "type": "string",
-          "description": "Defines the margin on the top side of an element."
+          "description": "Defines the margin on the top side of an element.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-right": {
-          "type": "string",
-          "description": "Defines the margin on the right side of an element."
+          "description": "Defines the margin on the right side of an element.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-bottom": {
-          "type": "string",
-          "description": "Defines the margin on the bottom side of an element."
+          "description": "Defines the margin on the bottom side of an element.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-left": {
-          "type": "string",
-          "description": "Defines the margin on the left side of an element."
+          "description": "Defines the margin on the left side of an element.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-block-start": {
-          "type": "string",
-          "description": "Defines the logical block start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical block start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-block-end": {
-          "type": "string",
-          "description": "Defines the logical block end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical block end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-block": {
           "type": "string",
-          "description": "Shorthand that defines the logical block start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+          "description": "Shorthand that defines the logical block start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation.",
+          "pattern": "^(-?[0-9]+(px|%) ?){1,2}$"
         },
         "margin-inline-start": {
-          "type": "string",
-          "description": "Defines the logical inline start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical inline start margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-inline-end": {
-          "type": "string",
-          "description": "Defines the logical inline end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+          "description": "Defines the logical inline end margin of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation.",
+          "$ref": "#/definitions/negativeLengthPattern"
         },
         "margin-inline": {
           "type": "string",
-          "description": "Shorthand that defines both the logical inline start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation."
+          "description": "Shorthand that defines both the logical inline start and end margins of an element, translating to physical margin based on the element's writing mode, text direction, and text orientation.",
+          "pattern": "^(-?[0-9]+(px|%) ?){1,2}$"
         }
       }
     },
