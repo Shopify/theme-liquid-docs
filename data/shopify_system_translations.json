@@ -455,6 +455,7 @@
   "shopify.checkout.order_summary.cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code isn’t valid for the items in your cart",
   "shopify.checkout.order_summary.discount_requires_customer_notice": "Enter your shipping information to apply the <strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code",
   "shopify.checkout.order_summary.customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code isn’t available to you right now",
+  "shopify.checkout.order_summary.eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code isn’t available without a customer added to the cart",
   "shopify.checkout.order_summary.shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code isn’t available for your shipping address",
   "shopify.checkout.order_summary.customer_already_used_once_per_customer_discount_notice": "The <strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code has already been used",
   "shopify.checkout.order_summary.subtotal_label": "Subtotal",
