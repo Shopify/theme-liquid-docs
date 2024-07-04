@@ -1061,6 +1061,7 @@
   "shopify.checkout.redeemable_errors.gift_card.currency_mismatch": "Only gift cards in %{shop_currency} are accepted",
   "shopify.checkout.redeemable_errors.gift_card.generic": "The gift card could not be added to checkout",
   "shopify.checkout.redeemable_errors.gift_card.throttle_limit_exceeded": "You have exceeded the maximum number of attempts. Try again later.",
+  "shopify.checkout.redeemable_errors.gift_card.no_longer_available": "This gift card can no longer be used with this checkout",
   "shopify.checkout.payment_errors.amount_too_small": "The minimum payment amount must be higher than $0.50 USD. Please try again with a higher amount.",
   "shopify.checkout.payment_errors.method_not_available": "The requested payment method is not available.",
   "shopify.checkout.payment_errors.available_methods_updated": "Available payment methods have been updated.",
