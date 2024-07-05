@@ -193,6 +193,7 @@
   "shopify.checkout.general.errors.captcha.token_invalid": "The provided captcha token was invalid. Complete a new captcha to continue checkout.",
   "shopify.checkout.general.errors.captcha.token_not_valid_for_session": "The provided captcha cannot be used with this checkout.",
   "shopify.checkout.general.errors.fx_reconciliation_override.shop_currency_mismatch": "The amount received must be in the store currency.",
+  "shopify.checkout.general.errors.checkout_source.revoked": "This checkout is no longer available.",
   "shopify.checkout.general.full_price": "Full price:",
   "shopify.checkout.general.title": "Checkout - {{shopName}}",
   "shopify.checkout.general.full_title": "{{pageTitle}} - {{shopName}} - Checkout",
