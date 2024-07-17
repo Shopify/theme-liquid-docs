@@ -22,6 +22,8 @@
         "inline_richtext",
         "link_list",
         "liquid",
+        "metaobject",
+        "metaobject_list",
         "number",
         "page",
         "paragraph",
@@ -113,6 +115,14 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "liquid" } } },
       "then": { "$ref": "#/definitions/liquid" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "metaobject" } } },
+      "then": { "$ref": "#/definitions/metaobject" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "metaobject_list" } } },
+      "then": { "$ref": "#/definitions/metaobject_list" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "number" } } },
@@ -527,6 +537,51 @@
       "additionalProperties": false
     },
 
+    "metaobject": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "metaobject",
+          "description": "A setting of type metaobject outputs a metaobject picker field that's automatically populated with the compatible metaobject entries for the store. You can use these fields to capture a metaobject entry selection for a known metaobject type.",
+          "markdownDescription": "A setting of type `metaobject` outputs a metaobject picker field that's automatically populated with the compatible metaobject entries for the store. You can use these fields to capture a metaobject entry selection for a known metaobject type. \n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#metaobject)"
+        },
+        "metaobject_type": {
+          "type": "string",
+          "description": "The metaobject type allowed by the picker."
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "required": ["metaobject_type"],
+      "additionalProperties": false
+    },
+
+    "metaobject_list": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "metaobject_list",
+          "description": "A setting of type metaobject_list outputs a metaobject picker field that's automatically populated with the compatible metaobject entries for the store. You can use these fields to capture multiple metaobject entry selections for a known metaobject type.",
+          "markdownDescription": "A setting of type `metaobject_list` outputs a metaobject picker field that's automatically populated with the compatible metaobject entries for the store. You can use these fields to capture multiple metaobject entry selections for a known metaobject type.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#metaobject_list)"
+        },
+        "metaobject_type": {
+          "type": "string",
+          "description": "The metaobject type allowed by the picker."
+        },
+        "limit": {
+          "type": "number",
+          "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "required": ["metaobject_type"],
+      "additionalProperties": false
+    },
     "number": {
       "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
       "properties": {
