@@ -268,7 +268,7 @@
           "markdownDescription": "A setting of type `collection_list` outputs a collection picker field that's automatically populated with the available collections for the store. You can use these fields to capture multiple collections, such as a group of collections to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#collection_list)"
         },
         "limit": {
-          "type": "number",
+          "type": "integer",
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
         "default": true,
@@ -571,7 +571,7 @@
           "description": "The metaobject type allowed by the picker."
         },
         "limit": {
-          "type": "number",
+          "type": "integer",
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
         "default": true,
@@ -643,7 +643,7 @@
           "markdownDescription": "A setting of type `product_list` outputs a product picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple products, such as a group of products to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#product_list)"
         },
         "limit": {
-          "type": "number",
+          "type": "integer",
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
         "default": true,
