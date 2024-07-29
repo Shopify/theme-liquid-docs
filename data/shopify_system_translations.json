@@ -466,7 +466,7 @@
   "shopify.checkout.order_summary.subtotal_label": "Subtotal",
   "shopify.checkout.order_summary.shipping_label": "Shipping",
   "shopify.checkout.order_summary.pickup_label": "Pickup in store",
-  "shopify.checkout.order_summary.no_pickup_location": "Pickup isn't available for this order. Choose another delivery method.",
+  "shopify.checkout.order_summary.no_pickup_location": "There are no pickup locations available.",
   "shopify.checkout.order_summary.tip_label": "Tip",
   "shopify.checkout.order_summary.calculating_shipping": "Calculating…",
   "shopify.checkout.order_summary.calculating": "Calculating…",
