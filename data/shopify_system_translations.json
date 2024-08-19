@@ -1901,6 +1901,7 @@
   "shopify.filters.availability.value.out_of_stock": "Out of stock",
   "shopify.filters.boolean.true_label": "Yes",
   "shopify.filters.boolean.false_label": "No",
+  "shopify.search.error": "There was a problem loading your search results. Please refresh the page or try again later.",
   "shopify.search.sorting.relevance": "Relevance",
   "shopify.search.sorting.price_ascending": "Price, low to high",
   "shopify.search.sorting.price_descending": "Price, high to low",
