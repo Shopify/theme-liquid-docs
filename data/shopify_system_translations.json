@@ -144,6 +144,7 @@
   "shopify.checkout.general.errors.payment.shop_cash_unsupported_checkout_source": "Shop Cash does not support this checkout.",
   "shopify.checkout.general.errors.payment.shop_cash_gift_card_not_allowed": "Shop Cash does not allow the purchase of gift cards.",
   "shopify.checkout.general.errors.payment.shop_cash_not_enabled": "Shop Cash is not enabled for this shop.",
+  "shopify.checkout.general.errors.payment.shop_cash_not_available": "Shop Cash is not supported in this checkout.",
   "shopify.checkout.general.errors.payment.shop_cash_unsupported_subscriptions": "Shop Cash does not support subscriptions.",
   "shopify.checkout.general.errors.payment.shop_cash_unsupported_shipping": "Shop Cash does not support merchandise with no shipping.",
   "shopify.checkout.general.errors.payment.invalid_address_type": "The provided address type is invalid for this payment method.",
