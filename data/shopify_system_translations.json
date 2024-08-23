@@ -1576,6 +1576,7 @@
   "shopify.checkout.pickup_point.title": "Pickup point",
   "shopify.checkout.pickup_point.or": "or",
   "shopify.checkout.pickup_point.search_button": "Search",
+  "shopify.checkout.pickup_point.address_label": "Address",
   "shopify.checkout.pickup_point.selector_tabs": "Pickup point selector",
   "shopify.checkout.pickup_point.selector_tab_map": "Map",
   "shopify.checkout.pickup_point.selector_tab_list": "List",
