@@ -77,7 +77,7 @@
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&lt;aside class=\"note beta\"&gt;\n  &lt;h4&gt;Developer preview&lt;/h4&gt;\n  &lt;p&gt;Style settings are currently only available as part of the &lt;a href=\"/docs/storefronts/themes/architecture/blocks/theme-blocks/developer-preview\"&gt;Theme blocks developer preview&lt;/a&gt;.&lt;/p&gt;\n&lt;/aside&gt;",
+    "description": "&lt;aside class=\"note beta\"&gt;\n  &lt;h4&gt;Developer preview&lt;/h4&gt;\n  &lt;p&gt;Style settings are currently only available as part of the &lt;a href=\"/storefronts/themes/architecture/blocks/theme-blocks/developer-preview\"&gt;Theme blocks developer preview&lt;/a&gt;.&lt;/p&gt;\n&lt;/aside&gt;",
     "parameters": [
 
     ],
@@ -101,8 +101,8 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates the list of style classes for a [style setting](/docs/storefronts/themes/architecture/settings/style-settings) or a collection of settings.",
-    "syntax": "section.settings | class_list",
+    "summary": "Generates the list of style classes for a [style setting](/storefronts/themes/architecture/settings/style-settings) or a collection of settings.",
+    "syntax": "settings.layout | class_list",
     "name": "class_list"
   },
   {
@@ -1660,6 +1660,38 @@
     "summary": "Returns a string of translated text for a given translation key from a [locale file](/themes/architecture/locales).",
     "syntax": "string | t",
     "name": "translate"
+  },
+  {
+    "category": "html",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "&gt; Note:\n&gt; The asset size must be less than 15KB to be inlined.\n&gt;",
+    "parameters": [
+
+    ],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{{ 'icon.svg' | inline_asset_content }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Outputs the content of an asset inline in the template. The asset must be either a SVG, JS, or CSS file.",
+    "syntax": "asset_name | inline_asset_content",
+    "name": "inline_asset_content"
   },
   {
     "category": "format",
