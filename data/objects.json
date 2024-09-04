@@ -5192,6 +5192,24 @@
         ],
         "return_type": [
           {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The external ID of the company.",
+        "name": "external_id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
             "type": "array",
             "name": "",
             "description": "",
@@ -5312,6 +5330,24 @@
         ],
         "summary": "The name of the location.",
         "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The external ID of the location.",
+        "name": "external_id"
       },
       {
         "deprecated": false,
