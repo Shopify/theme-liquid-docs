@@ -939,6 +939,7 @@
   "shopify.checkout.payment.proposed_gateway_unavailable": "The proposed payment gateway is unavailable",
   "shopify.checkout.payment.pay_in_installments_split_pay_short": "4 payments of %{amount}",
   "shopify.checkout.payment.gift_cards_unavailable": "Your gift card can't be applied to this order and has been removed",
+  "shopify.checkout.payment.payment_flexibility_terms_id_mismatch": "Payment flexibility terms ID mismatch",
   "shopify.checkout.billing.billing_address_title": "Bill to",
   "shopify.checkout.billing.same_as_shipping": "Same as shipping address",
   "shopify.checkout.billing.add_address": "Use a different address",
