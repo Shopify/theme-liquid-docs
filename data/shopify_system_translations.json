@@ -467,6 +467,8 @@
   "shopify.checkout.order_summary.shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code isn’t available for your shipping address",
   "shopify.checkout.order_summary.customer_already_used_once_per_customer_discount_notice": "The <strong style=\"text-transform:uppercase\">%{code}<\/strong> discount code has already been used",
   "shopify.checkout.order_summary.subtotal_label": "Subtotal",
+  "shopify.checkout.order_summary.subtotal_label_with_quantity.one": "Subtotal (%{count} item)",
+  "shopify.checkout.order_summary.subtotal_label_with_quantity.other": "Subtotal (%{count} items)",
   "shopify.checkout.order_summary.shipping_label": "Shipping",
   "shopify.checkout.order_summary.pickup_label": "Pickup in store",
   "shopify.checkout.order_summary.no_pickup_location": "There are no pickup locations available.",
