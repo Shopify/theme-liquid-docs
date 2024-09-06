@@ -13742,6 +13742,24 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "taxonomy_category",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The taxonomy category for the product",
+        "name": "category"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "&gt; Note:\n&gt; Returns a maximum of 100 variants.",
         "examples": [
 
@@ -19375,6 +19393,110 @@
       "path": "",
       "handle": "",
       "data_from_file": "{\"price\":1901,\"rate\":0.05,\"rate_percentage\":5.0,\"title\":\"GST\"}"
+    },
+    "return_type": [
+
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "product",
+          "property": "category"
+        }
+      ],
+      "template": [
+
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The public node ID for the category, formatted as a Shopify GID.",
+        "name": "gid"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The public node ID for the category",
+        "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The localized category name",
+        "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "taxonomy_category"
+          }
+        ],
+        "summary": "All parent nodes of the current taxonomy category.",
+        "name": "ancestors"
+      }
+    ],
+    "summary": "The taxonomy category for a product",
+    "name": "taxonomy_category",
+    "examples": [
+
+    ],
+    "json_data": {
+      "path": "/products/health-potion",
+      "handle": "product.category",
+      "data_from_file": ""
     },
     "return_type": [
 
