@@ -601,6 +601,7 @@
   "shopify.checkout.shipping.arrives_time_range": "Arrives %{min_time}–%{max_time}",
   "shopify.checkout.shipping.estimated_time": "Estimated %{time}",
   "shopify.checkout.shipping.estimated_time_range": "Estimated %{min_time}–%{max_time}",
+  "shopify.checkout.shipping.default_description": "Ships within 12 hours",
   "shopify.checkout.shipping.shipping_line_phone_label": "Mobile phone number (required)",
   "shopify.checkout.shipping.shipping_line_phone": "Your courier may use this number to contact you.",
   "shopify.checkout.shipping.shipping_line_delivery_phone_label": "Mobile phone number",
