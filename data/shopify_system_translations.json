@@ -498,6 +498,8 @@
   "shopify.checkout.order_summary.discount_savings_notice": "After %{discount_amount} in discounts",
   "shopify.checkout.order_summary.gift_card_savings_notice": "After %{gift_card_amount} in gift cards",
   "shopify.checkout.order_summary.cost_table_title": "Cost summary",
+  "shopify.checkout.order_summary.cost_table_item_column_header": "Item",
+  "shopify.checkout.order_summary.cost_table_value_column_header": "Value",
   "shopify.checkout.order_summary.description_label": "Description",
   "shopify.checkout.order_summary.price_label": "Price",
   "shopify.checkout.order_summary.price_per_item.accessibility_label": "%{price} per item",
