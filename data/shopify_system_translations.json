@@ -1072,6 +1072,7 @@
   "shopify.checkout.field_errors.vaulting_agreement_blank": "Your card must be saved because payment for the balance of this order is due later.",
   "shopify.checkout.field_errors.sms_marketing_phone_invalid": "Enter a valid phone number",
   "shopify.checkout.field_errors.address_suggestion_did_you_mean_html": "Did you mean %{html}?",
+  "shopify.checkout.field_errors.split_cart_international_shipping_not_supported": "International shipping is not currently supported when combining retail and shipping delivery methods.",
   "shopify.checkout.store_credit_errors.generic_error": "There was a problem with your store credit. Try again or reload the page.",
   "shopify.checkout.redeemable_errors.gift_card.duplicate": "The gift card has already been applied to your order",
   "shopify.checkout.redeemable_errors.gift_card.insufficient_funds": "This gift card has no funds left",
