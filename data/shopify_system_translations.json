@@ -1984,5 +1984,8 @@
   "shopify.store_availability.pick_up_time.two_to_four_hours": "Usually ready in 4 hours",
   "shopify.store_availability.pick_up_time.immediately": "Ready for pickup now",
   "shopify.store_availability.pick_up_time.next_day": "Ready for pickup next day",
+  "shopify.subscriptions.buyer_consent_product": "This item is a recurring or deferred purchase. By continuing, I agree to the %{cancellationPolicyLink} and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted.",
+  "shopify.subscriptions.buyer_consent_cart": "One or more of the items in your cart is a recurring or deferred purchase. By continuing, I agree to the %{cancellationPolicyLink} and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted.",
+  "shopify.subscriptions.cancellation_policy": "cancellation policy",
   "shopify.online_store.spam_detection.disclaimer_html": "<p data-spam-detection-disclaimer>This site is protected by reCAPTCHA and the Google <a href=\"https:\/\/policies.google.com\/privacy\">Privacy Policy<\/a> and <a href=\"https:\/\/policies.google.com\/terms\">Terms of Service<\/a> apply.<\/p>\n"
 }
