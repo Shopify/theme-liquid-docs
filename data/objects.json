@@ -16536,6 +16536,24 @@
             "array_value": ""
           }
         ],
+        "summary": "The price of the shipping method in the currency's subunit, after discounts have been applied, including order level discounts.",
+        "name": "price_with_discounts"
+      },
+      {
+        "deprecated": true,
+        "deprecation_reason": "Deprecated because the price did not include order level discounts.\n\nThe `shipping_line.price` property has been replaced by [`shipping_line.price_with_discounts`](/docs/api/liquid/objects/shipping_method#shipping_method-price_with_discounts).",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The price of the shipping method in the currency's subunit, after discounts have been applied.",
         "name": "price"
       },
