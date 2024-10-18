@@ -12099,11 +12099,11 @@
             "type": "array",
             "name": "",
             "description": "",
-            "array_value": "image"
+            "array_value": "selling_plan_group"
           }
         ],
-        "summary": "The images attached to the product.",
-        "name": "images"
+        "summary": "The selling plan groups that the variants of the product are included in.",
+        "name": "selling_plan_groups"
       },
       {
         "deprecated": false,
@@ -12356,6 +12356,24 @@
         ],
         "summary": "The media attached to the product, sorted by the date it was added to the product.",
         "name": "media"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "image"
+          }
+        ],
+        "summary": "The images attached to the product.",
+        "name": "images"
       },
       {
         "deprecated": false,
@@ -12788,24 +12806,6 @@
         ],
         "summary": "Returns `true` if all of the variants of the product require a selling plan. Returns `false` if not.",
         "name": "requires_selling_plan"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [
-
-        ],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "selling_plan_group"
-          }
-        ],
-        "summary": "The selling plan groups that the variants of the product are included in.",
-        "name": "selling_plan_groups"
       },
       {
         "deprecated": false,
