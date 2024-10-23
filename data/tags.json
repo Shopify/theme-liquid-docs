@@ -45,6 +45,7 @@
       {
         "description": "The desired URL to redirect to when the form submits.",
         "name": "return_to",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -595,6 +596,7 @@
       {
         "description": "The number of iterations to perform.",
         "name": "limit",
+        "positional": true,
         "required": false,
         "types": [
           "number"
@@ -603,6 +605,7 @@
       {
         "description": "The 1-based index to start iterating at.",
         "name": "offset",
+        "positional": true,
         "required": false,
         "types": [
           "number"
@@ -611,6 +614,7 @@
       {
         "description": "A custom numeric range to iterate over.",
         "name": "range",
+        "positional": true,
         "required": false,
         "types": [
           "untyped"
@@ -619,6 +623,7 @@
       {
         "description": "Iterate in reverse order.",
         "name": "reversed",
+        "positional": true,
         "required": false,
         "types": [
           "untyped"
@@ -879,6 +884,7 @@
       {
         "description": "The number of columns that the table should have.",
         "name": "cols",
+        "positional": true,
         "required": false,
         "types": [
           "number"
@@ -887,6 +893,7 @@
       {
         "description": "The number of iterations to perform.",
         "name": "limit",
+        "positional": true,
         "required": false,
         "types": [
           "number"
@@ -895,6 +902,7 @@
       {
         "description": "The 1-based index to start iterating at.",
         "name": "offset",
+        "positional": true,
         "required": false,
         "types": [
           "number"
@@ -903,6 +911,7 @@
       {
         "description": "A custom numeric range to iterate over.",
         "name": "range",
+        "positional": true,
         "required": false,
         "types": [
           "untyped"
@@ -1022,6 +1031,7 @@
       {
         "description": "The number of pages to display in the pagination.",
         "name": "window_size",
+        "positional": false,
         "required": false,
         "types": [
           "string"

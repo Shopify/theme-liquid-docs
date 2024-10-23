@@ -114,6 +114,7 @@
       {
         "description": "attribute [string] You can specify the value of supported [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).",
         "name": "HTML",
+        "positional": true,
         "required": false,
         "types": [
 
@@ -163,6 +164,7 @@
       {
         "description": "attribute [string] [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) for the link, passed as `attribute: value`.",
         "name": "HTML",
+        "positional": true,
         "required": false,
         "types": [
 
@@ -340,6 +342,7 @@
       {
         "description": "A color to compare with the provided color.",
         "name": "color",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -411,6 +414,7 @@
       {
         "description": "A color to compare with the provided color.",
         "name": "color",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -450,6 +454,7 @@
       {
         "description": "The amount to darken the provided color by.",
         "name": "percent",
+        "positional": true,
         "required": true,
         "types": [
           "number"
@@ -489,6 +494,7 @@
       {
         "description": "The amount to desaturate the provided color by.",
         "name": "percent",
+        "positional": true,
         "required": true,
         "types": [
           "number"
@@ -528,6 +534,7 @@
       {
         "description": "A color to compare with the provided color.",
         "name": "color",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -567,6 +574,7 @@
       {
         "description": "The color component that you want to extract.",
         "name": "color_component",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -606,6 +614,7 @@
       {
         "description": "The amount to lighten the provided color by.",
         "name": "percent",
+        "positional": true,
         "required": true,
         "types": [
           "number"
@@ -645,6 +654,7 @@
       {
         "description": "A color to mix with the provided color.",
         "name": "color",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -653,6 +663,7 @@
       {
         "description": "The percentage amount to mix the colors by.",
         "name": "percent",
+        "positional": true,
         "required": true,
         "types": [
           "number"
@@ -702,6 +713,7 @@
       {
         "description": "The color component that you want to modify.",
         "name": "color_component",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -710,6 +722,7 @@
       {
         "description": "The amount to modify the supplied color component by.",
         "name": "modification_value",
+        "positional": true,
         "required": true,
         "types": [
           "number"
@@ -759,6 +772,7 @@
       {
         "description": "The amount to saturate the provided color by.",
         "name": "percent",
+        "positional": true,
         "required": true,
         "types": [
           "number"
@@ -894,6 +908,7 @@
       {
         "description": "The desired alpha value.",
         "name": "alpha",
+        "positional": true,
         "required": false,
         "types": [
           "number"
@@ -1103,6 +1118,7 @@
       {
         "description": "The desired `class` attribute.",
         "name": "class",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -1111,6 +1127,7 @@
       {
         "description": "The desired `id` attribute.",
         "name": "id",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -1266,6 +1283,7 @@
       {
         "description": "The desired date format.",
         "name": "format",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -1335,6 +1353,7 @@
       {
         "description": "[string] Customize the [`font_display` property](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) of the `@font-face` declaration.",
         "name": "font_display",
+        "positional": false,
         "required": false,
         "types": [
 
@@ -1384,6 +1403,7 @@
       {
         "description": "Font property to modify",
         "name": "property",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -1392,6 +1412,7 @@
       {
         "description": "The new value for the associated property.",
         "name": "value",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -1441,6 +1462,7 @@
       {
         "description": "Choose to return the URL for the font in `woff` format, instead of `woff2`.",
         "name": "font_type",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -1559,6 +1581,16 @@
       {
         "description": "The desired date format.",
         "name": "format",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      },
+      {
+        "description": "The format for the datetime attribute of the time element.",
+        "name": "datetime",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -2118,6 +2150,7 @@
       {
         "description": "Whether to use false values instead of the default.",
         "name": "allow_false",
+        "positional": true,
         "required": false,
         "types": [
           "boolean"
@@ -3683,6 +3716,7 @@
       {
         "description": "The width of the image.",
         "name": "width",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -3691,6 +3725,7 @@
       {
         "description": "The height of the image.",
         "name": "height",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -3699,6 +3734,7 @@
       {
         "description": "The source sizes for responsiveness.",
         "name": "sizes",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -3707,6 +3743,7 @@
       {
         "description": "The widths to associate with custom `srcset` values.",
         "name": "widths",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -3715,6 +3752,7 @@
       {
         "description": "The `srcset` for responsiveness.",
         "name": "srcset",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -3723,6 +3761,7 @@
       {
         "description": "Whether the resource should be preloaded.",
         "name": "preload",
+        "positional": false,
         "required": false,
         "types": [
           "boolean"
@@ -3731,6 +3770,7 @@
       {
         "description": "The image's alt text.",
         "name": "alt",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -3870,6 +3910,7 @@
       {
         "description": "The dimensions of the media's poster image.",
         "name": "image_size",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -3919,6 +3960,7 @@
       {
         "description": "The dimensions of the model viewer's poster image.",
         "name": "image_size",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -3978,6 +4020,7 @@
       {
         "description": "The dimensions of the video's poster image.",
         "name": "image_size",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -4034,7 +4077,24 @@
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; The `metafield_tag` filter doesn't currently support list metafields other than `list.single_line_text_field` and `list.metaobject_reference`.",
     "parameters": [
-
+      {
+        "description": "Specifies which field should be used. Only applicable to `list.metaobject_reference` and `metaobject_reference` types.",
+        "name": "field",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      },
+      {
+        "description": "The desired list format. Accepts `unordered` or `ordered`. Default: `unordered`.",
+        "name": "list_format",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      }
     ],
     "return_type": [
       {
@@ -4146,7 +4206,15 @@
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; The `metafield_text` filter doesn't currently support list metafields other than `list.single_line_text_field` and `list.metaobject_reference`.",
     "parameters": [
-
+      {
+        "description": "Specifies which field should be used. Only applicable to types `list.metaobject_reference` and `metaobject_reference`.",
+        "name": "field",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      }
     ],
     "return_type": [
       {
@@ -4392,8 +4460,9 @@
     "description": "&gt; Note:\n&gt; The presence of the [shop](/docs/api/liquid/objects/shop) object is required for validation purposes only.",
     "parameters": [
       {
-        "description": "The action to be performed.",
+        "description": "The action to be performed. Accepts the following values: default, follow.",
         "name": "action",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -4773,6 +4842,7 @@
       {
         "description": "The string that you want to highlight.",
         "name": "highlighted_term",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -4844,6 +4914,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -4893,6 +4964,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -4974,6 +5046,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5023,6 +5096,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5072,6 +5146,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5143,6 +5218,7 @@
       {
         "description": "How the image should be cropped to match the desired dimensions.",
         "name": "crop",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -5151,6 +5227,7 @@
       {
         "description": "The file format for the image.",
         "name": "format",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -5159,6 +5236,7 @@
       {
         "description": "The padding color, if the provided image is smaller than the requested dimensions.",
         "name": "pad_color",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -5167,6 +5245,7 @@
       {
         "description": "The desired image width, in pixels.",
         "name": "width",
+        "positional": false,
         "required": true,
         "types": [
           "number"
@@ -5175,6 +5254,7 @@
       {
         "description": "The desired image height, in pixels.",
         "name": "height",
+        "positional": false,
         "required": true,
         "types": [
           "number"
@@ -5264,6 +5344,7 @@
       {
         "description": "The image's alt text.",
         "name": "alt",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5272,6 +5353,7 @@
       {
         "description": "The desired `class` attribute.",
         "name": "class",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5280,6 +5362,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5329,6 +5412,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5337,6 +5421,7 @@
       {
         "description": "The part of the image to show if the specified image has an aspect ratio that differs from the original.",
         "name": "crop",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -5345,6 +5430,7 @@
       {
         "description": "The desired pixel density.",
         "name": "scale",
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -5353,6 +5439,7 @@
       {
         "description": "The desired image format.",
         "name": "format",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -5432,6 +5519,7 @@
       {
         "description": "The URL to link to.",
         "name": "url",
+        "positional": true,
         "required": true,
         "types": [
           "string"
@@ -5513,6 +5601,7 @@
       {
         "description": "The desired `class` attribute.",
         "name": "class",
+        "positional": false,
         "required": false,
         "types": [
           "string"
@@ -5562,6 +5651,7 @@
       {
         "description": "The desired `class` attribute.",
         "name": "class",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5611,6 +5701,7 @@
       {
         "description": "The type of element or resource to preload.",
         "name": "as",
+        "positional": false,
         "required": true,
         "types": [
           "string"
@@ -5660,6 +5751,7 @@
       {
         "description": "The desired image size.",
         "name": "size",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5773,6 +5865,7 @@
       {
         "description": "The type of media that the resource applies to.",
         "name": "media",
+        "positional": true,
         "required": false,
         "types": [
           "string"
@@ -5781,6 +5874,7 @@
       {
         "description": "Whether the resource should be preloaded.",
         "name": "preload",
+        "positional": false,
         "required": false,
         "types": [
           "boolean"
@@ -5830,6 +5924,7 @@
       {
         "description": "The weight unit to use in place of the default weight unit.",
         "name": "weight_unit",
+        "positional": true,
         "required": false,
         "types": [
           "string"
