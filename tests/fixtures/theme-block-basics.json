@@ -27,6 +27,11 @@
           "settings": {
             "some-setting": "some-value"
           }
+        },
+        {
+          "type": "button",
+          "static": true,
+          "id": "static-block-id1"
         }
       ]
     }

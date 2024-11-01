@@ -6,6 +6,7 @@ const themeBlock1 = loadFixture('theme-block-1.json');
 const themeBlock2 = loadFixture('theme-block-2.json');
 const themeBlockBasics = loadFixture('theme-block-basics.json');
 const themeBlockSettings = loadFixture('theme-block-settings.json');
+const themeBlocksPresetsAsHash = loadFixture('theme-blocks-presets-as-hash.json');
 const emptySchema = '{}';
 
 const validate = validateSchema();
@@ -13,7 +14,7 @@ const service = getService();
 
 describe('JSON Schema validation of Liquid theme block schema tags', () => {
   it('should validate valid block schemas', async () => {
-    const schemas = [emptySchema, themeBlock1, themeBlock2, themeBlockBasics];
+    const schemas = [emptySchema, themeBlock1, themeBlock2, themeBlockBasics, themeBlocksPresetsAsHash];
     for (const blockSchema of schemas) {
       const diagnostics = await validate('blocks/block.liquid', blockSchema);
       expect(diagnostics).toStrictEqual([]);
