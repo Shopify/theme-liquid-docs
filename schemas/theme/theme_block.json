@@ -6,6 +6,7 @@
   "properties": {
     "name": {
       "type": "string",
+      "maxLength": 25,
       "description": "The name attribute determines the block title that's shown in the theme editor.",
       "markdownDescription": "The `name` attribute determines the block title that's shown in the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#name)"
     },
