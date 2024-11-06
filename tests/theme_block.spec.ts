@@ -6,7 +6,7 @@ const themeBlock1 = loadFixture('theme-block-1.json');
 const themeBlock2 = loadFixture('theme-block-2.json');
 const themeBlockBasics = loadFixture('theme-block-basics.json');
 const themeBlockSettings = loadFixture('theme-block-settings.json');
-const themeBlocksPresetsAsHash = loadFixture('theme-blocks-presets-as-hash.json');
+const themeBlocksPresetsAsHash = loadFixture('theme-block-presets-as-hash.json');
 const emptySchema = '{}';
 
 const validate = validateSchema();

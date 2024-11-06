@@ -14,7 +14,6 @@
         "blocks": {
           "exampleBlock": {
             "type": "text",
-            "static": false,
             "settings": {}
           },
           "exampleBlock2": {

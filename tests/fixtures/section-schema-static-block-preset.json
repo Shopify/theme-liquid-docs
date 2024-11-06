@@ -15,6 +15,13 @@
         {
           "type": "exampleBlock",
           "static": false,
+          "blocks": {
+            "exampleBlock": {
+              "type": "exampleBlock",
+              "static": true,
+              "settings": {}
+            }
+          },
           "settings": {}
         }
       ]

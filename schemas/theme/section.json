@@ -111,10 +111,7 @@
             "$ref": "./default_setting_values.json"
           },
           "blocks": {
-            "oneOf": [
-              { "$ref": "#/definitions/blocks_array" },
-              { "$ref": "#/definitions/blocks_hash" }
-            ]
+            "$ref": "./preset_blocks.json"
           }
         }
       }
@@ -218,64 +215,6 @@
             "type": "string"
           },
           "uniqueItems": true
-        }
-      }
-    },
-    "blocks_array": {
-      "type": "array",
-      "description": "A list of child blocks that you might want to include.",
-      "markdownDescription": "A list of child blocks that you might want to include.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)",
-      "required": ["type"],
-      "items": {
-        "type": "object",
-        "properties": {
-          "$ref": "#/definitions/base_block",
-          "id": {
-            "type": "string"
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "properties": {
-                "static": {
-                  "const": true
-                }
-              },
-              "required": ["static"]
-            },
-            "then": {
-              "required": ["id"]
-            }
-          }
-        ]
-      }
-    },
-    "blocks_hash": {
-      "type": "object",
-      "description": "A list of child blocks that you might want to include.",
-      "markdownDescription": "A list of child blocks that you might want to include.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)",
-      "additionalProperties": {
-        "$ref": "#/definitions/base_block"
-      }
-    },
-    "base_block": {
-      "type": "object",
-      "required": ["type"],
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "The block type."
-        },
-        "settings": {
-          "$ref": "./default_setting_values.json"
-        },
-        "blocks": {
-          "$ref": "#/properties/presets/items/properties/blocks"
-        },
-        "static": {
-          "type": "boolean",
-          "description": "If the block is rendered statically or not"
         }
       }
     }

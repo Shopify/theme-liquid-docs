@@ -152,7 +152,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       severity: 1,
       range: expect.objectContaining({
         start: expect.objectContaining({
-          line: 26,
+          line: 33,
         }),
       }),
     });
