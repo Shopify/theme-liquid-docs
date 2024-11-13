@@ -1,0 +1,54 @@
+{
+    "name": "Example Section",
+    "tag": "div",
+    "class": "example-class",
+    "limit": 1,
+    "settings": [],
+    "max_blocks": 2,
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Example Preset",
+        "settings": {
+        },
+        "blocks": {
+          "exampleBlock": {
+            "type": "text",
+            "settings": {}
+          },
+          "exampleBlock2": {
+            "type": "text",
+            "static": true,
+            "settings": {},
+            "blocks": {
+              "nestedExampleBlock": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "locales": {
+      "en": {
+        "exampleString": "This is a string"
+      }
+    },
+    "enabled_on": {
+      "templates": [
+        "index"
+      ],
+      "groups": [
+        "exampleGroup"
+      ]
+    },
+    "disabled_on": {
+      "templates": [
+        "product"
+      ],
+      "groups": [
+        "exampleGroup2"
+      ]
+    }
+  }
+  

@@ -9,6 +9,7 @@ const sectionSchema4 = loadFixture('section-schema-4.json');
 const sectionSchema5 = loadFixture('section-schema-5.json');
 const sectionSchema6 = loadFixture('section-schema-6.json');
 const sectionSchemaStaticBlockPreset = loadFixture('section-schema-static-block-preset.json');
+const sectionSchemaPresetBlocksAsHash = loadFixture('section-schema-preset-blocks-as-hash.json');
 const sectionSettings = loadFixture('section-settings.json');
 const sectionNestedBlocks = loadFixture('section-nested-blocks.json');
 const emptySchema = '{}';
@@ -27,6 +28,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       sectionSchema5,
       sectionSchema6,
       sectionNestedBlocks,
+      sectionSchemaPresetBlocksAsHash
     ];
     for (const sectionSchema of schemas) {
       const diagnostics = await validate('sections/section.liquid', sectionSchema);
@@ -150,7 +152,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       severity: 1,
       range: expect.objectContaining({
         start: expect.objectContaining({
-          line: 26,
+          line: 33,
         }),
       }),
     });

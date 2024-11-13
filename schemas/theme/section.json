@@ -111,48 +111,7 @@
             "$ref": "./default_setting_values.json"
           },
           "blocks": {
-            "type": "array",
-            "description": "Default blocks configurations to ship with this preset.",
-            "markdownDescription": "Default blocks configurations to ship with this preset.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)",
-            "items": {
-              "type": "object",
-              "required": ["type"],
-              "additionalProperties": false,
-              "properties": {
-                "static": {
-                  "type": "boolean",
-                  "description": "If the block is rendered statically or not"
-                },
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "description": "The block type."
-                },
-                "settings": {
-                  "$ref": "./default_setting_values.json"
-                },
-                "blocks": {
-                  "$ref": "#/properties/presets/items/properties/blocks"
-                }
-              },
-              "allOf": [
-                {
-                  "if": {
-                    "properties": {
-                      "static": {
-                        "const": true
-                      }
-                    },
-                    "required": ["static"]
-                  },
-                  "then": {
-                    "required": ["id"]
-                  }
-                }
-              ]
-            }
+            "$ref": "./preset_blocks.json"
           }
         }
       }
