@@ -26,7 +26,11 @@
               }
             }
           }
-        }
+        },
+        "block_order": [
+          "exampleBlock",
+          "exampleBlock2"
+        ]
       }
     ],
     "locales": {

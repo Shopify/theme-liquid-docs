@@ -73,6 +73,11 @@
           },
           "blocks": {
             "$ref": "./preset_blocks.json"
+          },
+          "block_order": {
+            "type": "array",
+            "description": "The order of blocks in the preset.",
+            "markdownDescription": "The order of blocks in the preset.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/storefronts/themes/architecture/blocks/theme-blocks/schema#presets)"
           }
         }
       }
