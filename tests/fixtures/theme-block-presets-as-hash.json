@@ -32,7 +32,11 @@
               "some-setting": "some-value"
             }
           }
-        }
+        },
+        "block_order": [
+          "some-block-id",
+          "some-other-block-id"
+        ]
       }
     ]
   }

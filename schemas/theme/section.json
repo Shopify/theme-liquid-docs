@@ -99,22 +99,8 @@
       "description": "Presets are default configurations of sections that enable users to easily add a section to a JSON template through the theme editor.",
       "markdownDescription": "Presets are default configurations of sections that enable users to easily add a section to a [JSON template](https://shopify.dev/docs/themes/architecture/templates/json-templates) through the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)",
       "items": {
-        "type": "object",
-        "required": ["name"],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The preset name, which will show in the Add section picker of the theme editor.",
-            "markdownDescription": "The preset name, which will show in the Add section picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
-          },
-          "settings": {
-            "$ref": "./default_setting_values.json"
-          },
-          "blocks": {
-            "$ref": "./preset_blocks.json"
-          }
+        "$ref": "./preset.json"
         }
-      }
     },
 
     "default": {
