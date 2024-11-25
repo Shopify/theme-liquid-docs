@@ -60,21 +60,7 @@
       "description": "Presets are default configurations of blocks that enable merchants to easily add a block to a JSON template through the theme editor.",
       "markdownDescription": "Presets are default configurations of blocks that enable merchants to easily add a block to a JSON template through the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)",
       "items": {
-        "type": "object",
-        "required": ["name"],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The preset name, which displays in the Add block picker of the theme editor.",
-            "markdownDescription": "The preset name, which displays in the <strong>Add block</strong> picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#presets)"
-          },
-          "settings": {
-            "$ref": "./default_setting_values.json"
-          },
-          "blocks": {
-            "$ref": "./preset_blocks.json"
-          }
-        }
+        "$ref": "./preset.json"
       }
     },
 

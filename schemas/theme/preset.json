@@ -11,11 +11,13 @@
   ],
   "definitions": {
     "presetWithBlocksArray": {
+      "type": "object",
+      "required": ["name"],
       "properties": {
         "name": {
           "type": "string",
-          "description": "The preset name, which will show in the Add section or block picker of the theme editor.",
-          "markdownDescription": "The preset name, which will show in the Add section or block picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
+          "description": "The preset name, which will show in the 'Add section' or 'Add block' picker of the theme editor.",
+          "markdownDescription": "The preset name, which will show in the 'Add section' or 'Add block' picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
         },
         "settings": {
           "$ref": "./default_setting_values.json"
@@ -23,14 +25,17 @@
         "blocks": {
           "$ref": "./preset_blocks.json#/definitions/blocksArray"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "presetWithBlocksHash": {
+      "type": "object",
+      "required": ["name", "blocks"],
       "properties": {
         "name": {
           "type": "string",
-          "description": "The preset name, which will show in the Add section or block picker of the theme editor.",
-          "markdownDescription": "The preset name, which will show in the Add section or block picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
+          "description": "The preset name, which will show in the 'Add section' or 'Add block' picker of the theme editor.",
+          "markdownDescription": "The preset name, which will show in the 'Add section' or 'Add block' picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
         },
         "settings": {
           "$ref": "./default_setting_values.json"
@@ -42,7 +47,8 @@
           "type": "array",
           "description": "The order of blocks in the preset.",
           "markdownDescription": "The order of blocks in the preset."
-        }
+        },
+        "additionalProperties": false
       }
     }
   }
