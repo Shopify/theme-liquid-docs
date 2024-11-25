@@ -42,7 +42,21 @@
       "description": "A list of child blocks that you might want to include.",
       "markdownDescription": "A list of child blocks that you might want to include.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)",
       "additionalProperties": {
-        "$ref": "#/definitions/commonBlockAttributes",
+        "allOf": [
+          {
+            "$ref": "#/definitions/commonBlockAttributes"
+          }
+        ],
+        "properties": {
+          "static": true,
+          "type": true,
+          "settings": true,
+          "blocks": true,
+          "block_order": {
+            "type": "array",
+            "description": "A unique identifier for the block."
+          }
+        },
         "additionalProperties": false
       }
     },

@@ -41,7 +41,7 @@
         "block_order": {
           "type": "array",
           "description": "The order of blocks in the preset.",
-          "markdownDescription": "The order of blocks in the preset.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
+          "markdownDescription": "The order of blocks in the preset."
         }
       }
     }
