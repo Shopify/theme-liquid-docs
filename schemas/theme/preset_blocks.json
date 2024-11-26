@@ -54,7 +54,7 @@
           "blocks": true,
           "block_order": {
             "type": "array",
-            "description": "A unique identifier for the block."
+            "description": "The order of the blocks in the section."
           }
         },
         "additionalProperties": false
