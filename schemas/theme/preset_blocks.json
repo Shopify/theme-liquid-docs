@@ -17,7 +17,9 @@
           "static": true,
           "type": true,
           "settings": true,
-          "blocks": true,
+          "blocks": {
+            "$ref": "#/definitions/blocksArray"
+          },
           "id": {
             "type": "string",
             "description": "A unique identifier for the block."
@@ -51,7 +53,9 @@
           "static": true,
           "type": true,
           "settings": true,
-          "blocks": true,
+          "blocks": {
+            "$ref": "#/definitions/blocksHash"
+          },
           "block_order": {
             "type": "array",
             "description": "The order of the blocks in the section."
@@ -70,9 +74,6 @@
         },
         "settings": {
           "$ref": "./default_setting_values.json"
-        },
-        "blocks": {
-          "$ref": "#"
         },
         "static": {
           "type": "boolean",
