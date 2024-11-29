@@ -24,9 +24,14 @@
               "nestedExampleBlock": {
                 "type": "text"
               }
-            }
+            },
+            "block_order": ["nestedExampleBlock"]
+          },
+          "exampleBlock3": {
+            "type": "text"
           }
-        }
+        },
+        "block_order": ["exampleBlock", "exampleBlock2", "exampleBlock3"]
       }
     ],
     "locales": {

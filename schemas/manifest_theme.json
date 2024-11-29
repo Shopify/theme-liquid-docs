@@ -13,6 +13,7 @@
     { "uri": "theme/theme_block_entry.json" },
     { "uri": "theme/targetted_block_entry.json" },
     { "uri": "theme/preset_blocks.json" },
+    { "uri": "theme/preset.json" },
     { "uri": "theme/local_block_entry.json" }
   ]
 }

@@ -1,39 +1,48 @@
 {
-    "name": "my block",
-    "blocks": [{ "type": "@app" }, { "type": "@theme" }],
-    "class": "my-class",
-    "tag": "custom-element",
-    "settings": [
-      {
-        "type": "header",
-        "content": "header name",
-        "info": "header info"
+  "name": "my block",
+  "blocks": [{ "type": "@app" }, { "type": "@theme" }],
+  "class": "my-class",
+  "tag": "custom-element",
+  "settings": [
+    {
+      "type": "header",
+      "content": "header name",
+      "info": "header info"
+    },
+    {
+      "type": "number",
+      "id": "number",
+      "label": "my number"
+    }
+  ],
+  "presets": [
+    {
+      "name": "preset name",
+      "settings": {
+        "number": 1
       },
-      {
-        "type": "number",
-        "id": "number",
-        "label": "my number"
-      }
-    ],
-    "presets": [
-      {
-        "name": "preset name",
-        "settings": {
-          "number": 1
+      "blocks": {
+        "some-block-id": {
+          "type": "button"
         },
-        "blocks": {
-          "some-block-id": {
-            "type": "button"
+        "some-other-block-id": {
+          "type": "image",
+          "static": true,
+          "settings": {
+            "some-setting": "some-value"
           },
-          "some-other-block-id": {
-            "type": "image",
-            "static": true,
-            "settings": {
-              "some-setting": "some-value"
+          "blocks": {
+            "nested-block-id": {
+              "type": "text"
             }
-          }
+          },
+          "block_order": ["nested-block-id"]
         }
-      }
-    ]
-  }
-  
+      },
+      "block_order": [
+        "some-block-id",
+        "some-other-block-id"
+      ]
+    }
+  ]
+}
