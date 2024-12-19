@@ -15143,6 +15143,24 @@
         ],
         "summary": "The [Product Recommendations API](https://shopify.dev/api/ajax/reference/product-recommendations) URL.",
         "name": "product_recommendations_url"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+
+        ],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "[New customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) login page. Redirects to the storefront page the customer was on before visiting the login page.",
+        "name": "storefront_login_url"
       }
     ],
     "summary": "Allows you to generate standard URLs for the storefront.",
