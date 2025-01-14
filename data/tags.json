@@ -4,15 +4,11 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&lt;aside class=\"note beta\"&gt;\n  &lt;h4&gt;Developer preview&lt;/h4&gt;\n  &lt;p&gt;This tag is only available as part of the &lt;a href=\"/storefronts/themes/architecture/blocks/theme-blocks/developer-preview\"&gt;Theme blocks developer preview&lt;/a&gt;.&lt;/p&gt;\n&lt;/aside&gt;\n\nThe content_for tag requires a type to indicate whether it will render a single static block or a number of theme blocks defined in the JSON templates or section groups.\n\n- [`blocks`](/docs/api/liquid/tags/content_for#content_for-blocks)\n- [`block`](/docs/api/liquid/tags/content_for#content_for-block)",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Creates a surface for rendering a block or blocks.",
     "name": "content_for",
     "syntax": "{% content_for 'blocks' %}\n{% content_for 'block', type: \"\", id: \"\" %}",
-    "syntax_keywords": [
-
-    ],
+    "syntax_keywords": [],
     "examples": [
       {
         "name": "blocks",
@@ -243,9 +239,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Specify which [layout](/themes/architecture/layouts) to use.",
     "name": "layout",
     "syntax": "{% layout name %}",
@@ -273,9 +267,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "You can create variables of any [basic type](/docs/api/liquid/basics#types), [object](/docs/api/liquid/objects), or object property.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Creates a new variable.",
     "name": "assign",
     "syntax": "{% assign variable_name = value %}",
@@ -307,15 +299,11 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Stops a [`for` loop](/docs/api/liquid/tags/for) from iterating.",
     "name": "break",
     "syntax": "{% break %}",
-    "syntax_keywords": [
-
-    ],
+    "syntax_keywords": [],
     "examples": [
       {
         "name": "",
@@ -334,9 +322,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "You can create complex strings with Liquid logic and variables.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Creates a new variable with a string value.",
     "name": "capture",
     "syntax": "{% capture variable %}\n  value\n{% endcapture %}",
@@ -368,9 +354,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders a specific expression depending on the value of a specific variable.",
     "name": "case",
     "syntax": "{% case variable %}\n  {% when first_value %}\n    first_expression\n  {% when second_value %}\n    second_expression\n  {% else %}\n    third_expression\n{% endcase %}",
@@ -428,9 +412,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Any text inside `comment` tags won't be output, and any Liquid code will be parsed, but not executed.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Prevents an expression from being rendered or output.",
     "name": "comment",
     "syntax": "{% comment %}\n  content\n{% endcomment %}",
@@ -468,15 +450,11 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Causes a [`for` loop](/docs/api/liquid/tags/for) to skip to the next iteration.",
     "name": "continue",
     "syntax": "{% continue %}",
-    "syntax_keywords": [
-
-    ],
+    "syntax_keywords": [],
     "examples": [
       {
         "name": "",
@@ -495,15 +473,11 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The `cycle` tag must be used inside a `for` loop.\n\n&gt; Tip:\n&gt; Use the `cycle` tag to output text in a predictable pattern. For example, to apply odd/even classes to rows in a table.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Loops through a group of strings and outputs them one at a time for each iteration of a [`for` loop](/docs/api/liquid/tags/for).",
     "name": "cycle",
     "syntax": "{% cycle string, string, ... %}",
-    "syntax_keywords": [
-
-    ],
+    "syntax_keywords": [],
     "examples": [
       {
         "name": "",
@@ -532,9 +506,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Variables that are declared with `decrement` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture#snippets) included in the file.\n\nSimilarly, variables that are created with `decrement` are independent from those created with [`assign`](/docs/api/liquid/tags/assign)\nand [`capture`](/docs/api/liquid/tags/capture). However, `decrement` and [`increment`](/docs/api/liquid/tags/increment) share\nvariables.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Creates a new variable, with a default value of -1, that's decreased by 1 with each subsequent call.",
     "name": "decrement",
     "syntax": "{% decrement variable_name %}",
@@ -562,9 +534,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Using the `echo` tag is the same as wrapping an expression in curly brackets (`{{` and `}}`). However, unlike the curly\nbracket method, you can use the `echo` tag inside [`liquid` tags](/docs/api/liquid/tags/liquid).\n\n&gt; Tip:\n&gt; You can use [filters](/docs/api/liquid/filters) on expressions inside `echo` tags.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Outputs an expression.",
     "name": "echo",
     "syntax": "{% liquid\n  echo expression\n%}",
@@ -660,7 +630,7 @@
       },
       {
         "name": "limit",
-        "description": "You can limit the number of iterations using the `limit` parameter.",
+        "description": "You can limit the number of iterations using the `limit`\nparameter.\n\n&gt; Tip:\n&gt; Limit the amount of data fetched for arrays that can be paginated with the `paginate` tag instead of using the `limit` parameter. Learn more about [limiting data fetching](/docs/api/liquid/tags/paginate#paginate-limit-data-fetching) for improved server-side performance.\n",
         "syntax": "{% for variable in array limit: number %}\n  expression\n{% endfor %}\n",
         "path": "/collections/sale-potions",
         "raw_liquid": "{% for product in collection.products limit: 2 -%}\n  {{ product.title }}\n{%- endfor %}",
@@ -705,9 +675,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders an expression if a specific condition is `true`.",
     "name": "if",
     "syntax": "{% if condition %}\n  expression\n{% endif %}",
@@ -749,9 +717,7 @@
     "deprecated": true,
     "deprecation_reason": "Deprecated because the way that variables are handled reduces performance and makes code harder to both read and maintain.\n\nThe `include` tag has been replaced by [`render`](/docs/api/liquid/tags/render).",
     "description": "Inside the snippet, you can access and alter variables that are [created](/docs/api/liquid/tags/variable-tags) outside of the\nsnippet.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders a [snippet](/themes/architecture#snippets).",
     "name": "include",
     "syntax": "{% include 'filename' %}",
@@ -761,18 +727,14 @@
         "description": "The name of the snippet to render, without the `.liquid` extension."
       }
     ],
-    "examples": [
-
-    ]
+    "examples": []
   },
   {
     "category": "variable",
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Variables that are declared with `increment` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture#snippets) included in the file.\n\nSimilarly, variables that are created with `increment` are independent from those created with [`assign`](/docs/api/liquid/tags/assign)\nand [`capture`](/docs/api/liquid/tags/capture). However, `increment` and [`decrement`](/docs/api/liquid/tags/decrement) share\nvariables.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Creates a new variable, with a default value of 0, that's increased by 1 with each subsequent call.",
     "name": "increment",
     "syntax": "{% increment variable_name %}",
@@ -800,9 +762,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Outputs any Liquid code as text instead of rendering it.",
     "name": "raw",
     "syntax": "{% raw %}\n  expression\n{% endraw %}",
@@ -830,9 +790,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Inside snippets and app blocks, you can't directly access variables that are [created](/docs/api/liquid/tags/variable-tags) outside\nof the snippet or app block. However, you can [specify variables as parameters](/docs/api/liquid/tags/render#render-passing-variables-to-a-snippet)\nto pass outside variables to snippets.\n\nWhile you can't directly access created variables, you can access global objects, as well as any objects that are\ndirectly accessible outside the snippet or app block. For example, a snippet or app block inside the [product template](/themes/architecture/templates/product)\ncan access the [`product` object](/docs/api/liquid/objects/product), and a snippet or app block inside a [section](/themes/architecture/sections)\ncan access the [`section` object](/docs/api/liquid/objects/section).\n\nOutside a snippet or app block, you can't access variables created inside the snippet or app block.\n\n&gt; Note:\n&gt; When you render a snippet using the `render` tag, you can't use the [`include` tag](/docs/api/liquid/tags/include)\n&gt; inside the snippet.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders a [snippet](/themes/architecture#snippets) or [app block](/themes/architecture/sections/section-schema#render-app-blocks).",
     "name": "render",
     "syntax": "{% render 'filename' %}",
@@ -993,9 +951,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Tip:\n&gt; Similar to the [`if` tag](/docs/api/liquid/tags/if), you can use `elsif` to add more conditions to an `unless` tag.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders an expression unless a specific condition is `true`.",
     "name": "unless",
     "syntax": "{% unless condition %}\n  expression\n{% endunless %}",
@@ -1081,6 +1037,16 @@
         "show_data_tab": true
       },
       {
+        "name": "Limit data fetching",
+        "description": "Limiting the number of iterations through an array with the `paginate` tag can be more performant than using the [`limit` parameter](/docs/api/liquid/tags/for#for-limit) of the `for` tag. The `limit` parameter sets the number of iterations executed, but not the amount of information fetched server-side.\n\nFor example, referencing `collection.products` will fetch information up to the first 50 products, regardless of the forloop's `limit` parameter.  Use `paginate` and set a `page_size` to limit the amount of data fetched, and opt not to display any pagination controls.\n",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% paginate collection.products by 4 %}\n  {% for product in collection.products -%}\n    {{ product.title }}\n  {%- endfor %}\n{% endpaginate -%}\n\n&lt;!-- Less performant method --&gt;\n{% for product in collection.products limit: 4 -%}\n  {{ product.title }}\n{%- endfor -%}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
         "name": "window_size",
         "description": "Set the window size of the pagination. The window size is the number of pages that should be visible in the pagination navigation.\n",
         "syntax": "{% paginate collection.products by 3, window_size: 1 %}",
@@ -1097,9 +1063,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the JavaScript that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% javascript %}` tag.\n\nTo learn more about how section-specific JavaScript is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#javascript).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% javascript %}` tags. Including Liquid code can cause syntax errors.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "JavaScript code included in a [section](/themes/architecture/sections) file.",
     "name": "javascript",
     "syntax": "{% javascript %}\n  javascript_code\n{% endjavascript %}",
@@ -1109,18 +1073,14 @@
         "description": "The JavaScript code for the section."
       }
     ],
-    "examples": [
-
-    ]
+    "examples": []
   },
   {
     "category": "theme",
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Rendering a section with the `section` tag renders a section statically. To learn more about sections and how to use\nthem in your theme, refer to [Render a section](/themes/architecture/sections#render-a-section).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders a [section](/themes/architecture/sections).",
     "name": "section",
     "syntax": "{% section 'name' %}",
@@ -1148,9 +1108,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the CSS styles that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% stylesheet %}` tag.\n\nTo learn more about how section-specific CSS is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#stylesheet).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "CSS styles included in a [section](/themes/architecture/sections) file.",
     "name": "stylesheet",
     "syntax": "{% stylesheet %}\n  css_styles\n{% endstylesheet %}",
@@ -1160,18 +1118,14 @@
         "description": "The CSS styles for the section."
       }
     ],
-    "examples": [
-
-    ]
+    "examples": []
   },
   {
     "category": "theme",
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Use this tag to render section groups as part of the theme's [layout](/themes/architecture/layouts) content. Place the `sections` tag where you want to render it in the layout.\n\nTo learn more about section groups and how to use them in your theme, refer to [Section groups](/themes/architecture/section-groups#usage).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Renders a [section group](/themes/architecture/section-groups).",
     "name": "sections",
     "syntax": "{% sections 'name' %}",
@@ -1181,18 +1135,14 @@
         "description": "The name of the section group file you want to render."
       }
     ],
-    "examples": [
-
-    ]
+    "examples": []
   },
   {
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; If you reference [color settings](/themes/architecture/settings/input-settings#color) inside `style` tags, then\n&gt; the associated CSS rules will update as the setting is changed in the theme editor, without a page refresh.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Generates an HTML `&lt;style&gt;` tag with an attribute of `data-shopify`.",
     "name": "style",
     "syntax": "{% style %}\n  CSS_rules\n{% endstyle %}",
@@ -1220,9 +1170,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "You can use the `else` tag with the following tags:\n\n- [`case`](/docs/api/liquid/tags/case)\n- [`if`](/docs/api/liquid/tags/if)\n- [`unless`](/docs/api/liquid/tags/unless)",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Allows you to specify a default expression to execute when no other condition is met.",
     "name": "else",
     "syntax": "{% else %}\n  expression",
@@ -1250,9 +1198,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Allows you to specify a default expression to execute when a [`for` loop](/docs/api/liquid/tags/for) has zero length.",
     "name": "else",
     "syntax": "{% for variable in array %}\n  first_expression\n{% else %}\n  second_expression\n{% endfor %}",
@@ -1292,9 +1238,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Because the tags don't have delimeters, each tag needs to be on its own line.\n\n&gt; Tip:\n&gt; Use the [`echo` tag](/docs/api/liquid/tags/echo) to output an expression inside `liquid` tags.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "summary": "Allows you to have a block of Liquid without delimeters on each tag.",
     "name": "liquid",
     "syntax": "{% liquid\n  expression\n%}",
