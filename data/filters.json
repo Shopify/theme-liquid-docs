@@ -4,9 +4,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -36,9 +34,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Accepts the following object types:\n\n- `product`\n- `variant`",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -78,9 +74,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&lt;aside class=\"note beta\"&gt;\n  &lt;h4&gt;Developer preview&lt;/h4&gt;\n  &lt;p&gt;Style settings are currently only available as part of the &lt;a href=\"/storefronts/themes/architecture/blocks/theme-blocks/developer-preview\"&gt;Theme blocks developer preview&lt;/a&gt;.&lt;/p&gt;\n&lt;/aside&gt;",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -116,9 +110,7 @@
         "name": "HTML",
         "positional": true,
         "required": false,
-        "types": [
-
-        ]
+        "types": []
       }
     ],
     "return_type": [
@@ -166,9 +158,7 @@
         "name": "HTML",
         "positional": true,
         "required": false,
-        "types": [
-
-        ]
+        "types": []
       }
     ],
     "return_type": [
@@ -210,9 +200,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Accepts the following values:\n\n- `manual` (as defined in the [collection settings](https://help.shopify.com/manual/products/collections/collection-layout#change-the-sort-order-for-the-products-in-a-collection))\n- `best-selling`\n- `title-ascending`\n- `title-descending`\n- `price-ascending`\n- `price-descending`\n- `created-ascending`\n- `created-descending`\n\n&gt; Tip:\n&gt; You can append the `sort_by` filter to the [`url_for_type`](/docs/api/liquid/filters/url_for_type)\n&gt; and [`url_for_vendor`](/docs/api/liquid/filters/url_for_vendor) filters.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -242,9 +230,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -274,9 +260,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -306,9 +290,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "When the collection context is included, you can access the associated [`collection` object](/docs/api/liquid/objects/collection)\nin the [product template](/themes/architecture/templates/product).\n\n&gt; Caution:\n&gt; Because a standard product page and a product page in the context of a collection have the same content on separate\n&gt; URLs, you should consider the SEO implications of using the `within` filter.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -378,9 +360,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -808,9 +788,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Because colors are converted to `hex6` format, if a color with an alpha component is provided, then the alpha component\nis excluded from the output.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -840,9 +818,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "If a color with an alpha component is provided, the color is converted to `HSLA` format.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -872,9 +848,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "If a color with an alpha component is provided, then the color is converted to `RGBA` format.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -954,9 +928,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The secret key for the message is supplied as a parameter to the filter.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -986,9 +958,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The secret key for the message is supplied as a parameter to the filter.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1018,9 +988,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1050,9 +1018,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1082,9 +1048,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1183,9 +1147,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1215,9 +1177,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1247,9 +1207,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1355,9 +1313,7 @@
         "name": "font_display",
         "positional": false,
         "required": false,
-        "types": [
-
-        ]
+        "types": []
       }
     ],
     "return_type": [
@@ -1508,9 +1464,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1519,9 +1473,7 @@
         "array_value": ""
       }
     ],
-    "examples": [
-
-    ],
+    "examples": [],
     "summary": "Generates default error messages for each possible value of [`form.errors`](/docs/themes/liquid/reference/objects/form#form-errors).",
     "syntax": "string | default_errors",
     "name": "default_errors"
@@ -1531,9 +1483,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; You can't render accelerated checkout buttons through AJAX requests, including those through the\n&gt; [Section Rendering API](/api/section-rendering). The accelerated checkout buttons are added by JavaScript included\n&gt; by Shopify through the [`content_for_header`](/docs/api/liquid/objects/content_for_header) object, which only runs on\n&gt; the initial page load.\n&gt;\n&gt; For guidance on styling or event tracking of accelerated checkout buttons, see [accelerated checkout](/docs/storefronts/themes/pricing-payments/accelerated-checkout/).\n```liquid\n{% form 'product', product %}\n  {{ form | payment_button }}\n{% endform %}\n```",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1542,9 +1492,7 @@
         "array_value": ""
       }
     ],
-    "examples": [
-
-    ],
+    "examples": [],
     "summary": "Generates an HTML container to host [accelerated checkout buttons](https://help.shopify.com/manual/online-store/dynamic-checkout)\nfor a product. The `payment_button` filter must be used on the `form` object within a [product form](/docs/api/liquid/tags/form#form-product).",
     "syntax": "form | payment_button",
     "name": "payment_button"
@@ -1554,9 +1502,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The `payment_terms` filter must be used on the `form` object within a [product form](/docs/api/liquid/tags/form#form-product) or\n[cart form](/docs/api/liquid/tags/form#form-cart).\n\n```liquid\n{% form 'product', product %}\n  {{ form | payment_terms }}\n{% endform %}\n```\n\n```liquid\n{% form 'cart', cart %}\n  {{ form | payment_terms }}\n{% endform %}\n```",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1565,9 +1511,7 @@
         "array_value": ""
       }
     ],
-    "examples": [
-
-    ],
+    "examples": [],
     "summary": "Generates the HTML for the [Shop Pay Installments banner](/themes/pricing-payments/installments).",
     "syntax": "form | payment_terms",
     "name": "payment_terms"
@@ -1656,9 +1600,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The `translate` filter has an alias of `t`, which is more commonly used.\n\n&gt; Tip:\n&gt; To learn more about using the `t` filter, refer to [storefront locale file usage](/themes/architecture/locales/storefront-locale-files#usage)\n&gt; or [schema locale file usage](/themes/architecture/locales/schema-locale-files#usage).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1698,9 +1640,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; The asset size must be less than 15KB to be inlined.\n&gt;",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1730,9 +1670,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Tip:\n&gt; When using the JSON output in JavaScript, you don't need to wrap it in quotes because the `json` filter includes them.\n&gt; The `json` filter also escapes any quotes inside the output.\n\n#### Product inventory\n\nWhen applied to a [`product` object](/docs/api/liquid/objects/product) on any Shopify store created after December 5, 2017, the\n`json` filter doesn't output values for the `inventory_quantity` and `inventory_policy` properties of any associated\n[variants](/docs/api/liquid/objects/variant). These properties are excluded to help prevent bots and crawlers from retrieving\ninventory quantities for stores to which they aren't granted access.\n\nIf you need inventory information, you can access it through individual variants.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1762,9 +1700,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -1794,9 +1730,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1826,9 +1760,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -1858,9 +1790,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -1890,9 +1820,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1922,9 +1850,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1954,9 +1880,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -1986,9 +1910,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2018,9 +1940,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2050,9 +1970,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2082,9 +2000,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -2114,9 +2030,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; The `concat` filter won't filter out duplicates. If you want to remove duplicates, then you need to use the\n&gt; [`uniq` filter](/docs/api/liquid/filters/uniq).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -2196,9 +2110,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2228,9 +2140,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2260,9 +2170,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2292,9 +2200,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2324,9 +2230,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "untyped",
@@ -2366,9 +2270,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2398,9 +2300,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2440,9 +2340,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "untyped",
@@ -2482,9 +2380,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2514,9 +2410,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -2546,9 +2440,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2578,9 +2470,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2610,9 +2500,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2642,9 +2530,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2674,9 +2560,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2706,9 +2590,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2738,9 +2620,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2770,9 +2650,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2802,9 +2680,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2834,9 +2710,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2866,9 +2740,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -2898,9 +2770,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -2940,9 +2810,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -2982,9 +2850,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3014,9 +2880,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The size of a string is the number of characters that the string includes. The size of an array is the number of items\nin the array.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -3056,9 +2920,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "By default, the substring has a length of one character, and the array series has one array item. However, you can\nprovide a second parameter to specify the number of characters or array items.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3098,9 +2960,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -3140,9 +3000,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Caution:\n&gt; You shouldn't use the `sort_natural` filter to sort numerical values. When comparing items an array, each item is converted to a\n&gt; string, so sorting on numerical values can lead to unexpected results.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -3182,9 +3040,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -3214,9 +3070,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3246,9 +3100,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3278,9 +3130,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3310,9 +3160,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -3352,9 +3200,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "number",
@@ -3384,9 +3230,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "If the specified number of characters is less than the length of the string, then an ellipsis (`...`) is appended to\nthe truncated string. The ellipsis is included in the character count of the truncated string.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3426,9 +3270,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "If the specified number of words is less than the number of words in the string, then an ellipsis (`...`) is appended to\nthe truncated string.\n\n&gt; Caution:\n&gt; HTML tags are treated as words, so you should strip any HTML from truncated content. If you don't strip HTML, then\n&gt; closing HTML tags can be removed, which can result in unexpected behavior.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3468,9 +3310,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -3500,9 +3340,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3532,9 +3370,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3564,9 +3400,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; Spaces are converted to a `+` character, instead of a percent-encoded character.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3596,9 +3430,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "This requires you to provide both the property name and the associated value.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "array",
@@ -3638,9 +3470,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "If [alt text is set on the video](https://help.shopify.com/en/manual/products/product-media/add-alt-text), then it's\nincluded in the `title` attribute of the `&lt;iframe&gt;`. If no alt text is set, then the `title` attribute is set to the\nproduct title.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -3680,9 +3510,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4275,9 +4103,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4307,9 +4133,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4339,9 +4163,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4371,9 +4193,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4403,9 +4223,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4435,9 +4253,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Tip:\n&gt; Use with the [`customer.has_avatar?`](/docs/api/liquid/objects/customer#customer-has_avatar?) method to determine if the customer has an avatar.\n\n```liquid\n{{ customer | avatar }}\n```",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4446,9 +4262,7 @@
         "array_value": ""
       }
     ],
-    "examples": [
-
-    ],
+    "examples": [],
     "summary": "Generates HTML to render a customer's avatar, if available.",
     "syntax": "customer | avatar",
     "name": "avatar"
@@ -4508,9 +4322,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4540,9 +4352,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Note:\n&gt; The `handleize` filter has an alias of `handle`.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4572,9 +4382,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4604,9 +4412,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The `url_param_escape` filter escapes the same characters as [`url_escape`](/docs/api/liquid/filters/url_escape), with the\naddition of `&amp;`.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4636,9 +4442,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The `structured_data` filter can be used on the [`product`](/docs/api/liquid/objects/product) and [`article`](/docs/api/liquid/objects/article) objects.\n\nProduct objects are output as a [schema.org `Product`](https://schema.org/Product) if they have no variants, and a [`ProductGroup`](https://schema.org/ProductGroup) if they have one or more variants.\n\nArticle objects are output as a [schema.org `Article`.](https://schema.org/Article)",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4668,9 +4472,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4700,9 +4502,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Tip:\n&gt; To learn more about filtering by tag, refer to [Filter articles by tag](/themes/architecture/templates/blog#filter-articles-by-tag)\n&gt; or [Filter collections by tag](/themes/navigation-search/filtering/tag-filtering).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4732,9 +4532,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Tip:\n&gt; To learn more about filtering by tag, refer to [Filter articles by tag](/themes/architecture/templates/blog#filter-articles-by-tag)\n&gt; or [Filter collections by tag](/themes/navigation-search/filtering/tag-filtering).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4764,9 +4562,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Tip:\n&gt; To learn more about filtering by tag, refer to [Filter articles by tag](/themes/architecture/templates/blog#filter-articles-by-tag)\n&gt; or [Filter collections by tag](/themes/navigation-search/filtering/tag-filtering).",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4796,9 +4592,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -4878,9 +4672,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "&gt; Caution:\n&gt; The `pluralize` filter applies English pluralization rules to determine which string to output. You shouldn't use this\n&gt; filter on non-English strings because it could lead to incorrect pluralizations.",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -5010,9 +4802,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -5182,9 +4972,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "Global assets are kept in a directory on Shopify's server. Using global assets can be faster than loading the resource\ndirectly.\n\nDepending on the resource type, you might need to use an additional filter to load the resource. The following table\noutlines which filter to use for specific resource types.\n\n| Resource type | Additional filter |\n| --- | --- |\n| JavaScript (`.js`) | [`script_tag`](/docs/api/liquid/filters/script_tag) |\n| CSS (`.css`) | [`stylesheet_tag`](/docs/api/liquid/filters/stylesheet_tag)  |\n\nThe following table outlines the available global assets:\n\n| Category | Assets |\n| --- | --- |\n| Firebug | - `firebug/firebug.css`&lt;br&gt;- `firebug/firebug.html`&lt;br&gt;- `firebug/firebug.js`&lt;br&gt;- `firebug/firebugx.js`&lt;br&gt;- `firebug/errorIcon.png`&lt;br&gt;- `firebug/infoIcon.png`&lt;br&gt;- `firebug/warningIcon.png` |\n| JavaScript libraries | - `controls.js`&lt;br&gt;- `dragdrop.js`&lt;br&gt;- `effects.js`&lt;br&gt;- `ga.js`&lt;br&gt;- `mootools.js` |\n| Lightbox | - `lightbox.css`&lt;br&gt;- `lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v1/lightbox.css`&lt;br&gt;- `lightbox/v1/lightbox.js`&lt;br&gt;&lt;br&gt;- `lightbox/v2/lightbox.css`&lt;br&gt;- `lightbox/v2/lightbox.js`&lt;br&gt;- `lightbox/v2/close.gif`&lt;br&gt;- `lightbox/v2/loading.gif`&lt;br&gt;- `lightbox/v2/overlay.png`&lt;br&gt;- `lightbox/v2/zoom-lg.gif`&lt;br&gt;&lt;br&gt;- `lightbox/v204/lightbox.css`&lt;br&gt;- `lightbox/v204/lightbox.js`&lt;br&gt;- `lightbox/v204/bullet.gif`&lt;br&gt;- `lightbox/v204/close.gif`&lt;br&gt;- `lightbox/v204/closelabel.gif`&lt;br&gt;- `lightbox/v204/donatebutton.gif`&lt;br&gt;- `lightbox/v204/downloadicon.gif`&lt;br&gt;- `lightbox/v204/loading.gif`&lt;br&gt;- `lightbox/v204/nextlabel.png`&lt;br&gt;- `lightbox/v204/prevlabel.gif` |\n| Prototype | - `prototype.js`&lt;br&gt;- `prototype/1.5/prototype.js`&lt;br&gt;- `prototype/1.6/prototype.js` |\n| script.aculo.us | - `scriptaculous/1.8.2/scriptaculous.js`&lt;br&gt;- `scriptaculous/1.8.2/builder.js`&lt;br&gt;- `scriptaculous/1.8.2/controls.js`&lt;br&gt;- `scriptaculous/1.8.2/dragdrop.js`&lt;br&gt;- `scriptaculous/1.8.2/effects.js`&lt;br&gt;- `scriptaculous/1.8.2/slider.js`&lt;br&gt;- `scriptaculous/1.8.2/sound.js`&lt;br&gt;- `scriptaculous/1.8.2/unittest.js` |\n| Shopify | - `list-collection.css`&lt;br&gt;- `textile.css` |",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -5565,9 +5353,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -5797,9 +5583,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
@@ -5829,9 +5613,7 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "The following are the globally accessible Shopify assets:\n\n- `option_selection.js`\n- `api.jquery.js`\n- `shopify_common.js`\n- `customer_area.js`\n- `currencies.js`\n- `customer.css`",
-    "parameters": [
-
-    ],
+    "parameters": [],
     "return_type": [
       {
         "type": "string",
