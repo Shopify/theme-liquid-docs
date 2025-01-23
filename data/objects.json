@@ -4049,6 +4049,22 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "customer_payment_method"
+          }
+        ],
+        "summary": "The customer's saved payment methods.",
+        "name": "payment_methods"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "To learn about B2B in themes, refer to [Support B2B customers in your theme](/themes/pricing-payments/b2b).",
         "examples": [],
         "return_type": [
@@ -4160,6 +4176,64 @@
     "json_data": {
       "path": "/",
       "handle": "customer",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "customer",
+          "property": "payment_methods"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "A payment method that a customer has saved to their account for reuse (e.g. a credit card).",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The instrument type of the payment method (e.g credit_card).",
+        "name": "payment_instrument_type"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The identifier for the payment method.",
+        "name": "token"
+      }
+    ],
+    "summary": "A customer's saved payment method.",
+    "name": "customer_payment_method",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
       "data_from_file": ""
     },
     "return_type": []
