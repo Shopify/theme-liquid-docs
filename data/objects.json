@@ -10914,7 +10914,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Returns a maximum of 100 variants.",
+        "description": "&gt; Note:\n&gt; Returns a maximum of 250 variants.",
         "examples": [],
         "return_type": [
           {
