@@ -1482,7 +1482,7 @@
     "category": "payment",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; You can't render accelerated checkout buttons through AJAX requests, including those through the\n&gt; [Section Rendering API](/api/section-rendering). The accelerated checkout buttons are added by JavaScript included\n&gt; by Shopify through the [`content_for_header`](/docs/api/liquid/objects/content_for_header) object, which only runs on\n&gt; the initial page load.\n&gt;\n&gt; For guidance on styling or event tracking of accelerated checkout buttons, see [accelerated checkout](/docs/storefronts/themes/pricing-payments/accelerated-checkout/).\n```liquid\n{% form 'product', product %}\n  {{ form | payment_button }}\n{% endform %}\n```",
+    "description": "&gt; Note:\n&gt; You can't render accelerated checkout buttons through AJAX requests, including those through the\n&gt; [Section Rendering API](/api/section-rendering). The accelerated checkout buttons are added by JavaScript included\n&gt; by Shopify through the [`content_for_header`](/docs/api/liquid/objects/content_for_header) object, which only runs on\n&gt; the initial page load.\n&gt;\n&gt; For guidance on styling or event tracking of accelerated checkout buttons, refer to [accelerated checkout](/docs/storefronts/themes/pricing-payments/accelerated-checkout/).",
     "parameters": [],
     "return_type": [
       {
@@ -1492,7 +1492,18 @@
         "array_value": ""
       }
     ],
-    "examples": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/products/health-potion",
+        "raw_liquid": "{% form 'product', product %}\n  {{ form | payment_button }}\n{% endform %}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
     "summary": "Generates an HTML container to host [accelerated checkout buttons](https://help.shopify.com/manual/online-store/dynamic-checkout)\nfor a product. The `payment_button` filter must be used on the `form` object within a [product form](/docs/api/liquid/tags/form#form-product).",
     "syntax": "form | payment_button",
     "name": "payment_button"

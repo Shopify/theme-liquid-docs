@@ -2088,6 +2088,123 @@
   },
   {
     "access": {
+      "global": true,
+      "parents": [],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "This drop is used to hold resources of different types that are the closest to the current context. These resources can be of type `product`, `collection`, `article`, `blog`, `page`, or `metaobject`.\nThe resources of different types within the closest drop can be:\n - The currently rendered section or theme block resource setting of the same type\n - The currently rendered theme block's ancestor resource setting of the same type\n - The currently rendered template resource of the same type\n - Assigned via {% content_for %} tag\n\n&gt; Tip:\n&gt; To learn about how closest drop in theme settings can be used, refer to [Dynamic sources][/themes/architecture/blocks/theme-blocks/dynamic-sources].",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The product resource that is the closest to the current context.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "product",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Closest product resource",
+        "name": "product"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The collection resource that is the closest to the current context.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "collection",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Closest collection resource",
+        "name": "collection"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The article resource that is the closest to the current context.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "article",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Closest article resource",
+        "name": "article"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The blog resource that is the closest to the current context.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "blog",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Closest blog resource",
+        "name": "blog"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The page resource that is the closest to the current context.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "page",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Closest page resource",
+        "name": "page"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The metaobject resources that are the closest to the current context.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "metaobject",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Closest metaobject resources",
+        "name": "metaobject"
+      }
+    ],
+    "summary": "A drop that holds resources of different types that are the closest to the current context",
+    "name": "closest",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
       "global": false,
       "parents": [
         {
@@ -8986,7 +9103,7 @@
     "examples": [
       {
         "name": "Loop over entries of a metaobject definition",
-        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nYou can loop over a maximum of 50 entries in a metaobject definition.\nFor example, you can display the field `author` for each metaobject using the following `forloop`:\n\n```liquid\n{% for testimonial in shop.metaobjects.testimonials.values %}\n  {{ testimonial.author.value }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
+        "description": "If a metaobject definition has multiple metaobject entries, then you can loop over them using the `values` property.\nYou can loop over a maximum of 50 entries in a metaobject definition.\nFor example, you can display the field `author` for each metaobject using the following `forloop`:\n\n```liquid\n{% for testimonial in metaobjects.testimonials.values %}\n  {{ testimonial.author.value }}\n{% endfor %}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, loops return only metaobjects with a status of `active`. Metaobjects with a status of `draft` are skipped.\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -9004,11 +9121,31 @@
   },
   {
     "access": {
+      "global": true,
+      "parents": [],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Individual metaobjects can be accessed by specifying their type and handle. For more information, refer to [Access metaobjects individually](/docs/api/liquid/objects#metaobject-access-metaobjects-individually).\n\nAdditionally, it is possible to iterate over entries from a metaobject definition. For more information, refer to [Loop over entries of a metaobject definition](/docs/api/liquid/objects/metaobject_definition#metaobject_definition-loop-over-entries-of-a-metaobject-definition).\n\nMetaobjects are created in the [Content](https://www.shopify.com/admin/content) page of the Shopify admin.",
+    "properties": [],
+    "summary": "All of the [metaobjects](/docs/api/liquid/objects/metaobject) of the store.",
+    "name": "metaobjects",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
       "global": false,
       "parents": [
         {
-          "object": "shop",
-          "property": "metaobjects"
+          "object": "metaobjects",
+          "property": ""
         }
       ],
       "template": [
@@ -9041,7 +9178,7 @@
     "examples": [
       {
         "name": "Access metaobjects individually",
-        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/docs/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ shop.metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ shop.metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ shop.metaobjects.testimonials.homepage.title }}\n{{ shop.metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
+        "description": "The access path for a metaobject consists of two layers:\n\n- type - The type of the parent metaobject definition.\n- handle - The unique [handle](/docs/api/liquid/basics#handles) of the metaobject.\n\nGiven this, you can access a metaobject with the following syntax:\n\n```liquid\n{{ metaobjects.type.handle }}\n```\n\nYou can also use square bracket notation:\n\n```liquid\n{{ metaobjects['type']['handle'] }}\n```\n\nA metaobjects's field values can be accessed using the key of the desired field:\n\n```liquid\n{{ metaobjects.testimonials.homepage.title }}\n{{ metaobjects['highlights']['washable'].image.value }}\n```\n\n&gt; Note:\n&gt; When the [`publishable` capability](/apps/data-extensions/metaobjects/capabilities) is enabled, a metaobject can only be accessed if its status is `active`.  If its status is `draft`, then the return value is `nil`.\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -9152,7 +9289,7 @@
     "examples": [
       {
         "name": "Using the `metaobject_system` object",
-        "description": "You can access the `metaobject_system` object and its properties through the metaobject's `system` property. You can use the following syntax:\n\n```liquid\n{{ shop.metaobjects.testimonials[\"home_page\"].system.id }}\n```\n\nYou can also access `metaobject_system` properties when iterating over a list of metaobjects:\n\n```liquid\n{% for metaobject in product.metafields.custom.mixed_metaobject_list.value %}\n  {% if metaobject.system.type == \"testimonial\" %}\n    {% render 'testimonial' with metaobject as testimonial  %}\n  {% else %}\n    {{ metaobject.system.handle }}\n  {% endif %}\n{% endfor %}\n```\n",
+        "description": "You can access the `metaobject_system` object and its properties through the metaobject's `system` property. You can use the following syntax:\n\n```liquid\n{{ metaobjects.testimonials[\"home_page\"].system.id }}\n```\n\nYou can also access `metaobject_system` properties when iterating over a list of metaobjects:\n\n```liquid\n{% for metaobject in product.metafields.custom.mixed_metaobject_list.value %}\n  {% if metaobject.system.type == \"testimonial\" %}\n    {% render 'testimonial' with metaobject as testimonial  %}\n  {% else %}\n    {{ metaobject.system.handle }}\n  {% endif %}\n{% endfor %}\n```\n",
         "syntax": "",
         "path": "",
         "raw_liquid": "",
@@ -15489,9 +15626,9 @@
         "name": "brand"
       },
       {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "Metaobjects can only be accessed by specifying their type and handle. For more information, refer to [Access metaobjects individually](/docs/api/liquid/objects#metaobject-access-metaobjects-individually).\n\nMetaobjects are created in the [Content](https://www.shopify.com/admin/content) page of the Shopify admin.",
+        "deprecated": true,
+        "deprecation_reason": "The `shop.metaobjects` property has been replaced by [`metaobjects`](/docs/api/liquid/objects/metaobjects).",
+        "description": "",
         "examples": [],
         "return_type": [],
         "summary": "All of the [metaobjects](/docs/api/liquid/objects/metaobject) of the store.",
