@@ -17,6 +17,18 @@ const emptySchema = '{}';
 const validate = validateSchema();
 const service = getService();
 
+const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
+  'article',
+  'blog',
+  'collection',
+  'collection_list',
+  'metaobject',
+  'metaobject_list',
+  'page',
+  'product',
+  'product_list',
+];
+
 describe('JSON Schema validation of Liquid theme section schema tags', () => {
   it('should validate valid section schemas', async () => {
     const schemas = [
@@ -207,6 +219,33 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
         }),
       }),
     });
+  });
+
+  it('should validate section schema with conditional settings', async () => {
+    const sectionSchemaConditionalSettings = loadFixture('section-schema-conditional-settings.json');
+    const diagnostics = await validate('sections/section.liquid', sectionSchemaConditionalSettings);
+    expect(diagnostics).toStrictEqual([]);
+  });
+
+  it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)('should not allow visible_if on %s setting type', async (settingType) => {
+    const schema = {
+      settings: [
+        {
+          type: settingType,
+          id: 'test_setting',
+          label: 'Test Setting',
+          visible_if: '{{ section.settings.some_setting }}'
+        }
+      ]
+    };
+    
+    const diagnostics = await validate('sections/section.liquid', schema);
+    expect(diagnostics).toContainEqual(
+      expect.objectContaining({
+        message: 'Property visible_if is not allowed.',
+        severity: 1
+      })
+    );
   });
 
   it('should complete the type property with the generic docs', async () => {
