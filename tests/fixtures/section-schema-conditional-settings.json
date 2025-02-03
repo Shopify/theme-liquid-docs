@@ -1,0 +1,140 @@
+{
+  "name": "Custom Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Advanced Settings",
+      "visible_if": "{{ section.settings.show_advanced }}",
+      "info": "Configure advanced options below"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_features",
+      "label": "Enable features",
+      "default": true,
+      "visible_if": "{{ section.settings.show_advanced }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.enable_custom_colors }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "visible_if": "{{ section.settings.enable_custom_colors }}"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000",
+      "visible_if": "{{ section.settings.enable_custom_colors }}"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading Font",
+      "default": "helvetica_n4",
+      "visible_if": "{{ section.settings.enable_custom_typography }}"
+    },
+    {
+      "type": "html",
+      "id": "custom_html",
+      "label": "Custom HTML",
+      "default": "<p>Add your HTML here</p>",
+      "visible_if": "{{ section.settings.enable_custom_code }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "visible_if": "{{ section.settings.enable_background }}"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Add your caption",
+      "visible_if": "{{ section.settings.show_caption }}"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu",
+      "visible_if": "{{ section.settings.show_navigation }}"
+    },
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Custom Liquid",
+      "default": "{% if customer %}Hello {{ customer.name }}{% endif %}",
+      "visible_if": "{{ section.settings.enable_custom_code }}"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Content width",
+      "min": 400,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200,
+      "visible_if": "{{ section.settings.width_type == 'custom' }}"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Add your content here</p>",
+      "visible_if": "{{ section.settings.show_content }}"
+    },
+    {
+      "type": "select",
+      "id": "layout_type",
+      "label": "Layout type",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ],
+      "default": "grid",
+      "visible_if": "{{ section.settings.enable_layout_options }}"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "visible_if": "{{ section.settings.enable_custom_layout }}"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "visible_if": "{{ section.settings.show_button }}"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["youtube", "vimeo"],
+      "visible_if": "{{ section.settings.media_type == 'video' }}"
+    },
+    {
+      "type": "video",
+      "id": "video_file",
+      "label": "Video file",
+      "visible_if": "{{ section.settings.media_type == 'video' }}"
+    }
+  ]
+} 

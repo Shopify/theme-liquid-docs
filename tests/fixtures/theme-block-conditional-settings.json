@@ -1,0 +1,202 @@
+{
+  "name": "Content Block",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout style",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "standard"
+    },
+    {
+      "type": "range",
+      "id": "width_percent",
+      "label": "Width",
+      "min": 25,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.layout_style == 'custom' }}"
+    },
+    {
+        "type": "select",
+        "id": "border_style",
+        "label": "Border style",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "dashed",
+            "label": "Dashed"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "range",
+        "id": "border_width",
+        "label": "Border width",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "default": 1,
+        "visible_if": "{{ block.settings.border_style != 'none' }}"
+      },
+      {
+        "type": "range",
+        "id": "border_opacity",
+        "label": "Border opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "default": 100,
+        "visible_if": "{{ block.settings.border_style != 'none' }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_background",
+        "label": "Enable background",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "background_type",
+        "label": "Background type",
+        "options": [
+          {
+            "value": "color",
+            "label": "Color"
+          },
+          {
+            "value": "image",
+            "label": "Image"
+          },
+          {
+            "value": "video",
+            "label": "Video"
+          }
+        ],
+        "default": "color",
+        "visible_if": "{{ block.settings.enable_background }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image",
+        "visible_if": "{{ block.settings.enable_background and block.settings.background_type == 'image' }}"
+      },
+      {
+        "type": "url",
+        "id": "video_url",
+        "label": "Video URL",
+        "visible_if": "{{ block.settings.enable_background and block.settings.background_type == 'video' }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "video_loop",
+        "label": "Loop video",
+        "default": true,
+        "visible_if": "{{ block.settings.enable_background and block.settings.background_type == 'video' }}"
+      },
+      {
+        "type": "color_background",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#ffffff",
+        "visible_if": "{{ block.settings.enable_background and block.settings.background_type == 'color' }}"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color scheme",
+        "visible_if": "{{ block.settings.enable_custom_colors }}"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000000",
+        "visible_if": "{{ block.settings.enable_custom_colors }}"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading Font",
+        "default": "helvetica_n4",
+        "visible_if": "{{ block.settings.enable_custom_typography }}"
+      },
+      {
+        "type": "html",
+        "id": "custom_html",
+        "label": "Custom HTML",
+        "default": "<p>Add your HTML here</p>",
+        "visible_if": "{{ block.settings.enable_custom_code }}"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "caption",
+        "label": "Caption",
+        "default": "Add your caption",
+        "visible_if": "{{ block.settings.show_caption }}"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu",
+        "default": "main-menu",
+        "visible_if": "{{ block.settings.show_navigation }}"
+      },
+      {
+        "type": "liquid",
+        "id": "custom_liquid",
+        "label": "Custom Liquid",
+        "default": "{% if customer %}Hello {{ customer.name }}{% endif %}",
+        "visible_if": "{{ block.settings.enable_custom_code }}"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>Add your content here</p>",
+        "visible_if": "{{ block.settings.show_content }}"
+      },
+      {
+        "type": "text_alignment",
+        "id": "text_align",
+        "label": "Text alignment",
+        "default": "center",
+        "visible_if": "{{ block.settings.enable_custom_layout }}"
+      },
+      {
+        "type": "video_url",
+        "id": "video_url_with_hosts",
+        "label": "Video URL",
+        "accept": ["youtube", "vimeo"],
+        "visible_if": "{{ block.settings.enable_background and block.settings.background_type == 'video' }}"
+      },
+      {
+        "type": "video",
+        "id": "video_file",
+        "label": "Video file",
+        "visible_if": "{{ block.settings.enable_background and block.settings.background_type == 'video' }}"
+      }
+  ]
+} 

@@ -94,5 +94,50 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         }),
       ]);
     });
+
+    it("validates that conditional settings (visible_if) is not allowed in color_scheme_group", async () => {
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        settings({ visible_if: '{{ section.settings.show_color_scheme_group }}',
+        }),
+      );
+    });
+
+    it("validates that conditional settings (visible_if) is not allowed in any nested definitions within color_scheme_group", async () => {
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        settings({
+          definition: [
+            { type: 'header', content: 'ok', visible_if: '{{ section.settings.show_color_scheme_group }}' },
+            {
+              type: 'color',
+              id: 'color',
+              label: 'my color',
+              default: '#000',
+              visible_if: '{{ section.settings.show_color_scheme_group }}',
+            },
+            {
+              type: 'color_background',
+              id: 'color_bg',
+              label: 'my color background',
+              default: '#000',
+              visible_if: '{{ section.settings.show_color_scheme_group }}',
+            },
+          ],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: 'The property visible_if is not allowed within color_scheme_group',
+        }),
+        expect.objectContaining({
+          message: 'The property visible_if is not allowed within color_scheme_group',
+        }),
+        expect.objectContaining({
+          message: 'The property visible_if is not allowed within color_scheme_group',
+        }),
+      ]);
+    });
   });
 });
