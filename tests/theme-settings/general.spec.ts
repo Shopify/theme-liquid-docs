@@ -1,48 +1,10 @@
 import { assert, describe, expect, it } from 'vitest';
+import { INPUT_SETTING_TYPES, SIDEBAR_SETTING_TYPES } from '../test-constants';
 import { complete, getService, hover, loadFixture, validateSchema } from '../test-helpers';
 
 const themeSettingsMetadata = loadFixture('theme-settings-metadata.json');
 const themeSettingsAllSettings = loadFixture('theme-settings-all-settings.json');
 const themeSettingsDawn = loadFixture('theme-settings-dawn.json');
-
-const inputSettingTypes = [
-  'article',
-  'blog',
-  'checkbox',
-  'collection_list',
-  'collection',
-  'color_background',
-  'color_scheme_group',
-  'color_scheme',
-  'color',
-  'font_picker',
-  'html',
-  'image_picker',
-  'inline_richtext',
-  'link_list',
-  'liquid',
-  'metaobject',
-  'metaobject_list',
-  'number',
-  'page',
-  'product_list',
-  'product',
-  'radio',
-  'range',
-  'richtext',
-  'select',
-  'style.layout_panel',
-  'style.size_panel',
-  'style.spacing_panel',
-  'text_alignment',
-  'text',
-  'textarea',
-  'url',
-  'video_url',
-  'video',
-] as const;
-
-const sidebarSettingTypes = ['header', 'paragraph'] as const;
 
 const validate = validateSchema();
 const service = getService();
@@ -115,7 +77,7 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
     });
 
     it('has documentation for all input setting types that point to the input settings documentation', async () => {
-      for (const inputSetting of inputSettingTypes) {
+      for (const inputSetting of INPUT_SETTING_TYPES) {
         const settings = `
           [
             {
@@ -138,7 +100,7 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
     });
 
     it('has documentation for all sidebar setting types that point to the sidebar settings documentation', async () => {
-      for (const sidebarSetting of sidebarSettingTypes) {
+      for (const sidebarSetting of SIDEBAR_SETTING_TYPES) {
         const settings = `
           [
             {
@@ -162,7 +124,7 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
     });
 
     it('has standardized documentation for all setting types', async () => {
-      for (const setting of [...inputSettingTypes, ...sidebarSettingTypes]) {
+      for (const setting of [...INPUT_SETTING_TYPES, ...SIDEBAR_SETTING_TYPES]) {
         const settings = `
           [
             {
@@ -217,8 +179,8 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]`;
       const result = await complete(service, 'config/settings_schema.json', settings);
       assert(result);
-      expect(result.items).to.have.lengthOf(inputSettingTypes.length + sidebarSettingTypes.length);
-      for (const setting of [...inputSettingTypes, ...sidebarSettingTypes]) {
+      expect(result.items).to.have.lengthOf(INPUT_SETTING_TYPES.length + SIDEBAR_SETTING_TYPES.length);
+      for (const setting of [...INPUT_SETTING_TYPES, ...SIDEBAR_SETTING_TYPES]) {
         expect(result.items).toContainEqual(
           expect.objectContaining({
             label: `"${setting}"`,

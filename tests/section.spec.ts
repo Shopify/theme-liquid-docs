@@ -1,5 +1,6 @@
 import set from 'lodash.set';
 import { assert, describe, expect, it } from 'vitest';
+import { SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF } from './test-constants';
 import { complete, getService, hover, loadFixture, validateSchema } from './test-helpers';
 
 const sectionSchema1 = loadFixture('section-schema-1.json');
@@ -16,18 +17,6 @@ const emptySchema = '{}';
 
 const validate = validateSchema();
 const service = getService();
-
-const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
-  'article',
-  'blog',
-  'collection',
-  'collection_list',
-  'metaobject',
-  'metaobject_list',
-  'page',
-  'product',
-  'product_list',
-];
 
 describe('JSON Schema validation of Liquid theme section schema tags', () => {
   it('should validate valid section schemas', async () => {
