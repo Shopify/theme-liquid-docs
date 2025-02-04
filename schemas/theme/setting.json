@@ -228,7 +228,10 @@
     },
 
     "checkbox": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "checkbox",
@@ -238,7 +241,8 @@
         "default": { "type": "boolean" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -280,7 +284,10 @@
     },
 
     "color": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "color",
@@ -290,14 +297,18 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "color_background": {
       "type": "object",
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "color_background",
@@ -307,13 +318,17 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "color_scheme": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "color_scheme",
@@ -323,7 +338,8 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -345,6 +361,12 @@
             "properties": {
               "type": {
                 "enum": ["header", "color", "color_background"]
+              },
+              "visible_if": {
+                "not": {
+                  "type": "string"
+                },
+                "errorMessage": "The property visible_if is not allowed within color_scheme_group"
               }
             },
             "allOf": [
@@ -431,7 +453,10 @@
     },
 
     "font_picker": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "font_picker",
@@ -445,14 +470,18 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["default"],
       "additionalProperties": false
     },
 
     "html": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "html",
@@ -468,13 +497,17 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "image_picker": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "image_picker",
@@ -484,13 +517,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "inline_richtext": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "inline_richtext",
@@ -500,13 +537,17 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "link_list": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "link_list",
@@ -516,13 +557,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "liquid": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "liquid",
@@ -532,7 +577,8 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -676,7 +722,10 @@
     },
 
     "range": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "range",
@@ -705,14 +754,18 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["default", "min", "max"],
       "additionalProperties": false
     },
 
     "richtext": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "richtext",
@@ -722,13 +775,17 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "select": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "select",
@@ -746,7 +803,8 @@
         "options": { "$ref": "#/definitions/options" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["options"],
       "additionalProperties": false
@@ -898,7 +956,10 @@
     },
 
     "text_alignment": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "text_alignment",
@@ -911,7 +972,8 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -939,7 +1001,10 @@
     },
 
     "url": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "url",
@@ -949,13 +1014,17 @@
         "default": { "type": "string" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "video": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "video",
@@ -965,13 +1034,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "video_url": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "video_url",
@@ -994,14 +1067,18 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["accept"],
       "additionalProperties": false
     },
 
     "header": {
-      "allOf": [{ "$ref": "#/definitions/sidebarStandardSettings" }],
+      "allOf": [
+        { "$ref": "#/definitions/sidebarStandardSettings" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "header",
@@ -1009,7 +1086,8 @@
           "markdownDescription": "A setting of type `header` outputs a header element to help you better organize your input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/sidebar-settings#header)"
         },
         "info": { "$ref": "#/definitions/info" },
-        "content": true
+        "content": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -1034,6 +1112,17 @@
         "content": {
           "type": "string",
           "description": "The setting content, which will show in the theme editor."
+        }
+      }
+    },
+
+    "conditionalSetting": {
+      "$comment": "Conditional setting property",
+      "properties": {
+        "visible_if": {
+          "type": "string",
+          "description": "A liquid expression that determines whether the setting should be visible.",
+          "markdownDescription": "A liquid expression that determines whether the setting should be visible.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#visible_if)"
         }
       }
     },
