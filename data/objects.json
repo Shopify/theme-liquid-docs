@@ -2094,7 +2094,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "This drop is used to hold resources of different types that are the closest to the current context. These resources can be of type `product`, `collection`, `article`, `blog`, `page`, or `metaobject`.\nThe resources of different types within the closest drop can be:\n - The currently rendered section or theme block resource setting of the same type\n - The currently rendered theme block's ancestor resource setting of the same type\n - The currently rendered template resource of the same type\n - Assigned via {% content_for %} tag\n\n&gt; Tip:\n&gt; To learn about how closest drop in theme settings can be used, refer to [Dynamic sources](/themes/architecture/blocks/theme-blocks/dynamic-sources).",
+    "description": "This drop is used to hold resources of different types that are the closest to the current context. These resources can be of type `product`, `collection`, `article`, `blog`, `page`, or `metaobject`.\nThe resources of different types within the closest drop can be:\n - The currently rendered section or theme block resource setting of the same type\n - The currently rendered theme block's ancestor resource setting of the same type\n - The currently rendered template resource of the same type\n - Assigned via {% content_for %} tag\n\n&gt; Tip:\n&gt; To learn about how closest drop in theme settings can be used, refer to [Dynamic sources](/storefronts/themes/architecture/blocks/theme-blocks/dynamic-sources#accessing-the-closest-resource).",
     "properties": [
       {
         "deprecated": false,
