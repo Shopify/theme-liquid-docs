@@ -2075,7 +2075,7 @@
       {
         "description": "Whether to use false values instead of the default.",
         "name": "allow_false",
-        "positional": true,
+        "positional": false,
         "required": false,
         "types": [
           "boolean"
@@ -2240,6 +2240,44 @@
     "category": "array",
     "deprecated": false,
     "deprecation_reason": "",
+    "description": "This requires you to provide both the property name and the associated value.",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "untyped",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [],
+    "summary": "Returns the first item in an array with a specific property value.",
+    "syntax": "array | find: string, string",
+    "name": "find"
+  },
+  {
+    "category": "array",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "This requires you to provide both the property name and the associated value.",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "number",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [],
+    "summary": "Returns the index of the first item in an array with a specific property value.",
+    "syntax": "array | find_index: string, string",
+    "name": "find_index"
+  },
+  {
+    "category": "array",
+    "deprecated": false,
+    "deprecation_reason": "",
     "description": "",
     "parameters": [],
     "return_type": [
@@ -2305,6 +2343,25 @@
     "summary": "Rounds a number down to the nearest integer.",
     "syntax": "number | floor",
     "name": "floor"
+  },
+  {
+    "category": "array",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "This requires you to provide both the property name and the associated value.",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "boolean",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [],
+    "summary": "Tests if any item in an array has a specific property value.",
+    "syntax": "array | some: string, string",
+    "name": "has"
   },
   {
     "category": "array",
@@ -2595,6 +2652,25 @@
     "summary": "Adds a given string to the beginning of a string.",
     "syntax": "string | prepend: string",
     "name": "prepend"
+  },
+  {
+    "category": "array",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "This requires you to provide both the property name and the associated value.",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "array",
+        "name": "",
+        "description": "",
+        "array_value": "untyped"
+      }
+    ],
+    "examples": [],
+    "summary": "Filters an array to exclude items with a specific property value.",
+    "syntax": "array | reject: string, string",
+    "name": "reject"
   },
   {
     "category": "string",
