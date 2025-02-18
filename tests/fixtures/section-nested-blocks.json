@@ -9,7 +9,7 @@
           "type": "group",
           "blocks": [
             { "type": "text", "settings": { "text": "Hello" } },
-            { "type": "header", "settings": { "text": "World" } }
+            { "type": "header", "name": "Header", "settings": { "text": "World" } }
           ]
         }
       ]

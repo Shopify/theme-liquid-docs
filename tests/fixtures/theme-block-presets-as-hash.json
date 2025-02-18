@@ -27,13 +27,15 @@
         },
         "some-other-block-id": {
           "type": "image",
+          "name": "Image Block",
           "static": true,
           "settings": {
             "some-setting": "some-value"
           },
           "blocks": {
             "nested-block-id": {
-              "type": "text"
+              "type": "text",
+              "name": "Nested Text Block"
             }
           },
           "block_order": ["nested-block-id"]
