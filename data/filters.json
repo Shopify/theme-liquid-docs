@@ -2360,7 +2360,7 @@
     ],
     "examples": [],
     "summary": "Tests if any item in an array has a specific property value.",
-    "syntax": "array | some: string, string",
+    "syntax": "array | has: string, string",
     "name": "has"
   },
   {
