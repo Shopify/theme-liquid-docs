@@ -1,6 +1,10 @@
 import set from 'lodash.set';
 import { assert, describe, expect, it } from 'vitest';
-import { SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF } from './test-constants';
+import {
+  INPUT_SETTING_TYPES,
+  SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF,
+  SIDEBAR_SETTING_TYPES,
+} from './test-constants';
 import { complete, getService, hover, loadFixture, validateSchema } from './test-helpers';
 
 const sectionSchema1 = loadFixture('section-schema-1.json');
@@ -29,7 +33,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       sectionSchema5,
       sectionSchema6,
       sectionNestedBlocks,
-      sectionSchemaPresetBlocksAsHash
+      sectionSchemaPresetBlocksAsHash,
     ];
     for (const sectionSchema of schemas) {
       const diagnostics = await validate('sections/section.liquid', sectionSchema);
@@ -211,31 +215,63 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
   });
 
   it('should validate section schema with conditional settings', async () => {
-    const sectionSchemaConditionalSettings = loadFixture('section-schema-conditional-settings.json');
+    const sectionSchemaConditionalSettings = loadFixture(
+      'section-schema-conditional-settings.json',
+    );
     const diagnostics = await validate('sections/section.liquid', sectionSchemaConditionalSettings);
     expect(diagnostics).toStrictEqual([]);
   });
 
-  it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)('should not allow visible_if on %s setting type', async (settingType) => {
+  it.each(
+    INPUT_SETTING_TYPES.filter(
+      (settingType) =>
+        !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat('color_scheme_group').includes(
+          settingType,
+        ),
+    ),
+  )('should allow visible_if on %s setting type', async (settingType) => {
     const schema = {
       settings: [
         {
           type: settingType,
           id: 'test_setting',
           label: 'Test Setting',
-          visible_if: '{{ section.settings.some_setting }}'
-        }
-      ]
+          visible_if: '{{ section.settings.some_setting }}',
+        },
+      ],
     };
-    
+
     const diagnostics = await validate('sections/section.liquid', schema);
-    expect(diagnostics).toContainEqual(
+    expect(diagnostics).not.toContainEqual(
       expect.objectContaining({
         message: 'Property visible_if is not allowed.',
-        severity: 1
-      })
+      }),
     );
   });
+
+  it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)(
+    'should not allow visible_if on %s setting type',
+    async (settingType) => {
+      const schema = {
+        settings: [
+          {
+            type: settingType,
+            id: 'test_setting',
+            label: 'Test Setting',
+            visible_if: '{{ section.settings.some_setting }}',
+          },
+        ],
+      };
+
+      const diagnostics = await validate('sections/section.liquid', schema);
+      expect(diagnostics).toContainEqual(
+        expect.objectContaining({
+          message: 'Property visible_if is not allowed.',
+          severity: 1,
+        }),
+      );
+    },
+  );
 
   it('should complete the type property with the generic docs', async () => {
     const result = await complete(

@@ -629,7 +629,10 @@
       "additionalProperties": false
     },
     "number": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "number",
@@ -643,7 +646,8 @@
         "default": { "type": "number" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -701,7 +705,10 @@
     },
 
     "radio": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "radio",
@@ -715,7 +722,8 @@
         "options": { "$ref": "#/definitions/options" },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["options"],
       "additionalProperties": false
@@ -841,7 +849,10 @@
     },
 
     "style.layout_panel": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "style.layout_panel",
@@ -866,13 +877,17 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "style.size_panel": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "style.size_panel",
@@ -897,13 +912,17 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "style.spacing_panel": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "style.spacing_panel",
@@ -928,13 +947,17 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "text": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "text",
@@ -950,7 +973,8 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -979,7 +1003,10 @@
     },
 
     "textarea": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "textarea",
@@ -995,7 +1022,8 @@
         },
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
