@@ -1,10 +1,6 @@
 import set from 'lodash.set';
 import { assert, describe, expect, it } from 'vitest';
-import {
-  INPUT_SETTING_TYPES,
-  SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF,
-  SIDEBAR_SETTING_TYPES,
-} from './test-constants';
+import { INPUT_SETTING_TYPES, SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF } from './test-constants';
 import { complete, getService, hover, loadFixture, validateSchema } from './test-helpers';
 
 const sectionSchema1 = loadFixture('section-schema-1.json');
@@ -222,32 +218,33 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
     expect(diagnostics).toStrictEqual([]);
   });
 
-  it.each(
-    INPUT_SETTING_TYPES.filter(
-      (settingType) =>
-        !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat('color_scheme_group').includes(
-          settingType,
-        ),
-    ),
-  )('should allow visible_if on %s setting type', async (settingType) => {
-    const schema = {
-      settings: [
-        {
-          type: settingType,
-          id: 'test_setting',
-          label: 'Test Setting',
-          visible_if: '{{ section.settings.some_setting }}',
-        },
-      ],
-    };
+  const settingsTypesSupportingVisibleIf = INPUT_SETTING_TYPES.filter(
+    (settingType) =>
+      !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat('color_scheme_group').includes(settingType),
+  );
 
-    const diagnostics = await validate('sections/section.liquid', schema);
-    expect(diagnostics).not.toContainEqual(
-      expect.objectContaining({
-        message: 'Property visible_if is not allowed.',
-      }),
-    );
-  });
+  it.each(settingsTypesSupportingVisibleIf)(
+    'should allow visible_if on %s setting type',
+    async (settingType) => {
+      const schema = {
+        settings: [
+          {
+            type: settingType,
+            id: 'test_setting',
+            label: 'Test Setting',
+            visible_if: '{{ section.settings.some_setting }}',
+          },
+        ],
+      };
+
+      const diagnostics = await validate('sections/section.liquid', schema);
+      expect(diagnostics).not.toContainEqual(
+        expect.objectContaining({
+          message: 'Property visible_if is not allowed.',
+        }),
+      );
+    },
+  );
 
   it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)(
     'should not allow visible_if on %s setting type',
