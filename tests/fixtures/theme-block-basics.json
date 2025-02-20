@@ -24,9 +24,17 @@
       "blocks": [
         {
           "type": "thing",
+          "name": "The Thing",
           "settings": {
             "some-setting": "some-value"
-          }
+          },
+          "blocks": [
+            {
+              "type": "text",
+              "name": "Nested Text Block",
+              "settings": {}
+            }
+          ]
         },
         {
           "type": "button",
