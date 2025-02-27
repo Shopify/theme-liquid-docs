@@ -2250,7 +2250,28 @@
         "array_value": ""
       }
     ],
-    "examples": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign product = collection.products | find: 'vendor', \"Polina's Potent Potions\" %}\n\n{{ product.title }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Returns `nil` when no items match the specified property value.",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign product = collection.products | find: 'vendor', \"Polina's Potions\" %}\n\n{{ product.title | default: \"No product found\" }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
     "summary": "Returns the first item in an array with a specific property value.",
     "syntax": "array | find: string, string",
     "name": "find"
@@ -2269,7 +2290,28 @@
         "array_value": ""
       }
     ],
-    "examples": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign index = collection.products | find_index: 'vendor', \"Polina's Potent Potions\" %}\n\n{{ index }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Returns `nil` when no items match the specified property value.",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign index = collection.products | find_index: 'vendor', \"Polina's Potions\" %}\n\n{{ index | default: \"No index found\" }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
     "summary": "Returns the index of the first item in an array with a specific property value.",
     "syntax": "array | find_index: string, string",
     "name": "find_index"
@@ -2358,7 +2400,28 @@
         "array_value": ""
       }
     ],
-    "examples": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign has_potent_potions = collection.products | has: 'vendor', \"Polina's Potent Potions\" %}\n\n{{ has_potent_potions }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Returns `false` when no items match the specified property value.",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign has_potent_potions = collection.products | has: 'vendor', \"Polina's Potions\" %}\n\n{{ has_potent_potions }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
     "summary": "Tests if any item in an array has a specific property value.",
     "syntax": "array | has: string, string",
     "name": "has"
@@ -2667,7 +2730,18 @@
         "array_value": "untyped"
       }
     ],
-    "examples": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{% assign polina_products = collection.products | reject: 'vendor', \"Polina's Potent Potions\" %}\n\nProducts from other vendors than Polina's Potent Potions:\n\n{% for product in polina_products -%}\n  - {{ product.title }}\n{%- endfor %}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
     "summary": "Filters an array to exclude items with a specific property value.",
     "syntax": "array | reject: string, string",
     "name": "reject"
