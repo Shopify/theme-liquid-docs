@@ -8989,7 +8989,7 @@
     "examples": [
       {
         "name": "Access metafields",
-        "description": "The access path for metafields consists of two layers:\n\n- namespace - A grouping of metafields to prevent conflicts.\n- key - The metafield name.\n\nGiven this, you can access the metafield object with the following syntax:\n\n```liquid\n{{ resource.metafields.namespace.key }}\n```\n\n&gt; Note:\n&gt; The namespace and key values will always be `snake_case`, regardless of the casing used in the metafield definition.\n",
+        "description": "The access path for metafields consists of two layers:\n\n- namespace - A grouping of metafields to prevent conflicts.\n- key - The metafield name.\n\nGiven this, you can access the metafield object with the following syntax:\n\n```liquid\n{{ resource.metafields.namespace.key }}\n```\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "Type: {{ product.metafields.information.directions.type }}\nValue: {{ product.metafields.information.directions.value }}",
