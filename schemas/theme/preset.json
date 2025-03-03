@@ -19,6 +19,11 @@
           "description": "The preset name, which will show in the 'Add section' or 'Add block' picker of the theme editor.",
           "markdownDescription": "The preset name, which will show in the 'Add section' or 'Add block' picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
         },
+        "category": {
+          "type": "string",
+          "description": "The category of the preset, which will show in the 'Add section' or 'Add block' picker of the theme editor.",
+          "markdownDescription": "The category of the preset, which will show in the 'Add section' or 'Add block' picker of the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#presets)"
+        },
         "settings": {
           "$ref": "./default_setting_values.json"
         }
@@ -33,6 +38,7 @@
       ],
       "properties": {
         "name": true,
+        "category": true,
         "settings": true,
         "blocks": {
           "$ref": "./preset_blocks.json#/definitions/blocksArray"

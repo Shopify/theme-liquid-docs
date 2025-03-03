@@ -72,6 +72,7 @@
   "presets": [
     {
       "name": "t:sections.announcement-bar.presets.name",
+      "category": "t:sections.announcement-bar.presets.category",
       "blocks": [
         {
           "type": "announcement"
