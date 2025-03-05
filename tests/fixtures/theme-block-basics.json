@@ -18,6 +18,7 @@
   "presets": [
     {
       "name": "preset name",
+      "category": "The Category",
       "settings": {
         "number": 1
       },
