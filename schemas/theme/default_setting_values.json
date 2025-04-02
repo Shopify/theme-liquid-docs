@@ -2,62 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "description": "A list of default values for any settings that you might want to populate. Each entry should include the setting name and the value.",
-  "properties": {
-    "layout": {
-      "type": "object",
-      "description": "Layout style settings for the preset",
-      "allOf": [
-        {
-          "$ref": "./setting.json#/definitions/style.flex_layout_properties"
-        }
-      ],
-      "properties": {
-        "@media (--mobile)": {
-          "type": "object",
-          "description": "Layout style settings for the mobile breakpoint",
-          "$ref": "./setting.json#/definitions/style.flex_layout_properties",
-          "unevaluatedProperties": false
-        }
-      },
-      "unevaluatedProperties": false
-    },
-    "size": {
-      "type": "object",
-      "description": "Size style settings for the preset",
-      "allOf": [
-        {
-          "$ref": "./setting.json#/definitions/style.size_properties"
-        }
-      ],
-      "properties": {
-        "@media (--mobile)": {
-          "type": "object",
-          "description": "Size style settings for the mobile breakpoint",
-          "$ref": "./setting.json#/definitions/style.size_properties",
-          "unevaluatedProperties": false
-        }
-      },
-      "unevaluatedProperties": false
-    },
-    "spacing": {
-      "type": "object",
-      "description": "Spacing style settings for the preset",
-      "allOf": [
-        {
-          "$ref": "./setting.json#/definitions/style.spacing_properties"
-        }
-      ],
-      "properties": {
-        "@media (--mobile)": {
-          "type": "object",
-          "description": "Spacing style settings for the mobile breakpoint",
-          "$ref": "./setting.json#/definitions/style.spacing_properties",
-          "unevaluatedProperties": false
-        }
-      },
-      "unevaluatedProperties": false
-    }
-  },
   "additionalProperties": {
     "anyOf": [
       {
