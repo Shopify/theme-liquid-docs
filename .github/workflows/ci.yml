@@ -15,10 +15,10 @@ jobs:
     name: OS ${{ matrix.os }} / NodeJS ${{ matrix.node-version }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
