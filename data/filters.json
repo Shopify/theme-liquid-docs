@@ -847,6 +847,36 @@
     "category": "color",
     "deprecated": false,
     "deprecation_reason": "",
+    "description": "",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{{ '#EA5AB9' | color_to_oklch }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Converts a CSS color string to `OKLCH` format.",
+    "syntax": "string | color_to_oklch",
+    "name": "color_to_oklch"
+  },
+  {
+    "category": "color",
+    "deprecated": false,
+    "deprecation_reason": "",
     "description": "If a color with an alpha component is provided, then the color is converted to `RGBA` format.",
     "parameters": [],
     "return_type": [
@@ -2065,6 +2095,25 @@
     "summary": "Concatenates (combines) two arrays.",
     "syntax": "array | concat: array",
     "name": "concat"
+  },
+  {
+    "category": "date",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "This filter formats a date using various format specifiers. If the format string is empty,\nthe original input is returned. If the input cannot be converted to a date, the original input is returned.\n\nThe following format specifiers can be used:\n\n%a - The abbreviated weekday name (``Sun'')\n%A - The  full  weekday  name (``Sunday'')\n%b - The abbreviated month name (``Jan'')\n%B - The  full  month  name (``January'')\n%c - The preferred local date and time representation\n%d - Day of the month (01..31)\n%H - Hour of the day, 24-hour clock (00..23)\n%I - Hour of the day, 12-hour clock (01..12)\n%j - Day of the year (001..366)\n%m - Month of the year (01..12)\n%M - Minute of the hour (00..59)\n%p - Meridian indicator (``AM''  or  ``PM'')\n%s - Number of seconds since 1970-01-01 00:00:00 UTC.\n%S - Second of the minute (00..60)\n%U - Week  number  of the current year,\n        starting with the first Sunday as the first\n        day of the first week (00..53)\n%W - Week  number  of the current year,\n        starting with the first Monday as the first\n        day of the first week (00..53)\n%w - Day of the week (Sunday is 0, 0..6)\n%x - Preferred representation for the date alone, no time\n%X - Preferred representation for the time alone, no date\n%y - Year without a century (00..99)\n%Y - Year with century\n%Z - Time zone name\n%% - Literal ``%'' character",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [],
+    "summary": "Formats a date according to a specified format string.",
+    "syntax": "date | date: string",
+    "name": "date"
   },
   {
     "category": "default",

@@ -2845,6 +2845,38 @@
         "examples": [],
         "return_type": [
           {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The lightness, chroma, and hue values of the color, represented as a\nspace-separated string.",
+        "name": "oklch"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The lightness, chroma, hue and alpha values of the color, represented as a\nspace-separated string, with a slash before the alpha channel.",
+        "name": "oklcha"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
             "type": "number",
             "name": "",
             "description": "",
@@ -2901,6 +2933,38 @@
         ],
         "summary": "The alpha component of the color, which is a decimal number between 0.0 and 1.0.",
         "name": "alpha"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The chroma component of the color, which is a decimal number between 0.0 and 0.5.",
+        "name": "chroma"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The color space of the color. Returns 'srgb' or 'oklch'",
+        "name": "color_space"
       }
     ],
     "summary": "A color from a [`color` setting](/themes/architecture/settings/input-settings#color).",
@@ -11051,7 +11115,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Returns a maximum of 250 variants.",
+        "description": "&gt; Note:\n&gt; Returns a maximum of 250 variants when unpaginated.\n&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many variants to show per page, up to a limit of 50.",
         "examples": [],
         "return_type": [
           {
@@ -11063,6 +11127,22 @@
         ],
         "summary": "The variants of the product.",
         "name": "variants"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The total number of variants for the product.",
+        "name": "variants_count"
       },
       {
         "deprecated": false,
