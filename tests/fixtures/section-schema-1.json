@@ -1,4 +1,4 @@
-{
+{ 
   "name": "t:sections.announcement-bar.name",
   "max_blocks": 12,
   "class": "announcement-bar-section",
@@ -11,6 +11,13 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "accent-1"
+    },
+    {
+      "type": "color",
+      "id": "color_picker",
+      "label": "t:sections.all.colors.label",
+      "default": "accent-1",
+      "alpha": false
     },
     {
       "type": "checkbox",
