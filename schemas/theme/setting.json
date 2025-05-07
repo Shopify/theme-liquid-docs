@@ -298,7 +298,12 @@
         "label": true,
         "info": true,
         "id": true,
-        "visible_if": true
+        "visible_if": true,
+        "alpha": {
+          "type": "boolean",
+          "description": "A boolean value that determines whether the color picker should include an alpha slider. The default value is true.",
+          "markdownDescription": "A boolean value that determines whether the color picker should include an alpha slider. The default value is true.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color)"
+        }
       },
       "additionalProperties": false
     },

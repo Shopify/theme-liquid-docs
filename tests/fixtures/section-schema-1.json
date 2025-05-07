@@ -13,6 +13,13 @@
       "default": "accent-1"
     },
     {
+      "type": "color",
+      "id": "color_picker",
+      "label": "t:sections.all.colors.label",
+      "default": "accent-1",
+      "alpha": false
+    },
+    {
       "type": "checkbox",
       "id": "show_line_separator",
       "default": true,
