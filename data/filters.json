@@ -4433,7 +4433,35 @@
     "deprecated": false,
     "deprecation_reason": "",
     "description": "",
-    "parameters": [],
+    "parameters": [
+      {
+        "description": "The text for the previous page link.",
+        "name": "previous",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      },
+      {
+        "description": "The text for the next page link.",
+        "name": "next",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      },
+      {
+        "description": "The anchor to add to the pagination links.",
+        "name": "anchor",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      }
+    ],
     "return_type": [
       {
         "type": "string",
@@ -4452,6 +4480,36 @@
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
+      },
+      {
+        "name": "previous",
+        "description": "Specify the text for the previous page link.",
+        "syntax": "paginate | default_pagination: previous: string",
+        "path": "/collections/sale-potions",
+        "raw_liquid": "{% paginate collection.products by 2 %}\n  {% for product in collection.products %}\n    {{- product.title }}\n  {% endfor %}\n\n  {{- paginate | default_pagination: previous: 'Previous' -}}\n{% endpaginate %}",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "next",
+        "description": "Specify the text for the next page link.",
+        "syntax": "paginate | default_pagination: next: string",
+        "path": "/collections/sale-potions",
+        "raw_liquid": "{% paginate collection.products by 2 %}\n  {% for product in collection.products %}\n    {{- product.title }}\n  {% endfor %}\n\n  {{- paginate | default_pagination: next: 'Next' -}}\n{% endpaginate %}",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": false
+      },
+      {
+        "name": "anchor",
+        "description": "Specify the anchor to add to the pagination links.",
+        "syntax": "paginate | default_pagination: anchor: string",
+        "path": "/collections/sale-potions",
+        "raw_liquid": "{% paginate collection.products by 2 %}\n  {% for product in collection.products %}\n    {{- product.title }}\n  {% endfor %}\n\n  &lt;div id=\"pagination\"&gt;\n    {{- paginate | default_pagination: anchor: 'pagination' -}}\n  &lt;/div&gt;\n{% endpaginate %}",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": false
       }
     ],
     "summary": "Generates HTML for a set of links for paginated results. Must be applied to the [`paginate` object](/docs/api/liquid/objects/paginate).",
