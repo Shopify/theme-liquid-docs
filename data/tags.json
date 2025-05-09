@@ -1074,15 +1074,15 @@
     "category": "theme",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the JavaScript that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% javascript %}` tag.\n\nTo learn more about how section-specific JavaScript is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#javascript).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% javascript %}` tags. Including Liquid code can cause syntax errors.",
+    "description": "Each section, block or snippet can have only one `{% javascript %}` tag.\n\nTo learn more about how Javascript that's defined between the `javascript` tags is loaded and run, refer to the documentation for [javascript tags](/storefronts/themes/best-practices/javascript-and-stylesheet-tags#javascript).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% javascript %}` tags. Including Liquid code can cause syntax errors.",
     "parameters": [],
-    "summary": "JavaScript code included in a [section](/themes/architecture/sections) file.",
+    "summary": "JavaScript code included in [section](/storefronts/themes/architecture/sections), [block](/storefronts/themes/architecture/blocks) and [snippet](/storefronts/themes/architecture/snippets) files.",
     "name": "javascript",
     "syntax": "{% javascript %}\n  javascript_code\n{% endjavascript %}",
     "syntax_keywords": [
       {
         "keyword": "javascript_code",
-        "description": "The JavaScript code for the section."
+        "description": "The JavaScript code for the section, block or snippet."
       }
     ],
     "examples": []
@@ -1119,15 +1119,15 @@
     "category": "theme",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You need to use these tags only if your section or app block is meant to be installed on multiple themes or stores. Otherwise, you should include the CSS styles that your section needs in your theme's [`assets`](/themes/architecture#assets) directory. Each section or app block can have only one `{% stylesheet %}` tag.\n\nTo learn more about how section-specific CSS is loaded and run, refer to the documentation for [sections](/themes/architecture/sections/section-assets#stylesheet).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.",
+    "description": "Each section, block or snippet can have only one `{% stylesheet %}` tag.\n\nTo learn more about how CSS that's defined between the `stylesheet` tags is loaded and run, refer to the documentation for [stylesheet tags](/storefronts/themes/best-practices/javascript-and-stylesheet-tags#stylesheet).\n&gt; Caution:\n&gt; Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.",
     "parameters": [],
-    "summary": "CSS styles included in a [section](/themes/architecture/sections) file.",
+    "summary": "CSS styles included in [section](/storefronts/themes/architecture/sections), [block](/storefronts/themes/architecture/blocks) and [snippet](/storefronts/themes/architecture/snippets) files.",
     "name": "stylesheet",
     "syntax": "{% stylesheet %}\n  css_styles\n{% endstylesheet %}",
     "syntax_keywords": [
       {
         "keyword": "css_styles",
-        "description": "The CSS styles for the section."
+        "description": "The CSS styles for the section, block or snippet."
       }
     ],
     "examples": []
