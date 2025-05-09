@@ -4338,6 +4338,22 @@
         ],
         "summary": "Returns `true` if an avatar is associated with a customer. Returns `false` if not.",
         "name": "has_avatar?"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The account shown will be in the currency associated with the customer’s current context.\nFor example, if a customer is browsing the storefront in the US market, their USD store credit account will be\nreturned. If they do not have a USD store credit account `nil` will be returned.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "store_credit_account",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The store credit account associated with the customer.",
+        "name": "store_credit_account"
       }
     ],
     "summary": "A [customer](https://help.shopify.com/manual/customers) of the store.",
@@ -9583,6 +9599,10 @@
         {
           "object": "metafield",
           "property": "value"
+        },
+        {
+          "object": "store_credit_account",
+          "property": "balance"
         }
       ],
       "template": []
@@ -16043,6 +16063,48 @@
     "json_data": {
       "path": "/products/health-potion?variant=39897499729985",
       "handle": "product.selected_variant.store_availabilities[0]",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "customer",
+          "property": "store_credit_account"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted amount.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "money",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The balance of the store credit account in the currency's subunit.",
+        "name": "balance"
+      }
+    ],
+    "summary": "A [store_credit_account](https://help.shopify.com/en/manual/customers/store-credit) owned by a [customer](/docs/api/liquid/objects/customer).",
+    "name": "store_credit_account",
+    "examples": [],
+    "json_data": {
+      "path": "/",
+      "handle": "customer.store_credit_account",
       "data_from_file": ""
     },
     "return_type": []
