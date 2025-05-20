@@ -1277,7 +1277,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The theme editor's [JavaScript API](/themes/architecture/sections/integrate-sections-with-the-theme-editor#section-and-block-javascript-events)\nuses the data attributes to identify blocks and listen for events. No value for `block.shopify_attributes` is returned\noutside the theme editor.",
+        "description": "The theme editor's [JavaScript API](/themes/best-practices/editor/integrate-sections-and-blocks#section-and-block-javascript-events)\nuses the data attributes to identify blocks and listen for events. No value for `block.shopify_attributes` is returned\noutside the theme editor.",
         "examples": [],
         "return_type": [
           {
