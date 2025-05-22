@@ -16099,7 +16099,7 @@
         "name": "balance"
       }
     ],
-    "summary": "A [store_credit_account](https://help.shopify.com/en/manual/customers/store-credit) owned by a [customer](/docs/api/liquid/objects/customer).",
+    "summary": "A [store credit account](https://help.shopify.com/en/manual/customers/store-credit) owned by a [customer](/docs/api/liquid/objects/customer).",
     "name": "store_credit_account",
     "examples": [],
     "json_data": {
