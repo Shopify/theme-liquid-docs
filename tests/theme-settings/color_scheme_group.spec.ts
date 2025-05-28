@@ -95,20 +95,23 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]);
     });
 
-    it("validates that conditional settings (visible_if) is not allowed in color_scheme_group", async () => {
+    it('validates that conditional settings (visible_if) is not allowed in color_scheme_group', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
-        settings({ visible_if: '{{ section.settings.show_color_scheme_group }}',
-        }),
+        settings({ visible_if: '{{ section.settings.show_color_scheme_group }}' }),
       );
     });
 
-    it("validates that conditional settings (visible_if) is not allowed in any nested definitions within color_scheme_group", async () => {
+    it('validates that conditional settings (visible_if) is not allowed in any nested definitions within color_scheme_group', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
         settings({
           definition: [
-            { type: 'header', content: 'ok', visible_if: '{{ section.settings.show_color_scheme_group }}' },
+            {
+              type: 'header',
+              content: 'ok',
+              visible_if: '{{ section.settings.show_color_scheme_group }}',
+            },
             {
               type: 'color',
               id: 'color',
