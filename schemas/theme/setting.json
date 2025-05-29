@@ -355,24 +355,19 @@
         "type": {
           "const": "color_scheme_group",
           "description": "A setting of type color_scheme_group outputs a color scheme.",
-          "markdownDescription": "A setting of type `color_scheme_group` outputs a color scheme which is composed of the following input setting types:\n\n- `header`\n- `color`\n- `color_background`\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)"
+          "markdownDescription": "A setting of type `color_scheme_group` outputs a color scheme which is composed of the following input setting types:\n\n- `header`\n- `color`\n- `color_background`\n- `color_scheme`\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)"
         },
         "definition": {
-          "description": "An array of header, color and color_background input settings.",
-          "markdownDescription": "An array of `header`, `color` and `color_background` input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)",
+          "description": "An array of header, color, color_background and color_scheme input settings.",
+          "markdownDescription": "An array of `header`, `color`, `color_background` and `color_scheme` input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_scheme_group)",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "type": {
-                "enum": ["header", "color", "color_background"]
+                "enum": ["header", "color", "color_background", "color_scheme"]
               },
-              "visible_if": {
-                "not": {
-                  "type": "string"
-                },
-                "errorMessage": "The property visible_if is not allowed within color_scheme_group"
-              }
+              "visible_if": true
             },
             "allOf": [
               {
@@ -389,6 +384,13 @@
                   "properties": { "type": { "const": "color_background" } }
                 },
                 "then": { "$ref": "#/definitions/color_background" }
+              },
+              {
+                "if": {
+                  "required": ["type"],
+                  "properties": { "type": { "const": "color_scheme" } }
+                },
+                "then": { "$ref": "#/definitions/color_scheme" }
               }
             ]
           }

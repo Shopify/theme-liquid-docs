@@ -47,19 +47,20 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]);
     });
 
-    it('validates that the definition are of type header, color or color_background', async () => {
+    it('validates that the definition are of type header, color, color_background, or color_scheme', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
         settings({ definition: [{ type: 'not good' }] }),
       );
       expect(diagnostics).toStrictEqual([
         expect.objectContaining({
-          message: 'Value is not accepted. Valid values: "header", "color", "color_background".',
+          message:
+            'Value is not accepted. Valid values: "header", "color", "color_background", "color_scheme".',
         }),
       ]);
     });
 
-    it('validates that the definition are of type header, color or color_background (extra properties)', async () => {
+    it('validates that the definition are of type header, color, color_background, or color_scheme (extra properties)', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
         settings({
@@ -95,20 +96,28 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]);
     });
 
-    it("validates that conditional settings (visible_if) is not allowed in color_scheme_group", async () => {
+    it('validates that conditional settings (visible_if) is not allowed in color_scheme_group', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
-        settings({ visible_if: '{{ section.settings.show_color_scheme_group }}',
-        }),
+        settings({ visible_if: '{{ section.settings.show_color_scheme_group }}' }),
       );
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: 'Property visible_if is not allowed.',
+        }),
+      ]);
     });
 
-    it("validates that conditional settings (visible_if) is not allowed in any nested definitions within color_scheme_group", async () => {
+    it('validates that conditional settings (visible if) are allowed in nested definitions within color_scheme_group', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
         settings({
           definition: [
-            { type: 'header', content: 'ok', visible_if: '{{ section.settings.show_color_scheme_group }}' },
+            {
+              type: 'header',
+              content: 'ok',
+              visible_if: '{{ section.settings.show_color_scheme_group }}',
+            },
             {
               type: 'color',
               id: 'color',
@@ -123,21 +132,18 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
               default: '#000',
               visible_if: '{{ section.settings.show_color_scheme_group }}',
             },
+            {
+              type: 'color_scheme',
+              id: 'color_scheme',
+              label: 'my color scheme',
+              default: '#000',
+              visible_if: '{{ section.settings.show_color_scheme_group }}',
+            },
           ],
         }),
       );
 
-      expect(diagnostics).toStrictEqual([
-        expect.objectContaining({
-          message: 'The property visible_if is not allowed within color_scheme_group',
-        }),
-        expect.objectContaining({
-          message: 'The property visible_if is not allowed within color_scheme_group',
-        }),
-        expect.objectContaining({
-          message: 'The property visible_if is not allowed within color_scheme_group',
-        }),
-      ]);
+      expect(diagnostics).toStrictEqual([]);
     });
   });
 });
