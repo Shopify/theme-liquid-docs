@@ -9,6 +9,7 @@
   "scripts": {
     "format": "prettier --write \"schemas/theme/*.json\"",
     "format:check": "prettier --check --ignore-unknown \"schemas/theme/*.json\"",
+    "generate:ai": "node scripts/generate-ai-file.js",
     "test": "vitest"
   },
   "devDependencies": {
@@ -16,5 +17,8 @@
     "prettier": "^2.8.8",
     "vitest": "^0.32.2",
     "vscode-json-languageservice": "^5.3.10"
+  },
+  "dependencies": {
+    "liquidjs": "^10.21.1"
   }
 }
