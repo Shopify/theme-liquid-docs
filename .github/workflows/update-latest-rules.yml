@@ -15,21 +15,27 @@ jobs:
     steps:
       - name: Checkout current repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
       - name: Setup Node.js
-        uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'yarn'
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Generate rules
         run: yarn generate:rules
+
       - name: Run git config
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
+
       - name: Commit and push changes
         run: |
-          git add .
-          git commit -m "Update generated rules"
-          git push origin main2
+          git add ai/rules.mdc
+          git commit -m "Update ai/rules.mdc"
+          git checkout -b main3
+          git push origin main3
