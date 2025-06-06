@@ -16,8 +16,15 @@
   },
   "patternProperties": {
     ".*_html$": {
-      "type": "string",
-      "description": "Translation string that contains HTML. The '_html' suffix prevents the HTML content from being escaped."
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "A string that can contain HTML content, typically used for translations that include HTML tags."
+        },
+        {
+          "$ref": "#/definitions/pluralizedString"
+        }
+      ]
     }
   },
   "definitions": {

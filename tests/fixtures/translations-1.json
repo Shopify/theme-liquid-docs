@@ -5,6 +5,10 @@
     "pluralized": {
       "one": "{{ count }} thing",
       "other": "{{ count }} things"
+    },
+    "pluralized_html": {
+      "one": "<script>console.log</script> {{ count }} thing",
+      "other": "<script>console.log</script> {{ count }} things"
     }
   }
 }
