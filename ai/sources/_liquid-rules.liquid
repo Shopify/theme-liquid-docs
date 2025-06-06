@@ -26,8 +26,8 @@ valid_objects = [
 
 validation_rules = {
   syntax: {
-    - Use {% liquid %} for multiline code
-    - Use {% # comments %} for inline comments
+    - Use {% raw %}{% liquid %}{% endraw %} for multiline code
+    - Use {% raw %}{% # comments %}{% endraw %} for inline comments
     - Never invent new filters, tags, or objects
     - Follow proper tag closing order
     - Use proper object dot notation

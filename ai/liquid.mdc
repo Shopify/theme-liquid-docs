@@ -270,8 +270,8 @@ alwaysApply: true
     
     validation_rules = {
       syntax: {
-        - Use  for multiline code
-        - Use  for inline comments
+        - Use {% liquid %} for multiline code
+        - Use {% # comments %} for inline comments
         - Never invent new filters, tags, or objects
         - Follow proper tag closing order
         - Use proper object dot notation
