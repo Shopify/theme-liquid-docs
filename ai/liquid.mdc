@@ -504,7 +504,7 @@ alwaysApply: true
     
     <variables>
       - Use CSS variables to reduce redundancy
-      - Hardcode values as variables first (e.g. --touch-target-size: 44px)
+      - Hardcode values as variables first (e.g. --touch-target-size: 45px)
       - Never hardcode colors, use color schemes
       - Scope variables to components unless global
       - Global variables go in :root (in may live in a file like snippets/theme-styles-variables.liquid)
