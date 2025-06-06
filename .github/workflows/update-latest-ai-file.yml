@@ -33,5 +33,9 @@ jobs:
       - name: Commit and push changes
         run: |
           git add ai/liquid.mdc
-          git commit -m "Update ai/liquid.mdc"
-          git push origin main
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "Update ai/liquid.mdc"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
