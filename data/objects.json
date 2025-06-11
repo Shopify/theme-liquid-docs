@@ -7264,7 +7264,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in Germany or France.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
+        "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with the\n&gt; `line_item.unit_price` property and this property to output a formatted unit price with measurement.",
         "examples": [],
         "return_type": [
           {
@@ -7280,7 +7280,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with this\n&gt; property and the `line_item.unit_price_measurement` property to output a formatted unit price with measurement.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
         "examples": [],
         "return_type": [
           {
@@ -7290,7 +7290,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [unit price](https://help.shopify.com/manual/intro-to-shopify/initial-setup/sell-in-france/price-per-unit#add-unit-prices-to-your-product)\n of the line item in the currency's subunit.",
+        "summary": "The [unit price](https://help.shopify.com/manual/products/details/product-pricing/unit-pricing#add-unit-prices-to-your-product)\n of the line item in the currency's subunit.",
         "name": "unit_price"
       },
       {
@@ -10684,7 +10684,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "Limited to 250.",
         "examples": [],
         "return_type": [
           {
@@ -10700,7 +10700,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "For example, if you show 5 items per page and are on page 3, then the value of `paginate.current_offset` is 10.",
+        "description": "For example, if you show 5 items per page and are on page 3, then the value of `paginate.current_offset` is 10.\n\nLimited to 24,999 see [Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.",
         "examples": [],
         "return_type": [
           {
@@ -10716,7 +10716,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "Limited to 25,000 see [Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.",
         "examples": [],
         "return_type": [
           {
@@ -10732,7 +10732,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "For example, if you paginate a collection of 120 products, then the value of `paginate.items` is 120.",
+        "description": "For example, if you paginate a collection of 120 products, then the value of `paginate.items` is 120.\n\nLimited to 25,000 see [Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.",
         "examples": [],
         "return_type": [
           {
@@ -10796,7 +10796,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "Limited to 25,000 see [Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.",
         "examples": [],
         "return_type": [
           {
@@ -12543,7 +12543,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.",
+        "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with the\n&gt; `variant.unit_price` property and this property to output a formatted unit price with measurement.",
         "examples": [],
         "return_type": [
           {
@@ -12559,7 +12559,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with this\n&gt; property and the `variant.unit_price_measurement` property to output a formatted unit price with measurement.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
         "examples": [],
         "return_type": [
           {
@@ -12569,7 +12569,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [unit price](https://help.shopify.com/manual/intro-to-shopify/initial-setup/sell-in-france/price-per-unit#add-unit-prices-to-your-product)\nof the variant in the currency's subunit.",
+        "summary": "The [unit price](https://help.shopify.com/manual/products/details/product-pricing/unit-pricing#add-unit-prices-to-your-product)\nof the variant in the currency's subunit.",
         "name": "unit_price"
       },
       {
@@ -16901,7 +16901,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in Germany and France.",
+    "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.",
     "properties": [
       {
         "deprecated": false,
@@ -16923,7 +16923,19 @@
           },
           {
             "type": "string",
-            "name": "dimension",
+            "name": "length",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "area",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "count",
             "description": "",
             "array_value": ""
           }
@@ -16996,7 +17008,7 @@
         "name": "reference_unit"
       }
     ],
-    "summary": "Information about how units of a product variant are measured. It's used to calculate\n[unit prices](https://help.shopify.com/manual/intro-to-shopify/initial-setup/sell-in-france/price-per-unit#add-unit-prices-to-your-product).",
+    "summary": "Information about how units of a product variant are measured. It's used to calculate\n[unit prices](https://help.shopify.com/manual/products/details/product-pricing/unit-pricing#add-unit-prices-to-your-product).",
     "name": "unit_price_measurement",
     "examples": [],
     "json_data": {
