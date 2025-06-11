@@ -82,6 +82,7 @@ alwaysApply: true
         { name: "date", usage: "string | date: string" },
         { name: "json", usage: "variable | json" },
         { name: "structured_data", usage: "variable | structured_data" },
+        { name: "unit_price_with_measurement", usage: "number | unit_price_with_measurement: unit_price_measurement" },
         { name: "weight_with_unit", usage: "number | weight_with_unit" },
         
         // hosted_file
