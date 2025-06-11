@@ -4966,6 +4966,46 @@
     "name": "pluralize"
   },
   {
+    "category": "format",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/products/blue-mountain-flower",
+        "raw_liquid": "{%- assign variant = product.variants.first -%}\n\n{{ variant.unit_price | unit_price_with_measurement: variant.unit_price_measurement }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Formatted unit price",
+        "description": "You can specify a formatted unit price using one of the [money filters](/docs/api/liquid/filters/payment_button#money-filters).",
+        "syntax": "string | unit_price_with_measurement: unit_price_measurement",
+        "path": "/products/blue-mountain-flower",
+        "raw_liquid": "{%- assign variant = product.variants.first -%}\n\n{{ variant.unit_price | money_with_currency | unit_price_with_measurement: variant.unit_price_measurement }}",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Formats a given unit price and measurement based on the store's [**HTML without currency** setting](https://help.shopify.com/manual/payments/currency-formatting).",
+    "syntax": "number | unit_price_with_measurement: unit_price_measurement",
+    "name": "unit_price_with_measurement"
+  },
+  {
     "category": "media",
     "deprecated": true,
     "deprecation_reason": "The `article_img_url` filter has been replaced by [`image_url`](/docs/api/liquid/filters/image_url).",
