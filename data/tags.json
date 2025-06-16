@@ -1008,7 +1008,7 @@
     ],
     "summary": "Splits an array's items across multiple pages.",
     "name": "paginate",
-    "syntax": "{% paginate array by page_size %}\n  {% for item in array %}\n    forloop_content\n  {% endfor %}\n{% endpaginate %}\n\nThe `paginate` tag allows the user to paginate to the 25,000'nth item in the array an no further. To reach items further in\nthe array the array should be filtered further before paginating. See\n[Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.",
+    "syntax": "{% paginate array by page_size %}\n  {% for item in array %}\n    forloop_content\n  {% endfor %}\n{% endpaginate %}\n\nThe `paginate` tag allows the user to paginate to the 25,000th item in the array and no further. To reach items further in\nthe array the array should be filtered further before paginating. See\n[Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.",
     "syntax_keywords": [
       {
         "keyword": "array",
