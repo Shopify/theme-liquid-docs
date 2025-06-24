@@ -1,13 +1,7 @@
 export const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
-  'article',
-  'blog',
-  'collection',
-  'collection_list',
   'metaobject',
   'metaobject_list',
   'page',
-  'product',
-  'product_list',
   // Not featured here is `color_scheme_group` which is exclusive to settings_schema.json.
   // That setting type is tested in `color_scheme_group.spec.ts`.
 ];
