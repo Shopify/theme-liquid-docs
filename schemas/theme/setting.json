@@ -1133,7 +1133,8 @@
           "description": "A setting of type paragraph outputs a text element to help you better describe your input settings.",
           "markdownDescription": "A setting of type `paragraph` outputs a text element to help you better describe your input settings.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/sidebar-settings#paragraph)"
         },
-        "content": true
+        "content": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
