@@ -1126,7 +1126,10 @@
     },
 
     "paragraph": {
-      "allOf": [{ "$ref": "#/definitions/sidebarStandardSettings" }],
+      "allOf": [
+        { "$ref": "#/definitions/sidebarStandardSettings" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "paragraph",

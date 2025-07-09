@@ -8,6 +8,11 @@
       "info": "Configure advanced options below"
     },
     {
+      "type": "paragraph",
+      "content": "This paragraph provides additional context and instructions for the advanced settings section.",
+      "visible_if": "{{ section.settings.show_advanced }}"
+    },
+    {
       "type": "checkbox",
       "id": "enable_features",
       "label": "Enable features",
@@ -137,4 +142,4 @@
       "visible_if": "{{ section.settings.media_type == 'video' }}"
     }
   ]
-} 
+}
