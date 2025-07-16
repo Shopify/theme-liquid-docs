@@ -18812,7 +18812,7 @@
     "examples": [
       {
         "name": "Create pagination navigation with `part`",
-        "description": "You can create a pagination navigation by iterating over each `part` of a [`paginate` object](/docs/api/liquid/objects/paginate).\n",
+        "description": "You can create a pagination navigation by iterating over each `part` of a [`paginate` object](/docs/api/liquid/objects/paginate).\nWhen paginating, `part.url` may contain a `phcursor` parameter in addition to `page`. This optional parameter is used to improve performance when navigating between pages.\n",
         "syntax": "",
         "path": "/collections/all",
         "raw_liquid": "{% paginate collection.products by 5 -%}\n  {% for part in paginate.parts -%}\n    {% if part.is_link -%}\n      {{ part.title | link_to: part.url}}\n    {%- else -%}\n      &lt;span&gt;{{ part.title }}&lt;/span&gt;\n    {% endif %}\n  {%- endfor %}\n{%- endpaginate %}",
@@ -18824,7 +18824,7 @@
     "json_data": {
       "path": "",
       "handle": "",
-      "data_from_file": "{\"is_link\":true,\"title\":\"2\",\"url\":\"/collections/all?page=2\"}"
+      "data_from_file": "{\"is_link\":true,\"title\":\"2\",\"url\":\"/collections/all?page=2&amp;phcursor=eyJhbGciOiJIUzI1NiJ9.eyJzayI6InBvc2l0aW9uIiwic3YiOjIwLCJkIjoiZiIsInVpZCI6MzY5MTI0Nzk3NjQ2NTksImwiOjIwLCJvIjowLCJyIjoiQ0RQIiwidiI6MSwicCI6Mn0.rlQnBhrVp_ZXLZBZRzrYxxDDKfpaPSH2UmkttMttC0s\"}"
     },
     "return_type": []
   },
