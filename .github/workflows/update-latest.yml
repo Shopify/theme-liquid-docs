@@ -29,17 +29,35 @@ jobs:
       - name: Generate AI file
         run: yarn generate:ai
 
-      - name: Run git config
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-
-      - name: Commit and push changes
+      - name: Create Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
+            # Configure git
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            
+            # Create and switch to new branch
+            BRANCH_NAME="update-ai-docs-$(date +%Y%m%d-%H%M%S)"
+            git checkout -b "$BRANCH_NAME"
+            
+            # Commit changes
             git add .
             git commit -m "Update 'ai/liquid.mdc' and 'data/latest.json' files"
-            git push origin main
+            
+            # Push branch
+            git push origin "$BRANCH_NAME"
+            
+            # Create pull request using GitHub CLI
+            gh pr create \
+              --title "Update 'ai/liquid.mdc' and 'data/latest.json' files" \
+              --body "Automated update of AI documentation and latest revision data.
+
+            - Updated \`ai/liquid.mdc\` with latest documentation
+            - Updated \`data/latest.json\` with current revision SHA" \
+              --base main \
+              --head "$BRANCH_NAME"
           else
             echo "No changes to commit"
           fi
