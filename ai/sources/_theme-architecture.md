@@ -53,7 +53,6 @@ theme_config = {
 theme_assets = {
   - Contains static files such as CSS, JavaScript, and images referenced via asset_url filter
   - Includes compiled stylesheets, JavaScript bundles, and media files
-  - Can be organized in subdirectories for better file management
   - Supports asset optimization and minification for performance
   - Images should be optimized and include responsive variants when possible
   - Examples: theme.css, theme.js, logo.png, icon sprites
