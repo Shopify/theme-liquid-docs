@@ -196,7 +196,10 @@
 
   "definitions": {
     "article": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "article",
@@ -206,13 +209,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "blog": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "blog",
@@ -222,7 +229,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -248,7 +256,10 @@
     },
 
     "collection": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "collection",
@@ -258,13 +269,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "collection_list": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "collection_list",
@@ -278,7 +293,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
@@ -589,7 +605,10 @@
     },
 
     "metaobject": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "metaobject",
@@ -603,14 +622,18 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["metaobject_type"],
       "additionalProperties": false
     },
 
     "metaobject_list": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "metaobject_list",
@@ -628,7 +651,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "required": ["metaobject_type"],
       "additionalProperties": false
@@ -658,7 +682,10 @@
     },
 
     "page": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "page",
@@ -668,13 +695,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "product": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "product",
@@ -684,13 +715,17 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
 
     "product_list": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
       "properties": {
         "type": {
           "const": "product_list",
@@ -704,7 +739,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": true
       },
       "additionalProperties": false
     },
