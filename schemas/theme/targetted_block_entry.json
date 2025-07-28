@@ -8,8 +8,8 @@
     "type": {
       "type": "string",
       "pattern": "^[a-zA-Z0-9_-]+$",
-      "description": "Developer preview: The name of a theme block found in the blocks/ folder of the theme.",
-      "markdownDescription": "🔮 **Developer preview**: The name of a theme block found in the `blocks/` folder of the theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
+      "description": "The name of a theme block found in the blocks/ folder of the theme.",
+      "markdownDescription": "The name of a theme block found in the `blocks/` folder of the theme.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/blocks/theme-blocks/schema#blocks)"
     }
   }
 }
