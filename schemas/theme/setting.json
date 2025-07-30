@@ -758,6 +758,7 @@
         },
         "step": {
           "type": "number",
+          "multipleOf": 0.1,
           "description": "The increment size between steps of the slider"
         },
         "unit": {
