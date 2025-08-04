@@ -1,8 +1,0 @@
-extends: theme-check:recommended
-
-MissingTemplate:
-  enabled: false
-LiquidHTMLSyntaxError:
-  enabled: false
-UndefinedObject:
-  enabled: false
