@@ -18,44 +18,6 @@ yarn install
 - **`tests/`** — Test suite ensuring documentation accuracy
 - **`scripts/`** — Automation scripts for docs generation
 
-## Working with AI files
-
-The AI sources generates comprehensive Liquid guidelines from modular rules files.
-
-### How it works
-
-The main AI file is `ai/liquid.mdc`, generated from `ai/sources/index.liquid`. This entry point pulls together:
-
-- Context from `ai/sources/*.md` files
-- Dynamic content from `ai/sources/*.liquid` templates
-
-Choose `.md` for static content, `.liquid` for dynamic generation.
-
-### Adding new rules
-
-1. **Create your rule file:**
-   ```bash
-   # Static content
-   touch ai/sources/my-new-rule.md
-
-   # Or dynamic content
-   touch ai/sources/my-new-rule.liquid
-   ```
-
-2. **Add your content:**
-   ```liquid
-   <!-- ai/sources/my-new-rule.liquid -->
-   {% for filter in filters %}
-   - `{{ filter.name }}` — {{ filter.description }}
-   {% endfor %}
-   ```
-
-3. **(Optional) Regenerate the rules:**
-  The `ai/liquid.mdc` file updates automatically via GitHub Actions, but you can generate it locally anytime.
-   ```bash
-   yarn generate:ai
-   ```
-
 ### Available data
 
 In `.liquid` templates, you have access to:

@@ -1,4 +1,4 @@
-name: Update 'ai/liquid.mdc' and 'data/latest.json' files
+name: Update the 'data/latest.json' file
 
 on:
   workflow_dispatch:
@@ -23,9 +23,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Generate AI file
-        run: yarn generate:ai
-
       - name: Create Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,25 +31,23 @@ jobs:
             # Configure git
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            
+
             # Create and switch to new branch
             BRANCH_NAME="update-ai-docs-$(date +%Y%m%d-%H%M%S)"
             git checkout -b "$BRANCH_NAME"
-            
+
             # Commit changes
-            git add ai/liquid.mdc
             git add data/latest.json
-            git commit -m "Update 'ai/liquid.mdc' and 'data/latest.json' files"
-            
+            git commit -m "Update the 'data/latest.json' file"
+
             # Push branch
             git push origin "$BRANCH_NAME"
-            
+
             # Create pull request using GitHub CLI
             gh pr create \
-              --title "Update 'ai/liquid.mdc' and 'data/latest.json' files" \
-              --body "Automated update of AI documentation and latest revision data.
+              --title "Update the 'data/latest.json' file" \
+              --body "Automated update of latest revision data.
 
-            - Updated \`ai/liquid.mdc\` with latest documentation
             - Updated \`data/latest.json\` with current revision SHA" \
               --base main \
               --head "$BRANCH_NAME"
