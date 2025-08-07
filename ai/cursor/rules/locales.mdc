@@ -1,0 +1,100 @@
+---
+description: Locales coding standards and best practices guide
+globs: locales/*.json
+alwaysApply: false
+---
+# Translation development standards
+
+Auto-attached when working in `locales/` directory.
+
+### File structure
+
+```
+locales/
+├── en.default.json          # English (required)
+├── en.default.schema.json   # English (required)
+├── es.json                  # Spanish
+├── est.schema.json          # Spanish
+├── fr.json                  # French
+├── frt.schema.json          # French
+└── pt-BR.json               # Portuguese
+└── pt-BR..schema.json       # Portuguese
+```
+
+#### Locale files
+
+Locale files are JSON files containing translations for all the text strings used throughout a Shopify theme and its editor. They let merchants easily update and localize repeated words and phrases, making it possible to translate store content and settings into multiple languages for international customers. These files provide a centralized way to manage and edit translations.
+
+**Example:**
+```json
+{
+  "general": {
+    "cart": "Cart",
+    "checkout": "Checkout"
+  },
+  "products": {
+    "add_to_cart": "Add to Cart"
+  }
+}
+```
+
+#### Schema locale files
+
+Schema locale files, saved with a .schema.json extension, store translation strings specifically for theme editor setting schemas. They follow a structured organization—category, group, and description—to give context to each translation, enabling accurate localization of editor content. Schema locale files must use the IETF language tag format in their naming, such as en-GB.schema.json for British English or fr-CA.schema.json for Canadian French.
+
+**Example:**
+```json
+{
+  "products": {
+    "card": {
+      "description": "Product card layout"
+    }
+  }
+}
+```
+
+### Key organization
+
+**Hierarchical structure:**
+```json
+{
+  "general": {
+    "meta": {
+      "title": "{{ shop_name }}",
+      "description": "{{ shop_description }}"
+    },
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close"
+    }
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "quick_view": "Quick view",
+    "price": {
+      "regular": "Regular price",
+      "sale": "Sale price",
+      "unit": "Unit price"
+    }
+  }
+}
+```
+**Usage**
+```liquid
+{{ 'general.meta.title' | t: shop_name: shop.name }}
+{{ 'general.meta.description' | t: shop_description: shop.description }}
+```
+
+### Translation guidelines
+
+**Key naming:**
+- Use descriptive, hierarchical keys
+- Maximum 3 levels deep
+- Use snake_case for key names
+- Group related translations
+
+**Content rules:**
+- Keep text concise for UI elements
+- Use variables for dynamic content
+- Consider character limits
+- Maintain consistent terminology
