@@ -1,0 +1,827 @@
+---
+description: Valid Liquid syntax reference (including filters, tags, and objects) for Shopify themes
+globs: *.liquid
+alwaysApply: false
+---
+# Liquid syntax standards
+
+## Liquid
+
+### Liquid delimiters
+
+- **`{{ ... }}`**: Output – prints a value.
+- **`{{- ... -}}`**: Output, trims whitespace around the value.
+- **`{% ... %}`**: Logic/control tag (if, for, assign, etc.), does not print anything, no whitespace trim.
+- **`{%- ... -%}`**: Logic/control tag, trims whitespace around the tag.
+
+**Tip:**
+Adding a dash (`-`) after `{%`/`{{` or before `%}`/`}}` trims spaces or newlines next to the tag.
+
+**Examples:**
+- `{{- product.title -}}` → print value, remove surrounding spaces or lines.
+- `{%- if available -%}In stock{%- endif -%}` → logic, removes extra spaces/lines.
+
+### Liquid operators
+
+**Comparison operators:**
+- ==
+- !=
+- >
+- <
+- >=
+- <=
+
+**Logical operators:**
+- `or`
+- `and`
+- `contains` - checks if a string contains a substring, or if an array contains a string
+
+#### Comparison and comparison tags
+
+**Key condition principles:**
+- For simplificity, ALWAYS use nested `if` conditions when the logic requires more than one logical operator
+- Parentheses are not supported in Liquid
+- Ternary conditionals are not supported in Liquid, so always use `{% if cond %}`
+
+**Basic comparison example:**
+```liquid
+{% if product.title == "Awesome Shoes" %}
+  These shoes are awesome!
+{% endif %}
+```
+
+**Multiple Conditions:**
+```liquid
+{% if product.type == "Shirt" or product.type == "Shoes" %}
+  This is a shirt or a pair of shoes.
+{% endif %}
+```
+
+**Contains Usage:**
+- For strings: `{% if product.title contains "Pack" %}`
+- For arrays: `{% if product.tags contains "Hello" %}`
+- Note: `contains` only works with strings, not objects in arrays
+
+**{% elsif %} (used inside if/unless only)**
+```liquid
+{% if a %}
+  ...
+{% elsif b %}
+  ...
+{% endif %}
+```
+
+**{% unless %}**
+```liquid
+{% unless condition %}
+  ...
+{% endunless %}
+```
+
+**{% case %}**
+```liquid
+{% case variable %}
+  {% when 'a' %}
+    a
+  {% when 'b' %}
+    b
+  {% else %}
+    other
+{% endcase %}
+```
+
+**{% else %} (used inside if, unless, case, or for)**
+```liquid
+{% if product.available %}
+  In stock
+{% else %}
+  Sold out
+{% endif %}
+```
+_or inside a for loop:_
+```liquid
+{% for item in collection.products %}
+  {{ item.title }}
+{% else %}
+  No products found.
+{% endfor %}
+```
+
+#### Variables and variable tags
+
+```liquid
+{% assign my_variable = 'value' %}
+
+{% capture my_variable %}
+  Contents of variable
+{% endcapture %}
+
+{% increment counter %}
+{% decrement counter %}
+```
+
+### Liquid filters
+
+You can chain filters in Liquid, passing the result of one filter as the input to the next.
+
+See these filters:
+
+- `upcase`: `{{ string | upcase }}` returns a **string**
+- `split`: `{{ string | split: string }}` returns an **array** (as we may notice in the docs, `split` receives a string as its argument)
+- `last`: `{{ array | last }}` returns **untyped**
+
+Each filter can pass its return value to the next filter as long as the types match.
+
+For example, `upcase` returns a string, which is suitable input for `split`, which then produces an array for `last` to use.
+
+Here's how the filters are executed step by step to eventually return `"WORLD"`:
+
+```liquid
+{{ "hello world" | upcase | split: " " | last }}
+```
+
+- First, `"hello world"` is converted to uppercase: `"HELLO WORLD"`, which is a string
+- Next, `split` can act on strings, so it splits the value by space into an array: `["HELLO", "WORLD"]`
+- Finally, the `last` filter work with array, so `"WORLD"` is returned
+
+#### Array
+- `compact`: `{{ array | compact }}` returns `array`
+- `concat`: `{{ array | concat: array }}` returns `array`
+- `find`: `{{ array | find: string, string }}` returns `untyped`
+- `find_index`: `{{ array | find_index: string, string }}` returns `number`
+- `first`: `{{ array | first }}` returns `untyped`
+- `has`: `{{ array | has: string, string }}` returns `boolean`
+- `join`: `{{ array | join }}` returns `string`
+- `last`: `{{ array | last }}` returns `untyped`
+- `map`: `{{ array | map: string }}` returns `array`
+- `reject`: `{{ array | reject: string, string }}` returns `array`
+- `reverse`: `{{ array | reverse }}` returns `array`
+- `size`: `{{ variable | size }}` returns `number`
+- `sort`: `{{ array | sort }}` returns `array`
+- `sort_natural`: `{{ array | sort_natural }}` returns `array`
+- `sum`: `{{ array | sum }}` returns `number`
+- `uniq`: `{{ array | uniq }}` returns `array`
+- `where`: `{{ array | where: string, string }}` returns `array`
+
+#### Cart
+- `item_count_for_variant`: `{{ cart | item_count_for_variant: {variant_id} }}` returns `number`
+- `line_items_for`: `{{ cart | line_items_for: object }}` returns `array`
+
+#### Collection
+- `link_to_type`: `{{ string | link_to_type }}` returns `string`
+- `link_to_vendor`: `{{ string | link_to_vendor }}` returns `string`
+- `sort_by`: `{{ string | sort_by: string }}` returns `string`
+- `url_for_type`: `{{ string | url_for_type }}` returns `string`
+- `url_for_vendor`: `{{ string | url_for_vendor }}` returns `string`
+- `within`: `{{ string | within: collection }}` returns `string`
+- `highlight_active_tag`: `{{ string | highlight_active_tag }}` returns `string`
+
+#### Color
+- `brightness_difference`: `{{ string | brightness_difference: string }}` returns `number`
+- `color_brightness`: `{{ string | color_brightness }}` returns `number`
+- `color_contrast`: `{{ string | color_contrast: string }}` returns `number`
+- `color_darken`: `{{ string | color_darken: number }}` returns `string`
+- `color_desaturate`: `{{ string | color_desaturate: number }}` returns `string`
+- `color_difference`: `{{ string | color_difference: string }}` returns `number`
+- `color_extract`: `{{ string | color_extract: string }}` returns `number`
+- `color_lighten`: `{{ string | color_lighten: number }}` returns `string`
+- `color_mix`: `{{ string | color_mix: string, number }}` returns `string`
+- `color_modify`: `{{ string | color_modify: string, number }}` returns `string`
+- `color_saturate`: `{{ string | color_saturate: number }}` returns `string`
+- `color_to_hex`: `{{ string | color_to_hex }}` returns `string`
+- `color_to_hsl`: `{{ string | color_to_hsl }}` returns `string`
+- `color_to_oklch`: `{{ string | color_to_oklch }}` returns `string`
+- `color_to_rgb`: `{{ string | color_to_rgb }}` returns `string`
+- `hex_to_rgba`: `{{ string | hex_to_rgba }}` returns `string`
+
+#### Customer
+- `customer_login_link`: `{{ string | customer_login_link }}` returns `string`
+- `customer_logout_link`: `{{ string | customer_logout_link }}` returns `string`
+- `customer_register_link`: `{{ string | customer_register_link }}` returns `string`
+- `avatar`: `{{ customer | avatar }}` returns `string`
+- `login_button`: `{{ shop | login_button }}` returns `string`
+
+#### Date
+- `date`: `{{ date | date: string }}` returns `string`
+
+#### Default
+- `default_errors`: `{{ string | default_errors }}` returns `string`
+- `default`: `{{ variable | default: variable }}` returns `untyped`
+- `default_pagination`: `{{ paginate | default_pagination }}` returns `string`
+
+#### Font
+- `font_face`: `{{ font | font_face }}` returns `string`
+- `font_modify`: `{{ font | font_modify: string, string }}` returns `font`
+- `font_url`: `{{ font | font_url }}` returns `string`
+
+#### Format
+- `date`: `{{ string | date: string }}` returns `string`
+- `json`: `{{ variable | json }}` returns `string`
+- `structured_data`: `{{ variable | structured_data }}` returns `string`
+- `unit_price_with_measurement`: `{{ number | unit_price_with_measurement: unit_price_measurement }}` returns `string`
+- `weight_with_unit`: `{{ number | weight_with_unit }}` returns `string`
+
+#### Hosted_file
+- `asset_img_url`: `{{ string | asset_img_url }}` returns `string`
+- `asset_url`: `{{ string | asset_url }}` returns `string`
+- `file_img_url`: `{{ string | file_img_url }}` returns `string`
+- `file_url`: `{{ string | file_url }}` returns `string`
+- `global_asset_url`: `{{ string | global_asset_url }}` returns `string`
+- `shopify_asset_url`: `{{ string | shopify_asset_url }}` returns `string`
+
+#### Html
+- `class_list`: `{{ settings.layout | class_list }}` returns `string`
+- `time_tag`: `{{ string | time_tag: string }}` returns `string`
+- `inline_asset_content`: `{{ asset_name | inline_asset_content }}` returns `string`
+- `highlight`: `{{ string | highlight: string }}` returns `string`
+- `link_to`: `{{ string | link_to: string }}` returns `string`
+- `placeholder_svg_tag`: `{{ string | placeholder_svg_tag }}` returns `string`
+- `preload_tag`: `{{ string | preload_tag: as: string }}` returns `string`
+- `script_tag`: `{{ string | script_tag }}` returns `string`
+- `stylesheet_tag`: `{{ string | stylesheet_tag }}` returns `string`
+
+#### Localization
+- `currency_selector`: `{{ form | currency_selector }}` returns `string`
+- `translate`: `{{ string | t }}` returns `string`
+- `format_address`: `{{ address | format_address }}` returns `string`
+
+#### Math
+- `abs`: `{{ number | abs }}` returns `number`
+- `at_least`: `{{ number | at_least }}` returns `number`
+- `at_most`: `{{ number | at_most }}` returns `number`
+- `ceil`: `{{ number | ceil }}` returns `number`
+- `divided_by`: `{{ number | divided_by: number }}` returns `number`
+- `floor`: `{{ number | floor }}` returns `number`
+- `minus`: `{{ number | minus: number }}` returns `number`
+- `modulo`: `{{ number | modulo: number }}` returns `number`
+- `plus`: `{{ number | plus: number }}` returns `number`
+- `round`: `{{ number | round }}` returns `number`
+- `times`: `{{ number | times: number }}` returns `number`
+
+#### Media
+- `external_video_tag`: `{{ variable | external_video_tag }}` returns `string`
+- `external_video_url`: `{{ media | external_video_url: attribute: string }}` returns `string`
+- `image_tag`: `{{ string | image_tag }}` returns `string`
+- `media_tag`: `{{ media | media_tag }}` returns `string`
+- `model_viewer_tag`: `{{ media | model_viewer_tag }}` returns `string`
+- `video_tag`: `{{ media | video_tag }}` returns `string`
+- `article_img_url`: `{{ variable | article_img_url }}` returns `string`
+- `collection_img_url`: `{{ variable | collection_img_url }}` returns `string`
+- `image_url`: `{{ variable | image_url: width: number, height: number }}` returns `string`
+- `img_tag`: `{{ string | img_tag }}` returns `string`
+- `img_url`: `{{ variable | img_url }}` returns `string`
+- `product_img_url`: `{{ variable | product_img_url }}` returns `string`
+
+#### Metafield
+- `metafield_tag`: `{{ metafield | metafield_tag }}` returns `string`
+- `metafield_text`: `{{ metafield | metafield_text }}` returns `string`
+
+#### Money
+- `money`: `{{ number | money }}` returns `string`
+- `money_with_currency`: `{{ number | money_with_currency }}` returns `string`
+- `money_without_currency`: `{{ number | money_without_currency }}` returns `string`
+- `money_without_trailing_zeros`: `{{ number | money_without_trailing_zeros }}` returns `string`
+
+#### Payment
+- `payment_button`: `{{ form | payment_button }}` returns `string`
+- `payment_terms`: `{{ form | payment_terms }}` returns `string`
+- `payment_type_img_url`: `{{ string | payment_type_img_url }}` returns `string`
+- `payment_type_svg_tag`: `{{ string | payment_type_svg_tag }}` returns `string`
+
+#### String
+- `hmac_sha1`: `{{ string | hmac_sha1: string }}` returns `string`
+- `hmac_sha256`: `{{ string | hmac_sha256: string }}` returns `string`
+- `md5`: `{{ string | md5 }}` returns `string`
+- `sha1`: `{{ string | sha1: string }}` returns `string`
+- `sha256`: `{{ string | sha256: string }}` returns `string`
+- `append`: `{{ string | append: string }}` returns `string`
+- `base64_decode`: `{{ string | base64_decode }}` returns `string`
+- `base64_encode`: `{{ string | base64_encode }}` returns `string`
+- `base64_url_safe_decode`: `{{ string | base64_url_safe_decode }}` returns `string`
+- `base64_url_safe_encode`: `{{ string | base64_url_safe_encode }}` returns `string`
+- `capitalize`: `{{ string | capitalize }}` returns `string`
+- `downcase`: `{{ string | downcase }}` returns `string`
+- `escape`: `{{ string | escape }}` returns `string`
+- `escape_once`: `{{ string | escape_once }}` returns `string`
+- `lstrip`: `{{ string | lstrip }}` returns `string`
+- `newline_to_br`: `{{ string | newline_to_br }}` returns `string`
+- `prepend`: `{{ string | prepend: string }}` returns `string`
+- `remove`: `{{ string | remove: string }}` returns `string`
+- `remove_first`: `{{ string | remove_first: string }}` returns `string`
+- `remove_last`: `{{ string | remove_last: string }}` returns `string`
+- `replace`: `{{ string | replace: string, string }}` returns `string`
+- `replace_first`: `{{ string | replace_first: string, string }}` returns `string`
+- `replace_last`: `{{ string | replace_last: string, string }}` returns `string`
+- `rstrip`: `{{ string | rstrip }}` returns `string`
+- `slice`: `{{ string | slice }}` returns `string`
+- `split`: `{{ string | split: string }}` returns `array`
+- `strip`: `{{ string | strip }}` returns `string`
+- `strip_html`: `{{ string | strip_html }}` returns `string`
+- `strip_newlines`: `{{ string | strip_newlines }}` returns `string`
+- `truncate`: `{{ string | truncate: number }}` returns `string`
+- `truncatewords`: `{{ string | truncatewords: number }}` returns `string`
+- `upcase`: `{{ string | upcase }}` returns `string`
+- `url_decode`: `{{ string | url_decode }}` returns `string`
+- `url_encode`: `{{ string | url_encode }}` returns `string`
+- `camelize`: `{{ string | camelize }}` returns `string`
+- `handleize`: `{{ string | handleize }}` returns `string`
+- `url_escape`: `{{ string | url_escape }}` returns `string`
+- `url_param_escape`: `{{ string | url_param_escape }}` returns `string`
+- `pluralize`: `{{ number | pluralize: string, string }}` returns `string`
+
+#### Tag
+- `link_to_add_tag`: `{{ string | link_to_add_tag }}` returns `string`
+- `link_to_remove_tag`: `{{ string | link_to_remove_tag }}` returns `string`
+- `link_to_tag`: `{{ string | link_to_tag }}` returns `string`
+
+### Liquid objects
+
+#### Global objects
+- `collections`
+- `pages`
+- `all_products`
+- `articles`
+- `blogs`
+- `cart`
+- `closest`
+- `content_for_header`
+- `customer`
+- `images`
+- `linklists`
+- `localization`
+- `metaobjects`
+- `request`
+- `routes`
+- `shop`
+- `theme`
+- `settings`
+- `template`
+- `additional_checkout_buttons`
+- `all_country_option_tags`
+- `canonical_url`
+- `content_for_additional_checkout_buttons`
+- `content_for_index`
+- `content_for_layout`
+- `country_option_tags`
+- `current_page`
+- `handle`
+- `page_description`
+- `page_image`
+- `page_title`
+- `powered_by_link`
+- `scripts`
+
+#### `/article` page
+- `article`
+- `blog`
+
+#### `/blog` page
+- `blog`
+- `current_tags`
+
+#### `/cart` page
+- `cart`
+
+#### `/checkout` page
+- `checkout`
+
+#### `/collection` page
+- `collection`
+- `current_tags`
+
+#### `/customers/account` page
+- `customer`
+
+#### `/customers/addresses` page
+- `customer`
+
+#### `/customers/order` page
+- `customer`
+- `order`
+
+#### `/gift_card.liquid` page
+- `gift_card`
+- `recipient`
+
+#### `/metaobject` page
+- `metaobject`
+
+#### `/page` page
+- `page`
+
+#### `/product` page
+- `product`
+
+#### `/robots.txt.liquid` page
+- `robots`
+
+#### `/search` page
+- `search`
+### Liquid tags
+
+
+#### content_for
+The `content_for` tag requires a type parameter to differentiate between rendering a number of theme blocks (`'blocks'`) and a single static block (`'block'`).
+
+
+Syntax:
+```
+{% content_for 'blocks' %}
+{% content_for 'block', type: "slide", id: "slide-1" %}
+```
+
+#### form
+Because there are many different form types available in Shopify themes, the `form` tag requires a type. Depending on the
+form type, an additional parameter might be required. You can specify the following form types:
+
+- [`activate_customer_password`](https://shopify.dev/docs/api/liquid/tags/form#form-activate_customer_password)
+- [`cart`](https://shopify.dev/docs/api/liquid/tags/form#form-cart)
+- [`contact`](https://shopify.dev/docs/api/liquid/tags/form#form-contact)
+- [`create_customer`](https://shopify.dev/docs/api/liquid/tags/form#form-create_customer)
+- [`currency`](https://shopify.dev/docs/api/liquid/tags/form#form-currency)
+- [`customer`](https://shopify.dev/docs/api/liquid/tags/form#form-customer)
+- [`customer_address`](https://shopify.dev/docs/api/liquid/tags/form#form-customer_address)
+- [`customer_login`](https://shopify.dev/docs/api/liquid/tags/form#form-customer_login)
+- [`guest_login`](https://shopify.dev/docs/api/liquid/tags/form#form-guest_login)
+- [`localization`](https://shopify.dev/docs/api/liquid/tags/form#form-localization)
+- [`new_comment`](https://shopify.dev/docs/api/liquid/tags/form#form-new_comment)
+- [`product`](https://shopify.dev/docs/api/liquid/tags/form#form-product)
+- [`recover_customer_password`](https://shopify.dev/docs/api/liquid/tags/form#form-recover_customer_password)
+- [`reset_customer_password`](https://shopify.dev/docs/api/liquid/tags/form#form-reset_customer_password)
+- [`storefront_password`](https://shopify.dev/docs/api/liquid/tags/form#form-storefront_password)
+
+
+Syntax:
+```
+{% form 'form_type' %}
+  content
+{% endform %}
+```
+
+#### layout
+
+Syntax:
+```
+{% layout name %}
+```
+
+#### assign
+You can create variables of any [basic type](https://shopify.dev/docs/api/liquid/basics#types), [object](https://shopify.dev/docs/api/liquid/objects), or object property.
+
+
+Syntax:
+```
+{% assign variable_name = value %}
+```
+
+#### break
+
+Syntax:
+```
+{% break %}
+```
+
+#### capture
+You can create complex strings with Liquid logic and variables.
+
+
+Syntax:
+```
+{% capture variable %}
+  value
+{% endcapture %}
+```
+
+#### case
+
+Syntax:
+```
+{% case variable %}
+  {% when first_value %}
+    first_expression
+  {% when second_value %}
+    second_expression
+  {% else %}
+    third_expression
+{% endcase %}
+```
+
+#### comment
+Any text inside `comment` tags won't be output, and any Liquid code will be parsed, but not executed.
+
+
+Syntax:
+```
+{% comment %}
+  content
+{% endcomment %}
+```
+
+#### continue
+
+Syntax:
+```
+{% continue %}
+```
+
+#### cycle
+The `cycle` tag must be used inside a `for` loop.
+
+> Tip:
+> Use the `cycle` tag to output text in a predictable pattern. For example, to apply odd/even classes to rows in a table.
+
+
+Syntax:
+```
+{% cycle string, string, ... %}
+```
+
+#### decrement
+Variables that are declared with `decrement` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),
+or [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across
+[snippets](/themes/architecture/snippets) included in the file.
+
+Similarly, variables that are created with `decrement` are independent from those created with [`assign`](https://shopify.dev/docs/api/liquid/tags/assign)
+and [`capture`](https://shopify.dev/docs/api/liquid/tags/capture). However, `decrement` and [`increment`](https://shopify.dev/docs/api/liquid/tags/increment) share
+variables.
+
+
+Syntax:
+```
+{% decrement variable_name %}
+```
+
+#### doc
+The `doc` tag allows developers to include documentation within Liquid
+templates. Any content inside `doc` tags is not rendered or outputted.
+Liquid code inside will be parsed but not executed. This facilitates
+tooling support for features like code completion, linting, and inline
+documentation.
+
+For detailed documentation syntax and examples, see the
+[`LiquidDoc` reference](https://shopify.dev/docs/storefronts/themes/tools/liquid-doc).
+
+
+Syntax:
+```
+{% doc %}
+  Renders a message.
+
+  @param {string} foo - A string value.
+  @param {string} [bar] - An optional string value.
+
+  @example
+  {% render 'message', foo: 'Hello', bar: 'World' %}
+{% enddoc %}
+{{ foo }}, {{ bar }}!
+```
+
+#### echo
+Using the `echo` tag is the same as wrapping an expression in curly brackets (`{{` and `}}`). However, unlike the curly
+bracket method, you can use the `echo` tag inside [`liquid` tags](https://shopify.dev/docs/api/liquid/tags/liquid).
+
+> Tip:
+> You can use [filters](https://shopify.dev/docs/api/liquid/filters) on expressions inside `echo` tags.
+
+
+Syntax:
+```
+{% liquid
+  echo expression
+%}
+```
+
+#### for
+You can do a maximum of 50 iterations with a `for` loop. If you need to iterate over more than 50 items, then use the
+[`paginate` tag](https://shopify.dev/docs/api/liquid/tags/paginate) to split the items over multiple pages.
+
+> Tip:
+> Every `for` loop has an associated [`forloop` object](https://shopify.dev/docs/api/liquid/objects/forloop) with information about the loop.
+
+
+Syntax:
+```
+{% for variable in array %}
+  expression
+{% endfor %}
+```
+
+#### if
+
+Syntax:
+```
+{% if condition %}
+  expression
+{% endif %}
+```
+
+#### increment
+Variables that are declared with `increment` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),
+or [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across
+[snippets](/themes/architecture/snippets) included in the file.
+
+Similarly, variables that are created with `increment` are independent from those created with [`assign`](https://shopify.dev/docs/api/liquid/tags/assign)
+and [`capture`](https://shopify.dev/docs/api/liquid/tags/capture). However, `increment` and [`decrement`](https://shopify.dev/docs/api/liquid/tags/decrement) share
+variables.
+
+
+Syntax:
+```
+{% increment variable_name %}
+```
+
+#### raw
+
+Syntax:
+```
+{% raw %}
+  expression
+{% endraw %}
+```
+
+#### render
+Inside snippets and app blocks, you can't directly access variables that are [created](https://shopify.dev/docs/api/liquid/tags/variable-tags) outside
+of the snippet or app block. However, you can [specify variables as parameters](https://shopify.dev/docs/api/liquid/tags/render#render-passing-variables-to-a-snippet)
+to pass outside variables to snippets.
+
+While you can't directly access created variables, you can access global objects, as well as any objects that are
+directly accessible outside the snippet or app block. For example, a snippet or app block inside the [product template](/themes/architecture/templates/product)
+can access the [`product` object](https://shopify.dev/docs/api/liquid/objects/product), and a snippet or app block inside a [section](/themes/architecture/sections)
+can access the [`section` object](https://shopify.dev/docs/api/liquid/objects/section).
+
+Outside a snippet or app block, you can't access variables created inside the snippet or app block.
+
+> Note:
+> When you render a snippet using the `render` tag, you can't use the [`include` tag](https://shopify.dev/docs/api/liquid/tags/include)
+> inside the snippet.
+
+
+Syntax:
+```
+{% render 'filename' %}
+```
+
+#### tablerow
+The `tablerow` tag must be wrapped in HTML `<table>` and `</table>` tags.
+
+> Tip:
+> Every `tablerow` loop has an associated [`tablerowloop` object](https://shopify.dev/docs/api/liquid/objects/tablerowloop) with information about the loop.
+
+
+Syntax:
+```
+{% tablerow variable in array %}
+  expression
+{% endtablerow %}
+```
+
+#### unless
+> Tip:
+> Similar to the [`if` tag](https://shopify.dev/docs/api/liquid/tags/if), you can use `elsif` to add more conditions to an `unless` tag.
+
+
+Syntax:
+```
+{% unless condition %}
+  expression
+{% endunless %}
+```
+
+#### paginate
+Because [`for` loops](https://shopify.dev/docs/api/liquid/tags/for) are limited to 50 iterations per page, you need to use the `paginate` tag to
+iterate over an array that has more than 50 items. The following arrays can be paginated:
+
+- [`all_products`](https://shopify.dev/docs/api/liquid/objects/all_products)
+- [`article.comments`](https://shopify.dev/docs/api/liquid/objects/article#article-comments)
+- [`blog.articles`](https://shopify.dev/docs/api/liquid/objects/blog#blog-articles)
+- [`collections`](https://shopify.dev/docs/api/liquid/objects/collections)
+- [`collection.products`](https://shopify.dev/docs/api/liquid/objects/collection#collection-products)
+- [`customer.addresses`](https://shopify.dev/docs/api/liquid/objects/customer#customer-addresses)
+- [`customer.orders`](https://shopify.dev/docs/api/liquid/objects/customer#customer-orders)
+- [`pages`](https://shopify.dev/docs/api/liquid/objects/pages)
+- [`product.variants`](https://shopify.dev/docs/api/liquid/objects/product#variants)
+- [`search.results`](https://shopify.dev/docs/api/liquid/objects/search#search-results)
+- [`collection_list` settings](/themes/architecture/settings/input-settings#collection_list)
+- [`product_list` settings](/themes/architecture/settings/input-settings#product_list)
+
+Within the `paginate` tag, you have access to the [`paginate` object](https://shopify.dev/docs/api/liquid/objects/paginate). You can use this
+object, or the [`default_pagination` filter](https://shopify.dev/docs/api/liquid/filters/default_pagination), to build page navigation.
+
+
+Syntax:
+```
+{% paginate array by page_size %}
+  {% for item in array %}
+    forloop_content
+  {% endfor %}
+{% endpaginate %}
+
+The `paginate` tag allows the user to paginate to the 25,000th item in the array and no further. To reach items further in
+the array the array should be filtered further before paginating. See
+[Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.
+```
+
+#### javascript
+Each section, block or snippet can have only one `{% javascript %}` tag.
+
+To learn more about how JavaScript that's defined between the `javascript` tags is loaded and run, refer to the documentation for [javascript tags](/storefronts/themes/best-practices/javascript-and-stylesheet-tags#javascript).
+> Caution:
+> Liquid isn't rendered inside of `{% javascript %}` tags. Including Liquid code can cause syntax errors.
+
+
+Syntax:
+```
+{% javascript %}
+  javascript_code
+{% endjavascript %}
+```
+
+#### section
+Rendering a section with the `section` tag renders a section statically. To learn more about sections and how to use
+them in your theme, refer to [Render a section](/themes/architecture/sections#render-a-section).
+
+
+Syntax:
+```
+{% section 'name' %}
+```
+
+#### stylesheet
+Each section, block or snippet can have only one `{% stylesheet %}` tag.
+
+To learn more about how CSS that's defined between the `stylesheet` tags is loaded and run, refer to the documentation for [stylesheet tags](/storefronts/themes/best-practices/javascript-and-stylesheet-tags#stylesheet).
+> Caution:
+> Liquid isn't rendered inside of `{% stylesheet %}` tags. Including Liquid code can cause syntax errors.
+
+
+Syntax:
+```
+{% stylesheet %}
+  css_styles
+{% endstylesheet %}
+```
+
+#### sections
+Use this tag to render section groups as part of the theme's [layout](/themes/architecture/layouts) content. Place the `sections` tag where you want to render it in the layout.
+
+To learn more about section groups and how to use them in your theme, refer to [Section groups](/themes/architecture/section-groups#usage).
+
+
+Syntax:
+```
+{% sections 'name' %}
+```
+
+#### style
+> Note:
+> If you reference [color settings](/themes/architecture/settings/input-settings#color) inside `style` tags, then
+> the associated CSS rules will update as the setting is changed in the theme editor, without a page refresh.
+
+
+Syntax:
+```
+{% style %}
+  CSS_rules
+{% endstyle %}
+```
+
+#### else
+You can use the `else` tag with the following tags:
+
+- [`case`](https://shopify.dev/docs/api/liquid/tags/case)
+- [`if`](https://shopify.dev/docs/api/liquid/tags/if)
+- [`unless`](https://shopify.dev/docs/api/liquid/tags/unless)
+
+
+Syntax:
+```
+{% else %}
+  expression
+```
+
+#### else
+
+Syntax:
+```
+{% for variable in array %}
+  first_expression
+{% else %}
+  second_expression
+{% endfor %}
+```
+
+#### liquid
+Because the tags don't have delimeters, each tag needs to be on its own line.
+
+> Tip:
+> Use the [`echo` tag](https://shopify.dev/docs/api/liquid/tags/echo) to output an expression inside `liquid` tags.
+
+
+Syntax:
+```
+{% liquid
+  expression
+%}
+```
+
+
