@@ -1,0 +1,119 @@
+---
+description: Snippets coding standards and best practices guide
+globs: snippets/*.liquid
+alwaysApply: false
+---
+
+# Snippet development standards
+
+## Snippet documentation
+
+Every snippet must include JSDoc-style comments using LiquidDoc:
+
+```liquid
+{% doc %}
+  Product Card Component
+
+  Renders a product card with customizable options.
+
+  @param {product} product - product object (required)
+  @param {boolean} show_vendor -  display vendor name (default: false)
+  @param {boolean} show_quick_add - show quick add button (default: false)
+  @param {string} image_ratio - image aspect ratio (default: 'adapt')
+  @param {boolean} lazy_load - enable lazy loading (default: true)
+  @param {string} card_class -  Additional CSS classes
+
+  @example
+  {% render 'product-card',
+       product: product,
+       show_vendor: true,
+       image_ratio: 'square'
+    %}
+{% enddoc %}
+```
+
+## Parameter handling
+
+Always provide defaults and validate parameters:
+
+```liquid
+{% liquid
+  # Parameter validation and defaults
+  assign product = product | default: empty
+  assign show_vendor = show_vendor | default: false
+  assign show_quick_add = show_quick_add | default: false
+  assign image_ratio = image_ratio | default: 'adapt'
+  assign lazy_load = lazy_load | default: true
+  assign card_class = card_class | default: ''
+
+  # Early return if required parameters missing
+  unless product != empty
+    echo '<!-- Error: product parameter required for product-card snippet -->'
+    break
+  endunless
+%}
+```
+
+## Common snippet patterns
+
+**Icon snippet:**
+```liquid
+{% doc %}
+  @param {string} icon - Icon name (required)
+  @param {string} size - Icon size class (default: 'icon--medium')
+  @param {string} css_class - Additional CSS class
+{% enddoc %}
+
+{% liquid
+  assign icon = icon | default: ''
+  assign size = size | default: 'icon--medium'
+  assign css_class = css_class | default: ''
+
+  unless icon != blank
+    break
+  endunless
+%}
+
+<svg class="icon {{ size }} {{ css_class }}" aria-hidden="true" focusable="false">
+  <use href="#icon-{{ icon }}"></use>
+</svg>
+```
+
+**Price snippet:**
+```liquid
+{% doc %}
+  @param {product} product - Product object (required)
+  @param {boolean} show_compare_at - Show compare at price (default: true)
+  @param {boolean} show_unit_price - Show unit price (default: false)
+{% enddoc %}
+
+{% liquid
+  assign show_compare_at = show_compare_at | default: true
+  assign show_unit_price = show_unit_price | default: false
+%}
+
+<div class="price">
+  <div class="price__regular">
+    {{ product.price | money }}
+  </div>
+
+  {% if show_compare_at and product.compare_at_price > product.price %}
+    <div class="price__compare-at">
+      <s>{{ product.compare_at_price | money }}</s>
+    </div>
+  {% endif %}
+
+  {% if show_unit_price and product.selected_or_first_available_variant.unit_price_measurement %}
+    <div class="price__unit">
+      {{ product.selected_or_first_available_variant.unit_price | money }}/
+      {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+        {{ product.selected_or_first_available_variant.unit_price_measurement.reference_value }}
+      {%- endif -%}
+      {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+    </div>
+  {% endif %}
+</div>
+```
+
+[snippet-example.liquid](mdc:.cursor/rules/examples/snippet-example.liquid)
+
