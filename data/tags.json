@@ -5,7 +5,7 @@
     "deprecation_reason": "",
     "description": "The `content_for` tag requires a type parameter to differentiate between rendering a number of theme blocks (`'blocks'`) and a single static block (`'block'`).",
     "parameters": [],
-    "summary": "Creates a designated area in your theme where blocks can be rendered.",
+    "summary": "Creates a designated area in your [theme](https://shopify.dev/themes/architecture) where blocks can be rendered.",
     "name": "content_for",
     "syntax": "{% content_for 'blocks' %}\n{% content_for 'block', type: \"slide\", id: \"slide-1\" %}",
     "syntax_keywords": [],

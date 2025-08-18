@@ -6960,6 +6960,64 @@
       "global": false,
       "parents": [
         {
+          "object": "line_item",
+          "property": "instructions"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Whether the nested cart line item can be removed.",
+        "name": "can_remove"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Whether the nested cart line item quantity can be updated.",
+        "name": "can_update_quantity"
+      }
+    ],
+    "summary": "The instructions for a nested cart line item.",
+    "name": "instructions",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
           "object": "cart",
           "property": "line_items"
         },
@@ -6970,6 +7028,10 @@
         {
           "object": "order",
           "property": "line_items"
+        },
+        {
+          "object": "parent_relationship",
+          "property": "parent"
         }
       ],
       "template": []
@@ -7623,6 +7685,38 @@
         ],
         "summary": "The components of a line item.",
         "name": "item_components"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This field is applicable for cart line item only.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "instructions",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Instructions define behaviours and operations that can be performed on the nested cart line.",
+        "name": "instructions"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This field is applicable for cart line item only.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "parent_relationship",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The parent relationship for a nested line item.",
+        "name": "parent_relationship"
       },
       {
         "deprecated": false,
@@ -10231,7 +10325,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The new customer accounts includes a list of Buyers Orders and an Order Details View.\nThis liquid function exposes a URL to a specific Orders Details in new customer accounts.\n[Setup process for the new order details page](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts)\ncan be found in the help center.",
+        "description": "Customer accounts includes a list of Buyers Orders and an Order Details View.\nThis liquid function exposes a URL to a specific Orders Details in customer accounts.\n[Setup process for the new order details page](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts)\ncan be found in the help center.",
         "examples": [],
         "return_type": [
           {
@@ -10833,6 +10927,48 @@
       "path": "",
       "handle": "",
       "data_from_file": "{\"current_offset\":10,\"current_page\":3,\"items\":17,\"next\":{},\"page_param\":\"page\",\"page_size\":5,\"pages\":4,\"parts\":[],\"previous\":{}}"
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "line_item",
+          "property": "parent_relationship"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "line_item",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The parent line item for the nested cart line item.",
+        "name": "parent"
+      }
+    ],
+    "summary": "Information about the parent relationship for a nested cart line item.",
+    "name": "parent_relationship",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
     },
     "return_type": []
   },
@@ -13554,7 +13690,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [account page](https://help.shopify.com/manual/customers/customer-accounts) URL. Redirects to [new customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
+        "summary": "The [account page](https://help.shopify.com/manual/customers/customer-accounts) URL. Redirects to [customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
         "name": "account_url"
       },
       {
@@ -13570,7 +13706,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [account login page](/themes/architecture/templates/customers-login) URL. Redirects to [new customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
+        "summary": "The [account login page](/themes/architecture/templates/customers-login) URL. Redirects to [customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
         "name": "account_login_url"
       },
       {
@@ -13586,7 +13722,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The URL to log a customer out of their account. Redirects to [new customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
+        "summary": "The URL to log a customer out of their account. Redirects to [customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
         "name": "account_logout_url"
       },
       {
@@ -13602,7 +13738,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [password recovery page](/themes/architecture/templates/customers-reset-password) URL. Redirects to [new customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
+        "summary": "The [password recovery page](/themes/architecture/templates/customers-reset-password) URL. Redirects to [customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
         "name": "account_recover_url"
       },
       {
@@ -13634,8 +13770,24 @@
             "array_value": ""
           }
         ],
-        "summary": "The [account addresses page](/themes/architecture/templates/customers-addresses) URL. Redirects to [new customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
+        "summary": "The [account addresses page](/themes/architecture/templates/customers-addresses) URL. Redirects to [customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) when enabled.",
         "name": "account_addresses_url"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The URL for the [customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) profile page.",
+        "name": "account_profile_url"
       },
       {
         "deprecated": false,
@@ -13810,7 +13962,7 @@
             "array_value": ""
           }
         ],
-        "summary": "[New customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) login page. Redirects to the storefront page the customer was on before visiting the login page.",
+        "summary": "[Customer accounts](https://help.shopify.com/en/manual/customers/customer-accounts/new-customer-accounts) login page. Redirects to the storefront page the customer was on before visiting the login page.",
         "name": "storefront_login_url"
       }
     ],

@@ -25,7 +25,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the total item count for a specified variant in the cart.",
+    "summary": "Returns the total item count for a specified variant in the [`cart`](https://shopify.dev/docs/api/liquid/objects/cart) object.",
     "syntax": "cart | item_count_for_variant: {variant_id}",
     "name": "item_count_for_variant"
   },
@@ -65,7 +65,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Returns the subset of cart line items that include a specified product or variant.",
+    "summary": "Returns the subset of [`cart`](https://shopify.dev/docs/api/liquid/objects/cart) line items that include a specified product or variant.",
     "syntax": "cart | line_items_for: object",
     "name": "line_items_for"
   },
@@ -143,7 +143,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates an HTML `&lt;a&gt;` tag with an `href` attribute linking to a collection page that lists all products of the given\nproduct type.",
+    "summary": "Generates an HTML `&lt;a&gt;` tag with an `href` attribute linking to a [collection page](https://shopify.dev/docs/storefronts/themes/architecture/templates/collection) that lists all products of the given\nproduct type.",
     "syntax": "string | link_to_type",
     "name": "link_to_type"
   },
@@ -191,7 +191,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates an HTML `&lt;a&gt;` tag with an `href` attribute linking to a collection page that lists all products of a given\nproduct vendor.",
+    "summary": "Generates an HTML `&lt;a&gt;` tag with an `href` attribute linking to a [collection page](https://shopify.dev/docs/storefronts/themes/architecture/templates/collection) that lists all products of a given\nproduct vendor.",
     "syntax": "string | link_to_vendor",
     "name": "link_to_vendor"
   },
@@ -221,7 +221,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates a collection URL with the provided `sort_by` parameter appended. This filter must be applied to a collection URL.",
+    "summary": "Generates a collection URL with the provided `sort_by` parameter appended.\nThis filter must be applied to the object property [`collection.url`](https://shopify.dev/docs/api/liquid/objects/collection#collection-url).",
     "syntax": "string | sort_by: string",
     "name": "sort_by"
   },
@@ -251,7 +251,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates a URL for a collection page that lists all products of the given product type.",
+    "summary": "Generates a URL for a [collection page](https://shopify.dev/docs/storefronts/themes/architecture/templates/collection) that lists all products of the given product type.",
     "syntax": "string | url_for_type",
     "name": "url_for_type"
   },
@@ -281,7 +281,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Generates a URL for a collection page that lists all products from the given product vendor.",
+    "summary": "Generates a URL for a [collection page](https://shopify.dev/docs/storefronts/themes/architecture/templates/collection) that lists all products from the given product vendor.",
     "syntax": "string | url_for_vendor",
     "name": "url_for_vendor"
   },
@@ -4234,7 +4234,7 @@
         "show_data_tab": false
       }
     ],
-    "summary": "Generates an HTML element to host the metafield data. The type of element that's generated differs depending on the\ntype of metafield.",
+    "summary": "Generates an HTML element to host the data from a [`metafield` object](https://shopify.dev/docs/api/liquid/objects/metafield).\nThe type of element that's generated differs depending on the type of metafield.",
     "syntax": "metafield | metafield_tag",
     "name": "metafield_tag"
   },
@@ -4304,7 +4304,7 @@
         "show_data_tab": false
       }
     ],
-    "summary": "Generates a text version of the metafield data.",
+    "summary": "Generates a text version of the data from a [`metafield` object](https://shopify.dev/docs/api/liquid/objects/metafield).",
     "syntax": "metafield | metafield_text",
     "name": "metafield_text"
   },
@@ -4761,7 +4761,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Wraps a given tag in an HTML `&lt;span&gt;` tag, with a `class` attribute of `active`, if the tag is currently active. Only\napplies to collection tags.",
+    "summary": "Wraps a given tag within the [`collection` object](https://shopify.dev/docs/api/liquid/objects/collection) in an HTML `&lt;span&gt;` tag, with a `class` attribute of `active`, if the tag is currently active. Only\napplies to collection tags.",
     "syntax": "string | highlight_active_tag",
     "name": "highlight_active_tag"
   },
