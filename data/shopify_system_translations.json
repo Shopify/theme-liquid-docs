@@ -2197,6 +2197,7 @@
   "shopify.notices.cart.cart_too_large": "Cart is too large.",
   "shopify.notices.cart.cart_attributes_error": "Cart attributes contain invalid data.",
   "shopify.notices.cart.merchandise_line_transformers.run_error": "An error occurred in your cart.",
+  "shopify.notices.cart.merchandise_not_applicable": "Item cannot be purchased as configured.",
   "shopify.notices.storefront.invalid_password": "Password incorrect, please try again.",
   "shopify.notices.tags.add_articles": "Narrow search to articles also having tag %{tag}",
   "shopify.notices.tags.add_products": "Narrow selection to products matching tag %{tag}",
