@@ -1453,6 +1453,7 @@
   "shopify.checkout.thank_you.thank_you_unconfirmed_items_description.other": "You haven't been charged for these",
   "shopify.checkout.thank_you.thank_you_item_label.one": "%{count} item",
   "shopify.checkout.thank_you.thank_you_item_label.other": "%{count} items",
+  "shopify.checkout.thank_you.thank_you_from_shop": "From %{shop_name}",
   "shopify.checkout.thank_you.thank_you_payments_app_failed_pending_payment": "You weren’t charged for your order. Return to your cart to review your order and pay again.",
   "shopify.checkout.thank_you.thank_you_payments_app_failed_pending_payment_payment": "You weren’t charged for your order. Return to your cart to review your order and pay again.",
   "shopify.checkout.thank_you.thank_you_payments_app_failed_pending_payment_pick_up": "You weren’t charged for your order. Return to your cart to review your order and pay again.",
