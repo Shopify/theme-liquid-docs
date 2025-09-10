@@ -453,6 +453,8 @@
   "shopify.checkout.order_summary.title": "Order summary",
   "shopify.checkout.order_summary.group_title_label": "Part of \"%{group_title}\"",
   "shopify.checkout.order_summary.for_add_on": "For: %{group_title}",
+  "shopify.checkout.order_summary.from_shop_heading": "From %{shop_name}",
+  "shopify.checkout.order_summary.from_other_stores_heading": "From other stores",
   "shopify.checkout.order_summary.number_items.one": "%{count} item",
   "shopify.checkout.order_summary.number_items.other": "%{count} items",
   "shopify.checkout.order_summary.view_all_items.one": "View %{count} item",
