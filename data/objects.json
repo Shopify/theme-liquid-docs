@@ -15544,7 +15544,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if customer accounts are required to complete checkout. Returns `false` if not.",
+        "summary": "Returns `true` if the store shows a login link. Returns `false` if not.",
         "name": "customer_accounts_enabled"
       },
       {
