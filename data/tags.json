@@ -266,7 +266,7 @@
     "category": "variable",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can create variables of any [basic type](/docs/api/liquid/basics#types), [object](/docs/api/liquid/objects), or object property.",
+    "description": "You can create variables of any [basic type](/docs/api/liquid/basics#types), [object](/docs/api/liquid/objects), or object property.\n\n&gt; Caution:\n&gt; Predefined Liquid objects can be overridden by variables with the same name.\n&gt; To make sure that you can access all Liquid objects, make sure that your variable name doesn't match a predefined object's name.",
     "parameters": [],
     "summary": "Creates a new variable.",
     "name": "assign",
@@ -321,7 +321,7 @@
     "category": "variable",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "You can create complex strings with Liquid logic and variables.",
+    "description": "You can create complex strings with Liquid logic and variables.\n\n&gt; Caution:\n&gt; Predefined Liquid objects can be overridden by variables with the same name.\n&gt; To make sure that you can access all Liquid objects, make sure that your variable name doesn't match a predefined object's name.",
     "parameters": [],
     "summary": "Creates a new variable with a string value.",
     "name": "capture",
@@ -507,7 +507,7 @@
     "deprecation_reason": "",
     "description": "Variables that are declared with `decrement` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture/snippets) included in the file.\n\nSimilarly, variables that are created with `decrement` are independent from those created with [`assign`](/docs/api/liquid/tags/assign)\nand [`capture`](/docs/api/liquid/tags/capture). However, `decrement` and [`increment`](/docs/api/liquid/tags/increment) share\nvariables.",
     "parameters": [],
-    "summary": "Creates a new variable, with a default value of -1, that's decreased by 1 with each subsequent call.",
+    "summary": "Creates a new variable, with a default value of -1, that's decreased by 1 with each subsequent call.\n\n&gt; Caution:\n&gt; Predefined Liquid objects can be overridden by variables with the same name.\n&gt; To make sure that you can access all Liquid objects, make sure that your variable name doesn't match a predefined object's name.",
     "name": "decrement",
     "syntax": "{% decrement variable_name %}",
     "syntax_keywords": [
@@ -537,7 +537,7 @@
     "parameters": [],
     "summary": "Documents template elements with annotations.",
     "name": "doc",
-    "syntax": "{% doc %}\n  Renders a message.\n\n  @param {string} foo - A string value.\n  @param {string} [bar] - An optional string value.\n\n  @example\n  {% render 'message', foo: 'Hello', bar: 'World' %}\n{% enddoc %}\n{{ foo }}, {{ bar }}!",
+    "syntax": "{% doc %}\n  Renders a message.\n\n  @param {string} foo - A string value.\n  @param {string} [bar] - An optional string value.\n\n  @example\n  {% render 'message', foo: 'Hello', bar: 'World' %}\n{% enddoc %}",
     "syntax_keywords": [],
     "examples": []
   },
@@ -578,7 +578,7 @@
       {
         "description": "The number of iterations to perform.",
         "name": "limit",
-        "positional": true,
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -587,7 +587,7 @@
       {
         "description": "The 1-based index to start iterating at.",
         "name": "offset",
-        "positional": true,
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -747,7 +747,7 @@
     "deprecation_reason": "",
     "description": "Variables that are declared with `increment` are unique to the [layout](/themes/architecture/layouts), [template](/themes/architecture/templates),\nor [section](/themes/architecture/sections) file that they're created in. However, the variable is shared across\n[snippets](/themes/architecture/snippets) included in the file.\n\nSimilarly, variables that are created with `increment` are independent from those created with [`assign`](/docs/api/liquid/tags/assign)\nand [`capture`](/docs/api/liquid/tags/capture). However, `increment` and [`decrement`](/docs/api/liquid/tags/decrement) share\nvariables.",
     "parameters": [],
-    "summary": "Creates a new variable, with a default value of 0, that's increased by 1 with each subsequent call.",
+    "summary": "Creates a new variable, with a default value of 0, that's increased by 1 with each subsequent call.\n\n&gt; Caution:\n&gt; Predefined Liquid objects can be overridden by variables with the same name.\n&gt; To make sure that you can access all Liquid objects, make sure that your variable name doesn't match a predefined object's name.",
     "name": "increment",
     "syntax": "{% increment variable_name %}",
     "syntax_keywords": [
@@ -854,7 +854,7 @@
       {
         "description": "The number of columns that the table should have.",
         "name": "cols",
-        "positional": true,
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -863,7 +863,7 @@
       {
         "description": "The number of iterations to perform.",
         "name": "limit",
-        "positional": true,
+        "positional": false,
         "required": false,
         "types": [
           "number"
@@ -872,7 +872,7 @@
       {
         "description": "The 1-based index to start iterating at.",
         "name": "offset",
-        "positional": true,
+        "positional": false,
         "required": false,
         "types": [
           "number"
