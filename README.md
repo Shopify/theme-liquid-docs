@@ -20,12 +20,19 @@ yarn install
 
 ### Available data
 
-In `.liquid` templates, you have access to:
+In `data/`, you have access to:
 - `filters` — All available Liquid filters
 - `tags` — All Liquid tags
 - `objects` — All Liquid objects
+- `latest.json` — Identifies the version of Liquid data used by CLI, theme-tools, and other dependent projects. See [Updating revision number](#updating-revision-number) for details.
 
-Check `ai/sources/_liquid-rules.liquid` for examples.
+Check `ai/liquid.mdc` for examples.
+
+### Updating revision number
+
+Run the [GitHub Action](https://github.com/Shopify/theme-liquid-docs/actions/workflows/update-latest.yml) to update the Liquid docs used by all dependent projects.
+
+🚨 IF YOU DONT RUN THIS ACTION, DEPENDENT PROJECTS WILL USE LIQUID DOCS IDENTIFIED BY THE REVISION ID IN `data/latest.json`.
 
 ## Contributing
 
