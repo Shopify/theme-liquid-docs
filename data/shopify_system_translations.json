@@ -2095,7 +2095,6 @@
   "shopify.errors.too_long": "is too long (maximum is %{count} characters)",
   "shopify.errors.password_mismatch": "must match the provided password",
   "shopify.errors.contains_spaces": "starts or ends with spaces.",
-  "shopify.errors.email_domain_invalid": "provider is not supported",
   "shopify.errors.invalid_for_country": "is not valid for %{country}",
   "shopify.errors.invalid_for_country_and_province": "is not valid for %{province} and %{country}",
   "shopify.errors.invalid_province_in_country": "is not a valid province in %{country}",
