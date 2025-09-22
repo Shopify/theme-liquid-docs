@@ -637,6 +637,10 @@ Syntax:
 #### assign
 You can create variables of any [basic type](https://shopify.dev/docs/api/liquid/basics#types), [object](https://shopify.dev/docs/api/liquid/objects), or object property.
 
+> Caution:
+> Predefined Liquid objects can be overridden by variables with the same name.
+> To make sure that you can access all Liquid objects, make sure that your variable name doesn't match a predefined object's name.
+
 
 Syntax:
 ```
@@ -652,6 +656,10 @@ Syntax:
 
 #### capture
 You can create complex strings with Liquid logic and variables.
+
+> Caution:
+> Predefined Liquid objects can be overridden by variables with the same name.
+> To make sure that you can access all Liquid objects, make sure that your variable name doesn't match a predefined object's name.
 
 
 Syntax:
@@ -742,7 +750,6 @@ Syntax:
   @example
   {% render 'message', foo: 'Hello', bar: 'World' %}
 {% enddoc %}
-{{ foo }}, {{ bar }}!
 ```
 
 #### echo
