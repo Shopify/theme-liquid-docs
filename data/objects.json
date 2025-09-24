@@ -14,6 +14,10 @@
         {
           "object": "variant",
           "property": "featured_media"
+        },
+        {
+          "object": "remote_product",
+          "property": "featured_media"
         }
       ],
       "template": []
@@ -1591,6 +1595,10 @@
     "access": {
       "global": false,
       "parents": [
+        {
+          "object": "remote_shop",
+          "property": "brand"
+        },
         {
           "object": "shop",
           "property": "brand"
@@ -6613,6 +6621,10 @@
           "property": "featured_image"
         },
         {
+          "object": "remote_product",
+          "property": "featured_image"
+        },
+        {
           "object": "user",
           "property": "image"
         },
@@ -7213,7 +7225,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The product associated with the line item.",
+        "summary": "The product associated with the line item. May be a regular [product](/docs/api/liquid/objects/product) or a [remote product](/docs/api/liquid/objects/remote_product).",
         "name": "product"
       },
       {
@@ -12007,7 +12019,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If no value is currently selected, then `nil` is returned.",
+        "description": "If no value is currently selected, then the first available variant is returned.",
         "examples": [],
         "return_type": [
           {
@@ -12262,6 +12274,18 @@
         {
           "object": "product_option_value",
           "property": "variant"
+        },
+        {
+          "object": "remote_product",
+          "property": "selected_or_first_available_variant"
+        },
+        {
+          "object": "remote_product",
+          "property": "selected_variant"
+        },
+        {
+          "object": "remote_product",
+          "property": "first_available_variant"
         }
       ],
       "template": []
@@ -13209,6 +13233,933 @@
       "data_from_file": "{\"products\":[],\"products_count\":4,\"performed?\":true}"
     },
     "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "remote_product",
+          "property": ""
+        },
+        {
+          "object": "remote_product",
+          "property": "remote_details"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Remote details can only be accessed on an object that comes from a remote source,\nsuch as a sponsored product.",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Provides context on how the remote object was surfaced.\nCurrently the only supported value is \"sponsored\", but this may be expanded in the future.",
+        "name": "type"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "remote_shop",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Information about the store that the remote object came from.",
+        "name": "shop"
+      }
+    ],
+    "summary": "Information about the remote source from which the object came from.",
+    "name": "remote_details",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+      {
+        "type": "RemoteDetailsDrop",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "collection",
+          "property": "products"
+        },
+        {
+          "object": "line_item",
+          "property": "product"
+        },
+        {
+          "object": "search",
+          "property": "results"
+        },
+        {
+          "object": "variant",
+          "property": "product"
+        }
+      ],
+      "template": [
+        "product"
+      ]
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; In a cart context, the title of a remote product is appended with \"Sold by {store name}\".",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The title of the product.",
+        "name": "title"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "remote_details",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Information about the remote source from which the remote product came from.",
+        "name": "remote_details"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; Depending on rendering context, the featured media of remote products may be modified to include a badge highlighting the remote source.\n\n&gt; Tip:\n&gt; You can use [media filters](/docs/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "media",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The first (featured) media attached to the product.",
+        "name": "featured_media"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; Depending on rendering context, the media of remote products may be modified to include a badge highlighting the remote source.\n\n&gt; Tip:\n&gt; You can use [media filters](/docs/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "media"
+          }
+        ],
+        "summary": "The media attached to the product, sorted by the date it was added to the product.",
+        "name": "media"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; Remote products have pre-determined dedicated template names, always prefixed with \"remote.\" This allows them to be managed independently of regular product templates.\n&gt; E.g. \"remote.sponsored\"",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the custom template assigned to the product.",
+        "name": "template_suffix"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; Only standard metafields set by the remote store are included. Custom metafields are not.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "untyped",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The metafields applied to the product.",
+        "name": "metafields"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.content`](/docs/api/liquid/objects/product#product-content).\n&gt; The description of remote products is modified to include a link to the remote store's shipping and refund policies, if the shop has defined them.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The description of the product.",
+        "name": "description"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "selling_plan_group"
+          }
+        ],
+        "summary": "The selling plan groups that the variants of the product are included in.",
+        "name": "selling_plan_groups"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "product_option"
+          }
+        ],
+        "summary": "The options on the product.",
+        "name": "options_with_values"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "taxonomy_category",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The taxonomy category for the product",
+        "name": "category"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; Returns a maximum of 250 variants when unpaginated.\n&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many variants to show per page, up to a limit of 50.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "variant"
+          }
+        ],
+        "summary": "The variants of the product.",
+        "name": "variants"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The total number of variants for the product.",
+        "name": "variants_count"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The ID of the product.",
+        "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The vendor of the product.",
+        "name": "vendor"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.description`](/docs/api/liquid/objects/product#product-description).",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The description of the product.",
+        "name": "content"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "image",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The first (featured) image attached to the product.",
+        "name": "featured_image"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "image"
+          }
+        ],
+        "summary": "The images attached to the product.",
+        "name": "images"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.price`](/docs/api/liquid/objects/product#product-price).\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The lowest price of any variants of the product in the currency's subunit.",
+        "name": "price_min"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.price_min`](/docs/api/liquid/objects/product#product-price_min).\n\nThe value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The lowest price of any variants of the product in the currency's subunit.",
+        "name": "price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The highest price of any variants of the product in the currency's subunit.",
+        "name": "price_max"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the product's variant prices vary. Returns `false` if not.",
+        "name": "price_varies"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. The `selected_variant` parameter is available on product pages only.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "variant",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The currently selected or first available variant of the product.",
+        "name": "selected_or_first_available_variant"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "If no variant is currently selected, then `nil` is returned.\n\n&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. This URL parameter is available on product pages URLs only.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "variant",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The currently selected variant of the product.",
+        "name": "selected_variant"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "variant",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The first available variant of the product.",
+        "name": "first_available_variant"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "For a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.\n- The variant has an associated [delivery profile](/docs/apps/selling-strategies/purchase-options/deferred/shipping-delivery/delivery-profiles) with a valid shipping rate.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if at least one of the variants of the product is available. Returns `false` if not.",
+        "name": "available"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+          {
+            "name": "Output the options",
+            "description": "You can use the [`size` filter](/docs/api/liquid/filters/size) with dot notation to determine how many options a product has.\n",
+            "syntax": "",
+            "path": "/products/health-potion",
+            "raw_liquid": "{% if product.options.size &gt; 0 -%}\n  {% for option in product.options -%}\n    - {{ option }}\n  {%- endfor %}\n{%- endif %}",
+            "parameter": false,
+            "display_type": "text",
+            "show_data_tab": true
+          }
+        ],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "string"
+          }
+        ],
+        "summary": "The option names of the product.",
+        "name": "options"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The type of the product.",
+        "name": "type"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The lowest **compare at** price of any variants of the product in the currency's subunit. This is the same as\n`product.compare_at_price`.",
+        "name": "compare_at_price_min"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The highest **compare at** price of any variants of the product in the currency's subunit.",
+        "name": "compare_at_price_max"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The value is output in the customer's local (presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use [money filters](/docs/api/liquid/filters/money-filters) to output a formatted price.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "number",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The lowest **compare at** price of any variants of the product in the currency's subunit.",
+        "name": "compare_at_price"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the variant **compare at** prices of the product vary. Returns `false` if not.",
+        "name": "compare_at_price_varies"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "If a product is [recommended](/docs/themes/product-merchandising/recommendations), then the URL contains tracking parameters:\n\n```liquid\n/products/gorgeous-wooden-computer?pr_choice=default&amp;pr_prod_strat=description&amp;pr_rec_pid=13&amp;pr_ref_pid=17&amp;pr_seq=alternating\n```",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The relative URL of the product.",
+        "name": "url"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "A timestamp for when the product was published.",
+        "name": "published_at"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Tip:\n&gt; Use the [`date` filter](/docs/api/liquid/filters/date) to format the timestamp.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "A timestamp for when the product was created.",
+        "name": "created_at"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [
+          {
+            "name": "Output the values for a specific option",
+            "description": "When accessing a specific option, the name is case-insensitive.",
+            "syntax": "",
+            "path": "/products/health-potion",
+            "raw_liquid": "&lt;label&gt;\n  Strength\n  &lt;select&gt;\n    {%- for value in product.options_by_name['strength'].values %}\n    &lt;option&gt;{{ value }}&lt;/option&gt;\n    {%- endfor %}\n  &lt;/select&gt;\n&lt;/label&gt;",
+            "parameter": false,
+            "display_type": "text",
+            "show_data_tab": false
+          }
+        ],
+        "return_type": [
+          {
+            "type": "untyped",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Allows you to access a specific [product option](/docs/api/liquid/objects/product_option) by its name.",
+        "name": "options_by_name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the product doesn't have any options. Returns `false` if not.",
+        "name": "has_only_default_variant"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the product has at least one variant with quantity price breaks in the current customer context.\nReturns `false` if not.",
+        "name": "quantity_price_breaks_configured?"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; A variant requires a selling plan if [`variant.requires_selling_plan`](/docs/api/liquid/objects/variant#variant-requires_selling_plan)\n&gt; is `true`.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if all of the variants of the product require a selling plan. Returns `false` if not.",
+        "name": "requires_selling_plan"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "If no selling plan is selected, then `nil` is returned.\n\n&gt; Note:\n&gt; The selected selling plan is determined by the `selling_plan` URL parameter.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "selling_plan",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The currently selected selling plan.",
+        "name": "selected_selling_plan"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "If no variant and selling plan are selected, then `nil` is returned.\n\n&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter, and the selected selling plan is determined by the\n&gt; `selling_plan` URL parameter.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "selling_plan_allocation",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The currently selected selling plan allocation for the currently selected variant.",
+        "name": "selected_selling_plan_allocation"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The following logic is used to determine which selling plan allocation is returned:\n\n| Selling plan allocation | Return criteria |\n| --- | --- |\n| The currently selected allocation | Returned if a variant and selling plan are selected.&lt;br&gt;&lt;br&gt;The selected variant is determined by the `variant` URL parameter, and the selected selling plan is determined by the `selling_plan` URL parameter. |\n| The first allocation on the first available variant | Returned if no allocation is currently selected. |\n| The first allocation on the first variant | Returned if no allocation is currently selected, and there are no available variants. |\n\nIf the product doesn't have any selling plans, then `nil` is returned.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "selling_plan_allocation",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The currently selected, or first available, selling plan allocation.",
+        "name": "selected_or_first_available_selling_plan_allocation"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the product is a gift card. Returns `false` if not.",
+        "name": "gift_card?"
+      }
+    ],
+    "summary": "A product that comes from a remote source, inheriting all [product](/docs/api/liquid/objects/product) functionality and also providing additional context about the remote source.",
+    "name": "remote_product",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+      {
+        "type": "RemoteProductDrop",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "remote_product",
+          "property": "remote_details"
+        },
+        {
+          "object": "remote_details",
+          "property": "shop"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Remote store information is only present via remote details, if the product comes from a remote source (i.e. a sponsored product).",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the remote store.",
+        "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "brand",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The [brand assets](https://help.shopify.com/manual/promoting-marketing/managing-brand-assets) for the remote store.",
+        "name": "brand"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "policy",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The shipping policy for the remote store.",
+        "name": "shipping_policy"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "policy",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The refund policy for the remote store.",
+        "name": "refund_policy"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The policies are set in the remote store's [Policies settings](https://www.shopify.com/admin/settings/legal).",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "policy"
+          }
+        ],
+        "summary": "The shipping and refund policies for the remote store.",
+        "name": "policies"
+      }
+    ],
+    "summary": "Information about a remote store.",
+    "name": "remote_shop",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+      {
+        "type": "RemoteShopDrop",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ]
   },
   {
     "access": {
@@ -14356,6 +15307,14 @@
         {
           "object": "variant",
           "property": "selected_selling_plan_allocation"
+        },
+        {
+          "object": "remote_product",
+          "property": "selected_selling_plan_allocation"
+        },
+        {
+          "object": "remote_product",
+          "property": "selected_or_first_available_selling_plan_allocation"
         }
       ],
       "template": []
@@ -14663,6 +15622,10 @@
         },
         {
           "object": "product",
+          "property": "selected_selling_plan"
+        },
+        {
+          "object": "remote_product",
           "property": "selected_selling_plan"
         },
         {
@@ -16028,6 +16991,14 @@
           "property": "policies"
         },
         {
+          "object": "remote_shop",
+          "property": "shipping_policy"
+        },
+        {
+          "object": "remote_shop",
+          "property": "refund_policy"
+        },
+        {
           "object": "shop",
           "property": "refund_policy"
         },
@@ -16361,6 +17332,10 @@
       "parents": [
         {
           "object": "product",
+          "property": "category"
+        },
+        {
+          "object": "remote_product",
           "property": "category"
         }
       ],
