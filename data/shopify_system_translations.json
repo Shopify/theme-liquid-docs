@@ -380,7 +380,7 @@
   "shopify.checkout.customer_account.saved_address_option_link": "Use a saved address",
   "shopify.checkout.customer_account.saved_address_modal_title": "Use my saved address",
   "shopify.checkout.remote_merchandise_only.title": "Complete your purchase",
-  "shopify.checkout.remote_merchandise_only.remote_only_notice": "These items are sold and shipped by other stores. Check out with each store to complete your purchase.",
+  "shopify.checkout.remote_merchandise_only.remote_only_notice": "These items are sold and shipped by other stores. Check out with each store to complete your purchase. Your information will be shared back with %{shop_name}.",
   "shopify.checkout.remote_merchandise_only.return_to_store_label": "Return to store",
   "shopify.checkout.remote_merchandise_only.detail_item_label.one": "{{count}} item",
   "shopify.checkout.remote_merchandise_only.detail_item_label.other": "{{count}} items",
