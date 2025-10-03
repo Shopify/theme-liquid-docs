@@ -3617,6 +3617,22 @@
         ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the company location.",
         "name": "metafields"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The account shown will be in the currency associated with the company location’s current context.\nFor example, when browsing a storefront for a company location in the US market, the company location's USD store credit\naccount will be returned. If the company location does not have a USD store credit account `nil` will be returned.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "store_credit_account",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The store credit account associated with the company location.",
+        "name": "store_credit_account"
       }
     ],
     "summary": "A location of the [company](/docs/api/liquid/objects/company) that a [customer](/docs/api/liquid/objects/customer) is purchasing for.",
@@ -7338,7 +7354,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with the\n&gt; `line_item.unit_price` property and this property to output a formatted unit price with measurement.",
+        "description": "To learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with the\n&gt; `line_item.unit_price` property and this property to output a formatted unit price with measurement.",
         "examples": [],
         "return_type": [
           {
@@ -7354,7 +7370,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with this\n&gt; property and the `line_item.unit_price_measurement` property to output a formatted unit price with measurement.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with this\n&gt; property and the `line_item.unit_price_measurement` property to output a formatted unit price with measurement.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
         "examples": [],
         "return_type": [
           {
@@ -11165,7 +11181,7 @@
     "name": "selling_plan_price_adjustment",
     "examples": [],
     "json_data": {
-      "path": "/products/health-potion?selling_plan=610435137",
+      "path": "/products/health-potion?selling_plan=2595487809",
       "handle": "product.selected_selling_plan.price_adjustments[0]",
       "data_from_file": ""
     },
@@ -12703,7 +12719,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with the\n&gt; `variant.unit_price` property and this property to output a formatted unit price with measurement.",
+        "description": "To learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with the\n&gt; `variant.unit_price` property and this property to output a formatted unit price with measurement.",
         "examples": [],
         "return_type": [
           {
@@ -12719,7 +12735,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with this\n&gt; property and the `variant.unit_price_measurement` property to output a formatted unit price with measurement.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
+        "description": "The price reflects any discounts that are applied to the line item. The value is output in the customer's local\n(presentment) currency.\n\nFor currencies without subunits, such as JPY and KRW, tenths and hundredths of a unit are appended. For example, 1000 Japanese yen is output as 100000.\n\n&gt; Tip:\n&gt; Use the [`unit_price_with_measurement` filter](/docs/api/liquid/filters/unit_price_with_measurement) with this\n&gt; property and the `variant.unit_price_measurement` property to output a formatted unit price with measurement.\n\nTo learn about how to display unit prices in your theme, refer to [Unit pricing](/themes/pricing-payments/unit-pricing).",
         "examples": [],
         "return_type": [
           {
@@ -13251,7 +13267,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Remote details can only be accessed on an object that comes from a remote source,\nsuch as a sponsored product.",
+    "description": "Remote details can only be accessed on an object that comes from a remote source,\nsuch as a product from another store.",
     "properties": [
       {
         "deprecated": false,
@@ -13266,7 +13282,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Provides context on how the remote object was surfaced.\nCurrently the only supported value is \"sponsored\", but this may be expanded in the future.",
+        "summary": "Provides context on how the remote object was surfaced.\nCurrently the only supported value is \"seller\", but this may be expanded in the future.",
         "name": "type"
       },
       {
@@ -13399,7 +13415,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; Remote products have pre-determined dedicated template names, always prefixed with \"remote.\" This allows them to be managed independently of regular product templates.\n&gt; E.g. \"remote.sponsored\"",
+        "description": "&gt; Note:\n&gt; Remote products have pre-determined dedicated template names, always prefixed with \"remote.\" This allows them to be managed independently of regular product templates.\n&gt; E.g. \"remote.seller\"",
         "examples": [],
         "return_type": [
           {
@@ -14061,7 +14077,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Remote store information is only present via remote details, if the product comes from a remote source (i.e. a sponsored product).",
+    "description": "Remote store information is only present via remote details, if the product comes from a remote source (i.e. a product from another store).",
     "properties": [
       {
         "deprecated": false,
@@ -15472,7 +15488,7 @@
     "name": "selling_plan_allocation",
     "examples": [],
     "json_data": {
-      "path": "/products/health-potion?variant=39897499828289&amp;selling_plan=610435137",
+      "path": "/products/health-potion?variant=39897499828289&amp;selling_plan=2595487809",
       "handle": "product.selected_selling_plan_allocation",
       "data_from_file": ""
     },
@@ -15530,7 +15546,7 @@
     "name": "selling_plan_allocation_price_adjustment",
     "examples": [],
     "json_data": {
-      "path": "/products/health-potion?variant=39897499828289&amp;selling_plan=610435137",
+      "path": "/products/health-potion?variant=39897499828289&amp;selling_plan=2595487809",
       "handle": "product.selected_selling_plan_allocation.price_adjustments[0]",
       "data_from_file": ""
     },
@@ -15602,7 +15618,7 @@
     "name": "selling_plan_checkout_charge",
     "examples": [],
     "json_data": {
-      "path": "/products/health-potion?selling_plan=610435137",
+      "path": "/products/health-potion?selling_plan=2595487809",
       "handle": "product.selected_selling_plan.checkout_charge",
       "data_from_file": ""
     },
@@ -15788,7 +15804,7 @@
     "name": "selling_plan",
     "examples": [],
     "json_data": {
-      "path": "/products/health-potion?selling_plan=610435137",
+      "path": "/products/health-potion?selling_plan=2595487809",
       "handle": "product.selected_selling_plan",
       "data_from_file": ""
     },
@@ -16074,7 +16090,7 @@
     "name": "selling_plan_option",
     "examples": [],
     "json_data": {
-      "path": "/products/health-potion?selling_plan=610435137",
+      "path": "/products/health-potion?selling_plan=2595487809",
       "handle": "product.selected_selling_plan.options[0]",
       "data_from_file": ""
     },
@@ -17197,6 +17213,10 @@
         {
           "object": "customer",
           "property": "store_credit_account"
+        },
+        {
+          "object": "company_location",
+          "property": "store_credit_account"
         }
       ],
       "template": []
@@ -18028,7 +18048,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; Unit prices are available only to stores located in the European Union or Switzerland.",
+    "description": "",
     "properties": [
       {
         "deprecated": false,
@@ -19939,7 +19959,7 @@
     "examples": [
       {
         "name": "Create pagination navigation with `part`",
-        "description": "You can create a pagination navigation by iterating over each `part` of a [`paginate` object](/docs/api/liquid/objects/paginate).\nWhen paginating, `part.url` may contain a `phcursor` parameter in addition to `page`. This optional parameter is used to improve performance when navigating between pages.\n",
+        "description": "You can create a pagination navigation by iterating over each `part` of a [`paginate` object](/docs/api/liquid/objects/paginate).\n",
         "syntax": "",
         "path": "/collections/all",
         "raw_liquid": "{% paginate collection.products by 5 -%}\n  {% for part in paginate.parts -%}\n    {% if part.is_link -%}\n      {{ part.title | link_to: part.url}}\n    {%- else -%}\n      &lt;span&gt;{{ part.title }}&lt;/span&gt;\n    {% endif %}\n  {%- endfor %}\n{%- endpaginate %}",
@@ -19951,7 +19971,7 @@
     "json_data": {
       "path": "",
       "handle": "",
-      "data_from_file": "{\"is_link\":true,\"title\":\"2\",\"url\":\"/collections/all?page=2&amp;phcursor=eyJhbGciOiJIUzI1NiJ9.eyJzayI6InBvc2l0aW9uIiwic3YiOjIwLCJkIjoiZiIsInVpZCI6MzY5MTI0Nzk3NjQ2NTksImwiOjIwLCJvIjowLCJyIjoiQ0RQIiwidiI6MSwicCI6Mn0.rlQnBhrVp_ZXLZBZRzrYxxDDKfpaPSH2UmkttMttC0s\"}"
+      "data_from_file": "{\"is_link\":true,\"title\":\"2\",\"url\":\"/collections/all?page=2\"}"
     },
     "return_type": []
   },

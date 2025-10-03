@@ -957,6 +957,36 @@
     "category": "string",
     "deprecated": false,
     "deprecation_reason": "",
+    "description": "",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{{ '' | blake3 }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Converts a string into a Blake3 hash.",
+    "syntax": "string | blake3",
+    "name": "blake3"
+  },
+  {
+    "category": "string",
+    "deprecated": false,
+    "deprecation_reason": "",
     "description": "The secret key for the message is supplied as a parameter to the filter.",
     "parameters": [],
     "return_type": [
@@ -1039,7 +1069,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Converts a string into an MD5 hash.",
+    "summary": "Converts a string into an MD5 hash. MD5 is not considered safe anymore. Please use ['blake3'](https://shopify.dev/docs/api/liquid/filters/blake3) instead for better security and performance.",
     "syntax": "string | md5",
     "name": "md5"
   },
@@ -1069,7 +1099,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Converts a string into an SHA-1 hash.",
+    "summary": "Converts a string into an SHA-1 hash. SHA-1 is not considered safe anymore. Please use ['blake3'](https://shopify.dev/docs/api/liquid/filters/blake3) instead for better security and performance.",
     "syntax": "string | sha1: string",
     "name": "sha1"
   },
@@ -1099,7 +1129,7 @@
         "show_data_tab": true
       }
     ],
-    "summary": "Converts a string into an SHA-256 hash.",
+    "summary": "Converts a string into an SHA-256 hash. Please use ['blake3'](https://shopify.dev/docs/api/liquid/filters/blake3) instead for better security and performance.",
     "syntax": "string | sha256: string",
     "name": "sha256"
   },
