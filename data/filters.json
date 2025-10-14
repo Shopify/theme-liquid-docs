@@ -70,36 +70,6 @@
     "name": "line_items_for"
   },
   {
-    "category": "html",
-    "deprecated": false,
-    "deprecation_reason": "",
-    "description": "&lt;aside class=\"note beta\"&gt;\n  &lt;h4&gt;Developer preview&lt;/h4&gt;\n  &lt;p&gt;Style settings are currently only available as part of the &lt;a href=\"/storefronts/themes/architecture/blocks/theme-blocks/developer-preview\"&gt;Theme blocks developer preview&lt;/a&gt;.&lt;/p&gt;\n&lt;/aside&gt;",
-    "parameters": [],
-    "return_type": [
-      {
-        "type": "string",
-        "name": "",
-        "description": "",
-        "array_value": ""
-      }
-    ],
-    "examples": [
-      {
-        "name": "",
-        "description": "",
-        "syntax": "",
-        "path": "/",
-        "raw_liquid": "{{ settings.layout | class_list }}",
-        "parameter": false,
-        "display_type": "text",
-        "show_data_tab": true
-      }
-    ],
-    "summary": "Generates the list of style classes for a [style setting](/storefronts/themes/architecture/settings/style-settings) or a collection of settings.",
-    "syntax": "settings.layout | class_list",
-    "name": "class_list"
-  },
-  {
     "category": "collection",
     "deprecated": false,
     "deprecation_reason": "",
