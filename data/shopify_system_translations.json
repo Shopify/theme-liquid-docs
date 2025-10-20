@@ -2043,6 +2043,7 @@
   "shopify.checkout.wallets.scrim.and_return_to_checkout": "and return to Checkout",
   "shopify.checkout.wallets.scrim.cancel": "Cancel",
   "shopify.checkout.note.length_exceeds_maximum": "Reduce the size of the note to 5000 or fewer characters.",
+  "shopify.checkout.offsite_payment_failed.title": "Offsite payment failed",
   "shopify.checkout.offsite_payment_failed.payment_not_processed_title": "Payment failed",
   "shopify.checkout.offsite_payment_failed.payment_not_processed_text": "Try scanning the QR code again. If it still doesn't work, let our staff know and try a different payment method.",
   "shopify.checkout.offsite_payment_failed.payment_link_expired_title": "Payment link expired",
