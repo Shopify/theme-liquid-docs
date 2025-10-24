@@ -2054,6 +2054,7 @@
   "shopify.checkout.one.errors.merchandise.signature_mismatch": "Merchandise signature mismatch for line %{stable_id}.",
   "shopify.checkout.remote.errors.only_remote_merchandise_lines": "The checkout only contains remote merchandise. A redirect to the remote shop is required to complete checkout.",
   "shopify.checkout.remote.errors.currency_mismatch": "This item can't be added to your cart because it's from a store that uses a different currency.",
+  "shopify.checkout.remote.errors.currency_mismatch_removal": "An item was removed from your cart because it's from a store that uses a different currency.",
   "shopify.checkout.remote.errors.max_remote_shops_exceeded": "This product can't be added because your cart already has the maximum from other stores.",
   "shopify.checkout.units.milligram": "mg",
   "shopify.checkout.units.gram": "g",
