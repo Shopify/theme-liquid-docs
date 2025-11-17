@@ -1956,6 +1956,7 @@
   "shopify.checkout.marketplaces.legal_notice.link_label": "{{partnerDisplayName}} Terms and Conditions",
   "shopify.checkout.online_store_chat.title": "Questions? Chat with us",
   "shopify.checkout.local_pickup.location_address_search_label": "Address",
+  "shopify.checkout.local_pickup.location_address_search_placeholder": "%{postal_code_label} or address",
   "shopify.checkout.local_pickup.location_information.one": "There is %{count} location with stock close to you",
   "shopify.checkout.local_pickup.location_information.other": "There are %{count} locations with stock close to you",
   "shopify.checkout.local_pickup.toggle_location": "Change location",
