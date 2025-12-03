@@ -1122,7 +1122,7 @@
   "shopify.checkout.payment.gift_card_store_credit.manage_label": "Manage gift cards or store credit",
   "shopify.checkout.payment.gift_card_checkbox_label": "Apply gift card",
   "shopify.checkout.payment.custom_onsite_payment_method_modal.title": "Custom Onsite Payment Confirmation",
-  "shopify.checkout.payment.markets_pro_disclaimer_label": "By clicking below and completing your order, you agree to purchase your item(s) from Global-e as merchant of record for this transaction, on Global-e's %{markets_pro_terms} and %{privacy_policy}. Global-e is an international fulfilment service provider to %{shop_name}.",
+  "shopify.checkout.payment.markets_pro_disclaimer_label": "By placing your order you agree to purchase from Global-e as the merchant of record, subject to Global-e’s %{markets_pro_terms} and %{privacy_policy}, and share your information with %{shop_name}.",
   "shopify.checkout.payment.markets_pro_disclaimer_terms_and_conditions": "Terms and Conditions",
   "shopify.checkout.payment.markets_pro_disclaimer_privacy_policy": "Privacy Policy",
   "shopify.checkout.payment.markets_pro_disclaimer_terms_and_conditions_title": "Merchant of Record Terms and Conditions",
