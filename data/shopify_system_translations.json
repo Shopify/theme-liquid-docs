@@ -651,6 +651,7 @@
   "shopify.checkout.order_summary.discount_discovery.merchandise_quantity_label.one": "%{count} item",
   "shopify.checkout.order_summary.discount_discovery.merchandise_quantity_label.other": "%{count} items",
   "shopify.checkout.order_summary.alternative_payment_currency_total": "Charged as %{amount_due}",
+  "shopify.checkout.order_summary.discount_applies_to_subscription_items_only": "This discount only applies to subscription items",
   "shopify.checkout.shipping.title": "Shipping",
   "shopify.checkout.shipping.delivery_title": "Delivery",
   "shopify.checkout.shipping.shipping_method_notice": " ",
