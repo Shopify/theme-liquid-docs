@@ -11459,7 +11459,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; You can use [media filters](/docs/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
+        "description": "&gt; Note:\n&gt; In search results or a filtered collection, the [media](/docs/api/liquid/objects/media) of the most relevant variant is returned. Relevancy is based on search terms and applied filters.\n\n&gt; Tip:\n&gt; You can use [media filters](/docs/api/liquid/filters/media-filters) to output media URLs and displays. To learn about how\n&gt; to include media in your theme, refer to [Support product media](/themes/product-merchandising/media/support-media).",
         "examples": [],
         "return_type": [
           {
@@ -11571,7 +11571,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. The `selected_variant` parameter is available on product pages only.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "description": "If a variant is selected, it will be returned, regardless of its availability. Otherwise, the first available variant is returned. If no available variant exists, the first variant is returned.\n\nA selected variant is determined by the following criteria:\n\n- On product pages, it is based on the variant ID set in the `variant` URL parameter.\n- In search results and filtered collections, it is the most relevant variant based on search terms and applied filters.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
         "examples": [],
         "return_type": [
           {
@@ -11603,7 +11603,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If no variant is currently selected, then `nil` is returned.\n\n&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. This URL parameter is available on product pages URLs only.",
+        "description": "If no variant is currently selected, then `nil` is returned.\n\n&gt; Note:\n&gt; On product pages, it is based on the variant ID set in the `variant` URL parameter.\n&gt; In search results and filtered collections, it is the most relevant variant based on search terms and applied filters.",
         "examples": [],
         "return_type": [
           {
@@ -11758,7 +11758,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If a product is [recommended](/docs/themes/product-merchandising/recommendations), then the URL contains tracking parameters:\n\n```liquid\n/products/gorgeous-wooden-computer?pr_choice=default&amp;pr_prod_strat=description&amp;pr_rec_pid=13&amp;pr_ref_pid=17&amp;pr_seq=alternating\n```",
+        "description": "If a product is rendered in search results or a filtered collection, then the URL contains the `variant` parameter of the most relevant variant.\n\n```liquid\n/products/gorgeous-wooden-computer?variant=1234567890\n```\n\nIf a product is rendered as a [product recommendation](/docs/themes/product-merchandising/recommendations), then the URL contains tracking parameters:\n\n```liquid\n/products/gorgeous-wooden-computer?pr_choice=default&amp;pr_prod_strat=description&amp;pr_rec_pid=13&amp;pr_ref_pid=17&amp;pr_seq=alternating\n```",
         "examples": [],
         "return_type": [
           {
@@ -13687,7 +13687,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. The `selected_variant` parameter is available on product pages only.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
+        "description": "If a variant is selected, it will be returned, regardless of its availability. Otherwise, the first available variant is returned. If no available variant exists, the first variant is returned.\n\nA selected variant is determined by the following criteria:\n\n- On product pages, it is based on the variant ID set in the `variant` URL parameter.\n- In search results and filtered collections, it is the most relevant variant based on search terms and applied filters.\n\nFor a variant to be available, it needs to meet one of the following criteria:\n\n- The `variant.inventory_quantity` is greater than 0.\n- The `variant.inventory_policy` is set to `continue`.\n- The `variant.inventory_management` is `nil`.",
         "examples": [],
         "return_type": [
           {
@@ -13703,7 +13703,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If no variant is currently selected, then `nil` is returned.\n\n&gt; Note:\n&gt; The selected variant is determined by the `variant` URL parameter. This URL parameter is available on product pages URLs only.",
+        "description": "If no variant is currently selected, then `nil` is returned.\n\n&gt; Note:\n&gt; On product pages, it is based on the variant ID set in the `variant` URL parameter.\n&gt; In search results and filtered collections, it is the most relevant variant based on search terms and applied filters.",
         "examples": [],
         "return_type": [
           {
@@ -13858,7 +13858,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If a product is [recommended](/docs/themes/product-merchandising/recommendations), then the URL contains tracking parameters:\n\n```liquid\n/products/gorgeous-wooden-computer?pr_choice=default&amp;pr_prod_strat=description&amp;pr_rec_pid=13&amp;pr_ref_pid=17&amp;pr_seq=alternating\n```",
+        "description": "If a product is rendered in search results or a filtered collection, then the URL contains the `variant` parameter of the most relevant variant.\n\n```liquid\n/products/gorgeous-wooden-computer?variant=1234567890\n```\n\nIf a product is rendered as a [product recommendation](/docs/themes/product-merchandising/recommendations), then the URL contains tracking parameters:\n\n```liquid\n/products/gorgeous-wooden-computer?pr_choice=default&amp;pr_prod_strat=description&amp;pr_rec_pid=13&amp;pr_ref_pid=17&amp;pr_seq=alternating\n```",
         "examples": [],
         "return_type": [
           {
