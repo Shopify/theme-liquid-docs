@@ -1512,7 +1512,7 @@
     "category": "payment",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "&gt; Note:\n&gt; You can't render accelerated checkout buttons through AJAX requests, including those through the\n&gt; [Section Rendering API](/api/section-rendering). The accelerated checkout buttons are added by JavaScript included\n&gt; by Shopify through the [`content_for_header`](/docs/api/liquid/objects/content_for_header) object, which only runs on\n&gt; the initial page load.\n&gt;\n&gt; For guidance on styling or event tracking of accelerated checkout buttons, refer to [accelerated checkout](/docs/storefronts/themes/pricing-payments/accelerated-checkout/).",
+    "description": "",
     "parameters": [],
     "return_type": [
       {
