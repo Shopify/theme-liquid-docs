@@ -548,6 +548,7 @@
   "shopify.checkout.order_summary.estimated_taxes_label_short": "Estimated",
   "shopify.checkout.order_summary.information_estimated_taxes_label": "Taxes (estimated)",
   "shopify.checkout.order_summary.estimated_taxes_finalization_tooltip_content": "The final tax and total will be confirmed by email or text after you place your order.",
+  "shopify.checkout.order_summary.estimated_taxes_finalization_tooltip_content_short": "Tax finalized after payment",
   "shopify.checkout.order_summary.order_total_label": "Order Total",
   "shopify.checkout.order_summary.price_before_discount_aria_text": "Original price",
   "shopify.checkout.order_summary.price_after_discount_aria_text": "Discounted price",
