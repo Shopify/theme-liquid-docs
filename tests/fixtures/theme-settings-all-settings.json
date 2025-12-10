@@ -81,6 +81,12 @@
         "label": "the article's label"
       },
       {
+        "type": "article_list",
+        "id": "article_list",
+        "label": "Articles",
+        "limit": 12
+      },
+      {
         "type": "blog",
         "id": "my-blog",
         "info": "This is a blog",
