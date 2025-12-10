@@ -1040,7 +1040,7 @@
       },
       {
         "name": "Paginating setting arrays",
-        "description": "To allow the pagination of `product_list` and `collection_list` settings to operate independently from other paginated lists on a page, these lists use a pagination query parameter with a unique key. The key is automatically assigned by the `paginate` tag, and you don't need to reference the key in your code. However, you can access the key using [`paginate.page_param`](/docs/api/liquid/objects/paginate#paginate-page_param).\n\n&gt; Tip:\n&gt; To paginate two arrays independently without refreshing the entire page, you can use the [Section Rendering API](/docs/api/ajax/section-rendering).\n",
+        "description": "To allow the pagination of `product_list`, `article_list` and `collection_list` settings to operate independently from other paginated lists on a page, these lists use a pagination query parameter with a unique key. The key is automatically assigned by the `paginate` tag, and you don't need to reference the key in your code. However, you can access the key using [`paginate.page_param`](/docs/api/liquid/objects/paginate#paginate-page_param).\n\n&gt; Tip:\n&gt; To paginate two arrays independently without refreshing the entire page, you can use the [Section Rendering API](/docs/api/ajax/section-rendering).\n",
         "syntax": "",
         "path": "/",
         "raw_liquid": "",
