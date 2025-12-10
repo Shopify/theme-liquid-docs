@@ -33,9 +33,6 @@
         "range",
         "richtext",
         "select",
-        "style.layout_panel",
-        "style.size_panel",
-        "style.spacing_panel",
         "text",
         "text_alignment",
         "textarea",
@@ -155,18 +152,6 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "select" } } },
       "then": { "$ref": "#/definitions/select" }
-    },
-    {
-      "if": { "required": ["type"], "properties": { "type": { "const": "style.layout_panel" } } },
-      "then": { "$ref": "#/definitions/style.layout_panel" }
-    },
-    {
-      "if": { "required": ["type"], "properties": { "type": { "const": "style.size_panel" } } },
-      "then": { "$ref": "#/definitions/style.size_panel" }
-    },
-    {
-      "if": { "required": ["type"], "properties": { "type": { "const": "style.spacing_panel" } } },
-      "then": { "$ref": "#/definitions/style.spacing_panel" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "text" } } },
@@ -853,112 +838,6 @@
       "type": "string",
       "pattern": "^-?[0-9]+$"
     },
-
-    "style.layout_panel": {
-      "allOf": [
-        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
-        { "$ref": "#/definitions/conditionalSetting" }
-      ],
-      "properties": {
-        "type": {
-          "const": "style.layout_panel",
-          "description": "A setting of type style.layout_panel outputs style settings for layout.",
-          "markdownDescription": "A setting of type `style.layout_panel` outputs style settings for layout.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.layout_panel)"
-        },
-        "default": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/style.flex_layout_properties"
-            }
-          ],
-          "properties": {
-            "@media (--mobile)": {
-              "type": "object",
-              "description": "Style settings for the mobile breakpoint",
-              "$ref": "#/definitions/style.flex_layout_properties",
-              "unevaluatedProperties": false
-            }
-          },
-          "unevaluatedProperties": false
-        },
-        "label": true,
-        "info": true,
-        "id": true,
-        "visible_if": true
-      },
-      "additionalProperties": false
-    },
-
-    "style.size_panel": {
-      "allOf": [
-        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
-        { "$ref": "#/definitions/conditionalSetting" }
-      ],
-      "properties": {
-        "type": {
-          "const": "style.size_panel",
-          "description": "A setting of type style.size_panel outputs style settings for size.",
-          "markdownDescription": "A setting of type `style.size_panel` outputs style settings for size.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.size_panel)"
-        },
-        "default": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/style.size_properties"
-            }
-          ],
-          "properties": {
-            "@media (--mobile)": {
-              "type": "object",
-              "description": "Style settings for the mobile breakpoint",
-              "$ref": "#/definitions/style.size_properties",
-              "unevaluatedProperties": false
-            }
-          },
-          "unevaluatedProperties": false
-        },
-        "label": true,
-        "info": true,
-        "id": true,
-        "visible_if": true
-      },
-      "additionalProperties": false
-    },
-
-    "style.spacing_panel": {
-      "allOf": [
-        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
-        { "$ref": "#/definitions/conditionalSetting" }
-      ],
-      "properties": {
-        "type": {
-          "const": "style.spacing_panel",
-          "description": "A setting of type style.spacing_panel outputs style settings for spacing.",
-          "markdownDescription": "A setting of type `style.spacing_panel` outputs style settings for spacing.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#style.spacing_panel)"
-        },
-        "default": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/style.spacing_properties"
-            }
-          ],
-          "properties": {
-            "@media (--mobile)": {
-              "type": "object",
-              "description": "Style settings for the mobile breakpoint",
-              "$ref": "#/definitions/style.spacing_properties",
-              "unevaluatedProperties": false
-            }
-          },
-          "unevaluatedProperties": false
-        },
-        "label": true,
-        "info": true,
-        "id": true,
-        "visible_if": true
-      },
-      "additionalProperties": false
-    },
-
     "text": {
       "allOf": [
         { "$ref": "#/definitions/inputSettingsStandardAttributes" },
