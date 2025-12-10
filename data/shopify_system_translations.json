@@ -1296,6 +1296,7 @@
   "shopify.checkout.field_errors.invalid_delivery_address_reference_handle": "Delivery address reference handle could not be matched to any available delivery addresses.",
   "shopify.checkout.field_errors.must_use_available_delivery_address": "Delivery address must be selected from the available delivery addresses.",
   "shopify.checkout.field_errors.must_use_available_shipping_rate": "Shipping rate must be selected from the available shipping rates.",
+  "shopify.checkout.field_errors.split_by_delivery_method_not_allowed": "Split by delivery method is not allowed for this session or shop.",
   "shopify.checkout.store_credit_errors.generic_error": "There was a problem with your store credit. Try again or reload the page.",
   "shopify.checkout.redeemable_errors.shop_cash.currency_mismatch": "The currency has changed. Please review your Shop Cash and offer.",
   "shopify.checkout.redeemable_errors.gift_card.duplicate": "The gift card has already been applied to your order",
