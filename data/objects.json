@@ -9265,7 +9265,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "One or more corresponding [`metaobject`](/docs/api/liquid/objects#metaobject) objects contain values for\nthe fields specified in the metaobject definition.",
+    "description": "One or more corresponding [`metaobject`](/docs/api/liquid/objects#metaobject) objects contain values for\nthe fields specified in the metaobject definition.\n\n&gt; Note:\n&gt; When looping through metaobjects by accessing them using individual handles (e.g., `metaobjects.TYPE[handle]`),\n&gt; you're limited to 20 unique handles per page and can't use [pagination](/docs/api/liquid/tags/paginate).\n&gt; To iterate over more metaobjects, instead use the `values` property, which supports pagination up to 250\n&gt; entries per page.",
     "properties": [
       {
         "deprecated": false,
