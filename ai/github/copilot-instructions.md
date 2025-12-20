@@ -869,6 +869,7 @@ iterate over an array that has more than 50 items. The following arrays can be p
 
 - [`all_products`](https://shopify.dev/docs/api/liquid/objects/all_products)
 - [`article.comments`](https://shopify.dev/docs/api/liquid/objects/article#article-comments)
+- [`article_list` settings](/themes/architecture/settings/input-settings#article_list)
 - [`blog.articles`](https://shopify.dev/docs/api/liquid/objects/blog#blog-articles)
 - [`collections`](https://shopify.dev/docs/api/liquid/objects/collections)
 - [`collection.products`](https://shopify.dev/docs/api/liquid/objects/collection#collection-products)
