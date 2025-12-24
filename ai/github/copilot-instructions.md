@@ -399,7 +399,6 @@ Here's how the filters are executed step by step to eventually return `"WORLD"`:
 - `shopify_asset_url`: `{{ string | shopify_asset_url }}` returns `string`
 
 #### Html
-- `class_list`: `{{ settings.layout | class_list }}` returns `string`
 - `time_tag`: `{{ string | time_tag: string }}` returns `string`
 - `inline_asset_content`: `{{ asset_name | inline_asset_content }}` returns `string`
 - `highlight`: `{{ string | highlight: string }}` returns `string`
@@ -458,6 +457,7 @@ Here's how the filters are executed step by step to eventually return `"WORLD"`:
 - `payment_type_svg_tag`: `{{ string | payment_type_svg_tag }}` returns `string`
 
 #### String
+- `blake3`: `{{ string | blake3 }}` returns `string`
 - `hmac_sha1`: `{{ string | hmac_sha1: string }}` returns `string`
 - `hmac_sha256`: `{{ string | hmac_sha256: string }}` returns `string`
 - `md5`: `{{ string | md5 }}` returns `string`
@@ -580,6 +580,7 @@ Here's how the filters are executed step by step to eventually return `"WORLD"`:
 
 #### `/product` page
 - `product`
+- `remote_product`
 
 #### `/robots.txt.liquid` page
 - `robots`
@@ -867,7 +868,6 @@ Syntax:
 Because [`for` loops](https://shopify.dev/docs/api/liquid/tags/for) are limited to 50 iterations per page, you need to use the `paginate` tag to
 iterate over an array that has more than 50 items. The following arrays can be paginated:
 
-- [`all_products`](https://shopify.dev/docs/api/liquid/objects/all_products)
 - [`article.comments`](https://shopify.dev/docs/api/liquid/objects/article#article-comments)
 - [`blog.articles`](https://shopify.dev/docs/api/liquid/objects/blog#blog-articles)
 - [`collections`](https://shopify.dev/docs/api/liquid/objects/collections)
