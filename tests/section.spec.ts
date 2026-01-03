@@ -70,7 +70,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
     expect(diagnostics).toStrictEqual([
       {
         code: 1,
-        message: expect.stringContaining('Value is not accepted. Valid values: "article", "blog"'),
+        message: expect.stringContaining('Value is not accepted. Valid values: "article", "article_list", "blog"'),
         severity: 1,
         range: expect.objectContaining({
           start: expect.objectContaining({
