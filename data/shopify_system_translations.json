@@ -1380,6 +1380,7 @@
   "shopify.checkout.shipping_errors.invalid_selected_address": "Selected shipping address is not valid",
   "shopify.checkout.shipping_errors.invalid_selected_address_with_update_link": "Selected shipping address is not valid. %{update_address_link} or select a different address",
   "shopify.checkout.shipping_errors.unavailable_addresses_only_countries": "Your order can only be shipped to {{countriesList}}. Add a new address to continue.",
+  "shopify.checkout.shipping_errors.unavailable_address_country": "Shipping isn’t available in the country you selected. Use a different address to continue",
   "shopify.checkout.shipping_errors.unavailable_selected_address": "Shipping not available for selected address",
   "shopify.checkout.shipping_errors.unavailable_selected_address_for_region": "Shipping isn’t available for {{region}}. Select a different address to continue",
   "shopify.checkout.alternative_payment_method_banner.express_checkout": "Express checkout",
