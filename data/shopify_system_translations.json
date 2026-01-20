@@ -593,6 +593,7 @@
   "shopify.checkout.order_summary.collapse_order_summary": "Hide order summary",
   "shopify.checkout.order_summary.original_price": "Original price",
   "shopify.checkout.order_summary.sale_price": "Sale price",
+  "shopify.checkout.order_summary.compare_at_sale": "Sale %{sale_amount}",
   "shopify.checkout.order_summary.total_updated_label": "Updated total price:",
   "shopify.checkout.order_summary.order_total_updated_label": "Updated total",
   "shopify.checkout.order_summary.total_already_paid_label": "Paid",
