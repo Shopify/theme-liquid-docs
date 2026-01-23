@@ -1,5 +1,6 @@
 export const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
   'article',
+  'article_list',
   'blog',
   'collection',
   'collection_list',
@@ -14,6 +15,7 @@ export const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
 
 export const INPUT_SETTING_TYPES = [
   'article',
+  'article_list',
   'blog',
   'checkbox',
   'collection_list',
@@ -48,4 +50,4 @@ export const INPUT_SETTING_TYPES = [
 
 export const SIDEBAR_SETTING_TYPES = ['header', 'paragraph'];
 
-export const RESOURCE_LIST_SETTING_TYPES = ['product_list', 'collection_list', 'metaobject_list'];
+export const RESOURCE_LIST_SETTING_TYPES = ['article_list', 'collection_list', 'metaobject_list', 'product_list'];

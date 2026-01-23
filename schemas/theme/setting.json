@@ -7,6 +7,7 @@
       "markdownDescription": "The type of the input or sidebar setting. This value determines the type of field that gets rendered into the editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings)",
       "enum": [
         "article",
+        "article_list",
         "blog",
         "checkbox",
         "collection",
@@ -56,6 +57,10 @@
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "article" } } },
       "then": { "$ref": "#/definitions/article" }
+    },
+    {
+      "if": { "required": ["type"], "properties": { "type": { "const": "article_list" } } },
+      "then": { "$ref": "#/definitions/article_list" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "blog" } } },
@@ -187,6 +192,26 @@
           "const": "article",
           "description": "A setting of type article outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture an article selection, such as the article to feature on the homepage.",
           "markdownDescription": "A setting of type `article` outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture an article selection, such as the article to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#article)"
+        },
+        "default": true,
+        "label": true,
+        "info": true,
+        "id": true
+      },
+      "additionalProperties": false
+    },
+
+    "article_list": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "properties": {
+        "type": {
+          "const": "article_list",
+          "description": "A setting of type article_list outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture multiple articles, such as a group of articles to feature on the homepage.",
+          "markdownDescription": "A setting of type `article_list` outputs an article picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple articles, such as a group of articles to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#article_list)"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
         "default": true,
         "label": true,

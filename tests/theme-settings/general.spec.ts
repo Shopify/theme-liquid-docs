@@ -59,7 +59,7 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         {
           code: 1,
           message: expect.stringContaining(
-            'Value is not accepted. Valid values: "article", "blog"',
+            'Value is not accepted. Valid values: "article", "article_list", "blog"',
           ),
           severity: 1,
           range: expect.objectContaining({

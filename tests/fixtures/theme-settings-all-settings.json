@@ -73,7 +73,6 @@
         "info": "This is a text area",
         "label": "The text area's label"
       },
-
       {
         "type": "article",
         "id": "my-article",
@@ -81,12 +80,18 @@
         "label": "the article's label"
       },
       {
+        "type": "article_list",
+        "id": "my-article-list",
+        "info": "This is an article list",
+        "label": "the article list's label",
+        "limit": 12
+      },
+      {
         "type": "blog",
         "id": "my-blog",
         "info": "This is a blog",
         "label": "the blog's label"
       },
-
       {
         "type": "collection",
         "id": "my-collection",
@@ -286,7 +291,6 @@
         "id": "video",
         "label": "A Shopify-hosted video"
       },
-
       {
         "type": "header",
         "content": "Email Signup",
