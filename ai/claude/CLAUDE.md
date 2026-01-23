@@ -874,14 +874,21 @@ iterate over an array that has more than 50 items. The following arrays can be p
 - [`collection.products`](https://shopify.dev/docs/api/liquid/objects/collection#collection-products)
 - [`customer.addresses`](https://shopify.dev/docs/api/liquid/objects/customer#customer-addresses)
 - [`customer.orders`](https://shopify.dev/docs/api/liquid/objects/customer#customer-orders)
+- [`metaobject_definition.values`](https://shopify.dev/docs/api/liquid/objects/metaobject_definition#metaobject_definition-values)
 - [`pages`](https://shopify.dev/docs/api/liquid/objects/pages)
 - [`product.variants`](https://shopify.dev/docs/api/liquid/objects/product#variants)
 - [`search.results`](https://shopify.dev/docs/api/liquid/objects/search#search-results)
+- [`article_list` settings](/themes/architecture/settings/input-settings#article_list)
 - [`collection_list` settings](/themes/architecture/settings/input-settings#collection_list)
 - [`product_list` settings](/themes/architecture/settings/input-settings#product_list)
 
 Within the `paginate` tag, you have access to the [`paginate` object](https://shopify.dev/docs/api/liquid/objects/paginate). You can use this
 object, or the [`default_pagination` filter](https://shopify.dev/docs/api/liquid/filters/default_pagination), to build page navigation.
+
+> Note:
+> The `paginate` tag allows the user to paginate to the 25,000th item in the array and no further. To reach items further in
+> the array the array should be filtered further before paginating. See
+> [Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.
 
 
 Syntax:
@@ -891,10 +898,6 @@ Syntax:
     forloop_content
   {% endfor %}
 {% endpaginate %}
-
-The `paginate` tag allows the user to paginate to the 25,000th item in the array and no further. To reach items further in
-the array the array should be filtered further before paginating. See
-[Pagination Limits](/themes/best-practices/performance/platform#pagination-limits) for more information.
 ```
 
 #### javascript
