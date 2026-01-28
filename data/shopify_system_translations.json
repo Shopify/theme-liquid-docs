@@ -2362,6 +2362,8 @@
   "shopify.email_marketing.unsubscribed.confirmation": "You’ve unsubscribed from our mailing list.",
   "shopify.email_marketing.unsubscribed.disclaimer": "You won’t receive any more marketing updates from us. You can subscribe again at any time.",
   "shopify.email_marketing.unsubscribed.preview": "You're previewing what customers will see when they unsubscribe.",
+  "shopify.email_marketing.sms_unsubscribe_confirm.message": "Are you sure you want to unsubscribe from SMS marketing?",
+  "shopify.email_marketing.sms_unsubscribe_confirm.button": "Unsubscribe",
   "shopify.email_marketing.open_tracking.opt_in.opted_in_html": "<b>You’ve opted in to email open tracking.<\/b>",
   "shopify.email_marketing.open_tracking.opt_in.visibility": "Email open rates will be reported anonymously. We will only see if you’ve opened an email as part of an aggregated email open rate.",
   "shopify.email_marketing.open_tracking.opt_in.opt_out_html": "You can <a style='text-decoration:underline;' href='%{link}'>opt out<\/a> of email open tracking if you do not want to share this information.",
