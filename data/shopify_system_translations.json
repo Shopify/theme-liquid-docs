@@ -285,6 +285,7 @@
   "shopify.checkout.contact.address2_label": "Apartment, suite, etc.",
   "shopify.checkout.contact.optional_address2_label": "Apartment, suite, etc. (optional)",
   "shopify.checkout.contact.city_label": "City",
+  "shopify.checkout.contact.suburb_label": "Suburb",
   "shopify.checkout.contact.country_label": "Country\/Region",
   "shopify.checkout.contact.country_code": "Country\/Region code",
   "shopify.checkout.contact.province_label": "Province",
