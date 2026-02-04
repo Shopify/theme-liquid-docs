@@ -820,11 +820,7 @@
           "type": "string",
           "description": "The value of the default option"
         },
-        "group": {
-          "type": "string",
-          "description": "An optional attribute that you can add to each option to create option groups in the drop-down."
-        },
-        "options": { "$ref": "#/definitions/options" },
+        "options": { "$ref": "#/definitions/selectOptions" },
         "label": true,
         "info": true,
         "id": true,
@@ -1347,6 +1343,25 @@
           }
         },
         "required": ["value", "label"]
+      }
+    },
+
+    "selectOptions": {
+      "description": "Takes an array of `value`/`label`/`group` definitions for select fields.",
+      "type": "array",
+      "items": {
+        "allOf": [
+          { "$ref": "#/definitions/options/items" },
+          {
+            "type": "object",
+            "properties": {
+              "group": {
+                "type": "string",
+                "description": "An optional attribute that you can add to each option to create option groups in the drop-down."
+              }
+            }
+          }
+        ]
       }
     }
   }
