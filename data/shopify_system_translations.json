@@ -998,7 +998,7 @@
   "shopify.checkout.payment.kcp_creditcard_label": "KCP Credit Card",
   "shopify.checkout.payment.usdc_label": "USDC",
   "shopify.checkout.payment.usdc_cashback_title": "1% cashback",
-  "shopify.checkout.payment.usdc_cashback_additional_info": "Get 1% back in USDC directly in your wallet.",
+  "shopify.checkout.payment.usdc_cashback_additional_info": "Get 1% back in USDC on Base in 30 days.",
   "shopify.checkout.payment.usdc_cashback_terms": "Terms Apply",
   "shopify.checkout.payment.purchase_options_card_update_agreement_label_html": "By updating your payment method, you authorize payments for any recurring or deferred purchase according to this store's <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">cancellation policy<\/a>.",
   "shopify.checkout.payment.subscription_card_update_agreement_label": "Changing the payment method will update your subscription and future recurring payments.",
