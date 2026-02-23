@@ -6520,6 +6520,22 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "If there is no variant associated with the gift card, then `nil` is returned.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "variant",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The variant associated with the gift card.",
+        "name": "variant"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [],
         "return_type": [
@@ -6540,7 +6556,7 @@
     "json_data": {
       "path": "",
       "handle": "",
-      "data_from_file": "{\"balance\":5000,\"code\":\"WCGX 7X97 K9HJ DFR8\",\"currency\":\"CAD\",\"customer\":{},\"enabled\":true,\"expired\":false,\"expires_on\":null,\"initial_value\":5000,\"last_four_characters\":\"DFR8\",\"message\":null,\"send_on\":null,\"pass_url\":\"https://polinas-potent-potions.myshopify.com/v1/passes/pass.com.shopify.giftcardnext/94af7fbe55d010130df8d8bc4a338d36/\",\"product\":{},\"properties\":{},\"qr_identifier\":\"shopify-giftcard-v1-3TKWJKJBM3X7PBRK\",\"recipient\":null,\"template_suffix\":null,\"url\":\"https://checkout.shopify.com/gift_cards/56174706753/0011c591fc720d0a51b80cdb694f969e\"}"
+      "data_from_file": "{\"balance\":5000,\"code\":\"WCGX 7X97 K9HJ DFR8\",\"currency\":\"CAD\",\"customer\":{},\"enabled\":true,\"expired\":false,\"expires_on\":null,\"initial_value\":5000,\"last_four_characters\":\"DFR8\",\"message\":null,\"send_on\":null,\"pass_url\":\"https://polinas-potent-potions.myshopify.com/v1/passes/pass.com.shopify.giftcardnext/94af7fbe55d010130df8d8bc4a338d36/\",\"product\":{},\"variant\":{},\"properties\":{},\"qr_identifier\":\"shopify-giftcard-v1-3TKWJKJBM3X7PBRK\",\"recipient\":null,\"template_suffix\":null,\"url\":\"https://checkout.shopify.com/gift_cards/56174706753/0011c591fc720d0a51b80cdb694f969e\"}"
     },
     "return_type": []
   },
@@ -12282,6 +12298,10 @@
         {
           "object": "product",
           "property": "variants"
+        },
+        {
+          "object": "gift_card",
+          "property": "variant"
         },
         {
           "object": "product",
