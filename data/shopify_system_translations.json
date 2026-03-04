@@ -1471,6 +1471,7 @@
   "shopify.checkout.thank_you.customer_information_title": "Order details",
   "shopify.checkout.thank_you.contact_information_title": "Contact information",
   "shopify.checkout.thank_you.billing_address_title": "Billing address",
+  "shopify.checkout.thank_you.cashback_notice": "You'll receive your cashback after 30 days",
   "shopify.checkout.thank_you.company_location_title": "Location",
   "shopify.checkout.thank_you.shipping_address_title": "Shipping address",
   "shopify.checkout.thank_you.shipping_address_map_title": "Google map displaying pin point of shipping address: %{address}",
