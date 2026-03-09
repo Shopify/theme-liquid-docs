@@ -817,6 +817,7 @@
   "shopify.checkout.shipping.split_shipping_option_fastest": "Fastest",
   "shopify.checkout.shipping.split_shipping_option_recommended": "Recommended",
   "shopify.checkout.shipping.split_shipping_option_custom": "Custom",
+  "shopify.checkout.shipping.add_new_delivery_address": "Add a new delivery address",
   "shopify.checkout.shipping.add_shipping_address": "Add shipping address",
   "shopify.checkout.shipping.choose_new_address": "Choose a new address",
   "shopify.checkout.localized_fields.additional_information.title": "Additional information",
