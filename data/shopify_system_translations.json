@@ -929,6 +929,8 @@
   "shopify.checkout.payment.expiry_short": "(Exp %{month}\/%{year})",
   "shopify.checkout.payment.crypto_payment_method.description": "Securely connect to your wallet on the Base network",
   "shopify.checkout.payment.crypto_payment_method.tooltip": "Your wallet balance and address will not be shared and only the requested amount can be deducted",
+  "shopify.checkout.payment.crypto_payment_method.cashback_descriptor.one": "You'll receive your cashback after %{count} day.",
+  "shopify.checkout.payment.crypto_payment_method.cashback_descriptor.other": "You'll receive your cashback after %{count} days.",
   "shopify.checkout.payment.crypto_modal.header": "Pay %{shop_name} %{total_price} USDC",
   "shopify.checkout.payment.crypto_modal.error.refresh": "Refresh",
   "shopify.checkout.payment.crypto_modal.error.close": "close",
