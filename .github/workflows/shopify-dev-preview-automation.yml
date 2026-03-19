@@ -1,0 +1,86 @@
+# This workflow dispatches a docs sync event to Shop/world's templated-apis-docs-sync
+# workflow when Liquid JSON schema files change in a PR.
+#
+# The templated-apis-docs-sync workflow will then run the Liquid JSON schemas sync
+# pipeline to create a draft pull request in shopify-dev which contains the changes
+# to preview the schema changes in shopify-dev's preview environment.
+#
+name: 'Liquid JSON schemas preview dispatch'
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, closed]
+    paths:
+      - 'schemas/theme/**'
+
+concurrency:
+  group: liquid-json-schemas-preview-dispatch-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  dispatch-liquid-json-schemas-sync:
+    name: Dispatch Liquid JSON schemas sync
+    runs-on: shopify-ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Create GitHub App Token (Shop org - world)
+        id: app-token
+        uses: actions/create-github-app-token@af35edadc00be37caa72ed9f3e6d5f7801bfdf09 # v1.11.7
+        with:
+          app-id: ${{ secrets.SHOPIFY_DEV_DOCS_SYNC_APP_ID }}
+          private-key: ${{ secrets.SHOPIFY_DEV_DOCS_SYNC_APP_PRIVATE_KEY }}
+          owner: Shop
+          repositories: |
+            world
+
+      - name: Dispatch to templated-apis-docs-sync
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          SOURCE_BRANCH: ${{ github.event.pull_request.base.ref }}
+          SOURCE_REF: ${{ github.event.pull_request.head.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ "${{ github.event.action }}" = "closed" ]; then
+            ACTION="close"
+            CHANGED_FILES='[]'
+          else
+            ACTION="sync"
+            CHANGED_FILES='["schemas/theme/"]'
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg action "$ACTION" \
+            --arg source_repo "Shopify/theme-liquid-docs" \
+            --arg source_branch "$SOURCE_BRANCH" \
+            --arg source_ref "$SOURCE_REF" \
+            --argjson source_pr_number "$PR_NUMBER" \
+            --argjson changed_files "$CHANGED_FILES" \
+            '{
+              event_type: "templated-api-docs-sync",
+              client_payload: {
+                action: $action,
+                source_repo: $source_repo,
+                source_branch: $source_branch,
+                source_ref: $source_ref,
+                source_pr_number: $source_pr_number,
+                changed_files: $changed_files
+              }
+            }')
+
+          echo "Dispatching $ACTION to shop/world templated-apis-docs-sync..."
+          echo "$PAYLOAD" | jq .
+
+          HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
+            -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/shop/world/dispatches \
+            -d "$PAYLOAD")
+
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+            echo "Successfully dispatched $ACTION event (HTTP $HTTP_STATUS)"
+          else
+            echo "Failed to dispatch $ACTION event (HTTP $HTTP_STATUS)"
+            cat response.txt
+            exit 1
+          fi
