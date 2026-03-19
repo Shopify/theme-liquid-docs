@@ -20,7 +20,7 @@ concurrency:
 jobs:
   dispatch-liquid-json-schemas-sync:
     name: Dispatch Liquid JSON schemas sync
-    runs-on: shopify-ubuntu-latest
+    runs-on: shopify-ubuntu
     timeout-minutes: 10
     steps:
       - name: Create GitHub App Token (Shop org - world)
