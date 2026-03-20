@@ -1337,6 +1337,7 @@
   "shopify.checkout.payment_errors.shipping_must_match_billing": "Billing address must match shipping address. Use a different payment method.",
   "shopify.checkout.payment_errors.shipping_company_required_error": "{{shopName}} requires a company name for the shipping address.",
   "shopify.checkout.payment_errors.decision_rule_block": "There was an issue processing your payment. Contact the store owner.",
+  "shopify.checkout.payment_errors.cancelled_payment": "Your payment was canceled. Try again or use a different payment method.",
   "shopify.checkout.payment_errors.pick_up_card": "Your card was declined. Try again or use a different payment method.",
   "shopify.checkout.payment_errors.cannot_verify": "Your payment details couldn’t be verified. Check your card details and try again.",
   "shopify.checkout.payment_errors.invalid_number": "Enter a valid card number",
