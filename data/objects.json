@@ -13371,7 +13371,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; In a cart context, the title of a remote product is appended with \"Sold by {store name}\".",
+        "description": "&gt; Note:\n&gt; In a cart or search suggestions context, the title of a remote product is appended with \"Sold by {store name}\".",
         "examples": [],
         "return_type": [
           {
@@ -16811,6 +16811,22 @@
         ],
         "summary": "All of the product types in the store.",
         "name": "types"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "Search types are `[\"article\", \"page\", \"product\"]` by default, and can be configured in the Search &amp; Discovery app.\nThese search types are used when a search query is performed without a `?type=` parameter.\n\n&gt; Tip:\n&gt; A search with a `?type=` parameter value not in the `shop.search_types` list will still return results for the specified type, if they exist.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "string"
+          }
+        ],
+        "summary": "The resource types searched for by default when no `type` parameter is specified.",
+        "name": "search_types"
       },
       {
         "deprecated": false,
