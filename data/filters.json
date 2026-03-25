@@ -4358,6 +4358,36 @@
         "description": "",
         "syntax": "",
         "path": "/products/health-potion",
+        "raw_liquid": "{{ product.price | money_amount }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Formats a given price as a plain decimal string, without currency symbols, thousand separators, or locale formatting.",
+    "syntax": "number | money_amount",
+    "name": "money_amount"
+  },
+  {
+    "category": "money",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/products/health-potion",
         "raw_liquid": "{{ product.price | money_with_currency }}",
         "parameter": false,
         "display_type": "text",
