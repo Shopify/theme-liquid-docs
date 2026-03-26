@@ -12625,6 +12625,22 @@
         "name": "options"
       },
       {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; The array is never empty because variants with no options still have a default option. You can check\n&gt; `variant.product.has_only_default_variant` before looping over the array.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "product_option"
+          }
+        ],
+        "summary": "The name and value pairs for each [product option](/docs/api/liquid/objects/product_option) of the variant.",
+        "name": "options_with_values"
+      },
+      {
         "deprecated": true,
         "deprecation_reason": "Deprecated. Prefer to use [`variant.options`](/docs/api/liquid/objects/variant#variant-options) instead.",
         "description": "If there's no first product option, then `nil` is returned.",
@@ -17284,6 +17300,43 @@
     "json_data": {
       "path": "/",
       "handle": "customer.store_credit_account",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns whether the storefront agent is enabled for the shop.",
+        "name": "enabled"
+      }
+    ],
+    "summary": "Information about the storefront agent configuration for a shop.",
+    "name": "storefront_agent",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
       "data_from_file": ""
     },
     "return_type": []
