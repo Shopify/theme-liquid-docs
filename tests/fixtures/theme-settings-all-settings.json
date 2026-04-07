@@ -124,6 +124,15 @@
         "label": "Color Scheme"
       },
       {
+        "type": "color_palette",
+        "id": "color_palette",
+        "default": {
+          "background": "#ffffff",
+          "foreground": "#000000"
+        },
+        "label": "Color Palette"
+      },
+      {
         "type": "color_scheme_group",
         "id": "color_schemes",
         "definition": [

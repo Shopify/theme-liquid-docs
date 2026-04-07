@@ -21,6 +21,7 @@ export const INPUT_SETTING_TYPES = [
   'collection_list',
   'collection',
   'color_background',
+  'color_palette',
   'color_scheme_group',
   'color_scheme',
   'color',
