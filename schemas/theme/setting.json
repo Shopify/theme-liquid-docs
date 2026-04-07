@@ -480,8 +480,8 @@
       "properties": {
         "type": {
           "const": "color_palette",
-          "description": "A setting of type color_palette outputs a set of named color values.",
-          "markdownDescription": "A setting of type `color_palette` outputs a set of named color values.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
+          "description": "A setting of type color_palette outputs a picker with all of the available theme palette colors.",
+          "markdownDescription": "A setting of type `color_palette` outputs a picker with all of the available theme palette colors.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
         },
         "default": { "type": "object", "additionalProperties": { "type": "string" } },
         "label": true,
