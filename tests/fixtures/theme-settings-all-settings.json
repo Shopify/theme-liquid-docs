@@ -118,6 +118,15 @@
         "default": "linear-gradient(#ffffff, #000000)"
       },
       {
+        "type": "color_palette",
+        "id": "color_palette",
+        "default": {
+          "background": "#ffffff",
+          "foreground": "#000000"
+        },
+        "label": "Color Palette"
+      },
+      {
         "type": "color_scheme",
         "id": "color_scheme",
         "default": "scheme_1",
