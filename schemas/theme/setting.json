@@ -14,9 +14,9 @@
         "collection_list",
         "color",
         "color_background",
+        "color_palette",
         "color_scheme",
         "color_scheme_group",
-        "color_palette",
         "font_picker",
         "header",
         "html",
@@ -88,16 +88,16 @@
       "then": { "$ref": "#/definitions/color_background" }
     },
     {
+      "if": { "required": ["type"], "properties": { "type": { "const": "color_palette" } } },
+      "then": { "$ref": "#/definitions/color_palette" }
+    },
+    {
       "if": { "required": ["type"], "properties": { "type": { "const": "color_scheme" } } },
       "then": { "$ref": "#/definitions/color_scheme" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "color_scheme_group" } } },
       "then": { "$ref": "#/definitions/color_scheme_group" }
-    },
-    {
-      "if": { "required": ["type"], "properties": { "type": { "const": "color_palette" } } },
-      "then": { "$ref": "#/definitions/color_palette" }
     },
     {
       "if": { "required": ["type"], "properties": { "type": { "const": "font_picker" } } },
@@ -344,6 +344,26 @@
       "additionalProperties": false
     },
 
+    "color_palette": {
+      "allOf": [
+        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
+        { "$ref": "#/definitions/conditionalSetting" }
+      ],
+      "properties": {
+        "type": {
+          "const": "color_palette",
+          "description": "A setting of type color_palette outputs a picker with all of the available theme palette colors.",
+          "markdownDescription": "A setting of type `color_palette` outputs a picker with all of the available theme palette colors.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
+        },
+        "default": { "type": "object", "additionalProperties": { "type": "string" } },
+        "label": true,
+        "info": true,
+        "id": true,
+        "visible_if": true
+      },
+      "additionalProperties": false
+    },
+
     "color_scheme": {
       "allOf": [
         { "$ref": "#/definitions/inputSettingsStandardAttributes" },
@@ -469,26 +489,6 @@
         "id": true
       },
       "required": ["definition", "role"],
-      "additionalProperties": false
-    },
-
-    "color_palette": {
-      "allOf": [
-        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
-        { "$ref": "#/definitions/conditionalSetting" }
-      ],
-      "properties": {
-        "type": {
-          "const": "color_palette",
-          "description": "A setting of type color_palette outputs a picker with all of the available theme palette colors.",
-          "markdownDescription": "A setting of type `color_palette` outputs a picker with all of the available theme palette colors.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
-        },
-        "default": { "type": "object", "additionalProperties": { "type": "string" } },
-        "label": true,
-        "info": true,
-        "id": true,
-        "visible_if": true
-      },
       "additionalProperties": false
     },
 
