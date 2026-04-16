@@ -1344,6 +1344,7 @@
   "shopify.checkout.payment_errors.subscription_agreement_blank": "To buy a subscription your payment details need to be saved. To continue, confirm that you agree or remove subscription items from you order.",
   "shopify.checkout.payment_errors.insufficient_funds": "Your payment was declined due to insufficient funds. Try again or use a different payment method.",
   "shopify.checkout.payment_errors.multiple_deferred_payment_not_allowed": "Only one deferred payment allowed per request. Check your request and try again.",
+  "shopify.checkout.payment.multiple_primary_payment_not_allowed": "Invalid payment methods",
   "shopify.checkout.payment_errors.shipping_must_match_billing": "Billing address must match shipping address. Use a different payment method.",
   "shopify.checkout.payment_errors.shipping_company_required_error": "{{shopName}} requires a company name for the shipping address.",
   "shopify.checkout.payment_errors.decision_rule_block": "There was an issue processing your payment. Contact the store owner.",
