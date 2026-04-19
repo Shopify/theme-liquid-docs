@@ -505,6 +505,7 @@
   "shopify.checkout.order_summary.applied_discount_message": "%{amount} off total order price",
   "shopify.checkout.order_summary.discount_has_been_applied": "Discount has been applied",
   "shopify.checkout.order_summary.discount_has_been_removed": "Discount has been removed",
+  "shopify.checkout.order_summary.automatic_discount_tooltip": "Automatically applied discounts can't be removed",
   "shopify.checkout.order_summary.gift_card_has_been_applied": "Gift card has been applied",
   "shopify.checkout.order_summary.gift_card_has_been_removed": "Gift card has been removed",
   "shopify.checkout.order_summary.gift_card_subscriptions_notice": "Gift cards will only apply to your first payment",
