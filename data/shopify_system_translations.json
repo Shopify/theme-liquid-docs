@@ -1358,6 +1358,7 @@
   "shopify.checkout.payment_errors.invalid_number": "Enter a valid card number",
   "shopify.checkout.payment_errors.invalid_expiry_date": "Enter a valid expiration date",
   "shopify.checkout.payment_errors.invalid_cvc": "Enter a valid security code",
+  "shopify.checkout.payment_errors.missing_cvc": "Enter a security code",
   "shopify.checkout.payment_errors.expired_card": "Your card has expired. Use a different payment method.",
   "shopify.checkout.payment_errors.payment_method_not_applicable": "This payment method is not applicable. Use a different payment method.",
   "shopify.checkout.payment_errors.card_declined": "Your card was declined. Try again or use a different payment method.",
