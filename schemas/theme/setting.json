@@ -357,7 +357,10 @@
           "type": "object",
           "minProperties": 1,
           "maxProperties": 20,
-          "propertyNames": { "pattern": "^[a-zA-Z]\\w*$" },
+          "propertyNames": {
+            "pattern": "^[a-zA-Z]\\w*$",
+            "patternErrorMessage": "Color palette names must start with a letter and contain only letters, digits, and underscores."
+          },
           "additionalProperties": { "type": "string" },
           "description": "A map of palette color names to color values. Each key is an arbitrary name and each value is a CSS color.",
           "markdownDescription": "A map of palette color names to color values.\n\nEach **key** is an arbitrary name. Each **value** is a CSS color, typically a hex code.\n\n**Example:**\n```json\n\"default\": {\n  \"background\": \"#ffffff\",\n  \"foreground\": \"#000000\"\n}\n```\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"

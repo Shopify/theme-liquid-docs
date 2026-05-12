@@ -128,6 +128,33 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]);
     });
 
+    it('refuses an empty default', async () => {
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        settings({ default: {} }),
+      );
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: 'Object has fewer properties than the required number of 1',
+        }),
+      ]);
+    });
+
+    it('refuses a default with more than 20 entries', async () => {
+      const tooMany = Object.fromEntries(
+        Array.from({ length: 21 }, (_, i) => [`color${i}`, '#000000']),
+      );
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        settings({ default: tooMany }),
+      );
+      expect(diagnostics).toStrictEqual([
+        expect.objectContaining({
+          message: 'Object has more properties than limit of 20.',
+        }),
+      ]);
+    });
+
     it('refuses default keys with hyphens', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
@@ -135,7 +162,8 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       );
       expect(diagnostics).toStrictEqual([
         expect.objectContaining({
-          message: expect.stringMatching(/does not match the pattern of "\^\[a-zA-Z\]\\w\*\$"/),
+          message:
+            'Color palette names must start with a letter and contain only letters, digits, and underscores.',
         }),
       ]);
     });
@@ -147,7 +175,8 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       );
       expect(diagnostics).toStrictEqual([
         expect.objectContaining({
-          message: expect.stringMatching(/does not match the pattern of "\^\[a-zA-Z\]\\w\*\$"/),
+          message:
+            'Color palette names must start with a letter and contain only letters, digits, and underscores.',
         }),
       ]);
     });
