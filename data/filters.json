@@ -1996,13 +1996,13 @@
         "description": "",
         "syntax": "",
         "path": "/",
-        "raw_liquid": "{{ 'this sentence should start with a capitalized word.' | capitalize }}",
+        "raw_liquid": "{{ 'this sentence should start with a capitalized letter.' | capitalize }}",
         "parameter": false,
         "display_type": "text",
         "show_data_tab": true
       }
     ],
-    "summary": "Capitalizes the first word in a string and downcases the remaining characters.",
+    "summary": "Capitalizes the first letter in a string and downcases the remaining characters.",
     "syntax": "string | capitalize",
     "name": "capitalize"
   },
