@@ -123,8 +123,7 @@
         "default": {
           "background": "#ffffff",
           "foreground": "#000000"
-        },
-        "label": "Color Palette"
+        }
       },
       {
         "type": "color_scheme",

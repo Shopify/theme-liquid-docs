@@ -345,21 +345,26 @@
     },
 
     "color_palette": {
-      "allOf": [
-        { "$ref": "#/definitions/inputSettingsStandardAttributes" },
-        { "$ref": "#/definitions/conditionalSetting" }
-      ],
+      "allOf": [{ "$ref": "#/definitions/colorPaletteStandardAttributes" }],
       "properties": {
+        "id": true,
         "type": {
           "const": "color_palette",
           "description": "A setting of type color_palette outputs a picker with all of the available theme palette colors.",
           "markdownDescription": "A setting of type `color_palette` outputs a picker with all of the available theme palette colors.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
         },
-        "default": { "type": "object", "additionalProperties": { "type": "string" } },
-        "label": true,
-        "info": true,
-        "id": true,
-        "visible_if": true
+        "default": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 20,
+          "propertyNames": {
+            "pattern": "^[a-zA-Z]\\w*$",
+            "patternErrorMessage": "Color palette names must start with a letter and contain only letters, digits, and underscores."
+          },
+          "additionalProperties": { "type": "string" },
+          "description": "A map of palette color names to color values. Each key is an arbitrary name and each value is a CSS color.",
+          "markdownDescription": "A map of palette color names to color values.\n\nEach **key** is an arbitrary name. Each **value** is a CSS color, typically a hex code.\n\n**Example:**\n```json\n\"default\": {\n  \"background\": \"#ffffff\",\n  \"foreground\": \"#000000\"\n}\n```\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
+        }
       },
       "additionalProperties": false
     },
@@ -1107,6 +1112,17 @@
         },
         "info": {
           "$ref": "#/definitions/info"
+        }
+      }
+    },
+
+    "colorPaletteStandardAttributes": {
+      "required": ["type", "id", "default"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the setting, which is used to access the setting value.",
+          "markdownDescription": "The unique identifier for the setting, which is used to access the setting value.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#standard-attributes)"
         }
       }
     },

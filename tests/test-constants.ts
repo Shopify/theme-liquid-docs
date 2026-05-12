@@ -9,8 +9,8 @@ export const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
   'page',
   'product',
   'product_list',
-  // Not featured here is `color_scheme_group` which is exclusive to settings_schema.json.
-  // That setting type is tested in `color_scheme_group.spec.ts`.
+  // Not featured here is `color_scheme_group` and `color_palette` which are exclusive to settings_schema.json.
+  // Those setting types are tested in `color_scheme_group.spec.ts` and `color_palette.spec.ts`.
 ];
 
 export const INPUT_SETTING_TYPES = [
@@ -48,6 +48,10 @@ export const INPUT_SETTING_TYPES = [
   'video_url',
   'video',
 ];
+
+// Setting types that are only valid in config/settings_schema.json,
+// not in section or block schemas. Tested in their own *.spec.ts files.
+export const SETTINGS_TYPES_EXCLUSIVE_TO_SETTINGS_SCHEMA = ['color_scheme_group', 'color_palette'];
 
 export const SIDEBAR_SETTING_TYPES = ['header', 'paragraph'];
 
