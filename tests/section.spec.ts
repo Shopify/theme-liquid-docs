@@ -1,6 +1,10 @@
 import set from 'lodash.set';
 import { assert, describe, expect, it } from 'vitest';
-import { INPUT_SETTING_TYPES, SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF } from './test-constants';
+import {
+  INPUT_SETTING_TYPES,
+  SETTINGS_TYPES_EXCLUSIVE_TO_SETTINGS_SCHEMA,
+  SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF,
+} from './test-constants';
 import { complete, getService, hover, loadFixture, validateSchema } from './test-helpers';
 
 const sectionSchema1 = loadFixture('section-schema-1.json');
@@ -220,7 +224,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
 
   const settingsTypesSupportingVisibleIf = INPUT_SETTING_TYPES.filter(
     (settingType) =>
-      !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat('color_scheme_group').includes(settingType),
+      !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat(SETTINGS_TYPES_EXCLUSIVE_TO_SETTINGS_SCHEMA).includes(settingType),
   );
 
   it.each(settingsTypesSupportingVisibleIf)(
