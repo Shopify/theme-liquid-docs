@@ -359,6 +359,7 @@
   "shopify.checkout.delivery_options.retail_method_definition": "Retail shipping",
   "shopify.checkout.delivery_options.company_location_no_address_banner": "Orders shipping to locations with no address will be submitted for review.",
   "shopify.checkout.delivery_options.none_method_definition": "No shipping",
+  "shopify.checkout.delivery_options.digital_product": "Digital product",
   "shopify.checkout.delivery_options.subscription_pickup_information": "This delivery method will apply to all items in this order and to all future orders for this subscription.",
   "shopify.checkout.customer_account.not_user_label": "Not %{first_name}?",
   "shopify.checkout.customer_account.have_an_account_label": "Have an account?",
