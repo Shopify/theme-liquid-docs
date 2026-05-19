@@ -1176,6 +1176,8 @@
   "shopify.checkout.payment.add_new_payment_method": "Add a new payment method",
   "shopify.checkout.payment.choose_new_payment_method": "Choose a new payment method",
   "shopify.checkout.payment.multiple_primary_payment_not_allowed": "Invalid payment methods",
+  "shopify.checkout.payment.vault_for_payment_later.pay_button_label": "Place order",
+  "shopify.checkout.payment.vault_for_payment_later.notice": "You won't be charged now. By continuing with your payment, you agree your payment method will automatically be charged when your order is processed.",
   "shopify.checkout.billing.billing_address_title": "Bill to",
   "shopify.checkout.billing.billing_address_rollup_accessibility_label": "Bill to options",
   "shopify.checkout.billing.same_as_shipping": "Same as shipping address",
