@@ -1013,6 +1013,8 @@
   "shopify.checkout.payment.vipps_label": "Vipps",
   "shopify.checkout.payment.grabpay_label": "GrabPay",
   "shopify.checkout.payment.kcp_creditcard_label": "KCP Credit Card",
+  "shopify.checkout.payment.alipay_label": "Alipay",
+  "shopify.checkout.payment.wechat_pay_label": "WeChat Pay",
   "shopify.checkout.payment.usdc_label": "USDC",
   "shopify.checkout.payment.usdc_cashback_title": "%{incentive_percentage}% cashback",
   "shopify.checkout.payment.usdc_cashback_additional_info": "Pay with USDC on Base and get %{incentive_percentage}% back in your wallet in 30 days.",
