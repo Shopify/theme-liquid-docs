@@ -1336,6 +1336,7 @@
   "shopify.checkout.merchant_instruction_errors.duplicate_variant_id": "The %{position} %{name} merchandise instruction contains a duplicate variant ID %{variant_id}.",
   "shopify.checkout.merchant_instruction_errors.invalid_variant_id_target": "The %{name} merchandise instruction references variant ID %{variant_id}, but that variant is not in merchandise lines.",
   "shopify.checkout.merchant_instruction_errors.invalid_price_override_target": "The price override merchandise instruction for line item %{stable_id} is invalid since it is a bundle component.",
+  "shopify.checkout.merchant_instruction_errors.discount_not_supported": "The apply merchandise discount merchant instruction doesn't support this kind of discount.",
   "shopify.checkout.payment_errors.currency.no_longer_supported": "The store's currency is no longer supported.",
   "shopify.checkout.payment_errors.amount_too_small": "The minimum payment amount must be higher than $0.50 USD. Try again with a higher amount.",
   "shopify.checkout.payment_errors.method_not_available": "The requested payment method is not available. Choose another payment method and try again.",
