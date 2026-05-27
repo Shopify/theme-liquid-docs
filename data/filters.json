@@ -4616,6 +4616,66 @@
     "name": "login_button"
   },
   {
+    "category": "format",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "The `standard_event_data` filter generates JSON payloads for standard events.\nIt can be used on [`product`](/docs/api/liquid/objects/product),\n[`collection`](/docs/api/liquid/objects/collection), and\n[`cart`](/docs/api/liquid/objects/cart) objects.\n\nThe only supported event type is `\"view\"`.\n\nFor products, you can optionally pass a context parameter. Valid values are:\n`page`, `search`, `collection`, `dialog`, and `recommendation`. If omitted, `context` is `null`.\nFor carts, you can optionally pass a context parameter. Valid values are:\n`page` and `dialog`. If omitted, `context` is `null`.\nIf the cart hasn't been created yet, then the payload returns `null` for the `cart` field.\nThe context parameter is ignored for collections.",
+    "parameters": [
+      {
+        "description": "The event context. Supports `page`, `search`, `collection`, `dialog`, and `recommendation` for products, and `page` or `dialog` for carts.",
+        "name": "context",
+        "positional": false,
+        "required": false,
+        "types": [
+          "string"
+        ]
+      }
+    ],
+    "return_type": [
+      {
+        "type": "string",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ],
+    "examples": [
+      {
+        "name": "",
+        "description": "",
+        "syntax": "",
+        "path": "/products/health-potion",
+        "raw_liquid": "{{ product | standard_event_data: \"view\", context: \"page\" }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Collection view event data",
+        "description": "",
+        "syntax": "",
+        "path": "/collections/all",
+        "raw_liquid": "{{ collection | standard_event_data: \"view\" }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "Cart view event data",
+        "description": "",
+        "syntax": "",
+        "path": "/cart",
+        "raw_liquid": "{{ cart | standard_event_data: \"view\", context: \"dialog\" }}",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ],
+    "summary": "Generates a JSON payload for standard events.",
+    "syntax": "variable | standard_event_data: event_type, context: string",
+    "name": "standard_event_data"
+  },
+  {
     "category": "string",
     "deprecated": false,
     "deprecation_reason": "",
