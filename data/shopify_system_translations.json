@@ -1266,6 +1266,7 @@
   "shopify.checkout.field_errors.address_generic_error": "Field error",
   "shopify.checkout.field_errors.credit_card_name_blank": "Enter your name exactly as it’s written on your card",
   "shopify.checkout.field_errors.credit_card_name_invalid": "Enter your name exactly as it’s written on your card",
+  "shopify.checkout.field_errors.credit_card_name_billing_invalid": "Enter your name on the billing address first",
   "shopify.checkout.field_errors.credit_card_number_invalid": "Enter a valid card number",
   "shopify.checkout.field_errors.credit_card_expiry_invalid": "Enter a valid expiration date",
   "shopify.checkout.field_errors.credit_card_month_invalid": "Enter a valid expiration month",
