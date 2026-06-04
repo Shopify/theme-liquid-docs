@@ -2090,6 +2090,7 @@
   "shopify.checkout.local_pickup.pickup_unavailable_banner_title_with_country.other": "No locations in %{country} with your items",
   "shopify.checkout.local_pickup.pickup_unavailable_banner_body.ship_items": "Ship your items",
   "shopify.checkout.local_pickup.pickup_unavailable_banner_body.search_elsewhere": "search elsewhere",
+  "shopify.checkout.local_pickup.pickup_unavailable_banner_body.search_elsewhere_standalone": "Search elsewhere",
   "shopify.checkout.local_pickup.pickup_unavailable_banner_body.ship_items_or_search_elsewhere": "%{ship_items} or %{search_elsewhere}",
   "shopify.checkout.split_delivery.pickup_all_items": "Pick up all items",
   "shopify.checkout.split_delivery.items_for_pickup": "Items for pickup",
