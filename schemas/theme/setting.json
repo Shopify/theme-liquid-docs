@@ -318,6 +318,10 @@
           "type": "boolean",
           "description": "A boolean value that determines whether the color picker should include an alpha slider. The default value is true.",
           "markdownDescription": "A boolean value that determines whether the color picker should include an alpha slider. The default value is true.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color)"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "A placeholder value for the input."
         }
       },
       "additionalProperties": false
