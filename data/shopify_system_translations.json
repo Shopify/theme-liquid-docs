@@ -2074,7 +2074,7 @@
   "shopify.checkout.local_pickup.all_stores_far_away.ship_to_address_link": "ship to address",
   "shopify.checkout.local_pickup.all_stores_far_away.change_location_link": "Change your location",
   "shopify.checkout.local_pickup.selected_pickup_option_no_longer_available.title": "Your previously selected location is no longer available",
-  "shopify.checkout.local_pickup.selected_pickup_option_no_longer_available.description": "Select a new location or %{ship_to_address_link}",
+  "shopify.checkout.local_pickup.selected_pickup_option_no_longer_available.description": "We've selected the nearest location with your items in stock",
   "shopify.checkout.local_pickup.selected_pickup_option_no_longer_available.ship_to_address_link": "ship to address",
   "shopify.checkout.local_pickup.could_not_resolve_address": "Your address couldn't be located. Try again or use a different address",
   "shopify.checkout.local_pickup.paginator.accessibility_label": "Local pickup pagination",
