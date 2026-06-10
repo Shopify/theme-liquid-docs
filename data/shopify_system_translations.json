@@ -288,6 +288,7 @@
   "shopify.checkout.contact.optional_company_attention_label": "Company\/Attention (optional)",
   "shopify.checkout.contact.optional_company_label": "Company (optional)",
   "shopify.checkout.contact.address1_label": "Address",
+  "shopify.checkout.contact.optional_street_name_label": "Street (optional)",
   "shopify.checkout.contact.address2_label": "Apartment, suite, etc.",
   "shopify.checkout.contact.optional_address2_label": "Apartment, suite, etc. (optional)",
   "shopify.checkout.contact.subdistrict_label": "Subdistrict",
