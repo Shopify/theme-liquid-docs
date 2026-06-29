@@ -958,6 +958,8 @@
   "shopify.checkout.payment.crypto_modal.error.web_component_error": "There was a problem loading this page",
   "shopify.checkout.payment.saved_by_payment_method": "Saved by %{payment_method}",
   "shopify.checkout.payment.pay_with_payment_method": "Pay with %{payment_method}",
+  "shopify.checkout.payment.pay_with_credit_card": "Pay with credit card",
+  "shopify.checkout.payment.pay_with_debit_card": "Pay with debit card",
   "shopify.checkout.payment.different_credit_card_label": "Use a different credit card",
   "shopify.checkout.payment.same_billing_address_label": "Same as shipping address",
   "shopify.checkout.payment.different_billing_address_label": "Use a different billing address",
