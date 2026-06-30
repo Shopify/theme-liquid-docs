@@ -15322,6 +15322,33 @@
   },
   {
     "access": {
+      "global": true,
+      "parents": [],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "The `self` object dynamically resolves properties from the current Liquid scope.",
+    "properties": [],
+    "summary": "The current Liquid scope.",
+    "name": "self",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": [
+      {
+        "type": "untyped",
+        "name": "",
+        "description": "",
+        "array_value": ""
+      }
+    ]
+  },
+  {
+    "access": {
       "global": false,
       "parents": [
         {
