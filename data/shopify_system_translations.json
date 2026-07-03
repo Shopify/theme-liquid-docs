@@ -1475,6 +1475,8 @@
   "shopify.checkout.payment_challenge_modal.open_app_text": "Open {{paymentMethod}} app",
   "shopify.checkout.payment_challenge_modal.header": "Pay with {{paymentMethod}}",
   "shopify.checkout.payment_challenge_modal.qr_code.instructions": "Complete your purchase using your {{paymentMethod}} code",
+  "shopify.checkout.payment_challenge_modal.qr_code.wechat_instructions": "Scan this QR code with the WeChat app on your phone to complete your purchase in Chinese Yuan.",
+  "shopify.checkout.payment_challenge_modal.qr_code.wechat_instructions_mobile": "Scan this QR code with the WeChat app on another device to complete your purchase in Chinese Yuan.",
   "shopify.checkout.payment_challenge_modal.external.instructions": "Confirm payment on your app to complete this purchase",
   "shopify.checkout.payment_challenge_modal.close": "Close the challenge",
   "shopify.checkout.failed_payment.page_title": "Payment couldn’t be processed",
