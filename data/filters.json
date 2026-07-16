@@ -4085,6 +4085,16 @@
         "show_data_tab": false
       },
       {
+        "name": "Lazy loading",
+        "description": "If you don't pass the [`loading` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#loading) to `video_tag`, then `loading` is automatically set to `lazy` for videos in sections further down the page.\nYou shouldn't lazy load videos above the fold. If the default value doesn't work for your theme, then consider writing your own logic using the `section.index` and `section.location` properties. For more information, refer to the [`section` object](/docs/api/liquid/objects/section).\n",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
         "name": "image_size",
         "description": "Specify the dimensions of the video's poster image in pixels.",
         "syntax": "media | video_tag: image_size: string",
@@ -4096,7 +4106,7 @@
       },
       {
         "name": "Optional supported HTML5 attributes",
-        "description": "`video_tag` supports all [HTML5 video attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attributes).\nFor example:\n\n| Attribute | Value |\n| --- | --- |\n| `autoplay` | Whether to automatically play the video after it’s loaded. Accepted values:`true`,`false`|\n| `loop` | Whether to loop the video. Accepted values:`true`,`false`|\n| `muted` | Whether to mute the video’s audio. Accepted values:`true`,`false`|\n| `controls` | Whether a user can control the video playback. Accepted values:`true`,`false`|\n",
+        "description": "`video_tag` supports all [HTML5 video attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attributes).\nFor example:\n\n| Attribute | Value |\n| --- | --- |\n| `autoplay` | Whether to automatically play the video after it’s loaded. Accepted values:`true`,`false`|\n| `loop` | Whether to loop the video. Accepted values:`true`,`false`|\n| `muted` | Whether to mute the video’s audio. Accepted values:`true`,`false`|\n| `controls` | Whether a user can control the video playback. Accepted values:`true`,`false`|\n| `loading` | Whether to lazy-load the video. Accepted values:`lazy`,`eager`|\n",
         "syntax": "media | video_tag: attribute: boolean",
         "path": "/products/potion-beats",
         "raw_liquid": "{% for media in product.media %}\n  {% if media.media_type == 'video' %}\n    {{ media | video_tag: autoplay: true, loop: true, muted: true, controls: true }}\n  {% endif %}\n{% endfor %}",
