@@ -2634,5 +2634,6 @@
   "shopify.online_store.hcaptcha_badge.badge_text": "Protected by hCaptcha",
   "shopify.online_store.hcaptcha_badge.terms_link_text": "Terms",
   "shopify.online_store.hcaptcha_badge.privacy_link_text": "Privacy",
-  "shopify.online_store.spam_detection.disclaimer_html": "<p data-spam-detection-disclaimer=\"\">This site is protected by hCaptcha and the hCaptcha <a href=\"https:\/\/hcaptcha.com\/privacy\">Privacy Policy<\/a> and <a href=\"https:\/\/hcaptcha.com\/terms\">Terms of Service<\/a> apply.<\/p>\n"
+  "shopify.online_store.spam_detection.disclaimer_html": "<p data-spam-detection-disclaimer=\"\">This site is protected by hCaptcha and the hCaptcha <a href=\"https:\/\/hcaptcha.com\/privacy\">Privacy Policy<\/a> and <a href=\"https:\/\/hcaptcha.com\/terms\">Terms of Service<\/a> apply.<\/p>\n",
+  "shopify.checkout.ucp.standard_errors.item_unavailable": "Item cannot be purchased"
 }
