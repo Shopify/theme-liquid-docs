@@ -2,6 +2,7 @@
   "shopify.sentence.words_connector": ", ",
   "shopify.sentence.two_words_connector": " and ",
   "shopify.sentence.last_word_connector": ", and ",
+  "shopify.checkout.ucp.standard_errors.item_unavailable": "Item cannot be purchased",
   "shopify.checkout.general.page_title": "Checkout",
   "shopify.checkout.general.error_page_title": "Error",
   "shopify.checkout.general.skip_to_content": "Skip to content",
@@ -670,9 +671,11 @@
   "shopify.checkout.order_summary.settlement_currency_note_wallet": "%{shop_name} processes payments in %{processing_currency}. You shopped in %{original_currency} and paid with %{wallet} in CNY. Check your %{wallet_app} app for the final amount.",
   "shopify.checkout.order_summary.settlement_currency_note_wallet_no_conversion": "You paid with %{wallet} in CNY. Check your %{wallet_app} app for the final amount.",
   "shopify.checkout.order_summary.lpm.wechat_pay.checkout_disclosure": "Confirm the final CNY total in the WeChat app.",
+  "shopify.checkout.order_summary.lpm.wechat_pay.checkout_disclosure_with_alternative_payment_currency": "%{shop_name} processes payments in %{processing_currency} (%{amount_due}). Confirm the final CNY total in the WeChat app.",
   "shopify.checkout.order_summary.lpm.wechat_pay.post_purchase_disclosure": "You paid with WeChat Pay in CNY. Check your WeChat app for the final amount.",
   "shopify.checkout.order_summary.lpm.wechat_pay.post_purchase_disclosure_with_alternative_payment_currency": "%{shop_name} processes payments in %{processing_currency}. You shopped in %{original_currency} and paid with WeChat Pay in CNY. Check your WeChat app for the final amount.",
   "shopify.checkout.order_summary.lpm.alipay.checkout_disclosure": "Confirm the final CNY total in the Alipay app.",
+  "shopify.checkout.order_summary.lpm.alipay.checkout_disclosure_with_alternative_payment_currency": "%{shop_name} processes payments in %{processing_currency} (%{amount_due}). Confirm the final CNY total in the Alipay app.",
   "shopify.checkout.order_summary.lpm.alipay.post_purchase_disclosure": "You paid with Alipay in CNY. Check your Alipay app for the final amount.",
   "shopify.checkout.order_summary.lpm.alipay.post_purchase_disclosure_with_alternative_payment_currency": "%{shop_name} processes payments in %{processing_currency}. You shopped in %{original_currency} and paid with Alipay in CNY. Check your Alipay app for the final amount.",
   "shopify.checkout.order_summary.pay_merchant_label": "Pay %{merchant_name}",
@@ -2641,6 +2644,5 @@
   "shopify.online_store.hcaptcha_badge.badge_text": "Protected by hCaptcha",
   "shopify.online_store.hcaptcha_badge.terms_link_text": "Terms",
   "shopify.online_store.hcaptcha_badge.privacy_link_text": "Privacy",
-  "shopify.online_store.spam_detection.disclaimer_html": "<p data-spam-detection-disclaimer=\"\">This site is protected by hCaptcha and the hCaptcha <a href=\"https:\/\/hcaptcha.com\/privacy\">Privacy Policy<\/a> and <a href=\"https:\/\/hcaptcha.com\/terms\">Terms of Service<\/a> apply.<\/p>\n",
-  "shopify.checkout.ucp.standard_errors.item_unavailable": "Item cannot be purchased"
+  "shopify.online_store.spam_detection.disclaimer_html": "<p data-spam-detection-disclaimer=\"\">This site is protected by hCaptcha and the hCaptcha <a href=\"https:\/\/hcaptcha.com\/privacy\">Privacy Policy<\/a> and <a href=\"https:\/\/hcaptcha.com\/terms\">Terms of Service<\/a> apply.<\/p>\n"
 }
