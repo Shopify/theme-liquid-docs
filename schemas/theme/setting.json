@@ -692,7 +692,21 @@
           "type": "string",
           "description": "A placeholder value for the input."
         },
-        "default": { "type": "number" },
+        "default": { "type": "number", "multipleOf": 0.1 },
+        "min": {
+          "type": "number",
+          "multipleOf": 0.1,
+          "description": "The smallest value the setting is expected to take. Supports at most one decimal digit. The stored setting value remains numeric, and the default and any option values must fall within the bounds.",
+          "markdownDescription": "The smallest value the setting is expected to take. Supports at most one decimal digit.\n\nThe stored setting value remains numeric, and `default` and `options[].value` must fall within the bounds.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#number)"
+        },
+        "max": {
+          "type": "number",
+          "multipleOf": 0.1,
+          "description": "The largest value the setting is expected to take. Supports at most one decimal digit. The stored setting value remains numeric, and the default and any option values must fall within the bounds.",
+          "markdownDescription": "The largest value the setting is expected to take. Supports at most one decimal digit.\n\nThe stored setting value remains numeric, and `default` and `options[].value` must fall within the bounds.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#number)"
+        },
+        "icon": { "$ref": "#/definitions/settingIcon" },
+        "options": { "$ref": "#/definitions/numberOptions" },
         "label": true,
         "info": true,
         "id": true,
@@ -768,7 +782,7 @@
           "type": "string",
           "description": "The value of the default option"
         },
-        "options": { "$ref": "#/definitions/options" },
+        "options": { "$ref": "#/definitions/radioOptions" },
         "label": true,
         "info": true,
         "id": true,
@@ -1391,8 +1405,22 @@
       }
     },
 
+    "radioOptions": {
+      "description": "Takes an array of `value`/`label` definitions for radio fields.",
+      "type": "array",
+      "items": {
+        "allOf": [{ "$ref": "#/definitions/options/items" }],
+        "properties": {
+          "icon": {
+            "not": {},
+            "errorMessage": "The property icon is not allowed on radio options. Use a select setting for options with icons."
+          }
+        }
+      }
+    },
+
     "selectOptions": {
-      "description": "Takes an array of `value`/`label`/`group` definitions for select fields.",
+      "description": "Takes an array of `value`/`label`/`group`/`icon` definitions for select fields.",
       "type": "array",
       "items": {
         "allOf": [
@@ -1403,11 +1431,108 @@
               "group": {
                 "type": "string",
                 "description": "An optional attribute that you can add to each option to create option groups in the drop-down."
-              }
+              },
+              "icon": { "$ref": "#/definitions/settingIcon" }
             }
           }
         ]
       }
+    },
+
+    "numberOptions": {
+      "description": "Takes an array of `value`/`label`/`icon` definitions that provide preset numeric values for number fields.",
+      "markdownDescription": "Takes an array of `value`/`label`/`icon` definitions that provide preset numeric values for number fields.\n\nOptions define preset numeric values for the setting; the stored setting value remains numeric. Values are numbers with at most one decimal digit.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "description": "The value of the option. Supports at most one decimal digit.",
+            "type": "number",
+            "multipleOf": 0.1
+          },
+          "label": {
+            "description": "The label of the option.",
+            "type": "string"
+          },
+          "icon": { "$ref": "#/definitions/settingIcon" }
+        },
+        "required": ["value"],
+        "additionalProperties": false
+      }
+    },
+
+    "settingIcon": {
+      "type": "string",
+      "description": "The icon that represents the setting or option in the theme editor. Must be one of the supported stable icon IDs.",
+      "markdownDescription": "The icon that represents the setting or option in the theme editor.\n\nMust be one of the supported stable icon IDs, written in `snake_case` (for example `layout_columns_2`). Polaris component names such as `LayoutColumns3Icon` and admin handles such as `layout-columns-3` aren't valid.",
+      "errorMessage": "Icon must be one of the supported snake_case stable icon IDs, such as \"layout_columns_2\". Polaris component names and kebab-case handles aren't supported.",
+      "enum": [
+        "text_align_left",
+        "text_align_center",
+        "text_align_right",
+        "text_title",
+        "text_in_columns",
+        "text_in_rows",
+        "layout_column_1",
+        "layout_columns_2",
+        "layout_columns_3",
+        "layout_rows_2",
+        "layout_block",
+        "layout_section",
+        "layout_header",
+        "layout_footer",
+        "layout_sidebar_left",
+        "layout_sidebar_right",
+        "arrow_up",
+        "arrow_down",
+        "arrow_left",
+        "arrow_right",
+        "dock_side",
+        "dock_floating",
+        "desktop",
+        "tablet",
+        "mobile",
+        "viewport_narrow",
+        "viewport_wide",
+        "maximize",
+        "minimize",
+        "image",
+        "images",
+        "slideshow",
+        "crop",
+        "rotate_left",
+        "rotate_right",
+        "product",
+        "product_list",
+        "collection",
+        "collection_list",
+        "cart",
+        "cart_discount",
+        "discount",
+        "payment",
+        "credit_card",
+        "currency_convert",
+        "money",
+        "cash_dollar",
+        "price_list",
+        "color",
+        "color_none",
+        "text_color",
+        "email",
+        "email_newsletter",
+        "email_follow_up",
+        "list_bulleted",
+        "list_numbered",
+        "search_list",
+        "sun",
+        "moon",
+        "corner_square",
+        "corner_round",
+        "corner_pill",
+        "view",
+        "hide"
+      ]
     }
   }
 }
