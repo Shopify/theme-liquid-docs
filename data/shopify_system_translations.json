@@ -1845,6 +1845,7 @@
   "shopify.checkout.review.blocks.change_delivery_method_link_label": "Change delivery method",
   "shopify.checkout.review.blocks.no_address": "(No address)",
   "shopify.checkout.review.blocks.no_purchase_order_number": "(No PO number)",
+  "shopify.checkout.review.blocks.no_purchase_order_number_long": "No purchase order number",
   "shopify.checkout.review.blocks.due_after_order_reviewed_html": "Due after order is reviewed",
   "shopify.checkout.review.blocks.review_title_free_order": "Review and complete your order",
   "shopify.checkout.review.blocks.payment_method_saved_company_location": "Save card for this location",
