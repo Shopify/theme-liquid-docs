@@ -847,8 +847,6 @@
   "shopify.checkout.shipping.split_shipping_multiple_shipment_notice_one_time_purchase": "Your order will arrive in %{quantity} shipments",
   "shopify.checkout.shipping.split_shipping_more_shipping_options": "More shipping options",
   "shopify.checkout.shipping.split_shipping_shipment_number": "Shipment %{number}",
-  "shopify.checkout.shipping.split_shipping_merchandise_quantity_label_inline_primary": "Quantity: %{quantity}",
-  "shopify.checkout.shipping.split_shipping_merchandise_quantity_label_inline": "%{merchandise_title} ×%{quantity}",
   "shopify.checkout.shipping.split_shipping_option_free": "Free shipping",
   "shopify.checkout.shipping.split_shipping_option_lowest_price": "Lowest price",
   "shopify.checkout.shipping.split_shipping_option_fastest": "Fastest",
