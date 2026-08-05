@@ -1818,6 +1818,7 @@
   "shopify.checkout.thank_you.announcement.expand": "Expand",
   "shopify.checkout.thank_you.announcement.collapse": "Collapse",
   "shopify.checkout.vaulted.change_button": "Change",
+  "shopify.checkout.vaulted.loading_section": "Loading {{section}}…",
   "shopify.checkout.review.title": "Review",
   "shopify.checkout.review.review_title": "Complete your order",
   "shopify.checkout.review.review_and_confirm_title": "Review and confirm",
