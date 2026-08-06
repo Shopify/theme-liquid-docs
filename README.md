@@ -1,5 +1,9 @@
 # Theme Liquid Docs
 
+<!-- hy-mt2-i18n:start -->
+**English** · [中文](./README_zh-CN.md) · [日本語](./README_ja.md) · [Español](./README_es.md)
+<!-- hy-mt2-i18n:end -->
+
 Auto-generated documentation for Liquid schemas, drops, tags, and filters. Documentation stays fresh—whenever you update the schema, docs regenerate automatically.
 
 ## Quick Start
