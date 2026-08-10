@@ -126,6 +126,7 @@
   "shopify.checkout.general.errors.tax.unresolvable_tax_terms": "The proposed terms are unresolvable given the current negotiation context.",
   "shopify.checkout.general.errors.tax.delivery_price_is_abstract": "The related delivery price is abstract.",
   "shopify.checkout.general.errors.tax.tax_inclusivity_mismatch": "Renegotiate with concrete totalTaxAndDutyAmount or totalAmountIncludedInTarget value.",
+  "shopify.checkout.general.errors.tax.mixed_tax_inclusivity_not_supported": "Tax lines must be all tax-inclusive or all tax-exclusive.",
   "shopify.checkout.general.errors.tax.tax_exemption_not_supported": "Tax exemptions are not supported for the current negotiation session.",
   "shopify.checkout.general.errors.tax.delivery_tax_exemption_not_supported": "Tax exemptions for delivery lines are not currently supported.",
   "shopify.checkout.general.errors.tax.proposed_allocations_required": "Missing 'proposed allocations' field.",
