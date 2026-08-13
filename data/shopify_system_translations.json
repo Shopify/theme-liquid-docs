@@ -1147,7 +1147,7 @@
   "shopify.checkout.payment.card_fields.errors.invalid.verification_value": "Enter a valid CVV or security code",
   "shopify.checkout.payment.simulated_checkout": "Preview coming soon",
   "shopify.checkout.payment.simulated_express_checkout": "Wallets are unavailable in the editor preview due to your region or browser",
-  "shopify.checkout.payment.vaulting_agreement_label": "Save my payment information with %{company} for a faster checkout.",
+  "shopify.checkout.payment.vaulting_agreement_label": "Save my payment information with %{company} for a faster checkout",
   "shopify.checkout.payment.business_customer_vaulting_payment_label": "Save this payment method at checkout and authorize %{company} to charge it for future purchases for this location. All contacts assigned to this location can use the payment method.",
   "shopify.checkout.payment.business_customer_with_bank_account_vaulting_payment_label": "Save this payment method at checkout and authorize %{company} to debit your account for future purchases you approve for this location, until you cancel. All contacts assigned to this location can use the payment method.",
   "shopify.checkout.payment.purchase_options_and_vaulting_agreement_label": "One or more items in your cart is a deferred or subscription purchase. By continuing with your payment, you agree that your payment method will automatically be charged at the price and frequency listed on this page until it ends or you cancel. All cancellations are subject to the %{cancellation_policy_label}.",
