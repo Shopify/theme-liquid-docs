@@ -1040,6 +1040,7 @@
   "shopify.checkout.payment.payment_method_not_available_for_shipping_address_error": "Payment method not available for selected shipping address. Choose another payment method.",
   "shopify.checkout.payment.payment_method_unavailable_error": "This payment method isn’t available right now. Choose another payment method.",
   "shopify.checkout.payment.payment_method_loading_error": "This payment method is still loading. Try again in a few seconds.",
+  "shopify.checkout.payment.bank_payment_method_label": "Bank Payment Method",
   "shopify.checkout.payment.billing_address_not_supported_for_payment_method_error": "This payment method isn't available for your billing address and currency. Try a different payment method.",
   "shopify.checkout.payment.generic_incorrect_card_info": "Your payment details couldn’t be verified. Check your card details and try again.",
   "shopify.checkout.payment.sofort_label": "Sofort bank transfer",
