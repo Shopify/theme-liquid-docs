@@ -8646,7 +8646,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The currently selected market on the storefront.",
+        "summary": "The market that applies to the buyer's country. In cases where multiple markets match, this returns the most narrowly scoped country region market.",
         "name": "market"
       },
       {
