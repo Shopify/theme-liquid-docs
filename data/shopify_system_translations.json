@@ -1044,6 +1044,7 @@
   "shopify.checkout.payment.paypal_wallet_label": "PayPal Wallet",
   "shopify.checkout.payment.shop_pay_installments_label": "Shop Pay Installments",
   "shopify.checkout.payment.default": "Default",
+  "shopify.checkout.payment.set_as_default_card": "Set as default card",
   "shopify.checkout.payment.continue_to_guest_checkout": "Continue to guest checkout",
   "shopify.checkout.payment.paypal_modal.order_contains_subscriptions": "Subscription",
   "shopify.checkout.payment.paypal_modal.order_contains_fixed_selling_plans": "Total may not include taxes, shipping, deferred charges, and some discounts. Continue to checkout for the amount due today.",
