@@ -5439,6 +5439,15 @@
         ]
       },
       {
+        "description": "The image quality, from 10 to 90.",
+        "name": "quality",
+        "positional": false,
+        "required": false,
+        "types": [
+          "number"
+        ]
+      },
+      {
         "description": "The desired image width, in pixels.",
         "name": "width",
         "positional": false,
@@ -5522,6 +5531,16 @@
         "syntax": "variable | image_url: pad_color: string",
         "path": "/products/health-potion",
         "raw_liquid": "{{ product | image_url: width: 400, height: 400, pad_color: '000' }}",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "quality",
+        "description": "Specify the image quality using an integer from `10` to `90`. Lower values can reduce file size, but they also reduce visual quality. If you omit `quality`, then Shopify selects the quality automatically based on the output format and encoding. Omitting `quality` isn't equivalent to setting it to `100`. The `image_url` filter doesn't guarantee byte-identical output, even when the requested dimensions match the source image, because Shopify's CDN might re-encode the image or negotiate a different output format.\n",
+        "syntax": "variable | image_url: quality: number",
+        "path": "/products/health-potion",
+        "raw_liquid": "{{ product | image_url: width: 450, quality: 80 }}",
         "parameter": true,
         "display_type": "text",
         "show_data_tab": true
