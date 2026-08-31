@@ -621,7 +621,14 @@
         "deprecation_reason": "",
         "description": "",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "metafields",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) that are [owned by the app](/apps/metafields/app-owned).",
         "name": "metafields"
       }
@@ -847,6 +854,14 @@
         {
           "object": "blog",
           "property": "articles"
+        },
+        {
+          "object": "link",
+          "property": "object"
+        },
+        {
+          "object": "search",
+          "property": "results"
         }
       ],
       "template": [
@@ -896,7 +911,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -1346,7 +1361,12 @@
   {
     "access": {
       "global": false,
-      "parents": [],
+      "parents": [
+        {
+          "object": "link",
+          "property": "object"
+        }
+      ],
       "template": [
         "blog",
         "article"
@@ -1443,10 +1463,10 @@
         "examples": [],
         "return_type": [
           {
-            "type": "array",
+            "type": "metafields",
             "name": "",
             "description": "",
-            "array_value": "metafield"
+            "array_value": ""
           }
         ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the blog.",
@@ -1711,7 +1731,14 @@
         "deprecation_reason": "",
         "description": "To learn about how to access brand colors, refer to [`brand_color`](/docs/api/liquid/objects/brand_color).",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "brand_colors",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The brand's colors.",
         "name": "colors"
       },
@@ -1731,7 +1758,14 @@
             "show_data_tab": true
           }
         ],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "metafields",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The social links for the brand.",
         "name": "metafields"
       }
@@ -1934,7 +1968,14 @@
         "deprecation_reason": "",
         "description": "If the store uses multi-currency, then this is the same as the customer's local\n(presentment) currency. Otherwise, it's the same as the store currency.\n\n&gt; Tip:\n&gt; You can output the store's available currencies using [`shop.enabled_currencies`](/docs/api/liquid/objects/shop#shop-enabled_currencies).",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "currency",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The currency of the cart.",
         "name": "currency"
       },
@@ -2218,6 +2259,10 @@
         {
           "object": "collections",
           "property": ""
+        },
+        {
+          "object": "link",
+          "property": "object"
         }
       ],
       "template": [
@@ -2235,10 +2280,10 @@
         "examples": [],
         "return_type": [
           {
-            "type": "array",
+            "type": "metafields",
             "name": "",
             "description": "",
-            "array_value": "metafield"
+            "array_value": ""
           }
         ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the collection.",
@@ -2713,8 +2758,12 @@
       "global": false,
       "parents": [
         {
-          "object": "brand",
-          "property": "colors"
+          "object": "brand_colors",
+          "property": "primary"
+        },
+        {
+          "object": "brand_colors",
+          "property": "secondary"
         }
       ],
       "template": []
@@ -2755,6 +2804,10 @@
     "access": {
       "global": false,
       "parents": [
+        {
+          "object": "filter_value_display",
+          "property": "value"
+        },
         {
           "object": "swatch",
           "property": "color"
@@ -3431,10 +3484,10 @@
         "examples": [],
         "return_type": [
           {
-            "type": "array",
+            "type": "metafields",
             "name": "",
             "description": "",
-            "array_value": "metafield"
+            "array_value": ""
           }
         ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the company.",
@@ -3609,10 +3662,10 @@
         "examples": [],
         "return_type": [
           {
-            "type": "array",
+            "type": "metafields",
             "name": "",
             "description": "",
-            "array_value": "metafield"
+            "array_value": ""
           }
         ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the company location.",
@@ -3863,16 +3916,16 @@
       "global": false,
       "parents": [
         {
-          "object": "cart",
-          "property": "currency"
-        },
-        {
           "object": "country",
           "property": "currency"
         },
         {
           "object": "shop",
           "property": "enabled_currencies"
+        },
+        {
+          "object": "cart",
+          "property": "currency"
         },
         {
           "object": "money",
@@ -4170,6 +4223,22 @@
         ],
         "summary": "The ID of the customer.",
         "name": "id"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage metafields](/apps/metafields/manage) or visit\n&gt; the [Shopify Help Center](https://help.shopify.com/manual/metafields).",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "metafields",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the customer.",
+        "name": "metafields"
       },
       {
         "deprecated": false,
@@ -5209,6 +5278,18 @@
         "return_type": [
           {
             "type": "untyped",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "color"
+          },
+          {
+            "type": "image",
             "name": "",
             "description": "",
             "array_value": ""
@@ -6456,7 +6537,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there aren't any line item properties, then an [`EmptyDrop`](/docs/api/liquid/basics#emptydrop) is returned.",
+        "description": "If there aren't any line item properties, then `nil` is returned.",
         "examples": [],
         "return_type": [
           {
@@ -6605,6 +6686,10 @@
           "property": "images"
         },
         {
+          "object": "remote_product",
+          "property": "images"
+        },
+        {
           "object": "variant",
           "property": "image"
         },
@@ -6635,6 +6720,10 @@
         {
           "object": "external_video",
           "property": "preview_image"
+        },
+        {
+          "object": "filter_value_display",
+          "property": "value"
         },
         {
           "object": "filter_value",
@@ -7612,7 +7701,7 @@
             "type": "array",
             "name": "",
             "description": "",
-            "array_value": "untyped"
+            "array_value": "option_with_value"
           }
         ],
         "summary": "The name and value pairs for each option of the variant associated with the line item.",
@@ -7922,6 +8011,48 @@
             "name": "",
             "description": "",
             "array_value": ""
+          },
+          {
+            "type": "article",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "blog",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "collection",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "metaobject",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "page",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "policy",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "product",
+            "name": "",
+            "description": "",
+            "array_value": ""
           }
         ],
         "summary": "The object associated with the link.",
@@ -7942,6 +8073,22 @@
         ],
         "summary": "The title of the link.",
         "name": "title"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "When a shop enables data-sale opt-out, Shopify automatically adds an\nopt-out link to the storefront, shown to buyers as \"Your Privacy Choices\".\nUS state privacy laws (such as California's CCPA/CPRA) require the official\n\"Your Privacy Choices\" icon to appear next to that link. This attribute\nreturns that icon for the opt-out link, and `nil` for every other link.\n\nRender it next to {{ link.title }}, checking for it first so other links\nare unaffected:\n\n```liquid\n{{ link.title }}{% if link.data_sharing_opt_out_icon %}{{ link.data_sharing_opt_out_icon }}{% endif %}\n```\n\nSee [Customer privacy settings](https://help.shopify.com/en/manual/privacy-and-security/privacy/customer-privacy-settings/privacy-settings#sales-opt-out).",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The \"Your Privacy Choices\" opt-out icon (an `&lt;img&gt;`) for the data-sale\nopt-out link, or `nil` for any other link.",
+        "name": "data_sharing_opt_out_icon"
       },
       {
         "deprecated": false,
@@ -8794,7 +8941,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -8872,10 +9019,10 @@
         "examples": [],
         "return_type": [
           {
-            "type": "array",
+            "type": "metafields",
             "name": "",
             "description": "",
-            "array_value": "metafield"
+            "array_value": ""
           }
         ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the market.",
@@ -8915,19 +9062,7 @@
         "return_type": [
           {
             "type": "string",
-            "name": "dimension",
-            "description": "",
-            "array_value": ""
-          },
-          {
-            "type": "string",
-            "name": "volume",
-            "description": "",
-            "array_value": ""
-          },
-          {
-            "type": "string",
-            "name": "weight",
+            "name": "",
             "description": "",
             "array_value": ""
           }
@@ -8968,7 +9103,7 @@
         "name": "unit"
       }
     ],
-    "summary": "A measurement from one of the following metafield types:\n\n- `dimension`\n- `volume`\n- `weight`",
+    "summary": "A measurement from one of the following metafield types:\n\n- `antenna_gain`\n- `area`\n- `battery_charge_capacity`\n- `battery_energy_capacity`\n- `capacitance`\n- `concentration`\n- `data_storage_capacity`\n- `data_transfer_rate`\n- `dimension`\n- `distance`\n- `display_density`\n- `duration`\n- `electric_current`\n- `electrical_resistance`\n- `energy`\n- `frequency`\n- `illuminance`\n- `inductance`\n- `luminous_flux`\n- `mass_flow_rate`\n- `power`\n- `pressure`\n- `resolution`\n- `rotational_speed`\n- `sound_level`\n- `speed`\n- `temperature`\n- `thermal_power`\n- `voltage`\n- `volume`\n- `volumetric_flow_rate`\n- `weight`",
     "name": "measurement",
     "examples": [],
     "json_data": {
@@ -8995,7 +9130,19 @@
           "property": "metafields"
         },
         {
+          "object": "brand",
+          "property": "metafields"
+        },
+        {
           "object": "collection",
+          "property": "metafields"
+        },
+        {
+          "object": "company",
+          "property": "metafields"
+        },
+        {
+          "object": "company_location",
           "property": "metafields"
         },
         {
@@ -9004,6 +9151,10 @@
         },
         {
           "object": "location",
+          "property": "metafields"
+        },
+        {
+          "object": "market",
           "property": "metafields"
         },
         {
@@ -9019,11 +9170,15 @@
           "property": "metafields"
         },
         {
-          "object": "shop",
+          "object": "variant",
           "property": "metafields"
         },
         {
-          "object": "variant",
+          "object": "remote_product",
+          "property": "metafields"
+        },
+        {
+          "object": "shop",
           "property": "metafields"
         }
       ],
@@ -9031,7 +9186,32 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "To learn about how to access a metafield on a specific object, refer to [Access metafields](/docs/api/liquid/objects/metafield#metafield-access-metafields).\n\nMetafields support [multiple data types](/apps/metafields/types), which determine the kind of information that's stored\nin the metafield. You can also output the metafield content in a type-specific format using\n[metafield filters](/docs/api/liquid/filters/metafield-filters).\n\n&gt; Note:\n&gt; You can't create metafields in Liquid. Metafields can be created in only the following ways:\n&gt;\n&gt; - [In the Shopify admin](https://help.shopify.com/manual/metafields)\n&gt; - [Through an app](https://shopify.dev/apps/metafields)\n\n&gt; Note:\n&gt; If a metafield key is `size`, `first`, or `last`, then use square bracket notation to access it, for example `product.metafields.namespace[\"size\"]`. These names are also built-in Liquid filters that can be applied using dot notation, and square bracket notation always looks up the metafield by key. With dot notation, such as `product.metafields.namespace.size`, Liquid returns the metafield if it exists, but applies the filter to the namespace if the metafield is missing. For example, `size` returns the metafield count instead of an empty value.\n\n&gt; Note:\n&gt; Metafields of type `integer`, `json_string`, and `string` are older implementations that don't have the properties\n  noted on this page, and aren't compatible with metafield filters. To learn more, refer to [Deprecated metafields](/docs/api/liquid/objects/metafield#metafield-deprecated-metafields).",
+    "description": "Access a [metafield namespace](/docs/api/liquid/objects/metafield_namespace) by appending its name to `metafields`.\nFor example, `product.metafields.custom` returns the `custom` metafield namespace.\n\nAfter selecting a namespace, append a metafield key to access a specific [metafield](/docs/api/liquid/objects/metafield).\nFor example, `product.metafields.custom.instructions` returns the `instructions` metafield from the `custom` namespace.",
+    "properties": [],
+    "summary": "The metafields attached to an object, grouped by namespace.",
+    "name": "metafields",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "metafield_namespace",
+          "property": ""
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "To learn about how to access a metafield on a specific object, refer to [Access metafields](/docs/api/liquid/objects/metafield#metafield-access-metafields).\n\nMetafields support [multiple data types](/apps/metafields/types), which determine the kind of information that's stored\nin the metafield. You can also output the metafield content in a type-specific format using\n[metafield filters](/docs/api/liquid/filters/metafield-filters).\n\n&gt; Note:\n&gt; You can't create metafields in Liquid. Metafields can be created in only the following ways:\n&gt;\n&gt; - [In the Shopify admin](https://help.shopify.com/manual/metafields)\n&gt; - [Through an app](https://shopify.dev/apps/metafields)\n\n&gt; Note:\n&gt; If a metafield key is `size`, `first`, or `last`, then use square bracket notation to access it, for example\n&gt; `product.metafields.namespace[\"size\"]`. These names are also built-in Liquid filters that can be applied using dot\n&gt; notation, and square bracket notation always looks up the metafield by key. With dot notation, such as\n&gt; `product.metafields.namespace.size`, Liquid returns the metafield if it exists, but applies the filter to the\n&gt; namespace if the metafield is missing. For example, `size` returns the metafield count instead of an empty value.\n\n&gt; Note:\n&gt; Metafields of type `integer`, `json_string`, and `string` are older implementations that don't have the properties\n  noted on this page, and aren't compatible with metafield filters. To learn more, refer to [Deprecated metafields](/docs/api/liquid/objects/metafield#metafield-deprecated-metafields).",
     "properties": [
       {
         "deprecated": false,
@@ -9207,7 +9387,7 @@
     "examples": [
       {
         "name": "Access metafields",
-        "description": "The access path for metafields consists of two layers:\n\n- namespace - A grouping of metafields to prevent conflicts.\n- key - The metafield name.\n\nGiven this, you can access the metafield object with the following syntax:\n\n```liquid\n{{ resource.metafields.namespace.key }}\n```\n\n&gt; Note:\n&gt; If a metafield key is `size`, `first`, or `last`, then use square bracket notation to access it, for example `{{ resource.metafields.namespace[\"size\"] }}`. These names are also built-in Liquid filters that can be applied using dot notation, and square bracket notation always looks up the metafield by key. With dot notation, such as `resource.metafields.namespace.size`, Liquid returns the metafield if it exists, but applies the filter to the namespace if the metafield is missing. For example, `size` returns the metafield count instead of an empty value.\n",
+        "description": "The access path for metafields consists of two layers:\n\n- namespace - A grouping of metafields to prevent conflicts.\n- key - The metafield name.\n\nGiven this, you can access the metafield object with the following syntax:\n\n```liquid\n{{ resource.metafields.namespace.key }}\n```\n\n&gt; Note:\n&gt; If a metafield key is `size`, `first`, or `last`, then use square bracket notation to access it, for example\n&gt; `{{ resource.metafields.namespace[\"size\"] }}`. These names are also built-in Liquid filters that can be applied using\n&gt; dot notation, and square bracket notation always looks up the metafield by key. With dot notation, such as\n&gt; `resource.metafields.namespace.size`, Liquid returns the metafield if it exists, but applies the filter to the namespace\n&gt; if the metafield is missing. For example, `size` returns the metafield count instead of an empty value.\n",
         "syntax": "",
         "path": "/products/health-potion",
         "raw_liquid": "Type: {{ product.metafields.information.directions.type }}\nValue: {{ product.metafields.information.directions.value }}",
@@ -9269,6 +9449,31 @@
     "json_data": {
       "path": "/products/health-potion",
       "handle": "product.metafields.information.directions",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "metafields",
+          "property": ""
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Access a metafield by appending its key to the namespace. For example, `product.metafields.custom.instructions`\nreturns the `instructions` metafield in the `custom` namespace.",
+    "properties": [],
+    "summary": "The metafields in a namespace.",
+    "name": "metafield_namespace",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
       "data_from_file": ""
     },
     "return_type": []
@@ -9340,7 +9545,12 @@
   {
     "access": {
       "global": true,
-      "parents": [],
+      "parents": [
+        {
+          "object": "shop",
+          "property": "metaobjects"
+        }
+      ],
       "template": []
     },
     "deprecated": false,
@@ -9361,6 +9571,10 @@
     "access": {
       "global": false,
       "parents": [
+        {
+          "object": "link",
+          "property": "object"
+        },
         {
           "object": "metaobjects",
           "property": ""
@@ -9831,7 +10045,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there are no attributes on the order, then `nil` is returned.\n&gt; Tip:\n&gt; Attributes are [collected with the cart](https://shopify.dev/themes/architecture/templates/cart#support-cart-notes-and-attributes).",
+        "description": "If there are no attributes on the order, then the returned value is empty.\n&gt; Tip:\n&gt; Attributes are [collected with the cart](https://shopify.dev/themes/architecture/templates/cart#support-cart-notes-and-attributes).",
         "examples": [
           {
             "name": "Output the attributes",
@@ -10194,7 +10408,14 @@
         "deprecation_reason": "",
         "description": "&gt; Tip:\n&gt; Use this property to output the financial status on the storefront.",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The localized version of the [financial status](/docs/api/liquid/objects/order#order-financial_status) of the order.",
         "name": "financial_status_label"
       },
@@ -10277,7 +10498,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -10638,12 +10859,20 @@
       "global": false,
       "parents": [
         {
-          "object": "pages",
-          "property": ""
+          "object": "link",
+          "property": "object"
         },
         {
           "object": "metafield",
           "property": "value"
+        },
+        {
+          "object": "pages",
+          "property": ""
+        },
+        {
+          "object": "search",
+          "property": "results"
         }
       ],
       "template": [
@@ -10773,7 +11002,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -11271,7 +11500,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -12086,6 +12315,10 @@
         {
           "object": "variant",
           "property": "options"
+        },
+        {
+          "object": "option_with_value",
+          "property": "value"
         }
       ],
       "template": []
@@ -12337,7 +12570,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -12625,6 +12858,22 @@
         "name": "options"
       },
       {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; The array is never empty because variants with no options still have a default option. You can check\n&gt; `variant.product.has_only_default_variant` before looping over the array.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "option_with_value"
+          }
+        ],
+        "summary": "The name and value pairs for each [product option](/docs/api/liquid/objects/product_option) of the variant.",
+        "name": "options_with_values"
+      },
+      {
         "deprecated": true,
         "deprecation_reason": "Deprecated. Prefer to use [`variant.options`](/docs/api/liquid/objects/variant#variant-options) instead.",
         "description": "If there's no first product option, then `nil` is returned.",
@@ -12675,7 +12924,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Variant URLs use the following structure:\n\n```\n/products/[product-handle]?variant=[variant-id]\n```",
+        "description": "Variant URLs use the following structure:\n\n```\n/products/[product-handle]?variant=[variant-id]\n```\n\nIn search results and filtered collections, the URL also carries the\ndiscovery tracking params (such as `_pos`, `_sid`, `_ss`, and `_fid`)\napplied to the parent product, so clicks retain search-click attribution.",
         "examples": [],
         "return_type": [
           {
@@ -13435,6 +13684,22 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "image"
+          }
+        ],
+        "summary": "The images attached to the product.",
+        "name": "images"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "&gt; Note:\n&gt; Remote products have pre-determined dedicated template names, always prefixed with \"remote.\" This allows them to be managed independently of regular product templates.\n&gt; E.g. \"remote.seller\"",
         "examples": [],
         "return_type": [
@@ -13455,7 +13720,7 @@
         "examples": [],
         "return_type": [
           {
-            "type": "untyped",
+            "type": "metafields",
             "name": "",
             "description": "",
             "array_value": ""
@@ -13623,22 +13888,6 @@
         ],
         "summary": "The first (featured) image attached to the product.",
         "name": "featured_image"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "",
-        "examples": [],
-        "return_type": [
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "image"
-          }
-        ],
-        "summary": "The images attached to the product.",
-        "name": "images"
       },
       {
         "deprecated": false,
@@ -15103,6 +15352,24 @@
             "name": "",
             "description": "",
             "array_value": ""
+          },
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "article"
+          },
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "page"
+          },
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "product"
           }
         ],
         "summary": "The search result items.",
@@ -15154,9 +15421,16 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "If there's no `sort_by` URL parameter, then the value is `nil`.",
+        "description": "If there's no `sort_by` URL parameter, then the [default sort order](/docs/api/liquid/objects/search#search-default_sort_by) is returned.",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The sort order of the search results. This is determined by the `sort_by` URL parameter.",
         "name": "sort_by"
       },
@@ -16642,7 +16916,14 @@
         "deprecation_reason": "",
         "description": "&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage metafields](/apps/metafields/manage) or visit\n&gt; the [Shopify Help Center](https://help.shopify.com/manual/metafields).",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "metafields",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the store.",
         "name": "metafields"
       },
@@ -16924,7 +17205,14 @@
         "deprecation_reason": "The `shop.metaobjects` property has been replaced by [`metaobjects`](/docs/api/liquid/objects/metaobjects).",
         "description": "",
         "examples": [],
-        "return_type": [],
+        "return_type": [
+          {
+            "type": "metaobjects",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
         "summary": "All of the [metaobjects](/docs/api/liquid/objects/metaobject) of the store.",
         "name": "metaobjects"
       }
@@ -17068,6 +17356,10 @@
         {
           "object": "shop",
           "property": "policies"
+        },
+        {
+          "object": "link",
+          "property": "object"
         },
         {
           "object": "remote_shop",
@@ -18736,6 +19028,64 @@
   },
   {
     "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "brand",
+          "property": "colors"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "brand_color"
+          }
+        ],
+        "summary": "The store's primary brand colors.",
+        "name": "primary"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "array",
+            "name": "",
+            "description": "",
+            "array_value": "brand_color"
+          }
+        ],
+        "summary": "The store's secondary brand colors.",
+        "name": "secondary"
+      }
+    ],
+    "summary": "The color groups defined as part of a store's brand assets.",
+    "name": "brand_colors",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
       "global": true,
       "parents": [],
       "template": []
@@ -19851,6 +20201,68 @@
         "array_value": ""
       }
     ]
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [
+        {
+          "object": "line_item",
+          "property": "options_with_values"
+        },
+        {
+          "object": "variant",
+          "property": "options_with_values"
+        }
+      ],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the product option.",
+        "name": "name"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "product_option_value",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The option value selected for the variant.",
+        "name": "value"
+      }
+    ],
+    "summary": "A product option paired with the value selected for a variant.",
+    "name": "option_with_value",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
+      "data_from_file": ""
+    },
+    "return_type": []
   },
   {
     "access": {
