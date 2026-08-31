@@ -295,6 +295,29 @@
     ]
   },
   {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Outside of a loop, `{% break %}` stops the rest of the current file from rendering, which you can use as an early return. Output that was already rendered is kept.\n\n[Sections](/docs/storefronts/themes/architecture/sections), [theme blocks](/docs/storefronts/themes/architecture/blocks/theme-blocks), and snippets rendered with the [`render` tag](/docs/api/liquid/tags/render) each render in their own context, so only the file that contains the tag stops. The file that rendered it, and the rest of the page, are unaffected.\n\n&gt; Caution:\n&gt; A snippet rendered with the deprecated [`include` tag](/docs/api/liquid/tags/include) shares the context of the file that included it, so a `{% break %}` in that snippet also stops the rest of the including file.\n\n&gt; Note:\n&gt; Inside a [`for` loop](/docs/api/liquid/tags/for) or [`tablerow` loop](/docs/api/liquid/tags/tablerow), `{% break %}` stops the loop instead of the file. To learn more, refer to [`break`](/docs/api/liquid/tags/break).",
+    "parameters": [],
+    "summary": "Stops rendering the rest of the current template or snippet.",
+    "name": "break",
+    "syntax": "{% break %}",
+    "syntax_keywords": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "This example is a [theme block](/docs/storefronts/themes/architecture/blocks/theme-blocks) that renders breadcrumbs. Because it's rendered on the home page, the tag returns early and the block outputs nothing.",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{%- if template.name == 'index' -%}\n  {%- break -%}\n{%- endif -%}\n\n<nav aria-label=\"Breadcrumbs\">\n  <a href=\"{{ routes.root_url }}\">Home</a>\n  <span aria-hidden=\"true\">/</span>\n  <span>{{ page_title }}</span>\n</nav>",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ]
+  },
+  {
     "category": "iteration",
     "deprecated": false,
     "deprecation_reason": "",
