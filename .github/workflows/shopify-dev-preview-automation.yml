@@ -1,86 +1,42 @@
-# This workflow dispatches a docs sync event to Shop/world's templated-apis-docs-sync
-# workflow when Liquid JSON schema files change in a PR.
+# Labels a pull request with `shopify.dev preview` when it changes the
+# Liquid JSON schema files.
 #
-# The templated-apis-docs-sync workflow will then run the Liquid JSON schemas sync
-# pipeline to create a draft pull request in shopify-dev which contains the changes
-# to preview the schema changes in shopify-dev's preview environment.
+# The label is the switch. shopify-dev polls labeled pull requests every 30
+# minutes and opens, updates, and closes a preview pull request in shop/world
+# that renders the changed schemas. Removing the label pauses updates; closing
+# the generated preview does not, because the label still asks for one.
 #
-name: 'Liquid JSON schemas preview dispatch'
+# This replaces the old workflow that dispatched `templated-api-docs-sync`
+
+name: Shopify Dev preview label
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review, closed]
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - 'schemas/theme/**'
 
 concurrency:
-  group: liquid-json-schemas-preview-dispatch-${{ github.head_ref }}
+  group: shopify-dev-preview-label-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
-jobs:
-  dispatch-liquid-json-schemas-sync:
-    name: Dispatch Liquid JSON schemas sync
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Create GitHub App Token (Shop org - world)
-        id: app-token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          app-id: ${{ secrets.SHOPIFY_DEV_DOCS_SYNC_APP_ID }}
-          private-key: ${{ secrets.SHOPIFY_DEV_DOCS_SYNC_APP_PRIVATE_KEY }}
-          owner: Shop
-          repositories: |
-            world
+permissions:
+  pull-requests: write
 
-      - name: Dispatch to templated-apis-docs-sync
+jobs:
+  label:
+    name: Add the shopify.dev preview label
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.repository_owner == 'Shopify'
+    steps:
+      - name: Add the label
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          SOURCE_BRANCH: ${{ github.event.pull_request.base.ref }}
-          SOURCE_REF: ${{ github.event.pull_request.head.ref }}
+          GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          if [ "${{ github.event.action }}" = "closed" ]; then
-            ACTION="close"
-            CHANGED_FILES='[]'
-          else
-            ACTION="sync"
-            CHANGED_FILES='["schemas/theme/"]'
-          fi
-
-          PAYLOAD=$(jq -n \
-            --arg action "$ACTION" \
-            --arg source_repo "Shopify/theme-liquid-docs" \
-            --arg source_branch "$SOURCE_BRANCH" \
-            --arg source_ref "$SOURCE_REF" \
-            --argjson source_pr_number "$PR_NUMBER" \
-            --argjson changed_files "$CHANGED_FILES" \
-            '{
-              event_type: "templated-api-docs-sync",
-              client_payload: {
-                action: $action,
-                source_repo: $source_repo,
-                source_branch: $source_branch,
-                source_ref: $source_ref,
-                source_pr_number: $source_pr_number,
-                changed_files: $changed_files
-              }
-            }')
-
-          echo "Dispatching $ACTION to shop/world templated-apis-docs-sync..."
-          echo "$PAYLOAD" | jq .
-
-          HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
-            -X POST \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/shop/world/dispatches \
-            -d "$PAYLOAD")
-
-          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
-            echo "Successfully dispatched $ACTION event (HTTP $HTTP_STATUS)"
-          else
-            echo "Failed to dispatch $ACTION event (HTTP $HTTP_STATUS)"
-            cat response.txt
-            exit 1
-          fi
+          # The label is sticky, so adding it again on a later push is a no-op
+          # and the scan keeps the preview up to date on its own.
+          gh pr edit "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --add-label 'shopify.dev preview'
