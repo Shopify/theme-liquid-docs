@@ -62,8 +62,8 @@
         },
         "block_order": {
           "type": "array",
-          "description": "The order of blocks in the preset.",
-          "markdownDescription": "The order of blocks in the preset."
+          "description": "The order in which the blocks of the preset are rendered.",
+          "markdownDescription": "The order in which the blocks of the preset are rendered."
         },
         "additionalProperties": false
       }
