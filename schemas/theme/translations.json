@@ -33,31 +33,31 @@
       "properties": {
         "one": {
           "type": "string",
-          "description": "Translation for the singular form"
+          "description": "Translation for the singular form."
         },
         "other": {
           "type": "string",
-          "description": "Translation for the plural form"
+          "description": "Translation for the plural form."
         },
         "few": {
           "type": "string",
-          "description": "Translation for 'few' form, used in some languages"
+          "description": "Translation for the 'few' form, used in some languages."
         },
         "many": {
           "type": "string",
-          "description": "Translation for 'many' form, used in some languages"
+          "description": "Translation for the 'many' form, used in some languages."
         },
         "two": {
           "type": "string",
-          "description": "Translation for 'two' form, used in some languages"
+          "description": "Translation for the 'two' form, used in some languages."
         },
         "zero": {
           "type": "string",
-          "description": "Translation for 'zero' form, used in some languages"
+          "description": "Translation for the 'zero' form, used in some languages."
         }
       },
       "additionalProperties": false,
-      "description": "An object representing a pluralized translation string"
+      "description": "An object representing a pluralized translation string."
     }
   }
 }

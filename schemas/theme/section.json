@@ -37,7 +37,7 @@
 
     "max_blocks": {
       "type": "integer",
-      "description": "There's a limit of 50 blocks per section. You can specify a lower limit with the max_blocks attribute",
+      "description": "There's a limit of 50 blocks per section. You can specify a lower limit with the max_blocks attribute.",
       "markdownDescription": "There's a limit of 50 blocks per section. You can specify a lower limit with the `max_blocks` attribute.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#max_blocks)",
       "minimum": 1,
       "maximum": 50
@@ -113,15 +113,15 @@
         },
         "blocks": {
           "type": "array",
-          "description": "Default blocks configurations to ship with this default.",
-          "markdownDescription": "Default blocks configurations to ship with this default.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#default)",
+          "description": "The default blocks that this section is rendered with.",
+          "markdownDescription": "The default blocks that this section is rendered with.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#default)",
           "items": {
             "type": "object",
             "required": ["type"],
             "properties": {
               "type": {
                 "type": "string",
-                "description": "The block type."
+                "description": "The type of the default block."
               },
               "settings": {
                 "$ref": "./default_setting_values.json"
