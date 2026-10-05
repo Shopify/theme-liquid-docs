@@ -3828,7 +3828,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The market that includes this country.",
+        "summary": "The market that applies to this country. In cases where multiple markets match, this returns the most-specific country region market.",
         "name": "market"
       },
       {
@@ -8793,7 +8793,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The currently selected market on the storefront.",
+        "summary": "The market that applies to the buyer's country. In cases where multiple markets match, this returns the most-specific country region market.",
         "name": "market"
       },
       {
@@ -9714,6 +9714,22 @@
         ],
         "summary": "The relative URL of the metaobject.",
         "name": "url"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The name doesn't include the `metaobject.` prefix, or the file extension (`.json` or `.liquid`).\n\nIf a custom template isn't assigned to the metaobject, then `nil` is returned.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The name of the [custom template](/themes/architecture/templates#alternate-templates) assigned to the metaobject.",
+        "name": "template_suffix"
       }
     ],
     "summary": "Basic information about a [`metaobject`](/api/liquid/objects#metaobject). These properties are grouped under the `system` object to avoid collisions between system property names and user-defined metaobject fields.",
@@ -13748,6 +13764,22 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "&gt; Note:\n&gt; This is the same value as [`product.description`](/docs/api/liquid/objects/product#product-description).\n&gt; The description of remote products is modified to include a link to the remote store's shipping and refund policies, if the shop has defined them.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The description of the product.",
+        "name": "content"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [],
         "return_type": [
@@ -13856,22 +13888,6 @@
         ],
         "summary": "The vendor of the product.",
         "name": "vendor"
-      },
-      {
-        "deprecated": false,
-        "deprecation_reason": "",
-        "description": "&gt; Note:\n&gt; This is the same value as [`product.description`](/docs/api/liquid/objects/product#product-description).",
-        "examples": [],
-        "return_type": [
-          {
-            "type": "string",
-            "name": "",
-            "description": "",
-            "array_value": ""
-          }
-        ],
-        "summary": "The description of the product.",
-        "name": "content"
       },
       {
         "deprecated": false,
@@ -15301,7 +15317,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "Only filters that are relevant to the current search results are returned. If the search results contain more than 1000\nproducts, then the array will be empty.\n\n&gt; Tip:\n&gt; To learn about how to set up filters in the admin, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/themes/customizing-themes/storefront-filters).",
+        "description": "Only filters that are relevant to the current search results are returned. Filters and their value counts are\ncalculated from up to the first 1,000 search results.\n\n&gt; Tip:\n&gt; To learn about how to set up filters in the admin, visit the [Shopify Help Center](https://help.shopify.com/manual/online-store/themes/customizing-themes/storefront-filters).",
         "examples": [],
         "return_type": [
           {
@@ -15333,7 +15349,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "An item can be an [`article`](/docs/api/liquid/objects/article), a [`page`](/docs/api/liquid/objects/page), or a\n[`product`](/docs/api/liquid/objects/product).\n\n&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many results to show per page, up to a limit of 50.",
+        "description": "An item can be an [`article`](/docs/api/liquid/objects/article), a [`page`](/docs/api/liquid/objects/page), or a\n[`product`](/docs/api/liquid/objects/product).\n\n&gt; Tip:\n&gt; Use the [paginate](/docs/api/liquid/tags/paginate) tag to choose how many results to show per page, up to a limit of 50.\n&gt; Pagination covers up to the first 1,000 results.",
         "examples": [
           {
             "name": "Search result `object_type`",
@@ -15357,19 +15373,7 @@
             "type": "array",
             "name": "",
             "description": "",
-            "array_value": "article"
-          },
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "page"
-          },
-          {
-            "type": "array",
-            "name": "",
-            "description": "",
-            "array_value": "product"
+            "array_value": "article | page | product"
           }
         ],
         "summary": "The search result items.",
@@ -15388,7 +15392,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The number of results.",
+        "summary": "The number of results, up to a maximum of 1,000. If a search matches more than 1,000 results, then it\nreturns 1,000.",
         "name": "results_count"
       },
       {
@@ -17325,6 +17329,28 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
+        "description": "Returns `rtl` for right-to-left locales and `ltr` for left-to-right locales.\n\nYou can use `direction` to set the [`dir` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir) on the `html` element, so that the page flows correctly for right-to-left languages.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "ltr",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "rtl",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The text direction of the locale.",
+        "name": "direction"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
         "description": "",
         "examples": [],
         "return_type": [
@@ -17484,7 +17510,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "If a location doesn't stock a variant, then there won't be a `store_availability` for that variant and location.\n\n&gt; Note:\n&gt; The `store_availability` object is defined only if one or more locations has [local pickup](https://help.shopify.com/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup)\n&gt; enabled.",
+    "description": "If a location doesn't stock a variant, then there won't be a `store_availability` for that variant and location.\n\n&gt; Note:\n&gt; A returned location isn't guaranteed to offer [local pickup](https://help.shopify.com/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup).\n&gt; Check `pick_up_enabled` before presenting a location as a pickup option.",
     "properties": [
       {
         "deprecated": false,
@@ -17517,6 +17543,22 @@
         ],
         "summary": "Returns `true` if the location has pickup enabled. Returns `false` if not.",
         "name": "pick_up_enabled"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "boolean",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "Returns `true` if the location is a physical retail storefront that sells in person. Returns `false` if not.",
+        "name": "physical_storefront"
       },
       {
         "deprecated": false,

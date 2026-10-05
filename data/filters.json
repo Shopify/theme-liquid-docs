@@ -1333,6 +1333,25 @@
     "name": "date"
   },
   {
+    "category": "metafield",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Disclosures scoped to a country or a country subdivision are returned only for buyers in that\njurisdiction. A disclosure is returned whenever the buyer's jurisdiction cannot be determined,\nso a disclosure is never hidden on the strength of an unknown.",
+    "parameters": [],
+    "return_type": [
+      {
+        "type": "array",
+        "name": "",
+        "description": "",
+        "array_value": "untyped"
+      }
+    ],
+    "examples": [],
+    "summary": "Filters a list of disclosures to the ones that apply to the buyer's jurisdiction.",
+    "syntax": "array | applicable_disclosures",
+    "name": "applicable_disclosures"
+  },
+  {
     "category": "font",
     "deprecated": false,
     "deprecation_reason": "",
@@ -6009,7 +6028,7 @@
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "",
+    "description": "You can add any other [HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes)\nto the tag by adding a parameter that matches the attribute name, and the desired value. Boolean attributes, such as\n`defer` and `async`, are rendered when the value is `true`, and omitted when the value is `false`.\n\n&gt; Note:\n&gt; The `src` attribute is managed by the filter and can't be overridden.",
     "parameters": [],
     "return_type": [
       {
@@ -6027,6 +6046,16 @@
         "path": "/",
         "raw_liquid": "{{ 'cart.js' | asset_url | script_tag }}",
         "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "HTML attributes",
+        "description": "You can specify [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes) by adding a parameter that matches the attribute name, and the desired value. Boolean attributes, such as `defer` and `async`, are rendered when the value is `true`, and omitted when the value is `false`. The `src` attribute is managed by the filter and can't be overridden.\n",
+        "syntax": "string | script_tag: attribute: string",
+        "path": "/",
+        "raw_liquid": "{{ 'cart.js' | asset_url | script_tag: type: 'module', defer: true }}",
+        "parameter": true,
         "display_type": "text",
         "show_data_tab": true
       }
@@ -6069,7 +6098,7 @@
     "category": "html",
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "",
+    "description": "You can add any other [HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attributes)\nto the tag by adding a parameter that matches the attribute name, and the desired value.\n\n&gt; Note:\n&gt; The `href` and `rel` attributes are managed by the filter and can't be overridden.",
     "parameters": [
       {
         "description": "The type of media that the resource applies to.",
@@ -6115,6 +6144,16 @@
         "syntax": "stylesheet_url | stylesheet_tag: preload: boolean",
         "path": "",
         "raw_liquid": "",
+        "parameter": true,
+        "display_type": "text",
+        "show_data_tab": true
+      },
+      {
+        "name": "HTML attributes",
+        "description": "You can specify [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attributes) by adding a parameter that matches the attribute name, and the desired value. The `href` and `rel` attributes are managed by the filter and can't be overridden.\n",
+        "syntax": "string | stylesheet_tag: attribute: string",
+        "path": "/",
+        "raw_liquid": "{{ 'base.css' | asset_url | stylesheet_tag: fetchpriority: 'high' }}",
         "parameter": true,
         "display_type": "text",
         "show_data_tab": true
