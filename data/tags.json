@@ -295,29 +295,6 @@
     ]
   },
   {
-    "category": "theme",
-    "deprecated": false,
-    "deprecation_reason": "",
-    "description": "Outside of a loop, `{% break %}` stops the rest of the current file from rendering, which you can use as an early return. Output that was already rendered is kept.\n\n[Sections](/docs/storefronts/themes/architecture/sections), [theme blocks](/docs/storefronts/themes/architecture/blocks/theme-blocks), and snippets rendered with the [`render` tag](/docs/api/liquid/tags/render) each render in their own context, so only the file that contains the tag stops. The file that rendered it, and the rest of the page, are unaffected.\n\n&gt; Caution:\n&gt; A snippet rendered with the deprecated [`include` tag](/docs/api/liquid/tags/include) shares the context of the file that included it, so a `{% break %}` in that snippet also stops the rest of the including file.\n\n&gt; Note:\n&gt; Inside a [`for` loop](/docs/api/liquid/tags/for) or [`tablerow` loop](/docs/api/liquid/tags/tablerow), `{% break %}` stops the loop instead of the file. To learn more, refer to [`break`](/docs/api/liquid/tags/break).",
-    "parameters": [],
-    "summary": "Stops rendering the rest of the current template or snippet.",
-    "name": "break",
-    "syntax": "{% break %}",
-    "syntax_keywords": [],
-    "examples": [
-      {
-        "name": "",
-        "description": "This example is a [theme block](/docs/storefronts/themes/architecture/blocks/theme-blocks) that renders breadcrumbs. Because it's rendered on the home page, the tag returns early and the block outputs nothing.",
-        "syntax": "",
-        "path": "/",
-        "raw_liquid": "{%- if template.name == 'index' -%}\n  {%- break -%}\n{%- endif -%}\n\n<nav aria-label=\"Breadcrumbs\">\n  <a href=\"{{ routes.root_url }}\">Home</a>\n  <span aria-hidden=\"true\">/</span>\n  <span>{{ page_title }}</span>\n</nav>",
-        "parameter": false,
-        "display_type": "text",
-        "show_data_tab": true
-      }
-    ]
-  },
-  {
     "category": "iteration",
     "deprecated": false,
     "deprecation_reason": "",
@@ -1295,5 +1272,61 @@
         "show_data_tab": true
       }
     ]
+  },
+  {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "Outside of a loop, `break` stops the rest of the current file from rendering, which you can use\nas an early return. Output that was already rendered is kept.\n\n[Sections](/docs/storefronts/themes/architecture/sections),\n[theme blocks](/docs/storefronts/themes/architecture/blocks/theme-blocks), and snippets\nrendered with the [`render` tag](/docs/api/liquid/tags/render) each render in their own\ncontext, so only the file that contains the tag stops. The file that rendered it, and the rest\nof the page, are unaffected.\n\n&gt; Caution:\n&gt; A snippet rendered with the deprecated [`include` tag](/docs/api/liquid/tags/include) shares\n&gt; the context of the file that included it, so a `break` in that snippet also stops the rest of\n&gt; the including file.\n\n&gt; Note:\n&gt; Inside a [`for` loop](/docs/api/liquid/tags/for) or\n&gt; [`tablerow` loop](/docs/api/liquid/tags/tablerow), `break` stops the loop instead of the file.\n&gt; To learn more, refer to [`break`](/docs/api/liquid/tags/break).",
+    "parameters": [],
+    "summary": "Stops the rest of a file from rendering.",
+    "name": "break",
+    "syntax": "{% break %}",
+    "syntax_keywords": [],
+    "examples": [
+      {
+        "name": "",
+        "description": "This example is a [theme block](/docs/storefronts/themes/architecture/blocks/theme-blocks) that renders breadcrumbs. Because it's rendered on the home page, the tag returns early and the block outputs nothing.\n",
+        "syntax": "",
+        "path": "/",
+        "raw_liquid": "{%- if template.name == 'index' -%}\n  {%- break -%}\n{%- endif -%}\n\n&lt;nav aria-label=\"Breadcrumbs\"&gt;\n  &lt;a href=\"{{ routes.root_url }}\"&gt;Home&lt;/a&gt;\n  &lt;span aria-hidden=\"true\"&gt;/&lt;/span&gt;\n  &lt;span&gt;{{ page_title }}&lt;/span&gt;\n&lt;/nav&gt;",
+        "parameter": false,
+        "display_type": "text",
+        "show_data_tab": true
+      }
+    ]
+  },
+  {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "A block is a reusable piece of a page, with markup, behavior, accessibility attributes, and theme editor settings kept together in one Liquid file. A Liquid template can render these [theme blocks](/docs/storefronts/themes/architecture/blocks) directly with `{% block %}`, in addition to blocks that merchants add through the theme editor.\n\nUse `{% block %}` the same way that [`{% render %}`](/docs/api/liquid/tags/render) renders a snippet: name the block file, pass any named parameters it accepts, and optionally provide body content. Because the template names each block, you can read a page's structure as a tree of blocks in the template itself. Page-specific content stays in the template that calls the block.\n\n## Basic syntax\n\nThe block name maps to a file in `blocks/`. For example, `{% block 'container' %}` renders `blocks/container.liquid`.\n\nA template composes its page by calling blocks. The following template puts a heading inside a `container` block:\n\n```liquid\n{% block 'container' %}\n  &lt;h1&gt;Welcome&lt;/h1&gt;\n{% endblock %}\n```\n\nEverything between the opening and closing tags is the block's body content. The block file is written in Liquid, and it prints that body content with `{{ content }}`:\n\n```liquid\n{% doc %}\n  @param {string} [tag] - The HTML element to render.\n  @param {string} [class] - A CSS class to add to the element.\n  @param {string} [content] - The optional body content.\n{% enddoc %}\n\n{% assign tag = tag | default: 'div' %}\n\n&lt;{{ tag }} class=\"{{ class }}\"&gt;\n  {{ content }}\n&lt;/{{ tag }}&gt;\n\n{% schema %}\n{\n  \"name\": \"t:blocks.container\",\n  \"settings\": []\n}\n{% endschema %}\n```\n\nUse [`{% doc %}`](/docs/storefronts/themes/tools/liquid-doc) to document the named parameters the block accepts and to show how to call it. `{% doc %}` is documentation only: it doesn't declare, validate, or bind parameters. A parameter that's declared only in `{% doc %}` doesn't touch `block.settings`, so the block reads it only as the plain variable, like `foo`, never as `block.settings.foo`.\n\nAlways document `content` in `{% doc %}` and indicate whether it's required or optional. Use `@param {string} content` for required body content and `@param {string} [content]` for optional body content.\n\nUse [`{% schema %}`](/docs/storefronts/themes/architecture/blocks/theme-blocks/schema) for settings in the theme editor, such as appearance choices, resource pickers, and contextual component settings.\n\n## Passing parameters\n\nPass named parameters after the block name, like you do with `{% render %}`. Each parameter is available as a variable inside the block, and the block's Liquid code decides what it does.\n\n```liquid\n{% block 'container', tag: 'header', class: 'site-header' %}\n  &lt;h1&gt;Page title&lt;/h1&gt;\n{% endblock %}\n```\n\nThis call passes a `tag` and a `class`, which the block can use to choose its HTML element and add CSS classes. `class` has no special platform behavior, so your styling stays visible in the Liquid that renders the HTML.\n\n### Schema settings\n\nA block's `{% schema %}` defines its [theme editor settings](/docs/storefronts/themes/architecture/settings/input-settings), which the block reads as `block.settings.&lt;id&gt;`. A merchant usually sets these values in the theme editor. When a parameter has the same name as a setting that the schema declares, the parameter also sets that setting, which is useful when the template already knows the value. A parameter with no matching setting is only a variable.\n\nFor example, if the `button` schema declares a `variant` setting, this call makes `button-primary` available inside the block as both `variant` and `block.settings.variant`:\n\n```liquid\n{% block 'button', variant: 'button-primary' %}\n  Add to cart\n{% endblock %}\n```\n\nInside `blocks/button.liquid`, both reads return `button-primary`:\n\n```liquid\n{{ variant }}\n{{ block.settings.variant }}\n```\n\nOne call can mix parameters that map to settings with parameters that don't:\n\n```liquid\n{% block 'product-card',\n  class: 'featured-product',\n  product: product\n%}\n{% endblock %}\n```\n\nFor how a block declares and reads settings, see [block schema](/docs/storefronts/themes/architecture/blocks/theme-blocks/schema).\n\n### Arrays\n\nA block parameter can take a literal array for a short list that lives in the template.\n\nFor a direct parameter, list the values inline:\n\n```liquid\n{% block 'badge-list',\n  badges: ['New arrival', 'Low stock', 'Online only']\n%}\n{% endblock %}\n```\n\nThe same works for a parameter that maps to a schema setting:\n\n```liquid\n{% block 'collection-list',\n  collections: [collections['summer'], collections['sale']]\n%}\n{% endblock %}\n```\n\n&gt; Note:\n&gt; Inline literal arrays are specific to the `{% block %}` tag. Other tags, such as `{% render %}` and `{% partial %}`, don't accept an array written directly in the tag.\n\n### Body content\n\nThe content between `{% block 'name' %}` and `{% endblock %}` is the block's body content, and the block prints it with `{{ content }}`.\n\nBody content can be plain markup, other blocks, or both. For example, a product template passes a heading and a nested `button` block into a `container`:\n\n```liquid\n{% block 'container' %}\n  &lt;h1&gt;{{ product.title }}&lt;/h1&gt;\n  {% block 'button', type: 'submit', class: 'button--full-width' %}\n    Add to cart\n  {% endblock %}\n{% endblock %}\n```\n\nWhen a block only displays text or markup, pass it as body content instead of adding parameters like `title`, `body`, or `heading`. Add a parameter only when the block needs to do something with the value, like change how it renders or read the data you pass.\n\n## Where you can use the tag\n\nUse `{% block %}` in `layout/` and `templates/` files.",
+    "parameters": [],
+    "summary": "Renders a reusable theme block directly from a Liquid template.",
+    "name": "block",
+    "syntax": "{% block 'name', parameter: value %}\n  content\n{% endblock %}",
+    "syntax_keywords": [],
+    "examples": []
+  },
+  {
+    "category": "theme",
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "A partial is a named region of server-rendered HTML that JavaScript can refresh without a full page reload. Mark the region inline in a template or layout with `{% partial %}`.\n\nFor the full partial-rendering JavaScript API, including fetching, applying, and refreshing partials, refer to [Partials](/docs/storefronts/themes/architecture/partials).\n\n## Basic syntax\n\nA partial wraps a region of a template or layout in `{% partial %}` and `{% endpartial %}`. The content inside is regular Liquid that renders with the rest of the page on the first load:\n\n```liquid\n{% partial 'product-grid' %}\n  {% for product in collection.products %}\n    {% render 'product-card', product: product %}\n  {% endfor %}\n{% endpartial %}\n```\n\nThe partial name is how JavaScript targets the region later. For example, refresh `product-grid` after an interaction changes the current page:\n\n```js\nimport {partials} from '@shopify/partial-rendering';\n\nawait partials.refresh('product-grid', 'product-count');\n```",
+    "parameters": [],
+    "summary": "Marks a named, server-rendered region that JavaScript can refresh without a full page reload.",
+    "name": "partial",
+    "syntax": "{% partial 'name' %}\n  content\n{% endpartial %}",
+    "syntax_keywords": [
+      {
+        "keyword": "name",
+        "description": "The name that JavaScript uses to target this partial."
+      },
+      {
+        "keyword": "content",
+        "description": "The server-rendered content for the partial."
+      }
+    ],
+    "examples": []
   }
 ]
