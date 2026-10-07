@@ -1767,6 +1767,7 @@
   "shopify.checkout.thank_you.cashback_notice": "You'll receive your cashback after 30 days",
   "shopify.checkout.thank_you.company_location_title": "Location",
   "shopify.checkout.thank_you.shipping_address_title": "Shipping address",
+  "shopify.checkout.thank_you.pickup_address_title": "Pickup at",
   "shopify.checkout.thank_you.shipping_address_map_title": "Google map displaying pin point of shipping address: %{address}",
   "shopify.checkout.thank_you.payment_method_title": "Payment method",
   "shopify.checkout.thank_you.payment_method_not_charged": "Not charged",
