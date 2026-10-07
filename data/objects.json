@@ -1243,7 +1243,7 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "Sections and blocks are reusable modules of content that make up [templates](/themes/architecture/templates).\n\nYou can include a maxiumum of 50 blocks in a section. To learn more about using blocks, refer to the [Building with sections and blocks](/docs/themes/best-practices/templates-sections-blocks).",
+    "description": "Sections and blocks are reusable modules of content that make up [templates](/docs/storefronts/themes/architecture/templates).\n\nIn a [theme block](/docs/storefronts/themes/architecture/blocks/theme-blocks/quick-start), use this object to access the block's properties and settings. In a section, access each block through [`section.blocks`](/docs/api/liquid/objects/section#section-blocks).\n\nYou can include a maximum of 50 blocks in a section. To learn more about using blocks, refer to [Building with sections and blocks](/docs/storefronts/themes/best-practices/templates-sections-blocks).",
     "properties": [
       {
         "deprecated": false,
