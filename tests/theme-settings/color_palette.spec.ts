@@ -52,16 +52,12 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]);
     });
 
-    it('refuses the visible_if property', async () => {
+    it('accepts (and ignores) the visible_if property', async () => {
       const diagnostics = await validate(
         'config/settings_schema.json',
         settings({ visible_if: '{{ section.settings.show_palette }}' }),
       );
-      expect(diagnostics).toStrictEqual([
-        expect.objectContaining({
-          message: 'Property visible_if is not allowed.',
-        }),
-      ]);
+      expect(diagnostics).toStrictEqual([]);
     });
 
     it('requires the default property', async () => {

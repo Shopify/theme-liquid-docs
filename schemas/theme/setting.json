@@ -201,7 +201,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -221,7 +222,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -237,7 +239,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -273,7 +276,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -293,7 +297,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -368,7 +373,8 @@
           "additionalProperties": { "type": "string" },
           "description": "A map of palette color names to color values. Each key is an arbitrary name and each value is a CSS color.",
           "markdownDescription": "A map of palette color names to color values.\n\nEach **key** is an arbitrary name. Each **value** is a CSS color, typically a hex code.\n\n**Example:**\n```json\n\"default\": {\n  \"background\": \"#ffffff\",\n  \"foreground\": \"#000000\"\n}\n```\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#color_palette)"
-        }
+        },
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -495,7 +501,8 @@
           ]
         },
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "required": ["definition", "role"],
       "additionalProperties": false
@@ -647,7 +654,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "required": ["metaobject_type"],
       "additionalProperties": false
@@ -672,7 +680,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "required": ["metaobject_type"],
       "additionalProperties": false
@@ -726,7 +735,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -742,7 +752,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -762,7 +773,8 @@
         "default": true,
         "label": true,
         "info": true,
-        "id": true
+        "id": true,
+        "visible_if": { "$ref": "#/definitions/ignoredConditionalSetting" }
       },
       "additionalProperties": false
     },
@@ -1111,6 +1123,12 @@
           "markdownDescription": "A liquid expression that determines whether the setting should be visible.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#visible_if)"
         }
       }
+    },
+
+    "ignoredConditionalSetting": {
+      "$comment": "visible_if on setting types that don't support it. Accepted so the file saves, but ignored by the theme editor.",
+      "description": "visible_if isn't supported on this setting type. It's ignored and the setting is always visible in the theme editor.",
+      "markdownDescription": "`visible_if` isn't supported on this setting type. It's ignored and the setting is always visible in the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/storefronts/themes/architecture/settings#conditional-settings)"
     },
 
     "inputSettingsStandardAttributes": {

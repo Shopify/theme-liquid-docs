@@ -251,7 +251,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
   );
 
   it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)(
-    'should not allow visible_if on %s setting type',
+    'should accept (and ignore) visible_if on %s setting type',
     async (settingType) => {
       const schema = {
         settings: [
@@ -265,10 +265,9 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       };
 
       const diagnostics = await validate('sections/section.liquid', schema);
-      expect(diagnostics).toContainEqual(
+      expect(diagnostics).not.toContainEqual(
         expect.objectContaining({
           message: 'Property visible_if is not allowed.',
-          severity: 1,
         }),
       );
     },
