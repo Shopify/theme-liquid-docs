@@ -273,6 +273,29 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
     },
   );
 
+  it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)(
+    'should still require visible_if to be a string on %s setting type',
+    async (settingType) => {
+      const schema = {
+        settings: [
+          {
+            type: settingType,
+            id: 'test_setting',
+            label: 'Test Setting',
+            visible_if: 42,
+          },
+        ],
+      };
+
+      const diagnostics = await validate('sections/section.liquid', schema);
+      expect(diagnostics).toContainEqual(
+        expect.objectContaining({
+          message: 'Incorrect type. Expected "string".',
+        }),
+      );
+    },
+  );
+
   it('should complete the type property with the generic docs', async () => {
     const result = await complete(
       service,

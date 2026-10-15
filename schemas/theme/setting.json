@@ -1127,6 +1127,7 @@
 
     "ignoredConditionalSetting": {
       "$comment": "visible_if on setting types that don't support it. Accepted so the file saves, but ignored by the theme editor.",
+      "type": "string",
       "description": "visible_if isn't supported on this setting type. It's ignored and the setting is always visible in the theme editor.",
       "markdownDescription": "`visible_if` isn't supported on this setting type. It's ignored and the setting is always visible in the theme editor.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/storefronts/themes/architecture/settings#conditional-settings)"
     },
