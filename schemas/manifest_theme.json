@@ -7,6 +7,7 @@
     { "fileMatch": ["config/settings_schema.json"], "uri": "theme/theme_settings.json" },
     { "fileMatch": ["sections/*.liquid"], "uri": "theme/section.json" },
     { "uri": "theme/settings.json" },
+    { "uri": "theme/strict_settings.json" },
     { "uri": "theme/setting.json" },
     { "uri": "theme/default_setting_values.json" },
     { "uri": "theme/app_block_entry.json" },

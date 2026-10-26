@@ -32,7 +32,7 @@
     },
 
     "settings": {
-      "$ref": "./settings.json"
+      "$ref": "./strict_settings.json"
     },
 
     "max_blocks": {

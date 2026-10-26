@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "Settings for sections and blocks, which have stricter limits than config/settings_schema.json.",
+  "allOf": [
+    { "$ref": "./settings.json" },
+    {
+      "items": {
+        "properties": {
+          "options": {
+            "items": {
+              "properties": {
+                "value": {
+                  "$comment": "We skip t: values here because translation references don't have a length limit.",
+                  "if": { "pattern": "^t:" },
+                  "else": { "maxLength": 50 }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

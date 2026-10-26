@@ -19,7 +19,7 @@
       "description": "The number of blocks of this type that can be used."
     },
     "settings": {
-      "$ref": "./settings.json"
+      "$ref": "./strict_settings.json"
     }
   }
 }
