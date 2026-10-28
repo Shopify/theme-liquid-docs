@@ -122,4 +122,26 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
       ]);
     });
   });
+
+  describe('Unit: option value length', () => {
+    it('select setting allows an option value over 50 characters', async () => {
+      const settings = `[
+        {
+          "name": "some category",
+          "settings": [
+            {
+              "type": "select",
+              "id": "variant",
+              "label": "Variant",
+              "options": [{ "value": "${'a'.repeat(51)}", "label": "Long" }]
+            }
+          ]
+        }
+      ]`;
+
+      const diagnostics = await validate('config/settings_schema.json', settings);
+
+      expect(diagnostics).toHaveLength(0);
+    });
+  });
 });

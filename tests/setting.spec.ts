@@ -8,10 +8,11 @@ const UNSUPPORTED_ICON_MESSAGE =
 const RADIO_ICON_MESSAGE =
   'The property icon is not allowed on radio options. Use a select setting for options with icons.';
 const NOT_DIVISIBLE_MESSAGE = 'Value is not divisible by 0.1.';
+const TOO_LONG_MESSAGE = 'String is longer than the maximum length of 50.';
 
 const sectionSchema = (setting: any) => ({ name: 'Test', settings: [setting] });
 
-describe('JSON Schema validation of setting option icons and number bounds', () => {
+describe('JSON Schema validation of setting options and number bounds', () => {
   describe('Unit: select options', () => {
     it('accepts a select option with a supported icon', async () => {
       const diagnostics = await validate(
@@ -73,6 +74,133 @@ describe('JSON Schema validation of setting option icons and number bounds', () 
       );
 
       expect(diagnostics).toStrictEqual([expect.objectContaining({ message: RADIO_ICON_MESSAGE })]);
+    });
+  });
+
+  describe('Unit: option value length', () => {
+    it('accepts a select option value of 50 characters', async () => {
+      const diagnostics = await validate(
+        'sections/section.liquid',
+        sectionSchema({
+          type: 'select',
+          id: 'variant',
+          label: 'Variant',
+          options: [{ value: 'a'.repeat(50), label: 'Long' }],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([]);
+    });
+
+    it('rejects a select option value of 51 characters', async () => {
+      const diagnostics = await validate(
+        'sections/section.liquid',
+        sectionSchema({
+          type: 'select',
+          id: 'variant',
+          label: 'Variant',
+          options: [{ value: 'a'.repeat(51), label: 'Long' }],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([expect.objectContaining({ message: TOO_LONG_MESSAGE })]);
+    });
+
+    it('accepts an empty select option value', async () => {
+      const diagnostics = await validate(
+        'sections/section.liquid',
+        sectionSchema({
+          type: 'select',
+          id: 'variant',
+          label: 'Variant',
+          options: [{ value: '', label: 'None' }],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([]);
+    });
+
+    it('accepts a select option value over 50 characters that starts with t:', async () => {
+      const diagnostics = await validate(
+        'sections/section.liquid',
+        sectionSchema({
+          type: 'select',
+          id: 'variant',
+          label: 'Variant',
+          options: [{ value: `t:${'a'.repeat(60)}`, label: 'Long' }],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([]);
+    });
+
+    it('rejects a radio option value of 51 characters', async () => {
+      const diagnostics = await validate(
+        'sections/section.liquid',
+        sectionSchema({
+          type: 'radio',
+          id: 'variant',
+          label: 'Variant',
+          options: [{ value: 'a'.repeat(51), label: 'Long' }],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([expect.objectContaining({ message: TOO_LONG_MESSAGE })]);
+    });
+
+    it('rejects a select option value of 51 characters in a section-local block', async () => {
+      const diagnostics = await validate('sections/section.liquid', {
+        name: 'Test',
+        blocks: [
+          {
+            type: 'item',
+            name: 'Item',
+            settings: [
+              {
+                type: 'select',
+                id: 'variant',
+                label: 'Variant',
+                options: [{ value: 'a'.repeat(51), label: 'Long' }],
+              },
+            ],
+          },
+        ],
+      });
+
+      expect(diagnostics).toStrictEqual([expect.objectContaining({ message: TOO_LONG_MESSAGE })]);
+    });
+
+    it('rejects a select option value of 51 characters in a theme block', async () => {
+      const diagnostics = await validate(
+        'blocks/block.liquid',
+        sectionSchema({
+          type: 'select',
+          id: 'variant',
+          label: 'Variant',
+          options: [{ value: 'a'.repeat(51), label: 'Long' }],
+        }),
+      );
+
+      expect(diagnostics).toStrictEqual([expect.objectContaining({ message: TOO_LONG_MESSAGE })]);
+    });
+
+    it('accepts a number option value written with more than 50 characters', async () => {
+      const diagnostics = await validate(
+        'sections/section.liquid',
+        `{
+          "name": "Test",
+          "settings": [
+            {
+              "type": "number",
+              "id": "width",
+              "label": "Width",
+              "options": [{ "value": ${'1'.repeat(51)}, "label": "Huge" }]
+            }
+          ]
+        }`,
+      );
+
+      expect(diagnostics).toStrictEqual([]);
     });
   });
 

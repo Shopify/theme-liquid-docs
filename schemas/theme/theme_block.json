@@ -11,7 +11,7 @@
     },
 
     "settings": {
-      "$ref": "./settings.json"
+      "$ref": "./strict_settings.json"
     },
 
     "blocks": {
