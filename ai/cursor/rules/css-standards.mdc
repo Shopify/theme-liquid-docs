@@ -1,0 +1,37 @@
+---
+description: CSS standards for Shopify theme components
+globs: "**/*.liquid"
+alwaysApply: false
+---
+# CSS standards
+
+## Scope and placement
+
+- Put component styles in a single `{% stylesheet %}` tag in a section, block, or snippet.
+- Do not put Liquid expressions inside `{% stylesheet %}`; pass dynamic setting values through CSS custom properties on the component markup.
+- Keep styles used by multiple components in a shared asset instead of duplicating them.
+
+```liquid
+<div class="product-card" style="--card-gap: {{ block.settings.gap }}px">
+  ...
+</div>
+
+{% stylesheet %}
+.product-card {
+  gap: var(--card-gap, 1rem);
+}
+{% endstylesheet %}
+```
+
+## Selectors and naming
+
+- Prefer simple class selectors. Do not use IDs or broad element selectors for styling.
+- Keep specificity low; avoid `!important` and use it only when an override cannot be expressed through the component styles.
+- Use BEM-style names: `block`, `block__element`, and `block--modifier`, with dashes between words.
+- Scope custom properties to the component unless they are genuinely shared. Define shared variables at `:root` and prefer theme colour settings over hard-coded colours.
+
+## Responsive styles
+
+- Write mobile-first rules and use `screen` media queries.
+- Keep nesting to one level. Do not use the `&` nesting operator.
+- Use pseudo-selectors sparingly and keep selectors readable.
