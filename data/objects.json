@@ -17557,7 +17557,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the location is a physical retail storefront that sells in person. Returns `false` if not.",
+        "summary": "Returns `true` if the location is a physical retail storefront that sells in person. Returns `false` if not, or if the location is deactivated.",
         "name": "physical_storefront"
       },
       {
