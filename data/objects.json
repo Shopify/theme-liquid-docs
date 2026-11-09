@@ -17414,6 +17414,10 @@
         {
           "object": "shop",
           "property": "subscription_policy"
+        },
+        {
+          "object": "url",
+          "property": "object"
         }
       ],
       "template": []
@@ -17557,7 +17561,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the location is a physical retail storefront that sells in person. Returns `false` if not.",
+        "summary": "Returns `true` if the location is a physical retail storefront that sells in person. Returns `false` if not, or if the location is deactivated.",
         "name": "physical_storefront"
       },
       {
@@ -18558,6 +18562,195 @@
     "json_data": {
       "path": "/",
       "handle": "customer.orders[1].line_items[0].unit_price_measurement",
+      "data_from_file": ""
+    },
+    "return_type": []
+  },
+  {
+    "access": {
+      "global": false,
+      "parents": [],
+      "template": []
+    },
+    "deprecated": false,
+    "deprecation_reason": "",
+    "description": "When URLs are saved as references to Shopify resources, they return dedicated\n[`object` drops](/docs/api/liquid/objects/url#url-object).\n\nWhen the `url` object is referenced directly in a theme file, the [`url` string](/docs/api/liquid/objects/url#url-url)\nis returned.",
+    "properties": [
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The type depends on how the URL was set:\n\n- A resource that's selected in the theme editor returns the type of that resource, such as `product_link` or\n  `catalog_link`.\n- A path that's entered as text, such as `/products/walrus-socks`, returns `relative_link`, even if the path\n  matches a resource. The only exception is `/`, which returns `home_link`.\n- A path from a dynamic source, such as `{{ page.url }}`, also returns `relative_link`.\n- An absolute URL returns `external_link`, even if it points to the store.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "anchor",
+            "description": "The URL points to an anchor on the current page, such as `#faq`.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "article_link",
+            "description": "The URL points to an article.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "blog_link",
+            "description": "The URL points to a blog.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "catalog_link",
+            "description": "The URL points to the [catalog page](https://help.shopify.com/manual/online-store/themes/customizing-themes/change-catalog-page) (`/collections/all`).",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "collection_link",
+            "description": "The URL points to a collection.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "collections_link",
+            "description": "The URL points to the [collection list page](/themes/architecture/templates/list-collections) (`/collections`).",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "external_link",
+            "description": "The URL is an absolute URL that starts with `http`, `https`, `mailto`, or `tel`.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "home_link",
+            "description": "The URL is the home page path (`/`).",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "metaobject_link",
+            "description": "The URL points to a metaobject page.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "page_link",
+            "description": "The URL points to a [page](https://help.shopify.com/manual/online-store/themes/theme-structure/pages).",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "policy_link",
+            "description": "The URL points to a [policy page](https://help.shopify.com/manual/checkout-settings/refund-privacy-tos#add-links-to-your-policies-within-pages-or-on-social-media).",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "product_link",
+            "description": "The URL points to a product page.",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "relative_link",
+            "description": "The URL is a path that was entered as text or comes from a dynamic source, such as `/pages/about`.",
+            "array_value": ""
+          }
+        ],
+        "summary": "The type of the URL.",
+        "name": "type"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The URL string to be used as the `href` in links. This is the same value that's returned when the `url` object is\nreferenced directly.\n\nURLs that point to store resources, the home page, and the collection pages include the path prefix of the\ncurrent locale, such as `/fr/collections/spring`. Relative paths and anchors are returned exactly as they were\nentered.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The URL.",
+        "name": "url"
+      },
+      {
+        "deprecated": false,
+        "deprecation_reason": "",
+        "description": "The object can be one of the following:\n\n- [`article`](/docs/api/liquid/objects/article)\n- [`blog`](/docs/api/liquid/objects/blog)\n- [`collection`](/docs/api/liquid/objects/collection)\n- [`metaobject`](/docs/api/liquid/objects/metaobject)\n- [`page`](/docs/api/liquid/objects/page)\n- [`policy`](/docs/api/liquid/objects/policy)\n- [`product`](/docs/api/liquid/objects/product)\n- A [string](/docs/api/liquid/basics#string) that contains the URL, if the [`type`](/docs/api/liquid/objects/url#url-type) is `external_link`\n\nFor any other type, or if the resource no longer exists, `nil` is returned. A path that's entered as text, such as\n`/products/walrus-socks`, is a `relative_link`, so its `object` is `nil` even if the path matches a resource.",
+        "examples": [],
+        "return_type": [
+          {
+            "type": "untyped",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "article",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "blog",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "collection",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "metaobject",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "page",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "policy",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "product",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          },
+          {
+            "type": "string",
+            "name": "",
+            "description": "",
+            "array_value": ""
+          }
+        ],
+        "summary": "The resource that the URL points to.",
+        "name": "object"
+      }
+    ],
+    "summary": "A URL object from a [`url` setting](/themes/architecture/settings/input-settings#url) or a `url` [metafield](/docs/api/liquid/objects/metafield).",
+    "name": "url",
+    "examples": [],
+    "json_data": {
+      "path": "",
+      "handle": "",
       "data_from_file": ""
     },
     "return_type": []
