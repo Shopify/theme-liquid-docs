@@ -1,3 +1,4 @@
+// visible_if is accepted on these types so files still save, but the theme editor ignores it.
 export const SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF = [
   'article',
   'article_list',
