@@ -4179,7 +4179,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "A customer can complete a checkout without making an account with the store. If the customer\ndoesn't have an account with the store, then `customer.has_account` is `false` at checkout.\n\nDuring the checkout process, if the customer has an account with the store and enters an email associated\nwith an account, then `customer.has_account` is `true`. The email is associated with the account regardless\nof whether the customer has logged into their account.",
+        "description": "A customer usually becomes `ENABLED` when they create a legacy customer account, or when they first sign in to the\nstore's [customer accounts](https://help.shopify.com/manual/customers/customer-accounts).\n\nA customer can complete a checkout without having an account with the store. If the customer isn't `ENABLED`,\nthen `customer.has_account` is `false` at checkout.\n\nDuring the checkout process, if the customer enters an email that's associated with an `ENABLED` customer, then\n`customer.has_account` is `true`, even if they haven't signed in during this checkout.",
         "examples": [],
         "return_type": [
           {
@@ -4189,7 +4189,7 @@
             "array_value": ""
           }
         ],
-        "summary": "Returns `true` if the email associated with the customer is tied to a\n[customer account](https://help.shopify.com/manual/customers/customer-accounts). Returns `false` if not.",
+        "summary": "Returns `true` if the customer's [state](https://shopify.dev/docs/api/admin-graphql/latest/objects/Customer#field-Customer.fields.state)\nis `ENABLED`. Returns `false` if not.",
         "name": "has_account"
       },
       {
