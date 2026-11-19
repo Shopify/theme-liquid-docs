@@ -110,6 +110,26 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
     ]);
   });
 
+  it('should accept nested and pluralized translations in locales', async () => {
+    const diagnostics = await validate('sections/section.liquid', {
+      locales: {
+        en: {
+          title: 'Title',
+          description: { desktop: 'Desktop text', mobile: 'Mobile text' },
+          items: { one: 'One item', other: '{{ count }} items' },
+        },
+      },
+    });
+    expect(diagnostics).toStrictEqual([]);
+  });
+
+  it('should report invalid translation values in locales', async () => {
+    const diagnostics = await validate('sections/section.liquid', {
+      locales: { en: { title: ['Title'] } },
+    });
+    expect(diagnostics).not.to.be.empty;
+  });
+
   it('should properly validate the min value for max_blocks', async () => {
     const diagnostics = await validate('sections/section.liquid', { max_blocks: 0 });
     expect(diagnostics).toStrictEqual([
