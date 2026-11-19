@@ -110,6 +110,38 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
     ]);
   });
 
+  it('should report invalid properties on preset blocks given as a hash', async () => {
+    const diagnostics = await validate('sections/section.liquid', {
+      name: 'Test',
+      blocks: [{ type: '@theme' }],
+      presets: [{ name: 'Preset', blocks: { button: { type: 'button', disabled: true } } }],
+    });
+    expect(diagnostics.map((diagnostic) => diagnostic.message)).toStrictEqual([
+      'Property disabled is not allowed.',
+    ]);
+  });
+
+  it('should report invalid properties on preset blocks given as an array', async () => {
+    const diagnostics = await validate('sections/section.liquid', {
+      name: 'Test',
+      blocks: [{ type: '@theme' }],
+      presets: [{ name: 'Preset', blocks: [{ type: 'button', disabled: true }] }],
+    });
+    expect(diagnostics.map((diagnostic) => diagnostic.message)).toStrictEqual([
+      'Property disabled is not allowed.',
+    ]);
+  });
+
+  it('should report preset blocks that are neither an array nor a hash', async () => {
+    const diagnostics = await validate('sections/section.liquid', {
+      name: 'Test',
+      presets: [{ name: 'Preset', blocks: 'button' }],
+    });
+    expect(diagnostics.map((diagnostic) => diagnostic.message)).toStrictEqual([
+      'Incorrect type. Expected "array".',
+    ]);
+  });
+
   it('should properly validate the min value for max_blocks', async () => {
     const diagnostics = await validate('sections/section.liquid', { max_blocks: 0 });
     expect(diagnostics).toStrictEqual([
