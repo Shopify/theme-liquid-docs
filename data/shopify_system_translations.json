@@ -950,6 +950,7 @@
   "shopify.checkout.localized_fields.additional_information.tax_credential_tr": "Türkiye Cumhuriyeti Kimlik Numarası\/KDV",
   "shopify.checkout.localized_fields.additional_information.shipping_credential_tr": "Türkiye Cumhuriyeti Kimlik Numarası\/KDV",
   "shopify.checkout.payment.shop_pay_hsa.eligible_product": "HSA\/FSA eligible",
+  "shopify.checkout.payment.shop_pay_hsa.partially_eligible_product": "Partially HSA\/FSA eligible",
   "shopify.checkout.payment.shop_pay_hsa.mixed_cart_description": "Your cart can only contain HSA\/FSA-eligible products",
   "shopify.checkout.payment.shop_pay_hsa.mixed_cart_lmn_description": "Use a personal card and request reimbursement for the eligible amount. Benefits cards will be declined because the purchase isn’t fully HSA\/FSA eligible.",
   "shopify.checkout.payment.shop_pay_hsa.label": "I want to use HSA\/FSA funds for this purchase",
