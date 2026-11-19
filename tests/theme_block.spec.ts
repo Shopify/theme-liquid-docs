@@ -243,7 +243,7 @@ describe('JSON Schema validation of Liquid theme block schema tags', () => {
     expect(diagnostics).toStrictEqual([]);
   });
 
-  it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)('should not allow visible_if on %s setting type', async (settingType) => {
+  it.each(SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF)('should accept (and ignore) visible_if on %s setting type', async (settingType) => {
     const schema = {
       settings: [
         {
@@ -254,12 +254,11 @@ describe('JSON Schema validation of Liquid theme block schema tags', () => {
         }
       ]
     };
-    
+
     const diagnostics = await validate('blocks/block.liquid', schema);
-    expect(diagnostics).toContainEqual(
+    expect(diagnostics).not.toContainEqual(
       expect.objectContaining({
-        message: 'Property visible_if is not allowed.',
-        severity: 1
+        message: 'Property visible_if is not allowed.'
       })
     );
   });
