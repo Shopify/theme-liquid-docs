@@ -137,10 +137,7 @@
       "description": "Sections can provide their own set of translated strings through the locales object. This is separate from the locales directory of the theme, which makes it a useful feature for sections that are meant to be installed on multiple themes or shops.",
       "markdownDescription": "Sections can provide their own set of translated strings through the `locales` object. This is separate from the `locales` directory of the theme, which makes it a useful feature for sections that are meant to be installed on multiple themes or shops.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/sections/section-schema#locales)",
       "additionalProperties": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
+        "$ref": "./translations.json"
       }
     },
 
