@@ -9015,7 +9015,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage\n&gt; metafields](/apps/metafields/manage) or visit the [Shopify Help\n&gt; Center](https://help.shopify.com/manual/metafields).",
+        "description": "Through `country.market`, the metafields are resolved for a visitor in that country.\n\n&gt; Tip:\n&gt; To learn about how to create metafields, refer to [Create and manage\n&gt; metafields](/apps/metafields/manage) or visit the [Shopify Help\n&gt; Center](https://help.shopify.com/manual/metafields).",
         "examples": [],
         "return_type": [
           {
@@ -9025,7 +9025,7 @@
             "array_value": ""
           }
         ],
-        "summary": "The [metafields](/docs/api/liquid/objects/metafield) applied to the market.",
+        "summary": "The [metafields](/docs/api/liquid/objects/metafield) resolved across the markets for the active localized experience.",
         "name": "metafields"
       }
     ],
@@ -13202,7 +13202,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "The array is defined in only the following cases:\n\n- `variant.selected` is `true`\n- The variant is the product's first available variant. For example, `product.first_available_variant` or `product.selected_or_first_available_variant`.",
+        "description": "The array is defined in only the following cases:\n\n- `variant.selected` is `true`\n- The variant is the product's first available variant. For example, `product.first_available_variant` or `product.selected_or_first_available_variant`.\n- The variant is the product's first variant, and `product.selected_or_first_available_variant` returns it because no variant is selected and no variant is available.\n\nIf none of these cases apply, then an empty array is returned.\n\nThe array can include locations that don't offer [local pickup](https://help.shopify.com/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup), such as physical stores that only sell in person. To output only pickup locations, filter the array by [`pick_up_enabled`](/docs/api/liquid/objects/store_availability#store_availability-pick_up_enabled):\n\n```liquid\n{% assign pickup_availabilities = variant.store_availabilities | where: 'pick_up_enabled', true %}\n```\n\nTo output physical stores, refer to the [`store_availability` object](/docs/api/liquid/objects/store_availability).",
         "examples": [],
         "return_type": [
           {
@@ -17514,12 +17514,12 @@
     },
     "deprecated": false,
     "deprecation_reason": "",
-    "description": "If a location doesn't stock a variant, then there won't be a `store_availability` for that variant and location.\n\n&gt; Note:\n&gt; A returned location isn't guaranteed to offer [local pickup](https://help.shopify.com/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup).\n&gt; Check `pick_up_enabled` before presenting a location as a pickup option.",
+    "description": "If a location doesn't stock a variant, then there won't be a `store_availability` for that variant and location.\n\n&gt; Note:\n&gt; A returned location isn't guaranteed to offer [local pickup](https://help.shopify.com/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup).\n&gt; Check `pick_up_enabled` before presenting a location as a pickup option.\n\nThe [`variant.store_availabilities`](/docs/api/liquid/objects/variant#variant-store_availabilities) array can include locations that don't offer pickup, such as physical stores that only sell in person. Use the following properties to present each location:\n\n- `pick_up_enabled` is `true` if customers can pick up online orders at the location.\n- `physical_storefront` is `true` if the location is a physical store that sells in person, with or without pickup.\n\nTo output only pickup locations, filter the array by `pick_up_enabled`. A pickup location stays in the array when the variant isn't available there, so check `available` before you output `pick_up_time`:\n\n```liquid\n{% assign pickup_availabilities = variant.store_availabilities | where: 'pick_up_enabled', true %}\n\n{% for availability in pickup_availabilities %}\n  {% if availability.available %}\n    {{ availability.location.name }}: {{ availability.pick_up_time }}\n  {% else %}\n    {{ availability.location.name }}: Pickup currently unavailable\n  {% endif %}\n{% endfor %}\n```\n\nTo output the physical stores that have the variant available but don't offer pickup, filter the array by `physical_storefront`, and then check `available` and `pick_up_enabled`:\n\n```liquid\n{% assign physical_store_availabilities = variant.store_availabilities | where: 'physical_storefront', true %}\n\n{% for availability in physical_store_availabilities %}\n  {% if availability.available %}\n    {% unless availability.pick_up_enabled %}\n      {{ availability.location.name }}: Available in store\n    {% endunless %}\n  {% endif %}\n{% endfor %}\n```",
     "properties": [
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "For a variant that isn't a bundle, if the location offers pickup, then inventory that can be transferred to the location for pickup also counts as available.\nIf the location doesn't offer pickup, then only the inventory at the location counts.\n\nFor a variant that isn't a bundle, if the variant's [`inventory_management`](/docs/api/liquid/objects/variant#variant-inventory_management) is `nil`, or its [`inventory_policy`](/docs/api/liquid/objects/variant#variant-inventory_policy) is `continue`, then `true` is returned, even if the location has no inventory.\n\nFor a bundle variant, only the inventory of the bundle's components at the location counts. Inventory that can be transferred to the location doesn't count. `true` is returned if the location has enough of every component for at least one bundle, or if no component limits the quantity because each one either doesn't track inventory or continues to sell when out of stock.",
         "examples": [],
         "return_type": [
           {
@@ -17535,7 +17535,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "To output only the locations where customers can pick up online orders, filter `variant.store_availabilities` by this property with the [`where` filter](/docs/api/liquid/filters/where).",
         "examples": [],
         "return_type": [
           {
@@ -17551,7 +17551,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "",
+        "description": "A physical storefront doesn't always offer pickup. Check `pick_up_enabled` before you present the location as a pickup option.",
         "examples": [],
         "return_type": [
           {
@@ -17567,7 +17567,7 @@
       {
         "deprecated": false,
         "deprecation_reason": "",
-        "description": "&gt; Tip:\n&gt; This value can be configured in the Shopify admin. To learn more, visit the [Shopify Help Center](https://help.shopify.com/en/manual/sell-in-person/shopify-pos/order-management/local-pickup-for-online-orders#manage-preferences-for-a-local-pickup-location).",
+        "description": "If the location doesn't offer pickup, then an empty string is returned.\n\nThe returned value doesn't depend on whether the variant is available at the location. Check [`available`](/docs/api/liquid/objects/store_availability#store_availability-available) before you output it.\n\n&gt; Tip:\n&gt; This value can be configured in the Shopify admin. To learn more, visit the [Shopify Help Center](https://help.shopify.com/en/manual/sell-in-person/shopify-pos/order-management/local-pickup-for-online-orders#manage-preferences-for-a-local-pickup-location).",
         "examples": [],
         "return_type": [
           {
