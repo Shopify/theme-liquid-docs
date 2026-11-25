@@ -15,6 +15,7 @@ const sectionSchema5 = loadFixture('section-schema-5.json');
 const sectionSchema6 = loadFixture('section-schema-6.json');
 const sectionSchemaStaticBlockPreset = loadFixture('section-schema-static-block-preset.json');
 const sectionSchemaPresetBlocksAsHash = loadFixture('section-schema-preset-blocks-as-hash.json');
+const sectionSchemaPresetArraySettings = loadFixture('section-schema-preset-array-settings.json');
 const sectionSettings = loadFixture('section-settings.json');
 const sectionNestedBlocks = loadFixture('section-nested-blocks.json');
 const emptySchema = '{}';
@@ -34,6 +35,7 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
       sectionSchema6,
       sectionNestedBlocks,
       sectionSchemaPresetBlocksAsHash,
+      sectionSchemaPresetArraySettings,
     ];
     for (const sectionSchema of schemas) {
       const diagnostics = await validate('sections/section.liquid', sectionSchema);
@@ -74,7 +76,9 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
     expect(diagnostics).toStrictEqual([
       {
         code: 1,
-        message: expect.stringContaining('Value is not accepted. Valid values: "article", "article_list", "blog"'),
+        message: expect.stringContaining(
+          'Value is not accepted. Valid values: "article", "article_list", "blog"',
+        ),
         severity: 1,
         range: expect.objectContaining({
           start: expect.objectContaining({
@@ -108,6 +112,41 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
         }),
       },
     ]);
+  });
+
+  it('should report a section that defines both presets and default on both values', async () => {
+    const sectionSchema = JSON.stringify({
+      name: 'Section',
+      presets: [{ name: 'Preset' }],
+      default: { settings: {} },
+    });
+
+    const diagnostics = await validate('sections/section.liquid', sectionSchema);
+    expect(diagnostics.map((d) => d.message)).toStrictEqual([
+      "Invalid schema: cannot define both 'default' and 'presets'",
+      "Invalid schema: cannot define both 'default' and 'presets'",
+    ]);
+    expect(
+      diagnostics.map(({ range }) =>
+        sectionSchema.slice(range.start.character, range.end.character),
+      ),
+    ).toStrictEqual(['[{"name":"Preset"}]', '{"settings":{}}']);
+  });
+
+  it('should report a section that defines default and an empty presets array', async () => {
+    const diagnostics = await validate('sections/section.liquid', { presets: [], default: {} });
+    expect(diagnostics.map((d) => d.message)).toStrictEqual([
+      "Invalid schema: cannot define both 'default' and 'presets'",
+      "Invalid schema: cannot define both 'default' and 'presets'",
+    ]);
+  });
+
+  it('should accept a section that defines only presets or only default', async () => {
+    const schemas = [{ presets: [{ name: 'Preset' }] }, { default: { settings: {} } }];
+    for (const sectionSchema of schemas) {
+      const diagnostics = await validate('sections/section.liquid', sectionSchema);
+      expect(diagnostics).toStrictEqual([]);
+    }
   });
 
   it('should properly validate the min value for max_blocks', async () => {
@@ -224,7 +263,9 @@ describe('JSON Schema validation of Liquid theme section schema tags', () => {
 
   const settingsTypesSupportingVisibleIf = INPUT_SETTING_TYPES.filter(
     (settingType) =>
-      !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat(SETTINGS_TYPES_EXCLUSIVE_TO_SETTINGS_SCHEMA).includes(settingType),
+      !SETTINGS_TYPES_NOT_SUPPORTING_VISIBLE_IF.concat(
+        SETTINGS_TYPES_EXCLUSIVE_TO_SETTINGS_SCHEMA,
+      ).includes(settingType),
   );
 
   it.each(settingsTypesSupportingVisibleIf)(
