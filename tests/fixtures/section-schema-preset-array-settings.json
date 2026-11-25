@@ -1,0 +1,25 @@
+{
+  "name": "Section with array settings in presets",
+  "presets": [
+    {
+      "name": "Example Preset",
+      "settings": {
+        "exampleString": "This is a string",
+        "exampleNumber": 123,
+        "exampleBoolean": true,
+        "exampleArray": ["String 1", "String 2"]
+      },
+      "blocks": [
+        {
+          "type": "exampleBlock",
+          "settings": {
+            "exampleString": "This is a string",
+            "exampleNumber": 123,
+            "exampleBoolean": true,
+            "exampleArray": ["String 1", "String 2"]
+          }
+        }
+      ]
+    }
+  ]
+}

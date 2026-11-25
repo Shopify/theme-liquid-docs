@@ -157,6 +157,20 @@
     }
   },
 
+  "if": { "required": ["presets", "default"] },
+  "then": {
+    "properties": {
+      "presets": {
+        "not": {},
+        "errorMessage": "Invalid schema: cannot define both 'default' and 'presets'"
+      },
+      "default": {
+        "not": {},
+        "errorMessage": "Invalid schema: cannot define both 'default' and 'presets'"
+      }
+    }
+  },
+
   "definitions": {
     "sectionToggle": {
       "type": "object",
