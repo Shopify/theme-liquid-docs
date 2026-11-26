@@ -633,7 +633,7 @@
     },
 
     "metaobject": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributesWithoutDefault" }],
       "properties": {
         "type": {
           "const": "metaobject",
@@ -644,7 +644,6 @@
           "type": "string",
           "description": "The metaobject type allowed by the picker."
         },
-        "default": true,
         "label": true,
         "info": true,
         "id": true
@@ -654,7 +653,7 @@
     },
 
     "metaobject_list": {
-      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributes" }],
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributesWithoutDefault" }],
       "properties": {
         "type": {
           "const": "metaobject_list",
@@ -669,7 +668,6 @@
           "type": "integer",
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
-        "default": true,
         "label": true,
         "info": true,
         "id": true
@@ -1114,6 +1112,15 @@
     },
 
     "inputSettingsStandardAttributes": {
+      "allOf": [{ "$ref": "#/definitions/inputSettingsStandardAttributesWithoutDefault" }],
+      "properties": {
+        "default": {
+          "description": "The default value for the setting."
+        }
+      }
+    },
+
+    "inputSettingsStandardAttributesWithoutDefault": {
       "required": ["type", "id", "label"],
       "properties": {
         "id": {
@@ -1124,9 +1131,6 @@
         "label": {
           "type": "string",
           "description": "The label for the setting, which will show in the theme editor."
-        },
-        "default": {
-          "description": "The default value for the setting."
         },
         "info": {
           "$ref": "#/definitions/info"
