@@ -54,5 +54,54 @@ describe('Module: theme settings validation (config/settings_schema.json)', () =
         }),
       );
     });
+
+    it.each([1, 50])(`${setting_type} accepts a limit of %d`, async (limit) => {
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        resourceListSettings(setting_type, { limit }),
+      );
+
+      expect(diagnostics).toHaveLength(0);
+    });
+
+    it.each([
+      [0, 'Value is below the minimum of 1.'],
+      [51, 'Value is above the maximum of 50.'],
+    ])(`${setting_type} rejects a limit of %d`, async (limit, message) => {
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        resourceListSettings(setting_type, { limit }),
+      );
+
+      expect(diagnostics).toContainEqual(expect.objectContaining({ message }));
+    });
+
+    it(`${setting_type} does not allow a default`, async () => {
+      const diagnostics = await validate(
+        'config/settings_schema.json',
+        resourceListSettings(setting_type, { default: [] }),
+      );
+
+      expect(diagnostics).toContainEqual(
+        expect.objectContaining({ message: 'Property default is not allowed.' }),
+      );
+    });
   });
 });
+
+function resourceListSettings(setting_type: string, attributes: Record<string, unknown>) {
+  return JSON.stringify([
+    {
+      name: 'some category',
+      settings: [
+        {
+          type: setting_type,
+          id: setting_type,
+          label: setting_type,
+          ...(setting_type === 'metaobject_list' ? { metaobject_type: 'author' } : {}),
+          ...attributes,
+        },
+      ],
+    },
+  ]);
+}
