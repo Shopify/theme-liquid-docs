@@ -212,13 +212,14 @@
         "type": {
           "const": "article_list",
           "description": "A setting of type article_list outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture multiple articles, such as a group of articles to feature on the homepage.",
-          "markdownDescription": "A setting of type `article_list` outputs an article picker field that's automatically populated with the available products for the store. You can use these fields to capture multiple articles, such as a group of articles to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#article_list)"
+          "markdownDescription": "A setting of type `article_list` outputs an article picker field that's automatically populated with the available articles for the store. You can use these fields to capture multiple articles, such as a group of articles to feature on the homepage.\n\n---\n\n[Shopify reference](https://shopify.dev/docs/themes/architecture/settings/input-settings#article_list)"
         },
         "limit": {
           "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
-        "default": true,
         "label": true,
         "info": true,
         "id": true
@@ -288,9 +289,10 @@
         },
         "limit": {
           "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
-        "default": true,
         "label": true,
         "info": true,
         "id": true
@@ -667,9 +669,10 @@
         },
         "limit": {
           "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
-        "default": true,
         "label": true,
         "info": true,
         "id": true
@@ -757,9 +760,10 @@
         },
         "limit": {
           "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
           "description": "The maximum number that the merchant can select. The default limit, and the maximum limit you can set, is 50."
         },
-        "default": true,
         "label": true,
         "info": true,
         "id": true
